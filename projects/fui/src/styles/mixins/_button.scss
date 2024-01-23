@@ -1,0 +1,11 @@
+@mixin ahpButtonBase {
+  display: inline-block;
+  appearance: none;
+  cursor: pointer;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  white-space: nowrap;
+  max-width: 100%;
+  vertical-align: middle;
+}
