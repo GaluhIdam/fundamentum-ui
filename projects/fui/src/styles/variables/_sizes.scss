@@ -1,0 +1,15 @@
+$fuiSize:     16px !default;
+
+$fuiSizeXS:   $fuiSize * .25 !default;
+$fuiSizeS:    $fuiSize * .5 !default;
+$fuiSizeM:    $fuiSize * .75 !default;
+$fuiSizeL:    $fuiSize * 1.5 !default;
+$fuiSizeXL:   $fuiSize * 2 !default;
+$fuiSizeXXL:  $fuiSize * 2.5 !default;
+
+$fuiButtonMinWidth: $fuiSize * 7 !default;
+
+$fuiScrollBar: $fuiSize !default;
+// Corner sizes are used as an inset border and therefore a smaller corner size means a larger thumb
+$fuiScrollBarCorner: $fuiSizeXS !default;
+$fuiScrollBarCornerThin: $fuiSizeS * .75 !default;
