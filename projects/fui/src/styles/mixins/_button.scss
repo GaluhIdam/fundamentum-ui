@@ -1,4 +1,4 @@
-@mixin ahpButtonBase {
+@mixin fuiButtonBase($col) {
   display: inline-block;
   appearance: none;
   cursor: pointer;
@@ -8,4 +8,7 @@
   white-space: nowrap;
   max-width: 100%;
   vertical-align: middle;
+  &:hover {
+    background-color: lighten($col, 20%);
+  }
 }

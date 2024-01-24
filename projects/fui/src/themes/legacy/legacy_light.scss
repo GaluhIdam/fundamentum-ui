@@ -1,5 +1,7 @@
-@import "themes/legacy/colors_light";
+@import "./colors_light";
 
-@import "themes/legacy/normilze";
+@import "./colors_dark";
 
-@import "styles/index";
+@import "./normilze";
+
+@import "./../../styles/index";

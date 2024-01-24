@@ -1,9 +1,11 @@
+@import "../../styles/functions/index";
+
 // Base Color
-$ahpColorPrimary: #0077cc;
-$ahpColorSuccess: #00bfb3;
-$ahpColorAccent: #f04e98;
-$ahpColorWarning: #fec514;
-$ahpColorDanger: #bd271e;
+$fuiColorPrimary: #0077cc !default;
+$fuiColorSuccess: #00bfb3 !default;
+$fuiColorAccent: #f04e98 !default;
+$fuiColorWarning: #fec514 !default;
+$fuiColorDanger: #bd271e !default;
 
 // $darkShade-color: #69707d;
 // $lightestShade-color: #f1f4f4;
@@ -14,13 +16,13 @@ $ahpColorDanger: #bd271e;
 // $fullShade-color: #000000;
 
 // Text Color
-$ahpTextColor: #343741;
-$ahpTextSubduedColor: #69707d;
-$ahpTitleColor: #1a1c21;
-$ahpColorPrimaryText: #0071c2;
-$ahpColorAccentText: #c4407c;
-$ahpColorSuccessText: #007e77;
-$ahpColorWarningText: #8a6a0a;
-$ahpColorDangerText: #bd271e;
+$fuiTextColor: #343741 !default;
+$fuiTextSubduedColor: #69707d !default;
+$fuiTitleColor: #1a1c21 !default;
+$fuiColorPrimaryText: #0071c2 !default;
+$fuiColorAccentText: #c4407c !default;
+$fuiColorSuccessText: #007e77 !default;
+$fuiColorWarningText: #8a6a0a !default;
+$fuiColorDangerText: #bd271e !default;
 
 // Button Color
