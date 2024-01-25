@@ -1,0 +1,12 @@
+@use "./colors" as colors;
+@use "../functions/colors" as colorsFunc;
+
+$fuiTooltipBackgroundColor: colorsFunc.tintOrShade(colors.$fuiColorFullShade, 25%, 100%) !default;
+$fuiTooltipBorderColor: colorsFunc.tintOrShade(colors.$fuiColorFullShade, 35%, 80%) !default;
+
+$fuiTooltipAnimations: (
+  top: fuiToolTipTop,
+  left: fuiToolTipBottom,
+  bottom: fuiToolTipLeft,
+  right: fuiToolTipRight,
+) !default;
