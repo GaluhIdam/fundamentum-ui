@@ -1,0 +1,11 @@
+@mixin fuiLink {
+  text-align: left;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    text-decoration: underline;
+  }
+}
