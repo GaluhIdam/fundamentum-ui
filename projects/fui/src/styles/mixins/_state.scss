@@ -1,0 +1,56 @@
+@use "../variables/animations" as animations;
+@use "../variables/colors" as colors;
+@use "../variables/states" as states;
+@use "../variables/buttons" as buttons;
+@use "../functions/colors" as colorsFunc;
+
+@mixin fuiFocusRing($size: 'small') {
+  @if $size == 'large' {
+    // It's always OK to use the focus animation. This will take precedence over times we turn it off individually like fuiButtonEmpty
+    // stylelint-disable-next-line declaration-no-important
+    animation: animations.$fuiAnimSpeedSlow animations.$fuiAnimSlightResistance 1 normal forwards focusRingAnimateLarge !important;
+  } @else {
+    // stylelint-disable-next-line declaration-no-important
+    animation: animations.$fuiAnimSpeedSlow animations.$fuiAnimSlightResistance 1 normal forwards focusRingAnimate !important;
+  }
+}
+
+// Keyframe animation declarations can be found in
+// utility/animations.scss
+
+@mixin fuiFocusBackground($color: colors.$fuiColorPrimary) {
+  background-color: colorsFunc.tintOrShade(colors.$fuiColorPrimary, ((1 - states.$fuiFocusTransparency) * 100%), ((1 - states.$fuiFocusTransparency) * 100%));
+}
+
+@mixin fuiHoverState {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@mixin fuiFocusState($color: colors.$fuiColorPrimary) {
+  @include fuiHoverState;
+  @include fuiFocusBackground($color);
+}
+
+@mixin fuiDisabledState($color: buttons.$fuiButtonColorDisabledText) {
+  cursor: not-allowed;
+  text-decoration: none;
+
+  @if ($color) {
+    color: $color;
+  }
+}
+
+@mixin fuiInteractiveStates($focusColor: colors.$fuiColorPrimary, $disabledColor: buttons.$fuiButtonColorDisabledText) {
+  &:hover {
+    @include fuiHoverState;
+  }
+
+  &:focus {
+    @include fuiFocusState($focusColor);
+  }
+
+  &:disabled {
+    @include fuiDisabledState($disabledColor);
+  }
+}
