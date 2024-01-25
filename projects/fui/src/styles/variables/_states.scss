@@ -1,0 +1,18 @@
+@use "./colors" as colors;
+@use "./sizes" as sizes;
+@use "../functions/colors" as colorsFunc;
+
+// Colors
+$fuiFocusRingColor: rgba(colors.$fuiColorPrimary, .3) !default;
+$fuiFocusRingAnimStartColor: rgba(colors.$fuiColorPrimary, 0) !default;
+$fuiFocusRingAnimStartSize: 6px !default;
+$fuiFocusRingAnimStartSizeLarge: 10px !default;
+
+// Sizing
+$fuiFocusRingSizeLarge: sizes.$fuiSizeXS !default;
+$fuiFocusRingSize: $fuiFocusRingSizeLarge * .75 !default;
+
+// Transparency
+$fuiFocusTransparency: colorsFunc.lightOrDarkTheme(.1, .2) !default;
+$fuiFocusTransparencyPercent: colorsFunc.lightOrDarkTheme(90%, 80%) !default;
+$fuiFocusBackgroundColor: colorsFunc.tintOrShade(colors.$fuiColorPrimary, $fuiFocusTransparencyPercent, $fuiFocusTransparencyPercent) !default;
