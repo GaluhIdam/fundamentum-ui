@@ -1,0 +1,170 @@
+@use "../variables/typography" as fonts;
+@use "../variables/font_weight" as fontWeight;
+@use "../variables/colors" as colors;
+
+// stylelint-disable property-no-vendor-prefix
+// stylelint-disable declaration-no-important
+
+@function fontSizeToRemOrEm($size, $sizingMethod: 'rem') {
+  @if ($sizingMethod == 'rem') {
+    @return #{$size / fonts.$fuiFontSize}rem;
+  } @else if ($sizingMethod == 'em') {
+    @return #{$size / fonts.$fuiFontSize}em;
+  }
+}
+
+// It can also be applied to calculate paddings
+@function marginToRemOrEm($elementSize, $elementFontSize, $sizingMethod: 'rem') {
+  @if ($sizingMethod == 'rem') {
+    @return #{$elementSize / fonts.$fuiFontSize}rem;
+  } @else if ($sizingMethod == 'em') {
+    @return #{$elementSize / $elementFontSize}em;
+  }
+}
+
+// Spit out rem and px
+@mixin fontSize($size: fonts.$fuiFontSize, $sizingMethod: 'rem') {
+  @if ($sizingMethod == 'rem') {
+    font-size: fontSizeToRemOrEm($size, 'rem');
+  } @else if ($sizingMethod == 'em') {
+    font-size: fontSizeToRemOrEm($size, 'em');
+  }
+}
+
+@mixin lineHeightFromBaseline($multiplier: 3) {
+  line-height: fonts.lineHeightFromBaseline($multiplier);
+}
+
+// Some mixins that help us deal with browser scaling of text more consistently.
+// Essentially, fonts across fui should scale against the root html element, not
+// against parent inheritance.
+
+// Our base fonts
+
+@mixin fuiFont {
+  font-family: fonts.$fuiFontFamily;
+  font-weight: fontWeight.$fuiFontWeightRegular;
+  letter-spacing: -.005em;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-kerning: normal;
+}
+
+@mixin fuiCodeFont {
+  font-family: fonts.$fuiCodeFontFamily;
+  letter-spacing: normal;
+}
+
+@mixin fuiText {
+  color: colors.$fuiTextColor;
+  font-weight: fontWeight.$fuiFontWeightRegular;
+}
+
+@mixin fuiTitle($size: 'm') {
+  @include fuiTextBreakWord;
+  color: colors.$fuiTitleColor;
+
+  @if (map-has-key(fonts.$fuiTitles, $size)) {
+    @each $property, $value in map-get(fonts.$fuiTitles, $size) {
+      @if ($property == 'font-size') {
+        @include fontSize($value);
+      } @else {
+        #{$property}: $value;
+      }
+    }
+  } @else {
+    @include fontSize($size);
+    @include lineHeightFromBaseline(3);
+  }
+}
+
+// Font sizing extends, using rem mixin
+
+@mixin fuiFontSizeXS {
+  @include fontSize(fonts.$fuiFontSizeXS);
+  line-height: fonts.$fuiLineHeight;
+}
+
+@mixin fuiFontSizeS {
+  @include fontSize(fonts.$fuiFontSizeS);
+  line-height: fonts.$fuiLineHeight;
+}
+
+@mixin fuiFontSize {
+  @include fontSize(fonts.$fuiFontSize);
+  line-height: fonts.$fuiLineHeight;
+}
+
+@mixin fuiFontSizeM {
+  @include fontSize(fonts.$fuiFontSizeM);
+  line-height: fonts.$fuiLineHeight;
+}
+
+@mixin fuiFontSizeL {
+  @include fontSize(fonts.$fuiFontSizeL);
+  line-height: fonts.$fuiLineHeight;
+}
+
+@mixin fuiFontSizeXL {
+  @each $property, $value in map-get(fonts.$fuiTitles, 'm') {
+    @if ($property == 'font-size') {
+      @include fontSize($value);
+    } @else {
+      #{$property}: $value;
+    }
+  }
+  line-height: 1.25;
+}
+
+@mixin fuiFontSizeXXL {
+  @each $property, $value in map-get(fonts.$fuiTitles, 'l') {
+    @if ($property == 'font-size') {
+      @include fontSize($value);
+    } @else {
+      #{$property}: $value;
+    }
+  }
+  line-height: 1.25;
+}
+
+@mixin fuiTextBreakWord {
+  // https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+  overflow-wrap: break-word !important; // makes sure the long string will wrap and not bust out of the container
+  word-break: break-word;
+}
+
+/**
+ * Text truncation
+ *
+ * Prevent text from wrapping onto multiple lines, and truncate with an ellipsis.
+ *
+ * 1. Ensure that the node has a maximum width after which truncation can occur.
+ */
+@mixin fuiTextTruncate {
+  max-width: 100%; // 1
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+@mixin fuiNumberFormat {
+  font-feature-settings: fonts.$fuiFontFeatureSettings, 'tnum' 1; // Fixed-width numbers for tabular data
+}
+
+/**
+ * Text weight shifting
+ *
+ * When changing the font-weight based the state of the component
+ * this mixin will ensure that the sizing is dependent on the boldest
+ * weight so it doesn't shifter sibling content.
+ */
+@mixin fuiTextShift($fontWeight: fontWeight.$fuiFontWeightBold, $attr: 'data-text') {
+  &::after {
+    display: block;
+    content: attr(#{$attr});
+    font-weight: $fontWeight;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+}

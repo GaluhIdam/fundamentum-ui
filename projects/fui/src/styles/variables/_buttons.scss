@@ -21,3 +21,5 @@ $fuiButtonTypes: (
   ghost: colors.$fuiColorGhost, // Ghost is special, and does not care about theming.
   text: colors.$fuiColorDarkShade, // Reserved for special use cases
 ) !default;
+
+$fuiButtonDefaultTransparency: 1 !default;
