@@ -1,0 +1,85 @@
+@use "./sizes" as sizes;
+@use "./borders" as borders;
+@use "./colors" as colors;
+@use "../functions/colors" as colorsFunc;
+
+// Sizing
+$fuiFormMaxWidth: sizes.$fuiSizeXXL * 10 !default;
+$fuiFormControlHeight: sizes.$fuiSizeXXL !default;
+$fuiFormControlCompressedHeight: sizes.$fuiSizeXL !default;
+$fuiFormControlPadding: sizes.$fuiSizeM !default;
+$fuiFormControlCompressedPadding: sizes.$fuiSizeS !default;
+$fuiFormControlBorderRadius: borders.$fuiBorderRadius !default;
+$fuiFormControlCompressedBorderRadius: borders.$fuiBorderRadiusSmall !default;
+
+$fuiRadioSize: sizes.$fuiSize !default;
+$fuiCheckBoxSize: sizes.$fuiSize !default;
+$fuiCheckboxBorderRadius: borders.$fuiBorderRadiusSmall !default;
+
+// Switch
+$fuiSwitchHeight: sizes.$fuiSize * 1.25 !default;
+$fuiSwitchWidth: (sizes.$fuiSize * 2.5) + sizes.$fuiSizeXS !default;
+$fuiSwitchThumbSize: $fuiSwitchHeight !default;
+$fuiSwitchIconHeight: sizes.$fuiSize !default;
+
+$fuiSwitchHeightCompressed: sizes.$fuiSize !default;
+$fuiSwitchWidthCompressed: sizes.$fuiSize * 1.75 !default;
+$fuiSwitchThumbSizeCompressed: $fuiSwitchHeightCompressed !default;
+
+$fuiSwitchHeightMini: $fuiSwitchHeight * .5 !default;
+$fuiSwitchWidthMini: $fuiSwitchWidth * .5 !default;
+$fuiSwitchThumbSizeMini: $fuiSwitchHeightMini !default;
+
+// Coloring
+$fuiFormBackgroundColor: colorsFunc.tintOrShade(colors.$fuiColorLightestShade, 60%, 40%) !default;
+$fuiFormBackgroundDisabledColor: darken(colors.$fuiColorLightestShade, 2%) !default;
+$fuiFormBackgroundReadOnlyColor: colors.$fuiColorEmptyShade !default;
+$fuiFormBorderOpaqueColor: colorsFunc.shadeOrTint(desaturate(adjust-hue(colors.$fuiColorPrimary, 22), 22.95), 26%, 100%) !default;
+$fuiFormBorderColor: transparentize($fuiFormBorderOpaqueColor, .9) !default;
+$fuiFormBorderDisabledColor: transparentize($fuiFormBorderOpaqueColor, .9) !default;
+$fuiFormCustomControlDisabledIconColor: colorsFunc.shadeOrTint(colors.$fuiColorMediumShade, 38%, 48.5%) !default; // exact 508c foreground for $fuiColorLightShade
+$fuiFormCustomControlBorderColor: colorsFunc.shadeOrTint(colors.$fuiColorLightestShade, 40%, 31%) !default;
+$fuiFormControlDisabledColor: colors.$fuiColorMediumShade !default;
+$fuiFormControlBoxShadow: 0 0 transparent !default;
+$fuiFormControlPlaceholderText: colorsFunc.makeHighContrastColor(colors.$fuiTextSubduedColor, $fuiFormBackgroundColor) !default;
+$fuiFormInputGroupLabelBackground: colorsFunc.tintOrShade(colors.$fuiColorLightShade, 50%, 15%) !default;
+$fuiFormInputGroupBorder: none !default;
+$fuiSwitchOffColor: colorsFunc.lightOrDarkTheme(transparentize(colors.$fuiColorDarkShade, .25), transparentize(colors.$fuiColorDarkShade, .4)) !default;
+
+// Icons sizes
+$fuiFormControlIconSizes: (
+  small: sizes.$fuiSizeM,
+  medium: sizes.$fuiSize,
+  large: sizes.$fuiSizeL,
+  xLarge: sizes.$fuiSizeXL,
+  xxLarge: sizes.$fuiSizeXXL
+);
+
+// Control Layout
+$fuiFormControlLayoutGroupInputHeight: $fuiFormControlHeight - 2px !default;
+$fuiFormControlLayoutGroupInputCompressedHeight: $fuiFormControlCompressedHeight - 2px !default;
+$fuiFormControlLayoutGroupInputCompressedBorderRadius: $fuiFormControlCompressedBorderRadius / 2 !default;
+
+// Range
+$fuiRangeTrackColor: colors.$fuiColorLightShade !default;
+$fuiRangeHighlightColor: colors.$fuiColorDarkShade !default;
+
+$fuiRangeThumbHeight: sizes.$fuiSize !default;
+$fuiRangeThumbWidth: sizes.$fuiSize !default;
+$fuiRangeThumbBorderColor: colors.$fuiColorEmptyShade !default;
+$fuiRangeThumbBackgroundColor: $fuiRangeHighlightColor;
+
+$fuiRangeTrackWidth: 100% !default;
+$fuiRangeTrackHeight: sizes.$fuiSizeM / 2 !default;
+$fuiRangeTrackCompressedHeight: sizes.$fuiSizeXS;
+$fuiRangeTrackBorderWidth: 0 !default;
+$fuiRangeTrackBorderColor: $fuiRangeTrackColor !default;
+$fuiRangeTrackRadius: borders.$fuiBorderRadius !default;
+
+$fuiRangeDisabledOpacity: .25 !default;
+
+$fuiRangeHighlightHeight: $fuiRangeTrackHeight !default;
+$fuiRangeHighlightCompressedHeight: $fuiRangeTrackCompressedHeight !default;
+
+$fuiRangeHeight: $fuiFormControlHeight !default;
+$fuiRangeCompressedHeight: $fuiFormControlCompressedHeight !default;
