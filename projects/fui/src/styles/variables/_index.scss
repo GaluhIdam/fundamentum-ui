@@ -1,7 +1,6 @@
 @import "./sizes";
 @import "./colors";
 @import "./font_weight";
-@import "./page";
 @import "./typography";
 @import "./animations";
 @import "./borders";
@@ -9,3 +8,7 @@
 @import "./shadows";
 @import "./states";
 @import "./z_index";
+
+// Components
+@import "./page";
+@import "./buttons";
