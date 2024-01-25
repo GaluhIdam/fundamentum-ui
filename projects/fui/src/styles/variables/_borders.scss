@@ -1,0 +1,14 @@
+@use "./sizes" as sizes;
+@use "./colors" as colors;
+
+// Borders
+
+$fuiBorderWidthThin: 1px !default;
+$fuiBorderWidthThick: 2px !default;
+
+$fuiBorderColor: colors.$fuiColorLightShade !default;
+$fuiBorderRadius: sizes.$fuiSizeS * .75 !default;
+$fuiBorderRadiusSmall: sizes.$fuiSizeS * .5 !default;
+$fuiBorderThick: $fuiBorderWidthThick solid $fuiBorderColor !default;
+$fuiBorderThin: $fuiBorderWidthThin solid $fuiBorderColor !default;
+$fuiBorderEditable: $fuiBorderWidthThick dotted $fuiBorderColor !default;
