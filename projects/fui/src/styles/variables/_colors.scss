@@ -1,4 +1,4 @@
-@use '../../styles/functions/colors' as colors_func;
+@use '../functions/colors' as colorsFunc;
 
 // These colors stay the same no matter the theme
 $fuiColorGhost: #FFF !default;
@@ -23,24 +23,24 @@ $fuiColorDarkestShade: #343741 !default;
 $fuiColorFullShade: #000 !default;
 
 // Backgrounds
-$fuiPageBackgroundColor: colors_func.tint($fuiColorLightestShade, 50%) !default;
+$fuiPageBackgroundColor: colorsFunc.tint($fuiColorLightestShade, 50%) !default;
 $fuiColorHighlight: #FFFCDD !default;
 
 // Every color below must be based mathematically on the set above and in a particular order.
 $fuiTextColor: $fuiColorDarkestShade !default;
-$fuiTitleColor: colors_func.shade($fuiTextColor, 50%) !default;
-$fuiTextSubduedColor: colors_func.makeHighContrastColor($fuiColorMediumShade) !default;
-$fuiColorDisabled: colors_func.tint($fuiTextColor, 70%) !default;
+$fuiTitleColor: colorsFunc.shade($fuiTextColor, 50%) !default;
+$fuiTextSubduedColor: colorsFunc.makeHighContrastColor($fuiColorMediumShade) !default;
+$fuiColorDisabled: colorsFunc.tint($fuiTextColor, 70%) !default;
 
 // Contrasty text variants
-$fuiColorPrimaryText: colors_func.makeHighContrastColor($fuiColorPrimary) !default;
-$fuiColorSuccessText: colors_func.makeHighContrastColor($fuiColorSuccess) !default;
-$fuiColorAccentText: colors_func.makeHighContrastColor($fuiColorAccent) !default;
-$fuiColorWarningText: colors_func.makeHighContrastColor($fuiColorWarning) !default;
-$fuiColorDangerText: colors_func.makeHighContrastColor($fuiColorDanger) !default;
-$fuiColorDisabledText: colors_func.makeDisabledContrastColor($fuiColorDisabled) !default;
+$fuiColorPrimaryText: colorsFunc.makeHighContrastColor($fuiColorPrimary) !default;
+$fuiColorSuccessText: colorsFunc.makeHighContrastColor($fuiColorSuccess) !default;
+$fuiColorAccentText: colorsFunc.makeHighContrastColor($fuiColorAccent) !default;
+$fuiColorWarningText: colorsFunc.makeHighContrastColor($fuiColorWarning) !default;
+$fuiColorDangerText: colorsFunc.makeHighContrastColor($fuiColorDanger) !default;
+$fuiColorDisabledText: colorsFunc.makeDisabledContrastColor($fuiColorDisabled) !default;
 $fuiLinkColor: $fuiColorPrimaryText !default;
 
 // Charts
-$fuiColorChartLines: colors_func.shade($fuiColorLightestShade, 3%) !default;
+$fuiColorChartLines: colorsFunc.shade($fuiColorLightestShade, 3%) !default;
 $fuiColorChartBand: $fuiColorLightestShade !default;

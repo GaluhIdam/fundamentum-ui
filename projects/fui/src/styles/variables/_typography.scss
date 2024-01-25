@@ -1,5 +1,5 @@
-@use "styles/variables/sizes" as sizes;
-@use "styles/variables/font_weight" as fontWeight;
+@use "./sizes" as sizes;
+@use "./font_weight" as fontWeight;
 
 // Families
 $fuiFontFamily: 'Inter', sans-serif !default;

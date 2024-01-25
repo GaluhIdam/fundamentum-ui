@@ -1,2 +1,3 @@
-$euiPageDefaultMaxWidth: 1000px !default;
-$euiPageSidebarMinWidth: $euiSizeL * 8 !default;
+@use "./sizes" as sizes;
+$fuiPageDefaultMaxWidth: 1000px !default;
+$fuiPageSidebarMinWidth: sizes.$fuiSizeL * 8 !default;
