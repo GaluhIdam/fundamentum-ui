@@ -1,4 +1,9 @@
-@use "styles/variables/colors" as colors_var;
+@use "./math_function";
+
+$fuiColorWhite: #FFF;
+$fuiColorBlack: #000;
+$fuiColorDarkGray: #343741;
+$fuiColorLightGray: #F5F7FA;
 
 // Converting a normal hex color to RBG
 @function hexToRGB($color) {
@@ -7,18 +12,18 @@
 
 // Mixes a provided color with white.
 @function tint($color, $percent) {
-  @return mix(colors_var.$fuiColorGhost, $color, $percent);
+  @return mix($fuiColorWhite, $color, $percent);
 }
 
 // Mixes a provided color with black.
 @function shade($color, $percent) {
-  @return mix(colors_var.$fuiColorInk, $color, $percent);
+  @return mix($fuiColorBlack, $color, $percent);
 }
 
 // For theming. Checks the text color and tells us whether it's light or dark.
 // Based on that we either tint (add white) or shade (add black).
 @function tintOrShade($color, $tint, $shade) {
-  @if (lightness(colors_var.$fuiTextColor) > 50) {
+  @if (lightness($fuiColorDarkGray) > 50) {
     @return shade($color, $shade);
   } @else {
     @return tint($color, $tint);
@@ -27,7 +32,7 @@
 
 // The reverse of the above
 @function shadeOrTint($color, $shade, $tint) {
-  @if (lightness(colors_var.$fuiTextColor) < 50) {
+  @if (lightness($fuiColorDarkGray) < 50) {
     @return shade($color, $shade);
   } @else {
     @return tint($color, $tint);
@@ -37,7 +42,7 @@
 // Similar to above, but uses the light or dark color based
 // on whether it's the light or dark theme
 @function lightOrDarkTheme($lightColor, $darkColor) {
-  @if (lightness($euiTextColor) < 50) {
+  @if (lightness($fuiColorDarkGray) < 50) {
     @return $lightColor;
   } @else {
     @return $darkColor;
@@ -55,7 +60,7 @@
     $rgb: nth($rgba, $i);
     $rgb: $rgb / 255;
 
-    $rgb: if($rgb < .03928, $rgb / 12.92, pow(($rgb + .055) / 1.055, 2.4));
+    $rgb: if($rgb < .03928, $rgb / 12.92, math_function.pow(($rgb + .055) / 1.055, 2.4));
 
     $rgba2: append($rgba2, $rgb);
   }
@@ -74,7 +79,7 @@
 // Given $color, decide whether $lightText or $darkText should be used as the text color
 // ex: chooseLightOrDarkText(#EEE, #FFF, #000) would return #000 because it has
 //     a higher contrast than #FFF against a #EEE background.
-@function chooseLightOrDarkText($background, $lightText: $euiColorGhost, $darkText: $euiColorInk) {
+@function chooseLightOrDarkText($background, $lightText: $fuiColorWhite, $darkText: $fuiColorBlack) {
   $lightContrast: contrastRatio($background, $lightText);
   $darkContrast: contrastRatio($background, $darkText);
 
@@ -91,8 +96,9 @@
 
 // ex: makeContrastColor($lightPink, #FFF) would continually shade the pink until
 //     it had higher than 4.5 contrast on a white background.
-$euiContrastRatioText: 4.5;
-@function makeHighContrastColor($foreground, $background: $euiPageBackgroundColor, $ratio: $euiContrastRatioText) {
+$fuiContrastRatioText: 4.5;
+$fuiContrastBackgroundColor: tint($fuiColorLightGray, 50%);
+@function makeHighContrastColor($foreground, $background: $fuiContrastBackgroundColor, $ratio: $fuiContrastRatioText) {
   $contrast: contrastRatio($foreground, $background);
 
   // Determine the lightness factor of the background color first to
@@ -128,13 +134,13 @@ $euiContrastRatioText: 4.5;
 // Therefore, we can reuse the `makeHighContrastColor()` function but only attain a min contrast of 3.0.
 // It is still recommended to use `makeHighContrastColor()` to attain a 4.5:1 ratio if the graphic is small or thinly stroked.
 // https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Informational_Graphic_Contrast_(Minimum)
-$euiContrastRatioGraphic: 3;
-@function makeGraphicContrastColor($color, $background: $euiPageBackgroundColor) {
-  @return makeHighContrastColor($color, $background, $euiContrastRatioGraphic);
+$fuiContrastRatioGraphic: 3;
+@function makeGraphicContrastColor($color, $background: $fuiContrastBackgroundColor) {
+  @return makeHighContrastColor($color, $background, $fuiContrastRatioGraphic);
 }
 
 // Disabled content only needs a contrast of at least 2 because there is no interaction available
-$euiContrastRatioDisabled: 2;
-@function makeDisabledContrastColor($color, $background: $euiPageBackgroundColor) {
-  @return makeHighContrastColor($color, $background, $euiContrastRatioDisabled);
+$fuiContrastRatioDisabled: 2;
+@function makeDisabledContrastColor($color, $background: $fuiContrastBackgroundColor) {
+  @return makeHighContrastColor($color, $background, $fuiContrastRatioDisabled);
 }

@@ -1,0 +1,8 @@
+@use "../variables/color_variable";
+
+@function fuiLoadingSpinnerBorderColors(
+  $main: color_variable.$fuiColorLightShade,
+  $highlight: color_variable.$fuiColorPrimary
+) {
+  @return $highlight $main $main $main;
+}

@@ -1,0 +1,4 @@
+@use "./size_variable";
+
+$fuiPageDefaultMaxWidth: 1000px !default;
+$fuiPageSidebarMinWidth: size_variable.$fuiSizeL * 8 !default;

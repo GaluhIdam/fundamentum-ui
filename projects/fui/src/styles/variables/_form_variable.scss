@@ -1,0 +1,85 @@
+@use "./size_variable";
+@use "./border_variable";
+@use "./color_variable";
+@use "../functions/color_function";
+
+// Sizing
+$fuiFormMaxWidth: size_variable.$fuiSizeXXL * 10 !default;
+$fuiFormControlHeight: size_variable.$fuiSizeXXL !default;
+$fuiFormControlCompressedHeight: size_variable.$fuiSizeXL !default;
+$fuiFormControlPadding: size_variable.$fuiSizeM !default;
+$fuiFormControlCompressedPadding: size_variable.$fuiSizeS !default;
+$fuiFormControlBorderRadius: border_variable.$fuiBorderRadius !default;
+$fuiFormControlCompressedBorderRadius: border_variable.$fuiBorderRadiusSmall !default;
+
+$fuiRadioSize: size_variable.$fuiSize !default;
+$fuiCheckBoxSize: size_variable.$fuiSize !default;
+$fuiCheckboxBorderRadius: border_variable.$fuiBorderRadiusSmall !default;
+
+// Switch
+$fuiSwitchHeight: size_variable.$fuiSize * 1.25 !default;
+$fuiSwitchWidth: (size_variable.$fuiSize * 2.5) + size_variable.$fuiSizeXS !default;
+$fuiSwitchThumbSize: $fuiSwitchHeight !default;
+$fuiSwitchIconHeight: size_variable.$fuiSize !default;
+
+$fuiSwitchHeightCompressed: size_variable.$fuiSize !default;
+$fuiSwitchWidthCompressed: size_variable.$fuiSize * 1.75 !default;
+$fuiSwitchThumbSizeCompressed: $fuiSwitchHeightCompressed !default;
+
+$fuiSwitchHeightMini: $fuiSwitchHeight * .5 !default;
+$fuiSwitchWidthMini: $fuiSwitchWidth * .5 !default;
+$fuiSwitchThumbSizeMini: $fuiSwitchHeightMini !default;
+
+// Coloring
+$fuiFormBackgroundColor: color_function.tintOrShade(color_variable.$fuiColorLightestShade, 60%, 40%) !default;
+$fuiFormBackgroundDisabledColor: darken(color_variable.$fuiColorLightestShade, 2%) !default;
+$fuiFormBackgroundReadOnlyColor: color_variable.$fuiColorEmptyShade !default;
+$fuiFormBorderOpaqueColor: color_function.shadeOrTint(desaturate(adjust-hue(color_variable.$fuiColorPrimary, 22), 22.95), 26%, 100%) !default;
+$fuiFormBorderColor: transparentize($fuiFormBorderOpaqueColor, .9) !default;
+$fuiFormBorderDisabledColor: transparentize($fuiFormBorderOpaqueColor, .9) !default;
+$fuiFormCustomControlDisabledIconColor: color_function.shadeOrTint(color_variable.$fuiColorMediumShade, 38%, 48.5%) !default; // exact 508c foreground for $fuiColorLightShade
+$fuiFormCustomControlBorderColor: color_function.shadeOrTint(color_variable.$fuiColorLightestShade, 40%, 31%) !default;
+$fuiFormControlDisabledColor: color_variable.$fuiColorMediumShade !default;
+$fuiFormControlBoxShadow: 0 0 transparent !default;
+$fuiFormControlPlaceholderText: color_function.makeHighContrastColor(color_variable.$fuiTextSubduedColor, $fuiFormBackgroundColor) !default;
+$fuiFormInputGroupLabelBackground: color_function.tintOrShade(color_variable.$fuiColorLightShade, 50%, 15%) !default;
+$fuiFormInputGroupBorder: none !default;
+$fuiSwitchOffColor: color_function.lightOrDarkTheme(transparentize(color_variable.$fuiColorDarkShade, .25), transparentize(color_variable.$fuiColorDarkShade, .4)) !default;
+
+// Icons sizes
+$fuiFormControlIconSizes: (
+  small: size_variable.$fuiSizeM,
+  medium: size_variable.$fuiSize,
+  large: size_variable.$fuiSizeL,
+  xLarge: size_variable.$fuiSizeXL,
+  xxLarge: size_variable.$fuiSizeXXL
+);
+
+// Control Layout
+$fuiFormControlLayoutGroupInputHeight: $fuiFormControlHeight - 2px !default;
+$fuiFormControlLayoutGroupInputCompressedHeight: $fuiFormControlCompressedHeight - 2px !default;
+$fuiFormControlLayoutGroupInputCompressedBorderRadius: $fuiFormControlCompressedBorderRadius / 2 !default;
+
+// Range
+$fuiRangeTrackColor: color_variable.$fuiColorLightShade !default;
+$fuiRangeHighlightColor: color_variable.$fuiColorDarkShade !default;
+
+$fuiRangeThumbHeight: size_variable.$fuiSize !default;
+$fuiRangeThumbWidth: size_variable.$fuiSize !default;
+$fuiRangeThumbBorderColor: color_variable.$fuiColorEmptyShade !default;
+$fuiRangeThumbBackgroundColor: $fuiRangeHighlightColor;
+
+$fuiRangeTrackWidth: 100% !default;
+$fuiRangeTrackHeight: size_variable.$fuiSizeM / 2 !default;
+$fuiRangeTrackCompressedHeight: size_variable.$fuiSizeXS;
+$fuiRangeTrackBorderWidth: 0 !default;
+$fuiRangeTrackBorderColor: $fuiRangeTrackColor !default;
+$fuiRangeTrackRadius: border_variable.$fuiBorderRadius !default;
+
+$fuiRangeDisabledOpacity: .25 !default;
+
+$fuiRangeHighlightHeight: $fuiRangeTrackHeight !default;
+$fuiRangeHighlightCompressedHeight: $fuiRangeTrackCompressedHeight !default;
+
+$fuiRangeHeight: $fuiFormControlHeight !default;
+$fuiRangeCompressedHeight: $fuiFormControlCompressedHeight !default;

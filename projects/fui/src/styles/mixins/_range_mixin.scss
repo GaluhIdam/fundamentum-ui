@@ -1,14 +1,14 @@
-@use "../variables/form" as form;
-@use "../variables/shadows" as shadows;
-@use "../variables/states" as states;
-@use "../variables/colors" as colors;
+@use "../variables/form_variable";
+@use "../variables/shadow_variable";
+@use "../variables/state_variable";
+@use "../variables/color_variable";
 
 @mixin fuiRangeTrackSize($compressed: false) {
-  height: form.$fuiRangeTrackHeight;
-  width: form.$fuiRangeTrackWidth;
+  height: form_variable.$fuiRangeTrackHeight;
+  width: form_variable.$fuiRangeTrackWidth;
 
   @if ($compressed) {
-    height: form.$fuiRangeTrackCompressedHeight;
+    height: form_variable.$fuiRangeTrackCompressedHeight;
   }
 }
 
@@ -20,28 +20,28 @@
 }
 
 @mixin fuiRangeThumbBorder {
-  border: 2px solid form.$fuiRangeThumbBorderColor;
+  border: 2px solid form_variable.$fuiRangeThumbBorderColor;
 }
 
 @mixin fuiRangeThumbBoxShadow {
   box-shadow:
-    0 0 0 1px form.$fuiRangeThumbBorderColor,
-    0 2px 2px -1px rgba(shadows.$fuiShadowColor, .2),
-    0 1px 5px -2px rgba(shadows.$fuiShadowColor, .2);
+    0 0 0 1px form_variable.$fuiRangeThumbBorderColor,
+    0 2px 2px -1px rgba(shadow_variable.$fuiShadowColor, .2),
+    0 1px 5px -2px rgba(shadow_variable.$fuiShadowColor, .2);
 }
 
 @mixin fuiRangeThumbFocusBoxShadow {
-  box-shadow: 0 0 0 2px states.$fuiFocusRingColor;
+  box-shadow: 0 0 0 2px state_variable.$fuiFocusRingColor;
 }
 
 @mixin fuiRangeThumbStyle {
   @include fuiRangeThumbBoxShadow;
   @include fuiRangeThumbBorder;
   cursor: pointer;
-  background-color: form.$fuiRangeThumbBackgroundColor;
+  background-color: form_variable.$fuiRangeThumbBackgroundColor;
   padding: 0;
-  height: form.$fuiRangeThumbHeight;
-  width: form.$fuiRangeThumbWidth;
+  height: form_variable.$fuiRangeThumbHeight;
+  width: form_variable.$fuiRangeThumbWidth;
   box-sizing: border-box;  // required for firefox or the border makes the width and height to increase
 }
 
@@ -54,5 +54,5 @@
 @mixin fuiRangeThumbFocus {
   @include fuiRangeThumbBorder;
   @include fuiRangeThumbFocusBoxShadow;
-  background-color: colors.$fuiColorPrimary;
+  background-color: color_variable.$fuiColorPrimary;
 }

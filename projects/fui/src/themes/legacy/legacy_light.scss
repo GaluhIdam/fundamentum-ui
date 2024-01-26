@@ -1,5 +1,5 @@
-@import "./globals";
-@import "./colors_light";
-@import "./normalize";
+@use "./globals";
+@use "./colors_light";
+@use "./normalize";
 
-@import "../../styles/index";
+@use "../../styles/index";

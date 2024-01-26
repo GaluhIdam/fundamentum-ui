@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "../../fui/src/themes/legacy/globals";
-@import "../../fui/src/themes/legacy/colors_light";
-@import "../../fui/src/themes/legacy/normalize";
+@use "../../fui/src/themes/legacy/globals";
+@use "../../fui/src/themes/legacy/colors_light";
+@use "../../fui/src/styles/variables/index";
 
-@import "../../fui/src/styles/index";
+@import "../../fui/src/styles/utility/normalize";

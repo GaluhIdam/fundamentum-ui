@@ -1,11 +1,11 @@
-@use "../variables/colors" as colors;
-@use "../variables/sizes" as sizes;
-@use "./shadow" as shadowMixin;
+@use "../variables/color_variable";
+@use "../variables/size_variable";
+@use "./shadow_mixin";
 
 // Helper mixins
 
 // Set scroll bar appearance on Chrome (and firefox).
-@mixin fuiScrollBar($thumbColor: colors.$fuiColorDarkShade, $trackBackgroundColor: transparent, $size: 'thin') {
+@mixin fuiScrollBar($thumbColor: color_variable.$fuiColorDarkShade, $trackBackgroundColor: transparent, $size: 'thin') {
   // Firefox's scrollbar coloring cascades, but the sizing does not,
   // so it's being added to this mixin for allowing support wherever custom scrollbars are
   scrollbar-color: transparentize($thumbColor, .5) $trackBackgroundColor; // Firefox support
@@ -16,19 +16,19 @@
 
   // stylelint-disable selector-no-vendor-prefix
   &::-webkit-scrollbar {
-    width: sizes.$fuiScrollBar;
-    height: sizes.$fuiScrollBar;
+    width: size_variable.$fuiScrollBar;
+    height: size_variable.$fuiScrollBar;
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: transparentize($thumbColor, .5);
     background-clip: content-box;
-    border-radius: sizes.$fuiScrollBar;
+    border-radius: size_variable.$fuiScrollBar;
 
     @if ($size == 'thin') {
-      border: sizes.$fuiScrollBarCornerThin solid $trackBackgroundColor;
+      border: size_variable.$fuiScrollBarCornerThin solid $trackBackgroundColor;
     } @else {
-      border: sizes.$fuiScrollBarCorner solid $trackBackgroundColor;
+      border: size_variable.$fuiScrollBarCorner solid $trackBackgroundColor;
     }
   }
 
@@ -77,12 +77,12 @@
 // The full overflow with shadow
 @mixin fuiYScrollWithShadows {
   @include fuiYScroll;
-  @include shadowMixin.fuiOverflowShadow('y');
+  @include shadow_mixin.fuiOverflowShadow('y');
 }
 
 @mixin fuiXScrollWithShadows {
   @include fuiXScroll;
-  @include shadowMixin.fuiOverflowShadow('x');
+  @include shadow_mixin.fuiOverflowShadow('x');
 }
 
 /**

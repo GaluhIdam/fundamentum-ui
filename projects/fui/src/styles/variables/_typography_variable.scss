@@ -1,5 +1,5 @@
-@use "./sizes" as sizes;
-@use "./font_weight" as fontWeight;
+@use "./size_variable";
+@use "./font_weight_variable";
 
 // Families
 $fuiFontFamily: 'Inter', sans-serif !default;
@@ -11,7 +11,7 @@ $fuiFontFeatureSettings: 'calt' 1, 'kern' 1, 'liga' 1 !default;
 // Font sizes -- scale is loosely based on Major Third (1.250)
 $fuiTextScale:      2.25, 1.75, 1.25, 1.125, 1, .875, .75 !default;
 
-$fuiFontSize:       sizes.$fuiSize !default; // 5th position in scale
+$fuiFontSize:       size_variable.$fuiSize !default; // 5th position in scale
 $fuiFontSizeXS:     $fuiFontSize * nth($fuiTextScale, 7) !default; // 12px
 $fuiFontSizeS:      $fuiFontSize * nth($fuiTextScale, 6) !default; // 14px
 $fuiFontSizeM:      $fuiFontSize * nth($fuiTextScale, 4) !default; // 18px
@@ -44,35 +44,35 @@ $fuiTitles: (
   'xxxs': (
     'font-size': $fuiFontSizeXS,
     'line-height': lineHeightFromBaseline(3),
-    'font-weight': fontWeight.$fuiFontWeightBold,
+    'font-weight': font_weight_variable.$fuiFontWeightBold,
   ),
   'xxs': (
     'font-size': $fuiFontSizeS,
     'line-height': lineHeightFromBaseline(3),
-    'font-weight': fontWeight.$fuiFontWeightBold,
+    'font-weight': font_weight_variable.$fuiFontWeightBold,
   ),
   'xs': (
     'font-size': $fuiFontSize,
     'line-height': lineHeightFromBaseline(3),
-    'font-weight': fontWeight.$fuiFontWeightSemiBold,
+    'font-weight': font_weight_variable.$fuiFontWeightSemiBold,
     'letter-spacing': -.02em,
   ),
   's': (
     'font-size': $fuiFontSizeL,
     'line-height': lineHeightFromBaseline(4),
-    'font-weight': fontWeight.$fuiFontWeightMedium,
+    'font-weight': font_weight_variable.$fuiFontWeightMedium,
     'letter-spacing': -.025em,
   ),
   'm': (
     'font-size': $fuiFontSizeXL,
     'line-height': lineHeightFromBaseline(5),
-    'font-weight': fontWeight.$fuiFontWeightLight,
+    'font-weight': font_weight_variable.$fuiFontWeightLight,
     'letter-spacing': -.04em,
   ),
   'l': (
     'font-size': $fuiFontSizeXXL,
     'line-height': lineHeightFromBaseline(6),
-    'font-weight': fontWeight.$fuiFontWeightLight,
+    'font-weight': font_weight_variable.$fuiFontWeightLight,
     'letter-spacing': -.03em,
   ),
 ) !default;

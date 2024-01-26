@@ -1,4 +1,5 @@
-@import "./mixins/index";
-@import "./functions/index";
-@import "./utility/index";
-@import "./variables/index";
+@forward "./variables/index";
+@forward "./functions/index";
+@forward "./mixins/index";
+
+@import "./utility/normalize";
