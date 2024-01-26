@@ -1,7 +1,5 @@
+@import "./globals";
 @import "./colors_light";
+@import "./normalize";
 
-@import "./colors_dark";
-
-@import "./normilze";
-
-@import "./../../styles/index";
+@import "../../styles/index";

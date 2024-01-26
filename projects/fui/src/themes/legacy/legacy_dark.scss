@@ -1,8 +1,5 @@
-@import "themes/legacy/base_variables";
-@import "themes/legacy/colors_dark";
+@import "./globals";
+@import "./colors_dark";
+@import "./normalize";
 
-@import "themes/legacy/normalize";
-
-@import "themes/legacy/font_inter";
-
-@import "styles/index";
+@import "../../styles/index";
