@@ -1,17 +1,16 @@
-// @import "./../../../themes/legacy/legacy_light.scss";
-// @import "./../../../../../demo/src/styles";
+@import "./../../../../../demo/src/styles";
 
-.button-primary {
+.primary {
   @include fuiButtonBase;
   background-color: $fuiColorPrimary;
 }
-.button-accent {
+.accent {
   @include fuiButtonBase;
   // @include fuiBottomShadow($fuiColorPrimary);
   background-color: $fuiColorAccent;
 }
 
-.button-danger {
+.danger {
   @include fuiButtonBase;
   background-color: $fuiColorDanger;
 }
