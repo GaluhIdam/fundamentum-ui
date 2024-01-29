@@ -1,21 +1,31 @@
 @import "./../../../../../demo/src/styles";
 
-.primary {
-  @include fuiButtonBase;
-  background-color: $fuiColorPrimary;
+button {
+  border-radius: 6px;
+  font-family: $fuiFontFamily;
+  font-size: $fuiFontSizeS;
+  font-weight: 500;
+  padding: 0 12px;
+  border: none;
 }
-.accent {
-  @include fuiButtonBase;
-  // @include fuiBottomShadow($fuiColorPrimary);
-  background-color: $fuiColorAccent;
+
+.primary {
+  @include fuiButtonBase($fuiColorPrimary, $fuiColorGhost);
+}
+.success {
+  @include fuiButtonBase($fuiColorSuccess, $fuiColorGhost);
+}
+.warning {
+  @include fuiButtonBase($fuiColorWarning, $fuiColorGhost);
 }
 
 .danger {
-  @include fuiButtonBase;
-  background-color: $fuiColorDanger;
+  @include fuiButtonBase($fuiColorDanger, $fuiColorGhost);
 }
 
-.button-warning {
-  @include fuiButtonBase;
-  background-color: $fuiColorWarning;
+.text {
+  @include fuiButtonBase($fuiColorDarkShade, $fuiColorGhost);
+}
+.accent {
+  @include fuiButtonBase($fuiColorAccent, $fuiColorGhost);
 }
