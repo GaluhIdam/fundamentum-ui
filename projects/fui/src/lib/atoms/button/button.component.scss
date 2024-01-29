@@ -1,0 +1,22 @@
+// @import "./../../../themes/legacy/legacy_light.scss";
+// @import "./../../../../../demo/src/styles";
+
+.button-primary {
+  @include fuiButtonBase;
+  background-color: $fuiColorPrimary;
+}
+.button-accent {
+  @include fuiButtonBase;
+  // @include fuiBottomShadow($fuiColorPrimary);
+  background-color: $fuiColorAccent;
+}
+
+.button-danger {
+  @include fuiButtonBase;
+  background-color: $fuiColorDanger;
+}
+
+.button-warning {
+  @include fuiButtonBase;
+  background-color: $fuiColorWarning;
+}
