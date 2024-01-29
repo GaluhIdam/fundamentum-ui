@@ -1,29 +1,29 @@
-@use "../variables/colors" as colors;
-@use "../variables/shadows" as shadows;
-@use "../variables/sizes" as sizes;
+@use "../variables/color_variable";
+@use "../variables/shadow_variable";
+@use "../variables/size_variable";
 
 @function shadowOpacity($opacity) {
-  @if (lightness(colors.$fuiTextColor) < 50) {
+  @if (lightness(color_variable.$fuiTextColor) < 50) {
     @return $opacity * 1;
   } @else {
     @return $opacity * 2.5;
   }
 }
 
-@mixin fuiSlightShadow($color: shadows.$fuiShadowColor) {
+@mixin fuiSlightShadow($color: shadow_variable.$fuiShadowColor) {
   box-shadow:
     0 .8px .8px rgba($color, shadowOpacity(.04)),
     0 2.3px 2px rgba($color, shadowOpacity(.03));
 }
 
-@mixin fuiBottomShadowSmall($color: shadows.$fuiShadowColor) {
+@mixin fuiBottomShadowSmall($color: shadow_variable.$fuiShadowColor) {
   box-shadow:
     0 .7px 1.4px rgba($color, shadowOpacity(.07)),
     0 1.9px 4px rgba($color, shadowOpacity(.05)),
     0 4.5px 10px rgba($color, shadowOpacity(.05));
 }
 
-@mixin fuiBottomShadowMedium($color: shadows.$fuiShadowColor) {
+@mixin fuiBottomShadowMedium($color: shadow_variable.$fuiShadowColor) {
   box-shadow:
     0 .9px 4px -1px rgba($color, shadowOpacity(.08)),
     0 2.6px 8px -1px rgba($color, shadowOpacity(.06)),
@@ -33,7 +33,7 @@
 
 // Similar to shadow medium but without the bottom depth. Useful for popovers
 // that drop UP rather than DOWN.
-@mixin fuiBottomShadowFlat($color: shadows.$fuiShadowColor) {
+@mixin fuiBottomShadowFlat($color: shadow_variable.$fuiShadowColor) {
   box-shadow:
     0 0 .8px rgba($color, shadowOpacity(.06)),
     0 0 2px rgba($color, shadowOpacity(.04)),
@@ -41,7 +41,7 @@
     0 0 17px rgba($color, shadowOpacity(.03));
 }
 
-@mixin fuiBottomShadow($color: shadows.$fuiShadowColor) {
+@mixin fuiBottomShadow($color: shadow_variable.$fuiShadowColor) {
   box-shadow:
     0 1px 5px rgba($color, shadowOpacity(.1)),
     0 3.6px 13px rgba($color, shadowOpacity(.07)),
@@ -50,7 +50,7 @@
 }
 
 @mixin fuiBottomShadowLarge(
-  $color: shadows.$fuiShadowColor,
+  $color: shadow_variable.$fuiShadowColor,
   $opacity: 0,
   $reverse: false
 ) {
@@ -67,7 +67,7 @@
   }
 }
 
-@mixin fuiSlightShadowHover($color: shadows.$fuiShadowColor) {
+@mixin fuiSlightShadowHover($color: shadow_variable.$fuiShadowColor) {
   box-shadow:
     0 1px 5px rgba($color, shadowOpacity(.1)),
     0 3.6px 13px rgba($color, shadowOpacity(.07)),
@@ -77,7 +77,7 @@
 
 // stylelint-disable color-named
 @mixin fuiOverflowShadow($direction: 'y', $side: 'both') {
-  $hideHeight: sizes.$fuiScrollBarCornerThin * 1.25;
+  $hideHeight: size_variable.$fuiScrollBarCornerThin * 1.25;
   $gradient: null;
   $gradientStart:
     transparentize(red, .9) 0%,

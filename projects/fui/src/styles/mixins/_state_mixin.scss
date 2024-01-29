@@ -1,25 +1,25 @@
-@use "../variables/animations" as animations;
-@use "../variables/colors" as colors;
-@use "../variables/states" as states;
-@use "../variables/buttons" as buttons;
-@use "../functions/colors" as colorsFunc;
+@use "../variables/animation_variable";
+@use "../variables/color_variable";
+@use "../variables/state_variable";
+@use "../variables/button_variable";
+@use "../functions/color_function";
 
 @mixin fuiFocusRing($size: 'small') {
   @if $size == 'large' {
     // It's always OK to use the focus animation. This will take precedence over times we turn it off individually like fuiButtonEmpty
     // stylelint-disable-next-line declaration-no-important
-    animation: animations.$fuiAnimSpeedSlow animations.$fuiAnimSlightResistance 1 normal forwards focusRingAnimateLarge !important;
+    animation: animation_variable.$fuiAnimSpeedSlow animation_variable.$fuiAnimSlightResistance 1 normal forwards focusRingAnimateLarge !important;
   } @else {
     // stylelint-disable-next-line declaration-no-important
-    animation: animations.$fuiAnimSpeedSlow animations.$fuiAnimSlightResistance 1 normal forwards focusRingAnimate !important;
+    animation: animation_variable.$fuiAnimSpeedSlow animation_variable.$fuiAnimSlightResistance 1 normal forwards focusRingAnimate !important;
   }
 }
 
 // Keyframe animation declarations can be found in
 // utility/animations.scss
 
-@mixin fuiFocusBackground($color: colors.$fuiColorPrimary) {
-  background-color: colorsFunc.tintOrShade(colors.$fuiColorPrimary, ((1 - states.$fuiFocusTransparency) * 100%), ((1 - states.$fuiFocusTransparency) * 100%));
+@mixin fuiFocusBackground($color: color_variable.$fuiColorPrimary) {
+  background-color: color_function.tintOrShade(color_variable.$fuiColorPrimary, ((1 - state_variable.$fuiFocusTransparency) * 100%), ((1 - state_variable.$fuiFocusTransparency) * 100%));
 }
 
 @mixin fuiHoverState {
@@ -27,12 +27,12 @@
   text-decoration: underline;
 }
 
-@mixin fuiFocusState($color: colors.$fuiColorPrimary) {
+@mixin fuiFocusState($color: color_variable.$fuiColorPrimary) {
   @include fuiHoverState;
   @include fuiFocusBackground($color);
 }
 
-@mixin fuiDisabledState($color: buttons.$fuiButtonColorDisabledText) {
+@mixin fuiDisabledState($color: button_variable.$fuiButtonColorDisabledText) {
   cursor: not-allowed;
   text-decoration: none;
 
@@ -41,7 +41,7 @@
   }
 }
 
-@mixin fuiInteractiveStates($focusColor: colors.$fuiColorPrimary, $disabledColor: buttons.$fuiButtonColorDisabledText) {
+@mixin fuiInteractiveStates($focusColor: color_variable.$fuiColorPrimary, $disabledColor: button_variable.$fuiButtonColorDisabledText) {
   &:hover {
     @include fuiHoverState;
   }

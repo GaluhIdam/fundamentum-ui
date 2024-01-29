@@ -1,7 +1,7 @@
-@use "../variables/colors" as colors;
+@use "../variables/color_variable";
 
 // For using icons as background images (data-uri)
-@mixin fuiIconBackground($type, $color: colors.$fuiColorEmptyShade) {
+@mixin fuiIconBackground($type, $color: color_variable.$fuiColorEmptyShade) {
   // stylelint-disable string-quotes
   @if variable-exists(type) == false {
     @error 'A $type:string must be provided to @mixin fuiIconBackground().';

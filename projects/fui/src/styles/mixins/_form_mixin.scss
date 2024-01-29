@@ -1,33 +1,33 @@
-@use "../variables/colors" as colors;
-@use "../variables/font_weight" as fontWeight;
-@use "../variables/sizes" as sizes;
-@use "../variables/form" as form;
-@use "../variables/typography" as fonts;
-@use "../variables/animations" as animations;
-@use "../variables/states" as states;
+@use "../variables/color_variable";
+@use "../variables/font_weight_variable";
+@use "../variables/size_variable";
+@use "../variables/form_variable";
+@use "../variables/typography_variable";
+@use "../variables/animation_variable";
+@use "../variables/state_variable";
 
-@use "./typography" as fontMixin;
-@use "./size" as sizeMixin;
-@use "./state" as stateMixin;
-@use "./icon" as iconMixin;
+@use "./typography_mixin";
+@use "./size_mixin";
+@use "./state_mixin";
+@use "./icon_mixin";
 
-@use "../functions/colors" as colorsFunc;
+@use "../functions/color_function";
 
 // Labels
 @mixin fuiFormLabel {
-  @include fontMixin.fuiFontSizeXS;
-  @include fontMixin.fuiTextBreakWord;
-  color: colors.$fuiTitleColor;
-  font-weight: fontWeight.$fuiFontWeightSemiBold;
+  @include typography_mixin.fuiFontSizeXS;
+  @include typography_mixin.fuiTextBreakWord;
+  color: color_variable.$fuiTitleColor;
+  font-weight: font_weight_variable.$fuiFontWeightSemiBold;
 }
 
 @mixin fuiFormControlLayoutPadding($numOfIcons, $side: 'right', $compressed: false) {
-  $iconSize: sizes.$fuiSize;
-  $iconPadding: form.$fuiFormControlPadding;
-  $marginBetweenIcons: form.$fuiFormControlPadding / 2;
+  $iconSize: size_variable.$fuiSize;
+  $iconPadding: form_variable.$fuiFormControlPadding;
+  $marginBetweenIcons: form_variable.$fuiFormControlPadding / 2;
 
   @if ($compressed) {
-    $iconPadding: form.$fuiFormControlCompressedPadding;
+    $iconPadding: form_variable.$fuiFormControlCompressedPadding;
   }
 
   @if variable-exists(numOfIcons) == false {
@@ -42,29 +42,29 @@
 }
 
 @mixin fuiFormControlLayoutClearIcon($iconClass, $size: 'm') {
-  $clearSize: sizes.$fuiSize;
+  $clearSize: size_variable.$fuiSize;
   $clearIconStroke: 2px;
 
   @if ($size == 's') {
-    $clearSize: sizes.$fuiSizeM;
-    $clearIconStroke: sizes.$fuiSizeXS;
+    $clearSize: size_variable.$fuiSizeM;
+    $clearIconStroke: size_variable.$fuiSizeXS;
   }
 
-  @include sizeMixin.size($clearSize);
+  @include size_mixin.size($clearSize);
   pointer-events: all;
-  background-color: colorsFunc.lightOrDarkTheme(colors.$fuiColorMediumShade, colors.$fuiColorDarkShade);
+  background-color: color_function.lightOrDarkTheme(color_variable.$fuiColorMediumShade, color_variable.$fuiColorDarkShade);
   border-radius: $clearSize;
   line-height: 0; // ensures the icon stays vertically centered
 
   &:focus {
-    @include stateMixin.fuiFocusRing;
+    @include state_mixin.fuiFocusRing;
   }
 
   #{$iconClass} {
-    @include sizeMixin.size($clearSize / 2);
-    fill: colors.$fuiColorEmptyShade;
+    @include size_mixin.size($clearSize / 2);
+    fill: color_variable.$fuiColorEmptyShade;
     // increase thickness of icon at such a small size
-    stroke: colors.$fuiColorEmptyShade;
+    stroke: color_variable.$fuiColorEmptyShade;
     stroke-width: $clearIconStroke;
   }
 }
@@ -79,7 +79,7 @@
   &::placeholder { @content; opacity: 1; }
 }
 
-@function fuiFormControlGradient($color: colors.$fuiColorPrimary) {
+@function fuiFormControlGradient($color: color_variable.$fuiColorPrimary) {
   @return linear-gradient(to top,
     $color,
     $color 2px,
@@ -89,21 +89,21 @@
 }
 
 @mixin fuiFormControlText {
-  @include fontMixin.fuiFont;
-  font-size: fonts.$fuiFontSizeS;
-  color: colors.$fuiTextColor;
+  @include typography_mixin.fuiFont;
+  font-size: typography_variable.$fuiFontSizeS;
+  color: color_variable.$fuiTextColor;
 
   @include fuiPlaceholderPerBrowser {
-    color: form.$fuiFormControlPlaceholderText;
+    color: form_variable.$fuiFormControlPlaceholderText;
   }
 }
 
 @mixin fuiFormControlSize(
-  $height: form.$fuiFormControlHeight,
+  $height: form_variable.$fuiFormControlHeight,
   $includeAlternates: false
 ) {
   // Default
-  max-width: form.$fuiFormMaxWidth;
+  max-width: form_variable.$fuiFormMaxWidth;
   width: 100%;
   height: $height;
 
@@ -113,7 +113,7 @@
     }
 
     &--compressed {
-      height: form.$fuiFormControlCompressedHeight;
+      height: form_variable.$fuiFormControlCompressedHeight;
     }
 
     &--inGroup {
@@ -157,23 +157,23 @@
 // 1. Must supply both values to background-size or some browsers apply the single value to both directions
 
 @mixin fuiFormControlDefaultShadow($borderOnly: false) {
-  background-color: form.$fuiFormBackgroundColor;
+  background-color: form_variable.$fuiFormBackgroundColor;
   background-repeat: no-repeat;
   background-size: 0 100%; // 1
 
   @if ($borderOnly) {
-    box-shadow: inset 0 0 0 1px form.$fuiFormBorderColor;
+    box-shadow: inset 0 0 0 1px form_variable.$fuiFormBorderColor;
   } @else {
     box-shadow:
-      #{form.$fuiFormControlBoxShadow},
-      inset 0 0 0 1px form.$fuiFormBorderColor;
+      #{form_variable.$fuiFormControlBoxShadow},
+      inset 0 0 0 1px form_variable.$fuiFormBorderColor;
   }
 
   transition:
-    box-shadow animations.$fuiAnimSpeedFast ease-in,
-    background-image animations.$fuiAnimSpeedFast ease-in,
-    background-size animations.$fuiAnimSpeedFast ease-in,
-    background-color animations.$fuiAnimSpeedFast ease-in;
+    box-shadow animation_variable.$fuiAnimSpeedFast ease-in,
+    background-image animation_variable.$fuiAnimSpeedFast ease-in,
+    background-size animation_variable.$fuiAnimSpeedFast ease-in,
+    background-color animation_variable.$fuiAnimSpeedFast ease-in;
 
   // Fixes bug in Firefox where adding a transition to the background-color
   // caused a flash of differently styled dropdown.
@@ -184,47 +184,47 @@
 }
 
 @mixin fuiFormControlFocusStyle($borderOnly: false) {
-  background-color: colorsFunc.tintOrShade(colors.$fuiColorEmptyShade, 0%, 40%);
+  background-color: color_function.tintOrShade(color_variable.$fuiColorEmptyShade, 0%, 40%);
   background-image: fuiFormControlGradient();
   background-size: 100% 100%; // 1
   outline: none; // Blanket remove all outlines relying on our own bottom border
 
   @if ($borderOnly) {
-    box-shadow: inset 0 0 0 1px form.$fuiFormBorderColor;
+    box-shadow: inset 0 0 0 1px form_variable.$fuiFormBorderColor;
   } @else {
-    box-shadow: inset 0 0 0 1px form.$fuiFormBorderColor;
+    box-shadow: inset 0 0 0 1px form_variable.$fuiFormBorderColor;
   }
 }
 
 @mixin fuiFormControlInvalidStyle {
-  background-image: fuiFormControlGradient(colors.$fuiColorDanger);
+  background-image: fuiFormControlGradient(color_variable.$fuiColorDanger);
   background-size: 100%;
 }
 
 @mixin fuiFormControlDisabledTextStyle {
-  color: form.$fuiFormControlDisabledColor;
-  -webkit-text-fill-color: form.$fuiFormControlDisabledColor; // Required for Safari
+  color: form_variable.$fuiFormControlDisabledColor;
+  -webkit-text-fill-color: form_variable.$fuiFormControlDisabledColor; // Required for Safari
 }
 
 @mixin fuiFormControlDisabledStyle {
   @include fuiFormControlDisabledTextStyle;
   cursor: not-allowed;
-  background: form.$fuiFormBackgroundDisabledColor;
-  box-shadow: inset 0 0 0 1px form.$fuiFormBorderDisabledColor;
+  background: form_variable.$fuiFormBackgroundDisabledColor;
+  box-shadow: inset 0 0 0 1px form_variable.$fuiFormBorderDisabledColor;
 
   @include fuiPlaceholderPerBrowser {
-    color: form.$fuiFormControlDisabledColor;
+    color: form_variable.$fuiFormControlDisabledColor;
   }
 }
 
 @mixin fuiFormControlReadOnlyStyle {
   cursor: default;
-  color: colors.$fuiTextColor;
-  -webkit-text-fill-color: colors.$fuiTextColor; // Required for Safari
+  color: color_variable.$fuiTextColor;
+  -webkit-text-fill-color: color_variable.$fuiTextColor; // Required for Safari
   // Use transparency since there is no border and in case form is on a non-white background
-  background: form.$fuiFormBackgroundReadOnlyColor;
+  background: form_variable.$fuiFormBackgroundReadOnlyColor;
   border-color: transparent;
-  box-shadow: inset 0 0 0 1px form.$fuiFormBorderDisabledColor;
+  box-shadow: inset 0 0 0 1px form_variable.$fuiFormBorderDisabledColor;
 }
 
 // 2. Override invalid state with focus state.
@@ -235,8 +235,8 @@
   @include fuiFormControlText;
 
   border: none;
-  border-radius: form.$fuiFormControlBorderRadius;
-  padding: form.$fuiFormControlPadding;
+  border-radius: form_variable.$fuiFormControlBorderRadius;
+  padding: form_variable.$fuiFormControlPadding;
 
   @if ($includeStates) {
     &:invalid { // 2
@@ -257,10 +257,10 @@
 
     // Needs to be set for autofill
     &:-webkit-autofill {
-      -webkit-text-fill-color: colorsFunc.lightOrDarkTheme(colors.$fuiColorDarkestShade, colors.$fuiColorLightShade);
+      -webkit-text-fill-color: color_function.lightOrDarkTheme(color_variable.$fuiColorDarkestShade, color_variable.$fuiColorLightShade);
 
       ~ .fuiFormControlLayoutIcons {
-        color: colorsFunc.lightOrDarkTheme(colors.$fuiColorDarkestShade, colors.$fuiColorLightShade);
+        color: color_function.lightOrDarkTheme(color_variable.$fuiColorDarkestShade, color_variable.$fuiColorLightShade);
       }
     }
   }
@@ -280,8 +280,8 @@
 
 @mixin fuiFormControlStyleCompressed($borderOnly: false, $includeStates: true) {
   @include fuiFormControlDefaultShadow($borderOnly: true);
-  padding: form.$fuiFormControlCompressedPadding;
-  border-radius: form.$fuiFormControlCompressedBorderRadius;
+  padding: form_variable.$fuiFormControlCompressedPadding;
+  border-radius: form_variable.$fuiFormControlCompressedBorderRadius;
 
   @if ($includeStates) {
     &:invalid { // 2
@@ -304,40 +304,40 @@
 
 // Custom styles and states for checkboxes and radios
 
-@mixin fuiCustomControl($type: null, $size: sizes.$fuiSize) {
+@mixin fuiCustomControl($type: null, $size: size_variable.$fuiSize) {
   @if $size {
     $size: $size - 2px; // subtract 2px from size to account for border size
     padding: $size / 2;
   }
 
-  border: 1px solid form.$fuiFormCustomControlBorderColor;
-  background: colors.$fuiColorEmptyShade no-repeat center;
+  border: 1px solid form_variable.$fuiFormCustomControlBorderColor;
+  background: color_variable.$fuiColorEmptyShade no-repeat center;
 
   @if $type == 'round' {
     border-radius: $size;
   } @else if $type == 'square' {
-    border-radius: form.$fuiCheckboxBorderRadius;
+    border-radius: form_variable.$fuiCheckboxBorderRadius;
   }
 
-  transition: background-color animations.$fuiAnimSpeedFast ease-in,
-  border-color animations.$fuiAnimSpeedFast ease-in; // stylelint-disable-line indentation
+  transition: background-color animation_variable.$fuiAnimSpeedFast ease-in,
+  border-color animation_variable.$fuiAnimSpeedFast ease-in; // stylelint-disable-line indentation
 }
 
 @mixin fuiCustomControlSelected($type: null) {
-  border-color: colors.$fuiColorPrimary;
-  background-color: colors.$fuiColorPrimary;
+  border-color: color_variable.$fuiColorPrimary;
+  background-color: color_variable.$fuiColorPrimary;
 
   @if $type != null {
-    @include iconMixin.fuiIconBackground($type, colors.$fuiColorEmptyShade);
+    @include icon_mixin.fuiIconBackground($type, color_variable.$fuiColorEmptyShade);
   }
 }
 
 @mixin fuiCustomControlDisabled($type: null) {
-  border-color: colors.$fuiColorLightShade;
-  background-color: colors.$fuiColorLightShade;
+  border-color: color_variable.$fuiColorLightShade;
+  background-color: color_variable.$fuiColorLightShade;
   box-shadow: none;
   @if $type != null {
-    @include iconMixin.fuiIconBackground($type, form.$fuiFormCustomControlDisabledIconColor);
+    @include icon_mixin.fuiIconBackground($type, form_variable.$fuiFormCustomControlDisabledIconColor);
   }
 }
 
@@ -345,13 +345,13 @@
   // Requires a selector to work with the Amsterdam outline styles
   @if ($amsterdamSelector) {
     + #{$amsterdamSelector} {
-      outline: states.$fuiFocusRingSize solid states.$fuiFocusRingColor;
+      outline: state_variable.$fuiFocusRingSize solid state_variable.$fuiFocusRingColor;
       outline-offset: 2px;
     }
 
     // Chrome
     &:focus-visible + #{$amsterdamSelector} {
-      outline: states.$fuiFocusRingSize solid states.$fuiFocusRingColor;
+      outline: state_variable.$fuiFocusRingSize solid state_variable.$fuiFocusRingColor;
       outline-offset: 2px;
     }
 
@@ -360,8 +360,8 @@
     }
   } @else {
     // Default theme
-    @include stateMixin.fuiFocusRing('small', 'outer');
-    border-color: colors.$fuiColorPrimary;
+    @include state_mixin.fuiFocusRing('small', 'outer');
+    border-color: color_variable.$fuiColorPrimary;
   }
 }
 

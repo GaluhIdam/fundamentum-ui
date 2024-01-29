@@ -1,12 +1,12 @@
-@use "../variables/buttons" as buttons;
-@use "../variables/animations" as animations;
-@use "../variables/font_weight" as fontWeight;
-@use "../variables/sizes" as sizes;
-@use "../variables/colors" as colors;
-@use "./helpers" as helpers;
-@use "./typography" as fontsMixin;
-@use "./loading" as loadingMixin;
-@use "../functions/colors" as colorsFunc;
+@use "../variables/button_variable";
+@use "../variables/animation_variable";
+@use "../variables/font_weight_variable";
+@use "../variables/size_variable";
+@use "../variables/color_variable";
+@use "./helper_mixin";
+@use "./typography_mixin";
+@use "./loading_mixin";
+@use "../functions/color_function";
 
 // Provides a solid reset and base for handling sizing layout
 // Does not include any visual styles
@@ -14,8 +14,8 @@
   display: inline-block;
   appearance: none;
   cursor: pointer;
-  height: buttons.$fuiButtonHeight;
-  line-height: buttons.$fuiButtonHeight; // prevents descenders from getting cut off
+  height: button_variable.$fuiButtonHeight;
+  line-height: button_variable.$fuiButtonHeight; // prevents descenders from getting cut off
   text-align: center;
   white-space: nowrap;
   max-width: 100%;
@@ -24,15 +24,15 @@
 
 // Adds the focus (and hover) animation for translating up 1px
 @mixin fuiButtonFocus {
-  @include helpers.fuiCanAnimate {
-    transition: transform animations.$fuiAnimSpeedNormal ease-in-out, background-color animations.$fuiAnimSpeedNormal ease-in-out;
+  @include helper_mixin.fuiCanAnimate {
+    transition: transform animation_variable.$fuiAnimSpeedNormal ease-in-out, background-color animation_variable.$fuiAnimSpeedNormal ease-in-out;
 
     &:hover:not(:disabled) {
       transform: translateY(-1px);
     }
 
     &:focus {
-      animation: fuiButtonActive animations.$fuiAnimSpeedNormal animations.$fuiAnimSlightBounce;
+      animation: fuiButtonActive animation_variable.$fuiAnimSpeedNormal animation_variable.$fuiAnimSlightBounce;
     }
 
     &:active:not(:disabled) {
@@ -45,11 +45,11 @@
 // Does not include individual alterations like color or sizes
 @mixin fuiButton {
   @include fuiButtonBase;
-  @include fontsMixin.fuiFont;
-  @include fontsMixin.fuiFontSize;
+  @include typography_mixin.fuiFont;
+  @include typography_mixin.fuiFontSize;
   @include fuiButtonFocus;
 
-  font-weight: fontWeight.$fuiFontWeightRegular;
+  font-weight: font_weight_variable.$fuiFontWeightRegular;
   text-decoration: none;
   outline-offset: -1px;
 
@@ -83,7 +83,7 @@
 
     > * + * {
       margin-inline-start: 0; // 1, 2
-      margin-inline-end: sizes.$fuiSizeS; // 1, 2
+      margin-inline-end: size_variable.$fuiSizeS; // 1, 2
     }
   } @else {
     display: flex;
@@ -91,7 +91,7 @@
     align-items: center;
 
     > * + * {
-      margin-inline-start: sizes.$fuiSizeS; // 1
+      margin-inline-start: size_variable.$fuiSizeS; // 1
     }
   }
 }
@@ -107,26 +107,26 @@
   }
 
   .fuiButtonContent__spinner {
-    border-color: loadingMixin.fuiLoadingSpinnerBorderColors(currentColor);
+    border-color: loading_mixin.fuiLoadingSpinnerBorderColors(currentColor);
   }
 }
 
 /*
  * Creates the Amsterdam style of button with a transparent background
  */
-@mixin fuiButtonDefaultStyle($color: 'primary', $includeStates: true, $transparency: buttons.$fuiButtonDefaultTransparency) {
+@mixin fuiButtonDefaultStyle($color: 'primary', $includeStates: true, $transparency: button_variable.$fuiButtonDefaultTransparency) {
   $backgroundColor: $color;
 
-  @if (map-has-key(buttons.$fuiButtonTypes, $color)) {
-    $backgroundColor: map-get(buttons.$fuiButtonTypes, $color);
+  @if (map-has-key(button_variable.$fuiButtonTypes, $color)) {
+    $backgroundColor: map-get(button_variable.$fuiButtonTypes, $color);
   }
 
   $percentConversion: $transparency * 100%;
   // This variable simulates the possibly darkest background the button could be on
   // Simulates the 20% opaque color on top of the page background color
-  $backgroundColorSimulated: mix(colors.$fuiPageBackgroundColor, $backgroundColor, $percentConversion);
+  $backgroundColorSimulated: mix(color_variable.$fuiPageBackgroundColor, $backgroundColor, $percentConversion);
   // Then we can calculate the darkest text color needed
-  color: colorsFunc.makeHighContrastColor($backgroundColor, $backgroundColorSimulated);
+  color: color_function.makeHighContrastColor($backgroundColor, $backgroundColorSimulated);
   // But still use transparency
   background-color: transparentize($backgroundColor, $transparency);
 
@@ -147,12 +147,12 @@
 @mixin fuiButtonFillStyle($color: 'primary') {
   $backgroundColor: $color;
 
-  @if (map-has-key(buttons.$fuiButtonTypes, $color)) {
-    $backgroundColor: map-get(buttons.$fuiButtonTypes, $color);
+  @if (map-has-key(button_variable.$fuiButtonTypes, $color)) {
+    $backgroundColor: map-get(button_variable.$fuiButtonTypes, $color);
   }
 
   background-color: $backgroundColor;
-  color: colorsFunc.chooseLightOrDarkText($backgroundColor);
+  color: color_function.chooseLightOrDarkText($backgroundColor);
 }
 
 // Keyframe animation declarations can be found in

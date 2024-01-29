@@ -2,6 +2,7 @@
 
 @use "../../fui/src/themes/legacy/globals";
 @use "../../fui/src/themes/legacy/colors_light";
-@use "../../fui/src/styles/variables/index";
+@use "../../fui/src/styles/variables";
+@use "../../fui/src/styles/mixins";
 
 @import "../../fui/src/styles/utility/normalize";
