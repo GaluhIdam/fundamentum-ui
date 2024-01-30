@@ -1,0 +1,46 @@
+@use "../../styles/variables/responsive_variable";
+
+// A sem-complicated mixin for breakpoints, that takes any number of
+// named breakpoints that exists in $fuiBreakpoints.
+
+@mixin fuiBreakpoint($sizes...) {
+  // Loop through each size parameter
+  @each $size in $sizes {
+    // Store the location of the size in the list to check against
+    $index: index(responsive_variable.$fuiBreakpointKeys, $size);
+
+    // Check to make sure it exists in the allowed breakpoint names
+    @if ( $index ) {
+
+      // Set the min size to the value of the size
+      $minSize: map-get(responsive_variable.$fuiBreakpoints, $size);
+
+      // If it is the last item, don't give it a max-width
+      @if ( $index == length(responsive_variable.$fuiBreakpointKeys) ) {
+        @media only screen and (min-width: $minSize) {
+          @content;
+        }
+        // If it's not the last item, add a max-width
+      } @else {
+
+        // Set the max size to the value of the next size (-1px as to not overlap)
+        $maxSize: map-get(responsive_variable.$fuiBreakpoints, nth(responsive_variable.$fuiBreakpointKeys, $index + 1)) - 1px;
+
+        // If it's the the first item, don't set a min-width
+        @if ( $index == 1 ) {
+          @media only screen and (max-width: $maxSize) {
+            @content;
+          }
+          // Otherwise it should have a min and max width
+        } @else {
+          @media only screen and (min-width: $minSize) and (max-width: $maxSize) {
+            @content;
+          }
+        }
+      }
+      // If it's not a known breakpoint, throw a warning
+    } @else {
+      @warn "fuiBreakpoint(): '#{$size}' is not a valid size in $fuiBreakpoints. Accepted values are '#{responsive_variable.$fuiBreakpointKeys}'";
+    }
+  }
+}

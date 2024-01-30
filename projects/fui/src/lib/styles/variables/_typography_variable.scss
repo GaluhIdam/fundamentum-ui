@@ -1,0 +1,78 @@
+@use "../../styles/variables/size_variable";
+@use "../../styles/variables/font_weight_variable";
+
+// Families
+$fuiFontFamily: 'Inter', sans-serif !default;
+$fuiCodeFontFamily: 'Roboto Mono', monospace !default;
+
+// Careful using ligatures. Code editors like ACE will often error because of width calculations
+$fuiFontFeatureSettings: 'calt' 1, 'kern' 1, 'liga' 1 !default;
+
+// Font sizes -- scale is loosely based on Major Third (1.250)
+$fuiTextScale:      2.25, 1.75, 1.25, 1.125, 1, .875, .75 !default;
+
+$fuiFontSize:       size_variable.$fuiSize !default; // 5th position in scale
+$fuiFontSizeXS:     $fuiFontSize * nth($fuiTextScale, 7) !default; // 12px
+$fuiFontSizeS:      $fuiFontSize * nth($fuiTextScale, 6) !default; // 14px
+$fuiFontSizeM:      $fuiFontSize * nth($fuiTextScale, 4) !default; // 18px
+$fuiFontSizeL:      $fuiFontSize * nth($fuiTextScale, 3) !default; // 20px
+$fuiFontSizeXL:     $fuiFontSize * nth($fuiTextScale, 2) !default; // 28px
+$fuiFontSizeXXL:    $fuiFontSize * nth($fuiTextScale, 1) !default; // 36px
+
+// Line height
+$fuiLineHeight:     1.5 !default;
+$fuiBodyLineHeight: 1 !default;
+
+// Normally functions are imported before variables in `_index.scss` files
+// But because they need to consume some typography variables they need to live here
+@function convertToRem($size) {
+  @return #{$size / $fuiFontSize}rem;
+}
+
+// Our base gridline is at 1/2 the font-size, ensure line-heights stay on that gridline.
+// EX: A proper line-height for text is 1.5 times the font-size.
+//     If our base font size (fuiFontSize) is 16, our baseline is 8 (16*1.5 / 3). To ensure the
+//     text stays on the baseline, we pass a multiplier to calculate a line-height in rems.
+@function lineHeightFromBaseline($multiplier: 3) {
+  @return convertToRem(($fuiFontSize / 2) * $multiplier);
+}
+
+// Titles map
+// Lists all the properties per fuiTitle size that then gets looped through to create the selectors.
+// The map allows for tokenization and easier customization per theme, otherwise you'd have to override the selectors themselves
+$fuiTitles: (
+  'xxxs': (
+    'font-size': $fuiFontSizeXS,
+    'line-height': lineHeightFromBaseline(3),
+    'font-weight': font_weight_variable.$fuiFontWeightBold,
+  ),
+  'xxs': (
+    'font-size': $fuiFontSizeS,
+    'line-height': lineHeightFromBaseline(3),
+    'font-weight': font_weight_variable.$fuiFontWeightBold,
+  ),
+  'xs': (
+    'font-size': $fuiFontSize,
+    'line-height': lineHeightFromBaseline(3),
+    'font-weight': font_weight_variable.$fuiFontWeightSemiBold,
+    'letter-spacing': -.02em,
+  ),
+  's': (
+    'font-size': $fuiFontSizeL,
+    'line-height': lineHeightFromBaseline(4),
+    'font-weight': font_weight_variable.$fuiFontWeightMedium,
+    'letter-spacing': -.025em,
+  ),
+  'm': (
+    'font-size': $fuiFontSizeXL,
+    'line-height': lineHeightFromBaseline(5),
+    'font-weight': font_weight_variable.$fuiFontWeightLight,
+    'letter-spacing': -.04em,
+  ),
+  'l': (
+    'font-size': $fuiFontSizeXXL,
+    'line-height': lineHeightFromBaseline(6),
+    'font-weight': font_weight_variable.$fuiFontWeightLight,
+    'letter-spacing': -.03em,
+  ),
+) !default;
