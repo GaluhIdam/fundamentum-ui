@@ -9,5 +9,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonComponent {
   @Input('color') colorValue = '';
-  @Input('size') sizeValue = '';
+  @Input('size') sizeValue: string = 'sizedefault'; // Atau beri nilai default sesuai kebutuhan
 }

@@ -10,7 +10,7 @@
 
 // Provides a solid reset and base for handling sizing layout
 // Does not include any visual styles
-@mixin fuiButtonBase {
+@mixin fuiButtonBase($bgCol, $col) {
   display: inline-block;
   appearance: none;
   cursor: pointer;
@@ -20,19 +20,30 @@
   white-space: nowrap;
   max-width: 100%;
   vertical-align: middle;
+  background-color: $bgCol;
+  color: $col;
+  transition-property: background-color color;
+  transition-duration: 0.3s;
+  &:hover {
+    background-color: lighten($bgCol, 10%);
+    color: darken($col, 10%);
+    transform: translateY(-3px);
+  }
 }
 
 // Adds the focus (and hover) animation for translating up 1px
 @mixin fuiButtonFocus {
   @include helper_mixin.fuiCanAnimate {
-    transition: transform animation_variable.$fuiAnimSpeedNormal ease-in-out, background-color animation_variable.$fuiAnimSpeedNormal ease-in-out;
+    transition: transform animation_variable.$fuiAnimSpeedNormal ease-in-out,
+      background-color animation_variable.$fuiAnimSpeedNormal ease-in-out;
 
     &:hover:not(:disabled) {
       transform: translateY(-1px);
     }
 
     &:focus {
-      animation: fuiButtonActive animation_variable.$fuiAnimSpeedNormal animation_variable.$fuiAnimSlightBounce;
+      animation: fuiButtonActive animation_variable.$fuiAnimSpeedNormal
+        animation_variable.$fuiAnimSlightBounce;
     }
 
     &:active:not(:disabled) {
@@ -114,7 +125,11 @@
 /*
  * Creates the Amsterdam style of button with a transparent background
  */
-@mixin fuiButtonDefaultStyle($color: 'primary', $includeStates: true, $transparency: button_variable.$fuiButtonDefaultTransparency) {
+@mixin fuiButtonDefaultStyle(
+  $color: "primary",
+  $includeStates: true,
+  $transparency: button_variable.$fuiButtonDefaultTransparency
+) {
   $backgroundColor: $color;
 
   @if (map-has-key(button_variable.$fuiButtonTypes, $color)) {
@@ -124,14 +139,21 @@
   $percentConversion: $transparency * 100%;
   // This variable simulates the possibly darkest background the button could be on
   // Simulates the 20% opaque color on top of the page background color
-  $backgroundColorSimulated: mix(color_variable.$fuiPageBackgroundColor, $backgroundColor, $percentConversion);
+  $backgroundColorSimulated: mix(
+    color_variable.$fuiPageBackgroundColor,
+    $backgroundColor,
+    $percentConversion
+  );
   // Then we can calculate the darkest text color needed
-  color: color_function.makeHighContrastColor($backgroundColor, $backgroundColorSimulated);
+  color: color_function.makeHighContrastColor(
+    $backgroundColor,
+    $backgroundColorSimulated
+  );
   // But still use transparency
   background-color: transparentize($backgroundColor, $transparency);
 
   @if ($includeStates) {
-    &:not([class*='isDisabled']) {
+    &:not([class*="isDisabled"]) {
       &:hover,
       &:focus {
         // Duplicated from inert state simply to override default theme
@@ -144,7 +166,7 @@
 /*
  * Creates the Amsterdam style of fill button
  */
-@mixin fuiButtonFillStyle($color: 'primary') {
+@mixin fuiButtonFillStyle($color: "primary") {
   $backgroundColor: $color;
 
   @if (map-has-key(button_variable.$fuiButtonTypes, $color)) {

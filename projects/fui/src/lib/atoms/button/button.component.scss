@@ -1,21 +1,63 @@
 @import "./../../../../../demo/src/styles";
+// :host {
+//   --button-size-xs: #{$fuiSizeXS};
+//   --button-size-s: #{$fuiSizeS};
+//   --button-size-m: #{$fuiSizeM};
+//   --button-size-l: #{$fuiSizeL};
+//   --button-size-xl: #{$fuiSizeXL};
+//   --button-size-xxl: #{$fuiSizeXXL};
+// }
+
+button {
+  border-radius: 6px;
+  font-family: $fuiFontFamily;
+  font-weight: $fuiFontWeightMedium;
+  padding: 6px 12px;
+  border: none;
+}
 
 .primary {
-  @include fuiButtonBase;
-  background-color: $fuiColorPrimary;
+  @include fuiButtonBase($fuiColorPrimary, $fuiColorGhost);
 }
-.accent {
-  @include fuiButtonBase;
-  // @include fuiBottomShadow($fuiColorPrimary);
-  background-color: $fuiColorAccent;
+.success {
+  @include fuiButtonBase($fuiColorSuccess, $fuiColorInk);
+}
+.warning {
+  @include fuiButtonBase($fuiColorWarning, $fuiColorInk);
 }
 
 .danger {
-  @include fuiButtonBase;
-  background-color: $fuiColorDanger;
+  @include fuiButtonBase($fuiColorDanger, $fuiColorGhost);
 }
 
-.button-warning {
-  @include fuiButtonBase;
-  background-color: $fuiColorWarning;
+.text {
+  @include fuiButtonBase($fuiColorDarkShade, $fuiColorGhost);
+}
+.accent {
+  @include fuiButtonBase($fuiColorAccent, $fuiColorInk);
+}
+
+.sizeXS {
+  font-size: $fuiSizeXS;
+}
+.sizeS {
+  font-size: $fuiSizeS;
+}
+.sizeM {
+  font-size: $fuiSizeM;
+}
+.sizeDefault {
+  font-size: $fuiSize;
+}
+
+.sizeL {
+  font-size: $fuiSizeL;
+}
+
+.sizeXL {
+  font-size: $fuiSizeXL;
+}
+
+.sizeXXL {
+  font-size: $fuiSizeXXL;
 }

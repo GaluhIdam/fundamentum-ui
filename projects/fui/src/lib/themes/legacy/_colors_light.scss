@@ -1,7 +1,7 @@
 // stylelint-disable color-no-hex
 
 // This extra import allows any variables that are created via functions to work when loaded into JS
-@import "lib/styles/functions/index";
+@import "../../styles/functions/index";
 
 // These colors stay the same no matter the theme
 $fuiColorGhost: #fff !default;
@@ -9,10 +9,11 @@ $fuiColorInk: #000 !default;
 
 // Core
 $fuiColorPrimary: #006bb4 !default;
-$fuiColorAccent: #dd0a73 !default;
+// $fuiColorAccent: #dd0a73 !default;
+$fuiColorAccent: #f583b7 !default;
 
 // Status
-$fuiColorSuccess: #017d73 !default;
+$fuiColorSuccess: #4dd2ca !default;
 $fuiColorWarning: #f5a700 !default;
 $fuiColorDanger: #bd271e !default;
 
