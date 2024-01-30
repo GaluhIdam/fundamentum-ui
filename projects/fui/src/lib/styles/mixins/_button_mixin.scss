@@ -14,8 +14,8 @@
   display: inline-block;
   appearance: none;
   cursor: pointer;
-  height: button_variable.$fuiButtonHeight;
-  line-height: button_variable.$fuiButtonHeight; // prevents descenders from getting cut off
+  // height: button_variable.$fuiButtonHeight;
+  // line-height: button_variable.$fuiButtonHeight; // prevents descenders from getting cut off
   text-align: center;
   white-space: nowrap;
   max-width: 100%;
