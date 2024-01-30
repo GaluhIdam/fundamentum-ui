@@ -9,6 +9,6 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonComponent {
   @Input('color') colorValue = '';
-  @Input('size') sizeValue: string = 'sizedefault';
+  @Input('size') sizeValue: string = 'sizem';
   @Input('width') widthValue: string = 'auto';
 }

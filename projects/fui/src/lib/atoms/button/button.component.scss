@@ -13,7 +13,6 @@ button {
   font-family: $fuiFontFamily;
   font-weight: $fuiFontWeightMedium;
   padding: 10.82px 12px;
-  height: auto !important;
   border: none;
 }
 
@@ -45,9 +44,6 @@ button {
   font-size: $fuiSizeS;
 }
 .sizeM {
-  font-size: $fuiSizeM;
-}
-.sizeDefault {
   font-size: $fuiSize;
 }
 
