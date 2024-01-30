@@ -1,0 +1,12 @@
+@use "../../styles/variables/color_variable";
+@use "../../styles/functions/color_function";
+
+$fuiTooltipBackgroundColor: color_function.tintOrShade(color_variable.$fuiColorFullShade, 25%, 100%) !default;
+$fuiTooltipBorderColor: color_function.tintOrShade(color_variable.$fuiColorFullShade, 35%, 80%) !default;
+
+$fuiTooltipAnimations: (
+  top: fuiToolTipTop,
+  left: fuiToolTipBottom,
+  bottom: fuiToolTipLeft,
+  right: fuiToolTipRight,
+) !default;

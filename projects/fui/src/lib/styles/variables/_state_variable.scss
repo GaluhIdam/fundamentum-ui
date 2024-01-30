@@ -1,0 +1,18 @@
+@use "../../styles/variables/color_variable";
+@use "../../styles/variables/size_variable";
+@use "../../styles/functions/color_function";
+
+// Colors
+$fuiFocusRingColor: rgba(color_variable.$fuiColorPrimary, .3) !default;
+$fuiFocusRingAnimStartColor: rgba(color_variable.$fuiColorPrimary, 0) !default;
+$fuiFocusRingAnimStartSize: 6px !default;
+$fuiFocusRingAnimStartSizeLarge: 10px !default;
+
+// Sizing
+$fuiFocusRingSizeLarge: size_variable.$fuiSizeXS !default;
+$fuiFocusRingSize: $fuiFocusRingSizeLarge * .75 !default;
+
+// Transparency
+$fuiFocusTransparency: color_function.lightOrDarkTheme(.1, .2) !default;
+$fuiFocusTransparencyPercent: color_function.lightOrDarkTheme(90%, 80%) !default;
+$fuiFocusBackgroundColor: color_function.tintOrShade(color_variable.$fuiColorPrimary, $fuiFocusTransparencyPercent, $fuiFocusTransparencyPercent) !default;

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'lib-button',
+  selector: 'fui-button',
   standalone: true,
   imports: [],
   templateUrl: './button.component.html',

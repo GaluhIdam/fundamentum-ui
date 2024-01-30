@@ -1,0 +1,26 @@
+@use "../../styles/variables/size_variable";
+@use "../../styles/variables/border_variable";
+@use "../../styles/variables/color_variable";
+@use "../../styles/functions/color_function";
+
+$fuiPanelPaddingModifiers: (
+  'paddingSmall':  size_variable.$fuiSizeS,
+  'paddingMedium': size_variable.$fuiSize,
+  'paddingLarge':  size_variable.$fuiSizeL
+) !default;
+
+$fuiPanelBorderRadiusModifiers: (
+  'borderRadiusNone': 0,
+  'borderRadiusMedium': border_variable.$fuiBorderRadius,
+) !default;
+
+$fuiPanelBackgroundColorModifiers: (
+  'transparent': transparent,
+  'plain': color_variable.$fuiColorEmptyShade,
+  'subdued': color_variable.$fuiPageBackgroundColor,
+  'accent':  color_function.tintOrShade(color_variable.$fuiColorAccent, 90%, 70%),
+  'primary': color_function.tintOrShade(color_variable.$fuiColorPrimary, 90%, 70%),
+  'success': color_function.tintOrShade(color_variable.$fuiColorSuccess, 90%, 70%),
+  'warning': color_function.tintOrShade(color_variable.$fuiColorWarning, 90%, 70%),
+  'danger':  color_function.tintOrShade(color_variable.$fuiColorDanger, 90%, 70%),
+) !default;

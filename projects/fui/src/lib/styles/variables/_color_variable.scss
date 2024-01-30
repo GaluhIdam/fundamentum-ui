@@ -1,0 +1,46 @@
+@use '../../styles/functions/color_function';
+
+// These colors stay the same no matter the theme
+$fuiColorGhost: #FFF !default;
+$fuiColorInk: #000 !default;
+
+// Core
+$fuiColorPrimary: #006BB4 !default;
+$fuiColorAccent: #DD0A73 !default;
+
+// Status
+$fuiColorSuccess: #017D73 !default;
+$fuiColorWarning: #F5A700 !default;
+$fuiColorDanger: #BD271E !default;
+
+// Grays
+$fuiColorEmptyShade: #FFF !default;
+$fuiColorLightestShade: #F5F7FA !default;
+$fuiColorLightShade: #D3DAE6 !default;
+$fuiColorMediumShade: #98A2B3 !default;
+$fuiColorDarkShade: #69707D !default;
+$fuiColorDarkestShade: #343741 !default;
+$fuiColorFullShade: #000 !default;
+
+// Backgrounds
+$fuiPageBackgroundColor: color_function.tint($fuiColorLightestShade, 50%) !default;
+$fuiColorHighlight: #FFFCDD !default;
+
+// Every color below must be based mathematically on the set above and in a particular order.
+$fuiTextColor: $fuiColorDarkestShade !default;
+$fuiTitleColor: color_function.shade($fuiTextColor, 50%) !default;
+$fuiTextSubduedColor: color_function.makeHighContrastColor($fuiColorMediumShade) !default;
+$fuiColorDisabled: color_function.tint($fuiTextColor, 70%) !default;
+
+// Contrasty text variants
+$fuiColorPrimaryText: color_function.makeHighContrastColor($fuiColorPrimary) !default;
+$fuiColorSuccessText: color_function.makeHighContrastColor($fuiColorSuccess) !default;
+$fuiColorAccentText: color_function.makeHighContrastColor($fuiColorAccent) !default;
+$fuiColorWarningText: color_function.makeHighContrastColor($fuiColorWarning) !default;
+$fuiColorDangerText: color_function.makeHighContrastColor($fuiColorDanger) !default;
+$fuiColorDisabledText: color_function.makeDisabledContrastColor($fuiColorDisabled) !default;
+$fuiLinkColor: $fuiColorPrimaryText !default;
+
+// Charts
+$fuiColorChartLines: color_function.shade($fuiColorLightestShade, 3%) !default;
+$fuiColorChartBand: $fuiColorLightestShade !default;
