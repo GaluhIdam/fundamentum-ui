@@ -1,5 +1,5 @@
-@use "lib/themes/legacy/globals";
-@use "lib/themes/legacy/colors_light";
-@use "lib/themes/legacy/normalize";
+@use "globals";
+@use "colors_light";
+@use "normalize";
 
-@use "lib/styles/index";
+@use "../../styles/_index.scss";
