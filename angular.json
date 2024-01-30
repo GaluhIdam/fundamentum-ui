@@ -12,7 +12,7 @@
       },
       "root": "projects/fui",
       "sourceRoot": "projects/fui/src",
-      "prefix": "lib",
+      "prefix": "fui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -70,6 +70,11 @@
             "styles": [
               "projects/demo/src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "dist/styles"
+              ]
+            },
             "scripts": [],
             "server": "projects/demo/src/main.server.ts",
             "prerender": true,
