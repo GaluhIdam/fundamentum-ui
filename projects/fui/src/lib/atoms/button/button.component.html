@@ -1,3 +1,13 @@
-<button [class]="colorValue">
+<!-- button.component.html -->
+<button
+  [class.sizeXS]="sizeValue === 'sizexs'"
+  [class.sizeS]="sizeValue === 'sizes'"
+  [class.sizeM]="sizeValue === 'sizem'"
+  [class.sizeL]="sizeValue === 'sizel'"
+  [class.sizeXL]="sizeValue === 'sizexl'"
+  [class.sizeDefault]="sizeValue === 'sizedefault'"
+  [class.sizeXXL]="sizeValue === 'sizexxl'"
+  [class]="colorValue"
+>
   <ng-content></ng-content>
 </button>

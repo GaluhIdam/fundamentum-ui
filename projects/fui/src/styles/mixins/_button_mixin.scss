@@ -27,6 +27,7 @@
   &:hover {
     background-color: lighten($bgCol, 10%);
     color: darken($col, 10%);
+    transform: translateY(-3px);
   }
 }
 

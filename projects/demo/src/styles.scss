@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "../../fui/src/themes/legacy/globals";
+@use "../../fui/src/themes/legacy/globals";
 @import "../../fui/src/themes/legacy/colors_light";
 @import "../../fui/src/styles/variables";
 @import "../../fui/src/styles/mixins";

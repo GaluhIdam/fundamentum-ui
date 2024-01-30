@@ -1,11 +1,18 @@
 @import "./../../../../../demo/src/styles";
+// :host {
+//   --button-size-xs: #{$fuiSizeXS};
+//   --button-size-s: #{$fuiSizeS};
+//   --button-size-m: #{$fuiSizeM};
+//   --button-size-l: #{$fuiSizeL};
+//   --button-size-xl: #{$fuiSizeXL};
+//   --button-size-xxl: #{$fuiSizeXXL};
+// }
 
 button {
   border-radius: 6px;
   font-family: $fuiFontFamily;
-  font-size: $fuiFontSizeS;
-  font-weight: 500;
-  padding: 0 12px;
+  font-weight: $fuiFontWeightMedium;
+  padding: 6px 12px;
   border: none;
 }
 
@@ -13,10 +20,10 @@ button {
   @include fuiButtonBase($fuiColorPrimary, $fuiColorGhost);
 }
 .success {
-  @include fuiButtonBase($fuiColorSuccess, $fuiColorGhost);
+  @include fuiButtonBase($fuiColorSuccess, $fuiColorInk);
 }
 .warning {
-  @include fuiButtonBase($fuiColorWarning, $fuiColorGhost);
+  @include fuiButtonBase($fuiColorWarning, $fuiColorInk);
 }
 
 .danger {
@@ -27,5 +34,30 @@ button {
   @include fuiButtonBase($fuiColorDarkShade, $fuiColorGhost);
 }
 .accent {
-  @include fuiButtonBase($fuiColorAccent, $fuiColorGhost);
+  @include fuiButtonBase($fuiColorAccent, $fuiColorInk);
+}
+
+.sizeXS {
+  font-size: $fuiSizeXS;
+}
+.sizeS {
+  font-size: $fuiSizeS;
+}
+.sizeM {
+  font-size: $fuiSizeM;
+}
+.sizeDefault {
+  font-size: $fuiSize;
+}
+
+.sizeL {
+  font-size: $fuiSizeL;
+}
+
+.sizeXL {
+  font-size: $fuiSizeXL;
+}
+
+.sizeXXL {
+  font-size: $fuiSizeXXL;
 }
