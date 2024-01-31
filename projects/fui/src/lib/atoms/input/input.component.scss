@@ -53,4 +53,6 @@ label {
   font-size: $fuiFontSizeXS;
   font-weight: 400;
   padding-left: 2px;
+  margin-top: calc($fuiFontSize * 0.25);
+  color: $fuiColorDarkShade;
 }
