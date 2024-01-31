@@ -4,7 +4,7 @@
     <ul class="main-ul">
       <li>
         <h4>Button Primary Color, size: xxl</h4>
-        <fui-button [color]="'primary'" [size]="'sizexxl'"> Primary</fui-button>
+        <fui-button [size]="'sizexxl'"> default</fui-button>
       </li>
       <li></li>
       <li>
@@ -75,11 +75,45 @@
           >Accent</fui-button
         >
       </li>
-      <!-- <li>
+      <li>
         <h4>Input</h4>
-        <lib-input [type]="'text'" [placeholder]="'your name'"></lib-input>
-      </li> -->
+        <lib-input [helpText]="'Help text'" [label]="'name'"></lib-input>
+      </li>
     </ul>
   </div>
+</div>
+
+<div class="main-container">
+  <ul class="main-ul">
+    <li>
+      <header>Standart Input</header>
+      <lib-input></lib-input>
+    </li>
+  </ul>
+  <ul class="main-ul">
+    <li>
+      <header>Input With Label & Help Text</header>
+      <lib-input [helpText]="'Help text'" [label]="'name'"></lib-input>
+    </li>
+  </ul>
+</div>
+
+<div class="main-container">
+  <ul class="main-ul">
+    <li>
+      <header><fui-text [size]="'sizeXL'">Default Text</fui-text></header>
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit.</fui-text
+      >
+    </li>
+  </ul>
+  <ul class="main-ul">
+    <li>
+      <header>Text With Color & Size</header>
+      <fui-text [color]="'primary'" [size]="'sizexl'"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      </fui-text>
+    </li>
+  </ul>
 </div>
 <router-outlet />

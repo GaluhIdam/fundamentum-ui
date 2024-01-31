@@ -1,1 +1,13 @@
-<input type="typeValue" placeholder="placeholderValue" />
+<div>
+  @if(!!textValue){
+  <label>{{ textValue }}</label>
+  } @else {
+  <ng-container></ng-container>
+  }
+  <input />
+  @if(!!helpTextValue){
+  <div class="helpText">{{ helpTextValue }}</div>
+  } @else {
+  <ng-container></ng-container>
+  }
+</div>

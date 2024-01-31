@@ -8,7 +8,8 @@ import { Component, Input } from '@angular/core';
   styleUrl: './input.component.scss',
 })
 export class InputComponent {
-  @Input('type') typeValue = '';
-  @Input('value') textValue = '';
-  @Input('placeholder') placeholderValue = '';
+  @Input('type') typeValue?: string;
+  @Input('label') textValue?: string;
+  @Input('placeholder') placeholderValue?: string;
+  @Input('helpText') helpTextValue?: string;
 }

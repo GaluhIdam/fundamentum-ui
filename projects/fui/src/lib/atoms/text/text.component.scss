@@ -1,0 +1,44 @@
+@import "./../../../../../demo/src/styles";
+
+.sizeXS {
+  font-size: $fuiFontSizeXS;
+}
+.sizeS {
+  font-size: $fuiFontSizeS;
+}
+.sizeM {
+  font-size: $fuiFontSize;
+}
+
+.sizeL {
+  font-size: $fuiFontSizeL;
+}
+
+.sizeXL {
+  font-size: $fuiFontSizeXL;
+}
+
+.sizeXXL {
+  font-size: $fuiFontSizeXXL;
+}
+
+.primary {
+  color: $fuiColorPrimary;
+}
+.success {
+  color: $fuiColorSuccess;
+}
+.warning {
+  color: $fuiColorWarning;
+}
+
+.danger {
+  color: $fuiColorDanger;
+}
+
+.text {
+  color: $fuiTextColor;
+}
+.accent {
+  color: $fuiColorAccent;
+}
