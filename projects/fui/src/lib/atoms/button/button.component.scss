@@ -1,12 +1,11 @@
 @import "./../../../../../demo/src/styles";
-// :host {
-//   --button-size-xs: #{$fuiSizeXS};
-//   --button-size-s: #{$fuiSizeS};
-//   --button-size-m: #{$fuiSizeM};
-//   --button-size-l: #{$fuiSizeL};
-//   --button-size-xl: #{$fuiSizeXL};
-//   --button-size-xxl: #{$fuiSizeXXL};
-// }
+
+// sizexs -> 12px
+// sizes -> 14px
+// sizem -> 16px
+// sizel -> 20px
+// sizexl -> 28px
+// sizexxl -> 36px
 
 button {
   border-radius: 6px;
@@ -43,8 +42,11 @@ button {
 .sizeS {
   font-size: $fuiFontSizeS;
 }
-.sizeM {
+.sizeDefault {
   font-size: $fuiFontSize;
+}
+.sizeM {
+  font-size: $fuiFontSizeM;
 }
 
 .sizeL {
