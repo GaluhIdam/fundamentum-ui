@@ -4,6 +4,7 @@ import { ButtonComponent } from '../../../fui/src/lib/atoms/button/button.compon
 import { InputComponent } from '../../../fui/src/lib/atoms/input/input.component';
 import { TextComponent } from '../../../fui/src/lib/atoms/text/text.component';
 import { IconsComponent } from '../../../fui/src/lib/atoms/icons/icons.component';
+import { ButtonEmptyComponent } from '../../../fui/src/lib/atoms/button-empty/button-empty.component';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import { IconsComponent } from '../../../fui/src/lib/atoms/icons/icons.component
   imports: [
     RouterOutlet,
     ButtonComponent,
+    ButtonEmptyComponent,
     InputComponent,
     TextComponent,
     IconsComponent,

@@ -1,0 +1,15 @@
+<button
+  [class]="colorValue"
+  [class.sizeXS]="sizeValue === 'sizexs'"
+  [class.sizeS]="sizeValue === 'sizes'"
+  [class.sizeM]="sizeValue === 'sizem'"
+  [class.sizeL]="sizeValue === 'sizel'"
+  [class.sizeXL]="sizeValue === 'sizexl'"
+  [class.sizeXXL]="sizeValue === 'sizexxl'"
+  [class.sizeM]="sizeValue === 'sizem'"
+  [class]="colorValue"
+  [class.autoWidth]="widthValue === 'auto'"
+  [class.fullWidth]="widthValue === 'full'"
+>
+  <ng-content></ng-content>
+</button>
