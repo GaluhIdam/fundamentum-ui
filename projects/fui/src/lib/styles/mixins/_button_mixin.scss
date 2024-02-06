@@ -1,7 +1,8 @@
 @use "../../styles/variables/button_variable";
 @use "../../styles/variables/animation_variable";
 @use "../../styles/variables/font_weight_variable";
-@use "../../styles/variables/size_variable";
+@use "../variables/border_variable" as border;
+@use "../variables/size_variable" as size;
 @use "../../styles/variables/color_variable";
 @use "../../styles/mixins/helper_mixin";
 @use "../../styles/mixins/typography_mixin";
@@ -14,6 +15,7 @@
   display: inline-block;
   appearance: none;
   cursor: pointer;
+  padding: calc(size.$fuiSize * 0.676) calc(size.$fuiSize * 0.75);
   // height: button_variable.$fuiButtonHeight;
   // line-height: button_variable.$fuiButtonHeight; // prevents descenders from getting cut off
   text-align: center;
@@ -21,6 +23,7 @@
   max-width: 100%;
   vertical-align: middle;
   background-color: $bgCol;
+  border-radius: border.$fuiBorderRadius;
   color: $col;
   transition-property: background-color color;
   transition-duration: 0.3s;
