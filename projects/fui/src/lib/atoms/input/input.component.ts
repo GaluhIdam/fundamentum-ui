@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'lib-input',
+  selector: 'fui-field-text',
   standalone: true,
   imports: [],
   templateUrl: './input.component.html',
