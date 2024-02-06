@@ -1,9 +1,7 @@
 @import "./../../../../../demo/src/styles";
 
 button {
-  font-family: $fuiFontFamily;
-  font-weight: $fuiFontWeightMedium;
-  border: none;
+  @include fuiButton($fuiColorPrimary, $fuiColorGhost);
 }
 
 .primary {

@@ -30,7 +30,10 @@
   &:hover {
     background-color: lighten($bgCol, 10%);
     color: darken($col, 10%);
-    transform: translateY(-3px);
+    transform: translateY(-1px);
+  }
+  &:active:not(:disabled) {
+    transform: translateY(1px);
   }
 }
 
@@ -57,14 +60,15 @@
 
 // All of the button base styles including the base, focus, font, and initial styles
 // Does not include individual alterations like color or sizes
-@mixin fuiButton {
-  @include fuiButtonBase;
+@mixin fuiButton($bgCol, $col) {
+  @include fuiButtonBase($bgCol, $col);
   @include typography_mixin.fuiFont;
   @include typography_mixin.fuiFontSize;
   @include fuiButtonFocus;
 
   font-weight: font_weight_variable.$fuiFontWeightRegular;
   text-decoration: none;
+  border: none;
   outline-offset: -1px;
 
   &:hover:not(:disabled),

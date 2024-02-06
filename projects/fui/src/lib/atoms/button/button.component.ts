@@ -11,4 +11,5 @@ export class ButtonComponent {
   @Input('color') colorValue = 'primary';
   @Input('size') sizeValue: string = 'sizem';
   @Input('width') widthValue: string = 'auto';
+  @Input('isDisabled') isDisabledValue: boolean = false;
 }
