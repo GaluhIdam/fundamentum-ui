@@ -52,3 +52,5 @@ Thumbs.db
 /projects/fui/src/lib/organisms/chart-line/*.css
 /projects/fui/src/lib/organisms/chart-line/*.css.map
 /projects/fui/src/lib/themes/legacy/*.css
+/projects/fui/src/lib/atoms/text/*.css
+/projects/fui/src/lib/atoms/text/*.css.map
