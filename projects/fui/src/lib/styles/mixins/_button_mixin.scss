@@ -1,13 +1,13 @@
-@use "../../styles/variables/button_variable";
-@use "../../styles/variables/animation_variable";
-@use "../../styles/variables/font_weight_variable";
-@use "../variables/border_variable" as border;
-@use "../variables/size_variable" as size;
-@use "../../styles/variables/color_variable";
-@use "../../styles/mixins/helper_mixin";
-@use "../../styles/mixins/typography_mixin";
-@use "../../styles/mixins/loading_mixin";
-@use "../../styles/functions/color_function";
+@use "../variables/button_variable";
+@use "../variables/animation_variable";
+@use "../variables/font_weight_variable";
+@use "../variables/border_variable";
+@use "../variables/size_variable";
+@use "../variables/color_variable";
+@use "../mixins/helper_mixin";
+@use "../mixins/typography_mixin";
+@use "../mixins/loading_mixin";
+@use "../functions/color_function";
 
 // Provides a solid reset and base for handling sizing layout
 // Does not include any visual styles
@@ -15,15 +15,14 @@
   display: inline-block;
   appearance: none;
   cursor: pointer;
-  padding: calc(size.$fuiSize * 0.676) calc(size.$fuiSize * 0.75);
-  // height: button_variable.$fuiButtonHeight;
-  // line-height: button_variable.$fuiButtonHeight; // prevents descenders from getting cut off
+  padding: calc(size_variable.$fuiSize * 0.676)
+    calc(size_variable.$fuiSize * 0.75);
   text-align: center;
   white-space: nowrap;
   max-width: 100%;
   vertical-align: middle;
   background-color: $bgCol;
-  border-radius: border.$fuiBorderRadius;
+  border-radius: border_variable.$fuiBorderRadius;
   color: $col;
   transition-property: background-color color;
   transition-duration: 0.3s;
