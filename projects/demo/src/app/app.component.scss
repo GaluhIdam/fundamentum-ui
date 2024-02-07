@@ -26,3 +26,10 @@
   min-width: calc($fuiSize * 23);
   border-radius: 6px;
 }
+
+.flex {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}

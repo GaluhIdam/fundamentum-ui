@@ -1,0 +1,134 @@
+@import "./../../../../../demo/src/styles";
+
+$paddingTopBottom : 0.441rem;
+$paddingLeftRight : 0.818rem;
+
+.badge {
+  border-radius: 0.35rem !important;
+  font-family: $fuiFontFamily;
+  font-weight: $fuiFontWeightMedium;
+  padding: $paddingTopBottom $paddingLeftRight;
+  width: auto;
+
+  display: flex !important;
+  align-items: center;
+  gap: 4px;
+
+  &:hover {
+    transform: translateY(0) !important;
+  }
+}
+
+.rounded {
+  border-radius: 50rem !important;
+}
+
+.fuiColorGhostFill {
+  fill: $fuiColorGhost;
+}
+
+.fuiColorDisabledFill {
+  fill: $fuiColorDisabledText;
+}
+
+.primary {
+  @include fuiButtonBase($fuiColorPrimary, $fuiColorGhost);
+}
+.success {
+  @include fuiButtonBase($fuiColorSuccess, $fuiColorInk);
+}
+.warning {
+  @include fuiButtonBase($fuiColorWarning, $fuiColorInk);
+} 
+
+.danger {
+  @include fuiButtonBase($fuiColorDanger, $fuiColorGhost);
+}
+
+.text {
+  @include fuiButtonBase($fuiColorDarkShade, $fuiColorGhost);
+}
+.accent {
+  @include fuiButtonBase($fuiColorAccent, $fuiColorInk);
+}
+
+.disabled {
+  @include fuiButtonBase($fuiColorDisabled, $fuiColorDisabledText);
+  cursor: not-allowed;
+}
+
+.sizedefault {
+  font-size: $fuiFontSize;
+  @include biggerPadding($fuiFontSize, $paddingTopBottom, $paddingLeftRight);
+}
+.sizexs {
+  font-size: $fuiFontSizeXS;
+  @include biggerPadding($fuiFontSizeXS, $paddingTopBottom, $paddingLeftRight);
+}
+.sizes {
+  font-size: $fuiFontSizeS;
+  @include biggerPadding($fuiFontSizeS, $paddingTopBottom, $paddingLeftRight);
+}
+.sizem {
+  font-size: $fuiFontSizeM;
+  @include biggerPadding($fuiFontSizeM, $paddingTopBottom, $paddingLeftRight);
+}
+
+.sizel {
+  font-size: $fuiFontSizeL;
+  @include biggerPadding($fuiFontSizeL, $paddingTopBottom, $paddingLeftRight);
+}
+
+.sizexl {
+  font-size: $fuiFontSizeXL;
+  @include biggerPadding($fuiFontSizeXL, $paddingTopBottom, $paddingLeftRight);
+}
+
+.sizexxl {
+  font-size: $fuiFontSizeXXL;
+  @include biggerPadding($fuiFontSizeXXL, $paddingTopBottom, $paddingLeftRight);
+}
+
+.default-svg {
+  @include size($fuiFontSize);
+}
+
+.xs-svg {
+  @include size($fuiFontSizeXS);
+}
+
+.s-svg {
+  @include size($fuiFontSizeS);
+}
+
+.m-svg {
+  @include size($fuiFontSizeM);
+}
+
+.l-svg {
+  @include size($fuiFontSizeL);
+}
+
+.xl-svg {
+  @include size($fuiFontSizeXL);
+}
+
+.xxl-svg {
+  @include size($fuiFontSizeXXL);
+}
+
+.d-none {
+  display: none !important;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.dismissLeft {
+  flex-direction: row;
+}
+
+.dismissRight {
+  flex-direction: row-reverse;
+}

@@ -5,6 +5,7 @@ import { InputComponent } from '../../../fui/src/lib/atoms/input/input.component
 import { TextComponent } from '../../../fui/src/lib/atoms/text/text.component';
 import { IconsComponent } from '../../../fui/src/lib/atoms/icons/icons.component';
 import { ButtonEmptyComponent } from '../../../fui/src/lib/atoms/button-empty/button-empty.component';
+import { BadgeComponent } from '../../../fui/src/lib/atoms/badge/badge.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { ButtonEmptyComponent } from '../../../fui/src/lib/atoms/button-empty/bu
     InputComponent,
     TextComponent,
     IconsComponent,
+    BadgeComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
