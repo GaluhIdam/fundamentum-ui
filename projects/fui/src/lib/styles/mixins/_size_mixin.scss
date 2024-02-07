@@ -2,3 +2,7 @@
   width: $size;
   height: $size;
 }
+
+@mixin biggerPadding($size, $paddingTopBottom, $paddingLeftRight) {
+  padding: calc($size * (10/100) + $paddingTopBottom) calc($size * (10/100) + $paddingLeftRight);
+}
