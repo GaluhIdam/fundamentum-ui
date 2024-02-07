@@ -13,10 +13,6 @@ $paddingLeftRight : 0.818rem;
   display: flex !important;
   align-items: center;
   gap: 4px;
-
-  &:hover {
-    transform: translateY(0) !important;
-  }
 }
 
 .rounded {
@@ -32,28 +28,28 @@ $paddingLeftRight : 0.818rem;
 }
 
 .primary {
-  @include fuiButtonBase($fuiColorPrimary, $fuiColorGhost);
+  @include fuiBadge($fuiColorPrimary, $fuiColorGhost);
 }
 .success {
-  @include fuiButtonBase($fuiColorSuccess, $fuiColorInk);
+  @include fuiBadge($fuiColorSuccess, $fuiColorInk);
 }
 .warning {
-  @include fuiButtonBase($fuiColorWarning, $fuiColorInk);
+  @include fuiBadge($fuiColorWarning, $fuiColorInk);
 } 
 
 .danger {
-  @include fuiButtonBase($fuiColorDanger, $fuiColorGhost);
+  @include fuiBadge($fuiColorDanger, $fuiColorGhost);
 }
 
 .text {
-  @include fuiButtonBase($fuiColorDarkShade, $fuiColorGhost);
+  @include fuiBadge($fuiColorDarkShade, $fuiColorGhost);
 }
 .accent {
-  @include fuiButtonBase($fuiColorAccent, $fuiColorInk);
+  @include fuiBadge($fuiColorAccent, $fuiColorInk);
 }
 
 .disabled {
-  @include fuiButtonBase($fuiColorDisabled, $fuiColorDisabledText);
+  @include fuiBadge($fuiColorDisabled, $fuiColorDisabledText);
   cursor: not-allowed;
 }
 

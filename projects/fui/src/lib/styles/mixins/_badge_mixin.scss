@@ -1,0 +1,27 @@
+@use "../variables/border_variable" as border;
+@use "../variables/size_variable" as size;
+
+@mixin fuiBadge($bgCol, $col) {
+  display: inline-block;
+  appearance: none;
+  cursor: pointer;
+  padding: calc(size.$fuiSize * 0.676) calc(size.$fuiSize * 0.75);
+  text-align: center;
+  white-space: nowrap;
+  max-width: 100%;
+  vertical-align: middle;
+  background-color: $bgCol;
+  border-radius: border.$fuiBorderRadius;
+  color: $col;
+  transition-property: background-color color;
+  transition-duration: 0.3s;
+  &:hover {
+    background-color: lighten($bgCol, 10%);
+    color: darken($col, 10%);
+    
+    svg, i {
+      color: darken($col, 10%);
+      fill: darken($col, 10%);
+    }
+  }
+}

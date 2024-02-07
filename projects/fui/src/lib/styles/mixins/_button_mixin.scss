@@ -31,10 +31,6 @@
     background-color: lighten($bgCol, 10%);
     color: darken($col, 10%);
     transform: translateY(-1px);
-    
-    svg {
-      fill: darken($col, 10%);
-    }
   }
   &:active:not(:disabled) {
     transform: translateY(1px);
