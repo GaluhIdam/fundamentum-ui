@@ -1,7 +1,8 @@
 @import "./../../../../../demo/src/styles";
 
-$paddingTopBottom : 0.441rem;
-$paddingLeftRight : 0.818rem;
+$paddingTopBottom : 0.316rem;
+$paddingLeftRight : 0.693rem;
+$reducer : 30;
 
 .badge {
   border-radius: 0.35rem !important;
@@ -54,63 +55,63 @@ $paddingLeftRight : 0.818rem;
 }
 
 .sizedefault {
-  font-size: $fuiFontSize;
+  @include reduceSize($fuiFontSize, $reducer);
   @include biggerPadding($fuiFontSize, $paddingTopBottom, $paddingLeftRight);
 }
 .sizexs {
-  font-size: $fuiFontSizeXS;
+  @include reduceSize($fuiFontSizeXS, $reducer);
   @include biggerPadding($fuiFontSizeXS, $paddingTopBottom, $paddingLeftRight);
 }
 .sizes {
-  font-size: $fuiFontSizeS;
+  @include reduceSize($fuiFontSizeS, $reducer);
   @include biggerPadding($fuiFontSizeS, $paddingTopBottom, $paddingLeftRight);
 }
 .sizem {
-  font-size: $fuiFontSizeM;
+  @include reduceSize($fuiFontSizeM, $reducer);
   @include biggerPadding($fuiFontSizeM, $paddingTopBottom, $paddingLeftRight);
 }
 
 .sizel {
-  font-size: $fuiFontSizeL;
+  @include reduceSize($fuiFontSizeL, $reducer);
   @include biggerPadding($fuiFontSizeL, $paddingTopBottom, $paddingLeftRight);
 }
 
 .sizexl {
-  font-size: $fuiFontSizeXL;
+  @include reduceSize($fuiFontSizeXL, $reducer);
   @include biggerPadding($fuiFontSizeXL, $paddingTopBottom, $paddingLeftRight);
 }
 
 .sizexxl {
-  font-size: $fuiFontSizeXXL;
+  @include reduceSize($fuiFontSizeXXL, $reducer);
   @include biggerPadding($fuiFontSizeXXL, $paddingTopBottom, $paddingLeftRight);
 }
 
 .default-svg {
-  @include size($fuiFontSize);
+  @include size(getReduceSize($fuiFontSize, $reducer));
 }
 
 .xs-svg {
-  @include size($fuiFontSizeXS);
+  @include size(getReduceSize($fuiFontSizeXS, $reducer));
 }
 
 .s-svg {
-  @include size($fuiFontSizeS);
+  @include size(getReduceSize($fuiFontSizeS, $reducer));
 }
 
 .m-svg {
-  @include size($fuiFontSizeM);
+  @include size(getReduceSize($fuiFontSizeM, $reducer));
 }
 
 .l-svg {
-  @include size($fuiFontSizeL);
+  @include size(getReduceSize($fuiFontSizeL, $reducer));
 }
 
 .xl-svg {
-  @include size($fuiFontSizeXL);
+  @include size(getReduceSize($fuiFontSizeXL, $reducer));
 }
 
 .xxl-svg {
-  @include size($fuiFontSizeXXL);
+  @include size(getReduceSize($fuiFontSizeXXL, $reducer));
 }
 
 .d-none {
