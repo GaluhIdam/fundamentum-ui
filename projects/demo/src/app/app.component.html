@@ -501,4 +501,22 @@
     </ul>
   </div>
 </div>
+
+<div class="main-container">
+  <div class="w-full">
+    <ul class="main-ul">
+      <li>
+        <header>Icons</header>
+        <div class="icons">
+          @for (iconName of icons; track $index) {
+          <div class="text-center icon">
+            <fui-icons [icon]="iconName" [size]="'sizexl'"></fui-icons>
+            <div>{{ iconName }}</div>
+          </div>
+          }
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
 <router-outlet />
