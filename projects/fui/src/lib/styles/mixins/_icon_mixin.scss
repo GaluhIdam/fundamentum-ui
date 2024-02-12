@@ -17,3 +17,7 @@
     @error "The $type of #{$type} cannot be found.";
   }
 }
+
+@mixin fuiIcon($color) {
+  color: $color;
+}

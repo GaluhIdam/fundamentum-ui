@@ -1,1 +1,8 @@
-<i [class]="'accessibility'"></i>
+<i
+  [ngClass]="[
+    'fui-icon',
+    icon ? 'fui-icon-' + icon : '',
+    size,
+    color ? color : ''
+  ]"
+></i>
