@@ -6,3 +6,7 @@
 @mixin biggerPadding($size, $paddingTopBottom, $paddingLeftRight) {
   padding: calc($size * (10/100) + $paddingTopBottom) calc($size * (10/100) + $paddingLeftRight);
 }
+
+@mixin addMorePadding($size, $paddingTopBottom, $paddingLeftRight) {
+  padding: calc($size + $paddingTopBottom) calc($size + $paddingLeftRight);
+}
