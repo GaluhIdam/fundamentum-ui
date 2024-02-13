@@ -1,16 +1,23 @@
 import { Component, Input } from '@angular/core';
-import { Color, Size } from '../../types';
+import { Color, Icon, Size } from '../../types';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../../atoms/button/button.component';
 import { ButtonEmptyComponent } from '../../atoms/button-empty/button-empty.component';
 import { TextComponent } from '../../atoms/text/text.component';
+import { IconsComponent } from '../../atoms/icons/icons.component';
 
 @Component({
   selector: 'fui-empty-prompt',
   standalone: true,
   templateUrl: './empty-prompt.component.html',
   styleUrl: './empty-prompt.component.scss',
-  imports: [CommonModule, ButtonComponent, ButtonEmptyComponent, TextComponent],
+  imports: [
+    CommonModule,
+    ButtonComponent,
+    ButtonEmptyComponent,
+    TextComponent,
+    IconsComponent,
+  ],
 })
 export class EmptyPromptComponent {
   @Input() title: string = '';
@@ -32,4 +39,6 @@ export class EmptyPromptComponent {
   @Input() secondaryButtonText: string = '';
   @Input() secondaryButtonColor!: Color;
   @Input() secondaryButtonSize!: Size;
+  @Input() icon!: Icon;
+  @Input() iconSize: Size = 'sizedefault';
 }
