@@ -10,10 +10,10 @@
   }
 }
 
-@function getReduceSize($size, $reducer) {
+@function getReduceHeightProgress($size, $reducer) {
   @return calc($size - (($reducer/100) * $size));
 }
 
 @mixin fuiProgressHeight($size, $reducer) {
-  height: getReduceSize($size, $reducer);
+  height: getReduceHeightProgress($size, $reducer);
 }
