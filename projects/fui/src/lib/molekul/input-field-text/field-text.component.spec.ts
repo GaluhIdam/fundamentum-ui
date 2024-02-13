@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InputFieldTextComponent } from './input-field-text.component';
+import { InputFieldTextComponent } from './field-text.component';
 
 describe('InputFieldTextComponent', () => {
   let component: InputFieldTextComponent;
@@ -8,10 +8,9 @@ describe('InputFieldTextComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InputFieldTextComponent]
-    })
-    .compileComponents();
-    
+      imports: [InputFieldTextComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(InputFieldTextComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

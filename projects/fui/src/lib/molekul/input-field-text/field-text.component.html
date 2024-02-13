@@ -4,7 +4,10 @@
   } @else {
   <ng-container></ng-container>
   }
-  <input [value]="valueInput" ] />
+  <fui-input-base
+    [width]="'fullWidth'"
+    [inputValue]="valueInput"
+  ></fui-input-base>
   @if(!!helpTextValue){
   <div class="helpText">{{ helpTextValue }}</div>
   } @else {
