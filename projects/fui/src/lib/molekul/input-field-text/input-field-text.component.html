@@ -1,0 +1,13 @@
+<div>
+  @if(!!labelTextValue){
+  <label>{{ labelTextValue }}</label>
+  } @else {
+  <ng-container></ng-container>
+  }
+  <input [value]="valueInput" ] />
+  @if(!!helpTextValue){
+  <div class="helpText">{{ helpTextValue }}</div>
+  } @else {
+  <ng-container></ng-container>
+  }
+</div>
