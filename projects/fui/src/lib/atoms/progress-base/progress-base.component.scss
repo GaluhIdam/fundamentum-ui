@@ -1,0 +1,63 @@
+@import "./../../../../../demo/src/styles";
+
+$colorBar : $fuiColorLightShade;
+$reducer: 30;
+
+.progress {
+  width: 100%;
+  border: none;
+  border-radius: 50%;
+}
+
+.primary {
+  @include fuiProgress($fuiColorPrimary, $colorBar);
+}
+
+.success {
+  @include fuiProgress($fuiColorSuccess, $colorBar);
+}
+
+.warning {
+  @include fuiProgress($fuiColorWarning, $colorBar);
+} 
+
+.danger {
+  @include fuiProgress($fuiColorDanger, $colorBar);
+}
+
+.text {
+  @include fuiProgress($fuiColorDarkShade, $colorBar);
+}
+
+.accent {
+  @include fuiProgress($fuiColorAccent, $colorBar);
+}
+
+.disabled {
+  @include fuiProgress($fuiColorDisabled, $colorBar);
+}
+
+.sizedefault {
+  @include fuiProgressHeight($fuiFontSize, $reducer);
+}
+.sizexs {
+  @include fuiProgressHeight($fuiFontSizeXS, $reducer);
+}
+.sizes {
+  @include fuiProgressHeight($fuiFontSizeS, $reducer);
+}
+.sizem {
+  @include fuiProgressHeight($fuiFontSizeM, $reducer);
+}
+
+.sizel {
+  @include fuiProgressHeight($fuiFontSizeL, $reducer);
+}
+
+.sizexl {
+  @include fuiProgressHeight($fuiFontSizeXL, $reducer);
+}
+
+.sizexxl {
+  @include fuiProgressHeight($fuiFontSizeXXL, $reducer);
+}
