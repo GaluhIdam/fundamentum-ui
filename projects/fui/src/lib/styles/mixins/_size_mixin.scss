@@ -6,3 +6,11 @@
 @mixin biggerPadding($size, $paddingTopBottom, $paddingLeftRight) {
   padding: calc($size * (10/100) + $paddingTopBottom) calc($size * (10/100) + $paddingLeftRight);
 }
+
+@function getReduceSize($size, $reducer) {
+  @return calc($size - (($reducer/100) * $size));
+}
+
+@mixin reduceSize($size, $reducer) {
+  font-size: getReduceSize($size, $reducer)
+}
