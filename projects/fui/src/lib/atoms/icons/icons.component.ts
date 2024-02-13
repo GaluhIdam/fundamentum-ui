@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './icons.component.scss',
 })
 export class IconsComponent {
-  @Input() icon!: Icon;
+  @Input({ required: true }) icon!: Icon;
   @Input() size: Size = 'sizedefault';
   @Input() color!: Color;
 }

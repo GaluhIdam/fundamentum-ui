@@ -1,13 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Color, Size } from '../../types';
+import { IconsComponent } from '../icons/icons.component';
 
 @Component({
   selector: 'fui-badge',
   standalone: true,
-  imports: [CommonModule],
   templateUrl: './badge.component.html',
   styleUrl: './badge.component.scss',
+  imports: [CommonModule, IconsComponent],
 })
 export class BadgeComponent {
   isDisplay: boolean = true;

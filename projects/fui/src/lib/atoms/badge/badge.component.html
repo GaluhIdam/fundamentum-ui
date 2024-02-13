@@ -10,33 +10,14 @@
   ]"
 >
   @if (dimissIcon) {
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    (click)="color !== 'disabled' ? onDismiss() : ''"
-    [ngClass]="{
-      fuiColorGhostFill:
-        color === 'primary' || color === 'danger' || color === 'text',
-      fuiColorDisabledFill: color === 'disabled',
-      'default-svg': size === 'sizedefault',
-      'xs-svg': size === 'sizexs',
-      's-svg': size === 'sizes',
-      'm-svg': size === 'sizem',
-      'l-svg': size === 'sizel',
-      'xl-svg': size === 'sizexl',
-      'xxl-svg': size === 'sizexxl'
-    }"
-    viewBox="0 0 16 16"
-    class="euiIcon euiBadge__icon css-12g20ab-euiIcon-s-inherit-isLoaded-euiBadge__icon-right"
-    role="img"
-    data-icon-type="cross"
-    data-is-loaded="true"
-    aria-hidden="true"
-  >
-    <path
-      d="M7.293 8 3.146 3.854a.5.5 0 1 1 .708-.708L8 7.293l4.146-4.147a.5.5 0 0 1 .708.708L8.707 8l4.147 4.146a.5.5 0 0 1-.708.708L8 8.707l-4.146 4.147a.5.5 0 0 1-.708-.708L7.293 8Z"
-    ></path>
-  </svg>
+  <fui-icons
+    [icon]="'cross'"
+    [size]="size"
+    [ngClass]="['badge-icon', size + '-badge-icon']"
+  ></fui-icons>
   }
-  <ng-content></ng-content>
+  <span class="body-text">
+    <ng-content></ng-content>
+  </span>
 </div>
 }

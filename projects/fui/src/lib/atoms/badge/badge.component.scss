@@ -86,32 +86,52 @@ $reducer : 30;
   @include biggerPadding($fuiFontSizeXXL, $paddingTopBottom, $paddingLeftRight);
 }
 
-.default-svg {
-  @include size(getReduceSize($fuiFontSize, $reducer));
+.badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.xs-svg {
-  @include size(getReduceSize($fuiFontSizeXS, $reducer));
+.sizedefault-badge-icon {
+  ::ng-deep i {
+    @include reduceSize($fuiFontSize, $reducer);
+  }
 }
 
-.s-svg {
-  @include size(getReduceSize($fuiFontSizeS, $reducer));
+.sizexs-badge-icon {
+  ::ng-deep i {
+    @include reduceSize($fuiFontSizeXS, $reducer);
+  }
 }
 
-.m-svg {
-  @include size(getReduceSize($fuiFontSizeM, $reducer));
+.sizes-badge-icon {
+  ::ng-deep i {
+    @include reduceSize($fuiFontSizeS, $reducer);
+  }
 }
 
-.l-svg {
-  @include size(getReduceSize($fuiFontSizeL, $reducer));
+.sizem-badge-icon {
+  ::ng-deep i {
+    @include reduceSize($fuiFontSizeM, $reducer);
+  }
 }
 
-.xl-svg {
-  @include size(getReduceSize($fuiFontSizeXL, $reducer));
+.sizel-badge-icon {
+  ::ng-deep i {
+    @include reduceSize($fuiFontSizeL, $reducer);
+  }
 }
 
-.xxl-svg {
-  @include size(getReduceSize($fuiFontSizeXXL, $reducer));
+.sizexl-badge-icon {
+  ::ng-deep i {
+    @include reduceSize($fuiFontSizeXL, $reducer);
+  }
+}
+
+.sizexxl-badge-icon {
+  ::ng-deep i {
+    @include reduceSize($fuiFontSizeXXL, $reducer);
+  }
 }
 
 .d-none {
@@ -119,7 +139,9 @@ $reducer : 30;
 }
 
 .underline {
-  text-decoration: underline;
+  .body-text {
+    text-decoration: underline;
+  }
 }
 
 .dismissLeft {
