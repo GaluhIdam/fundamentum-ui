@@ -808,7 +808,7 @@
 
 <div class="main-container">
   <div>
-    <header>Progress</header>
+    <header>Progress Base</header>
     <ul class="main-ul">
       <li>
         <fui-progress-base
@@ -820,31 +820,31 @@
         <fui-progress-base
           [value]="20"
           [max]="100"
-          [color]="'primary'"
+          [color]="'success'"
           [size]="'sizexs'"
         ></fui-progress-base>
         <fui-progress-base
           [value]="40"
           [max]="100"
-          [color]="'primary'"
+          [color]="'warning'"
           [size]="'sizes'"
         ></fui-progress-base>
         <fui-progress-base
           [value]="50"
           [max]="100"
-          [color]="'primary'"
+          [color]="'danger'"
           [size]="'sizem'"
         ></fui-progress-base>
         <fui-progress-base
           [value]="60"
           [max]="100"
-          [color]="'primary'"
+          [color]="'text'"
           [size]="'sizel'"
         ></fui-progress-base>
         <fui-progress-base
           [value]="80"
           [max]="100"
-          [color]="'primary'"
+          [color]="'disabled'"
           [size]="'sizexl'"
         ></fui-progress-base>
         <fui-progress-base
@@ -854,140 +854,64 @@
           [size]="'sizexxl'"
         ></fui-progress-base>
       </li>
+    </ul>
+  </div>
+</div>
 
+<div class="main-container">
+  <div>
+    <header>Progress</header>
+    <ul class="main-ul">
       <li>
-        <fui-progress-base
+        <fui-progress
           [value]="50"
           [max]="100"
-          [color]="'success'"
+          [color]="'primary'"
           [size]="'sizedefault'"
-        ></fui-progress-base>
-        <fui-progress-base
+          [label]="'Label'"
+        ></fui-progress>
+        <fui-progress
           [value]="20"
           [max]="100"
           [color]="'success'"
           [size]="'sizexs'"
-        ></fui-progress-base>
-        <fui-progress-base
-          [value]="40"
-          [max]="100"
-          [color]="'success'"
-          [size]="'sizes'"
-        ></fui-progress-base>
-        <fui-progress-base
-          [value]="50"
-          [max]="100"
-          [color]="'success'"
-          [size]="'sizem'"
-        ></fui-progress-base>
-        <fui-progress-base
-          [value]="60"
-          [max]="100"
-          [color]="'success'"
-          [size]="'sizel'"
-        ></fui-progress-base>
-        <fui-progress-base
-          [value]="80"
-          [max]="100"
-          [color]="'success'"
-          [size]="'sizexl'"
-        ></fui-progress-base>
-        <fui-progress-base
-          [value]="90"
-          [max]="100"
-          [color]="'success'"
-          [size]="'sizexxl'"
-        ></fui-progress-base>
-      </li>
-
-      <li>
-        <fui-progress-base
-          [value]="50"
-          [max]="100"
-          [color]="'warning'"
-          [size]="'sizedefault'"
-        ></fui-progress-base>
-        <fui-progress-base
-          [value]="20"
-          [max]="100"
-          [color]="'warning'"
-          [size]="'sizexs'"
-        ></fui-progress-base>
-        <fui-progress-base
+          [label]="'Label'"
+        ></fui-progress>
+        <fui-progress
           [value]="40"
           [max]="100"
           [color]="'warning'"
           [size]="'sizes'"
-        ></fui-progress-base>
-        <fui-progress-base
-          [value]="50"
-          [max]="100"
-          [color]="'warning'"
-          [size]="'sizem'"
-        ></fui-progress-base>
-        <fui-progress-base
-          [value]="60"
-          [max]="100"
-          [color]="'warning'"
-          [size]="'sizel'"
-        ></fui-progress-base>
-        <fui-progress-base
-          [value]="80"
-          [max]="100"
-          [color]="'warning'"
-          [size]="'sizexl'"
-        ></fui-progress-base>
-        <fui-progress-base
-          [value]="90"
-          [max]="100"
-          [color]="'warning'"
-          [size]="'sizexxl'"
-        ></fui-progress-base>
-      </li>
-
-      <li>
-        <fui-progress-base
-          [value]="50"
-          [max]="100"
-          [color]="'danger'"
-          [size]="'sizedefault'"
-        ></fui-progress-base>
-        <fui-progress-base
-          [value]="20"
-          [max]="100"
-          [color]="'danger'"
-          [size]="'sizexs'"
-        ></fui-progress-base>
-        <fui-progress-base
-          [value]="40"
-          [max]="100"
-          [color]="'danger'"
-          [size]="'sizes'"
-        ></fui-progress-base>
-        <fui-progress-base
+          [label]="'Label'"
+        ></fui-progress>
+        <fui-progress
           [value]="50"
           [max]="100"
           [color]="'danger'"
           [size]="'sizem'"
-        ></fui-progress-base>
-        <fui-progress-base
+          [label]="'Label'"
+        ></fui-progress>
+        <fui-progress
           [value]="60"
           [max]="100"
-          [color]="'danger'"
+          [color]="'text'"
           [size]="'sizel'"
-        ></fui-progress-base>
-        <fui-progress-base
+          [label]="'Label'"
+        ></fui-progress>
+        <fui-progress
           [value]="80"
           [max]="100"
-          [color]="'danger'"
+          [color]="'disabled'"
           [size]="'sizexl'"
-        ></fui-progress-base>
-        <fui-progress-base
+          [label]="'Label'"
+        ></fui-progress>
+        <fui-progress
           [value]="90"
           [max]="100"
-          [color]="'danger'"
+          [color]="'primary'"
           [size]="'sizexxl'"
-        ></fui-progress-base>
+          [label]="'Label'"
+        ></fui-progress>
       </li>
     </ul>
   </div>

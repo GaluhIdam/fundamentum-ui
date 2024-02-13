@@ -9,6 +9,7 @@ import { BadgeComponent } from '../../../fui/src/lib/atoms/badge/badge.component
 import { ProgressBaseComponent } from '../../../fui/src/lib/atoms/progress-base/progress-base.component';
 import { EmptyPromptComponent } from '../../../fui/src/lib/organisms/empty-prompt/empty-prompt.component';
 import { Icon } from '../../../fui/src/lib/types';
+import { ProgressComponent } from '../../../fui/src/lib/molecules/progress/progress.component';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,7 @@ import { Icon } from '../../../fui/src/lib/types';
     BadgeComponent,
     EmptyPromptComponent,
     ProgressBaseComponent,
+    ProgressComponent,
   ],
 })
 export class AppComponent {
