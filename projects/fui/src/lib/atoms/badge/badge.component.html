@@ -4,14 +4,14 @@
     'badge',
     color,
     size,
-    dismissPosition === 'start' ? 'dismissLeft' : 'dismissRight',
+    iconPosition === 'start' ? 'dismissLeft' : 'dismissRight',
     underline ? 'underline' : '',
     rounded ? 'rounded' : ''
   ]"
 >
-  @if (dimissIcon) {
+  @if (isBadgeIcon && icon) {
   <fui-icons
-    [icon]="'cross'"
+    [icon]="icon"
     [size]="size"
     [ngClass]="['badge-icon', size + '-badge-icon']"
   ></fui-icons>
