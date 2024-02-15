@@ -13,6 +13,6 @@ import { TextComponent } from '../../atoms/text/text.component';
 })
 export class BreadcrumbComponent {
   @Input() data: BreadcrumbData[] = [];
-  @Input() delimeter: string = '/';
+  @Input() separator: string = '/';
   @Input() labelSize: Size = 'sizedefault';
 }

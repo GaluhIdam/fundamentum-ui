@@ -2,7 +2,7 @@
 
 $linkColor : $fuiColorDarkShade;
 $linkActiveColor: $fuiColorDarkestShade;
-$delimeterColor: $fuiColorDarkShade;
+$separatorColor: $fuiColorDarkShade;
 
 a {
   text-decoration: none;
@@ -17,8 +17,8 @@ a {
     font-weight: 600;
   }
 
-  .delimeter {
+  .separator {
     margin: .5rem;
-    color: $delimeterColor;
+    color: $separatorColor;
   }
 }
