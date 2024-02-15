@@ -1,4 +1,9 @@
-<div [ngClass]="color">
+<div
+  [ngClass]="[
+    color,
+    colorBar ? colorBar + '-progress-bar' : 'defaultcolor-progress-bar'
+  ]"
+>
   <progress
     [value]="value"
     [max]="max"

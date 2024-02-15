@@ -1,11 +1,13 @@
-@mixin fuiProgress($colorValue, $colorBar) {
-  progress::-webkit-progress-bar {
-    background-color: $colorBar;
-    border-radius: 50rem;
-  }
-
+@mixin fuiProgress($colorValue) {
   progress::-webkit-progress-value {
     background-color: $colorValue;
+    border-radius: 50rem;
+  }
+}
+
+@mixin fuiProgressBar($colorBar) {
+  progress::-webkit-progress-bar {
+    background-color: $colorBar;
     border-radius: 50rem;
   }
 }

@@ -13,5 +13,6 @@ export class ProgressBaseComponent {
   @Input({ required: true }) value!: number;
   @Input({ required: true }) max!: number;
   @Input() color: Color = 'primary';
+  @Input() colorBar!: Color | null;
   @Input() size: Size = 'sizedefault';
 }

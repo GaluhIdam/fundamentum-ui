@@ -14,6 +14,8 @@ export class ProgressComponent {
   @Input({ required: true }) value!: number;
   @Input({ required: true }) max!: number;
   @Input() color: Color = 'primary';
+  @Input() colorBar!: Color | null;
   @Input() size: Size = 'sizedefault';
   @Input() label: string = '';
+  @Input() labelSize: Size = 'sizedefault';
 }
