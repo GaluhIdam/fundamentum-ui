@@ -11,6 +11,7 @@
 >
   @if (isBadgeIcon && icon) {
   <fui-icons
+    (click)="handleClicked()"
     [icon]="icon"
     [size]="size"
     [ngClass]="['badge-icon', size + '-badge-icon']"

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Color, Icon, Size } from '../../types';
 import { IconsComponent } from '../icons/icons.component';
 
@@ -19,8 +19,10 @@ export class BadgeComponent {
   @Input() icon!: Icon;
   @Input() underline: boolean = false;
   @Input() rounded: boolean = false;
+  @Output() onClickBadge: EventEmitter<void> = new EventEmitter();
 
-  onDismiss() {
+  handleClicked() {
+    this.onClickBadge.emit();
     this.isDisplay = false;
   }
 }
