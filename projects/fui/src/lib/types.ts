@@ -278,3 +278,8 @@ export type Icon =
   | 'wordWrap'
   | 'wordWrapDisabled'
   | 'wrench';
+
+export interface BreadcrumbData {
+  label: string;
+  link: string;
+}

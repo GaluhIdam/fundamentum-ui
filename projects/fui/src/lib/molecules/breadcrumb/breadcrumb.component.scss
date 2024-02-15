@@ -1,0 +1,24 @@
+@import "./../../../../../demo/src/styles";
+
+$linkColor : $fuiColorDarkShade;
+$linkActiveColor: $fuiColorDarkestShade;
+$separatorColor: $fuiColorDarkShade;
+
+a {
+  text-decoration: none;
+}
+
+.links {
+  .link {
+    color: $linkColor;
+  }
+  .active .link{
+    color: $linkActiveColor;
+    font-weight: 600;
+  }
+
+  .separator {
+    margin: .5rem;
+    color: $separatorColor;
+  }
+}
