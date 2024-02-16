@@ -1644,7 +1644,7 @@ i {
 }
 
 .text {
-  @include fuiIcon($fuiColorDarkShade);
+  @include fuiIcon($fuiTextColor);
 }
 .accent {
   @include fuiIcon($fuiColorAccent);

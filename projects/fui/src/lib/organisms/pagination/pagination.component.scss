@@ -1,0 +1,116 @@
+@import "./../../../../../demo/src/styles";
+
+.pagination,
+.page-size-options,
+.paginator,
+.pagination-button {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.pagination {
+  gap: 1rem;
+}
+
+.pagination-button,
+.page-size-options {
+  cursor: pointer;
+}
+
+.page-size-options {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    z-index: 2;
+    padding: 30px 0;
+    width: 100%;
+  }
+
+  &:hover {
+    .page-sizes {
+      position: absolute;
+      z-index: 1;
+      opacity: 1;
+      visibility: visible;
+      top: 150%;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+  
+  .page-sizes {
+    width: max-content;
+    background: $fuiColorEmptyShade;
+    box-shadow: rgba($color: $fuiColorDarkestShade, $alpha: .2) 0px 8px 24px;
+    padding: .6rem;
+    visibility: hidden;
+    position: absolute;
+    z-index: 2;
+    top: 200%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+
+    &::before {
+    content: "";
+    position: absolute; 
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3; 
+    border-style: solid; 
+    border-width: 0 10px 10px 10px; 
+    border-color: transparent transparent $fuiColorEmptyShade transparent; 
+    transition-duration: 0.3s; 
+    transition-property: transform;
+    }
+
+    & .size {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+
+      & .selected-size {
+        display: inline-flex;
+      }
+
+      & .value-size {
+        display: inline-flex;
+        padding: .4rem;
+        width: 100%;
+        
+        &:hover {
+          background: rgba($color: $fuiColorDarkestShade, $alpha: .1);
+        }
+      }
+    }
+  }
+}
+
+
+.sizedefault-empty-icon {
+    @include size($fuiFontSize);
+}
+.sizexs-empty-icon {
+    @include size($fuiFontSizeXS);
+}
+.sizes-empty-icon {
+    @include size($fuiFontSizeS);
+}
+.sizem-empty-icon {
+    @include size($fuiFontSizeM);
+}
+
+.sizel-empty-icon {
+    @include size($fuiFontSizeL);
+}
+
+.sizexl-empty-icon {
+    @include size($fuiFontSizeXL);
+}
+
+.sizexxl-empty-icon {
+    @include size($fuiFontSizeXXL);
+}

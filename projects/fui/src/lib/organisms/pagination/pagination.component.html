@@ -1,0 +1,83 @@
+<div [ngClass]="['pagination']">
+  @if (showPageSizeOptions) {
+  <div class="page-size-options">
+    <fui-text [size]="size">Rows per page: {{ itemsPerPage }}</fui-text>
+    <fui-icons [icon]="'arrowDown'" [size]="size"></fui-icons>
+    <div class="page-sizes">
+      @for (item of pageSizeOptionsValue; track $index) {
+      <div class="size" (click)="selectSize(item.size, item.label)">
+        <div class="selected-size">
+          @if (item.label === selectedSize) {
+          <fui-icons [icon]="'check'" [size]="size"></fui-icons>
+          } @else {
+          <div [ngClass]="[size + '-empty-icon']"></div>
+          }
+        </div>
+        <div class="value-size">
+          <fui-text [size]="size"
+            >{{ item.label
+            }}{{ item.label !== "Show all" ? " rows" : "" }}</fui-text
+          >
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  }
+  <div class="paginator">
+    @if (showFirstLastButtons) {
+    <div class="pagination-button button-first" (click)="goToPage('first')">
+      <fui-icons
+        [icon]="'arrowStart'"
+        [size]="size"
+        [color]="currentPage === 1 ? 'disabled' : color"
+      ></fui-icons>
+    </div>
+    }
+    <div
+      class="pagination-button button-previous"
+      (click)="goToPage('previous')"
+    >
+      <fui-icons
+        [icon]="'arrowLeft'"
+        [size]="size"
+        [color]="currentPage === 1 ? 'disabled' : color"
+      ></fui-icons>
+    </div>
+    <div class="pagination-button">
+      @for (item of visiblePages; track $index) { @if (currentPage ===
+      item.page) {
+      <div class="button-page">
+        <fui-text
+          [size]="size"
+          [color]="activeColor"
+          [decoration]="'underline'"
+          >{{ item.page || item.text }}</fui-text
+        >
+      </div>
+      } @else {
+      <div class="button-page" (click)="goToPage('number', item.page)">
+        <fui-text [size]="size" [color]="color">{{
+          item.page || item.text
+        }}</fui-text>
+      </div>
+      } }
+    </div>
+    <div class="pagination-button button-next" (click)="goToPage('next')">
+      <fui-icons
+        [icon]="'arrowRight'"
+        [size]="size"
+        [color]="currentPage === totalPages ? 'disabled' : color"
+      ></fui-icons>
+    </div>
+    @if (showFirstLastButtons) {
+    <div class="pagination-button button-last" (click)="goToPage('last')">
+      <fui-icons
+        [icon]="'arrowEnd'"
+        [size]="size"
+        [color]="currentPage === totalPages ? 'disabled' : color"
+      ></fui-icons>
+    </div>
+    }
+  </div>
+</div>
