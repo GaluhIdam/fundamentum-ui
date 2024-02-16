@@ -1,0 +1,9 @@
+{
+  "include": [
+    "projects/fui/src/**/*.ts"],
+  "exclude": [
+    "projects/fui/src/test.ts",
+    "projects/fui/src/**/*.spec.ts",
+    "projects/fui/src/app/file-to-exclude.ts"
+  ]
+}
