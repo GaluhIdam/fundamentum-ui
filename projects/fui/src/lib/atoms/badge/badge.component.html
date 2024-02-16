@@ -1,0 +1,24 @@
+@if (isDisplay) {
+<div
+  [ngClass]="[
+    'badge',
+    color,
+    size,
+    iconPosition === 'start' ? 'dismissLeft' : 'dismissRight',
+    underline ? 'underline' : '',
+    rounded ? 'rounded' : ''
+  ]"
+>
+  @if (isBadgeIcon && icon) {
+  <fui-icons
+    (click)="handleClicked()"
+    [icon]="icon"
+    [size]="size"
+    [ngClass]="['badge-icon', size + '-badge-icon']"
+  ></fui-icons>
+  }
+  <span class="body-text">
+    <ng-content></ng-content>
+  </span>
+</div>
+}

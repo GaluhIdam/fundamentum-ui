@@ -26,3 +26,37 @@
   min-width: calc($fuiSize * 23);
   border-radius: 6px;
 }
+
+.flex {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+  flex: 1;
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+
+  .icon {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: .8rem;
+  }
+}

@@ -1,20 +1,20 @@
-@use "../../styles/variables/button_variable";
-@use "../../styles/variables/animation_variable";
-@use "../../styles/variables/font_weight_variable";
-@use "../../styles/variables/typography_variable";
-@use "../../styles/variables/size_variable";
-@use "../../styles/variables/color_variable";
-@use "../../styles/mixins/helper_mixin";
-@use "../../styles/mixins/typography_mixin";
-@use "../../styles/mixins/loading_mixin";
-@use "../../styles/functions/color_function";
+@use "../variables/button_variable";
+@use "../variables/animation_variable";
+@use "../variables/font_weight_variable";
+@use "../variables/typography_variable";
+@use "../variables/color_variable";
+@use "../variables/border_variable";
+@use "../variables/size_variable";
+@use "../mixins/helper_mixin";
+@use "../mixins/typography_mixin";
+@use "../mixins/loading_mixin";
+@use "../functions/color_function";
 
 @mixin fuiInputTextBase {
-  max-width: 400px;
+  max-width: calc(size_variable.$fuiSize * 25);
   width: 100%;
-  // height: 40px;
-  background-color: #fbfcfd;
   background-repeat: no-repeat;
+  box-sizing: border-box;
   background-size: 0% 100%;
   box-shadow: 0 0 transparent, inset 0 0 0 1px rgba(17, 42, 134, 0.1);
   transition: box-shadow 150ms ease-in, background-image 150ms ease-in,
@@ -27,11 +27,12 @@
   -webkit-font-kerning: normal;
   font-kerning: normal;
   font-size: 14px;
-  // font-family: "Inter", sans-serif;
-  color: #343741;
+  font-family: typography_variable.$fuiFontFamily;
+  color: color_variable.$fuiColorDarkestShade;
   border: none;
-  border-radius: 6px;
-  padding: 12px;
+  border-radius: border_variable.$fuiBorderRadius;
+  padding: calc(size_variable.$fuiSize * 0.676)
+    calc(size_variable.$fuiSize * 0.75);
   &:focus {
     background-color: #fff;
     background-image: linear-gradient(

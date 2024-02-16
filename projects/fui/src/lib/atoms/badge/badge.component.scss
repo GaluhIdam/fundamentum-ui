@@ -1,0 +1,153 @@
+@import "./../../../../../demo/src/styles";
+
+$paddingTopBottom : 0.316rem;
+$paddingLeftRight : 0.693rem;
+$reducer : 30;
+
+.badge {
+  border-radius: 0.35rem !important;
+  font-family: $fuiFontFamily;
+  font-weight: $fuiFontWeightMedium;
+  padding: $paddingTopBottom $paddingLeftRight;
+  width: auto;
+
+  display: flex !important;
+  align-items: center;
+  gap: 4px;
+}
+
+.rounded {
+  border-radius: 50rem !important;
+}
+
+.fuiColorGhostFill {
+  fill: $fuiColorGhost;
+}
+
+.fuiColorDisabledFill {
+  fill: $fuiColorDisabledText;
+}
+
+.primary {
+  @include fuiBadge($fuiColorPrimary, $fuiColorGhost);
+}
+.success {
+  @include fuiBadge($fuiColorSuccess, $fuiColorInk);
+}
+.warning {
+  @include fuiBadge($fuiColorWarning, $fuiColorInk);
+} 
+
+.danger {
+  @include fuiBadge($fuiColorDanger, $fuiColorGhost);
+}
+
+.text {
+  @include fuiBadge($fuiColorDarkShade, $fuiColorGhost);
+}
+.accent {
+  @include fuiBadge($fuiColorAccent, $fuiColorInk);
+}
+
+.disabled {
+  @include fuiBadge($fuiColorDisabled, $fuiColorDisabledText);
+  cursor: not-allowed;
+}
+
+.sizedefault {
+  @include reduceSize($fuiFontSize, $reducer);
+  @include biggerPadding($fuiFontSize, $paddingTopBottom, $paddingLeftRight);
+}
+.sizexs {
+  @include reduceSize($fuiFontSizeXS, $reducer);
+  @include biggerPadding($fuiFontSizeXS, $paddingTopBottom, $paddingLeftRight);
+}
+.sizes {
+  @include reduceSize($fuiFontSizeS, $reducer);
+  @include biggerPadding($fuiFontSizeS, $paddingTopBottom, $paddingLeftRight);
+}
+.sizem {
+  @include reduceSize($fuiFontSizeM, $reducer);
+  @include biggerPadding($fuiFontSizeM, $paddingTopBottom, $paddingLeftRight);
+}
+
+.sizel {
+  @include reduceSize($fuiFontSizeL, $reducer);
+  @include biggerPadding($fuiFontSizeL, $paddingTopBottom, $paddingLeftRight);
+}
+
+.sizexl {
+  @include reduceSize($fuiFontSizeXL, $reducer);
+  @include biggerPadding($fuiFontSizeXL, $paddingTopBottom, $paddingLeftRight);
+}
+
+.sizexxl {
+  @include reduceSize($fuiFontSizeXXL, $reducer);
+  @include biggerPadding($fuiFontSizeXXL, $paddingTopBottom, $paddingLeftRight);
+}
+
+.badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sizedefault-badge-icon {
+  ::ng-deep i {
+    @include reduceSize($fuiFontSize, $reducer);
+  }
+}
+
+.sizexs-badge-icon {
+  ::ng-deep i {
+    @include reduceSize($fuiFontSizeXS, $reducer);
+  }
+}
+
+.sizes-badge-icon {
+  ::ng-deep i {
+    @include reduceSize($fuiFontSizeS, $reducer);
+  }
+}
+
+.sizem-badge-icon {
+  ::ng-deep i {
+    @include reduceSize($fuiFontSizeM, $reducer);
+  }
+}
+
+.sizel-badge-icon {
+  ::ng-deep i {
+    @include reduceSize($fuiFontSizeL, $reducer);
+  }
+}
+
+.sizexl-badge-icon {
+  ::ng-deep i {
+    @include reduceSize($fuiFontSizeXL, $reducer);
+  }
+}
+
+.sizexxl-badge-icon {
+  ::ng-deep i {
+    @include reduceSize($fuiFontSizeXXL, $reducer);
+  }
+}
+
+.d-none {
+  display: none !important;
+}
+
+.underline {
+  .body-text {
+    text-decoration: underline;
+  }
+}
+
+.dismissLeft {
+  flex-direction: row;
+}
+
+.dismissRight {
+  flex-direction: row-reverse;
+}

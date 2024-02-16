@@ -1,12 +1,13 @@
-@use "../../styles/variables/button_variable";
-@use "../../styles/variables/animation_variable";
-@use "../../styles/variables/font_weight_variable";
-@use "../../styles/variables/size_variable";
-@use "../../styles/variables/color_variable";
-@use "../../styles/mixins/helper_mixin";
-@use "../../styles/mixins/typography_mixin";
-@use "../../styles/mixins/loading_mixin";
-@use "../../styles/functions/color_function";
+@use "../variables/button_variable";
+@use "../variables/animation_variable";
+@use "../variables/font_weight_variable";
+@use "../variables/border_variable";
+@use "../variables/size_variable";
+@use "../variables/color_variable";
+@use "../mixins/helper_mixin";
+@use "../mixins/typography_mixin";
+@use "../mixins/loading_mixin";
+@use "../functions/color_function";
 
 // Provides a solid reset and base for handling sizing layout
 // Does not include any visual styles
@@ -14,20 +15,24 @@
   display: inline-block;
   appearance: none;
   cursor: pointer;
-  // height: button_variable.$fuiButtonHeight;
-  // line-height: button_variable.$fuiButtonHeight; // prevents descenders from getting cut off
+  padding: calc(size_variable.$fuiSize * 0.676)
+    calc(size_variable.$fuiSize * 0.75);
   text-align: center;
   white-space: nowrap;
   max-width: 100%;
   vertical-align: middle;
   background-color: $bgCol;
+  border-radius: border_variable.$fuiBorderRadius;
   color: $col;
   transition-property: background-color color;
   transition-duration: 0.3s;
   &:hover {
     background-color: lighten($bgCol, 10%);
     color: darken($col, 10%);
-    transform: translateY(-3px);
+    transform: translateY(-1px);
+  }
+  &:active:not(:disabled) {
+    transform: translateY(1px);
   }
 }
 
@@ -54,14 +59,15 @@
 
 // All of the button base styles including the base, focus, font, and initial styles
 // Does not include individual alterations like color or sizes
-@mixin fuiButton {
-  @include fuiButtonBase;
+@mixin fuiButton($bgCol, $col) {
+  @include fuiButtonBase($bgCol, $col);
   @include typography_mixin.fuiFont;
   @include typography_mixin.fuiFontSize;
   @include fuiButtonFocus;
 
   font-weight: font_weight_variable.$fuiFontWeightRegular;
   text-decoration: none;
+  border: none;
   outline-offset: -1px;
 
   &:hover:not(:disabled),

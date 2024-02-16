@@ -2,27 +2,28 @@
 
 button {
   @include fuiButton($fuiColorPrimary, $fuiColorGhost);
+  background-color: transparent !important;
 }
 
 .primary {
-  @include fuiButtonBase($fuiColorPrimary, $fuiColorGhost);
+  @include fuiButtonBase($fuiColorGhost, $fuiColorPrimary);
 }
 .success {
-  @include fuiButtonBase($fuiColorSuccess, $fuiColorInk);
+  @include fuiButtonBase($fuiColorGhost, $fuiColorSuccess);
 }
 .warning {
-  @include fuiButtonBase($fuiColorWarning, $fuiColorInk);
+  @include fuiButtonBase($fuiColorGhost, $fuiColorWarning);
 }
 
 .danger {
-  @include fuiButtonBase($fuiColorDanger, $fuiColorGhost);
+  @include fuiButtonBase($fuiColorGhost, $fuiColorDanger);
 }
 
 .text {
-  @include fuiButtonBase($fuiColorDarkShade, $fuiColorGhost);
+  @include fuiButtonBase($fuiColorGhost, $fuiColorDarkShade);
 }
 .accent {
-  @include fuiButtonBase($fuiColorAccent, $fuiColorInk);
+  @include fuiButtonBase($fuiColorGhost, $fuiColorInk);
 }
 
 .sizeXS {
@@ -31,11 +32,8 @@ button {
 .sizeS {
   font-size: $fuiFontSizeS;
 }
-.sizeDefault {
-  font-size: $fuiFontSize;
-}
 .sizeM {
-  font-size: $fuiFontSizeM;
+  font-size: $fuiFontSize;
 }
 
 .sizeL {

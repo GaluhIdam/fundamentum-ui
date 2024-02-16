@@ -1,0 +1,53 @@
+<div
+  [ngClass]="[
+    'container',
+    shadow ? 'prompt-shadow' : '',
+    color ? color : '',
+    direction === 'vertical' ? 'vertical-max-width' : 'horizontal-max-width',
+    paddingSize ? 'p-' + paddingSize : 'p-sizedefault'
+  ]"
+>
+  <div
+    [ngClass]="[
+      'content',
+      direction === 'horizontal' ? 'text-left' : 'text-center'
+    ]"
+  >
+    @if (icon) {
+    <fui-icons [icon]="icon" [size]="iconSize" [color]="color"></fui-icons>
+    }
+    <h2 class="title">{{ title }}</h2>
+    <div class="body">
+      <fui-text>
+        <ng-content></ng-content>
+      </fui-text>
+      @if (image && direction === 'vertical') {
+      <img [src]="image" />
+      }
+    </div>
+    <div
+      [ngClass]="[
+        'action',
+        direction === 'horizontal' ? 'flex-row' : 'flex-column'
+      ]"
+    >
+      @if (buttonText) {
+      <fui-button [color]="buttonColor" [size]="buttonSize">{{
+        buttonText
+      }}</fui-button>
+      } @if (secondaryButtonText) {
+      <fui-button-empty
+        [width]="'auto'"
+        [color]="secondaryButtonColor"
+        [size]="secondaryButtonSize"
+        >{{ secondaryButtonText }}</fui-button-empty
+      >
+      }
+    </div>
+  </div>
+  @if (image && direction === 'horizontal') {
+  <div class="image">
+    <img [src]="image" />
+  </div>
+  }
+</div>
