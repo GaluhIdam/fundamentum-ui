@@ -1,0 +1,12 @@
+{
+  "title": "Fundamentum UI",
+  "overview": "README.md",
+  "theme": "postmark",
+  "hideGenerator": true,
+  "disableSourceCode": true,
+  "disableGraph": true,
+  "disableCoverage": true,
+  "disableCoveragePreview": true,
+  "disableJSDoc": true,
+  "coverageTestThreshold": 80
+}
