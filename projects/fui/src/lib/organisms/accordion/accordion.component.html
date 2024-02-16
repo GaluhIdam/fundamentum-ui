@@ -1,0 +1,44 @@
+<div class="accordion" (click)="onExpandAccordion()">
+  <div class="accordion-header">
+    <div class="accordion-header-left">
+      @if (expandIconPosition === 'start') {
+      <ng-container *ngTemplateOutlet="expandIconTemplate"></ng-container>
+      }
+      <div class="title">
+        <fui-text [size]="titleSize" [color]="titleColor">
+          {{ title }}
+        </fui-text>
+      </div>
+    </div>
+    <div class="accordion-header-right">
+      @if (isLoading) {
+      <span [ngClass]="['loader', iconSize + '-loader']"></span>
+      } @if (expandIconPosition === 'end') {
+      <ng-container *ngTemplateOutlet="expandIconTemplate"></ng-container>
+      }
+    </div>
+  </div>
+  <div [ngClass]="['accordion-body', isExpand ? 'expanded' : '']">
+    <fui-text [size]="bodySize" [color]="bodyColor">
+      <ng-content></ng-content>
+    </fui-text>
+  </div>
+</div>
+
+<ng-template #expandIconTemplate>
+  <div class="expand-icon">
+    @if (!isExpand) {
+    <fui-icons
+      [icon]="collapsedIcon"
+      [size]="iconSize"
+      [color]="iconColor"
+    ></fui-icons>
+    } @else {
+    <fui-icons
+      [icon]="expandIcon"
+      [size]="iconSize"
+      [color]="iconColor"
+    ></fui-icons>
+    }
+  </div>
+</ng-template>

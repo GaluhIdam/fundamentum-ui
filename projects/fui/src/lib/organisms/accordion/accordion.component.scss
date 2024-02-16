@@ -1,0 +1,87 @@
+@import "./../../../../../demo/src/styles";
+
+.accordion {
+  box-sizing: border-box;
+  padding: 1rem;
+  width: 100%;
+  min-width: 260px;
+}
+.accordion-header,
+.accordion-header-left,
+.accordion-header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .5rem;
+}
+
+.accordion-header {
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.accordion-body {
+  margin-top: .5rem;
+  min-width: 260px;
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  &.collapsed {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  &.expanded {
+    max-height: fit-content; 
+    opacity: 1;
+  }
+}
+
+.loader {
+  border: .2rem solid $fuiColorLightShade;
+  border-bottom-color: $fuiColorPrimary;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+
+.sizedefault-loader {
+  @include size($fuiFontSize);
+}
+.sizexs-loader {
+  @include size($fuiFontSizeXS);
+}
+.sizes-loader {
+  @include size($fuiFontSizeS);
+}
+.sizem-loader {
+  @include size($fuiFontSizeM);
+}
+
+.sizel-loader {
+  @include size($fuiFontSizeL);
+}
+
+.sizexl-loader {
+  @include size($fuiFontSizeXL);
+}
+
+.sizexxl-loader {
+  @include size($fuiFontSizeXXL);
+}
