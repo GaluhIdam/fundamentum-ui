@@ -14,4 +14,5 @@ export class TextComponent {
   @Input('size') sizeValue: string = 'sizem';
   @Input('width') widthValue: string = 'auto';
   @Input('type') typeValue: string = 'normal';
+  @Input() decoration: 'underline' | 'normal' = 'normal';
 }
