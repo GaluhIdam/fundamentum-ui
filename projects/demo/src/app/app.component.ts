@@ -6,12 +6,16 @@ import { TextComponent } from '../../../fui/src/lib/atoms/text/text.component';
 import { IconsComponent } from '../../../fui/src/lib/atoms/icons/icons.component';
 import { ButtonEmptyComponent } from '../../../fui/src/lib/atoms/button-empty/button-empty.component';
 import { BadgeComponent } from '../../../fui/src/lib/atoms/badge/badge.component';
+import { ProgressBaseComponent } from '../../../fui/src/lib/atoms/progress-base/progress-base.component';
 import { EmptyPromptComponent } from '../../../fui/src/lib/organisms/empty-prompt/empty-prompt.component';
 import { Icon } from '../../../fui/src/lib/types';
+import { ProgressComponent } from '../../../fui/src/lib/molecules/progress/progress.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
   imports: [
     RouterOutlet,
     ButtonComponent,
@@ -21,9 +25,9 @@ import { Icon } from '../../../fui/src/lib/types';
     IconsComponent,
     BadgeComponent,
     EmptyPromptComponent,
+    ProgressBaseComponent,
+    ProgressComponent,
   ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'demo';

@@ -1,0 +1,18 @@
+<div class="links">
+  @for (item of data; track $index; let last = $last;) {
+  <a
+    [routerLink]="item.link"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <fui-text [size]="labelSize">
+      <span class="link">{{ item.label }}</span>
+    </fui-text>
+    @if (!last) {
+    <fui-text [size]="labelSize">
+      <span class="separator">{{ separator }}</span>
+    </fui-text>
+    }
+  </a>
+  }
+</div>

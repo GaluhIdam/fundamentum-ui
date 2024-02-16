@@ -13,6 +13,9 @@
       direction === 'horizontal' ? 'text-left' : 'text-center'
     ]"
   >
+    @if (icon) {
+    <fui-icons [icon]="icon" [size]="iconSize" [color]="color"></fui-icons>
+    }
     <h2 class="title">{{ title }}</h2>
     <div class="body">
       <fui-text>

@@ -1,0 +1,21 @@
+@mixin fuiProgress($colorValue) {
+  progress::-webkit-progress-value {
+    background-color: $colorValue;
+    border-radius: 50rem;
+  }
+}
+
+@mixin fuiProgressBar($colorBar) {
+  progress::-webkit-progress-bar {
+    background-color: $colorBar;
+    border-radius: 50rem;
+  }
+}
+
+@function getReduceHeightProgress($size, $reducer) {
+  @return calc($size - (($reducer/100) * $size));
+}
+
+@mixin fuiProgressHeight($size, $reducer) {
+  height: getReduceHeightProgress($size, $reducer);
+}

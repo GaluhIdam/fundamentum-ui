@@ -1,0 +1,95 @@
+@import "./../../../../../demo/src/styles";
+
+$defaultColorBar : $fuiColorLightShade;
+$reducer: 30;
+
+.progress {
+  width: 100%;
+  border: none;
+  border-radius: 50%;
+}
+
+.primary {
+  @include fuiProgress($fuiColorPrimary);
+}
+
+.success {
+  @include fuiProgress($fuiColorSuccess);
+}
+
+.warning {
+  @include fuiProgress($fuiColorWarning);
+} 
+
+.danger {
+  @include fuiProgress($fuiColorDanger);
+}
+
+.text {
+  @include fuiProgress($fuiColorDarkShade);
+}
+
+.accent {
+  @include fuiProgress($fuiColorAccent);
+}
+
+.disabled {
+  @include fuiProgress($fuiColorDisabled);
+}
+
+.defaultcolor-progress-bar {
+  @include fuiProgressBar($defaultColorBar);
+}
+
+.primary-progress-bar {
+  @include fuiProgressBar($fuiColorPrimary);
+}
+
+.success-progress-bar {
+  @include fuiProgressBar($fuiColorSuccess);
+}
+
+.warning-progress-bar {
+  @include fuiProgressBar($fuiColorWarning);
+} 
+
+.danger-progress-bar {
+  @include fuiProgressBar($fuiColorDanger);
+}
+
+.text-progress-bar {
+  @include fuiProgressBar($fuiColorDarkShade);
+}
+
+.accent-progress-bar {
+  @include fuiProgressBar($fuiColorAccent);
+}
+
+.disabled-progress-bar {
+  @include fuiProgressBar($fuiColorDisabled);
+}
+
+.sizedefault {
+  @include fuiProgressHeight($fuiFontSize, $reducer);
+}
+.sizexs {
+  @include fuiProgressHeight($fuiFontSizeXS, $reducer);
+}
+.sizes {
+  @include fuiProgressHeight($fuiFontSizeS, $reducer);
+}
+.sizem {
+  @include fuiProgressHeight($fuiFontSizeM, $reducer);
+}
+
+.sizel {
+  @include fuiProgressHeight($fuiFontSizeL, $reducer);
+}
+
+.sizexl {
+  @include fuiProgressHeight($fuiFontSizeXL, $reducer);
+}
+
+.sizexxl {
+  @include fuiProgressHeight($fuiFontSizeXXL, $reducer);
+}
