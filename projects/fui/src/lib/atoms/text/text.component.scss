@@ -43,6 +43,10 @@
   color: $fuiColorAccent;
 }
 
+.disabled {
+  color: $fuiColorDisabledText;
+}
+
 .title {
   margin: $fuiFontSizeXS 0;
   display: block;
