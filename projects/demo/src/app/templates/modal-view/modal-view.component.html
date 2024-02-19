@@ -1,0 +1,36 @@
+<div class="container">
+  <fui-button (click)="openModal()">Show Modal</fui-button>
+  <fui-modal
+    [open]="isModalOpen"
+    [title]="'Title'"
+    (onCancelButton)="handleCancelModal()"
+    (onConfirmButton)="handleConfirmButton()"
+    (onCloseModal)="handleCloseModal()"
+  >
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error voluptatem
+    nobis totam quasi mollitia adipisci magnam qui corporis reprehenderit,
+    laboriosam, nulla distinctio minus blanditiis modi debitis, veniam soluta
+    corrupti numquam optio fugit quisquam explicabo ducimus? Labore amet animi
+    porro delectus.
+  </fui-modal>
+</div>
+
+<div class="container">
+  <fui-button (click)="openModalDelete()" [color]="'danger'"
+    >Show Modal Delete</fui-button
+  >
+  <fui-modal
+    [open]="isModalDeleteOpen"
+    [title]="'Delete 6 pipelines?'"
+    [titleSize]="'sizexl'"
+    [titleColor]="'danger'"
+    [iconCloseColor]="'danger'"
+    [confirmButtonColor]="'danger'"
+    [confirmButtonText]="'Delete'"
+    (onCancelButton)="handleCancelModalDelete()"
+    (onConfirmButton)="handleConfirmButtonModalDelete()"
+    (onCloseModal)="handleCloseModalDelete()"
+  >
+    You can’t recover deleted data.
+  </fui-modal>
+</div>
