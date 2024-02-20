@@ -12,6 +12,7 @@ import { ChartAreaStackedGradientViewComponent } from './organisms/chart-area-st
 import { ChartPieDoughnutViewComponent } from './organisms/chart-pie-doughnut-view/chart-pie-doughnut-view.component';
 import { ModalViewComponent } from './templates/modal-view/modal-view.component';
 import { PanelViewComponent } from './templates/panel-view/panel-view.component';
+import { BreadcrumbViewComponent } from './molecules/breadcrumb-view/breadcrumb-view.component';
 
 export const routes: Routes = [
   {
@@ -100,6 +101,15 @@ export const routes: Routes = [
       {
         path: 'panel',
         component: PanelViewComponent,
+      },
+    ],
+  },
+  {
+    path: 'molecule',
+    children: [
+      {
+        path: 'breadcrumb',
+        component: BreadcrumbViewComponent,
       },
     ],
   },
