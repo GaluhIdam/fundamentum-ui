@@ -1,18 +1,112 @@
 <div class="links">
-  @for (item of data; track $index; let last = $last;) {
+  @for (group of groupedBreadcrumbs; track $index; let last = $last;) { @if
+  (group.length > 1) {
+  <ng-container
+    *ngTemplateOutlet="
+      itemBreadcrumbTruncated;
+      context: { itemsTruncated: group, last: last, isItemTruncated: true }
+    "
+  ></ng-container>
+  } @else {
+  <ng-container
+    *ngTemplateOutlet="
+      itemBreadcrumbLink;
+      context: {
+        item: group,
+        last: last,
+        isLast: false,
+        isItemTruncated: false
+      }
+    "
+  >
+  </ng-container>
+  } }
+</div>
+
+<ng-template
+  #itemBreadcrumbLink
+  let-item="item"
+  let-last="last"
+  let-isLast="isLast"
+  let-isItemTruncated="isItemTruncated"
+>
+  @if (!isItemTruncated) { @for (itemLink of item; track $index) {
+  <ng-container
+    *ngTemplateOutlet="
+    itemBreadcrumbLinkIndividual;
+    context: {
+      item: itemLink,
+      last: last,
+      isLast: isLast,
+    }
+  "
+  ></ng-container>
+  } } @else {
+  <ng-container
+    *ngTemplateOutlet="
+  itemBreadcrumbLinkIndividual;
+  context: {
+    item: item,
+    last: last,
+    isLast: isLast,
+  }
+"
+  ></ng-container>
+  }
+</ng-template>
+
+<ng-template
+  #itemBreadcrumbLinkIndividual
+  let-item="item"
+  let-last="last"
+  let-isLast="isLast"
+>
   <a
+    [ngClass]="'item-breadcrumb'"
     [routerLink]="item.link"
     routerLinkActive="active"
     [routerLinkActiveOptions]="{ exact: true }"
+    (click)="clickLink(item)"
   >
     <fui-text [size]="labelSize">
       <span class="link">{{ item.label }}</span>
     </fui-text>
-    @if (!last) {
+    @if (!last && !isLast) {
     <fui-text [size]="labelSize">
       <span class="separator">{{ separator }}</span>
     </fui-text>
     }
   </a>
-  }
-</div>
+</ng-template>
+
+<ng-template
+  #itemBreadcrumbTruncated
+  let-itemsTruncated="itemsTruncated"
+  let-last="last"
+>
+  <span class="container-truncated-breadcrumb">
+    <span class="dropdown-menu-truncated-breadcrumb">
+      <span>...</span>
+      <fui-icons [icon]="'arrowDown'"></fui-icons>
+      <div class="content-breadcrumb-dropdown">
+        <div class="breadcrumb-dropdown-items">
+          <ng-container
+            *ngTemplateOutlet="
+              itemBreadcrumbLink;
+              context: {
+                item: itemsTruncated,
+                last: last,
+                isLast: true,
+                isItemTruncated: false
+              }
+            "
+          >
+          </ng-container>
+        </div>
+      </div>
+    </span>
+    <fui-text [size]="labelSize">
+      <span class="separator">{{ separator }}</span>
+    </fui-text>
+  </span>
+</ng-template>
