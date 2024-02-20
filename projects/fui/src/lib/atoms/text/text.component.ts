@@ -15,4 +15,14 @@ export class TextComponent {
   @Input('width') widthValue: string = 'auto';
   @Input('type') typeValue: string = 'normal';
   @Input() decoration: 'underline' | 'normal' = 'normal';
+  @Input() weight:
+    | 'thin'
+    | 'extralight'
+    | 'light'
+    | 'normal'
+    | 'medium'
+    | 'semibold'
+    | 'bold'
+    | 'extrabold'
+    | 'black' = 'normal';
 }
