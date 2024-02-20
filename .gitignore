@@ -1,3 +1,5 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
 # Compiled output
 /dist
 /tmp
@@ -43,11 +45,3 @@ Thumbs.db
 /projects/demo/src/**/*.map
 /projects/fui/src/**/*.css
 /projects/fui/src/**/*.map
-
-# Documentation
-/documentation
-
-# Ignore Compodoc generated files
-documentation/*
-coverage/
-documentation/index.html
