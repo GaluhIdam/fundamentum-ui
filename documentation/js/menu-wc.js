@@ -114,7 +114,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/InputComponent.html" data-type="entity-link" >InputComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/ModalComponent.html" data-type="entity-link" >ModalComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/PaginationComponent.html" data-type="entity-link" >PaginationComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/PanelComponent.html" data-type="entity-link" >PanelComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/ProgressBaseComponent.html" data-type="entity-link" >ProgressBaseComponent</a>
@@ -148,6 +154,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
+                            <li class="link">
+                                <a href="interfaces/BreadCrubmbDataType.html" data-type="entity-link" >BreadCrubmbDataType</a>
+                            </li>
                             <li class="link">
                                 <a href="interfaces/BreadcrumbData.html" data-type="entity-link" >BreadcrumbData</a>
                             </li>

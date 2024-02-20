@@ -126,6 +126,12 @@
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
 
 
 <section data-compodoc="block-metadata">
@@ -160,6 +166,7 @@
                             <code>CommonModule</code>
                             <code>RouterModule</code>
                                 <code><a href="../components/TextComponent.html" target="_self" >TextComponent</a></code>
+                                <code><a href="../components/IconsComponent.html" target="_self" >IconsComponent</a></code>
                 </td>
             </tr>
 
@@ -190,7 +197,56 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#currentLink" >currentLink</a>
+                            </li>
+                            <li>
+                                <a href="#groupedBreadcrumbs" >groupedBreadcrumbs</a>
+                            </li>
+                            <li>
+                                <a href="#linkTruncated" >linkTruncated</a>
+                            </li>
+                            <li>
+                                <a href="#totalLinks" >totalLinks</a>
+                            </li>
+                            <li>
+                                <a href="#visibleLinks" >visibleLinks</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#clickLink" >clickLink</a>
+                            </li>
+                            <li>
+                                <a href="#generateLinks" >generateLinks</a>
+                            </li>
+                            <li>
+                                <a href="#groupBreadcrumbs" >groupBreadcrumbs</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -207,12 +263,29 @@
                                 <a href="#labelSize" >labelSize</a>
                             </li>
                             <li>
+                                <a href="#maxDisplayLink" >maxDisplayLink</a>
+                            </li>
+                            <li>
                                 <a href="#separator" >separator</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#onChangeBreadcrumb" >onChangeBreadcrumb</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -269,6 +342,27 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="maxDisplayLink"></a>
+                        <b>maxDisplayLink</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>5</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="separator"></a>
                         <b>separator</b>
                     </td>
@@ -287,10 +381,318 @@
             </tbody>
         </table>
 </section>
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onChangeBreadcrumb"></a>
+                        <b>onChangeBreadcrumb</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/BreadcrumbData.html" target="_self" >EventEmitter&lt;BreadcrumbData&gt;</a></code>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clickLink"></a>
+                    <span class="name">
+                        <span ><b>clickLink</b></span>
+                        <a href="#clickLink"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>clickLink(item: <a href="../interfaces/BreadCrubmbDataType.html" target="_self">BreadCrubmbDataType</a>)</code>
+                </td>
+            </tr>
 
 
 
 
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>item</td>
+                                            <td>
+                                                            <code><a href="../interfaces/BreadCrubmbDataType.html" target="_self" >BreadCrubmbDataType</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateLinks"></a>
+                    <span class="name">
+                        <span ><b>generateLinks</b></span>
+                        <a href="#generateLinks"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>generateLinks()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="groupBreadcrumbs"></a>
+                    <span class="name">
+                        <span ><b>groupBreadcrumbs</b></span>
+                        <a href="#groupBreadcrumbs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>groupBreadcrumbs()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentLink"></a>
+                    <span class="name">
+                        <span ><b>currentLink</b></span>
+                        <a href="#currentLink"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>1</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="groupedBreadcrumbs"></a>
+                    <span class="name">
+                        <span ><b>groupedBreadcrumbs</b></span>
+                        <a href="#groupedBreadcrumbs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/BreadCrubmbDataType.html" target="_self" >BreadCrubmbDataType[][]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="linkTruncated"></a>
+                    <span class="name">
+                        <span ><b>linkTruncated</b></span>
+                        <a href="#linkTruncated"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/BreadCrubmbDataType.html" target="_self" >BreadCrubmbDataType[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="totalLinks"></a>
+                    <span class="name">
+                        <span ><b>totalLinks</b></span>
+                        <a href="#totalLinks"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="visibleLinks"></a>
+                    <span class="name">
+                        <span ><b>visibleLinks</b></span>
+                        <a href="#visibleLinks"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/BreadCrubmbDataType.html" target="_self" >BreadCrubmbDataType[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
 </div>
 
@@ -298,23 +700,117 @@
 
     <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;links&quot;&gt;
-  @for (item of data; track $index; let last &#x3D; $last;) {
+  @for (group of groupedBreadcrumbs; track $index; let last &#x3D; $last;) { @if
+  (group.length &gt; 1) {
+  &lt;ng-container
+    *ngTemplateOutlet&#x3D;&quot;
+      itemBreadcrumbTruncated;
+      context: { itemsTruncated: group, last: last, isItemTruncated: true }
+    &quot;
+  &gt;&lt;/ng-container&gt;
+  } @else {
+  &lt;ng-container
+    *ngTemplateOutlet&#x3D;&quot;
+      itemBreadcrumbLink;
+      context: {
+        item: group,
+        last: last,
+        isLast: false,
+        isItemTruncated: false
+      }
+    &quot;
+  &gt;
+  &lt;/ng-container&gt;
+  } }
+&lt;/div&gt;
+
+&lt;ng-template
+  #itemBreadcrumbLink
+  let-item&#x3D;&quot;item&quot;
+  let-last&#x3D;&quot;last&quot;
+  let-isLast&#x3D;&quot;isLast&quot;
+  let-isItemTruncated&#x3D;&quot;isItemTruncated&quot;
+&gt;
+  @if (!isItemTruncated) { @for (itemLink of item; track $index) {
+  &lt;ng-container
+    *ngTemplateOutlet&#x3D;&quot;
+    itemBreadcrumbLinkIndividual;
+    context: {
+      item: itemLink,
+      last: last,
+      isLast: isLast,
+    }
+  &quot;
+  &gt;&lt;/ng-container&gt;
+  } } @else {
+  &lt;ng-container
+    *ngTemplateOutlet&#x3D;&quot;
+  itemBreadcrumbLinkIndividual;
+  context: {
+    item: item,
+    last: last,
+    isLast: isLast,
+  }
+&quot;
+  &gt;&lt;/ng-container&gt;
+  }
+&lt;/ng-template&gt;
+
+&lt;ng-template
+  #itemBreadcrumbLinkIndividual
+  let-item&#x3D;&quot;item&quot;
+  let-last&#x3D;&quot;last&quot;
+  let-isLast&#x3D;&quot;isLast&quot;
+&gt;
   &lt;a
+    [ngClass]&#x3D;&quot;&#x27;item-breadcrumb&#x27;&quot;
     [routerLink]&#x3D;&quot;item.link&quot;
     routerLinkActive&#x3D;&quot;active&quot;
     [routerLinkActiveOptions]&#x3D;&quot;{ exact: true }&quot;
+    (click)&#x3D;&quot;clickLink(item)&quot;
   &gt;
     &lt;fui-text [size]&#x3D;&quot;labelSize&quot;&gt;
       &lt;span class&#x3D;&quot;link&quot;&gt;{{ item.label }}&lt;/span&gt;
     &lt;/fui-text&gt;
-    @if (!last) {
+    @if (!last &amp;&amp; !isLast) {
     &lt;fui-text [size]&#x3D;&quot;labelSize&quot;&gt;
       &lt;span class&#x3D;&quot;separator&quot;&gt;{{ separator }}&lt;/span&gt;
     &lt;/fui-text&gt;
     }
   &lt;/a&gt;
-  }
-&lt;/div&gt;
+&lt;/ng-template&gt;
+
+&lt;ng-template
+  #itemBreadcrumbTruncated
+  let-itemsTruncated&#x3D;&quot;itemsTruncated&quot;
+  let-last&#x3D;&quot;last&quot;
+&gt;
+  &lt;span class&#x3D;&quot;container-truncated-breadcrumb&quot;&gt;
+    &lt;span class&#x3D;&quot;dropdown-menu-truncated-breadcrumb&quot;&gt;
+      &lt;span&gt;...&lt;/span&gt;
+      &lt;fui-icons [icon]&#x3D;&quot;&#x27;arrowDown&#x27;&quot;&gt;&lt;/fui-icons&gt;
+      &lt;div class&#x3D;&quot;content-breadcrumb-dropdown&quot;&gt;
+        &lt;div class&#x3D;&quot;breadcrumb-dropdown-items&quot;&gt;
+          &lt;ng-container
+            *ngTemplateOutlet&#x3D;&quot;
+              itemBreadcrumbLink;
+              context: {
+                item: itemsTruncated,
+                last: last,
+                isLast: true,
+                isItemTruncated: false
+              }
+            &quot;
+          &gt;
+          &lt;/ng-container&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/span&gt;
+    &lt;fui-text [size]&#x3D;&quot;labelSize&quot;&gt;
+      &lt;span class&#x3D;&quot;separator&quot;&gt;{{ separator }}&lt;/span&gt;
+    &lt;/fui-text&gt;
+  &lt;/span&gt;
+&lt;/ng-template&gt;
 </code></pre>
     </div>
 
@@ -344,8 +840,8 @@
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="links">  @for (item of data; track $index; let last = $last;) {  <a    [routerLink]="item.link"    routerLinkActive="active"    [routerLinkActiveOptions]="{ exact: true }"  >    <fui-text [size]="labelSize">      <span class="link">{{ item.label }}</span>    </fui-text>    @if (!last) {    <fui-text [size]="labelSize">      <span class="separator">{{ separator }}</span>    </fui-text>    }  </a>  }</div></div>'
-    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'fui-accordion'},{'name': 'BadgeComponent', 'selector': 'fui-badge'},{'name': 'BreadcrumbComponent', 'selector': 'fui-breadcrumb'},{'name': 'ButtonComponent', 'selector': 'fui-button'},{'name': 'ButtonEmptyComponent', 'selector': 'fui-button-empty'},{'name': 'ChartAreaComponent', 'selector': 'fui-chart-area'},{'name': 'ChartAreaStackedComponent', 'selector': 'fui-chart-area-stacked'},{'name': 'ChartAreaStackedGradientComponent', 'selector': 'fui-chart-area-stacked-gradient'},{'name': 'ChartBarComponent', 'selector': 'fui-chart-bar'},{'name': 'ChartCandlestickComponent', 'selector': 'fui-chart-candlestick'},{'name': 'ChartLineComponent', 'selector': 'fui-chart-line'},{'name': 'ChartLineStackedComponent', 'selector': 'fui-chart-line-stacked'},{'name': 'ChartPieComponent', 'selector': 'fui-chart-pie'},{'name': 'ChartPieDoughnutComponent', 'selector': 'fui-chart-pie-doughnut'},{'name': 'ChartRadarComponent', 'selector': 'fui-chart-radar'},{'name': 'ChartScatterComponent', 'selector': 'fui-chart-scatter'},{'name': 'ChartTreeComponent', 'selector': 'fui-chart-tree'},{'name': 'EmptyPromptComponent', 'selector': 'fui-empty-prompt'},{'name': 'IconsComponent', 'selector': 'fui-icons'},{'name': 'InputComponent', 'selector': 'fui-input-base'},{'name': 'PaginationComponent', 'selector': 'fui-pagination'},{'name': 'ProgressBaseComponent', 'selector': 'fui-progress-base'},{'name': 'ProgressComponent', 'selector': 'fui-progress'},{'name': 'TextComponent', 'selector': 'fui-text'}];
+        var COMPONENT_TEMPLATE = '<div><div class="links">  @for (group of groupedBreadcrumbs; track $index; let last = $last;) { @if  (group.length > 1) {  <ng-container    *ngTemplateOutlet="      itemBreadcrumbTruncated;      context: { itemsTruncated: group, last: last, isItemTruncated: true }    "  ></ng-container>  } @else {  <ng-container    *ngTemplateOutlet="      itemBreadcrumbLink;      context: {        item: group,        last: last,        isLast: false,        isItemTruncated: false      }    "  >  </ng-container>  } }</div><ng-template  #itemBreadcrumbLink  let-item="item"  let-last="last"  let-isLast="isLast"  let-isItemTruncated="isItemTruncated">  @if (!isItemTruncated) { @for (itemLink of item; track $index) {  <ng-container    *ngTemplateOutlet="    itemBreadcrumbLinkIndividual;    context: {      item: itemLink,      last: last,      isLast: isLast,    }  "  ></ng-container>  } } @else {  <ng-container    *ngTemplateOutlet="  itemBreadcrumbLinkIndividual;  context: {    item: item,    last: last,    isLast: isLast,  }"  ></ng-container>  }</ng-template><ng-template  #itemBreadcrumbLinkIndividual  let-item="item"  let-last="last"  let-isLast="isLast">  <a    [ngClass]="\'item-breadcrumb\'"    [routerLink]="item.link"    routerLinkActive="active"    [routerLinkActiveOptions]="{ exact: true }"    (click)="clickLink(item)"  >    <fui-text [size]="labelSize">      <span class="link">{{ item.label }}</span>    </fui-text>    @if (!last && !isLast) {    <fui-text [size]="labelSize">      <span class="separator">{{ separator }}</span>    </fui-text>    }  </a></ng-template><ng-template  #itemBreadcrumbTruncated  let-itemsTruncated="itemsTruncated"  let-last="last">  <span class="container-truncated-breadcrumb">    <span class="dropdown-menu-truncated-breadcrumb">      <span>...</span>      <fui-icons [icon]="\'arrowDown\'"></fui-icons>      <div class="content-breadcrumb-dropdown">        <div class="breadcrumb-dropdown-items">          <ng-container            *ngTemplateOutlet="              itemBreadcrumbLink;              context: {                item: itemsTruncated,                last: last,                isLast: true,                isItemTruncated: false              }            "          >          </ng-container>        </div>      </div>    </span>    <fui-text [size]="labelSize">      <span class="separator">{{ separator }}</span>    </fui-text>  </span></ng-template></div>'
+    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'fui-accordion'},{'name': 'BadgeComponent', 'selector': 'fui-badge'},{'name': 'BreadcrumbComponent', 'selector': 'fui-breadcrumb'},{'name': 'ButtonComponent', 'selector': 'fui-button'},{'name': 'ButtonEmptyComponent', 'selector': 'fui-button-empty'},{'name': 'ChartAreaComponent', 'selector': 'fui-chart-area'},{'name': 'ChartAreaStackedComponent', 'selector': 'fui-chart-area-stacked'},{'name': 'ChartAreaStackedGradientComponent', 'selector': 'fui-chart-area-stacked-gradient'},{'name': 'ChartBarComponent', 'selector': 'fui-chart-bar'},{'name': 'ChartCandlestickComponent', 'selector': 'fui-chart-candlestick'},{'name': 'ChartLineComponent', 'selector': 'fui-chart-line'},{'name': 'ChartLineStackedComponent', 'selector': 'fui-chart-line-stacked'},{'name': 'ChartPieComponent', 'selector': 'fui-chart-pie'},{'name': 'ChartPieDoughnutComponent', 'selector': 'fui-chart-pie-doughnut'},{'name': 'ChartRadarComponent', 'selector': 'fui-chart-radar'},{'name': 'ChartScatterComponent', 'selector': 'fui-chart-scatter'},{'name': 'ChartTreeComponent', 'selector': 'fui-chart-tree'},{'name': 'EmptyPromptComponent', 'selector': 'fui-empty-prompt'},{'name': 'IconsComponent', 'selector': 'fui-icons'},{'name': 'InputComponent', 'selector': 'fui-input-base'},{'name': 'ModalComponent', 'selector': 'fui-modal'},{'name': 'PaginationComponent', 'selector': 'fui-pagination'},{'name': 'PanelComponent', 'selector': 'fui-panel'},{'name': 'ProgressBaseComponent', 'selector': 'fui-progress-base'},{'name': 'ProgressComponent', 'selector': 'fui-progress'},{'name': 'TextComponent', 'selector': 'fui-text'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BreadcrumbComponent'};
 </script>
