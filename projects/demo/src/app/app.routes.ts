@@ -10,6 +10,7 @@ import { ChartAreaStackedViewComponent } from './organisms/chart-area-stacked-vi
 import { ChartLineStackedViewComponent } from './organisms/chart-line-stacked-view/chart-line-stacked-view.component';
 import { ChartAreaStackedGradientViewComponent } from './organisms/chart-area-stacked-gradient-view/chart-area-stacked-gradient-view.component';
 import { ChartPieDoughnutViewComponent } from './organisms/chart-pie-doughnut-view/chart-pie-doughnut-view.component';
+import { PanelViewComponent } from './templates/panel-view/panel-view.component';
 
 export const routes: Routes = [
   {
@@ -75,6 +76,20 @@ export const routes: Routes = [
         title: 'Chart Area Stacked Gradient',
         path: 'chart-area-stacked-gradient',
         component: ChartAreaStackedGradientViewComponent,
+      },
+    ],
+  },
+  {
+    path: 'template',
+    children: [
+      {
+        path: '',
+        redirectTo: 'panel',
+        pathMatch: 'full',
+      },
+      {
+        path: 'panel',
+        component: PanelViewComponent,
       },
     ],
   },
