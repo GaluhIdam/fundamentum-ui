@@ -54,7 +54,19 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="components-links"' : 'id="xs-components-links"' }>
                             <li class="link">
+                                <a href="components/AccordionComponent.html" data-type="entity-link" >AccordionComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/BadgeComponent.html" data-type="entity-link" >BadgeComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/BreadcrumbComponent.html" data-type="entity-link" >BreadcrumbComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/ButtonComponent.html" data-type="entity-link" >ButtonComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/ButtonEmptyComponent.html" data-type="entity-link" >ButtonEmptyComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/ChartAreaComponent.html" data-type="entity-link" >ChartAreaComponent</a>
@@ -67,6 +79,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="components/ChartBarComponent.html" data-type="entity-link" >ChartBarComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/ChartCandlestickComponent.html" data-type="entity-link" >ChartCandlestickComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/ChartLineComponent.html" data-type="entity-link" >ChartLineComponent</a>
@@ -87,10 +102,25 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/ChartScatterComponent.html" data-type="entity-link" >ChartScatterComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/ChartTreeComponent.html" data-type="entity-link" >ChartTreeComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/EmptyPromptComponent.html" data-type="entity-link" >EmptyPromptComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/IconsComponent.html" data-type="entity-link" >IconsComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/InputComponent.html" data-type="entity-link" >InputComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/PaginationComponent.html" data-type="entity-link" >PaginationComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/ProgressBaseComponent.html" data-type="entity-link" >ProgressBaseComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/ProgressComponent.html" data-type="entity-link" >ProgressComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/TextComponent.html" data-type="entity-link" >TextComponent</a>
@@ -107,6 +137,35 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
                                 <a href="classes/ThemesChart.html" data-type="entity-link" >ThemesChart</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ? 'data-bs-target="#interfaces-links"' :
+                            'data-bs-target="#xs-interfaces-links"' }>
+                            <span class="icon ion-md-information-circle-outline"></span>
+                            <span>Interfaces</span>
+                            <span class="icon ion-ios-arrow-down"></span>
+                        </div>
+                        <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
+                            <li class="link">
+                                <a href="interfaces/BreadcrumbData.html" data-type="entity-link" >BreadcrumbData</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Page.html" data-type="entity-link" >Page</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ? 'data-bs-target="#miscellaneous-links"'
+                            : 'data-bs-target="#xs-miscellaneous-links"' }>
+                            <span class="icon ion-ios-cube"></span>
+                            <span>Miscellaneous</span>
+                            <span class="icon ion-ios-arrow-down"></span>
+                        </div>
+                        <ul class="links collapse " ${ isNormalMode ? 'id="miscellaneous-links"' : 'id="xs-miscellaneous-links"' }>
+                            <li class="link">
+                                <a href="miscellaneous/typealiases.html" data-type="entity-link">Type aliases</a>
                             </li>
                         </ul>
                     </li>

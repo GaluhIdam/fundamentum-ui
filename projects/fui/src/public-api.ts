@@ -27,3 +27,7 @@ export * from './lib/organisms/chart-area/chart-area.component';
 export * from './lib/organisms/chart-area-stacked/chart-area-stacked.component';
 /* Area Stacked Gradient Componet export to be dist */
 export * from './lib/organisms/chart-area-stacked-gradient/chart-area-stacked-gradient.component';
+/* Candlestick Componet export to be dist */
+export * from './lib/organisms/chart-candlestick/chart-candlestick.component';
+/* Tree Componet export to be dist */
+export * from './lib/organisms/chart-tree/chart-tree.component';

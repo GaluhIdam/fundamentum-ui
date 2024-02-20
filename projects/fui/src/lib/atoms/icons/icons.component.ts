@@ -2,6 +2,19 @@ import { Component, Input } from '@angular/core';
 import { Color, Icon, Size } from '../../types';
 import { CommonModule } from '@angular/common';
 
+/**
+ * The IconsComponent component
+ * @usage
+ * ```html
+ * <fui-icons
+    [icon]="'wordWrap'"
+    [size]="'sizexs'"
+    [color]="'success'">
+ * </fui-icons>
+ * ```
+ * <example-url>http://localhost:4200/chart/chart-area</example-url>
+ */
+
 @Component({
   selector: 'fui-icons',
   standalone: true,

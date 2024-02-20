@@ -265,15 +265,14 @@ $fui-icon-wordWrap: unquote('"\\ea02"');
 $fui-icon-wordWrapDisabled: unquote('"\\ea03"');
 $fui-icon-wrench: unquote('"\\ea04"');
 
-
-
 @font-face {
-  font-family: '#{$fundamentum-font-family}';
-  src:  url('../../assets/#{$fundamentum-font-path}/#{$fundamentum-font-family}.eot?fm9f73');
-  src:  url('../../assets/#{$fundamentum-font-path}/#{$fundamentum-font-family}.eot?fm9f73#iefix') format('embedded-opentype'),
-    url('../../assets/#{$fundamentum-font-path}/#{$fundamentum-font-family}.ttf?fm9f73') format('truetype'),
-    url('../../assets/#{$fundamentum-font-path}/#{$fundamentum-font-family}.woff?fm9f73') format('woff'),
-    url('../../assets/#{$fundamentum-font-path}/#{$fundamentum-font-family}.svg?fm9f73##{$fundamentum-font-family}') format('svg');
+  font-family: "#{$fundamentum-font-family}";
+  src: url("../../assets/#{$fundamentum-font-path}/#{$fundamentum-font-family}.ttf?fm9f73")
+      format("truetype"),
+    url("../../assets/#{$fundamentum-font-path}/#{$fundamentum-font-family}.woff?fm9f73")
+      format("woff"),
+    url("../../assets/#{$fundamentum-font-path}/#{$fundamentum-font-family}.svg?fm9f73##{$fundamentum-font-family}")
+      format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -281,7 +280,7 @@ $fui-icon-wrench: unquote('"\\ea04"');
 
 i {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: '#{$fundamentum-font-family}' !important;
+  font-family: "#{$fundamentum-font-family}" !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -296,1311 +295,1309 @@ i {
 
 .fui-icon-accessibility {
   &:before {
-    content: $fui-icon-accessibility; 
+    content: $fui-icon-accessibility;
   }
 }
 .fui-icon-aggregate {
   &:before {
-    content: $fui-icon-aggregate; 
+    content: $fui-icon-aggregate;
   }
 }
 .fui-icon-alert {
   &:before {
-    content: $fui-icon-alert; 
+    content: $fui-icon-alert;
   }
 }
 .fui-icon-analyzeEvent {
   &:before {
-    content: $fui-icon-analyzeEvent; 
+    content: $fui-icon-analyzeEvent;
   }
 }
 .fui-icon-annotation {
   &:before {
-    content: $fui-icon-annotation; 
+    content: $fui-icon-annotation;
   }
 }
 .fui-icon-apmTrace {
   &:before {
-    content: $fui-icon-apmTrace; 
+    content: $fui-icon-apmTrace;
   }
 }
 .fui-icon-apps {
   &:before {
-    content: $fui-icon-apps; 
+    content: $fui-icon-apps;
   }
 }
 .fui-icon-arrowDown {
   &:before {
-    content: $fui-icon-arrowDown; 
+    content: $fui-icon-arrowDown;
   }
 }
 .fui-icon-arrowEnd {
   &:before {
-    content: $fui-icon-arrowEnd; 
+    content: $fui-icon-arrowEnd;
   }
 }
 .fui-icon-arrowLeft {
   &:before {
-    content: $fui-icon-arrowLeft; 
+    content: $fui-icon-arrowLeft;
   }
 }
 .fui-icon-arrowRight {
   &:before {
-    content: $fui-icon-arrowRight; 
+    content: $fui-icon-arrowRight;
   }
 }
 .fui-icon-arrowStart {
   &:before {
-    content: $fui-icon-arrowStart; 
+    content: $fui-icon-arrowStart;
   }
 }
 .fui-icon-arrowUp {
   &:before {
-    content: $fui-icon-arrowUp; 
+    content: $fui-icon-arrowUp;
   }
 }
 .fui-icon-article {
   &:before {
-    content: $fui-icon-article; 
+    content: $fui-icon-article;
   }
 }
 .fui-icon-asterisk {
   &:before {
-    content: $fui-icon-asterisk; 
+    content: $fui-icon-asterisk;
   }
 }
 .fui-icon-beaker {
   &:before {
-    content: $fui-icon-beaker; 
+    content: $fui-icon-beaker;
   }
 }
 .fui-icon-bell {
   &:before {
-    content: $fui-icon-bell; 
+    content: $fui-icon-bell;
   }
 }
 .fui-icon-bellSlash {
   &:before {
-    content: $fui-icon-bellSlash; 
+    content: $fui-icon-bellSlash;
   }
 }
 .fui-icon-beta {
   &:before {
-    content: $fui-icon-beta; 
+    content: $fui-icon-beta;
   }
 }
 .fui-icon-bolt {
   &:before {
-    content: $fui-icon-bolt; 
+    content: $fui-icon-bolt;
   }
 }
 .fui-icon-boxesHorizontal {
   &:before {
-    content: $fui-icon-boxesHorizontal; 
+    content: $fui-icon-boxesHorizontal;
   }
 }
 .fui-icon-boxesVertical {
   &:before {
-    content: $fui-icon-boxesVertical; 
+    content: $fui-icon-boxesVertical;
   }
 }
 .fui-icon-branch {
   &:before {
-    content: $fui-icon-branch; 
+    content: $fui-icon-branch;
   }
 }
 .fui-icon-broom {
   &:before {
-    content: $fui-icon-broom; 
+    content: $fui-icon-broom;
   }
 }
 .fui-icon-brush {
   &:before {
-    content: $fui-icon-brush; 
+    content: $fui-icon-brush;
   }
 }
 .fui-icon-bug {
   &:before {
-    content: $fui-icon-bug; 
+    content: $fui-icon-bug;
   }
 }
 .fui-icon-bullseye {
   &:before {
-    content: $fui-icon-bullseye; 
+    content: $fui-icon-bullseye;
   }
 }
 .fui-icon-calendar {
   &:before {
-    content: $fui-icon-calendar; 
+    content: $fui-icon-calendar;
   }
 }
 .fui-icon-check {
   &:before {
-    content: $fui-icon-check; 
+    content: $fui-icon-check;
   }
 }
 .fui-icon-checkInCircleFilled {
   &:before {
-    content: $fui-icon-checkInCircleFilled; 
+    content: $fui-icon-checkInCircleFilled;
   }
 }
 .fui-icon-cheer {
   &:before {
-    content: $fui-icon-cheer; 
+    content: $fui-icon-cheer;
   }
 }
 .fui-icon-clock {
   &:before {
-    content: $fui-icon-clock; 
+    content: $fui-icon-clock;
   }
 }
 .fui-icon-cloudDrizzle {
   &:before {
-    content: $fui-icon-cloudDrizzle; 
+    content: $fui-icon-cloudDrizzle;
   }
 }
 .fui-icon-cloudStormy {
   &:before {
-    content: $fui-icon-cloudStormy; 
+    content: $fui-icon-cloudStormy;
   }
 }
 .fui-icon-cloudSunny {
   &:before {
-    content: $fui-icon-cloudSunny; 
+    content: $fui-icon-cloudSunny;
   }
 }
 .fui-icon-cluster {
   &:before {
-    content: $fui-icon-cluster; 
+    content: $fui-icon-cluster;
   }
 }
 .fui-icon-color {
   &:before {
-    content: $fui-icon-color; 
+    content: $fui-icon-color;
   }
 }
 .fui-icon-compute {
   &:before {
-    content: $fui-icon-compute; 
+    content: $fui-icon-compute;
   }
 }
 .fui-icon-console {
   &:before {
-    content: $fui-icon-console; 
+    content: $fui-icon-console;
   }
 }
 .fui-icon-container {
   &:before {
-    content: $fui-icon-container; 
+    content: $fui-icon-container;
   }
 }
 .fui-icon-continuityAbove {
   &:before {
-    content: $fui-icon-continuityAbove; 
+    content: $fui-icon-continuityAbove;
   }
 }
 .fui-icon-continuityAboveBelow {
   &:before {
-    content: $fui-icon-continuityAboveBelow; 
+    content: $fui-icon-continuityAboveBelow;
   }
 }
 .fui-icon-continuityBelow {
   &:before {
-    content: $fui-icon-continuityBelow; 
+    content: $fui-icon-continuityBelow;
   }
 }
 .fui-icon-continuityWithin {
   &:before {
-    content: $fui-icon-continuityWithin; 
+    content: $fui-icon-continuityWithin;
   }
 }
 .fui-icon-controlsHorizontal {
   &:before {
-    content: $fui-icon-controlsHorizontal; 
+    content: $fui-icon-controlsHorizontal;
   }
 }
 .fui-icon-controlsVertical {
   &:before {
-    content: $fui-icon-controlsVertical; 
+    content: $fui-icon-controlsVertical;
   }
 }
 .fui-icon-copy {
   &:before {
-    content: $fui-icon-copy; 
+    content: $fui-icon-copy;
   }
 }
 .fui-icon-copyClipboard {
   &:before {
-    content: $fui-icon-copyClipboard; 
+    content: $fui-icon-copyClipboard;
   }
 }
 .fui-icon-cross {
   &:before {
-    content: $fui-icon-cross; 
+    content: $fui-icon-cross;
   }
 }
 .fui-icon-crosshairs {
   &:before {
-    content: $fui-icon-crosshairs; 
+    content: $fui-icon-crosshairs;
   }
 }
 .fui-icon-crossInACircleFilled {
   &:before {
-    content: $fui-icon-crossInACircleFilled; 
+    content: $fui-icon-crossInACircleFilled;
   }
 }
 .fui-icon-currency {
   &:before {
-    content: $fui-icon-currency; 
+    content: $fui-icon-currency;
   }
 }
 .fui-icon-cut {
   &:before {
-    content: $fui-icon-cut; 
+    content: $fui-icon-cut;
   }
 }
 .fui-icon-database {
   &:before {
-    content: $fui-icon-database; 
+    content: $fui-icon-database;
   }
 }
 .fui-icon-desktop {
   &:before {
-    content: $fui-icon-desktop; 
+    content: $fui-icon-desktop;
   }
 }
 .fui-icon-discuss {
   &:before {
-    content: $fui-icon-discuss; 
+    content: $fui-icon-discuss;
   }
 }
 .fui-icon-document {
   &:before {
-    content: $fui-icon-document; 
+    content: $fui-icon-document;
   }
 }
 .fui-icon-documentation {
   &:before {
-    content: $fui-icon-documentation; 
+    content: $fui-icon-documentation;
   }
 }
 .fui-icon-documentEdit {
   &:before {
-    content: $fui-icon-documentEdit; 
+    content: $fui-icon-documentEdit;
   }
 }
 .fui-icon-documents {
   &:before {
-    content: $fui-icon-documents; 
+    content: $fui-icon-documents;
   }
 }
 .fui-icon-dot {
   &:before {
-    content: $fui-icon-dot; 
+    content: $fui-icon-dot;
   }
 }
 .fui-icon-dotInCircle {
   &:before {
-    content: $fui-icon-dotInCircle; 
+    content: $fui-icon-dotInCircle;
   }
 }
 .fui-icon-download {
   &:before {
-    content: $fui-icon-download; 
+    content: $fui-icon-download;
   }
 }
 .fui-icon-email {
   &:before {
-    content: $fui-icon-email; 
+    content: $fui-icon-email;
   }
 }
 .fui-icon-eql {
   &:before {
-    content: $fui-icon-eql; 
+    content: $fui-icon-eql;
   }
 }
 .fui-icon-eraser {
   &:before {
-    content: $fui-icon-eraser; 
+    content: $fui-icon-eraser;
   }
 }
 .fui-icon-error {
   &:before {
-    content: $fui-icon-error; 
+    content: $fui-icon-error;
   }
 }
 .fui-icon-exit {
   &:before {
-    content: $fui-icon-exit; 
+    content: $fui-icon-exit;
   }
 }
 .fui-icon-expand {
   &:before {
-    content: $fui-icon-expand; 
+    content: $fui-icon-expand;
   }
 }
 .fui-icon-expandMini {
   &:before {
-    content: $fui-icon-expandMini; 
+    content: $fui-icon-expandMini;
   }
 }
 .fui-icon-export {
   &:before {
-    content: $fui-icon-export; 
+    content: $fui-icon-export;
   }
 }
 .fui-icon-eye {
   &:before {
-    content: $fui-icon-eye; 
+    content: $fui-icon-eye;
   }
 }
 .fui-icon-eyeClosed {
   &:before {
-    content: $fui-icon-eyeClosed; 
+    content: $fui-icon-eyeClosed;
   }
 }
 .fui-icon-faceHappy {
   &:before {
-    content: $fui-icon-faceHappy; 
+    content: $fui-icon-faceHappy;
   }
 }
 .fui-icon-faceNeutral {
   &:before {
-    content: $fui-icon-faceNeutral; 
+    content: $fui-icon-faceNeutral;
   }
 }
 .fui-icon-faceSad {
   &:before {
-    content: $fui-icon-faceSad; 
+    content: $fui-icon-faceSad;
   }
 }
 .fui-icon-filter {
   &:before {
-    content: $fui-icon-filter; 
+    content: $fui-icon-filter;
   }
 }
 .fui-icon-filterExclude {
   &:before {
-    content: $fui-icon-filterExclude; 
+    content: $fui-icon-filterExclude;
   }
 }
 .fui-icon-filterIgnore {
   &:before {
-    content: $fui-icon-filterIgnore; 
+    content: $fui-icon-filterIgnore;
   }
 }
 .fui-icon-filterInCircle {
   &:before {
-    content: $fui-icon-filterInCircle; 
+    content: $fui-icon-filterInCircle;
   }
 }
 .fui-icon-filterInclude {
   &:before {
-    content: $fui-icon-filterInclude; 
+    content: $fui-icon-filterInclude;
   }
 }
 .fui-icon-flag {
   &:before {
-    content: $fui-icon-flag; 
+    content: $fui-icon-flag;
   }
 }
 .fui-icon-fold {
   &:before {
-    content: $fui-icon-fold; 
+    content: $fui-icon-fold;
   }
 }
 .fui-icon-folder_exclamation {
   &:before {
-    content: $fui-icon-folder_exclamation; 
+    content: $fui-icon-folder_exclamation;
   }
 }
 .fui-icon-folderCheck {
   &:before {
-    content: $fui-icon-folderCheck; 
+    content: $fui-icon-folderCheck;
   }
 }
 .fui-icon-folderClosed {
   &:before {
-    content: $fui-icon-folderClosed; 
+    content: $fui-icon-folderClosed;
   }
 }
 .fui-icon-folderOpen {
   &:before {
-    content: $fui-icon-folderOpen; 
+    content: $fui-icon-folderOpen;
   }
 }
 .fui-icon-frameNext {
   &:before {
-    content: $fui-icon-frameNext; 
+    content: $fui-icon-frameNext;
   }
 }
 .fui-icon-framePrevious {
   &:before {
-    content: $fui-icon-framePrevious; 
+    content: $fui-icon-framePrevious;
   }
 }
 .fui-icon-fullScreen {
   &:before {
-    content: $fui-icon-fullScreen; 
+    content: $fui-icon-fullScreen;
   }
 }
 .fui-icon-fullScreenExit {
   &:before {
-    content: $fui-icon-fullScreenExit; 
+    content: $fui-icon-fullScreenExit;
   }
 }
 .fui-icon-function {
   &:before {
-    content: $fui-icon-function; 
+    content: $fui-icon-function;
   }
 }
 .fui-icon-gear {
   &:before {
-    content: $fui-icon-gear; 
+    content: $fui-icon-gear;
   }
 }
 .fui-icon-glasses {
   &:before {
-    content: $fui-icon-glasses; 
+    content: $fui-icon-glasses;
   }
 }
 .fui-icon-globe {
   &:before {
-    content: $fui-icon-globe; 
+    content: $fui-icon-globe;
   }
 }
 .fui-icon-Glyph {
   &:before {
-    content: $fui-icon-Glyph; 
+    content: $fui-icon-Glyph;
   }
 }
 .fui-icon-grab {
   &:before {
-    content: $fui-icon-grab; 
+    content: $fui-icon-grab;
   }
 }
 .fui-icon-grabHorizontal {
   &:before {
-    content: $fui-icon-grabHorizontal; 
+    content: $fui-icon-grabHorizontal;
   }
 }
 .fui-icon-grid {
   &:before {
-    content: $fui-icon-grid; 
+    content: $fui-icon-grid;
   }
 }
 .fui-icon-heart {
   &:before {
-    content: $fui-icon-heart; 
+    content: $fui-icon-heart;
   }
 }
 .fui-icon-heatmap {
   &:before {
-    content: $fui-icon-heatmap; 
+    content: $fui-icon-heatmap;
   }
 }
 .fui-icon-help {
   &:before {
-    content: $fui-icon-help; 
+    content: $fui-icon-help;
   }
 }
 .fui-icon-home {
   &:before {
-    content: $fui-icon-home; 
+    content: $fui-icon-home;
   }
 }
 .fui-icon-iInCircle {
   &:before {
-    content: $fui-icon-iInCircle; 
+    content: $fui-icon-iInCircle;
   }
 }
 .fui-icon-image {
   &:before {
-    content: $fui-icon-image; 
+    content: $fui-icon-image;
   }
 }
 .fui-icon-importAction {
   &:before {
-    content: $fui-icon-importAction; 
+    content: $fui-icon-importAction;
   }
 }
 .fui-icon-indexClose {
   &:before {
-    content: $fui-icon-indexClose; 
+    content: $fui-icon-indexClose;
   }
 }
 .fui-icon-indexEdit {
   &:before {
-    content: $fui-icon-indexEdit; 
+    content: $fui-icon-indexEdit;
   }
 }
 .fui-icon-indexFlush {
   &:before {
-    content: $fui-icon-indexFlush; 
+    content: $fui-icon-indexFlush;
   }
 }
 .fui-icon-indexMapping {
   &:before {
-    content: $fui-icon-indexMapping; 
+    content: $fui-icon-indexMapping;
   }
 }
 .fui-icon-indexOpen {
   &:before {
-    content: $fui-icon-indexOpen; 
+    content: $fui-icon-indexOpen;
   }
 }
 .fui-icon-indexRuntime {
   &:before {
-    content: $fui-icon-indexRuntime; 
+    content: $fui-icon-indexRuntime;
   }
 }
 .fui-icon-indexSettings {
   &:before {
-    content: $fui-icon-indexSettings; 
+    content: $fui-icon-indexSettings;
   }
 }
 .fui-icon-indexTemporary {
   &:before {
-    content: $fui-icon-indexTemporary; 
+    content: $fui-icon-indexTemporary;
   }
 }
 .fui-icon-infinity {
   &:before {
-    content: $fui-icon-infinity; 
+    content: $fui-icon-infinity;
   }
 }
 .fui-icon-inputOutput {
   &:before {
-    content: $fui-icon-inputOutput; 
+    content: $fui-icon-inputOutput;
   }
 }
 .fui-icon-inspect {
   &:before {
-    content: $fui-icon-inspect; 
+    content: $fui-icon-inspect;
   }
 }
 .fui-icon-invert {
   &:before {
-    content: $fui-icon-invert; 
+    content: $fui-icon-invert;
   }
 }
 .fui-icon-ip {
   &:before {
-    content: $fui-icon-ip; 
+    content: $fui-icon-ip;
   }
 }
 .fui-icon-keyboard {
   &:before {
-    content: $fui-icon-keyboard; 
+    content: $fui-icon-keyboard;
   }
 }
 .fui-icon-kqlField {
   &:before {
-    content: $fui-icon-kqlField; 
+    content: $fui-icon-kqlField;
   }
 }
 .fui-icon-kqlFunction {
   &:before {
-    content: $fui-icon-kqlFunction; 
+    content: $fui-icon-kqlFunction;
   }
 }
 .fui-icon-kqlOperand {
   &:before {
-    content: $fui-icon-kqlOperand; 
+    content: $fui-icon-kqlOperand;
   }
 }
 .fui-icon-kqlSelector {
   &:before {
-    content: $fui-icon-kqlSelector; 
+    content: $fui-icon-kqlSelector;
   }
 }
 .fui-icon-kqlValue {
   &:before {
-    content: $fui-icon-kqlValue; 
+    content: $fui-icon-kqlValue;
   }
 }
 .fui-icon-kubernetesNode {
   &:before {
-    content: $fui-icon-kubernetesNode; 
+    content: $fui-icon-kubernetesNode;
   }
 }
 .fui-icon-kubernetesPod {
   &:before {
-    content: $fui-icon-kubernetesPod; 
+    content: $fui-icon-kubernetesPod;
   }
 }
 .fui-icon-launch {
   &:before {
-    content: $fui-icon-launch; 
+    content: $fui-icon-launch;
   }
 }
 .fui-icon-layers {
   &:before {
-    content: $fui-icon-layers; 
+    content: $fui-icon-layers;
   }
 }
 .fui-icon-lettering {
   &:before {
-    content: $fui-icon-lettering; 
+    content: $fui-icon-lettering;
   }
 }
 .fui-icon-lineDashed {
   &:before {
-    content: $fui-icon-lineDashed; 
+    content: $fui-icon-lineDashed;
   }
 }
 .fui-icon-lineDotted {
   &:before {
-    content: $fui-icon-lineDotted; 
+    content: $fui-icon-lineDotted;
   }
 }
 .fui-icon-lineSolid {
   &:before {
-    content: $fui-icon-lineSolid; 
+    content: $fui-icon-lineSolid;
   }
 }
 .fui-icon-link {
   &:before {
-    content: $fui-icon-link; 
+    content: $fui-icon-link;
   }
 }
 .fui-icon-list {
   &:before {
-    content: $fui-icon-list; 
+    content: $fui-icon-list;
   }
 }
 .fui-icon-listAdd {
   &:before {
-    content: $fui-icon-listAdd; 
+    content: $fui-icon-listAdd;
   }
 }
 .fui-icon-lock {
   &:before {
-    content: $fui-icon-lock; 
+    content: $fui-icon-lock;
   }
 }
 .fui-icon-lockOpen {
   &:before {
-    content: $fui-icon-lockOpen; 
+    content: $fui-icon-lockOpen;
   }
 }
 .fui-icon-logstashFilter {
   &:before {
-    content: $fui-icon-logstashFilter; 
+    content: $fui-icon-logstashFilter;
   }
 }
 .fui-icon-logstashIf {
   &:before {
-    content: $fui-icon-logstashIf; 
+    content: $fui-icon-logstashIf;
   }
 }
 .fui-icon-logstashInput {
   &:before {
-    content: $fui-icon-logstashInput; 
+    content: $fui-icon-logstashInput;
   }
 }
 .fui-icon-logstashOutput {
   &:before {
-    content: $fui-icon-logstashOutput; 
+    content: $fui-icon-logstashOutput;
   }
 }
 .fui-icon-logstashQueue {
   &:before {
-    content: $fui-icon-logstashQueue; 
+    content: $fui-icon-logstashQueue;
   }
 }
 .fui-icon-magnet {
   &:before {
-    content: $fui-icon-magnet; 
+    content: $fui-icon-magnet;
   }
 }
 .fui-icon-magnifyWithExclamation {
   &:before {
-    content: $fui-icon-magnifyWithExclamation; 
+    content: $fui-icon-magnifyWithExclamation;
   }
 }
 .fui-icon-magnifyWithMinus {
   &:before {
-    content: $fui-icon-magnifyWithMinus; 
+    content: $fui-icon-magnifyWithMinus;
   }
 }
 .fui-icon-magnifyWithPlus {
   &:before {
-    content: $fui-icon-magnifyWithPlus; 
+    content: $fui-icon-magnifyWithPlus;
   }
 }
 .fui-icon-mapMarker {
   &:before {
-    content: $fui-icon-mapMarker; 
+    content: $fui-icon-mapMarker;
   }
 }
 .fui-icon-memory {
   &:before {
-    content: $fui-icon-memory; 
+    content: $fui-icon-memory;
   }
 }
 .fui-icon-menu {
   &:before {
-    content: $fui-icon-menu; 
+    content: $fui-icon-menu;
   }
 }
 .fui-icon-menuLeft {
   &:before {
-    content: $fui-icon-menuLeft; 
+    content: $fui-icon-menuLeft;
   }
 }
 .fui-icon-menuRight {
   &:before {
-    content: $fui-icon-menuRight; 
+    content: $fui-icon-menuRight;
   }
 }
 .fui-icon-merge {
   &:before {
-    content: $fui-icon-merge; 
+    content: $fui-icon-merge;
   }
 }
 .fui-icon-minimize {
   &:before {
-    content: $fui-icon-minimize; 
+    content: $fui-icon-minimize;
   }
 }
 .fui-icon-minus {
   &:before {
-    content: $fui-icon-minus; 
+    content: $fui-icon-minus;
   }
 }
 .fui-icon-minusInCircle {
   &:before {
-    content: $fui-icon-minusInCircle; 
+    content: $fui-icon-minusInCircle;
   }
 }
 .fui-icon-minusInCircleFilled {
   &:before {
-    content: $fui-icon-minusInCircleFilled; 
+    content: $fui-icon-minusInCircleFilled;
   }
 }
 .fui-icon-moon {
   &:before {
-    content: $fui-icon-moon; 
+    content: $fui-icon-moon;
   }
 }
 .fui-icon-namespace {
   &:before {
-    content: $fui-icon-namespace; 
+    content: $fui-icon-namespace;
   }
 }
 .fui-icon-nested {
   &:before {
-    content: $fui-icon-nested; 
+    content: $fui-icon-nested;
   }
 }
 .fui-icon-node {
   &:before {
-    content: $fui-icon-node; 
+    content: $fui-icon-node;
   }
 }
 .fui-icon-number {
   &:before {
-    content: $fui-icon-number; 
+    content: $fui-icon-number;
   }
 }
 .fui-icon-offline {
   &:before {
-    content: $fui-icon-offline; 
+    content: $fui-icon-offline;
   }
 }
 .fui-icon-online {
   &:before {
-    content: $fui-icon-online; 
+    content: $fui-icon-online;
   }
 }
 .fui-icon-package {
   &:before {
-    content: $fui-icon-package; 
+    content: $fui-icon-package;
   }
 }
 .fui-icon-pageSelect {
   &:before {
-    content: $fui-icon-pageSelect; 
+    content: $fui-icon-pageSelect;
   }
 }
 .fui-icon-pagesSelect {
   &:before {
-    content: $fui-icon-pagesSelect; 
+    content: $fui-icon-pagesSelect;
   }
 }
 .fui-icon-paperClip {
   &:before {
-    content: $fui-icon-paperClip; 
+    content: $fui-icon-paperClip;
   }
 }
 .fui-icon-partial {
   &:before {
-    content: $fui-icon-partial; 
+    content: $fui-icon-partial;
   }
 }
 .fui-icon-pause {
   &:before {
-    content: $fui-icon-pause; 
+    content: $fui-icon-pause;
   }
 }
 .fui-icon-payment {
   &:before {
-    content: $fui-icon-payment; 
+    content: $fui-icon-payment;
   }
 }
 .fui-icon-pencil {
   &:before {
-    content: $fui-icon-pencil; 
+    content: $fui-icon-pencil;
   }
 }
 .fui-icon-percent {
   &:before {
-    content: $fui-icon-percent; 
+    content: $fui-icon-percent;
   }
 }
 .fui-icon-pin {
   &:before {
-    content: $fui-icon-pin; 
+    content: $fui-icon-pin;
   }
 }
 .fui-icon-pinFilled {
   &:before {
-    content: $fui-icon-pinFilled; 
+    content: $fui-icon-pinFilled;
   }
 }
 .fui-icon-play {
   &:before {
-    content: $fui-icon-play; 
+    content: $fui-icon-play;
   }
 }
 .fui-icon-playFilled {
   &:before {
-    content: $fui-icon-playFilled; 
+    content: $fui-icon-playFilled;
   }
 }
 .fui-icon-plus {
   &:before {
-    content: $fui-icon-plus; 
+    content: $fui-icon-plus;
   }
 }
 .fui-icon-plusInCircle {
   &:before {
-    content: $fui-icon-plusInCircle; 
+    content: $fui-icon-plusInCircle;
   }
 }
 .fui-icon-plusInCircleFilled {
   &:before {
-    content: $fui-icon-plusInCircleFilled; 
+    content: $fui-icon-plusInCircleFilled;
   }
 }
 .fui-icon-popout {
   &:before {
-    content: $fui-icon-popout; 
+    content: $fui-icon-popout;
   }
 }
 .fui-icon-push {
   &:before {
-    content: $fui-icon-push; 
+    content: $fui-icon-push;
   }
 }
 .fui-icon-questionInCircle {
   &:before {
-    content: $fui-icon-questionInCircle; 
+    content: $fui-icon-questionInCircle;
   }
 }
 .fui-icon-quote {
   &:before {
-    content: $fui-icon-quote; 
+    content: $fui-icon-quote;
   }
 }
 .fui-icon-refresh {
   &:before {
-    content: $fui-icon-refresh; 
+    content: $fui-icon-refresh;
   }
 }
 .fui-icon-reporter {
   &:before {
-    content: $fui-icon-reporter; 
+    content: $fui-icon-reporter;
   }
 }
 .fui-icon-returnKey {
   &:before {
-    content: $fui-icon-returnKey; 
+    content: $fui-icon-returnKey;
   }
 }
 .fui-icon-save {
   &:before {
-    content: $fui-icon-save; 
+    content: $fui-icon-save;
   }
 }
 .fui-icon-scale {
   &:before {
-    content: $fui-icon-scale; 
+    content: $fui-icon-scale;
   }
 }
 .fui-icon-search {
   &:before {
-    content: $fui-icon-search; 
+    content: $fui-icon-search;
   }
 }
 .fui-icon-securitySignal {
   &:before {
-    content: $fui-icon-securitySignal; 
+    content: $fui-icon-securitySignal;
   }
 }
 .fui-icon-securitySignalDetected {
   &:before {
-    content: $fui-icon-securitySignalDetected; 
+    content: $fui-icon-securitySignalDetected;
   }
 }
 .fui-icon-securitySignalResolved {
   &:before {
-    content: $fui-icon-securitySignalResolved; 
+    content: $fui-icon-securitySignalResolved;
   }
 }
 .fui-icon-shard {
   &:before {
-    content: $fui-icon-shard; 
+    content: $fui-icon-shard;
   }
 }
 .fui-icon-share {
   &:before {
-    content: $fui-icon-share; 
+    content: $fui-icon-share;
   }
 }
 .fui-icon-snowflake {
   &:before {
-    content: $fui-icon-snowflake; 
+    content: $fui-icon-snowflake;
   }
 }
 .fui-icon-sortable {
   &:before {
-    content: $fui-icon-sortable; 
+    content: $fui-icon-sortable;
   }
 }
 .fui-icon-sortAscending {
   &:before {
-    content: $fui-icon-sortAscending; 
+    content: $fui-icon-sortAscending;
   }
 }
 .fui-icon-sortDescending {
   &:before {
-    content: $fui-icon-sortDescending; 
+    content: $fui-icon-sortDescending;
   }
 }
 .fui-icon-sortDown {
   &:before {
-    content: $fui-icon-sortDown; 
+    content: $fui-icon-sortDown;
   }
 }
 .fui-icon-sortLeft {
   &:before {
-    content: $fui-icon-sortLeft; 
+    content: $fui-icon-sortLeft;
   }
 }
 .fui-icon-sortRight {
   &:before {
-    content: $fui-icon-sortRight; 
+    content: $fui-icon-sortRight;
   }
 }
 .fui-icon-sortUp {
   &:before {
-    content: $fui-icon-sortUp; 
+    content: $fui-icon-sortUp;
   }
 }
 .fui-icon-spaces {
   &:before {
-    content: $fui-icon-spaces; 
+    content: $fui-icon-spaces;
   }
 }
 .fui-icon-starEmpty {
   &:before {
-    content: $fui-icon-starEmpty; 
+    content: $fui-icon-starEmpty;
   }
 }
 .fui-icon-starEmptySpace {
   &:before {
-    content: $fui-icon-starEmptySpace; 
+    content: $fui-icon-starEmptySpace;
   }
 }
 .fui-icon-starFilled {
   &:before {
-    content: $fui-icon-starFilled; 
+    content: $fui-icon-starFilled;
   }
 }
 .fui-icon-starFilledSpace {
   &:before {
-    content: $fui-icon-starFilledSpace; 
+    content: $fui-icon-starFilledSpace;
   }
 }
 .fui-icon-starMinusEmpty {
   &:before {
-    content: $fui-icon-starMinusEmpty; 
+    content: $fui-icon-starMinusEmpty;
   }
 }
 .fui-icon-starMinusFilled {
   &:before {
-    content: $fui-icon-starMinusFilled; 
+    content: $fui-icon-starMinusFilled;
   }
 }
 .fui-icon-starPlusEmpty {
   &:before {
-    content: $fui-icon-starPlusEmpty; 
+    content: $fui-icon-starPlusEmpty;
   }
 }
 .fui-icon-starPlusFilled {
   &:before {
-    content: $fui-icon-starPlusFilled; 
+    content: $fui-icon-starPlusFilled;
   }
 }
 .fui-icon-stats {
   &:before {
-    content: $fui-icon-stats; 
+    content: $fui-icon-stats;
   }
 }
 .fui-icon-stop {
   &:before {
-    content: $fui-icon-stop; 
+    content: $fui-icon-stop;
   }
 }
 .fui-icon-stopFilled {
   &:before {
-    content: $fui-icon-stopFilled; 
+    content: $fui-icon-stopFilled;
   }
 }
 .fui-icon-stopSlash {
   &:before {
-    content: $fui-icon-stopSlash; 
+    content: $fui-icon-stopSlash;
   }
 }
 .fui-icon-storage {
   &:before {
-    content: $fui-icon-storage; 
+    content: $fui-icon-storage;
   }
 }
 .fui-icon-string {
   &:before {
-    content: $fui-icon-string; 
+    content: $fui-icon-string;
   }
 }
 .fui-icon-submodule {
   &:before {
-    content: $fui-icon-submodule; 
+    content: $fui-icon-submodule;
   }
 }
 .fui-icon-sun {
   &:before {
-    content: $fui-icon-sun; 
+    content: $fui-icon-sun;
   }
 }
 .fui-icon-symlink {
   &:before {
-    content: $fui-icon-symlink; 
+    content: $fui-icon-symlink;
   }
 }
 .fui-icon-tableDensityCompact {
   &:before {
-    content: $fui-icon-tableDensityCompact; 
+    content: $fui-icon-tableDensityCompact;
   }
 }
 .fui-icon-tableDensityExpanded {
   &:before {
-    content: $fui-icon-tableDensityExpanded; 
+    content: $fui-icon-tableDensityExpanded;
   }
 }
 .fui-icon-tableDensityNormal {
   &:before {
-    content: $fui-icon-tableDensityNormal; 
+    content: $fui-icon-tableDensityNormal;
   }
 }
 .fui-icon-tableOfContents {
   &:before {
-    content: $fui-icon-tableOfContents; 
+    content: $fui-icon-tableOfContents;
   }
 }
 .fui-icon-tag {
   &:before {
-    content: $fui-icon-tag; 
+    content: $fui-icon-tag;
   }
 }
 .fui-icon-tear {
   &:before {
-    content: $fui-icon-tear; 
+    content: $fui-icon-tear;
   }
 }
 .fui-icon-temperature {
   &:before {
-    content: $fui-icon-temperature; 
+    content: $fui-icon-temperature;
   }
 }
 .fui-icon-timeline {
   &:before {
-    content: $fui-icon-timeline; 
+    content: $fui-icon-timeline;
   }
 }
 .fui-icon-timeRefresh {
   &:before {
-    content: $fui-icon-timeRefresh; 
+    content: $fui-icon-timeRefresh;
   }
 }
 .fui-icon-timeslider {
   &:before {
-    content: $fui-icon-timeslider; 
+    content: $fui-icon-timeslider;
   }
 }
 .fui-icon-training {
   &:before {
-    content: $fui-icon-training; 
+    content: $fui-icon-training;
   }
 }
 .fui-icon-trash {
   &:before {
-    content: $fui-icon-trash; 
+    content: $fui-icon-trash;
   }
 }
 .fui-icon-unfold {
   &:before {
-    content: $fui-icon-unfold; 
+    content: $fui-icon-unfold;
   }
 }
 .fui-icon-unlink {
   &:before {
-    content: $fui-icon-unlink; 
+    content: $fui-icon-unlink;
   }
 }
 .fui-icon-user {
   &:before {
-    content: $fui-icon-user; 
+    content: $fui-icon-user;
   }
 }
 .fui-icon-userAvatar {
   &:before {
-    content: $fui-icon-userAvatar; 
+    content: $fui-icon-userAvatar;
   }
 }
 .fui-icon-users {
   &:before {
-    content: $fui-icon-users; 
+    content: $fui-icon-users;
   }
 }
 .fui-icon-videoPlayer {
   &:before {
-    content: $fui-icon-videoPlayer; 
+    content: $fui-icon-videoPlayer;
   }
 }
 .fui-icon-visArea {
   &:before {
-    content: $fui-icon-visArea; 
+    content: $fui-icon-visArea;
   }
 }
 .fui-icon-visAreaStacked {
   &:before {
-    content: $fui-icon-visAreaStacked; 
+    content: $fui-icon-visAreaStacked;
   }
 }
 .fui-icon-visBarHorizontal {
   &:before {
-    content: $fui-icon-visBarHorizontal; 
+    content: $fui-icon-visBarHorizontal;
   }
 }
 .fui-icon-visBarHorizontalStacked {
   &:before {
-    content: $fui-icon-visBarHorizontalStacked; 
+    content: $fui-icon-visBarHorizontalStacked;
   }
 }
 .fui-icon-visBarVertical {
   &:before {
-    content: $fui-icon-visBarVertical; 
+    content: $fui-icon-visBarVertical;
   }
 }
 .fui-icon-visBarVerticalStacked {
   &:before {
-    content: $fui-icon-visBarVerticalStacked; 
+    content: $fui-icon-visBarVerticalStacked;
   }
 }
 .fui-icon-visGauge {
   &:before {
-    content: $fui-icon-visGauge; 
+    content: $fui-icon-visGauge;
   }
 }
 .fui-icon-visGoal {
   &:before {
-    content: $fui-icon-visGoal; 
+    content: $fui-icon-visGoal;
   }
 }
 .fui-icon-visLine {
   &:before {
-    content: $fui-icon-visLine; 
+    content: $fui-icon-visLine;
   }
 }
 .fui-icon-visMapCoordinate {
   &:before {
-    content: $fui-icon-visMapCoordinate; 
+    content: $fui-icon-visMapCoordinate;
   }
 }
 .fui-icon-visMapRegion {
   &:before {
-    content: $fui-icon-visMapRegion; 
+    content: $fui-icon-visMapRegion;
   }
 }
 .fui-icon-visMetric {
   &:before {
-    content: $fui-icon-visMetric; 
+    content: $fui-icon-visMetric;
   }
 }
 .fui-icon-visPie {
   &:before {
-    content: $fui-icon-visPie; 
+    content: $fui-icon-visPie;
   }
 }
 .fui-icon-visTable {
   &:before {
-    content: $fui-icon-visTable; 
+    content: $fui-icon-visTable;
   }
 }
 .fui-icon-visTagCloud {
   &:before {
-    content: $fui-icon-visTagCloud; 
+    content: $fui-icon-visTagCloud;
   }
 }
 .fui-icon-visText {
   &:before {
-    content: $fui-icon-visText; 
+    content: $fui-icon-visText;
   }
 }
 .fui-icon-visTimelion {
   &:before {
-    content: $fui-icon-visTimelion; 
+    content: $fui-icon-visTimelion;
   }
 }
 .fui-icon-visVega {
   &:before {
-    content: $fui-icon-visVega; 
+    content: $fui-icon-visVega;
   }
 }
 .fui-icon-visVisualBuilder {
   &:before {
-    content: $fui-icon-visVisualBuilder; 
+    content: $fui-icon-visVisualBuilder;
   }
 }
 .fui-icon-wordWrap {
   &:before {
-    content: $fui-icon-wordWrap; 
+    content: $fui-icon-wordWrap;
   }
 }
 .fui-icon-wordWrapDisabled {
   &:before {
-    content: $fui-icon-wordWrapDisabled; 
+    content: $fui-icon-wordWrapDisabled;
   }
 }
 .fui-icon-wrench {
   &:before {
-    content: $fui-icon-wrench; 
+    content: $fui-icon-wrench;
   }
 }
-
-
 
 .sizedefault {
   font-size: $fuiFontSize;
@@ -1628,7 +1625,7 @@ i {
 }
 
 .primary {
-  @include fuiIcon($fuiColorPrimary)
+  @include fuiIcon($fuiColorPrimary);
 }
 
 .success {
@@ -1637,7 +1634,7 @@ i {
 
 .warning {
   @include fuiIcon($fuiColorWarning);
-} 
+}
 
 .danger {
   @include fuiIcon($fuiColorDanger);
