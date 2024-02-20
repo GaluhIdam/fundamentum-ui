@@ -1,0 +1,71 @@
+@if (panelSplit) {
+<div
+  [ngClass]="[
+    'panel-split',
+    hasShadow ? 'shadow-' + (color ? color : 'default') : '',
+    hasBorder ? 'border-' + (color ? color : 'default') : '',
+    borderRadius ? 'panel-radius' : '',
+    directionSubdued === 'row' ? 'subdued-row' : 'subdued-column'
+  ]"
+>
+  <div
+    [ngClass]="[
+      'panel-start',
+      'p-' + padding,
+      colorSubdued === 'start' ? (color ? color : 'panel-subdued-default') : '',
+      wordBreak ? 'word-break' : '',
+      alignPanel === 'start'
+        ? directionSubdued === 'column'
+          ? 'justify-start'
+          : 'align-start'
+        : alignPanel === 'center'
+        ? directionSubdued === 'column'
+          ? 'justify-center'
+          : 'align-center'
+        : alignPanel === 'end'
+        ? directionSubdued === 'column'
+          ? 'justify-end'
+          : 'align-end'
+        : ''
+    ]"
+  >
+    <ng-content select="[panel-start]"></ng-content>
+  </div>
+  <div
+    [ngClass]="[
+      'panel-end',
+      'p-' + padding,
+      colorSubdued === 'end' ? (color ? color : 'panel-subdued-default') : '',
+      wordBreak ? 'word-break' : '',
+      alignPanel === 'start'
+        ? directionSubdued === 'column'
+          ? 'justify-start'
+          : 'align-start'
+        : alignPanel === 'center'
+        ? directionSubdued === 'column'
+          ? 'justify-center'
+          : 'align-center'
+        : alignPanel === 'end'
+        ? directionSubdued === 'column'
+          ? 'justify-end'
+          : 'align-end'
+        : ''
+    ]"
+  >
+    <ng-content select="[panel-end]"></ng-content>
+  </div>
+</div>
+} @else {
+<div
+  [ngClass]="[
+    'panel',
+    'p-' + padding,
+    color ? color : '',
+    hasShadow ? 'shadow-' + (color ? color : 'default') : '',
+    hasBorder ? 'border-' + (color ? color : 'default') : '',
+    borderRadius ? 'panel-radius' : ''
+  ]"
+>
+  <ng-content></ng-content>
+</div>
+}

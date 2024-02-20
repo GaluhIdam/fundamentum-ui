@@ -1,0 +1,182 @@
+@import "./../../../../../demo/src/styles";
+
+* {
+  box-sizing: border-box;
+}
+
+.panel-split {
+  display: flex;
+  width: 100%;
+  
+  .panel-start,
+  .panel-end {
+    display: flex;
+    width: 100%;
+    flex: 1;
+  }
+}
+
+
+.subdued-row {
+  flex-direction: row;
+}
+
+.subdued-column {
+  flex-direction: column;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.word-break {
+  word-break: break-all;
+}
+
+.p-sizedefault {
+  padding: $fuiFontSize;
+}
+
+.p-sizexs {
+  padding: $fuiFontSizeXS;
+}
+
+.p-sizes {
+  padding: $fuiFontSizeS;
+}
+
+.p-sizem {
+  padding: $fuiFontSizeM;
+}
+
+.p-sizel {
+  padding: $fuiFontSizeL;
+}
+
+.p-sizexl {
+  padding: $fuiFontSizeXL;
+}
+
+.p-sizexxl {
+  padding: $fuiFontSizeXXL;
+}
+
+.panel-subdued-default {
+  @include fuiPanel($fuiColorLightShade, 10%)
+}
+
+.primary {
+  @include fuiPanel($fuiColorPrimary, 60%);
+}
+
+.success {
+  @include fuiPanel($fuiColorSuccess, 40%);
+}
+
+.warning {
+  @include fuiPanel($fuiColorWarning, 45%);
+} 
+
+.danger {
+  @include fuiPanel($fuiColorDanger, 50%);
+}
+
+.text {
+  @include fuiPanel($fuiColorDarkShade, 50%);
+}
+
+.accent {
+  @include fuiPanel($fuiColorAccent, 22%);
+}
+
+.disabled {
+  @include fuiPanel($fuiColorDisabled, 20%);
+}
+
+.shadow-default {
+  @include fuiBottomShadowMedium();
+}
+
+.shadow-primary {
+  @include fuiBottomShadowMedium($fuiColorPrimary);
+}
+
+.shadow-success {
+  @include fuiBottomShadowMedium($fuiColorSuccess);
+}
+
+.shadow-warning {
+  @include fuiBottomShadowMedium($fuiColorWarning);
+} 
+
+.shadow-danger {
+  @include fuiBottomShadowMedium($fuiColorDanger);
+}
+
+.shadow-text {
+  @include fuiBottomShadowMedium($fuiColorDarkShade);
+}
+
+.shadow-accent {
+  @include fuiBottomShadowMedium($fuiColorAccent);
+}
+
+.shadow-disabled {
+  @include fuiBottomShadowMedium($fuiColorDisabled);
+}
+
+.border-default {
+  @include fuiPanelBorder($fuiColorDarkShade, 40%);
+}
+
+.border-primary {
+  @include fuiPanelBorder($fuiColorPrimary, 55%);
+}
+
+.border-success {
+  @include fuiPanelBorder($fuiColorSuccess, 35%);
+}
+
+.border-warning {
+  @include fuiPanelBorder($fuiColorWarning, 40%);
+} 
+
+.border-danger {
+  @include fuiPanelBorder($fuiColorDanger, 45%);
+}
+
+.border-text {
+  @include fuiPanelBorder($fuiColorDarkShade, 45%);
+}
+
+.border-accent {
+  @include fuiPanelBorder($fuiColorAccent, 17%);
+}
+
+.border-disabled {
+  @include fuiPanelBorder($fuiColorDisabled, 17%);
+}
+
+.panel-radius {
+  border-radius: 6px;
+}

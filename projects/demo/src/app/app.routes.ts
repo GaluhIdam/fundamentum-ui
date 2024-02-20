@@ -12,6 +12,9 @@ import { ChartAreaStackedGradientViewComponent } from './organisms/chart-area-st
 import { ChartPieDoughnutViewComponent } from './organisms/chart-pie-doughnut-view/chart-pie-doughnut-view.component';
 import { ChartCandlestickViewComponent } from './organisms/chart-candlestick-view/chart-candlestick-view.component';
 import { ChartTreeViewComponent } from './organisms/chart-tree-view/chart-tree-view.component';
+import { ModalViewComponent } from './templates/modal-view/modal-view.component';
+import { PanelViewComponent } from './templates/panel-view/panel-view.component';
+import { BreadcrumbViewComponent } from './molecules/breadcrumb-view/breadcrumb-view.component';
 
 export const routes: Routes = [
   {
@@ -87,6 +90,38 @@ export const routes: Routes = [
         title: 'Chart Tree',
         path: 'chart-tree',
         component: ChartTreeViewComponent,
+      },
+    ],
+  },
+  {
+    path: 'template',
+    children: [
+      {
+        path: 'modal',
+        component: ModalViewComponent,
+      },
+    ],
+  },
+  {
+    path: 'template',
+    children: [
+      {
+        path: '',
+        redirectTo: 'panel',
+        pathMatch: 'full',
+      },
+      {
+        path: 'panel',
+        component: PanelViewComponent,
+      },
+    ],
+  },
+  {
+    path: 'molecule',
+    children: [
+      {
+        path: 'breadcrumb',
+        component: BreadcrumbViewComponent,
       },
     ],
   },
