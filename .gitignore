@@ -46,3 +46,7 @@ Thumbs.db
 
 # Documentation
 /documentation
+
+# Ignore Compodoc generated files
+documentation/
+coverage/
