@@ -1,0 +1,105 @@
+@if (open) {
+<div [ngClass]="['modal-flyout']">
+  <div
+    [ngClass]="[
+      'modal-flyout-layout',
+      modalDirection === 'start'
+        ? 'modal-direction-start'
+        : 'modal-direction-end'
+    ]"
+  >
+    <div class="modal-flyout-container">
+      <div
+        [ngClass]="[
+          'modal-flyout-content',
+          open ? 'modal-flyout-content-open' : '',
+          modalSize ? 'modal-size-' + modalSize : ''
+        ]"
+        [@slideInOut]
+        [style.transform]="
+          modalDirection === 'start' ? 'translateX(-200%)' : 'translateX(200%)'
+        "
+      >
+        <div
+          [ngClass]="[
+            'modal-flyout-header-container',
+            modalPadding ? 'modal-p-' + modalPadding : ''
+          ]"
+        >
+          <div class="modal-flyout-header">
+            <div class="title">
+              <fui-text
+                [size]="titleSize"
+                [weight]="'bold'"
+                [color]="titleColor"
+                >{{ title }}</fui-text
+              >
+            </div>
+            <div class="close-modal" (click)="onHandleCloseModal()">
+              <fui-icons
+                [icon]="iconClose"
+                [size]="iconCloseSize"
+                [color]="iconCloseColor"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          [ngClass]="[
+            'modal-flyout-body',
+            modalPadding ? 'modal-p-' + modalPadding : ''
+          ]"
+        >
+          <ng-content></ng-content>
+        </div>
+        <div
+          [ngClass]="[
+            'modal-flyout-footer',
+            'button-position-' + modalButtonPosition,
+            modalPadding ? 'modal-p-' + modalPadding : ''
+          ]"
+        >
+          <div
+            [ngClass]="[
+              'modal-flyout-footer-button',
+              reverseButtonPosition ? 'reversed-button' : '',
+              splitButton ? 'button-split-' + splitButton : ''
+            ]"
+          >
+            <div class="cancel-button" (click)="onHandleCancelButton()">
+              @if (showCancelButton) { @if(cancelButtonType === 'button') {
+              <fui-button
+                [size]="cancelButtonSize"
+                [color]="cancelButtonColor"
+                >{{ cancelButtonText }}</fui-button
+              >
+              } @else {
+              <fui-button-empty
+                [size]="cancelButtonSize"
+                [color]="cancelButtonColor"
+                >{{ cancelButtonText }}</fui-button-empty
+              >
+              } }
+            </div>
+            <div class="confirm-button" (click)="onHandleConfirmButton()">
+              @if (showConfirmButton) { @if(confirmButtonType === 'button') {
+              <fui-button
+                [size]="confirmButtonSize"
+                [color]="confirmButtonColor"
+                >{{ confirmButtonText }}</fui-button
+              >
+              } @else {
+              <fui-button-empty
+                [size]="confirmButtonSize"
+                [color]="confirmButtonColor"
+                >{{ confirmButtonText }}</fui-button-empty
+              >
+              } }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+}

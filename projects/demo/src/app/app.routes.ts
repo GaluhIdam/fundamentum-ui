@@ -13,6 +13,7 @@ import { ChartPieDoughnutViewComponent } from './organisms/chart-pie-doughnut-vi
 import { ModalViewComponent } from './templates/modal-view/modal-view.component';
 import { PanelViewComponent } from './templates/panel-view/panel-view.component';
 import { BreadcrumbViewComponent } from './molecules/breadcrumb-view/breadcrumb-view.component';
+import { ModalFlyoutViewComponent } from './template/modal-flyout-view/modal-flyout-view.component';
 
 export const routes: Routes = [
   {
@@ -81,15 +82,8 @@ export const routes: Routes = [
       },
     ],
   },
-  {
-    path: 'template',
-    children: [
-      {
-        path: 'modal',
-        component: ModalViewComponent,
-      },
-    ],
-  },
+
+  /* Router for template */
   {
     path: 'template',
     children: [
@@ -101,6 +95,14 @@ export const routes: Routes = [
       {
         path: 'panel',
         component: PanelViewComponent,
+      },
+      {
+        path: 'modal',
+        component: ModalViewComponent,
+      },
+      {
+        path: 'modal-flyout',
+        component: ModalFlyoutViewComponent,
       },
     ],
   },
