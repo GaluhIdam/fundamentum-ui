@@ -10,6 +10,8 @@ import { ChartAreaStackedViewComponent } from './organisms/chart-area-stacked-vi
 import { ChartLineStackedViewComponent } from './organisms/chart-line-stacked-view/chart-line-stacked-view.component';
 import { ChartAreaStackedGradientViewComponent } from './organisms/chart-area-stacked-gradient-view/chart-area-stacked-gradient-view.component';
 import { ChartPieDoughnutViewComponent } from './organisms/chart-pie-doughnut-view/chart-pie-doughnut-view.component';
+import { ChartCandlestickViewComponent } from './organisms/chart-candlestick-view/chart-candlestick-view.component';
+import { ChartTreeViewComponent } from './organisms/chart-tree-view/chart-tree-view.component';
 import { ModalViewComponent } from './templates/modal-view/modal-view.component';
 import { PanelViewComponent } from './templates/panel-view/panel-view.component';
 import { BreadcrumbViewComponent } from './molecules/breadcrumb-view/breadcrumb-view.component';
@@ -78,6 +80,16 @@ export const routes: Routes = [
         title: 'Chart Area Stacked Gradient',
         path: 'chart-area-stacked-gradient',
         component: ChartAreaStackedGradientViewComponent,
+      },
+      {
+        title: 'Chart Candlestick',
+        path: 'chart-candlestick',
+        component: ChartCandlestickViewComponent,
+      },
+      {
+        title: 'Chart Tree',
+        path: 'chart-tree',
+        component: ChartTreeViewComponent,
       },
     ],
   },

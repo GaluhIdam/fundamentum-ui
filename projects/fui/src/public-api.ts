@@ -8,22 +8,26 @@ export * from './lib/atoms/input/input.component';
 export * from './lib/atoms/text/text.component';
 
 /* Line Componet export to be dist */
-export * from './lib/organisms/chart-line/chart-line.component';
+export * from './lib/organisms/charts/chart-line/chart-line.component';
 /* Line Stacked Componet export to be dist */
-export * from './lib/organisms/chart-line-stacked/chart-line-stacked.component';
+export * from './lib/organisms/charts/chart-line-stacked/chart-line-stacked.component';
 /* Bar Componet export to be dist */
-export * from './lib/organisms/chart-bar/chart-bar.component';
+export * from './lib/organisms/charts/chart-bar/chart-bar.component';
 /* Pie Componet export to be dist */
-export * from './lib/organisms/chart-pie/chart-pie.component';
+export * from './lib/organisms/charts/chart-pie/chart-pie.component';
 /* Pie Doughnut Componet export to be dist */
-export * from './lib/organisms/chart-pie-doughnut/chart-pie-doughnut.component';
+export * from './lib/organisms/charts/chart-pie-doughnut/chart-pie-doughnut.component';
 /* Radar Componet export to be dist */
-export * from './lib/organisms/chart-radar/chart-radar.component';
+export * from './lib/organisms/charts/chart-radar/chart-radar.component';
 /* Scatter Componet export to be dist */
-export * from './lib/organisms/chart-scatter/chart-scatter.component';
+export * from './lib/organisms/charts/chart-scatter/chart-scatter.component';
 /* Area Componet export to be dist */
-export * from './lib/organisms/chart-area/chart-area.component';
+export * from './lib/organisms/charts/chart-area/chart-area.component';
 /* Area Stacked Componet export to be dist */
-export * from './lib/organisms/chart-area-stacked/chart-area-stacked.component';
+export * from './lib/organisms/charts/chart-area-stacked/chart-area-stacked.component';
 /* Area Stacked Gradient Componet export to be dist */
-export * from './lib/organisms/chart-area-stacked-gradient/chart-area-stacked-gradient.component';
+export * from './lib/organisms/charts/chart-area-stacked-gradient/chart-area-stacked-gradient.component';
+/* Candlestick Componet export to be dist */
+export * from './lib/organisms/charts/chart-candlestick/chart-candlestick.component';
+/* Tree Componet export to be dist */
+export * from './lib/organisms/charts/chart-tree/chart-tree.component';
