@@ -1,0 +1,29 @@
+@import "./../../../../../demo/src/styles";
+
+.overlay-mask {
+  padding: 1rem;
+  position: fixed;
+  inset: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: $fuiZMask;
+}
+
+.flex-center {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.p-s {
+  padding: $fuiFontSizeS;
+}
+
+.p-m {
+  padding: $fuiFontSizeM;
+}
+
+.p-l {
+  padding: $fuiFontSizeL;
+}

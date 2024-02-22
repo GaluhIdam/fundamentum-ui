@@ -1,6 +1,6 @@
 @if (open) {
 <div class="modal">
-  <div class="modal-backdrop">
+  <fui-overlay-mask (onOverlayClick)="onHandleOverLayClick()">
     <div class="modal-container">
       <div class="modal-header">
         <div class="title">
@@ -59,6 +59,6 @@
         </div>
       </div>
     </div>
-  </div>
+  </fui-overlay-mask>
 </div>
 }
