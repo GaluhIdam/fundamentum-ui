@@ -1,13 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Color, Icon, Size } from '../../types';
 import { CommonModule } from '@angular/common';
-import {
-  ButtonComponent,
-  ButtonEmptyComponent,
-  IconsComponent,
-  OverlayMaskComponent,
-  TextComponent,
-} from 'fui';
+import { IconsComponent } from '../../atoms/icons/icons.component';
+import { TextComponent } from '../../atoms/text/text.component';
+import { ButtonComponent } from '../../atoms/button/button.component';
+import { ButtonEmptyComponent } from '../../atoms/button-empty/button-empty.component';
+import { OverlayMaskComponent } from '../../atoms/overlay-mask/overlay-mask.component';
 
 @Component({
   selector: 'fui-modal',

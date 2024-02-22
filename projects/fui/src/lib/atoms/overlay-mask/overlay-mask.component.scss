@@ -1,10 +1,10 @@
-@import "./../../../../../demo/src/styles";
+@import "./../../styles/index";
 
 .overlay-mask {
   padding: 1rem;
   position: fixed;
   inset: 0px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba($fuiColorPrimary, 0.5);
   z-index: $fuiZMask;
 }
 
