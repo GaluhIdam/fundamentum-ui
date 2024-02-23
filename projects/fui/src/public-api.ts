@@ -31,3 +31,11 @@ export * from './lib/organisms/charts/chart-area-stacked-gradient/chart-area-sta
 export * from './lib/organisms/charts/chart-candlestick/chart-candlestick.component';
 /* Tree Componet export to be dist */
 export * from './lib/organisms/charts/chart-tree/chart-tree.component';
+/* Callout Component */
+export * from './lib/organisms/callout/callout.component';
+/* Inline Edit Component */
+export * from './lib/organisms/inline-edit/inline-edit.component';
+/* Link Component */
+export * from './lib/atoms/link/link.component';
+/* Button Icon Component */
+export * from './lib/molecules/button-icon/button-icon.component';

@@ -1,0 +1,16 @@
+<button
+  [type]="type"
+  [ngClass]="
+    'text-' +
+    textColor +
+    ' ' +
+    'bg-' +
+    bgColor +
+    (bgColor ? ' ' + bgColor : '') +
+    (rounded ? ' ' + rounded : '') +
+    (position ? ' ' + position : '')
+  "
+>
+  <fui-icons *ngIf="icon" [color]="textColor!" [icon]="icon"></fui-icons>
+  {{ text }}
+</button>

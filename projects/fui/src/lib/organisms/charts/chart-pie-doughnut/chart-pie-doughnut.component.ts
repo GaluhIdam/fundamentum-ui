@@ -24,7 +24,7 @@ import { ThemesChart } from '../theme-chart';
     [themeChart]="themeChart">
  * </fui-chart-pie-doughnut>
  * ```
- * <example-url>http://localhost:4200/chart/chart-pie-doughnut</example-url>
+ * <example-url>http://localhost:4200/organisms/chart/chart-pie-doughnut</example-url>
  */
 
 @Component({

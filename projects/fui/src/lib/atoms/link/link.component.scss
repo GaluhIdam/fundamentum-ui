@@ -1,0 +1,38 @@
+@import "../../styles/index";
+.primary {
+  @include link("transparant", $fuiColorPrimaryText);
+}
+.success {
+  @include link("transparant", $fuiColorSuccess);
+}
+.warning {
+  @include link("transparant", $fuiColorWarning);
+}
+.danger {
+  @include link("transparant", $fuiColorDanger);
+}
+.subdued {
+  @include link("transparant", $fuiTextSubduedColor);
+}
+.accent {
+  @include link("transparant", $fuiColorAccent);
+}
+.ghost {
+  @include link("transparant", $fuiColorGhost);
+}
+.text {
+  @include link("transparant", $fuiTextColor);
+}
+
+.icon-popout {
+  margin-left: 4px;
+}
+
+.disabled {
+  @include link("transparant", $fuiTextColor);
+  cursor: auto;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}

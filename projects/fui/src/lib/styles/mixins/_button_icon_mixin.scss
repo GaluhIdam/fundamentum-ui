@@ -1,0 +1,10 @@
+@import "../variables/index";
+
+@mixin buttonIconMix($bgColor, $color, $rounded) {
+  background-color: $bgColor;
+  color: $color;
+  border-radius: $rounded;
+  font-family: $fuiFontFamily;
+  font-weight: $fuiFontWeightSemiBold;
+  height: fit-content;
+}

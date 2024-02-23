@@ -1,0 +1,63 @@
+@import "../../styles/index";
+
+.bg-primary {
+  font-family: $fuiFontFamily;
+  border-width: 0;
+  padding: $fuiSizeXS $fuiSizeM $fuiSizeXS $fuiSizeM;
+  background-color: $fuiColorPrimary;
+  cursor: pointer;
+  &:hover {
+    background-color: $fuiBgPrimary;
+  }
+}
+.bg-success {
+  background-color: $fuiColorSuccess;
+}
+.bg-warning {
+  background-color: $fuiColorWarning;
+}
+
+.bg-danger {
+  background-color: $fuiColorDanger;
+}
+
+.bg-text {
+  background-color: $fuiColorInk;
+}
+
+.bg-accent {
+  background-color: $fuiColorAccent;
+}
+
+.bg-disabled {
+  background-color: $fuiColorDisabled;
+}
+
+.text-primary {
+  color: $fuiColorPrimary;
+}
+.text-success {
+  color: $fuiColorSuccess;
+}
+.text-warning {
+  color: $fuiColorWarning;
+}
+
+.text-danger {
+  color: $fuiColorDanger;
+}
+
+.text-text {
+  color: $fuiColorInk;
+}
+
+.text-accent {
+  color: $fuiColorAccent;
+}
+
+.text-disabled {
+  color: $fuiColorDisabled;
+}
+.text-ghost {
+  color: $fuiColorGhost;
+}
