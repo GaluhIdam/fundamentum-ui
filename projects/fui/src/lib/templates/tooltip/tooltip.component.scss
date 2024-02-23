@@ -1,0 +1,176 @@
+@import './../../styles/index';
+
+* {
+  box-sizing: border-box;
+}
+
+.tooltip {
+  position: relative;
+  width: 100%;
+
+  &-container {
+    position: absolute;
+    z-index: 1;
+    padding: .5rem;
+    width: max-content;
+    max-width: 200px;
+    margin: auto;
+    background: $fuiTooltipBackgroundColor;
+    border: $fuiTooltipBorderColor;
+    color: $fuiColorEmptyShade;
+    transition: all .3s ease;
+    visibility: hidden;
+    opacity: 0;
+
+    .title {
+      font-weight: 700;
+    }
+
+    hr {
+      border-top: 1px solid $fuiColorLightShade;
+    }
+  }
+  
+  &:hover {
+    .tooltip-container {
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    .top {
+      bottom: 150%;
+    }
+
+    .bottom {
+      top: 150%;
+    }
+
+    .left {
+      right: 100%;
+    }
+
+    .right {
+      left: 100%;
+    }
+    
+  }
+}
+
+.top {
+  bottom: 200%;
+}
+
+.bottom {
+  top: 200%;
+}
+
+.left {
+  right: 170%;
+}
+
+.right {
+  left: 170%;
+}
+
+.topBottom-start {
+  left: 0;
+}
+
+.topBottom-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.topBottom-end {
+  right: 0;
+}
+
+.left-start {
+  top: -50%;
+  transform: translateX(-15px);
+}
+
+.left-center {
+  top: 50%;
+  transform: translate(-15px, -50%);
+}
+
+.left-end {
+  bottom: -50%;
+  transform: translateX(-15px);
+}
+
+.right-start {
+  top: -50%;
+  transform: translateX(15px);
+}
+
+.right-center {
+  top: 50%;
+  transform: translate(15px, -50%);
+}
+
+.right-end {
+  bottom: -50%;
+  transform: translateX(15px);
+}
+
+.arrow-tooltip-top-start {
+  @include fuiTooltipArrow('top', 'start')
+}
+
+.arrow-tooltip-top-center {
+  @include fuiTooltipArrow('top', 'center')
+}
+
+.arrow-tooltip-top-end {
+  @include fuiTooltipArrow('top', 'end')
+}
+
+.arrow-tooltip-bottom-start {
+  @include fuiTooltipArrow('bottom', 'start')
+}
+
+.arrow-tooltip-bottom-center {
+  @include fuiTooltipArrow('bottom', 'center')
+}
+
+.arrow-tooltip-bottom-end {
+  @include fuiTooltipArrow('bottom', 'end')
+}
+
+.arrow-tooltip-right-start {
+  @include fuiTooltipArrow('right', 'start')
+}
+
+.arrow-tooltip-right-center {
+  @include fuiTooltipArrow('right', 'center')
+}
+
+.arrow-tooltip-right-end {
+  @include fuiTooltipArrow('right', 'end')
+}
+
+.arrow-tooltip-left-start {
+  @include fuiTooltipArrow('left', 'start')
+}
+
+.arrow-tooltip-left-center {
+  @include fuiTooltipArrow('left', 'center')
+}
+
+.arrow-tooltip-left-end {
+  @include fuiTooltipArrow('left', 'end')
+}
+
+.tooltip-radius-none{
+  border-radius: 0;
+}
+
+.tooltip-radius-s{
+  border-radius: $fuiBorderRadiusSmall;  
+}
+
+.tooltip-radius-m{
+  border-radius: $fuiBorderRadius;
+}
