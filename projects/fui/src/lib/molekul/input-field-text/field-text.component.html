@@ -1,16 +1,18 @@
-<div>
-  @if(!!labelTextValue){
-  <label>{{ labelTextValue }}</label>
-  } @else {
-  <ng-container></ng-container>
-  }
+<div class="field-group">
+  @if(!!labelText){
+  <div>{{ labelText }}</div>
+  } @else{}
   <fui-input-base
-    [width]="'fullWidth'"
-    [inputValue]="valueInput"
+    [controlName]="control"
+    (textChange)="onTextChange($event)"
   ></fui-input-base>
-  @if(!!helpTextValue){
-  <div class="helpText">{{ helpTextValue }}</div>
-  } @else {
-  <ng-container></ng-container>
-  }
+
+  @if(control.touched && control.invalid ){ @if(control.errors?.['required']){
+  <p>tidak boleh kosong</p>
+  } @else if(control.dirty && control.errors?.['minlength']){
+  <p>
+    {{control.errors?.['minlength'].actualLength}} character from
+    {{control.errors?.['minlength'].requiredLength}}
+  </p>
+  } }
 </div>
