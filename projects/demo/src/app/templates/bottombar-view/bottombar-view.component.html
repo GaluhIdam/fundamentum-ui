@@ -1,0 +1,14 @@
+<div class="container">
+  <fui-button (click)="handleDisplayBotombar()">Toggle Bottombar</fui-button>
+  <fui-button (click)="handleChangePositionBotombar()"
+    >Change Position Bottombar</fui-button
+  >
+</div>
+<fui-bottombar
+  [isDisplay]="displayBottomBar"
+  [position]="position"
+  [cancelButtonText]="'Discard'"
+  (onCancelButton)="handleCancelBottomBar()"
+>
+  <fui-button>Help</fui-button>
+</fui-bottombar>

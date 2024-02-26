@@ -1,0 +1,46 @@
+@if (isDisplay && position === 'bottom') {
+<div [ngClass]="bottomBarClasses" [@slideInBottom]>
+  <ng-container *ngTemplateOutlet="bottomBarContent" />
+</div>
+} @else if (isDisplay && position === 'top') {
+<div [ngClass]="bottomBarClasses" [@slideInTop]>
+  <ng-container *ngTemplateOutlet="bottomBarContent" />
+</div>
+}
+
+<ng-template #bottomBarContent>
+  <div class="bottombar-content">
+    <ng-content></ng-content>
+  </div>
+  <div
+    [ngClass]="[
+      'bottombar-button',
+      reverseButtonPosition ? 'revereverseButtonPosition' : ''
+    ]"
+  >
+    <div class="cancel-button" (click)="onHandleCancelButton()">
+      @if (showCancelButton) { @if(cancelButtonType === 'button') {
+      <fui-button [size]="cancelButtonSize" [color]="cancelButtonColor">{{
+        cancelButtonText
+      }}</fui-button>
+      } @else {
+      <fui-button-empty [size]="cancelButtonSize" [color]="cancelButtonColor">{{
+        cancelButtonText
+      }}</fui-button-empty>
+      } }
+    </div>
+    <div class="confirm-button" (click)="onHandleConfirmButton()">
+      @if (showConfirmButton) { @if(confirmButtonType === 'button') {
+      <fui-button [size]="confirmButtonSize" [color]="confirmButtonColor">{{
+        confirmButtonText
+      }}</fui-button>
+      } @else {
+      <fui-button-empty
+        [size]="confirmButtonSize"
+        [color]="confirmButtonColor"
+        >{{ confirmButtonText }}</fui-button-empty
+      >
+      } }
+    </div>
+  </div>
+</ng-template>
