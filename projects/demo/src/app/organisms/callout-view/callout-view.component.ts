@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CalloutComponent } from 'fui';
+//TODO: EXAMPLE FOR COMPODOC
 @Component({
   selector: 'app-callout-view',
   standalone: true,

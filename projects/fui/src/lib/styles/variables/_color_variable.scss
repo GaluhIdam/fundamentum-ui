@@ -10,7 +10,7 @@ $fuiColorAccent: #dd0a73 !default;
 
 // Status
 $fuiColorSuccess: #017d73 !default;
-$fuiColorWarning: #f5a700 !default;
+$fuiColorWarning: #b37a00 !default;
 $fuiColorDanger: #bd271e !default;
 
 // Grays
@@ -67,3 +67,30 @@ $fuiBgPrimary: rgba(0, 107, 180, 0.2);
 $fuiBgSuccess: rgba(1, 125, 115, 0.2);
 $fuiBgWarning: rgba(245, 167, 0, 0.2);
 $fuiBgDanger: rgba(189, 39, 30, 0.2);
+
+/* Button Background Color Filled */
+$fuiBtnPrimary: rgb(0, 119, 204);
+$fuiBtnSuccess: rgb(77, 210, 202);
+$fuiBtnWarning: rgb(254, 197, 20);
+$fuiBtnDanger: rgb(189, 39, 30);
+$fuiBtnText: rgb(105, 112, 125);
+$fuiBtnAccent: rgb(245, 131, 183);
+$fuiBtnDisabled: rgba(211, 218, 230, 0.15);
+
+/* Button Background Color Secondary */
+$fuiBtnPrimarySecondary: rgb(204, 228, 245);
+$fuiBtnSuccessSecondary: rgb(204, 242, 240);
+$fuiBtnWarningSecondary: rgb(255, 243, 208);
+$fuiBtnDangerSecondary: rgb(242, 212, 210);
+$fuiBtnTextSecondary: rgb(233, 237, 243);
+$fuiBtnAccentSecondary: rgb(252, 220, 234);
+$fuiBtnDisabledSecondary: rgba(211, 218, 230, 0.15);
+
+/* Button Text Color Secondary */
+$fuiBtnPrimaryText: rgb(0, 97, 166);
+$fuiBtnSuccessText: rgb(0, 108, 102);
+$fuiBtnWarningText: rgb(131, 101, 10);
+$fuiBtnDangerText: rgb(171, 35, 28);
+$fuiBtnTextText: rgb(52, 55, 65);
+$fuiBtnAccentText: rgb(160, 52, 101);
+$fuiBtnDisabledText: rgb(162, 171, 186);

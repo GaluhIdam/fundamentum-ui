@@ -1,16 +1,26 @@
-<button
-  [type]="type"
-  [ngClass]="
-    'text-' +
-    textColor +
-    ' ' +
-    'bg-' +
-    bgColor +
-    (bgColor ? ' ' + bgColor : '') +
-    (rounded ? ' ' + rounded : '') +
-    (position ? ' ' + position : '')
-  "
->
-  <fui-icons *ngIf="icon" [color]="textColor!" [icon]="icon"></fui-icons>
-  {{ text }}
+<button *ngIf="iconSide === 'left' && option === 'iconText'" [type]="type" [disabled]="disabled" [ngClass]="
+    style == 'filled' ? 'btn-fui-' + color : 'btn-fui-secondary-'+color+' '+
+    fullWidth
+  " (click)="handleOnClick()" [type]="type">
+  <fui-icons *ngIf="icon" [ngClass]="iconSide === 'left' ? 'mr' : 'ml'" [icon]="icon"></fui-icons>
+  <a>{{ text }}</a>
+</button>
+<button *ngIf="iconSide === 'right' && option === 'iconText'" [type]="type" [disabled]="disabled" [ngClass]="
+    style == 'filled' ? 'btn-fui-' + color : 'btn-fui-secondary-'+color+' '+
+    fullWidth
+  " (click)="handleOnClick()" [type]="type">
+  <a>{{ text }}</a>
+  <fui-icons *ngIf="icon" [ngClass]="iconSide === 'right' ? 'ml' : 'mr'" [icon]="icon"></fui-icons>
+</button>
+<button *ngIf="option === 'icon'" [type]="type" [disabled]="disabled" [ngClass]="
+    style == 'filled' ? 'btn-fui-' + color : 'btn-fui-secondary-'+color+' '+
+    fullWidth
+  " (click)="handleOnClick()" [type]="type">
+  <fui-icons *ngIf="icon" [icon]="icon"></fui-icons>
+</button>
+<button *ngIf="option === 'text'" [type]="type" [disabled]="disabled" [ngClass]="
+    style == 'filled' ? 'btn-fui-' + color : 'btn-fui-secondary-'+color+' '+
+    fullWidth
+  " (click)="handleOnClick()" [type]="type">
+  <a>{{ text }}</a>
 </button>

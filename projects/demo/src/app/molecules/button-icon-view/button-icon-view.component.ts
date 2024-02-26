@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ButtonComponent, ButtonIconComponent } from '../../../../../fui/src/public-api';
+import { ButtonComponent, ButtonIconComponent } from 'fui';
 
 @Component({
   selector: 'app-button-icon-view',
@@ -8,4 +8,8 @@ import { ButtonComponent, ButtonIconComponent } from '../../../../../fui/src/pub
   templateUrl: './button-icon-view.component.html',
   styleUrl: './button-icon-view.component.scss',
 })
-export class ButtonIconViewComponent {}
+export class ButtonIconViewComponent {
+  handleButtonClick($event: any): void {
+    console.log('ok');
+  }
+}

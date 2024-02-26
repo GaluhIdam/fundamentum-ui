@@ -1,63 +1,114 @@
 @import "../../styles/index";
 
-.bg-primary {
-  font-family: $fuiFontFamily;
-  border-width: 0;
-  padding: $fuiSizeXS $fuiSizeM $fuiSizeXS $fuiSizeM;
-  background-color: $fuiColorPrimary;
-  cursor: pointer;
+/* Button Filled */
+.btn-fui-primary {
+  @include buttonIconMix($fuiBtnPrimary, $fuiColorGhost, $fuiSizeXS);
+}
+.btn-fui-success {
+  @include buttonIconMix($fuiBtnSuccess, $fuiColorInk, $fuiSizeXS);
+}
+.btn-fui-danger {
+  @include buttonIconMix($fuiBtnDanger, $fuiColorGhost, $fuiSizeXS);
+}
+.btn-fui-warning {
+  @include buttonIconMix($fuiBtnWarning, $fuiColorGhost, $fuiSizeXS);
+}
+.btn-fui-text {
+  @include buttonIconMix($fuiBtnText, $fuiColorGhost, $fuiSizeXS);
+}
+.btn-fui-accent {
+  @include buttonIconMix($fuiBtnAccent, $fuiColorInk, $fuiSizeXS);
+}
+.btn-fui-disabled {
+  @include buttonIconMix($fuiBtnDisabled, $fuiBtnDisabledText, $fuiSizeXS);
+  &:disabled {
+    transition: none;
+    text-decoration: none;
+    cursor: not-allowed;
+    transform: none;
+  }
   &:hover {
-    background-color: $fuiBgPrimary;
+    transition: none;
+    text-decoration: none;
+    cursor: not-allowed;
+    transform: none;
+  }
+  &:active {
+    transform: none;
   }
 }
-.bg-success {
-  background-color: $fuiColorSuccess;
+
+/* Button Secondary */
+.btn-fui-secondary-primary {
+  @include buttonIconMix(
+    $fuiBtnPrimarySecondary,
+    $fuiBtnPrimaryText,
+    $fuiSizeXS
+  );
 }
-.bg-warning {
-  background-color: $fuiColorWarning;
+.btn-fui-secondary-success {
+  @include buttonIconMix(
+    $fuiBtnSuccessSecondary,
+    $fuiBtnSuccessText,
+    $fuiSizeXS
+  );
+}
+.btn-fui-secondary-danger {
+  @include buttonIconMix(
+    $fuiBtnWarningSecondary,
+    $fuiBtnWarningText,
+    $fuiSizeXS
+  );
+}
+.btn-fui-secondary-warning {
+  @include buttonIconMix($fuiBtnDangerSecondary, $fuiBtnDangerText, $fuiSizeXS);
+}
+.btn-fui-secondary-text {
+  @include buttonIconMix($fuiBtnTextSecondary, $fuiBtnTextText, $fuiSizeXS);
+}
+.btn-fui-secondary-accent {
+  @include buttonIconMix($fuiBtnAccentSecondary, $fuiBtnAccentText, $fuiSizeXS);
+}
+.btn-fui-secondary-disabled {
+  @include buttonIconMix(
+    $fuiBtnDisabledSecondary,
+    $fuiBtnDisabledText,
+    $fuiSizeXS
+  );
+  &:disabled {
+    text-decoration: none;
+    cursor: not-allowed;
+    transform: none;
+  }
+  &:hover {
+    transition: none;
+    text-decoration: none;
+    cursor: not-allowed;
+    transform: none;
+  }
+  &:active {
+    transform: none;
+  }
 }
 
-.bg-danger {
-  background-color: $fuiColorDanger;
+/* Add On */
+.mr {
+  margin-right: 6px;
+}
+.ml {
+  margin-left: 6px;
 }
 
-.bg-text {
-  background-color: $fuiColorInk;
+a {
+  text-decoration: none;
+  &:disabled {
+    text-decoration: underline;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-.bg-accent {
-  background-color: $fuiColorAccent;
-}
-
-.bg-disabled {
-  background-color: $fuiColorDisabled;
-}
-
-.text-primary {
-  color: $fuiColorPrimary;
-}
-.text-success {
-  color: $fuiColorSuccess;
-}
-.text-warning {
-  color: $fuiColorWarning;
-}
-
-.text-danger {
-  color: $fuiColorDanger;
-}
-
-.text-text {
-  color: $fuiColorInk;
-}
-
-.text-accent {
-  color: $fuiColorAccent;
-}
-
-.text-disabled {
-  color: $fuiColorDisabled;
-}
-.text-ghost {
-  color: $fuiColorGhost;
+.full-width {
+  width: 100%;
 }
