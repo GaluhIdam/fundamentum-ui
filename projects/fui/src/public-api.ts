@@ -7,6 +7,8 @@ export * from './lib/atoms/icons/icons.component';
 export * from './lib/atoms/input/input.component';
 export * from './lib/atoms/text/text.component';
 
+export * from './lib/molecules/avatar/avatar.component';
+
 /* Line Componet export to be dist */
 export * from './lib/organisms/charts/chart-line/chart-line.component';
 /* Line Stacked Componet export to be dist */
@@ -31,3 +33,5 @@ export * from './lib/organisms/charts/chart-area-stacked-gradient/chart-area-sta
 export * from './lib/organisms/charts/chart-candlestick/chart-candlestick.component';
 /* Tree Componet export to be dist */
 export * from './lib/organisms/charts/chart-tree/chart-tree.component';
+
+export * from './lib/types';
