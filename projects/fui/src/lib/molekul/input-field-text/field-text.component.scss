@@ -1,0 +1,24 @@
+@import "./../../../../../demo/src/styles";
+
+input {
+  @include fuiInputTextBase;
+  font-family: $fuiFontFamily;
+  font-size: $fuiFontSizeS;
+  font-weight: $fuiFontWeightMedium;
+}
+
+label {
+  display: block;
+  padding-left: 2px;
+  font-size: calc($fuiFontSize * 0.84375);
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.helpText {
+  font-size: $fuiFontSizeXS;
+  font-weight: 400;
+  padding-left: 2px;
+  margin-top: calc($fuiFontSize * 0.25);
+  color: $fuiColorDarkShade;
+}
