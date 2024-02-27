@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { BottombarComponent } from '../../../../../fui/src/lib/templates/bottombar/bottombar.component';
-import { ButtonComponent } from '../../../../../fui/src/lib/atoms/button/button.component';
+import { BottombarComponent, ButtonComponent } from 'fui';
 
 @Component({
   selector: 'app-bottombar-view',
