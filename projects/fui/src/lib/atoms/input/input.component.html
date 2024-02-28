@@ -12,6 +12,7 @@
   }
 </div> -->
 <input
+  type="text"
   [placeholder]="placeholderValue"
   [class]="colorValue"
   [class.sizeXS]="sizeValue === 'sizexs'"
@@ -24,4 +25,7 @@
   [class]="colorValue"
   [class.autoWidth]="widthValue === 'auto'"
   [class.fullWidth]="widthValue === 'full'"
+  [formControl]="controlName"
+  (input)="onInput($event)"
+  [ngClass]="onHasError(controlName)"
 />

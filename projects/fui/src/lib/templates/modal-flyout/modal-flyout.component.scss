@@ -1,0 +1,144 @@
+@import "./../../../../../demo/src/styles";
+
+.modal-flyout {
+  &-layout {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: $fuiZModal;
+    display: flex;
+  }
+
+  &-container {
+    position: relative;
+  }
+
+  &-content {
+    height: 100vh;
+    background-color: rgba($color: #fff, $alpha: 1.0);
+    min-width: 400px;
+    width: fit-content;
+    @include fuiBottomShadowLarge();
+
+    display: flex;
+    flex-direction: column;
+
+    & .modal-flyout-header-container {
+      border-bottom: 1px solid $fuiColorLightShade;
+    }
+
+    & .modal-flyout-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .close-modal {
+        cursor: pointer;
+      }
+
+    }
+
+    & .modal-flyout-body {
+      flex: 1;
+      overflow-y: scroll;
+
+      scrollbar-width: thin;
+      scrollbar-color: $fuiColorLightShade;
+    }
+  
+    & .modal-flyout-footer {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-top: 1px solid $fuiColorLightShade;
+  
+      &-button{
+        display: flex;
+            
+        &.reversed-button {
+          flex-direction: row-reverse;
+        }
+      }
+  
+      &.button-position-start {
+        justify-content: flex-start;
+      }
+  
+      &.button-position-center {
+        justify-content: center;
+      }
+  
+      &.button-position-end {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+
+  @media screen and (max-width: map-get($map: $fuiBreakpoints, $key: 's')){
+    &-container {
+    min-width: fit-content;
+    }
+  }
+}
+
+.modal-direction-start {
+  justify-content: flex-start;
+  left: 0;
+}
+
+.modal-direction-end {
+  justify-content: flex-end;
+  right: 0;
+}
+
+.modal-size-s {
+  width: 25vw;
+}
+
+.modal-size-m {
+  width: 50vw;
+}
+
+.modal-size-l {
+  width: 75vw;
+}
+
+.modal-size-auto {
+  width: fit-content;
+}
+
+.modal-p-none {
+  padding: 0;
+}
+
+.modal-p-s {
+  padding: $fuiFontSizeS;
+}
+
+.modal-p-m {
+  padding: $fuiFontSizeM;
+}
+
+.modal-p-l {
+  padding: $fuiFontSizeL;
+}
+
+.button-split-between {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.button-split-evenly {
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.button-split-around {
+  justify-content: space-around;
+  width: 100%;
+}
+
+.button-split-none {
+  justify-content: initial;
+}

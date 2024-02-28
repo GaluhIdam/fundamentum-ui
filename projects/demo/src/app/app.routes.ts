@@ -19,6 +19,8 @@ import { CalloutViewComponent } from './organisms/callout-view/callout-view.comp
 import { LinkViewComponent } from './atoms/link-view/link-view.component';
 import { ButtonIconViewComponent } from './molecules/button-icon-view/button-icon-view.component';
 import { TextFieldComplexViewComponent } from './atoms/text-field-complex-view/text-field-complex-view.component';
+import { ModalFlyoutViewComponent } from './template/modal-flyout-view/modal-flyout-view.component';
+import { LoadingViewComponent } from './molecules/loading-view/loading-view.component';
 
 export const routes: Routes = [
   {
@@ -134,7 +136,7 @@ export const routes: Routes = [
   },
   /* Router for Atoms */
 
-  /* Router for Templates */
+  /* Router for template */
   {
     path: 'template',
     children: [
@@ -151,6 +153,14 @@ export const routes: Routes = [
         path: 'panel',
         component: PanelViewComponent,
       },
+      {
+        path: 'modal',
+        component: ModalViewComponent,
+      },
+      {
+        path: 'modal-flyout',
+        component: ModalFlyoutViewComponent,
+      },
     ],
   },
   /* Router for Templates */
@@ -166,6 +176,10 @@ export const routes: Routes = [
       {
         path: 'button-icon',
         component: ButtonIconViewComponent,
+      },
+      {
+        path: 'loading',
+        component: LoadingViewComponent,
       },
     ],
   },
