@@ -1,0 +1,37 @@
+@import "../../styles/index";
+
+input.fui-text-field {
+  @include textFieldComplex($fuiColorPrimary);
+}
+input.fui-text-field-invalid {
+  @include textFieldIconComplex($fuiColorDanger);
+}
+
+.full-width {
+  width: -webkit-fill-available;
+}
+
+.flex {
+  width: fit-content;
+  margin-bottom: 3px;
+  align-items: center;
+  position: relative;
+}
+.flex-full {
+  width: -webkit-fill-available;
+  margin-bottom: 3px;
+  align-items: center;
+  position: relative;
+}
+
+.fui-icon-input {
+  top: 8px;
+  right: 10px;
+  position: absolute;
+}
+
+.msg-validation {
+  font-family: $fuiFontFamily;
+  font-size: $fuiSizeS + 3;
+  color: $fuiColorDanger;
+}

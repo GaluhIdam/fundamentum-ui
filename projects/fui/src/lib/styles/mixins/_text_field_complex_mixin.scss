@@ -1,0 +1,51 @@
+@import "../variables/index";
+
+@mixin textFieldIconComplex($color) {
+  font-family: $fuiFontFamily;
+  font-size: $fuiSizeM;
+  border-width: 1px;
+  border-radius: 6px;
+  border-color: #a7a7a738;
+  background-color: #fbfcfd;
+  padding: 10px 10px 10px 10px;
+  box-shadow: none;
+  border-bottom-color: $color;
+  border-bottom-width: 2px;
+  &:focus {
+    border-bottom-color: $color;
+    border-bottom-width: 2px;
+    outline: none;
+  }
+  &:disabled {
+    color: #9aa4b4;
+    background-color: #eef2f7;
+    cursor: not-allowed;
+    &::placeholder {
+      color: #9aa4b4;
+    }
+  }
+}
+
+@mixin textFieldComplex($color) {
+  font-family: $fuiFontFamily;
+  font-size: $fuiSizeM;
+  border-width: 1px;
+  border-radius: 6px;
+  border-color: #a7a7a738;
+  background-color: #fbfcfd;
+  padding: 10px 10px 10px 10px;
+  box-shadow: none;
+  &:focus {
+    border-bottom-color: $color;
+    border-bottom-width: 2px;
+    outline: none;
+  }
+  &:disabled {
+    color: #9aa4b4;
+    background-color: #eef2f7;
+    cursor: not-allowed;
+    &::placeholder {
+      color: #9aa4b4;
+    }
+  }
+}

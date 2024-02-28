@@ -39,3 +39,5 @@ export * from './lib/organisms/inline-edit/inline-edit.component';
 export * from './lib/atoms/link/link.component';
 /* Button Icon Component */
 export * from './lib/molecules/button-icon/button-icon.component';
+/* Text Field FC */
+export * from './lib/atoms/text-field-complex/text-field-complex.component';

@@ -18,6 +18,7 @@ import { BreadcrumbViewComponent } from './molecules/breadcrumb-view/breadcrumb-
 import { CalloutViewComponent } from './organisms/callout-view/callout-view.component';
 import { LinkViewComponent } from './atoms/link-view/link-view.component';
 import { ButtonIconViewComponent } from './molecules/button-icon-view/button-icon-view.component';
+import { TextFieldComplexViewComponent } from './atoms/text-field-complex-view/text-field-complex-view.component';
 
 export const routes: Routes = [
   {
@@ -124,6 +125,10 @@ export const routes: Routes = [
       {
         path: 'link',
         component: LinkViewComponent,
+      },
+      {
+        path: 'text-field',
+        component: TextFieldComplexViewComponent,
       },
     ],
   },

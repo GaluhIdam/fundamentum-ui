@@ -1,0 +1,27 @@
+<div class="fit">
+  <div></div>
+  <fui-text-field-complex [textFieldControl]="textFieldx" [fullWidth]="true" [validator]="false"
+    [message]="'This is required !'"></fui-text-field-complex>
+</div>
+
+<form [formGroup]="myForm!" class="fit">
+  <div class="max-width">
+    <fui-text-field-complex formControlName="email" [fullWidth]="true" [validator]="true"
+      [message]="'This is required!'">
+    </fui-text-field-complex>
+  </div>
+
+  <div class="flex">
+    <div class="max-width">
+      <fui-text-field-complex formControlName="firstName" [fullWidth]="true" [validator]="true"
+        [message]="'This is required!'">
+      </fui-text-field-complex>
+    </div>
+    <div class="max-width">
+      <fui-text-field-complex formControlName="lastName" [fullWidth]="true" [validator]="true"
+        [message]="'This is required!'">
+      </fui-text-field-complex>
+    </div>
+  </div>
+
+</form>
