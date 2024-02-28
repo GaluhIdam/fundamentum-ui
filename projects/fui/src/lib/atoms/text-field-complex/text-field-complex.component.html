@@ -1,6 +1,22 @@
 <div [class.flex]="!fullWidth" [class.flex-full]="fullWidth">
-  <input [formControl]="textFieldControl" [class.full-width]="fullWidth" [class.fui-text-field-invalid]="validator"
-    [class.fui-text-field]="!validator" type="text" [readOnly]="readOnly" [value]="value" [placeholder]="placeholder">
-  <fui-icons *ngIf="validator" class="fui-icon-input" [icon]="'alert'" [size]="'sizel'" [color]="'danger'"></fui-icons>
+  <label
+    style="height: 38px; padding: 0px 8px 0px 8px; width: fit-content; border-top-left-radius: 6px; border-bottom-left-radius: 6px; align-items: center; display: flex; justify-content: center; position: relative;"
+    *ngIf="inputGroup==='prepend' || inputGroup==='prepend-append'" class="append">
+    <span>{{ textPrepend }}</span>
+  </label>
+  <input [formControl]="textFieldControl"
+    class="{{ inputGroup === 'append' || inputGroup=== 'prepend' ||  inputGroup=== 'none' ? 'border-'+inputGroup : 'border-append-prepend'}}"
+    [class.full-width]="fullWidth" [class.fui-text-field-invalid]="validator" [class.fui-text-field]="!validator"
+    type="text" [readOnly]="readOnly" [value]="value" [placeholder]="placeholder">
+  <div
+    class="{{ inputGroup === 'append' || inputGroup=== 'prepend' ||  inputGroup=== 'none' ? 'fui-icon-input-'+inputGroup : 'fui-icon-input-append-prepend'}}">
+    <fui-loading *ngIf="loading" [type]="'spinner'" class="fui-icon-mx" [size]="'sizel'"></fui-loading>
+    <fui-icons *ngIf="validator" class="fui-icon-mx" [icon]="'alert'" [size]="'sizel'" [color]="'danger'"></fui-icons>
+  </div>
+  <label
+    style="height: 38px; padding: 0px 8px 0px 8px; width: fit-content; border-top-right-radius: 6px; align-items: center; display: flex; justify-content: center; position: relative; border-bottom-right-radius: 6px;"
+    *ngIf="inputGroup==='append' || inputGroup==='prepend-append'" class="append">
+    <span>{{ textAppend }}</span>
+  </label>
 </div>
-<span class="msg-validation" *ngIf="validator">{{ message }}</span>
+<span class=" msg-validation" *ngIf="validator">{{ message }}</span>

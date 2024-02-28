@@ -6,7 +6,7 @@
 
 <form [formGroup]="myForm!" class="fit">
   <div class="max-width">
-    <fui-text-field-complex formControlName="email" [fullWidth]="true" [validator]="true"
+    <fui-text-field-complex formControlName="email" [loading]="true" [fullWidth]="true" [validator]="true"
       [message]="'This is required!'">
     </fui-text-field-complex>
   </div>
@@ -18,8 +18,36 @@
       </fui-text-field-complex>
     </div>
     <div class="max-width">
-      <fui-text-field-complex formControlName="lastName" [fullWidth]="true" [validator]="true"
-        [message]="'This is required!'">
+      <fui-text-field-complex formControlName="lastName" [fullWidth]="true" [message]="'This is required!'">
+      </fui-text-field-complex>
+    </div>
+  </div>
+
+</form>
+
+<h1>Append & Prepend</h1>
+<div class="fit">
+  <div></div>
+  <fui-text-field-complex [textFieldControl]="textFieldx" [fullWidth]="true" [validator]="false"
+    [message]="'This is required !'"></fui-text-field-complex>
+</div>
+
+<form [formGroup]="myForm!" class="fit">
+  <div class="max-width">
+    <fui-text-field-complex [inputGroup]="'prepend-append'" [textAppend]="'Append'" [textPrepend]="'Prepend'" formControlName="email" [loading]="true"
+      [fullWidth]="true" [validator]="true" [message]="'This is required!'">
+    </fui-text-field-complex>
+  </div>
+
+  <div class="flex">
+    <div class="max-width">
+      <fui-text-field-complex formControlName="firstName" [inputGroup]="'append'" [textAppend]="'Append'"
+        [fullWidth]="true" [loading]="true" [validator]="true" [message]="'This is required!'">
+      </fui-text-field-complex>
+    </div>
+    <div class="max-width">
+      <fui-text-field-complex [validator]="true" [loading]="true" formControlName="lastName" [fullWidth]="true" [inputGroup]="'prepend'"
+        [textPrepend]="'Prepend'" [message]="'This is required!'">
       </fui-text-field-complex>
     </div>
   </div>

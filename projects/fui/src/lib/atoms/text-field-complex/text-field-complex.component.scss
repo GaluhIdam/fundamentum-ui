@@ -7,6 +7,18 @@ input.fui-text-field-invalid {
   @include textFieldIconComplex($fuiColorDanger);
 }
 
+input.border-append {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+input.border-prepend {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+input.border-append-prepend {
+  border-radius: 0px;
+}
+
 .full-width {
   width: -webkit-fill-available;
 }
@@ -18,15 +30,45 @@ input.fui-text-field-invalid {
   position: relative;
 }
 .flex-full {
+  display: flex;
   width: -webkit-fill-available;
   margin-bottom: 3px;
   align-items: center;
   position: relative;
 }
 
-.fui-icon-input {
+.fui-icon-input-none {
   top: 8px;
   right: 10px;
+  position: absolute;
+}
+
+.fui-icon-input-prepend {
+  top: 8px;
+  right: 10px;
+  position: absolute;
+}
+
+.fui-icon-input-append {
+  top: 8px;
+  right: 70px;
+  position: absolute;
+}
+
+.fui-icon-input-append-prepend {
+  top: 8px;
+  right: 70px;
+  position: absolute;
+}
+
+.fui-icon-mx {
+  margin: 0px 5px 0px 5px;
+  display: inline-block;
+}
+
+.fui-icon-loading {
+  top: 8px;
+  right: 50px;
   position: absolute;
 }
 
@@ -34,4 +76,10 @@ input.fui-text-field-invalid {
   font-family: $fuiFontFamily;
   font-size: $fuiSizeS + 3;
   color: $fuiColorDanger;
+}
+
+.append {
+  font-family: $fuiFontFamily;
+  font-size: small;
+  background-color: #e9edf3;
 }

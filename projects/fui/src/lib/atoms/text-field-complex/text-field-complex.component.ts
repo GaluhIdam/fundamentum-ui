@@ -6,11 +6,17 @@ import {
   NG_VALUE_ACCESSOR,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { LoadingComponent } from '../../../public-api';
 
 @Component({
   selector: 'fui-text-field-complex',
   standalone: true,
-  imports: [IconsComponent, CommonModule, ReactiveFormsModule],
+  imports: [
+    IconsComponent,
+    CommonModule,
+    ReactiveFormsModule,
+    LoadingComponent,
+  ],
   templateUrl: './text-field-complex.component.html',
   styleUrl: './text-field-complex.component.scss',
   providers: [
@@ -30,8 +36,10 @@ export class TextFieldComplexComponent {
   @Input() message?: string;
   @Input() loading: boolean = false;
   @Input() textFieldControl: FormControl = new FormControl('');
-  @Input() inputGroup: 'prepend' | 'append' | 'none' = 'none';
-  @Input() textPend?: string;
+  @Input() inputGroup: 'prepend' | 'append' | 'prepend-append' | 'none' =
+    'none';
+  @Input() textPrepend: string = '';
+  @Input() textAppend: string = '';
 
   writeValue(value: any): void {
     this.textFieldControl.setValue(value);
