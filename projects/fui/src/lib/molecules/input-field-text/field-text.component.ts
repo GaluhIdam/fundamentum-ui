@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { InputComponent } from '../../atoms/input/input.component';
+import { InputComponent } from '../../../public-api';
 import {
   FormGroup,
   FormControl,
@@ -8,20 +8,25 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { TextComponent } from '../../../public-api';
 
 @Component({
   selector: 'fui-field-text',
   standalone: true,
-  imports: [InputComponent, CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    InputComponent,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TextComponent,
+  ],
   templateUrl: './field-text.component.html',
   styleUrl: './field-text.component.scss',
 })
 export class FieldTextComponent implements OnInit {
-  @Input() labelText?: string;
+  @Input('label') labelText?: string;
   @Input() errorMessage?: string;
-  // @Input({ required: true, alias: 'name' }) nameAttribute?: string | undefined;
   @Input() control!: FormControl;
-
   @Output() onTextValue = new EventEmitter();
   @Output() countChanged = new EventEmitter<number>();
   ngOnInit(): void {}

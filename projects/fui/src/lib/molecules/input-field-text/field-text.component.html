@@ -1,0 +1,28 @@
+<div class="field-group">
+  @if(!!labelText){
+  <div class="title">
+    <fui-text [weight]="'bold'">{{ labelText }} </fui-text>
+  </div>
+  } @else{}
+  <fui-input-base
+    [controlName]="control"
+    (textChange)="onTextChange($event)"
+  ></fui-input-base>
+
+  @if(control.touched && control.invalid ){ @if(control.errors?.['required']){
+  <div class="error">
+    <fui-text [color]="'danger'" [weight]="'light'"
+      >tidak boleh kosong
+    </fui-text>
+  </div>
+  } @else if(control.dirty && control.errors?.['minlength']){
+
+  <div class="error">
+    <fui-text [color]="'danger'" [weight]="'light'"
+      >{{control.errors?.['minlength'].actualLength}}
+      character from
+      {{control.errors?.['minlength'].requiredLength}}</fui-text
+    >
+  </div>
+  } }
+</div>

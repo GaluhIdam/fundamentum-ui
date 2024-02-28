@@ -1,23 +1,25 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+
+import { TextComponent } from '../../../public-api';
 
 @Component({
   selector: 'fui-input-base',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TextComponent],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
 })
 export class InputComponent {
-  // @Input('type') typeValue?: string;
-  // @Input('label') textValue?: string;
+  @Input('type') typeValue?: string = 'text';
+  @Input() textValue?: any;
   // @Input('helpText') helpTextValue?: string;
   @Input('placeholder') placeholderValue = '';
   @Input('color') colorValue = 'primary';
   @Input('size') sizeValue: string = 'sizem';
   @Input('width') widthValue: string = 'auto';
-  @Input() controlName!: FormControl;
+  @Input() controlName = new FormControl('');
   @Output() textChange = new EventEmitter();
 
   onInput(e: any) {

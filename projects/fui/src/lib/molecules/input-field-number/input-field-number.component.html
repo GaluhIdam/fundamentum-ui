@@ -1,0 +1,8 @@
+@if(!!showSeparator){
+<fui-input-base [textValue]="value" (input)="onValueChanges($event)">
+</fui-input-base>
+
+} @else{
+<fui-input-base [type]="'number'"> </fui-input-base>
+
+}

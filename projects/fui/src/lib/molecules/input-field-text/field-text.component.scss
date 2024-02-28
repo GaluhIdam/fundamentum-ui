@@ -7,6 +7,11 @@ input {
   font-weight: $fuiFontWeightMedium;
 }
 
+.title {
+  text-transform: capitalize;
+  transform: translateX(1px);
+}
+
 label {
   display: block;
   padding-left: 2px;
@@ -21,4 +26,30 @@ label {
   padding-left: 2px;
   margin-top: calc($fuiFontSize * 0.25);
   color: $fuiColorDarkShade;
+}
+
+.error {
+  color: $fuiColorDanger;
+  // transition: all 0.4s;
+  animation-name: errorAnimation;
+  animation-duration: 0.3s;
+}
+
+@keyframes errorAnimation {
+  0% {
+    transform: translateX(-5px);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }

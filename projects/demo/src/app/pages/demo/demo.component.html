@@ -1,0 +1,23 @@
+<div style="margin: 1rem auto; width: 30%">
+  <form [formGroup]="employee">
+    <fui-field-text
+      [label]="'name'"
+      [control]="employee.controls.name"
+    ></fui-field-text>
+    <fui-field-text
+      [label]="'job'"
+      [control]="employee.controls.job"
+    ></fui-field-text>
+    <fui-button type="submit">Testing</fui-button>
+  </form>
+
+  <div>
+    <fui-input-field-number
+      [value]="myValue | number : '1.2-2'"
+      [showSeparator]="true"
+      (valueChanges)="onValueChanges($event)"
+    ></fui-input-field-number>
+
+    <!-- <input type="text" [ngModel]="myValue | number : '1.2-2'" /> -->
+  </div>
+</div>

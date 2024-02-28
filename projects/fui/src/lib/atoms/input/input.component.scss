@@ -3,6 +3,19 @@
 input {
   @include fuiInputTextBase;
 }
+.has-error:focus-within {
+  background-color: #fff;
+  background-image: linear-gradient(
+    to top,
+    #cc1f00,
+    #cc1f00 2px,
+    transparent 2px,
+    transparent 100%
+  );
+  background-size: 100% 100%;
+  outline: none;
+  box-shadow: inset 0 0 0 1px rgba(17, 42, 134, 0.1);
+}
 
 // label {
 //   display: block;
