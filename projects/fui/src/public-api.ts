@@ -9,29 +9,29 @@ export * from './lib/atoms/text/text.component';
 
 export * from './lib/molecules/loading/loading.component';
 
-/* Line Componet export to be dist */
+/* Line Component export to be dist */
 export * from './lib/organisms/charts/chart-line/chart-line.component';
-/* Line Stacked Componet export to be dist */
+/* Line Stacked Component export to be dist */
 export * from './lib/organisms/charts/chart-line-stacked/chart-line-stacked.component';
-/* Bar Componet export to be dist */
+/* Bar Component export to be dist */
 export * from './lib/organisms/charts/chart-bar/chart-bar.component';
-/* Pie Componet export to be dist */
+/* Pie Component export to be dist */
 export * from './lib/organisms/charts/chart-pie/chart-pie.component';
-/* Pie Doughnut Componet export to be dist */
+/* Pie Doughnut Component export to be dist */
 export * from './lib/organisms/charts/chart-pie-doughnut/chart-pie-doughnut.component';
-/* Radar Componet export to be dist */
+/* Radar Component export to be dist */
 export * from './lib/organisms/charts/chart-radar/chart-radar.component';
-/* Scatter Componet export to be dist */
+/* Scatter Component export to be dist */
 export * from './lib/organisms/charts/chart-scatter/chart-scatter.component';
-/* Area Componet export to be dist */
+/* Area Component export to be dist */
 export * from './lib/organisms/charts/chart-area/chart-area.component';
-/* Area Stacked Componet export to be dist */
+/* Area Stacked Component export to be dist */
 export * from './lib/organisms/charts/chart-area-stacked/chart-area-stacked.component';
-/* Area Stacked Gradient Componet export to be dist */
+/* Area Stacked Gradient Component export to be dist */
 export * from './lib/organisms/charts/chart-area-stacked-gradient/chart-area-stacked-gradient.component';
-/* Candlestick Componet export to be dist */
+/* Candlestick Component export to be dist */
 export * from './lib/organisms/charts/chart-candlestick/chart-candlestick.component';
-/* Tree Componet export to be dist */
+/* Tree Component export to be dist */
 export * from './lib/organisms/charts/chart-tree/chart-tree.component';
 /* Callout Component */
 export * from './lib/organisms/callout/callout.component';

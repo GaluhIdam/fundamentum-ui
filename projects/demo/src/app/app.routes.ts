@@ -21,6 +21,7 @@ import { ButtonIconViewComponent } from './molecules/button-icon-view/button-ico
 import { TextFieldComplexViewComponent } from './atoms/text-field-complex-view/text-field-complex-view.component';
 import { ModalFlyoutViewComponent } from './template/modal-flyout-view/modal-flyout-view.component';
 import { LoadingViewComponent } from './molecules/loading-view/loading-view.component';
+import { InlineEditViewComponent } from './organisms/inline-edit-view/inline-edit-view.component';
 
 export const routes: Routes = [
   {
@@ -40,6 +41,10 @@ export const routes: Routes = [
       {
         path: 'callout',
         component: CalloutViewComponent,
+      },
+      {
+        path: 'inline-edit',
+        component: InlineEditViewComponent,
       },
       {
         path: 'charts',

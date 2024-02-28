@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { TextFieldComplexComponent } from '../../../../../fui/src/public-api';
+import { TextFieldComplexComponent } from 'fui';
 import {
   FormBuilder,
   FormControl,

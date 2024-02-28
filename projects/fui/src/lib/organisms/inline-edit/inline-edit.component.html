@@ -1,1 +1,13 @@
-<p>inline-edit works!</p>
+<div *ngIf="!editMode" class="flex-input">
+  <span class="text">
+    <span class="edit-text">{{ textFieldControl.value }}</span>
+    <fui-icons class="icon-inline" (click)="editMode = !editMode" [icon]="'pencil'"></fui-icons>
+  </span>
+</div>
+<div *ngIf="editMode" class="flex">
+  <fui-text-field-complex [textFieldControl]="textFieldControl" [fullWidth]="true"></fui-text-field-complex>
+  <fui-button-icon class="icon-list" [type]="'button'" [option]="'icon'" [style]="'secondary'" [color]="'success'"
+    [icon]="'check'" />
+  <fui-button-icon (onClick)="editMode = !editMode" class="icon-list" [type]="'button'" [option]="'icon'" [style]="'secondary'" [color]="'danger'"
+    [icon]="'cross'" />
+</div>

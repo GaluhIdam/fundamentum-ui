@@ -1,0 +1,31 @@
+.flex-input {
+  display: inline-flex;
+  width: 100%;
+}
+
+.text {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  &:hover {
+    .edit-text {
+      text-decoration: underline;
+    }
+  }
+}
+
+.icon-inline {
+  margin-left: 5px;
+}
+.input-edit {
+  width: -webkit-fill-available;;
+  margin-right: 5px;
+}
+.icon-list {
+  margin: 0px 3px 0px 3px;
+}
+
+.flex {
+  display: flex;
+  position: relative;
+}

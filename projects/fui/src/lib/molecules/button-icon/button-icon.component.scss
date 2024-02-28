@@ -54,14 +54,14 @@
   );
 }
 .btn-fui-secondary-danger {
+  @include buttonIconMix($fuiBtnDangerSecondary, $fuiBtnDangerText, $fuiSizeXS);
+}
+.btn-fui-secondary-warning {
   @include buttonIconMix(
     $fuiBtnWarningSecondary,
     $fuiBtnWarningText,
     $fuiSizeXS
   );
-}
-.btn-fui-secondary-warning {
-  @include buttonIconMix($fuiBtnDangerSecondary, $fuiBtnDangerText, $fuiSizeXS);
 }
 .btn-fui-secondary-text {
   @include buttonIconMix($fuiBtnTextSecondary, $fuiBtnTextText, $fuiSizeXS);
