@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import EventEmitter from 'events';
 
 @Component({
   selector: 'fui-input-base',
