@@ -5,16 +5,16 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ButtonComponent, CheckboxComponent } from 'fui';
+import { ButtonComponent, RadioComponent } from 'fui';
 
 @Component({
-  selector: 'app-checkbox-view',
+  selector: 'app-radio-view',
   standalone: true,
-  templateUrl: './checkbox-view.component.html',
-  styleUrl: './checkbox-view.component.scss',
-  imports: [CheckboxComponent, ReactiveFormsModule, ButtonComponent],
+  templateUrl: './radio-view.component.html',
+  styleUrl: './radio-view.component.scss',
+  imports: [ReactiveFormsModule, RadioComponent, ButtonComponent],
 })
-export class CheckboxViewComponent {
+export class RadioViewComponent {
   form!: FormGroup;
   errorMessageRequiredFruit: string = '';
 
@@ -40,25 +40,25 @@ export class CheckboxViewComponent {
   ngOnInit() {
     this.generateDataArrays();
     this.form = this.fb.group({
-      fruits: ['', Validators.required],
+      fruit: ['', Validators.required],
     });
   }
 
-  getSelectedCheckboxFruits(selectedFruit: string[]) {
+  getSelectedRadioFruit(selectedFruit: string) {
     if (selectedFruit?.length) {
       this.errorMessageRequiredFruit = '';
     }
-    this.form.get('fruits')?.setValue(selectedFruit);
+    this.form.get('fruit')?.setValue(selectedFruit);
   }
 
   onSubmit() {
     if (this.form.valid) {
       console.log('onsubmit', this.form.value);
     } else {
-      const fruitsControl = this.form.get('fruits');
-      if (fruitsControl?.errors) {
-        if (fruitsControl.errors?.['required']) {
-          this.errorMessageRequiredFruit = 'Fruits field is required';
+      const fruitControl = this.form.get('fruit');
+      if (fruitControl?.errors) {
+        if (fruitControl.errors?.['required']) {
+          this.errorMessageRequiredFruit = 'Fruit field is required';
         }
       }
     }

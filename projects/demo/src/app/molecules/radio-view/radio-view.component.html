@@ -1,0 +1,134 @@
+<div class="container">
+  <div class="block">
+    <fui-radio
+      [color]="'warning'"
+      [name]="'radio1'"
+      [defaultValue]="'apple1'"
+      [options]="dataArrays[0]"
+      [groupLabel]="'Label'"
+    ></fui-radio>
+  </div>
+  <div class="block">
+    <fui-radio
+      [options]="dataArrays[1]"
+      [groupLabel]="'Label'"
+      [name]="'radio2'"
+      [errorMessage]="'Error text explaining how to fix'"
+    ></fui-radio>
+  </div>
+</div>
+
+<div class="container">
+  <div class="block">
+    <fui-radio
+      [options]="dataArrays[2]"
+      [groupLabel]="'Label'"
+      [name]="'radio3'"
+      [direction]="'row'"
+    ></fui-radio>
+  </div>
+  <div class="block">
+    <fui-radio
+      [options]="dataArrays[3]"
+      [groupLabel]="'Label'"
+      [name]="'radio4'"
+      [direction]="'row'"
+      [errorMessage]="'Error text explaining how to fix'"
+    ></fui-radio>
+  </div>
+</div>
+
+<div class="container">
+  <div class="block">
+    <fui-radio
+      [options]="dataArrays[4]"
+      [name]="'radio5'"
+      [defaultValue]="'apple5'"
+      [direction]="'column'"
+    ></fui-radio>
+  </div>
+  <div class="block">
+    <fui-radio
+      [options]="dataArrays[5]"
+      [name]="'radio6'"
+      [color]="'accent'"
+      [direction]="'column'"
+      [errorMessage]="'Error text explaining how to fix'"
+    ></fui-radio>
+  </div>
+</div>
+
+<div class="container">
+  <div class="block">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <fui-radio
+        [options]="dataArrays[6]"
+        [name]="'radio7'"
+        [errorMessage]="errorMessageRequiredFruit"
+        (selectedRadio)="getSelectedRadioFruit($event)"
+      ></fui-radio>
+
+      <div class="btn">
+        <fui-button type="submit" [color]="'primary'" [size]="'sizes'"
+          >Submit</fui-button
+        >
+      </div>
+    </form>
+  </div>
+
+  <div class="block">
+    <fui-radio
+      [options]="dataArrays[7]"
+      [name]="'radio9'"
+      [color]="'disabled'"
+      [direction]="'column'"
+    ></fui-radio>
+  </div>
+</div>
+
+<div class="container">
+  <div class="block">
+    <fui-radio
+      name="radiosizedefault"
+      [options]="[{ value: 'value default', label: 'Label Default' }]"
+      [color]="'primary'"
+      [size]="'sizedefault'"
+    ></fui-radio>
+    <fui-radio
+      [name]="'radiosizeXS'"
+      [options]="[{ value: 'value xs', label: 'Label XS' }]"
+      [color]="'primary'"
+      [size]="'sizexs'"
+    ></fui-radio>
+    <fui-radio
+      [name]="'radiosizeS'"
+      [options]="[{ value: 'value s', label: 'Label S' }]"
+      [color]="'primary'"
+      [size]="'sizes'"
+    ></fui-radio>
+    <fui-radio
+      [name]="'radiosizeM'"
+      [options]="[{ value: 'value m', label: 'Label M' }]"
+      [color]="'primary'"
+      [size]="'sizem'"
+    ></fui-radio>
+    <fui-radio
+      [name]="'radiosizeL'"
+      [options]="[{ value: 'value l', label: 'Label L' }]"
+      [color]="'primary'"
+      [size]="'sizel'"
+    ></fui-radio>
+    <fui-radio
+      [name]="'radiosizeXL'"
+      [options]="[{ value: 'value xl', label: 'Label XL' }]"
+      [color]="'primary'"
+      [size]="'sizexl'"
+    ></fui-radio>
+    <fui-radio
+      [name]="'radiosizeXXL'"
+      [options]="[{ value: 'value xxl', label: 'Label XXL' }]"
+      [color]="'primary'"
+      [size]="'sizexxl'"
+    ></fui-radio>
+  </div>
+</div>
