@@ -22,6 +22,7 @@ import { TextFieldComplexViewComponent } from './atoms/text-field-complex-view/t
 import { ModalFlyoutViewComponent } from './template/modal-flyout-view/modal-flyout-view.component';
 import { LoadingViewComponent } from './molecules/loading-view/loading-view.component';
 import { InlineEditViewComponent } from './organisms/inline-edit-view/inline-edit-view.component';
+import { DataGridViewComponent } from './organisms/data-grid-view/data-grid-view.component';
 
 export const routes: Routes = [
   {
@@ -45,6 +46,10 @@ export const routes: Routes = [
       {
         path: 'inline-edit',
         component: InlineEditViewComponent,
+      },
+      {
+        path: 'data-grid',
+        component: DataGridViewComponent,
       },
       {
         path: 'charts',

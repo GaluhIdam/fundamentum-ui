@@ -1,1 +1,16 @@
-<fui-inline-edit></fui-inline-edit>
+<h1>Inline Edit Standard</h1>
+<fui-inline-edit
+  [textFieldControl]="textFieldControl"
+  (onSave)="funcSave()"
+  (onCancel)="funcCancel()"
+></fui-inline-edit>
+
+<h1>Inline Edit With Validation</h1>
+<fui-inline-edit
+  [disabled]="this.textFieldControl2.invalid"
+  [validator]="this.textFieldControl2.invalid"
+  [message]="'This is must be number!'"
+  [textFieldControl]="textFieldControl2"
+  (onSave)="funcSave2()"
+  (onCancel)="funcCancel2()"
+></fui-inline-edit>

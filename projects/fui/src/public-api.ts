@@ -41,5 +41,7 @@ export * from './lib/organisms/inline-edit/inline-edit.component';
 export * from './lib/atoms/link/link.component';
 /* Button Icon Component */
 export * from './lib/molecules/button-icon/button-icon.component';
-/* Text Field FC */
+/* Text Field Complex */
 export * from './lib/atoms/text-field-complex/text-field-complex.component';
+/* Data Grid */
+export * from './lib/organisms/data-grid/data-grid.component';

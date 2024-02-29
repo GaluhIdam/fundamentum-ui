@@ -1,31 +1,34 @@
-.flex-input {
-  display: inline-flex;
-  width: 100%;
-}
+@import "../../styles/index";
 
-.text {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  cursor: pointer;
-  &:hover {
-    .edit-text {
-      text-decoration: underline;
+.container-inline-edit {
+  margin: 20px;
+  .flex-input {
+    display: inline-flex;
+    .text {
+      font-family: $fuiFontFamily;
+      font-size: $fuiSizeM + 3;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      cursor: pointer;
+      &:hover {
+        .edit-text {
+          text-decoration: underline;
+        }
+      }
+    }
+    .icon-inline {
+      margin-left: 5px;
     }
   }
-}
 
-.icon-inline {
-  margin-left: 5px;
-}
-.input-edit {
-  width: -webkit-fill-available;;
-  margin-right: 5px;
-}
-.icon-list {
-  margin: 0px 3px 0px 3px;
-}
-
-.flex {
-  display: flex;
-  position: relative;
+  .inline-edit {
+    display: flex;
+    .fui-text-field-complex {
+      flex: 1;
+      margin-right: 8px;
+    }
+    .icon-list {
+      margin: 0px 3px 0px 3px;
+    }
+  }
 }

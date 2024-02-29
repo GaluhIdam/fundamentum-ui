@@ -1,13 +1,42 @@
-<div *ngIf="!editMode" class="flex-input">
-  <span class="text">
-    <span class="edit-text">{{ textFieldControl.value }}</span>
-    <fui-icons class="icon-inline" (click)="editMode = !editMode" [icon]="'pencil'"></fui-icons>
-  </span>
-</div>
-<div *ngIf="editMode" class="flex">
-  <fui-text-field-complex [textFieldControl]="textFieldControl" [fullWidth]="true"></fui-text-field-complex>
-  <fui-button-icon class="icon-list" [type]="'button'" [option]="'icon'" [style]="'secondary'" [color]="'success'"
-    [icon]="'check'" />
-  <fui-button-icon (onClick)="editMode = !editMode" class="icon-list" [type]="'button'" [option]="'icon'" [style]="'secondary'" [color]="'danger'"
-    [icon]="'cross'" />
+<div class="container-inline-edit">
+  <div *ngIf="!editMode" class="flex-input">
+    <span class="text">
+      <span class="edit-text">{{ textFieldControl.value }}</span>
+      <fui-icons
+        class="icon-inline"
+        (click)="editMode = !editMode"
+        [icon]="'pencil'"
+      ></fui-icons>
+    </span>
+  </div>
+  <div class="inline-edit" *ngIf="editMode">
+    <fui-text-field-complex
+      [size]="size"
+      [validator]="validator"
+      [message]="message"
+      [readOnly]="readOnly"
+      [textFieldControl]="textFieldControl"
+      [fullWidth]="true"
+      class="fui-text-field-complex"
+    ></fui-text-field-complex>
+    <fui-button-icon
+      [disabled]="disabled"
+      [color]="disabled ? 'disabled' : 'success'"
+      (onClick)="onHandleSave()"
+      class="icon-list"
+      [type]="'button'"
+      [option]="'icon'"
+      [style]="'secondary'"
+      [icon]="'check'"
+    ></fui-button-icon>
+    <fui-button-icon
+      (onClick)="onHandleCancel()"
+      class="icon-list"
+      [type]="'button'"
+      [option]="'icon'"
+      [style]="'secondary'"
+      [color]="'danger'"
+      [icon]="'cross'"
+    ></fui-button-icon>
+  </div>
 </div>

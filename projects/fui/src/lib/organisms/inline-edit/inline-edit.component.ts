@@ -1,8 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { TextFieldComplexComponent } from '../../atoms/text-field-complex/text-field-complex.component';
 import { IconsComponent } from '../../atoms/icons/icons.component';
-import { CommonModule } from '@angular/common';
 import { ButtonIconComponent } from '../../molecules/button-icon/button-icon.component';
 
 @Component({
@@ -18,14 +18,21 @@ import { ButtonIconComponent } from '../../molecules/button-icon/button-icon.com
   styleUrl: './inline-edit.component.scss',
 })
 export class InlineEditComponent {
-  @Input() value: string = 'Hello World!';
-  @Input() editMode: boolean = false;
+  @Input({ required: true }) textFieldControl: FormControl = new FormControl();
+  editMode: boolean = false;
   @Input() readOnly: boolean = false;
-  @Input() size: 'xs' | 's' | 'm' | 'l' = 'm';
-  @Input() textField: FormControl = new FormControl('');
-  @Output() onClick: EventEmitter<void> = new EventEmitter<void>();
-  @Input() textFieldControl: FormControl = new FormControl(this.value);
-  onHandleEdit(): void {
-    this.onClick.emit();
+  @Input() validator: boolean = false;
+  @Input() disabled: boolean = false;
+  @Input() message: string = '';
+  @Input() size: 's' | 'm' | 'l' = 'm';
+  @Output() onSave: EventEmitter<void> = new EventEmitter<void>();
+  @Output() onCancel: EventEmitter<void> = new EventEmitter<void>();
+  onHandleSave(): void {
+    this.editMode = !this.editMode;
+    this.onSave.emit();
+  }
+  onHandleCancel(): void {
+    this.editMode = !this.editMode;
+    this.onCancel.emit();
   }
 }

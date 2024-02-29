@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { TextFieldComplexComponent } from 'fui';
 import {
   FormBuilder,
   FormControl,
@@ -8,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Subscription, debounceTime } from 'rxjs';
+import { TextFieldComplexComponent } from '../../../../../fui/src/lib/atoms/text-field-complex/text-field-complex.component';
 interface TEST {
   nama: string;
   umur: number;
@@ -21,13 +21,13 @@ interface TEST {
 })
 export class TextFieldComplexViewComponent implements OnInit, OnDestroy {
   textValue: FormGroup = new FormGroup({
-    textField: new FormControl(''),
+    textField: new FormControl('Hello World!'),
   });
 
   myForm?: FormGroup;
   constructor(private formBuilder: FormBuilder) {}
 
-  textFieldx: FormControl = new FormControl('');
+  textFieldx: FormControl = new FormControl('Hello World!');
   obs?: Subscription;
 
   apa: any[] = [
@@ -43,8 +43,8 @@ export class TextFieldComplexViewComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
-      firstName: ['', [Validators.required, Validators.email]],
-      lastName: ['', Validators.required],
+      firstName: ['Hello World!', [Validators.required, Validators.email]],
+      lastName: ['Hello World!', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phoneNumber: ['', Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')], // Example for phone number validation
     });

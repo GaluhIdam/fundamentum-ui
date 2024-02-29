@@ -1,12 +1,12 @@
 import { Component, Input, forwardRef } from '@angular/core';
-import { IconsComponent } from '../icons/icons.component';
 import { CommonModule } from '@angular/common';
 import {
   FormControl,
   NG_VALUE_ACCESSOR,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { LoadingComponent } from '../../../public-api';
+import { IconsComponent } from '../icons/icons.component';
+import { LoadingComponent } from '../../molecules/loading/loading.component';
 
 @Component({
   selector: 'fui-text-field-complex',
@@ -40,6 +40,7 @@ export class TextFieldComplexComponent {
     'none';
   @Input() textPrepend: string = '';
   @Input() textAppend: string = '';
+  @Input() size: 's' | 'm' | 'l' = 'm';
 
   writeValue(value: any): void {
     this.textFieldControl.setValue(value);
