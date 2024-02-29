@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import {
   FormBuilder,
   FormsModule,
@@ -15,6 +15,7 @@ import {
   InputFieldNumberComponent,
 } from '../../../../../fui/src/public-api';
 import { CommonModule } from '@angular/common';
+import { ThousandSeparatorDirective } from './../../../../../fui/src/lib/molecules/input-field-number/thousand-separator.directive';
 
 @Component({
   selector: 'app-demo',
@@ -28,6 +29,7 @@ import { CommonModule } from '@angular/common';
     TextComponent,
     InputFieldNumberComponent,
     CommonModule,
+    ThousandSeparatorDirective,
   ],
   templateUrl: './demo.component.html',
   styleUrl: './demo.component.scss',
@@ -35,7 +37,7 @@ import { CommonModule } from '@angular/common';
 export class DemoComponent {
   constructor(private fb: FormBuilder) {}
 
-  myValue?: number;
+  myValue = '';
 
   // employee = this.fb.group({
   //   name:['', Validators.required],
@@ -52,9 +54,21 @@ export class DemoComponent {
     console.log('tester');
   }
 
+  // onValueChanges(e: any) {
+  //   this.myValue = e;
+  //   console.log('demo: ', e);
+  // }
+
+  // @HostListener('keydown', ['$event.target.value'])
+  // onInput(e: any) {
+  //   var t = e.target.value;
+  //   let numeric = t.substr(0, t.indexOf('.')) + t.substr(t.indexOf(','), 3);
+  //   e.target.value =
+  //     t.indexOf('.') >= 0 ? (this.myValue = numeric) : (this.myValue = t);
+  // }
+
   onValueChanges(e: any) {
     this.myValue = e;
-    console.log(e);
   }
 
   onSubmit() {}
