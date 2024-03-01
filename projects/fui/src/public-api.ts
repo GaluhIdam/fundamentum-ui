@@ -7,6 +7,8 @@ export * from './lib/atoms/icons/icons.component';
 export * from './lib/atoms/input/input.component';
 export * from './lib/atoms/text/text.component';
 
+export * from './lib/molecules/highlight/highlight.component';
+
 /* Line Componet export to be dist */
 export * from './lib/organisms/charts/chart-line/chart-line.component';
 /* Line Stacked Componet export to be dist */
