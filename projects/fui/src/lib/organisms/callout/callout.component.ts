@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Icon } from '../../types';
 import { CommonModule } from '@angular/common';
-import { IconsComponent } from '../../atoms/icons/icons.component';
+import { IconsComponent } from '../../../public-api';
 
 /**
  * The CalloutComponent component

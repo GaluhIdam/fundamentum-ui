@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { ButtonComponent, ButtonIconComponent } from 'fui';
+import { ButtonIconComponent } from 'fui';
 
 @Component({
   selector: 'app-button-icon-view',
   standalone: true,
-  imports: [ButtonIconComponent, ButtonComponent],
+  imports: [ButtonIconComponent],
   templateUrl: './button-icon-view.component.html',
   styleUrl: './button-icon-view.component.scss',
 })
