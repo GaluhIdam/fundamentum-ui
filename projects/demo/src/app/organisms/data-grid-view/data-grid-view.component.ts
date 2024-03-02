@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataGridComponent } from '../../../../../fui/src/public-api';
+import { DataGridComponent } from 'fui';
 
 @Component({
   selector: 'app-data-grid-view',

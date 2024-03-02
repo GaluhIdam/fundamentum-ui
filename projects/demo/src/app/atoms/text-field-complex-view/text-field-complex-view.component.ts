@@ -7,7 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Subscription, debounceTime } from 'rxjs';
-import { TextFieldComplexComponent } from '../../../../../fui/src/lib/atoms/text-field-complex/text-field-complex.component';
+import { TextFieldComplexComponent } from '../../../../../fui/src/public-api';
 interface TEST {
   nama: string;
   umur: number;
@@ -20,6 +20,7 @@ interface TEST {
   styleUrl: './text-field-complex-view.component.scss',
 })
 export class TextFieldComplexViewComponent implements OnInit, OnDestroy {
+  size: 's' | 'm' | 'l' = 'm';
   textValue: FormGroup = new FormGroup({
     textField: new FormControl('Hello World!'),
   });

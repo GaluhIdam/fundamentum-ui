@@ -50,22 +50,38 @@ input.fui-text-field-invalid-l {
   @include textAppendPrepend(large, #e9edf3);
 }
 
-.fui-icon-input-none,
-.fui-icon-input-prepend {
+.fui-icon-input-none-s,
+.fui-icon-input-prepend-s {
+  @include prependAppend(10px);
+}
+.fui-icon-input-none-m,
+.fui-icon-input-prepend-m {
+  @include prependAppend(10px);
+}
+.fui-icon-input-none-l,
+.fui-icon-input-prepend-l {
   @include prependAppend(10px);
 }
 
-.fui-icon-input-append,
-.fui-icon-input-append-prepend {
-  @include prependAppend(70px);
+.fui-icon-input-append-s,
+.fui-icon-input-append-prepend-s {
+  @include prependAppend(65px);
+}
+.fui-icon-input-append-m,
+.fui-icon-input-append-prepend-m {
+  @include prependAppend(85px);
+}
+.fui-icon-input-append-l,
+.fui-icon-input-append-prepend-l {
+  @include prependAppend(95px);
 }
 
 /* Add On */
 .flex {
-  @include flexTextFieldComplex(fit-content);
+  @include flexTextFieldComplex(fit-content, flex);
 }
 .flex-full {
-  @include flexTextFieldComplex(-webkit-fill-available);
+  @include flexTextFieldComplex(-webkit-fill-available, block);
   display: flex;
 }
 .fui-icon-loading {
@@ -90,6 +106,10 @@ input.border-append-prepend {
 
 .full-width {
   width: -webkit-fill-available;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .fui-icon-mx {

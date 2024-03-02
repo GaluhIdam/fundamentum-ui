@@ -43,7 +43,8 @@
   color: $color;
 }
 
-@mixin flexTextFieldComplex($width) {
+@mixin flexTextFieldComplex($width, $display) {
+  display: $display;
   align-items: center;
   position: relative;
   width: $width;

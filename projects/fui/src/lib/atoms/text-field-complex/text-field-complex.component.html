@@ -35,8 +35,8 @@
       inputGroup === 'append' ||
       inputGroup === 'prepend' ||
       inputGroup === 'none'
-        ? 'fui-icon-input-' + inputGroup
-        : 'fui-icon-input-append-prepend'
+        ? 'fui-icon-input-' + inputGroup + '-' + size
+        : 'fui-icon-input-append-prepend-' + size
     }}"
   >
     <fui-loading
@@ -59,7 +59,7 @@
       'container-text-append-' + size + ' ' + 'text-append-prepend-' + size
     }}"
   >
-    <span style="height: 100%">{{ textAppend }}</span>
+    <span class="h-full">{{ textAppend }}</span>
   </div>
 </div>
 <span class="msg-validation" *ngIf="validator">{{ message }}</span>

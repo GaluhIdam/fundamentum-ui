@@ -24,6 +24,7 @@
       align-items: center;
       display: flex;
       .fui-item-icon .fui-utility-link-grid {
+        cursor: pointer;
         font-size: $fuiSizeM;
         font-weight: $fuiFontWeightSemiBold;
         color: $fuiColorDarkShade;
@@ -32,14 +33,13 @@
       .fui-count-grid {
         margin-right: 5px;
         font-size: $fuiSizeM;
-        font-weight: $fuiFontWeightSemiBold;
+        font-weight: $fuiFontWeightMedium;
         text-decoration: none;
         margin-left: 5px;
         padding: 2px 5px 2px 5px;
         border-radius: 3px;
         background-color: rgb(224, 229, 238);
       }
-
       .fui-item-icon:hover .fui-utility-link-grid {
         text-decoration: underline;
       }
@@ -49,8 +49,18 @@
         margin: 5px 4px 5px 8px;
       }
       .fui-icon-only-utilty-grid {
-        margin: 5px 8px 5px 8px;
+        padding: 5px 8px 5px 8px;
+        border-radius: 5px;
         cursor: pointer;
+        transition: transform 0.3s ease;
+        &:hover {
+          background-color: rgba(211, 218, 230, 0.2);
+          transform: translateY(-1px);
+        }
+        &:active {
+          background-color: rgba(211, 218, 230, 0.2);
+          transform: translateY(1.5px);
+        }
       }
     }
   }

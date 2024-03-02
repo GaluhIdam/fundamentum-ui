@@ -17,3 +17,10 @@
   }
   border-radius: $BorderRadius;
 }
+
+@mixin effectBtnIcon($transition, $textDecoration, $cursor, $transform) {
+  transition: $transition;
+  text-decoration: $textDecoration;
+  cursor: $cursor;
+  transform: $transform;
+}

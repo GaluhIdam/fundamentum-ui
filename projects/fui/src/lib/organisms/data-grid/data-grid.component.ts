@@ -4,8 +4,12 @@ import { ButtonIconComponent, IconsComponent } from '../../../public-api';
 @Component({
   selector: 'fui-data-grid',
   standalone: true,
-  imports: [ButtonIconComponent, IconsComponent],
+  imports: [IconsComponent, ButtonIconComponent],
   templateUrl: './data-grid.component.html',
   styleUrl: './data-grid.component.scss',
 })
-export class DataGridComponent {}
+export class DataGridComponent {
+    handleButtonClick($event: any): void {
+    console.log('ok');
+  }
+}

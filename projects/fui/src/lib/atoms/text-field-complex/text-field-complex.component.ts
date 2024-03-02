@@ -5,9 +5,30 @@ import {
   NG_VALUE_ACCESSOR,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { IconsComponent } from '../icons/icons.component';
-import { LoadingComponent } from '../../molecules/loading/loading.component';
+import { IconsComponent, LoadingComponent } from '../../../public-api';
 
+/**
+ * The TextFieldComplexComponent component
+ * @usage
+ * ```html
+ * <fui-text-field-complex
+     [loading]="true"
+     formControlName="lastName"
+     [fullWidth]="true"
+     [inputGroup]="'prepend'"
+     [textPrepend]="'Prepend'"
+     [message]="'This is required!'">
+ * </fui-text-field-complex>
+ * //Or
+ * <fui-text-field-complex
+     [textFieldControl]="textField"
+     [fullWidth]="true"
+     [validator]="false"
+     [message]="'This is required !'">
+ * </fui-text-field-complex>
+ * ```
+ * <example-url>http://localhost:4200/atoms/text-field</example-url>
+ */
 @Component({
   selector: 'fui-text-field-complex',
   standalone: true,

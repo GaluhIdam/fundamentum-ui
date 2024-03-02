@@ -21,20 +21,12 @@
 }
 .btn-fui-disabled {
   @include buttonIconMix($fuiBtnDisabled, $fuiBtnDisabledText, $fuiSizeXS);
-  &:disabled {
-    transition: none;
-    text-decoration: none;
-    cursor: not-allowed;
-    transform: none;
-  }
-  &:hover {
-    transition: none;
-    text-decoration: none;
-    cursor: not-allowed;
-    transform: none;
+  &:disabled,
+  :hover {
+    @include effectBtnIcon(none, none, not-allowed, none);
   }
   &:active {
-    transform: none;
+    @include effectBtnIcon(transform 0.3s ease, underline, cursor, none);
   }
 }
 
@@ -76,18 +68,13 @@
     $fuiSizeXS
   );
   &:disabled {
-    text-decoration: none;
-    cursor: not-allowed;
-    transform: none;
+    @include effectBtnIcon(transform 0.3s ease, none, not-allowed, none);
   }
   &:hover {
-    transition: none;
-    text-decoration: none;
-    cursor: not-allowed;
-    transform: none;
+    @include effectBtnIcon(none, none, not-allowed, none);
   }
   &:active {
-    transform: none;
+    @include effectBtnIcon(transform 0.3s ease, underline, cursor, none);
   }
 }
 
