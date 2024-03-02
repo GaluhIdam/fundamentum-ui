@@ -1,26 +1,32 @@
 @import "../../styles/index";
 
-/* Button Filled */
-.btn-fui-primary {
-  @include buttonIconMix($fuiBtnPrimary, $fuiColorGhost, $fuiSizeXS);
+/* Button Filled S*/
+.btn-fui-primary-s {
+  @include buttonIconMix($fuiBtnPrimary, $fuiColorGhost, $fuiSizeXS, $fuiSizeM, 7px);
 }
-.btn-fui-success {
-  @include buttonIconMix($fuiBtnSuccess, $fuiColorInk, $fuiSizeXS);
+.btn-fui-success-s {
+  @include buttonIconMix($fuiBtnSuccess, $fuiColorInk, $fuiSizeXS, $fuiSizeM, 7px);
 }
-.btn-fui-danger {
-  @include buttonIconMix($fuiBtnDanger, $fuiColorGhost, $fuiSizeXS);
+.btn-fui-danger-s {
+  @include buttonIconMix($fuiBtnDanger, $fuiColorGhost, $fuiSizeXS, $fuiSizeM, 7px);
 }
-.btn-fui-warning {
-  @include buttonIconMix($fuiBtnWarning, $fuiColorGhost, $fuiSizeXS);
+.btn-fui-warning-s {
+  @include buttonIconMix($fuiBtnWarning, $fuiColorGhost, $fuiSizeXS, $fuiSizeM, 7px);
 }
-.btn-fui-text {
-  @include buttonIconMix($fuiBtnText, $fuiColorGhost, $fuiSizeXS);
+.btn-fui-text-s {
+  @include buttonIconMix($fuiBtnText, $fuiColorGhost, $fuiSizeXS, $fuiSizeM, 7px);
 }
-.btn-fui-accent {
-  @include buttonIconMix($fuiBtnAccent, $fuiColorInk, $fuiSizeXS);
+.btn-fui-accent-s {
+  @include buttonIconMix($fuiBtnAccent, $fuiColorInk, $fuiSizeXS, $fuiSizeM, 7px);
 }
-.btn-fui-disabled {
-  @include buttonIconMix($fuiBtnDisabled, $fuiBtnDisabledText, $fuiSizeXS);
+.btn-fui-disabled-s {
+  @include buttonIconMix(
+    $fuiBtnDisabled,
+    $fuiBtnDisabledText,
+    $fuiSizeXS,
+    $fuiSizeM,
+    7px
+  );
   &:disabled,
   :hover {
     @include effectBtnIcon(none, none, not-allowed, none);
@@ -30,42 +36,131 @@
   }
 }
 
-/* Button Secondary */
-.btn-fui-secondary-primary {
+/* Button Filled M*/
+.btn-fui-primary-m {
+  @include buttonIconMix($fuiBtnPrimary, $fuiColorGhost, $fuiSizeXS, $fuiSizeM + 3, 8px);
+}
+.btn-fui-success-m {
+  @include buttonIconMix($fuiBtnSuccess, $fuiColorInk, $fuiSizeXS, $fuiSizeM + 3, 8px);
+}
+.btn-fui-danger-m {
+  @include buttonIconMix($fuiBtnDanger, $fuiColorGhost, $fuiSizeXS, $fuiSizeM + 3, 8px);
+}
+.btn-fui-warning-m {
+  @include buttonIconMix($fuiBtnWarning, $fuiColorGhost, $fuiSizeXS, $fuiSizeM + 3, 8px);
+}
+.btn-fui-text-m {
+  @include buttonIconMix($fuiBtnText, $fuiColorGhost, $fuiSizeXS, $fuiSizeM + 3, 8px);
+}
+.btn-fui-accent-m {
+  @include buttonIconMix($fuiBtnAccent, $fuiColorInk, $fuiSizeXS, $fuiSizeM + 3, 8px);
+}
+.btn-fui-disabled-m {
+  @include buttonIconMix(
+    $fuiBtnDisabled,
+    $fuiBtnDisabledText,
+    $fuiSizeXS,
+    $fuiSizeM + 3, 8px
+  );
+  &:disabled,
+  :hover {
+    @include effectBtnIcon(none, none, not-allowed, none);
+  }
+  &:active {
+    @include effectBtnIcon(transform 0.3s ease, underline, cursor, none);
+  }
+}
+
+/* Button Filled L*/
+.btn-fui-primary-l {
+  @include buttonIconMix($fuiBtnPrimary, $fuiColorGhost, $fuiSizeXS, $fuiSizeM + 6, 9px);
+}
+.btn-fui-success-l {
+  @include buttonIconMix($fuiBtnSuccess, $fuiColorInk, $fuiSizeXS, $fuiSizeM + 6, 9px);
+}
+.btn-fui-danger-l {
+  @include buttonIconMix($fuiBtnDanger, $fuiColorGhost, $fuiSizeXS, $fuiSizeM + 6, 9px);
+}
+.btn-fui-warning-l {
+  @include buttonIconMix($fuiBtnWarning, $fuiColorGhost, $fuiSizeXS, $fuiSizeM + 6, 9px);
+}
+.btn-fui-text-l {
+  @include buttonIconMix($fuiBtnText, $fuiColorGhost, $fuiSizeXS, $fuiSizeM + 6, 9px);
+}
+.btn-fui-accent-l {
+  @include buttonIconMix($fuiBtnAccent, $fuiColorInk, $fuiSizeXS, $fuiSizeM + 6, 9px);
+}
+.btn-fui-disabled-l {
+  @include buttonIconMix(
+    $fuiBtnDisabled,
+    $fuiBtnDisabledText,
+    $fuiSizeXS,
+    $fuiSizeM + 6, 9px
+  );
+  &:disabled,
+  :hover {
+    @include effectBtnIcon(none, none, not-allowed, none);
+  }
+  &:active {
+    @include effectBtnIcon(transform 0.3s ease, underline, cursor, none);
+  }
+}
+
+/* Button Secondary S */
+.btn-fui-secondary-primary-s {
   @include buttonIconMix(
     $fuiBtnPrimarySecondary,
     $fuiBtnPrimaryText,
-    $fuiSizeXS
+    $fuiSizeXS,
+    $fuiSizeM, 7px
   );
 }
-.btn-fui-secondary-success {
+.btn-fui-secondary-success-s {
   @include buttonIconMix(
     $fuiBtnSuccessSecondary,
     $fuiBtnSuccessText,
-    $fuiSizeXS
+    $fuiSizeXS,
+    $fuiSizeM, 7px
   );
 }
-.btn-fui-secondary-danger {
-  @include buttonIconMix($fuiBtnDangerSecondary, $fuiBtnDangerText, $fuiSizeXS);
+.btn-fui-secondary-danger-s {
+  @include buttonIconMix(
+    $fuiBtnDangerSecondary,
+    $fuiBtnDangerText,
+    $fuiSizeXS,
+    $fuiSizeM, 7px
+  );
 }
-.btn-fui-secondary-warning {
+.btn-fui-secondary-warning-s {
   @include buttonIconMix(
     $fuiBtnWarningSecondary,
     $fuiBtnWarningText,
-    $fuiSizeXS
+    $fuiSizeXS,
+    $fuiSizeM, 7px
   );
 }
-.btn-fui-secondary-text {
-  @include buttonIconMix($fuiBtnTextSecondary, $fuiBtnTextText, $fuiSizeXS);
+.btn-fui-secondary-text-s {
+  @include buttonIconMix(
+    $fuiBtnTextSecondary,
+    $fuiBtnTextText,
+    $fuiSizeXS,
+    $fuiSizeM, 7px
+  );
 }
-.btn-fui-secondary-accent {
-  @include buttonIconMix($fuiBtnAccentSecondary, $fuiBtnAccentText, $fuiSizeXS);
+.btn-fui-secondary-accent-s {
+  @include buttonIconMix(
+    $fuiBtnAccentSecondary,
+    $fuiBtnAccentText,
+    $fuiSizeXS,
+    $fuiSizeM, 7px
+  );
 }
-.btn-fui-secondary-disabled {
+.btn-fui-secondary-disabled-s {
   @include buttonIconMix(
     $fuiBtnDisabledSecondary,
     $fuiBtnDisabledText,
-    $fuiSizeXS
+    $fuiSizeXS,
+    $fuiSizeM, 7px
   );
   &:disabled {
     @include effectBtnIcon(transform 0.3s ease, none, not-allowed, none);
@@ -77,6 +172,142 @@
     @include effectBtnIcon(transform 0.3s ease, underline, cursor, none);
   }
 }
+
+/* Button Secondary M */
+.btn-fui-secondary-primary-m {
+  @include buttonIconMix(
+    $fuiBtnPrimarySecondary,
+    $fuiBtnPrimaryText,
+    $fuiSizeXS,
+    $fuiSizeM + 3, 8px
+  );
+}
+.btn-fui-secondary-success-m {
+  @include buttonIconMix(
+    $fuiBtnSuccessSecondary,
+    $fuiBtnSuccessText,
+    $fuiSizeXS,
+    $fuiSizeM + 3, 8px
+  );
+}
+.btn-fui-secondary-danger-m {
+  @include buttonIconMix(
+    $fuiBtnDangerSecondary,
+    $fuiBtnDangerText,
+    $fuiSizeXS,
+    $fuiSizeM + 3, 8px
+  );
+}
+.btn-fui-secondary-warning-m {
+  @include buttonIconMix(
+    $fuiBtnWarningSecondary,
+    $fuiBtnWarningText,
+    $fuiSizeXS,
+    $fuiSizeM + 3, 8px
+  );
+}
+.btn-fui-secondary-text-m {
+  @include buttonIconMix(
+    $fuiBtnTextSecondary,
+    $fuiBtnTextText,
+    $fuiSizeXS,
+    $fuiSizeM + 3, 8px
+  );
+}
+.btn-fui-secondary-accent-m {
+  @include buttonIconMix(
+    $fuiBtnAccentSecondary,
+    $fuiBtnAccentText,
+    $fuiSizeXS,
+    $fuiSizeM + 3, 8px
+  );
+}
+.btn-fui-secondary-disabled-m {
+  @include buttonIconMix(
+    $fuiBtnDisabledSecondary,
+    $fuiBtnDisabledText,
+    $fuiSizeXS,
+    $fuiSizeM + 3, 8px
+  );
+  &:disabled {
+    @include effectBtnIcon(transform 0.3s ease, none, not-allowed, none);
+  }
+  &:hover {
+    @include effectBtnIcon(none, none, not-allowed, none);
+  }
+  &:active {
+    @include effectBtnIcon(transform 0.3s ease, underline, cursor, none);
+  }
+}
+
+/* Button Secondary L */
+.btn-fui-secondary-primary-l {
+  @include buttonIconMix(
+    $fuiBtnPrimarySecondary,
+    $fuiBtnPrimaryText,
+    $fuiSizeXS,
+    $fuiSizeM + 6, 9px
+  );
+}
+.btn-fui-secondary-success-l {
+  @include buttonIconMix(
+    $fuiBtnSuccessSecondary,
+    $fuiBtnSuccessText,
+    $fuiSizeXS,
+    $fuiSizeM + 6, 9px
+  );
+}
+.btn-fui-secondary-danger-l {
+  @include buttonIconMix(
+    $fuiBtnDangerSecondary,
+    $fuiBtnDangerText,
+    $fuiSizeXS,
+    $fuiSizeM + 6, 9px
+  );
+}
+.btn-fui-secondary-warning-l {
+  @include buttonIconMix(
+    $fuiBtnWarningSecondary,
+    $fuiBtnWarningText,
+    $fuiSizeXS,
+    $fuiSizeM + 6, 9px
+  );
+}
+.btn-fui-secondary-text-l {
+  @include buttonIconMix(
+    $fuiBtnTextSecondary,
+    $fuiBtnTextText,
+    $fuiSizeXS,
+    $fuiSizeM + 6, 9px
+  );
+}
+.btn-fui-secondary-accent-l {
+  @include buttonIconMix(
+    $fuiBtnAccentSecondary,
+    $fuiBtnAccentText,
+    $fuiSizeXS,
+    $fuiSizeM + 6, 9px
+  );
+}
+.btn-fui-secondary-disabled-l {
+  @include buttonIconMix(
+    $fuiBtnDisabledSecondary,
+    $fuiBtnDisabledText,
+    $fuiSizeXS,
+    $fuiSizeM + 6, 9px
+  );
+  &:disabled {
+    @include effectBtnIcon(transform 0.3s ease, none, not-allowed, none);
+  }
+  &:hover {
+    @include effectBtnIcon(none, none, not-allowed, none);
+  }
+  &:active {
+    @include effectBtnIcon(transform 0.3s ease, underline, cursor, none);
+  }
+}
+
+
 
 /* Add On */
 .mr {

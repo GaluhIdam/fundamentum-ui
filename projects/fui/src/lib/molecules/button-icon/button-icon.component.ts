@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Color, Icon } from '../../types';
 import { CommonModule } from '@angular/common';
-import { IconsComponent } from '../../../public-api';
+import { IconsComponent } from '../../atoms/icons/icons.component';
 
 /**
  * The ButtonIconComponent component
@@ -37,6 +37,7 @@ export class ButtonIconComponent {
   @Input() iconSide?: 'right' | 'left' = 'left';
   @Input({ required: true }) option: 'iconText' | 'icon' | 'text' = 'iconText';
   @Input() color: Color = 'primary';
+  @Input() size: 's' | 'm' | 'l' = 'm';
   @Output() onClick: EventEmitter<void> = new EventEmitter<void>();
 
   handleOnClick(): void {

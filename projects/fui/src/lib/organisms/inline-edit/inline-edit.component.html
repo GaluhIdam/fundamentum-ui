@@ -21,6 +21,7 @@
     ></fui-text-field-complex>
     <fui-button-icon
       [disabled]="disabled"
+      [size]="size"
       [color]="disabled ? 'disabled' : 'success'"
       (onClick)="onHandleSave()"
       class="icon-list"
@@ -32,6 +33,7 @@
     <fui-button-icon
       (onClick)="onHandleCancel()"
       class="icon-list"
+      [size]="size"
       [type]="'button'"
       [option]="'icon'"
       [style]="'secondary'"

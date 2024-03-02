@@ -5,7 +5,8 @@ import {
   NG_VALUE_ACCESSOR,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { IconsComponent, LoadingComponent } from '../../../public-api';
+import { LoadingComponent } from '../../molecules/loading/loading.component';
+import { IconsComponent } from '../icons/icons.component';
 
 /**
  * The TextFieldComplexComponent component
@@ -34,9 +35,9 @@ import { IconsComponent, LoadingComponent } from '../../../public-api';
   standalone: true,
   imports: [
     IconsComponent,
+    LoadingComponent,
     CommonModule,
     ReactiveFormsModule,
-    LoadingComponent,
   ],
   templateUrl: './text-field-complex.component.html',
   styleUrl: './text-field-complex.component.scss',
