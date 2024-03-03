@@ -23,6 +23,7 @@ import { ModalFlyoutViewComponent } from './template/modal-flyout-view/modal-fly
 import { LoadingViewComponent } from './molecules/loading-view/loading-view.component';
 import { InlineEditViewComponent } from './organisms/inline-edit-view/inline-edit-view.component';
 import { DataGridViewComponent } from './organisms/data-grid-view/data-grid-view.component';
+import { TabsViewComponent } from './molecules/tabs-view/tabs-view.component';
 
 export const routes: Routes = [
   {
@@ -190,6 +191,10 @@ export const routes: Routes = [
       {
         path: 'loading',
         component: LoadingViewComponent,
+      },
+      {
+        path: 'tabs',
+        component: TabsViewComponent,
       },
     ],
   },

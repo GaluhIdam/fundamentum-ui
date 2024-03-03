@@ -1,9 +1,18 @@
-<div class="container-inline-edit">
+<div class="{{ 'container-inline-edit-' + size }}">
   <div *ngIf="!editMode" class="flex-input">
     <span class="text">
       <span class="edit-text">{{ textFieldControl.value }}</span>
       <fui-icons
         class="icon-inline"
+        [size]="
+          size === 's'
+            ? 'sizexs'
+            : size === 'm'
+            ? 'sizes'
+            : size === 'l'
+            ? 'sizem'
+            : 'sizem'
+        "
         (click)="editMode = !editMode"
         [icon]="'pencil'"
       ></fui-icons>

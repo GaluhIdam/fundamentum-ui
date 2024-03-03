@@ -1,12 +1,12 @@
 @import "../variables/index";
 
-@mixin inlineEditMixin() {
+@mixin inlineEditMixin($size) {
   margin: 20px;
   .flex-input {
     display: inline-flex;
     .text {
       font-family: $fuiFontFamily;
-      font-size: $fuiSizeM + 3;
+      font-size: $size + 3;
       margin-top: 0px;
       margin-bottom: 0px;
       cursor: pointer;

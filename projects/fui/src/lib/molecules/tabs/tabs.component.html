@@ -1,0 +1,34 @@
+<div class="fui-panel-tabs">
+  <div class="fui-tab-selector">
+    <button
+      type="button"
+      *ngFor="let title of dataTabs; let i = index"
+      (click)="onActive(dataTabs!, i)"
+      [disabled]="title.active === 'disabled'"
+      [ngClass]="{
+        'btn-tabs-selector-active': title.active === true,
+        'btn-tabs-selector-none': title.active === false,
+        'btn-tabs-selector-disabled': title.active === 'disabled'
+      }"
+    >
+      <fui-icons
+        class="fui-icon-tabs-left"
+        *ngIf="title.sideIcon === 'left'"
+        [icon]="title.icon!"
+        [size]="'sizes'"
+      ></fui-icons>
+      <span class="fui-text-title">{{ title.title }}</span>
+      <fui-icons
+        class="fui-icon-tabs-right"
+        *ngIf="title.sideIcon === 'right'"
+        [icon]="title.icon!"
+        [size]="'sizes'"
+      ></fui-icons>
+    </button>
+  </div>
+  <div class="fui-tab-content">
+    <div class="fui-tabs-content-selector" *ngFor="let content of dataTabs">
+      <span *ngIf="content.active === true">{{ content.content }}</span>
+    </div>
+  </div>
+</div>

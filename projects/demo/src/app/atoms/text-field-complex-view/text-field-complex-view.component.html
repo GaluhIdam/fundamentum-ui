@@ -7,6 +7,15 @@
     [message]="'This is required !'"
   ></fui-text-field-complex>
 </div>
+<div class="fit">
+  <fui-text-field-complex
+    [size]="size"
+    [textFieldControl]="textFieldx"
+    [fullWidth]="false"
+    [validator]="false"
+    [message]="'This is required !'"
+  ></fui-text-field-complex>
+</div>
 
 <form [formGroup]="myForm!" class="fit">
   <div class="max-width">
@@ -15,6 +24,17 @@
       formControlName="email"
       [loading]="true"
       [fullWidth]="true"
+      [validator]="true"
+      [message]="'This is required!'"
+    >
+    </fui-text-field-complex>
+  </div>
+  <div class="max-width">
+    <fui-text-field-complex
+      [size]="size"
+      formControlName="email"
+      [loading]="true"
+      [fullWidth]="false"
       [validator]="true"
       [message]="'This is required!'"
     >

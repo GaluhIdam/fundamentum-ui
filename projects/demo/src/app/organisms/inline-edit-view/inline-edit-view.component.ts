@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { InlineEditComponent } from 'fui';
+// import { InlineEditComponent } from 'fui';
 import { FormControl, Validators } from '@angular/forms';
+import { InlineEditComponent } from 'fui';
 
 @Component({
   selector: 'app-inline-edit-view',

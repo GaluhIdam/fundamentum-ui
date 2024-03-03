@@ -43,5 +43,12 @@ export * from './lib/atoms/link/link.component';
 export * from './lib/molecules/button-icon/button-icon.component';
 /* Text Field Complex */
 export * from './lib/atoms/text-field-complex/text-field-complex.component';
+/* Pagination */
+export * from './lib/organisms/pagination/pagination.component';
 /* Data Grid */
 export * from './lib/organisms/data-grid/data-grid.component';
+/* Tabs */
+export * from './lib/molecules/tabs/tabs.component';
+
+/* Tabs */
+export * from './lib/types';

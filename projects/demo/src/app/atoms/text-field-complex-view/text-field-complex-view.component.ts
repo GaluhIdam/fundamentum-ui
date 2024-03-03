@@ -7,7 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Subscription, debounceTime } from 'rxjs';
-import { TextFieldComplexComponent } from '../../../../../fui/src/public-api';
+import { TextFieldComplexComponent } from 'fui';
 interface TEST {
   nama: string;
   umur: number;
