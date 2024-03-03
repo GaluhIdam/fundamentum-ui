@@ -25,7 +25,7 @@ import { LabelLayout, UniversalTransition } from 'echarts/features';
       [themeChart]="themeChart">
  * </fui-chart-candlestick>
  * ```
- * <example-url>http://localhost:4200/chart/chart-candlestick</example-url>
+ * <example-url>http://localhost:4200/organisms/chart/chart-candlestick</example-url>
  */
 
 @Component({

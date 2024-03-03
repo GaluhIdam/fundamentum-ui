@@ -1,0 +1,27 @@
+@import "../variables/index";
+
+@mixin buttonIconMix($bgColor, $color, $BorderRadius, $fontSize, $padding) {
+  color: $color;
+  font-family: $fuiFontFamily;
+  font-size: $fontSize;
+  border-width: 0;
+  padding: $fuiSizeXS $fuiSizeM $fuiSizeXS $fuiSizeM;
+  background-color: $bgColor;
+  padding: $padding $padding + 5 $padding $padding + 5;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateY(-1px);
+  }
+  &:active {
+    transform: translateY(1.5px);
+  }
+  border-radius: $BorderRadius;
+}
+
+@mixin effectBtnIcon($transition, $textDecoration, $cursor, $transform) {
+  transition: $transition;
+  text-decoration: $textDecoration;
+  cursor: $cursor;
+  transform: $transform;
+}

@@ -5,6 +5,7 @@ export type Color =
   | 'danger'
   | 'text'
   | 'accent'
+  | 'ghost'
   | 'disabled';
 
 export type Size =

@@ -26,7 +26,7 @@ import { ThemesChart } from '../theme-chart';
     [themeChart]="themeChart">
  * </fui-chart-line-stacked>
  * ```
- * <example-url>http://localhost:4200/chart/chart-line-stacked</example-url>
+ * <example-url>http://localhost:4200/organisms/chart/chart-line-stacked</example-url>
  */
 
 @Component({

@@ -1,9 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'fui-input-base',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
 })
@@ -15,4 +17,19 @@ export class InputComponent {
   @Input('color') colorValue = 'primary';
   @Input('size') sizeValue: string = 'sizem';
   @Input('width') widthValue: string = 'auto';
+  @Input() controlName!: FormControl;
+  @Output() textChange = new EventEmitter();
+
+  onInput(e: any) {
+    const nilai = (e.target as HTMLInputElement).value;
+    this.textChange.emit(nilai);
+  }
+
+  onHasError(control: FormControl) {
+    const isTouched = control.touched;
+    const isRequired = control.errors?.['required'];
+    const isMinLength = control.errors?.['minlength'];
+
+    return isTouched && (isRequired || isMinLength) ? 'has-error' : '';
+  }
 }

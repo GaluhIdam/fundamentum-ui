@@ -25,7 +25,7 @@ import { LabelLayout } from 'echarts/features';
     [themeChart]="themeChart">
  * </fui-chart-radar>
  * ```
- * <example-url>http://localhost:4200/chart/chart-radar</example-url>
+ * <example-url>http://localhost:4200/organisms/chart/chart-radar</example-url>
  */
 
 @Component({

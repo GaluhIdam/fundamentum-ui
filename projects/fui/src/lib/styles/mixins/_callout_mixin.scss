@@ -1,0 +1,84 @@
+@import "../variables/index";
+
+@mixin callout($bgColor, $color, $fontSize) {
+  color: $color;
+  background-color: $bgColor;
+  font-family: $fuiFontFamily;
+  font-weight: $fuiFontWeightSemiBold;
+  height: fit-content;
+  h4,
+  h5 {
+    margin: 0px 0px 0px 0px;
+  }
+
+  .text-callout-m,
+  .text-callout-s {
+    color: $fuiColorDarkestShade;
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-weight: $fuiFontWeightRegular;
+    height: fit-content;
+  }
+
+  // Adjusting font size for different text sizes
+  .text-callout-m {
+    font-size: $fontSize + 2.5;
+  }
+
+  .text-callout-s {
+    font-size: $fontSize;
+  }
+
+  // Styling for icons and icon buttons
+  .icon {
+    margin-right: 5px;
+    margin-top: 5px;
+  }
+
+  .icon-btn {
+    cursor: pointer;
+    padding: 5px 5px 3px 5px;
+    border-radius: 5px;
+    height: fit-content;
+    &:hover {
+      padding: 5px 5px 3px 5px;
+      background-color: $bgColor;
+    }
+  }
+
+  // Flex container styles
+  .flex,
+  .flex-between {
+    display: flex;
+    align-items: center;
+  }
+
+  // Adjusting styles for flex-between to include spacing between items
+  .flex-between {
+    justify-content: space-between;
+  }
+}
+
+// Create a map to store color values based on their context
+$fuiColorMap: (
+  primary: $fuiColorPrimaryText,
+  success: $fuiColorSuccessText,
+  accent: $fuiColorAccentText,
+  warning: $fuiColorWarningText,
+  danger: $fuiColorDangerText,
+  disabled: $fuiColorDisabledText,
+) !default;
+
+// Creating a reusable container class with the callout mixin
+@mixin container-callout($bgColor, $color, $textColor, $fontSize) {
+  padding: $fuiSizeM;
+  @include callout($bgColor, $color, $fontSize);
+
+  &.#{$textColor} {
+    @include callout(
+      "transparent",
+      map-get($fuiColorMap, #{$textColor} + "Text"),
+      $fontSize
+    );
+  }
+}

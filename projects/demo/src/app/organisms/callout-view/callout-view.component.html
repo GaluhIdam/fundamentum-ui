@@ -1,0 +1,37 @@
+<fui-callout
+  [title]="'This is CallOut Primary'"
+  [size]="'m'"
+  [icon]="'user'"
+  [color]="'primary'"
+  [message]="message"
+  [visibility]="visibilityPrimary"
+  (onClick)="onHandleCalloutPrimary()"
+>
+</fui-callout>
+<fui-callout
+  [title]="'This is CallOut Success'"
+  [size]="'s'"
+  [icon]="'checkInCircleFilled'"
+  [color]="'success'"
+  [message]="message"
+  [visibility]="visibilitySuccess"
+  (onClick)="onHandleCalloutSuccess()"
+></fui-callout>
+<fui-callout
+  [title]="'This is CallOut Warning'"
+  [size]="'m'"
+  [icon]="'alert'"
+  [color]="'warning'"
+  [visibility]="visibilityWarning"
+  (onClick)="onHandleCalloutWarning()"
+>
+</fui-callout>
+<fui-callout
+  [title]="'This is CallOut Danger'"
+  [size]="'s'"
+  [icon]="'crossInACircleFilled'"
+  [color]="'danger'"
+  [visibility]="visibilityDanger"
+  (onClick)="onHandleCalloutDanger()"
+>
+</fui-callout>

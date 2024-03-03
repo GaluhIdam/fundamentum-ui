@@ -1,0 +1,48 @@
+<div
+  *ngIf="visibility"
+  [ngClass]="'container-callout-' + color"
+  class="container-callout"
+>
+  <div class="flex-between">
+    <div class="flex">
+      <!-- Title -->
+      <ng-container *ngIf="size === 'm'; else smallTitle">
+        <h4 [ngClass]="color">
+          <!-- Icon -->
+          <fui-icons
+            [className]="'icon'"
+            [icon]="icon"
+            [size]="'sizem'"
+            [color]="color"
+          ></fui-icons>
+          <!-- Icon -->
+          {{ title }}
+        </h4>
+      </ng-container>
+
+      <ng-template #smallTitle>
+        <h5 [ngClass]="color">
+          <!-- Icon -->
+          <fui-icons
+            [className]="'icon'"
+            [icon]="icon"
+            [size]="'sizes'"
+            [color]="color"
+          ></fui-icons>
+          <!-- Icon -->
+          {{ title }}
+        </h5>
+      </ng-template>
+      <!-- Title -->
+    </div>
+
+    <!-- Dismiss BTN  -->
+    <div class="icon-btn" (click)="onHandleCallout()">
+      <fui-icons [icon]="'cross'" [size]="'sizes'" [color]="color"></fui-icons>
+    </div>
+    <!-- Dismiss BTN  -->
+  </div>
+  <!-- Message -->
+  <p *ngIf="message" [ngClass]="'text-callout-' + size">{{ message }}</p>
+  <!-- Message -->
+</div>

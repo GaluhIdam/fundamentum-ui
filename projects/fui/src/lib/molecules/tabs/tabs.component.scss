@@ -1,0 +1,41 @@
+@import "../../styles/index";
+
+.fui-panel-tabs {
+  font-family: $fuiFontFamily;
+  width: fit-content;
+}
+
+.fui-tab-selector {
+  width: 100%;
+  display: flex;
+}
+.btn-tabs-selector-none {
+  @include tabsMixin(pointer, $fuiColorDarkestShade, none);
+}
+
+.btn-tabs-selector-active {
+  @include tabsMixin(
+    pointer,
+    $fuiColorPrimary,
+    $fuiColorPrimary 0px -2px 0px inset
+  );
+}
+
+.btn-tabs-selector-disabled {
+  @include tabsMixin(not-allowed, $fuiColorMediumShade, none);
+}
+
+.fui-tabs-content-selector {
+  margin: 10px 10px 10px 10px;
+  color: $fuiColorDarkestShade;
+}
+
+.fui-icon-tabs-left {
+  @include tabsMargin(0px, 8px);
+}
+.fui-icon-tabs-right {
+  @include tabsMargin(8px, 0px);
+}
+.fui-text-title {
+  top: -5px;
+}
