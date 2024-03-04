@@ -16,6 +16,7 @@ import { ModalViewComponent } from './templates/modal-view/modal-view.component'
 import { PanelViewComponent } from './templates/panel-view/panel-view.component';
 import { BreadcrumbViewComponent } from './molecules/breadcrumb-view/breadcrumb-view.component';
 import { ModalFlyoutViewComponent } from './template/modal-flyout-view/modal-flyout-view.component';
+import { PopoverViewComponent } from './templates/popover-view/popover-view.component';
 
 export const routes: Routes = [
   {
@@ -115,6 +116,10 @@ export const routes: Routes = [
       {
         path: 'modal-flyout',
         component: ModalFlyoutViewComponent,
+      },
+      {
+        path: 'popover',
+        component: PopoverViewComponent,
       },
     ],
   },
