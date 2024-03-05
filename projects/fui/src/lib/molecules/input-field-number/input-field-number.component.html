@@ -1,8 +1,40 @@
-@if(!!showSeparator){
-<fui-input-base [textValue]="valueInput" (keyup)="onInput($event)">
-</fui-input-base>
+@if(!!showSeparator){ @if(!!labelText){
 
-} @else{
+<div class="title">
+  <fui-text [weight]="'bold'">{{ labelText }} </fui-text>
+</div>
+<div class="container-inputFieldNumber">
+  <fui-input-base
+    [controlName]="control"
+    [textValue]="valueInput"
+    (keyup)="onInput($event)"
+  >
+  </fui-input-base>
+  <span
+    class="inputFieldNumber-icon"
+    [ngStyle]="{
+      display: control.touched && control.invalid ? 'inline' : 'none'
+    }"
+  >
+    <fui-icons [icon]="'alert'" [color]="'danger'"></fui-icons>
+  </span>
+</div>
+} } @else{
 <fui-input-base [type]="'number'"> </fui-input-base>
 
-}
+} @if(control.touched && control.invalid ){ @if(control.errors?.['required']){
+<div class="error">
+  <fui-text [color]="'danger'" [weight]="'light'"
+    >{{ errorControlName }} tidak boleh kosong
+  </fui-text>
+</div>
+} @else if(control.dirty && control.errors?.['minlength']){
+
+<div class="error">
+  <fui-text [color]="'danger'" [weight]="'light'"
+    >{{control.errors?.['minlength'].actualLength}}
+    character from
+    {{control.errors?.['minlength'].requiredLength}}</fui-text
+  >
+</div>
+} }

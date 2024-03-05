@@ -13,9 +13,14 @@
 
   <div>
     <fui-input-field-number
-      [valueInput]="myValue"
+      [valueInput]="inputValue"
       [showSeparator]="true"
+      [control]="employee.controls.price"
+      [labelText]="'Price'"
+      [name]="'price'"
       (valueChanges)="onValueChanges($event)"
     ></fui-input-field-number>
   </div>
 </div>
+
+<div></div>

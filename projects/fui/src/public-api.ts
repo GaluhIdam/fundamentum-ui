@@ -8,6 +8,7 @@ export * from './lib/atoms/input/input.component';
 export * from './lib/atoms/text/text.component';
 export * from './lib/molecules/input-field-text/field-text.component';
 export * from './lib/molecules/input-field-number/input-field-number.component';
+export * from './lib/molecules/input-field-password/input-field-password.component';
 
 /* Line Componet export to be dist */
 export * from './lib/organisms/charts/chart-line/chart-line.component';

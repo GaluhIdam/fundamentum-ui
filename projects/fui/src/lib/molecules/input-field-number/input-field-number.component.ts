@@ -5,19 +5,34 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { InputComponent } from '../../../public-api';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  IconsComponent,
+  InputComponent,
+  TextComponent,
+} from '../../../public-api';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'fui-input-field-number',
   standalone: true,
-  imports: [InputComponent, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    InputComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    TextComponent,
+    IconsComponent,
+  ],
   templateUrl: './input-field-number.component.html',
   styleUrl: './input-field-number.component.scss',
 })
 export class InputFieldNumberComponent {
   @Input() valueInput?: any;
   @Input() showSeparator = false;
+  @Input() labelText?: string;
+  @Input() control = new FormControl();
+  @Input('name') errorControlName?: string;
   @Output() valueChanges = new EventEmitter();
 
   constructor() {}
@@ -136,7 +151,7 @@ export class InputFieldNumberComponent {
     const formattedValue = this.formatNumberWithCommas(numericValue);
 
     this.valueInput =
-      formattedValue === '' || formattedValue == '0' ? 0 : formattedValue;
+      formattedValue === '' || formattedValue == '0' ? '' : formattedValue;
 
     let hasil = formattedValue.replace(/,/g, '');
 

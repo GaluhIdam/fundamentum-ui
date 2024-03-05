@@ -12,7 +12,7 @@
   @if(control.touched && control.invalid ){ @if(control.errors?.['required']){
   <div class="error">
     <fui-text [color]="'danger'" [weight]="'light'"
-      >tidak boleh kosong
+      >{{ labelText }} tidak boleh kosong
     </fui-text>
   </div>
   } @else if(control.dirty && control.errors?.['minlength']){
@@ -20,8 +20,8 @@
   <div class="error">
     <fui-text [color]="'danger'" [weight]="'light'"
       >{{control.errors?.['minlength'].actualLength}}
-      character from
-      {{control.errors?.['minlength'].requiredLength}}</fui-text
+      character of
+      {{control.errors?.['minlength'].requiredLength}} character</fui-text
     >
   </div>
   } }

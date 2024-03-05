@@ -1,0 +1,10 @@
+@import "./../../../../../demo/src/styles";
+
+.container-inputFieldNumber {
+  position: relative;
+  width: fit-content;
+  & .inputFieldNumber-icon {
+    position: absolute;
+    right: calc($fuiSizeS * 0.5);
+  }
+}

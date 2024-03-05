@@ -13,6 +13,7 @@ import {
   FieldTextComponent,
   TextComponent,
   InputFieldNumberComponent,
+  IconsComponent,
 } from '../../../../../fui/src/public-api';
 import { CommonModule } from '@angular/common';
 import { ThousandSeparatorDirective } from './../../../../../fui/src/lib/molecules/input-field-number/thousand-separator.directive';
@@ -30,6 +31,7 @@ import { ThousandSeparatorDirective } from './../../../../../fui/src/lib/molecul
     InputFieldNumberComponent,
     CommonModule,
     ThousandSeparatorDirective,
+    IconsComponent,
   ],
   templateUrl: './demo.component.html',
   styleUrl: './demo.component.scss',
@@ -37,6 +39,7 @@ import { ThousandSeparatorDirective } from './../../../../../fui/src/lib/molecul
 export class DemoComponent {
   constructor(private fb: FormBuilder) {}
 
+  inputValue = '';
   myValue: any;
 
   // employee = this.fb.group({
@@ -48,6 +51,7 @@ export class DemoComponent {
   employee = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     job: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    price: new FormControl(null, [Validators.required, Validators.min(1)]),
   });
 
   onClick() {
