@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Color, Icon, Size } from '../../types';
 import { CommonModule } from '@angular/common';
 import { IconsComponent } from '../../atoms/icons/icons.component';
@@ -37,4 +37,9 @@ export class CardComponent {
   @Input() cardBadgeSize: Size = 'sizes';
   @Input() cardBadgeBackground!: Color;
   @Input() cardBadgeColor!: Color;
+  @Output() onClickCard: EventEmitter<void> = new EventEmitter();
+
+  handleOnClickCard() {
+    this.onClickCard.emit();
+  }
 }
