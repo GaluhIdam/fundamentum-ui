@@ -44,3 +44,5 @@ $fuiLinkColor: $fuiColorPrimaryText !default;
 // Charts
 $fuiColorChartLines: color_function.shade($fuiColorLightestShade, 3%) !default;
 $fuiColorChartBand: $fuiColorLightestShade !default;
+
+$fuiColorCardDisabled: $fuiColorLightShade;
