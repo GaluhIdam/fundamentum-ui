@@ -37,7 +37,7 @@ import { ThousandSeparatorDirective } from './../../../../../fui/src/lib/molecul
 export class DemoComponent {
   constructor(private fb: FormBuilder) {}
 
-  myValue = '';
+  myValue: any;
 
   // employee = this.fb.group({
   //   name:['', Validators.required],

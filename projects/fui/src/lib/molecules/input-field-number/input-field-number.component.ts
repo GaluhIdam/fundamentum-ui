@@ -7,74 +7,146 @@ import {
 } from '@angular/core';
 import { InputComponent } from '../../../public-api';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'fui-input-field-number',
   standalone: true,
-  imports: [InputComponent, FormsModule, ReactiveFormsModule, DecimalPipe],
-  providers: [DecimalPipe],
+  imports: [InputComponent, FormsModule, ReactiveFormsModule],
   templateUrl: './input-field-number.component.html',
   styleUrl: './input-field-number.component.scss',
 })
 export class InputFieldNumberComponent {
-  @Input() valueInput = '';
+  @Input() valueInput?: any;
   @Input() showSeparator = false;
   @Output() valueChanges = new EventEmitter();
 
+  constructor() {}
+
+  // @HostListener('input', ['$event'])
+  // onInput(event: InputEvent) {
+  //   const input = event.target as HTMLInputElement;
+  //   const originalValue = input.value;
+
+  //   // Remove non-numeric characters
+  //   const numericValue = originalValue.replace(/\D/g, '');
+
+  //   // Format with thousand separator and 2 decimal places
+  //   const formattedValue = this.formatNumberWithCommas(numericValue);
+
+  //   // Update the control value
+  //   this.valueInput = formattedValue;
+  //   console.log('parse float numeric ', parseFloat(numericValue));
+  //   console.log('parse float numeric 2', formattedValue);
+
+  //   let hasil = formattedValue.replace(/,/g, '');
+  //   this.valueChanges.emit(parseFloat(hasil));
+  // }
+
   // @HostListener('keydown', ['$event'])
-  // updateValue(event: KeyboardEvent) {
+  // onKeyDown(event: KeyboardEvent) {
+  //   const input = event.target as HTMLInputElement;
+  //   const key = event.key;
 
+  //   // Jika tombol yang ditekan adalah karakter non-numeric atau tidak diizinkan
+  //   try {
+  //     if (
+  //       isNaN(Number(key)) ||
+  //       key === ' ' ||
+  //       key === '-' ||
+  //       (key == '.' && input.value.indexOf('.') != -1) ||
+  //       key === 'Backspace'
+  //     ) {
+  //       if (key === 'Backspace') {
+  //         // Menghapus karakter sebelum kursor
+  //         const start = input.selectionStart || 0;
+  //         const end = input.selectionEnd || 0;
+  //         if (start === end && start > 0) {
+  //           const value = input.value;
+  //           const newValue = value.slice(0, start - 1) + value.slice(end);
+  //           input.value = newValue;
+  //           input.setSelectionRange(start - 1, start - 1);
+  //           input.dispatchEvent(new Event('input'));
+  //           this.valueInput = newValue;
+  //           let hasil = newValue.replace(/,/g, '');
+  //           this.valueChanges.emit(hasil);
+  //         }
+  //       } else if (key == '.') {
+  //         event.preventDefault();
+  //       }
+
+  //       // Menghentikan event default
+  //       event.preventDefault();
+
+  //       // Menghapus karakter yang dipilih
+  //       const start = input.selectionStart || 0;
+  //       const end = input.selectionEnd || 0;
+  //       const value = input.value;
+  //       const newValue = value.slice(0, start) + value.slice(end);
+  //       input.value = newValue;
+
+  //       // Memperbarui nilai input
+  //       input.dispatchEvent(new InputEvent('input'));
+
+  //       // Memanggil onInput untuk memastikan nilai terformat dan valueChanges terisi
+  //       this.onInput(new InputEvent('input'));
+  //     }
+  //   } catch (err) {
+  //     console.log('tidak boleh menggunakan character ', err);
+  //   }
   // }
 
-  constructor(private decimalPipe: DecimalPipe) {}
-
-  // onValueC4hange(newValue: string) {
-  //   // Menghapus semua karakter selain digit
-  //   const numericValue = parseFloat(newValue.replace(/\D/g, ''));
-
-  //   // Mengirimkan nilai keluar dengan event emitter
-  //   this.valueChanges.emit(numericValue);
-  // }
-
-  onValueChanges(val: any) {
-    let value = (val.target as HTMLInputElement).value;
-    // 1
-    let numericValue = value.replace(/[^0-9]/g, '');
-    console.log('isi numericValue ', numericValue);
-    let formattedValue = this.formatNumberWithCommas(numericValue);
-    this.valueInput = formattedValue;
-    console.log('tes');
-    this.valueChanges.emit(this.valueInput);
-
-    //  2
-    // let numericValue = parseFloat(value.replace(/\D/g, ''));
-    // if (!isNaN(numericValue)) {
-    //   let formattedValue = this.decimalPipe.transform(numericValue, '1.0-2');
-    //   this.valueInput += formattedValue;
-    //   this.valueChanges.emit(this.valueInput);
-    //   console.log('numeric', numericValue);
-    // } else {
-    //   value = '';
-    //   this.valueInput += value;
-    //   console.log('non numeric', numericValue);
-    //   this.valueChanges.emit(this.valueInput);
-    // }
-  }
   // formatNumberWithCommas(value: string): string {
   //   const numberParts = value.split('.');
-  //   let wholePart = numberParts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  //   const wholePart = numberParts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   //   const decimalPart =
-  //     numberParts.length > 1 ? `.${numberParts[1].padEnd(2, '0')}` : '.00';
-  //   wholePart += decimalPart;
-  //   return wholePart;
+  //     numberParts.length > 1 ? `.${numberParts[1].padEnd(2, '0')}` : '';
+  //   return wholePart + decimalPart;
   // }
-  formatNumberWithCommas(value: string): any {
-    let numberParts = value.split('.');
 
-    let wholePart = numberParts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    let decimalPart =
-      numberParts.length > 1 ? `.${numberParts[1].padEnd(2, '0')}` : '';
+  // coba-coba
+  @HostListener('keydown', ['$event'])
+  onKeyDown(event: KeyboardEvent) {
+    const input = event.target as HTMLInputElement;
+    const key = event.key;
+
+    try {
+      if (
+        !(
+          (
+            (key >= '0' && key <= '9') || // Angka 0-9
+            key === '.' || // Titik
+            key === 'Backspace'
+          ) // Backspace
+        )
+      ) {
+        event.preventDefault();
+      }
+    } catch (err) {
+      console.log('Error: ', err);
+    }
+  }
+
+  @HostListener('input', ['$event'])
+  onInput(event: InputEvent) {
+    const input = event.target as HTMLInputElement;
+    const originalValue = input.value;
+
+    const numericValue = originalValue.replace(/[^0-9.]/g, '');
+
+    const formattedValue = this.formatNumberWithCommas(numericValue);
+
+    this.valueInput =
+      formattedValue === '' || formattedValue == '0' ? 0 : formattedValue;
+
+    let hasil = formattedValue.replace(/,/g, '');
+
+    this.valueChanges.emit(parseFloat(hasil));
+  }
+
+  formatNumberWithCommas(value: string): string {
+    const numberParts = value.split('.');
+    const wholePart = numberParts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    const decimalPart = numberParts.length > 1 ? `.${numberParts[1]}` : '';
     return wholePart + decimalPart;
   }
 }

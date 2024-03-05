@@ -13,12 +13,9 @@
 
   <div>
     <fui-input-field-number
+      [valueInput]="myValue"
       [showSeparator]="true"
       (valueChanges)="onValueChanges($event)"
     ></fui-input-field-number>
-
-    <!-- <input type="text" class="form-control" [(ngModel)]="myValue" /> -->
-
-    <!-- <input type="text" [ngModel]="myValue | number : '1.2-2'" /> -->
   </div>
 </div>
