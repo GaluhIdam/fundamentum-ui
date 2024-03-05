@@ -1,0 +1,13 @@
+<div style="margin: 20px">
+  <fui-comment-list
+    *ngFor="let item of commentList"
+    [iconAvatar]="item.iconAvatar"
+    [iconTitle]="item.iconTitle!"
+    [username]="item.username"
+    [actions]="item.action"
+    [tags]="item.tags"
+    [timestamp]="item.timestamp"
+    [comments]="item.comments"
+    [typeComment]="item.typeComment"
+  ></fui-comment-list>
+</div>

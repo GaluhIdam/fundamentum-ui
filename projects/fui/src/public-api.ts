@@ -49,6 +49,8 @@ export * from './lib/organisms/pagination/pagination.component';
 export * from './lib/organisms/data-grid/data-grid.component';
 /* Tabs */
 export * from './lib/molecules/tabs/tabs.component';
+/* Comment List */
+export * from './lib/templates/comment-list/comment-list.component';
 
-/* Tabs */
+/* Type */
 export * from './lib/types';

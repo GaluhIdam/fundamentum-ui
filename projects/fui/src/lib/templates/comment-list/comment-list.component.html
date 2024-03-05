@@ -1,0 +1,67 @@
+<div class="fui-container-comment-list">
+  <div class="fui-panel-comment-list vertical-line">
+    <div class="fui-grid">
+      <fui-icons
+        [size]="'sizem'"
+        [icon]="iconAvatar"
+        class="fui-icon-comment-list mr-20"
+      ></fui-icons>
+    </div>
+    <div
+      class="{{
+        typeComment === 'commentBorder'
+          ? 'fui-content-comment-list-border'
+          : 'fui-content-comment-list-standard'
+      }}"
+    >
+      <div
+        class="{{
+          typeComment === 'commentBorder'
+            ? 'fui-between-comment-list-border'
+            : 'fui-between-comment-list-standard'
+        }}"
+      >
+        <div
+          class="{{
+            typeComment === 'commentBorder'
+              ? 'fui-flex-comment-list-border'
+              : 'fui-flex-comment-list-standard'
+          }}"
+        >
+          <fui-icons
+            *ngIf="iconTitle"
+            [size]="'sizexs'"
+            [icon]="iconTitle"
+            class="fui-iconTitle-comment-list mr-10"
+          ></fui-icons>
+          <div>
+            <p
+              class="fui-text-comment-list fui-text-bold-comment-list mr-5 mt-3"
+            >
+              {{ username }}
+              <span class="fui-text-medium-comment-list"
+                >{{ actions }}
+                <span *ngFor="let case of tags" class="fui-tags-comment-list">{{
+                  case
+                }}</span>
+                on {{ timestamp }}</span
+              >
+            </p>
+          </div>
+        </div>
+        <fui-icons
+          (click)="handleOnClick()"
+          [size]="'sizes'"
+          [icon]="'copy'"
+          class="fui-icon-small-comment-list"
+        ></fui-icons>
+      </div>
+      <p
+        *ngIf="typeComment === 'commentBorder'"
+        class="fui-comment-text fui-text-comment-list"
+      >
+        {{ comments }}
+      </p>
+    </div>
+  </div>
+</div>

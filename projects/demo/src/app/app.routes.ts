@@ -24,6 +24,7 @@ import { LoadingViewComponent } from './molecules/loading-view/loading-view.comp
 import { InlineEditViewComponent } from './organisms/inline-edit-view/inline-edit-view.component';
 import { DataGridViewComponent } from './organisms/data-grid-view/data-grid-view.component';
 import { TabsViewComponent } from './molecules/tabs-view/tabs-view.component';
+import { CommentListViewComponent } from './templates/comment-list-view/comment-list-view.component';
 
 export const routes: Routes = [
   {
@@ -171,6 +172,10 @@ export const routes: Routes = [
       {
         path: 'modal-flyout',
         component: ModalFlyoutViewComponent,
+      },
+      {
+        path: 'comment-list',
+        component: CommentListViewComponent,
       },
     ],
   },
