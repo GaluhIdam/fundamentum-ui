@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { CommentListComponent, Icon } from '../../../../../fui/src/public-api';
+import { CommentListComponent, Icon } from 'fui';
 
 @Component({
   selector: 'app-comment-list-view',
