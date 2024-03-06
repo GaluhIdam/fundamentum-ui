@@ -67,6 +67,7 @@ export class DemoComponent {
     ]),
     job: new FormControl('', [Validators.required, Validators.minLength(3)]),
     alamat: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    number: new FormControl(null, [Validators.required, Validators.min(1)]),
     price: new FormControl(null, [Validators.required, Validators.min(1)]),
   });
 

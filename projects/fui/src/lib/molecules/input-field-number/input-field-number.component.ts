@@ -35,6 +35,7 @@ export class InputFieldNumberComponent {
   @Input('min') minValue?: number;
   @Input() labelText?: string;
   @Input() control = new FormControl();
+  @Input() controlNumber = new FormControl();
   @Input('name') errorControlName?: string;
   @Output() valueChanges = new EventEmitter();
 

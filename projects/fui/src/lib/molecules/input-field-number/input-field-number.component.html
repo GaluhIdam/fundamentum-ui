@@ -14,26 +14,13 @@
     >
     </fui-input-base>
   </div>
-  } } @else{
-  <div class="title">
-    <fui-text [weight]="'bold'">{{ labelText }} </fui-text>
-  </div>
-  <fui-input-base
-    [type]="'number'"
-    [width]="'full'"
-    [size]="'sizes'"
-    [minValue]="minValue"
-  >
-  </fui-input-base>
-
   } @if(control.touched && control.invalid ){ @if(control.errors?.['required']){
   <div class="error">
     <fui-text [color]="'danger'" [weight]="'light'" [size]="'sizes'"
       >{{ labelText }} tidak boleh kosong
     </fui-text>
   </div>
-  }
-  <!-- @else if(control.dirty && control.errors?.['minlength']){
+  } @else if(control.dirty && control.errors?.['minlength']){
 
   <div class="error">
     <fui-text [color]="'danger'" [weight]="'light'" [size]="'sizes'"
@@ -42,7 +29,33 @@
       {{control.errors?.['minlength'].requiredLength}}</fui-text
     >
   </div>
-  }  -->
-  }
+  } } } @else{
+  <div class="title">
+    <fui-text [weight]="'bold'">{{ labelText }} </fui-text>
+  </div>
+  <fui-input-base
+    [type]="'number'"
+    [width]="'full'"
+    [size]="'sizes'"
+    [minValue]="minValue"
+    [controlName]="controlNumber"
+  >
+  </fui-input-base>
+  @if(controlNumber.touched && controlNumber.invalid ){
+  @if(controlNumber.errors?.['required']){
+  <div class="error">
+    <fui-text [color]="'danger'" [weight]="'light'" [size]="'sizes'"
+      >{{ labelText }} tidak boleh kosong
+    </fui-text>
+  </div>
+  } @else if(controlNumber.dirty && controlNumber.errors?.['minlength']){
+
+  <div class="error">
+    <fui-text [color]="'danger'" [weight]="'light'" [size]="'sizes'"
+      >{{controlNumber.errors?.['minlength'].actualLength}}
+      character from
+      {{controlNumber.errors?.['minlength'].requiredLength}}</fui-text
+    >
+  </div>
+  } } }
 </div>
-<fui-spacer [size]="'sizel'" [direction]="'vertical'"></fui-spacer>
