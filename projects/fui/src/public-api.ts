@@ -31,3 +31,6 @@ export * from './lib/organisms/charts/chart-area-stacked-gradient/chart-area-sta
 export * from './lib/organisms/charts/chart-candlestick/chart-candlestick.component';
 /* Tree Componet export to be dist */
 export * from './lib/organisms/charts/chart-tree/chart-tree.component';
+
+export * from './lib/templates/toast/toast.component';
+export * from './lib/templates/toast/toast.service';
