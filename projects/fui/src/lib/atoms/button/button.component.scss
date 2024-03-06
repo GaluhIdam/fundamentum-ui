@@ -21,6 +21,9 @@ button {
 .text {
   @include fuiButtonBase($fuiColorDarkShade, $fuiColorGhost);
 }
+.textlight {
+  @include fuiButtonBase($fuiColorDarkestShade, $fuiColorGhost);
+}
 .accent {
   @include fuiButtonBase($fuiColorAccent, $fuiColorInk);
 }

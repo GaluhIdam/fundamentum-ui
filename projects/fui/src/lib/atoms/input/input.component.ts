@@ -17,9 +17,12 @@ export class InputComponent {
   // @Input('helpText') helpTextValue?: string;
   @Input('placeholder') placeholderValue = '';
   @Input('color') colorValue = 'primary';
-  @Input('size') sizeValue: string = 'sizem';
+  @Input('passwordIcon') passwordIconValue = '';
+  @Input('size') sizeValue: string = 'sizedefault';
   @Input('width') widthValue: string = 'auto';
   @Input() controlName = new FormControl('');
+  @Input() minValue?: number;
+
   @Output() textChange = new EventEmitter();
 
   onInput(e: any) {

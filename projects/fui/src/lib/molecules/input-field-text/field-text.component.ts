@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { InputComponent } from '../../../public-api';
+import { InputComponent, SpacerComponent } from '../../../public-api';
 import {
   FormGroup,
   FormControl,
@@ -19,6 +19,7 @@ import { TextComponent } from '../../../public-api';
     FormsModule,
     ReactiveFormsModule,
     TextComponent,
+    SpacerComponent,
   ],
   templateUrl: './field-text.component.html',
   styleUrl: './field-text.component.scss',

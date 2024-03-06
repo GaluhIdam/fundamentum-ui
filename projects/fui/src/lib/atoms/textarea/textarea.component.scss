@@ -1,9 +1,11 @@
 @import "./../../../../../demo/src/styles";
 
-.container-input-field__password {
-  position: relative;
+.container-textarea {
+  textarea {
+    @include fuiTextArea;
+  }
 
-  .error {
+  & .error {
     color: $fuiColorDanger;
     // transition: all 0.4s;
     animation-name: errorAnimation;

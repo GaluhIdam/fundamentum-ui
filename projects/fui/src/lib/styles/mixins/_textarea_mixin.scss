@@ -10,8 +10,8 @@
 @use "../mixins/loading_mixin";
 @use "../functions/color_function";
 
-@mixin fuiInputTextBase {
-  max-width: calc(size_variable.$fuiSize * 25);
+@mixin fuiTextArea {
+  // max-width: calc(size_variable.$fuiSize * 25);
   width: 100%;
   background-repeat: no-repeat;
   box-sizing: border-box;
@@ -46,9 +46,4 @@
     outline: none;
     box-shadow: inset 0 0 0 1px rgba(17, 42, 134, 0.1);
   }
-}
-
-@mixin fuiInputBaseIcon {
-  padding: calc(size_variable.$fuiSize * 0.676) calc(size_variable.$fuiSize * 3)
-    calc(size_variable.$fuiSize * 0.676) calc(size_variable.$fuiSize * 2);
 }

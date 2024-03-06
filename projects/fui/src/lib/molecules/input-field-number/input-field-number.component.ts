@@ -8,6 +8,7 @@ import {
 import {
   IconsComponent,
   InputComponent,
+  SpacerComponent,
   TextComponent,
 } from '../../../public-api';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -23,6 +24,7 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     TextComponent,
     IconsComponent,
+    SpacerComponent,
   ],
   templateUrl: './input-field-number.component.html',
   styleUrl: './input-field-number.component.scss',
@@ -30,6 +32,7 @@ import { CommonModule } from '@angular/common';
 export class InputFieldNumberComponent {
   @Input() valueInput?: any;
   @Input() showSeparator = false;
+  @Input('min') minValue?: number;
   @Input() labelText?: string;
   @Input() control = new FormControl();
   @Input('name') errorControlName?: string;
@@ -150,12 +153,12 @@ export class InputFieldNumberComponent {
 
     const formattedValue = this.formatNumberWithCommas(numericValue);
 
-    this.valueInput =
-      formattedValue === '' || formattedValue == '0' ? '' : formattedValue;
+    this.valueInput = formattedValue;
 
     let hasil = formattedValue.replace(/,/g, '');
+    let hasilAkhir = hasil === '' || hasil == '0' ? '0' : hasil;
 
-    this.valueChanges.emit(parseFloat(hasil));
+    this.valueChanges.emit(parseFloat(hasilAkhir));
   }
 
   formatNumberWithCommas(value: string): string {

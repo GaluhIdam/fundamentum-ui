@@ -1,40 +1,48 @@
-@if(!!showSeparator){ @if(!!labelText){
+<div class="container-input-field__number">
+  @if(!!showSeparator){ @if(!!labelText){
 
-<div class="title">
-  <fui-text [weight]="'bold'">{{ labelText }} </fui-text>
-</div>
-<div class="container-inputFieldNumber">
+  <div class="title">
+    <fui-text [weight]="'bold'">{{ labelText }} </fui-text>
+  </div>
+  <div>
+    <fui-input-base
+      [controlName]="control"
+      [textValue]="valueInput"
+      (keyup)="onInput($event)"
+      [width]="'full'"
+      [size]="'sizes'"
+    >
+    </fui-input-base>
+  </div>
+  } } @else{
+  <div class="title">
+    <fui-text [weight]="'bold'">{{ labelText }} </fui-text>
+  </div>
   <fui-input-base
-    [controlName]="control"
-    [textValue]="valueInput"
-    (keyup)="onInput($event)"
+    [type]="'number'"
+    [width]="'full'"
+    [size]="'sizes'"
+    [minValue]="minValue"
   >
   </fui-input-base>
-  <span
-    class="inputFieldNumber-icon"
-    [ngStyle]="{
-      display: control.touched && control.invalid ? 'inline' : 'none'
-    }"
-  >
-    <fui-icons [icon]="'alert'" [color]="'danger'"></fui-icons>
-  </span>
-</div>
-} } @else{
-<fui-input-base [type]="'number'"> </fui-input-base>
 
-} @if(control.touched && control.invalid ){ @if(control.errors?.['required']){
-<div class="error">
-  <fui-text [color]="'danger'" [weight]="'light'"
-    >{{ errorControlName }} tidak boleh kosong
-  </fui-text>
-</div>
-} @else if(control.dirty && control.errors?.['minlength']){
+  } @if(control.touched && control.invalid ){ @if(control.errors?.['required']){
+  <div class="error">
+    <fui-text [color]="'danger'" [weight]="'light'" [size]="'sizes'"
+      >{{ labelText }} tidak boleh kosong
+    </fui-text>
+  </div>
+  }
+  <!-- @else if(control.dirty && control.errors?.['minlength']){
 
-<div class="error">
-  <fui-text [color]="'danger'" [weight]="'light'"
-    >{{control.errors?.['minlength'].actualLength}}
-    character from
-    {{control.errors?.['minlength'].requiredLength}}</fui-text
-  >
+  <div class="error">
+    <fui-text [color]="'danger'" [weight]="'light'" [size]="'sizes'"
+      >{{control.errors?.['minlength'].actualLength}}
+      character from
+      {{control.errors?.['minlength'].requiredLength}}</fui-text
+    >
+  </div>
+  }  -->
+  }
 </div>
-} }
+<fui-spacer [size]="'sizel'" [direction]="'vertical'"></fui-spacer>

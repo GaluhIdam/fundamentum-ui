@@ -14,6 +14,10 @@ import {
   TextComponent,
   InputFieldNumberComponent,
   IconsComponent,
+  InputFieldPasswordComponent,
+  SpacerComponent,
+  TextareaComponent,
+  ImageComponent,
 } from '../../../../../fui/src/public-api';
 import { CommonModule } from '@angular/common';
 import { ThousandSeparatorDirective } from './../../../../../fui/src/lib/molecules/input-field-number/thousand-separator.directive';
@@ -32,6 +36,10 @@ import { ThousandSeparatorDirective } from './../../../../../fui/src/lib/molecul
     CommonModule,
     ThousandSeparatorDirective,
     IconsComponent,
+    InputFieldPasswordComponent,
+    SpacerComponent,
+    TextareaComponent,
+    ImageComponent,
   ],
   templateUrl: './demo.component.html',
   styleUrl: './demo.component.scss',
@@ -39,8 +47,11 @@ import { ThousandSeparatorDirective } from './../../../../../fui/src/lib/molecul
 export class DemoComponent {
   constructor(private fb: FormBuilder) {}
 
-  inputValue = '';
-  myValue: any;
+  inputValueNumber = '';
+  inputValuePrice = '';
+  myValueNumber: any;
+  myValuePrice: any = 0;
+  myValuePassword?: string;
 
   // employee = this.fb.group({
   //   name:['', Validators.required],
@@ -50,7 +61,12 @@ export class DemoComponent {
   demo!: FormGroup;
   employee = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
     job: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    alamat: new FormControl('', [Validators.required, Validators.minLength(5)]),
     price: new FormControl(null, [Validators.required, Validators.min(1)]),
   });
 
@@ -58,22 +74,18 @@ export class DemoComponent {
     console.log('tester');
   }
 
-  // onValueChanges(e: any) {
-  //   this.myValue = e;
-  //   console.log('demo: ', e);
-  // }
-
-  // @HostListener('keydown', ['$event.target.value'])
-  // onInput(e: any) {
-  //   var t = e.target.value;
-  //   let numeric = t.substr(0, t.indexOf('.')) + t.substr(t.indexOf(','), 3);
-  //   e.target.value =
-  //     t.indexOf('.') >= 0 ? (this.myValue = numeric) : (this.myValue = t);
-  // }
-
-  onValueChanges(e: any) {
-    this.myValue = e;
+  onValueChangesPassword(e: any) {
+    this.myValuePassword = e;
+    console.log(e);
+  }
+  onValueChangesNumber(e: any) {
+    this.myValueNumber = e;
+  }
+  onValueChangesPrice(e: any) {
+    this.myValuePrice = e;
   }
 
-  onSubmit() {}
+  onSubmit() {
+    console.log(this.employee.value);
+  }
 }
