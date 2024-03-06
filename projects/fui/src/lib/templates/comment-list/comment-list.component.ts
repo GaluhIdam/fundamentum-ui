@@ -2,6 +2,17 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ButtonIconComponent, Icon, IconsComponent } from '../../../public-api';
 import { CommonModule } from '@angular/common';
 
+/**
+ * The ButtonIconComponent component
+ * @usage
+ * ```html
+ * <fui-comment-list
+    [dataComment]="commentList!"
+    [comment]="true">
+ * </fui-comment-list>
+ * ```
+ * <example-url>http://localhost:4200/template/comment-list</example-url>
+ */
 @Component({
   selector: 'fui-comment-list',
   standalone: true,
