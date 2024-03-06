@@ -1,0 +1,31 @@
+@import "./../../../../../demo/src/styles";
+
+.image {
+  vertical-align: middle;
+  max-inline-size: 100%;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 0.7px 1.4px,
+    rgba(0, 0, 0, 0.05) 0px 1.9px 4px, rgba(0, 0, 0, 0.05) 0px 4.5px 10px;
+}
+.image.sizexs {
+  inline-size: calc($fuiSize * 20);
+}
+.image.sizes {
+  max-inline-size: 100%;
+  inline-size: calc($fuiSize * 30);
+}
+
+.image.sizem {
+  inline-size: calc($fuiSize * 40);
+}
+
+.image.sizel {
+  inline-size: calc($fuiSize * 50);
+}
+
+.image.sizexl {
+  inline-size: calc($fuiSize * 60);
+}
+
+.image.sizexxl {
+  inline-size: calc($fuiSize * 70);
+}

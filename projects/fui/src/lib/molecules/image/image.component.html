@@ -1,0 +1,15 @@
+<ng-container *ngIf="!!labelText; else noLabel">
+  <figure>
+    <img class="image" [src]="srcValue" alt="altValue" [ngClass]="size" />
+    <figcaption>
+      <fui-text [color]="'text'" weight="'light'" [size]="'sizes'">
+        {{ labelText }}
+      </fui-text>
+    </figcaption>
+  </figure>
+</ng-container>
+<ng-template #noLabel>
+  <figure>
+    <img class="image" [src]="srcValue" alt="altValue" [ngClass]="size" />
+  </figure>
+</ng-template>

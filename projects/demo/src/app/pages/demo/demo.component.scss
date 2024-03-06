@@ -1,0 +1,31 @@
+@import "./../../../../../demo/src/styles";
+
+.container-demo__page {
+  margin: $fuiFontSizeL auto;
+  width: 20%;
+  padding: 16px;
+  box-shadow: 0 0px 5px 2px lightgrey;
+}
+
+.form-group {
+  margin-bottom: $fuiFontSize;
+}
+.form-group__button {
+  margin-bottom: $fuiFontSize;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-demo__image {
+  margin: $fuiFontSizeL auto;
+  width: 80%;
+  padding: 16px;
+  box-shadow: 0 0px 5px 2px lightgrey;
+}
+.container-demo__button {
+  margin: $fuiFontSizeL auto;
+  width: fit-content;
+  padding: 16px;
+  box-shadow: 0 0px 5px 2px lightgrey;
+  text-align: center;
+}
