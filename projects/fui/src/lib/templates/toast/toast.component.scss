@@ -1,0 +1,52 @@
+@use './../../styles//variables//z_index_variable' as z_index;
+@use "./../../styles/variables/color_variable" as color;
+@use "./../../styles//variables/size_variable" as size;
+@use "./../../styles//variables/border_variable" as border;
+
+
+.toasts-container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
+.toast {
+  margin: 1rem;
+  z-index: z_index.$fuiZToastList;
+  max-width: 320px;
+  background: color.$fuiColorEmptyShade;
+  box-shadow: rgba($color: color.$fuiColorDarkestShade, $alpha: .2) 0px 8px 24px;
+  padding: size.$fuiSizeL;
+  border-radius: border.$fuiBorderRadius;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+}
+
+$color-styles: (
+  primary: color.$fuiColorPrimary,
+  accent: color.$fuiColorAccent,
+  success: color.$fuiColorSuccess,
+  warning: color.$fuiColorWarning,
+  danger: color.$fuiColorDanger,
+  text: color.$fuiColorDarkShade,
+  disabled: color.$fuiColorDisabled,
+);
+
+@each $color, $value in $color-styles {
+  .toast-#{$color} {
+    border-top: 2px solid $value;
+  }
+}
