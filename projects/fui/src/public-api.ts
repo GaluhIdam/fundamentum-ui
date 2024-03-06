@@ -2,6 +2,8 @@
  * Public API Surface of fui
  */
 
+export * from './lib/types';
+
 export * from './lib/atoms/button/button.component';
 export * from './lib/atoms/icons/icons.component';
 export * from './lib/atoms/input/input.component';
