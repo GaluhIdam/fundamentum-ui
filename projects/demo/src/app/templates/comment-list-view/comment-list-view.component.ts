@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { CommentListComponent, Icon } from 'fui';
+
 import { CommonModule } from '@angular/common';
+import { CommentListComponent, Icon } from '../../../../../fui/src/public-api';
 
 @Component({
   selector: 'app-comment-list-view',
@@ -34,7 +35,7 @@ export class CommentListViewComponent {
       iconAvatar: 'userAvatar',
       iconTitle: 'pencil',
       username: 'janed',
-      action: 'added a comment',
+      action: 'commit [UPDATE] Update comment list',
       tags: [],
       timestamp: 'Jan 11, 2020',
       comments:
@@ -44,7 +45,7 @@ export class CommentListViewComponent {
     {
       iconAvatar: 'userAvatar',
       username: 'janed',
-      action: 'added a comment',
+      action: 'added a tags',
       tags: ['case', 'phishing', 'security'],
       timestamp: 'Jan 11, 2020',
       comments:

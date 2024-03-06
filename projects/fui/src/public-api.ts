@@ -42,7 +42,7 @@ export * from './lib/atoms/link/link.component';
 /* Button Icon Component */
 export * from './lib/molecules/button-icon/button-icon.component';
 /* Text Field Complex */
-export * from './lib/atoms/text-field-complex/text-field-complex.component';
+export * from './lib/molecules/text-field-complex/text-field-complex.component';
 /* Pagination */
 export * from './lib/organisms/pagination/pagination.component';
 /* Data Grid */

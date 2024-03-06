@@ -18,7 +18,7 @@ import { BreadcrumbViewComponent } from './molecules/breadcrumb-view/breadcrumb-
 import { CalloutViewComponent } from './organisms/callout-view/callout-view.component';
 import { LinkViewComponent } from './atoms/link-view/link-view.component';
 import { ButtonIconViewComponent } from './molecules/button-icon-view/button-icon-view.component';
-import { TextFieldComplexViewComponent } from './atoms/text-field-complex-view/text-field-complex-view.component';
+import { TextFieldComplexViewComponent } from './molecules/text-field-complex-view/text-field-complex-view.component';
 import { ModalFlyoutViewComponent } from './template/modal-flyout-view/modal-flyout-view.component';
 import { LoadingViewComponent } from './molecules/loading-view/loading-view.component';
 import { InlineEditViewComponent } from './organisms/inline-edit-view/inline-edit-view.component';
@@ -140,10 +140,6 @@ export const routes: Routes = [
         path: 'link',
         component: LinkViewComponent,
       },
-      {
-        path: 'text-field',
-        component: TextFieldComplexViewComponent,
-      },
     ],
   },
   /* Router for Atoms */
@@ -200,6 +196,10 @@ export const routes: Routes = [
       {
         path: 'tabs',
         component: TabsViewComponent,
+      },
+      {
+        path: 'text-field/:paramName',
+        component: TextFieldComplexViewComponent,
       },
     ],
   },

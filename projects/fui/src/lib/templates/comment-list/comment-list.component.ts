@@ -1,24 +1,27 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Icon, IconsComponent } from '../../../public-api';
+import { ButtonIconComponent, Icon, IconsComponent } from '../../../public-api';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'fui-comment-list',
   standalone: true,
-  imports: [IconsComponent, CommonModule],
+  imports: [IconsComponent, CommonModule, ButtonIconComponent],
   templateUrl: './comment-list.component.html',
   styleUrl: './comment-list.component.scss',
 })
 export class CommentListComponent {
-  @Input({ required: true }) iconAvatar: Icon = 'userAvatar';
-  @Input() iconTitle: Icon = 'pencil';
-  @Input({ required: true }) username?: string;
-  @Input({ required: true }) actions?: string;
-  @Input() tags?: string[];
-  @Input({ required: true }) timestamp?: string;
-  @Input() comments?: string;
-  @Input({ required: true }) typeComment: 'commentBorder' | 'standard' =
-    'commentBorder';
+  @Input({ required: true }) comment: boolean = false;
+  @Input({ required: true }) dataComment: {
+    iconAvatar: Icon;
+    iconTitle?: Icon;
+    username?: string;
+    action: string;
+    tags?: string[];
+    timestamp?: string;
+    comments?: string;
+    typeComment: 'commentBorder' | 'standard';
+  }[] = [];
+
   @Output() onClick: EventEmitter<void> = new EventEmitter<void>();
   handleOnClick(): void {
     this.onClick.emit();
