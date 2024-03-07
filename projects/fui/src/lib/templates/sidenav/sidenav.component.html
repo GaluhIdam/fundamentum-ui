@@ -1,0 +1,54 @@
+<div class="fui-sidenav" *ngFor="let item of dataSide; let i = index">
+  <h3 *ngIf="item.heading">{{ item.heading }}</h3>
+  <div class="fui-sidenav-flex">
+    <fui-icons
+      class="fui-sidenav-icon"
+      *ngIf="item.icon"
+      [icon]="item.icon.type"
+      [size]="item.icon.size"
+      [color]="
+        item.link
+          ? item.active && item.link === router.url
+            ? 'primary'
+            : 'text'
+          : item.active
+          ? 'primary'
+          : 'text'
+      "
+    ></fui-icons>
+    <span
+      *ngIf="!item.link"
+      (click)="collapse(dataSide, i)"
+      class="fui-sidenav-heading {{ item.active ? 'active' : '' }}"
+    >
+      {{ item.title }}
+    </span>
+    <a
+      *ngIf="item.link"
+      [routerLink]="item.link"
+      (click)="collapse(dataSide, i)"
+      class="fui-sidenav-heading {{
+        item.active && item.link === router.url ? 'active' : ''
+      }}"
+    >
+      {{ item.title }}
+    </a>
+    <fui-icons
+      *ngIf="item.children?.length && !item.active && !item.link"
+      class="fui-sidenav-icon"
+      [icon]="'arrowRight'"
+      [size]="'sizexs'"
+      [color]="'text'"
+    ></fui-icons>
+    <fui-icons
+      *ngIf="item.children?.length && item.active && !item.link"
+      class="fui-sidenav-icon"
+      [icon]="'arrowDown'"
+      [size]="'sizexs'"
+      [color]="'text'"
+    ></fui-icons>
+  </div>
+  <div class="fui-children-sidenav" *ngIf="item.active && !item.link">
+    <fui-sidenav *ngIf="item.children" [dataSide]="item.children"></fui-sidenav>
+  </div>
+</div>

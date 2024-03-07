@@ -51,6 +51,8 @@ export * from './lib/organisms/data-grid/data-grid.component';
 export * from './lib/molecules/tabs/tabs.component';
 /* Comment List */
 export * from './lib/templates/comment-list/comment-list.component';
+/* Side Nav */
+export * from './lib/templates/sidenav/sidenav.component';
 
 /* Type */
 export * from './lib/types';

@@ -25,6 +25,8 @@ import { InlineEditViewComponent } from './organisms/inline-edit-view/inline-edi
 import { DataGridViewComponent } from './organisms/data-grid-view/data-grid-view.component';
 import { TabsViewComponent } from './molecules/tabs-view/tabs-view.component';
 import { CommentListViewComponent } from './templates/comment-list-view/comment-list-view.component';
+import { SidenavViewComponent } from './templates/sidenav-view/sidenav-view.component';
+import path from 'path';
 
 export const routes: Routes = [
   {
@@ -172,6 +174,20 @@ export const routes: Routes = [
       {
         path: 'comment-list',
         component: CommentListViewComponent,
+      },
+      {
+        path: 'side-nav',
+        component: SidenavViewComponent,
+        children: [
+          {
+            path: 'test',
+            component: SidenavViewComponent,
+          },
+          {
+            path: 'test-2',
+            component: SidenavViewComponent,
+          },
+        ],
       },
     ],
   },
