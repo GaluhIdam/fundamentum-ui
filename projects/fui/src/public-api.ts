@@ -2,6 +2,8 @@
  * Public API Surface of fui
  */
 
+export * from './lib/types';
+
 export * from './lib/atoms/button/button.component';
 export * from './lib/atoms/icons/icons.component';
 export * from './lib/atoms/input/input.component';
@@ -37,3 +39,5 @@ export * from './lib/organisms/charts/chart-area-stacked-gradient/chart-area-sta
 export * from './lib/organisms/charts/chart-candlestick/chart-candlestick.component';
 /* Tree Componet export to be dist */
 export * from './lib/organisms/charts/chart-tree/chart-tree.component';
+
+export * from './lib/templates/tree-view/tree-view.component';
