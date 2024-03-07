@@ -1,0 +1,104 @@
+<div
+  class="fui-container-comment-list"
+  *ngFor="let item of dataComment; let i = index"
+>
+  <div
+    class="{{
+      dataComment.length - 1 === i && !comment
+        ? 'fui-panel-comment-list'
+        : 'fui-panel-comment-list vertical-line'
+    }}"
+  >
+    <div class="fui-grid">
+      <fui-icons
+        [size]="'sizem'"
+        [icon]="item.iconAvatar"
+        class="fui-icon-comment-list mr-20"
+      ></fui-icons>
+    </div>
+    <div
+      class="{{
+        item.typeComment === 'commentBorder'
+          ? 'fui-content-comment-list-border'
+          : 'fui-content-comment-list-standard'
+      }}"
+    >
+      <div
+        class="{{
+          item.typeComment === 'commentBorder'
+            ? 'fui-between-comment-list-border'
+            : 'fui-between-comment-list-standard'
+        }}"
+      >
+        <div
+          class="{{
+            item.typeComment === 'commentBorder'
+              ? 'fui-flex-comment-list-border'
+              : 'fui-flex-comment-list-standard'
+          }}"
+        >
+          <fui-icons
+            *ngIf="item.iconTitle"
+            [size]="'sizexs'"
+            [icon]="item.iconTitle"
+            class="fui-iconTitle-comment-list mr-10"
+          ></fui-icons>
+          <div>
+            <p
+              class="fui-text-comment-list fui-text-bold-comment-list mr-5 mt-3"
+            >
+              {{ item.username }}
+              <span class="fui-text-medium-comment-list"
+                >{{ item.action }}
+                <span
+                  *ngFor="let case of item.tags"
+                  class="fui-tags-comment-list"
+                  >{{ case }}</span
+                >
+                on {{ item.timestamp }}</span
+              >
+            </p>
+          </div>
+        </div>
+        <fui-icons
+          (click)="handleOnClick()"
+          [size]="'sizes'"
+          [icon]="'copy'"
+          class="fui-icon-small-comment-list"
+        ></fui-icons>
+      </div>
+      <p
+        *ngIf="item.typeComment === 'commentBorder'"
+        class="fui-comment-text fui-text-comment-list"
+      >
+        {{ item.comments }}
+      </p>
+    </div>
+  </div>
+</div>
+<div class="fui-container-comment-list" *ngIf="comment">
+  <div class="fui-panel-comment-list">
+    <div class="fui-grid">
+      <fui-icons
+        [size]="'sizem'"
+        [icon]="'userAvatar'"
+        class="fui-icon-comment-list mr-20"
+      ></fui-icons>
+    </div>
+    <div class="fui-comment-textarea">
+      <textarea
+        placeholder="Add a comment..."
+        class="fui-textarea-comment-list"
+        rows="10"
+      ></textarea>
+      <fui-button-icon
+        (onClick)="handleOnClick()"
+        [option]="'text'"
+        [text]="'Add Comment'"
+        [color]="'primary'"
+        [type]="'button'"
+        [style]="'secondary'"
+      ></fui-button-icon>
+    </div>
+  </div>
+</div>

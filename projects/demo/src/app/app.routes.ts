@@ -18,12 +18,15 @@ import { BreadcrumbViewComponent } from './molecules/breadcrumb-view/breadcrumb-
 import { CalloutViewComponent } from './organisms/callout-view/callout-view.component';
 import { LinkViewComponent } from './atoms/link-view/link-view.component';
 import { ButtonIconViewComponent } from './molecules/button-icon-view/button-icon-view.component';
-import { TextFieldComplexViewComponent } from './atoms/text-field-complex-view/text-field-complex-view.component';
+import { TextFieldComplexViewComponent } from './molecules/text-field-complex-view/text-field-complex-view.component';
 import { ModalFlyoutViewComponent } from './template/modal-flyout-view/modal-flyout-view.component';
 import { LoadingViewComponent } from './molecules/loading-view/loading-view.component';
 import { InlineEditViewComponent } from './organisms/inline-edit-view/inline-edit-view.component';
 import { DataGridViewComponent } from './organisms/data-grid-view/data-grid-view.component';
 import { TabsViewComponent } from './molecules/tabs-view/tabs-view.component';
+import { CommentListViewComponent } from './templates/comment-list-view/comment-list-view.component';
+import { SidenavViewComponent } from './templates/sidenav-view/sidenav-view.component';
+import path from 'path';
 
 export const routes: Routes = [
   {
@@ -139,10 +142,6 @@ export const routes: Routes = [
         path: 'link',
         component: LinkViewComponent,
       },
-      {
-        path: 'text-field',
-        component: TextFieldComplexViewComponent,
-      },
     ],
   },
   /* Router for Atoms */
@@ -172,6 +171,24 @@ export const routes: Routes = [
         path: 'modal-flyout',
         component: ModalFlyoutViewComponent,
       },
+      {
+        path: 'comment-list',
+        component: CommentListViewComponent,
+      },
+      {
+        path: 'side-nav',
+        component: SidenavViewComponent,
+        children: [
+          {
+            path: 'test',
+            component: SidenavViewComponent,
+          },
+          {
+            path: 'test-2',
+            component: SidenavViewComponent,
+          },
+        ],
+      },
     ],
   },
   /* Router for Templates */
@@ -195,6 +212,10 @@ export const routes: Routes = [
       {
         path: 'tabs',
         component: TabsViewComponent,
+      },
+      {
+        path: 'text-field/:paramName',
+        component: TextFieldComplexViewComponent,
       },
     ],
   },

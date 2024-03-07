@@ -42,13 +42,17 @@ export * from './lib/atoms/link/link.component';
 /* Button Icon Component */
 export * from './lib/molecules/button-icon/button-icon.component';
 /* Text Field Complex */
-export * from './lib/atoms/text-field-complex/text-field-complex.component';
+export * from './lib/molecules/text-field-complex/text-field-complex.component';
 /* Pagination */
 export * from './lib/organisms/pagination/pagination.component';
 /* Data Grid */
 export * from './lib/organisms/data-grid/data-grid.component';
 /* Tabs */
 export * from './lib/molecules/tabs/tabs.component';
+/* Comment List */
+export * from './lib/templates/comment-list/comment-list.component';
+/* Side Nav */
+export * from './lib/templates/sidenav/sidenav.component';
 
-/* Tabs */
+/* Type */
 export * from './lib/types';

@@ -1,22 +1,22 @@
 @import "../../styles/index";
 
-input.fui-text-field-s {
+.fui-text-field-s {
   @include textFieldBaseStyles($fuiColorPrimary, $fuiSizeM, 6px);
 }
-input.fui-text-field-m {
+.fui-text-field-m {
   @include textFieldBaseStyles($fuiColorPrimary, $fuiSizeM + 3, 10px);
 }
-input.fui-text-field-l {
+.fui-text-field-l {
   @include textFieldBaseStyles($fuiColorPrimary, $fuiSizeM + 6, 10px);
 }
 
-input.fui-text-field-invalid-s {
+.fui-text-field-invalid-s {
   @include textFieldIconComplex($fuiColorDanger, $fuiSizeM, 6px);
 }
-input.fui-text-field-invalid-m {
+.fui-text-field-invalid-m {
   @include textFieldIconComplex($fuiColorDanger, $fuiSizeM + 3, 10px);
 }
-input.fui-text-field-invalid-l {
+.fui-text-field-invalid-l {
   @include textFieldIconComplex($fuiColorDanger, $fuiSizeM + 6, 10px);
 }
 
@@ -91,16 +91,16 @@ input.fui-text-field-invalid-l {
   @include msgValidator($fuiSizeS, $fuiColorDanger);
 }
 
-input.border-none {
+.border-none {
   @include borderInputTXTFC(6px, 6px, 6px, 6px);
 }
-input.border-append {
+.border-append {
   @include borderInputTXTFC(0px, 0px, 6px, 6px);
 }
-input.border-prepend {
+.border-prepend {
   @include borderInputTXTFC(6px, 6px, 0px, 0px);
 }
-input.border-append-prepend {
+.border-append-prepend {
   @include borderInputTXTFC(0px, 0px, 0px, 0px);
 }
 
@@ -115,4 +115,63 @@ input.border-append-prepend {
 .fui-icon-mx {
   margin: 0px 5px 0px 5px;
   display: inline-block;
+}
+
+.fui-icon-search {
+  top: 10px;
+  position: absolute;
+  left: 8px;
+}
+.fui-icon-search-prepend {
+  top: 10px;
+  position: absolute;
+  left: 10px;
+}
+
+.pl-35 {
+  padding-left: 35px;
+  padding-right: 45px;
+}
+.pl-10 {
+  padding-left: 10px;
+}
+.pr-10 {
+  padding-right: 10px;
+}
+.pr-70 {
+  padding-right: 70px;
+}
+
+.pr-100 {
+  padding-right: 100px;
+}
+
+.custom-select {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#my-select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #000;
+}
+
+.fui-icon-util {
+  z-index: -1;
+  margin-right: 25px;
 }

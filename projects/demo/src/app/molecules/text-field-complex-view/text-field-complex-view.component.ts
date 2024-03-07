@@ -8,6 +8,8 @@ import {
 } from '@angular/forms';
 import { Subscription, debounceTime } from 'rxjs';
 import { TextFieldComplexComponent } from 'fui';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 interface TEST {
   nama: string;
   umur: number;
@@ -15,20 +17,41 @@ interface TEST {
 @Component({
   selector: 'app-text-field-view',
   standalone: true,
-  imports: [TextFieldComplexComponent, ReactiveFormsModule],
+  imports: [TextFieldComplexComponent, ReactiveFormsModule, CommonModule],
   templateUrl: './text-field-complex-view.component.html',
   styleUrl: './text-field-complex-view.component.scss',
 })
 export class TextFieldComplexViewComponent implements OnInit, OnDestroy {
+  params?: string;
   size: 's' | 'm' | 'l' = 'm';
   textValue: FormGroup = new FormGroup({
     textField: new FormControl('Hello World!'),
   });
 
+  selectOptions?: Array<{ label: string; value: any }> = [
+    {
+      label: 'Life for nothing',
+      value: 'life',
+    },
+    {
+      label: 'Die for everything',
+      value: 'die',
+    },
+    {
+      label: 'Confuse for something',
+      value: 'confuse',
+    },
+  ];
+
   myForm?: FormGroup;
-  constructor(private formBuilder: FormBuilder) {}
+  myFormSelect?: FormGroup;
+  constructor(
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute
+  ) {}
 
   textFieldx: FormControl = new FormControl('Hello World!');
+  textFieldSelect: FormControl = new FormControl('');
   obs?: Subscription;
 
   apa: any[] = [
@@ -43,9 +66,16 @@ export class TextFieldComplexViewComponent implements OnInit, OnDestroy {
   ];
 
   ngOnInit(): void {
+    this.params = this.route.snapshot.params['paramName'];
     this.myForm = this.formBuilder.group({
       firstName: ['Hello World!', [Validators.required, Validators.email]],
       lastName: ['Hello World!', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phoneNumber: ['', Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')], // Example for phone number validation
+    });
+    this.myFormSelect = this.formBuilder.group({
+      firstName: ['', [Validators.required, Validators.email]],
+      lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phoneNumber: ['', Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')], // Example for phone number validation
     });
@@ -55,7 +85,7 @@ export class TextFieldComplexViewComponent implements OnInit, OnDestroy {
       .subscribe((val) => console.log(val));
     this.obs = this.myForm.valueChanges
       .pipe(debounceTime(500))
-      .subscribe((val) => console.log(val.firstName));
+      .subscribe((val) => console.log(val));
   }
 
   onSubmit(): void {
