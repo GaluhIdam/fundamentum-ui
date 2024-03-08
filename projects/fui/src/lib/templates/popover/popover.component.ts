@@ -8,17 +8,24 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { Color, Size } from '../../types';
+import { Color, Icon, Size } from '../../types';
 import { TextComponent } from '../../atoms/text/text.component';
 import { ButtonComponent } from '../../atoms/button/button.component';
 import { ButtonEmptyComponent } from '../../atoms/button-empty/button-empty.component';
+import { IconsComponent } from '../../atoms/icons/icons.component';
 
 @Component({
   selector: 'fui-popover',
   standalone: true,
   templateUrl: './popover.component.html',
   styleUrl: './popover.component.scss',
-  imports: [CommonModule, TextComponent, ButtonComponent, ButtonEmptyComponent],
+  imports: [
+    CommonModule,
+    TextComponent,
+    ButtonComponent,
+    ButtonEmptyComponent,
+    IconsComponent,
+  ],
 })
 export class PopoverComponent {
   @Input() displayPopover: boolean = false;
@@ -27,6 +34,8 @@ export class PopoverComponent {
   @Input() popoverRadius: 'none' | 's' | 'm' = 's';
   @Input() popoverPadding: 'none' | 's' | 'm' | 'l' = 's';
   @Input() displayHeader: boolean = false;
+  @Input() displayHeaderIcon: boolean = false;
+  @Input() headerIcon!: Icon;
   @Input() headerTitle: string = '';
   @Input() headerSize: Size = 'sizem';
   @Input() displayFooter: boolean = false;
@@ -36,6 +45,7 @@ export class PopoverComponent {
   @Input() footerButtonType: 'button' | 'button-empty' = 'button';
   @Input() footerButtonText: string = '';
   @Input() footerButtonColor: Color = 'primary';
+  @Output() onClickHeaderPopover: EventEmitter<void> = new EventEmitter();
   @Output() onClickFooterPopover: EventEmitter<void> = new EventEmitter();
   @ViewChild('clickablePopover') clickablePopover!: ElementRef;
   @ViewChild('clickablePopoverContent') clickablePopoverContent!: ElementRef;
@@ -52,6 +62,10 @@ export class PopoverComponent {
 
   onHandleDisplayPopover() {
     this.displayPopover = !this.displayPopover;
+  }
+
+  onHandleClikHeader() {
+    this.onClickHeaderPopover.emit();
   }
 
   onHandleClikFooterButton() {

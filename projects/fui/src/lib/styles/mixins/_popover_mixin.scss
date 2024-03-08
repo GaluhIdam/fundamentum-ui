@@ -50,7 +50,7 @@
     }
   } @else if($position == 'left' or $position == 'right') {
       @if $align == 'start' {
-        top: -10%;
+        top: -5px;
         @if($position == 'left') {
           transform: translate(100%, 100%)
         } @else {
@@ -67,7 +67,7 @@
       }
 
       @else if $align == 'end' {
-        bottom: -10%;
+        bottom: -5px;
         @if($position == 'left') {
           transform: translate(100%, -100%)
         } @else {

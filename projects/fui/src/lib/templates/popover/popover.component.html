@@ -29,10 +29,16 @@
         displayHeader ? 'border-header' : '',
         popoverPadding ? 'popover-p-' + popoverPadding : ''
       ]"
+      (click)="onHandleClikHeader()"
     >
-      <fui-text [size]="headerSize" [weight]="'bold'">
-        {{ headerTitle }}
-      </fui-text>
+      @if (displayHeaderIcon) {
+      <fui-icons [icon]="headerIcon" [size]="headerSize"></fui-icons>
+      }
+      <div class="popover-header-title">
+        <fui-text [size]="headerSize" [weight]="'bold'">
+          {{ headerTitle }}
+        </fui-text>
+      </div>
     </div>
     }
 
