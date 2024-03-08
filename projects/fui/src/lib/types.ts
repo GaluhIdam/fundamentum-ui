@@ -283,3 +283,8 @@ export interface BreadcrumbData {
   label: string;
   link: string;
 }
+
+export interface DescriptionListProps {
+  title: string;
+  description: string;
+}

@@ -1,0 +1,114 @@
+@use "./../../styles//variables/color_variable" as color;
+@use "./../../styles//variables/typography_variable" as typography;
+
+.description-list {
+  display: grid;
+}
+
+.list-type-row {
+  grid-template-columns: minmax(auto, max-content);
+}
+
+.list-type-column {
+  grid-template-columns: minmax(auto, max-content) minmax(auto, max-content);
+  align-items: center;
+  gap: .5rem;
+}
+
+.list-type-inline {
+  display: block;
+
+  .title,
+  .description {
+    display: inline;
+    width: fit-content !important;
+  }
+
+  .title {
+    padding-inline: .25rem;
+    background: color.$fuiColorLightShade;
+    border-radius: .25rem;
+  }
+}
+
+.column-width-1 {
+  width: 25%;
+}
+
+.column-width-2 {
+  width: 50%;
+}
+
+.column-width-3 {
+  width: 75%;
+}
+
+.column-width-4 {
+  width: 100%;
+}
+
+.list-type-row.list-gap-s {
+  .title:not(:first-of-type) {
+    margin-block-start: .5rem;
+  }
+}
+
+.list-type-row.list-gap-m {
+  .title:not(:first-of-type) {
+    margin-block-start: 1rem;
+  }
+}
+
+.list-type-column.list-gap-s {
+  gap: .5rem;
+}
+
+.list-type-column.list-gap-m {
+  gap: .5rem 1rem;
+}
+
+.list-type-inline.list-gap-s {
+  .title:not(:last-child) {
+    margin-right: .25rem;
+  }
+  .description:not(:last-child) {
+    margin-right: .5rem;
+  }
+}
+
+.list-type-inline.list-gap-m {
+  .title:not(:last-child) {
+    margin-right: .5rem;
+  }
+  .description:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+
+.align-left{
+  text-align: left;
+}
+
+.align-center{
+  text-align: center;
+}
+
+.align-right{
+  text-align: right;
+}
+
+$size-style: (
+  sizedefault: typography.$fuiFontSize,
+  sizexs: typography.$fuiFontSizeXS,
+  sizes: typography.$fuiFontSizeS,
+  sizem: typography.$fuiFontSizeM,
+  sizel: typography.$fuiFontSizeL,
+  sizexl: typography.$fuiFontSizeXL,
+  sizexxl: typography.$fuiFontSizeXXL,
+);
+
+@each $size, $value in $size-style {
+  .title-size-#{$size} {
+    font-size: $value;
+  }
+}
