@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { IconsComponent } from '../../atoms/icons/icons.component';
 
 /**
- * The CalloutComponent component
+ * The CalloutComponent
  * @usage
  * ```html
  * <fui-callout
@@ -17,7 +17,7 @@ import { IconsComponent } from '../../atoms/icons/icons.component';
     (onClick)="onHandleCalloutPrimary()">
  * </fui-callout>
  * ```
- * <example-url>http://localhost:4200/callout</example-url>
+ * <example-url>http://localhost:4200/organisms/callout</example-url>
  */
 
 @Component({

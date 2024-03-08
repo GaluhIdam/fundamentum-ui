@@ -1,0 +1,21 @@
+<div class="fui-flex-container-collapsible">
+  <div class="fui-overlay-collapsible-nav" [class.show]="show">
+    <div class="fui-content-collapsible-nav">
+      <ng-content></ng-content>
+    </div>
+    <div style="width: 100%">
+      <div class="ml-20">
+        <fui-button-icon
+          (click)="handleOnClick()"
+          class="ml-20"
+          [size]="'s'"
+          [type]="'button'"
+          [icon]="'cross'"
+          [option]="'icon'"
+          [color]="'text'"
+        ></fui-button-icon>
+      </div>
+      <div (click)="handleOnClick()" class="fui-outside-area-collapsible"></div>
+    </div>
+  </div>
+</div>

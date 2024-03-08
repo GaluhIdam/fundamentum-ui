@@ -53,6 +53,8 @@ export * from './lib/molecules/tabs/tabs.component';
 export * from './lib/templates/comment-list/comment-list.component';
 /* Side Nav */
 export * from './lib/templates/sidenav/sidenav.component';
+/* Collapsible Nav */
+export * from './lib/templates/collapsible-nav/collapsible-nav.component';
 
 /* Type */
 export * from './lib/types';

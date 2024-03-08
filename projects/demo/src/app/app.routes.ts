@@ -27,6 +27,7 @@ import { TabsViewComponent } from './molecules/tabs-view/tabs-view.component';
 import { CommentListViewComponent } from './templates/comment-list-view/comment-list-view.component';
 import { SidenavViewComponent } from './templates/sidenav-view/sidenav-view.component';
 import path from 'path';
+import { CollapsibleNavViewComponent } from './templates/collapsible-nav-view/collapsible-nav-view.component';
 
 export const routes: Routes = [
   {
@@ -188,6 +189,10 @@ export const routes: Routes = [
             component: SidenavViewComponent,
           },
         ],
+      },
+      {
+        path: 'collapsible-nav',
+        component: CollapsibleNavViewComponent,
       },
     ],
   },

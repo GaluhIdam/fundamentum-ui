@@ -16,6 +16,16 @@ export interface DataSideDTO {
   children?: DataSideDTO[];
 }
 
+/**
+ * The CollapsibleNavComponent
+ * @usage
+ * ```html
+ * <fui-sidenav
+    [dataSide]="dataSide">
+ * </fui-sidenav>
+ * ```
+ * <example-url>http://localhost:4200/template/side-nav</example-url>
+ */
 @Component({
   selector: 'fui-sidenav',
   standalone: true,
