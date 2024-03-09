@@ -108,13 +108,22 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/EmptyPromptComponent.html" data-type="entity-link" >EmptyPromptComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/FieldTextComponent.html" data-type="entity-link" >FieldTextComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/IconsComponent.html" data-type="entity-link" >IconsComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/InputComponent.html" data-type="entity-link" >InputComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/InputFieldNumberComponent.html" data-type="entity-link" >InputFieldNumberComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/ModalComponent.html" data-type="entity-link" >ModalComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/ModalFlyoutComponent.html" data-type="entity-link" >ModalFlyoutComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/PaginationComponent.html" data-type="entity-link" >PaginationComponent</a>

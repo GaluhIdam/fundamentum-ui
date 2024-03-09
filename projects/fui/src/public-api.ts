@@ -6,6 +6,12 @@ export * from './lib/atoms/button/button.component';
 export * from './lib/atoms/icons/icons.component';
 export * from './lib/atoms/input/input.component';
 export * from './lib/atoms/text/text.component';
+export * from './lib/atoms/spacer/spacer.component';
+export * from './lib/atoms/textarea/textarea.component';
+export * from './lib/molecules/input-field-text/field-text.component';
+export * from './lib/molecules/input-field-number/input-field-number.component';
+export * from './lib/molecules/input-field-password/input-field-password.component';
+export * from './lib/molecules/image/image.component';
 
 export * from './lib/molecules/loading/loading.component';
 

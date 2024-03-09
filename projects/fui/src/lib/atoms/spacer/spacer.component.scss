@@ -1,0 +1,57 @@
+@import "./../../../../../demo/src/styles";
+
+.vertical {
+  display: block;
+}
+
+.vertical.sizexs {
+  margin-bottom: calc($fuiFontSize / 4);
+}
+
+.vertical.sizes {
+  margin-bottom: calc($fuiFontSize / 2);
+}
+
+.vertical.sizem {
+  margin-bottom: $fuiFontSize;
+}
+
+.vertical.sizel {
+  margin-bottom: calc($fuiFontSize * 1.5);
+}
+
+.vertical.sizexl {
+  margin-bottom: calc($fuiFontSize * 2);
+}
+
+.vertical.sizexxl {
+  margin-bottom: calc($fuiFontSize * 2.5);
+}
+
+.horizontal {
+  display: inline-block;
+}
+
+.horizontal.sizexs {
+  margin-right: calc($fuiFontSize / 4);
+}
+
+.horizontal.sizes {
+  margin-right: calc($fuiFontSize / 2);
+}
+
+.horizontal.sizem {
+  margin-right: $fuiFontSize;
+}
+
+.horizontal.sizel {
+  margin-right: calc($fuiFontSize * 1.5);
+}
+
+.horizontal.sizexl {
+  margin-right: calc($fuiFontSize * 2);
+}
+
+.horizontal.sizexxl {
+  margin-right: calc($fuiFontSize * 2.5);
+}

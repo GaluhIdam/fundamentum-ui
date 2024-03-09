@@ -1,0 +1,296 @@
+<div class="container-demo__page">
+  <form [formGroup]="employee" (ngSubmit)="onSubmit()">
+    <fui-field-text
+      [label]="'name'"
+      [control]="employee.controls.name"
+    ></fui-field-text>
+    <fui-field-text
+      [label]="'job'"
+      [control]="employee.controls.job"
+    ></fui-field-text>
+    <fui-textarea
+      [rows]="2"
+      [placeholder]="'gak di isi juga ga apa-apa'"
+      [control]="employee.controls.alamat"
+      [labelText]="'Alamat'"
+    ></fui-textarea>
+    <fui-spacer [size]="'sizel'" [direction]="'vertical'"></fui-spacer>
+    <fui-input-field-password
+      [control]="employee.controls.password"
+      (valueChanges)="onValueChangesPassword($event)"
+      [labelText]="'Password'"
+    ></fui-input-field-password>
+    <fui-input-field-number
+      [valueInput]="inputValueNumber"
+      [controlNumber]="employee.controls.number"
+      [labelText]="'Number'"
+      [name]="'price'"
+      [min]="0"
+      (valueChanges)="onValueChangesNumber($event)"
+    ></fui-input-field-number>
+    <fui-input-field-number
+      [valueInput]="inputValuePrice"
+      [showSeparator]="true"
+      [control]="employee.controls.price"
+      [labelText]="'Price'"
+      [name]="'price'"
+      (valueChanges)="onValueChangesPrice($event)"
+    ></fui-input-field-number>
+    <!-- <p>{{ myValuePrice }}</p> -->
+    <div class="form-group__button">
+      <fui-button [size]="'sizes'" [type]="'reset'">Reset</fui-button>
+      <fui-button [size]="'sizes'" [type]="'submit'">Submit</fui-button>
+    </div>
+  </form>
+</div>
+<fui-spacer [size]="'sizexxl'" [direction]="'vertical'"></fui-spacer>
+<div class="container-demo__image">
+  <fui-image
+    [src]="
+      'https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGZvb2R8ZW58MHx8MHx8fDA%3D'
+    "
+    [alt]="'url salah'"
+    [size]="'sizexxl'"
+    [labelText]="'Size XXL'"
+  ></fui-image>
+</div>
+<fui-spacer [size]="'sizexxl'" [direction]="'vertical'"></fui-spacer>
+<div class="container-demo__image">
+  <fui-image
+    [src]="
+      'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D'
+    "
+    [alt]="'url salah'"
+    [size]="'sizexl'"
+    [labelText]="'Size XL'"
+  ></fui-image>
+</div>
+<fui-spacer [size]="'sizexl'" [direction]="'vertical'"></fui-spacer>
+<div class="container-demo__image">
+  <fui-image
+    [src]="
+      'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D'
+    "
+    [alt]="'url salah'"
+    [size]="'sizel'"
+    [labelText]="'Size L'"
+  ></fui-image>
+</div>
+<fui-spacer [size]="'sizel'" [direction]="'vertical'"></fui-spacer>
+<div class="container-demo__image">
+  <fui-image
+    [src]="
+      'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D'
+    "
+    [alt]="'url salah'"
+    [size]="'sizem'"
+    [labelText]="'Default'"
+  ></fui-image>
+</div>
+<fui-spacer [size]="'sizem'" [direction]="'vertical'"></fui-spacer>
+<div class="container-demo__image">
+  <fui-image
+    [src]="
+      'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D'
+    "
+    [alt]="'url salah'"
+    [size]="'sizes'"
+    [labelText]="'Size S'"
+  ></fui-image>
+</div>
+<fui-spacer [size]="'sizes'" [direction]="'vertical'"></fui-spacer>
+<div class="container-demo__image">
+  <fui-image
+    [src]="
+      'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D'
+    "
+    [alt]="'url salah'"
+    [size]="'sizexs'"
+    [labelText]="'Size XS'"
+  ></fui-image>
+</div>
+<fui-spacer [size]="'sizexs'" [direction]="'vertical'"></fui-spacer>
+
+<div class="container-demo__button">
+  <div>
+    <fui-text [color]="'primary'" weight="'bolder'" [size]="'sizexl'"
+      >Primary Color</fui-text
+    >
+  </div>
+  <fui-button [size]="'sizexs'" [type]="'submit'">Xtra Small</fui-button>
+  <fui-spacer [size]="'sizexs'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [size]="'sizes'" [type]="'submit'">Small</fui-button>
+  <fui-spacer [size]="'sizes'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [size]="'sizedefault'" [type]="'submit'">Default</fui-button>
+  <fui-spacer [size]="'sizem'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [size]="'sizel'" [type]="'submit'">Large</fui-button>
+  <fui-spacer [size]="'sizel'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [size]="'sizexl'" [type]="'submit'">Extra Large</fui-button>
+  <fui-spacer [size]="'sizexl'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [size]="'sizexxl'" [type]="'submit'"
+    >Extra Extra Large</fui-button
+  >
+  <fui-spacer [size]="'sizexxl'" [direction]="'horizontal'"></fui-spacer>
+</div>
+<fui-spacer [size]="'sizexxl'" [direction]="'vertical'"></fui-spacer>
+<div class="container-demo__button">
+  <div>
+    <fui-text [color]="'success'" weight="'bolder'" [size]="'sizexl'"
+      >Success Color</fui-text
+    >
+  </div>
+  <fui-button [color]="'success'" [size]="'sizexs'" [type]="'submit'"
+    >Xtra Small</fui-button
+  >
+  <fui-spacer [size]="'sizexs'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'success'" [size]="'sizes'" [type]="'submit'"
+    >Small</fui-button
+  >
+  <fui-spacer [size]="'sizes'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'success'" [size]="'sizedefault'" [type]="'submit'"
+    >Default</fui-button
+  >
+  <fui-spacer [size]="'sizem'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'success'" [size]="'sizel'" [type]="'submit'"
+    >Large</fui-button
+  >
+  <fui-spacer [size]="'sizel'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'success'" [size]="'sizexl'" [type]="'submit'"
+    >Extra Large</fui-button
+  >
+  <fui-spacer [size]="'sizexl'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'success'" [size]="'sizexxl'" [type]="'submit'"
+    >Extra Extra Large</fui-button
+  >
+  <fui-spacer [size]="'sizexxl'" [direction]="'horizontal'"></fui-spacer>
+</div>
+<fui-spacer [size]="'sizexxl'" [direction]="'vertical'"></fui-spacer>
+<div class="container-demo__button">
+  <div>
+    <fui-text [color]="'warning'" weight="'bolder'" [size]="'sizexl'"
+      >Warning Color</fui-text
+    >
+  </div>
+  <fui-button [color]="'warning'" [size]="'sizexs'" [type]="'submit'"
+    >Xtra Small</fui-button
+  >
+  <fui-spacer [size]="'sizexs'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'warning'" [size]="'sizes'" [type]="'submit'"
+    >Small</fui-button
+  >
+  <fui-spacer [size]="'sizes'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'warning'" [size]="'sizedefault'" [type]="'submit'"
+    >Default</fui-button
+  >
+  <fui-spacer [size]="'sizem'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'warning'" [size]="'sizel'" [type]="'submit'"
+    >Large</fui-button
+  >
+  <fui-spacer [size]="'sizel'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'warning'" [size]="'sizexl'" [type]="'submit'"
+    >Extra Large</fui-button
+  >
+  <fui-spacer [size]="'sizexl'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'warning'" [size]="'sizexxl'" [type]="'submit'"
+    >Extra Extra Large</fui-button
+  >
+  <fui-spacer [size]="'sizexxl'" [direction]="'horizontal'"></fui-spacer>
+</div>
+<fui-spacer [size]="'sizexxl'" [direction]="'vertical'"></fui-spacer>
+<div class="container-demo__button">
+  <div>
+    <fui-text [color]="'danger'" weight="'bolder'" [size]="'sizexl'"
+      >Danger Color</fui-text
+    >
+  </div>
+  <fui-button [color]="'danger'" [size]="'sizexs'" [type]="'submit'"
+    >Xtra Small</fui-button
+  >
+  <fui-spacer [size]="'sizexs'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'danger'" [size]="'sizes'" [type]="'submit'"
+    >Small</fui-button
+  >
+  <fui-spacer [size]="'sizes'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'danger'" [size]="'sizedefault'" [type]="'submit'"
+    >Default</fui-button
+  >
+  <fui-spacer [size]="'sizem'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'danger'" [size]="'sizel'" [type]="'submit'"
+    >Large</fui-button
+  >
+  <fui-spacer [size]="'sizel'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'danger'" [size]="'sizexl'" [type]="'submit'"
+    >Extra Large</fui-button
+  >
+  <fui-spacer [size]="'sizexl'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'danger'" [size]="'sizexxl'" [type]="'submit'"
+    >Extra Extra Large</fui-button
+  >
+  <fui-spacer [size]="'sizexxl'" [direction]="'horizontal'"></fui-spacer>
+</div>
+
+<fui-spacer [size]="'sizexxl'" [direction]="'vertical'"></fui-spacer>
+<div class="container-demo__button">
+  <div>
+    <fui-text [color]="'text'" weight="'bolder'" [size]="'sizexl'"
+      >Text Color</fui-text
+    >
+  </div>
+  <fui-button [color]="'text'" [size]="'sizexs'" [type]="'submit'"
+    >Xtra Small</fui-button
+  >
+  <fui-spacer [size]="'sizexs'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'text'" [size]="'sizes'" [type]="'submit'"
+    >Small</fui-button
+  >
+  <fui-spacer [size]="'sizes'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'text'" [size]="'sizedefault'" [type]="'submit'"
+    >Default</fui-button
+  >
+  <fui-spacer [size]="'sizem'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'text'" [size]="'sizel'" [type]="'submit'"
+    >Large</fui-button
+  >
+  <fui-spacer [size]="'sizel'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'text'" [size]="'sizexl'" [type]="'submit'"
+    >Extra Large</fui-button
+  >
+  <fui-spacer [size]="'sizexl'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'text'" [size]="'sizexxl'" [type]="'submit'"
+    >Extra Extra Large</fui-button
+  >
+  <fui-spacer [size]="'sizexxl'" [direction]="'horizontal'"></fui-spacer>
+</div>
+
+<fui-spacer [size]="'sizexxl'" [direction]="'vertical'"></fui-spacer>
+<div class="container-demo__button">
+  <div>
+    <fui-text [color]="'accent'" weight="'bolder'" [size]="'sizexl'"
+      >Accent Color</fui-text
+    >
+  </div>
+  <fui-button [color]="'accent'" [size]="'sizexs'" [type]="'submit'"
+    >Xtra Small</fui-button
+  >
+  <fui-spacer [size]="'sizexs'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'accent'" [size]="'sizes'" [type]="'submit'"
+    >Small</fui-button
+  >
+  <fui-spacer [size]="'sizes'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'accent'" [size]="'sizedefault'" [type]="'submit'"
+    >Default</fui-button
+  >
+  <fui-spacer [size]="'sizem'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'accent'" [size]="'sizel'" [type]="'submit'"
+    >Large</fui-button
+  >
+  <fui-spacer [size]="'sizel'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'accent'" [size]="'sizexl'" [type]="'submit'"
+    >Extra Large</fui-button
+  >
+  <fui-spacer [size]="'sizexl'" [direction]="'horizontal'"></fui-spacer>
+  <fui-button [color]="'accent'" [size]="'sizexxl'" [type]="'submit'"
+    >Extra Extra Large</fui-button
+  >
+  <fui-spacer [size]="'sizexxl'" [direction]="'horizontal'"></fui-spacer>
+</div>

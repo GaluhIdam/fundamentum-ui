@@ -17,12 +17,18 @@ import { PanelViewComponent } from './templates/panel-view/panel-view.component'
 import { BreadcrumbViewComponent } from './molecules/breadcrumb-view/breadcrumb-view.component';
 import { ModalFlyoutViewComponent } from './template/modal-flyout-view/modal-flyout-view.component';
 import { LoadingViewComponent } from './molecules/loading-view/loading-view.component';
+import { DemoComponent } from './pages/demo/demo.component';
 
 export const routes: Routes = [
   {
     title: 'Demo',
     path: '',
     component: AppComponent,
+  },
+  {
+    title: 'demo page',
+    path: 'demo',
+    component: DemoComponent,
   },
   /* Router for chart area */
   {

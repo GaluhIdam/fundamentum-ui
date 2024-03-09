@@ -4,18 +4,79 @@ input {
   @include fuiInputTextBase;
 }
 
-// label {
-//   display: block;
-//   padding-left: 2px;
-//   font-size: calc($fuiFontSize * 0.84375);
-//   font-weight: 700;
-//   text-transform: capitalize;
+.passwordIcon {
+  @include fuiInputBaseIcon;
+}
+.has-error:focus-within {
+  background-color: #fff;
+  background-image: linear-gradient(
+    to top,
+    #cc1f00,
+    #cc1f00 2px,
+    transparent 2px,
+    transparent 100%
+  );
+  background-size: 100% 100%;
+  outline: none;
+  box-shadow: inset 0 0 0 1px rgba(17, 42, 134, 0.1);
+}
+
+// .primary {
+//   @include fuiButtonBase($fuiColorPrimary, $fuiColorGhost);
+// }
+// .success {
+//   @include fuiButtonBase($fuiColorSuccess, $fuiColorInk);
+// }
+// .warning {
+//   @include fuiButtonBase($fuiColorWarning, $fuiColorInk);
 // }
 
-// .helpText {
-//   font-size: $fuiFontSizeXS;
-//   font-weight: 400;
-//   padding-left: 2px;
-//   margin-top: calc($fuiFontSize * 0.25);
-//   color: $fuiColorDarkShade;
+// .danger {
+//   @include fuiButtonBase($fuiColorDanger, $fuiColorGhost);
 // }
+
+// .text {
+//   @include fuiButtonBase($fuiColorLightShade, $fuiColorGhost);
+// }
+// .accent {
+//   @include fuiButtonBase($fuiColorAccent, $fuiColorInk);
+// }
+
+.sizeXS {
+  font-size: $fuiFontSizeXS;
+}
+.sizeS {
+  font-size: $fuiFontSizeS;
+}
+.sizeDefault {
+  font-size: $fuiFontSize;
+}
+.sizeM {
+  font-size: $fuiFontSizeM;
+}
+
+.sizeL {
+  font-size: $fuiFontSizeL;
+}
+
+.sizeXL {
+  font-size: $fuiFontSizeXL;
+}
+
+.sizeXXL {
+  font-size: $fuiFontSizeXXL;
+}
+
+.sizePassword {
+  padding-left: calc($fuiFontSize * 2);
+  padding-right: calc($fuiFontSize * 2);
+}
+
+.autoWidth {
+  width: auto;
+}
+
+.fullWidth {
+  width: 100%;
+  max-width: 100%;
+}
