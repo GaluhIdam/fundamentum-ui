@@ -1,20 +1,9 @@
-@import "./../../../../../demo/src/styles";
+@import "./../../styles/index";
 
 .modal {
-  &-backdrop {
-    padding: 1rem;
-    position: fixed;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    inset: 0px;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: $fuiZModal;
-  }
-
   &-container {
+    position: relative;
+    z-index: $fuiZModal;
     padding: 1rem;
     background-color: rgba($color: #fff, $alpha: 1.0);
     min-width: 400px;

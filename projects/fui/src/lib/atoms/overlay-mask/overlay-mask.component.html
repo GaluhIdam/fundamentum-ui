@@ -1,0 +1,10 @@
+<div
+  [ngClass]="[
+    'overlay-mask',
+    isCenterContent ? 'flex-center' : '',
+    'p-' + paddingSize
+  ]"
+  (click)="handleOverlayClick()"
+>
+  <ng-content></ng-content>
+</div>

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ButtonComponent } from '../../../../../fui/src/lib/atoms/button/button.component';
-import { ModalComponent } from '../../../../../fui/src/lib/templates/modal/modal.component';
+import { ButtonComponent, ModalComponent } from 'fui';
 
 @Component({
   selector: 'app-modal-view',
@@ -26,6 +25,10 @@ export class ModalViewComponent {
   }
 
   handleConfirmButton() {
+    this.isModalOpen = false;
+  }
+
+  handleClickOverlay() {
     this.isModalOpen = false;
   }
 
