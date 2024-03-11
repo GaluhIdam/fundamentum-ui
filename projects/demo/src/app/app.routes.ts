@@ -26,8 +26,8 @@ import { DataGridViewComponent } from './organisms/data-grid-view/data-grid-view
 import { TabsViewComponent } from './molecules/tabs-view/tabs-view.component';
 import { CommentListViewComponent } from './templates/comment-list-view/comment-list-view.component';
 import { SidenavViewComponent } from './templates/sidenav-view/sidenav-view.component';
-import path from 'path';
 import { CollapsibleNavViewComponent } from './templates/collapsible-nav-view/collapsible-nav-view.component';
+import { ComboBoxViewComponent } from './molecules/combo-box-view/combo-box-view.component';
 
 export const routes: Routes = [
   {
@@ -221,6 +221,10 @@ export const routes: Routes = [
       {
         path: 'text-field/:paramName',
         component: TextFieldComplexViewComponent,
+      },
+      {
+        path: 'combo-box',
+        component: ComboBoxViewComponent,
       },
     ],
   },
