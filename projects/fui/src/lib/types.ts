@@ -293,3 +293,28 @@ export interface AvatarGroupProps {
 }
 
 export type AvatarType = 'initial' | 'icon' | 'image';
+
+export interface ToastProps {
+  id?: string;
+  type?: Color;
+  header?: {
+    title?: string;
+    sizeTitle?: Size;
+    colorTitle?: Color;
+    icon?: Icon;
+    sizeIcon?: Size;
+    colorIcon?: Color;
+  };
+  body?: {
+    message?: string;
+    size?: Size;
+  };
+  footer?: {
+    text?: string;
+    color?: Color;
+    size?: Size;
+    isActionDismiss?: boolean;
+    action?: () => void;
+  };
+  duration?: number;
+}

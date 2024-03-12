@@ -18,6 +18,7 @@ import { BreadcrumbViewComponent } from './molecules/breadcrumb-view/breadcrumb-
 import { ModalFlyoutViewComponent } from './template/modal-flyout-view/modal-flyout-view.component';
 import { TooltipViewComponent } from './templates/tooltip-view/tooltip-view.component';
 import { LoadingViewComponent } from './molecules/loading-view/loading-view.component';
+import { ToastViewComponent } from './templates/toast-view/toast-view.component';
 import { DemoComponent } from './pages/demo/demo.component';
 import { BottombarViewComponent } from './templates/bottombar-view/bottombar-view.component';
 import { AvatarViewComponent } from './molecules/avatar-view/avatar-view.component';
@@ -146,6 +147,10 @@ export const routes: Routes = [
       {
         path: 'card',
         component: CardViewComponent,
+      },
+      {
+        path: 'toast',
+        component: ToastViewComponent,
       },
     ],
   },

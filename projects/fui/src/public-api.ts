@@ -5,6 +5,8 @@
 export * from './lib/types';
 
 export * from './lib/atoms/badge/badge.component';
+export * from './lib/types';
+
 export * from './lib/atoms/button/button.component';
 export * from './lib/atoms/button-empty/button-empty.component';
 export * from './lib/atoms/icons/icons.component';
@@ -78,3 +80,6 @@ export * from './lib/organisms/pagination/pagination.component';
 export * from './lib/templates/popover/popover.component';
 
 export * from './lib/templates/card/card.component';
+
+export * from './lib/templates/toast/toast.component';
+export * from './lib/templates/toast/toast.service';
