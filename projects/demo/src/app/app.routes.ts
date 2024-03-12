@@ -25,6 +25,7 @@ import { CheckboxViewComponent } from './molecules/checkbox-view/checkbox-view.c
 import { RadioViewComponent } from './molecules/radio-view/radio-view.component';
 import { HighlightViewComponent } from './molecules/highlight-view/highlight-view.component';
 import { PopoverViewComponent } from './templates/popover-view/popover-view.component';
+import { CardViewComponent } from './templates/card-view/card-view.component';
 
 export const routes: Routes = [
   {
@@ -141,6 +142,10 @@ export const routes: Routes = [
       {
         path: 'popover',
         component: PopoverViewComponent,
+      },
+      {
+        path: 'card',
+        component: CardViewComponent,
       },
     ],
   },

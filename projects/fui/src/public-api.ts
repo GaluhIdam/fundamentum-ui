@@ -77,3 +77,5 @@ export * from './lib/types';
 export * from './lib/organisms/pagination/pagination.component';
 
 export * from './lib/templates/popover/popover.component';
+
+export * from './lib/templates/card/card.component';

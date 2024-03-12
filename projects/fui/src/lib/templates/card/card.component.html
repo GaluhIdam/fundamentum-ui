@@ -1,0 +1,77 @@
+<div class="card" (click)="handleOnClickCard()">
+  <div
+    [ngClass]="[
+      'card-container',
+      'card-layout-' + layout,
+      'card-content-align-' + cardContentAlign,
+      'card-radius-' + radius,
+      'card-' + cardColor
+    ]"
+  >
+    @if(cardBadgeText) {
+    <div [ngClass]="['card-badge', 'card-badge-' + cardBadgeBackground]">
+      <fui-text [size]="cardBadgeSize" [color]="cardBadgeColor">{{
+        cardBadgeText
+      }}</fui-text>
+    </div>
+    } @if(cardImage && layout === 'vertical') {
+    <div [ngClass]="['card-image', 'card-image-radius-' + radius]">
+      <img [src]="cardImage" [alt]="title" />
+      <div class="card-icon">
+        <ng-container *ngTemplateOutlet="iconCard"></ng-container>
+      </div>
+    </div>
+    } @else {
+    <ng-container *ngTemplateOutlet="iconCard"></ng-container>
+    }
+    <div
+      [ngClass]="[
+        'card-content',
+        'card-p-' + padding,
+        'card-content-align-' + cardContentAlign
+      ]"
+    >
+      @if (title) {
+      <div class="card-title">
+        <fui-text [size]="titleSize" [color]="titleColor" [weight]="'bold'">{{
+          title
+        }}</fui-text>
+      </div>
+      }
+      <div class="card-body">
+        <ng-content></ng-content>
+      </div>
+
+      <div class="card-footer">
+        @if (showButtonFooter) {
+        <fui-button
+          [size]="buttonFooterSize"
+          [color]="buttonFooterColor"
+          [width]="buttonFooterWidth"
+          >{{ buttonFooterText }}</fui-button
+        >
+        }
+        <ng-content select="[addition-footer]"></ng-content>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #iconCard>
+  @if (icon || iconImage) {
+  <div
+    [ngClass]="[
+      'card-icon',
+      'card-icon-' + layout,
+      'card-icon-' + iconSize,
+      'card-icon-p-' + padding + '-' + layout + '-' + cardContentAlign
+    ]"
+  >
+    @if (iconType === 'icon') {
+    <fui-icons [icon]="icon" [size]="iconSize" [color]="iconColor"></fui-icons>
+    } @else {
+    <img [src]="iconImage" [alt]="title" />
+    }
+  </div>
+  }
+</ng-template>
