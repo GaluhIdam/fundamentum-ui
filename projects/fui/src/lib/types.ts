@@ -318,3 +318,17 @@ export interface ToastProps {
   };
   duration?: number;
 }
+
+export interface TreeViewProps {
+  id?: string;
+  label: string;
+  labelSize?: Size;
+  labelColor?: Color;
+  icon?: Icon;
+  iconSize?: Size;
+  iconColor?: Color;
+  isExpanded: boolean;
+  iconCollapsed?: Icon;
+  iconExpanded?: Icon;
+  children?: TreeViewProps[];
+}

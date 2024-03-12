@@ -27,6 +27,7 @@ import { RadioViewComponent } from './molecules/radio-view/radio-view.component'
 import { HighlightViewComponent } from './molecules/highlight-view/highlight-view.component';
 import { PopoverViewComponent } from './templates/popover-view/popover-view.component';
 import { CardViewComponent } from './templates/card-view/card-view.component';
+import { TreeViewViewComponent } from './templates/tree-view-view/tree-view-view.component';
 
 export const routes: Routes = [
   {
@@ -151,6 +152,10 @@ export const routes: Routes = [
       {
         path: 'toast',
         component: ToastViewComponent,
+      },
+      {
+        path: 'tree-view',
+        component: TreeViewViewComponent,
       },
     ],
   },
