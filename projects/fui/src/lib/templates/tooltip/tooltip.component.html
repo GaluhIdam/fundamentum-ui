@@ -1,0 +1,26 @@
+<div class="tooltip">
+  <ng-content></ng-content>
+  <div
+    [ngClass]="[
+      'tooltip-container',
+      position,
+      position === 'top' || position === 'bottom'
+        ? 'topBottom-' + align
+        : position === 'left'
+        ? 'left-' + align
+        : 'right-' + align,
+      tooltipRadius ? 'tooltip-radius-' + tooltipRadius : ''
+    ]"
+  >
+    <div [ngClass]="['arrow-tooltip-' + position + '-' + align]"></div>
+    @if (title) {
+    <div class="title">
+      {{ title }}
+    </div>
+    <hr />
+    }
+    <div class="content">
+      {{ content }}
+    </div>
+  </div>
+</div>

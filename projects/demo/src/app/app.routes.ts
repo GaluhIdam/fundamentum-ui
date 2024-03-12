@@ -16,6 +16,7 @@ import { ModalViewComponent } from './templates/modal-view/modal-view.component'
 import { PanelViewComponent } from './templates/panel-view/panel-view.component';
 import { BreadcrumbViewComponent } from './molecules/breadcrumb-view/breadcrumb-view.component';
 import { ModalFlyoutViewComponent } from './template/modal-flyout-view/modal-flyout-view.component';
+import { TooltipViewComponent } from './templates/tooltip-view/tooltip-view.component';
 import { DemoComponent } from './pages/demo/demo.component';
 
 export const routes: Routes = [
@@ -121,6 +122,10 @@ export const routes: Routes = [
       {
         path: 'modal-flyout',
         component: ModalFlyoutViewComponent,
+      },
+      {
+        path: 'tooltip',
+        component: TooltipViewComponent,
       },
     ],
   },

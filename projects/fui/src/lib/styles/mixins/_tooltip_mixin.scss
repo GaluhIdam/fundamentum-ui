@@ -1,0 +1,110 @@
+@use "../variables/tool_tip_variable";
+
+@mixin tooltipArrowBottom {
+  border-color: tool_tip_variable.$fuiTooltipBackgroundColor transparent transparent transparent; 
+  bottom: 0;
+}
+
+@mixin tooltipArrowTop {
+  border-color: transparent transparent tool_tip_variable.$fuiTooltipBackgroundColor transparent; 
+  top: 0;
+}
+
+@mixin tooltipArrowLeft {
+  border-color: transparent tool_tip_variable.$fuiTooltipBackgroundColor transparent transparent; 
+  left: 0;
+}
+
+@mixin tooltipArrowRight {
+  border-color: transparent transparent transparent tool_tip_variable.$fuiTooltipBackgroundColor; 
+  right: 0;
+}
+
+@mixin fuiTooltipArrowAlign($position, $align) {
+  @if ($position == 'top' or $position == 'bottom') {
+    @if $align == 'start' {
+        left: 5%;
+        @if $position == 'top' {
+          transform: translateY(100%);
+        } @else {
+          transform: translateY(-100%);
+        }
+    }
+
+    @else if $align == 'center' {
+      left: 50%;
+      @if $position == 'top' {
+        transform: translate(-50%, 100%);
+      } @else {
+        transform: translate(-50%, -100%);
+      }
+    }
+
+    @else if $align == 'end' {
+      right: 5%;
+      @if $position == 'top' {
+        transform: translateY(100%);
+      } @else {
+        transform: translateY(-100%);
+      }
+    }
+  } @else if($position == 'left' or $position == 'right') {
+      @if $align == 'start' {
+        top: -10%;
+        @if($position == 'left') {
+          transform: translate(100%, 100%)
+        } @else {
+          transform: translate(-100%, 100%)
+        }
+      }
+      @else if $align == 'center' {
+        top: 50%;
+        @if($position == 'left') {
+          transform: translate(100%, -50%)
+        } @else {
+          transform: translate(-100%, -50%)
+        }
+      }
+
+      @else if $align == 'end' {
+        bottom: -10%;
+        @if($position == 'left') {
+          transform: translate(100%, -100%)
+        } @else {
+          transform: translate(-100%, -100%)
+        }
+      }
+  }
+}
+
+
+@mixin fuiTooltipArrow($position, $align) {
+  position: absolute;
+  inset: 0px;
+  &::before {
+    content: "";
+    position: absolute;
+    border-style: solid; 
+    border-width: 8px;
+
+    @if $position == 'top' {
+      @include tooltipArrowBottom;
+      @include fuiTooltipArrowAlign($position, $align);
+    }
+
+    @else if $position == 'bottom' {
+      @include tooltipArrowTop;
+      @include fuiTooltipArrowAlign($position, $align);
+    }
+
+    @else if $position == 'right' {
+      @include tooltipArrowLeft;
+      @include fuiTooltipArrowAlign($position, $align);
+    }
+    
+    @else if $position == 'left' {
+      @include tooltipArrowRight;
+      @include fuiTooltipArrowAlign($position, $align);
+    }
+  }
+}
