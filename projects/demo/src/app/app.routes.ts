@@ -23,6 +23,7 @@ import { BottombarViewComponent } from './templates/bottombar-view/bottombar-vie
 import { AvatarViewComponent } from './molecules/avatar-view/avatar-view.component';
 import { CheckboxViewComponent } from './molecules/checkbox-view/checkbox-view.component';
 import { RadioViewComponent } from './molecules/radio-view/radio-view.component';
+import { HighlightViewComponent } from './molecules/highlight-view/highlight-view.component';
 
 export const routes: Routes = [
   {
@@ -160,6 +161,10 @@ export const routes: Routes = [
       {
         path: 'radio',
         component: RadioViewComponent,
+      },
+      {
+        path: 'highlight',
+        component: HighlightViewComponent,
       },
     ],
   },
