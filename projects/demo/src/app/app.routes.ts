@@ -24,6 +24,7 @@ import { AvatarViewComponent } from './molecules/avatar-view/avatar-view.compone
 import { CheckboxViewComponent } from './molecules/checkbox-view/checkbox-view.component';
 import { RadioViewComponent } from './molecules/radio-view/radio-view.component';
 import { HighlightViewComponent } from './molecules/highlight-view/highlight-view.component';
+import { PopoverViewComponent } from './templates/popover-view/popover-view.component';
 
 export const routes: Routes = [
   {
@@ -136,6 +137,10 @@ export const routes: Routes = [
       {
         path: 'bottombar',
         component: BottombarViewComponent,
+      },
+      {
+        path: 'popover',
+        component: PopoverViewComponent,
       },
     ],
   },

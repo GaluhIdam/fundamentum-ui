@@ -3,6 +3,8 @@
  */
 
 export * from './lib/atoms/badge/badge.component';
+export * from './lib/types';
+
 export * from './lib/atoms/button/button.component';
 export * from './lib/atoms/button-empty/button-empty.component';
 export * from './lib/atoms/icons/icons.component';
@@ -37,6 +39,8 @@ export * from './lib/molecules/radio/radio.component';
 
 export * from './lib/molecules/highlight/highlight.component';
 
+export * from './lib/molecules/breadcrumb/breadcrumb.component';
+
 /* Line Componet export to be dist */
 export * from './lib/organisms/charts/chart-line/chart-line.component';
 /* Line Stacked Componet export to be dist */
@@ -69,3 +73,7 @@ export * from './lib/templates/tooltip/tooltip.component';
 export * from './lib/templates/bottombar/bottombar.component';
 
 export * from './lib/types';
+
+export * from './lib/organisms/pagination/pagination.component';
+
+export * from './lib/templates/popover/popover.component';
