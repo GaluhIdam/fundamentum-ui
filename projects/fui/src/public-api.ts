@@ -2,9 +2,9 @@
  * Public API Surface of fui
  */
 
-export * from './lib/atoms/badge/badge.component';
 export * from './lib/types';
 
+export * from './lib/atoms/badge/badge.component';
 export * from './lib/atoms/button/button.component';
 export * from './lib/atoms/button-empty/button-empty.component';
 export * from './lib/atoms/icons/icons.component';
@@ -72,7 +72,6 @@ export * from './lib/templates/tooltip/tooltip.component';
 
 export * from './lib/templates/bottombar/bottombar.component';
 
-export * from './lib/types';
 
 export * from './lib/organisms/pagination/pagination.component';
 
