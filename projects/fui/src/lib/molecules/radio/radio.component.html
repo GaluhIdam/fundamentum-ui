@@ -1,0 +1,35 @@
+<div
+  [ngClass]="[
+    'radio',
+    'flex-' + direction,
+    groupLabel ? 'with-group-label' : ''
+  ]"
+>
+  <div class="radio-label-group">
+    <fui-text
+      [weight]="'bold'"
+      [size]="size"
+      [color]="errorMessage ? 'danger' : ''"
+      >{{ groupLabel }}</fui-text
+    >
+  </div>
+  <div class="radio-options">
+    @for (item of options; track $index) {
+    <div [ngClass]="['option', 'radio-' + size, 'radio-' + color]">
+      <input
+        type="radio"
+        [value]="item.value"
+        [id]="item.value"
+        [name]="name"
+        [checked]="item.value === defaultValue"
+        [disabled]="color === 'disabled'"
+        (change)="onToggle($event, item.value)"
+      />
+      <fui-text [size]="size" [color]="color === 'disabled' ? 'disabled' : ''">
+        <label [for]="item.value">{{ item.label }}</label>
+      </fui-text>
+    </div>
+    }
+    <fui-text [size]="size" [color]="'danger'">{{ errorMessage }}</fui-text>
+  </div>
+</div>

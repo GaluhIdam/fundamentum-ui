@@ -21,6 +21,8 @@ import { LoadingViewComponent } from './molecules/loading-view/loading-view.comp
 import { DemoComponent } from './pages/demo/demo.component';
 import { BottombarViewComponent } from './templates/bottombar-view/bottombar-view.component';
 import { AvatarViewComponent } from './molecules/avatar-view/avatar-view.component';
+import { CheckboxViewComponent } from './molecules/checkbox-view/checkbox-view.component';
+import { RadioViewComponent } from './molecules/radio-view/radio-view.component';
 
 export const routes: Routes = [
   {
@@ -150,6 +152,14 @@ export const routes: Routes = [
       {
         path: 'avatar',
         component: AvatarViewComponent,
+      },
+      {
+        path: 'checkbox',
+        component: CheckboxViewComponent,
+      },
+      {
+        path: 'radio',
+        component: RadioViewComponent,
       },
     ],
   },

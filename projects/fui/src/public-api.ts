@@ -32,6 +32,9 @@ export * from './lib/templates/panel/panel.component';
 
 export * from './lib/molecules/avatar/avatar.component';
 
+export * from './lib/molecules/checkbox/checkbox.component';
+export * from './lib/molecules/radio/radio.component';
+
 /* Line Componet export to be dist */
 export * from './lib/organisms/charts/chart-line/chart-line.component';
 /* Line Stacked Componet export to be dist */
