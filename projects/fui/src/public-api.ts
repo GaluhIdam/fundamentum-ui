@@ -17,6 +17,8 @@ export * from './lib/molecules/input-field-number/input-field-number.component';
 export * from './lib/molecules/input-field-password/input-field-password.component';
 export * from './lib/molecules/image/image.component';
 
+export * from './lib/molecules/loading/loading.component';
+
 export * from './lib/molecules/breadcrumb/breadcrumb.component';
 export * from './lib/molecules/progress/progress.component';
 

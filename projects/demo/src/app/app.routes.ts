@@ -17,6 +17,7 @@ import { PanelViewComponent } from './templates/panel-view/panel-view.component'
 import { BreadcrumbViewComponent } from './molecules/breadcrumb-view/breadcrumb-view.component';
 import { ModalFlyoutViewComponent } from './template/modal-flyout-view/modal-flyout-view.component';
 import { TooltipViewComponent } from './templates/tooltip-view/tooltip-view.component';
+import { LoadingViewComponent } from './molecules/loading-view/loading-view.component';
 import { DemoComponent } from './pages/demo/demo.component';
 import { BottombarViewComponent } from './templates/bottombar-view/bottombar-view.component';
 
@@ -140,6 +141,10 @@ export const routes: Routes = [
       {
         path: 'breadcrumb',
         component: BreadcrumbViewComponent,
+      },
+      {
+        path: 'loading',
+        component: LoadingViewComponent,
       },
     ],
   },

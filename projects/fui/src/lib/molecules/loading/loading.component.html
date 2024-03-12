@@ -1,0 +1,58 @@
+@if (isLoading) { @if (withOverlay) {
+<fui-overlay-mask>
+  <ng-container *ngTemplateOutlet="loadingItem"></ng-container>
+</fui-overlay-mask>
+} @else {
+<ng-container *ngTemplateOutlet="loadingItem"></ng-container>
+} }
+
+<ng-template #loadingItem>
+  @if (type === 'spinner') {
+  <span [ngClass]="['spinner', size + '-loader']"></span>
+  } @else if (type === 'logo') {
+  <span [ngClass]="['loading-logo', size + '-loader']">
+    <img [src]="logoImage" [alt]="logoImageAlt" />
+  </span>
+  } @else if (type === 'chart') {
+  <span [ngClass]="['loading-chart', size + '-loader']">
+    <span class="loading-chart-bar"></span>
+    <span class="loading-chart-bar"></span>
+    <span class="loading-chart-bar"></span>
+    <span class="loading-chart-bar"></span>
+  </span>
+  } @else if (type === 'elastic') {
+  <span class="loadingElastic">
+    <svg
+      [ngClass]="[size + '-loader']"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M14.9171 16.4404L24.1089 20.6351L33.3831 12.5007C33.5173 11.8298 33.5828 11.1608 33.5828 10.4606C33.5828 4.73733 28.9323 0.0809326 23.2148 0.0809326C19.7945 0.0809326 16.6044 1.76674 14.6653 4.59353L13.1228 12.605L14.9171 16.4404Z"
+        fill="#FDD009"
+      />
+      <path
+        d="M5.40284 26.1842C5.2686 26.8552 5.19971 27.5513 5.19971 28.2555C5.19971 33.9936 9.86387 38.6626 15.597 38.6626C19.0453 38.6626 22.2511 36.961 24.1872 34.1052L25.7181 26.1207L23.6751 22.2123L14.4469 18.0019L5.40284 26.1842Z"
+        fill="#23BAB1"
+      />
+      <path
+        d="M5.3445 10.2606L11.6439 11.7495L13.0239 4.58003C12.1631 3.92146 11.1005 3.56097 10.0076 3.56097C7.27004 3.56097 5.0437 5.7907 5.0437 8.53111C5.0437 9.13635 5.14474 9.71671 5.3445 10.2606Z"
+        fill="#EE5097"
+      />
+      <path
+        d="M4.7976 11.7625C1.98316 12.696 0.0263672 15.3966 0.0263672 18.3672C0.0263672 21.2598 1.8134 23.8427 4.49574 24.8648L13.3336 16.868L11.711 13.3972L4.7976 11.7625Z"
+        fill="#17A7E0"
+      />
+      <path
+        d="M25.8027 34.1048C26.6668 34.7696 27.7242 35.1322 28.8036 35.1322C31.541 35.1322 33.7673 32.9036 33.7673 30.1632C33.7673 29.5588 33.6665 28.9785 33.4665 28.4347L27.1725 26.9603L25.8027 34.1048Z"
+        fill="#92C73D"
+      />
+      <path
+        d="M27.0835 25.3087L34.0126 26.9309C36.8281 25.9995 38.7849 23.2978 38.7849 20.3261C38.7849 17.4389 36.9936 14.859 34.3061 13.84L25.2434 21.788L27.0835 25.3087Z"
+        fill="#0678A0"
+      />
+    </svg>
+  </span>
+  }
+</ng-template>
