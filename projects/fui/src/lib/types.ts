@@ -332,3 +332,8 @@ export interface TreeViewProps {
   iconExpanded?: Icon;
   children?: TreeViewProps[];
 }
+
+export interface DescriptionListProps {
+  title: string;
+  description: string;
+}

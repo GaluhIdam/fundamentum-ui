@@ -1,0 +1,40 @@
+<div
+  [ngClass]="[
+    'description-list',
+    'list-type-' + type,
+    'list-gap-' + gap,
+    'align-' + align
+  ]"
+>
+  @for (item of data; track $index) {
+  <div
+    [ngClass]="[
+      'title',
+      'column-width-' + titleColumnWidth,
+      'align-' + (titleAlign ? titleAlign : align),
+      'title-size-' + titleSize
+    ]"
+  >
+    <fui-text
+      [weight]="titleTextWeight"
+      [color]="titleColor"
+      [size]="titleSize"
+      >{{ item.title }}</fui-text
+    >
+  </div>
+  <div
+    [ngClass]="[
+      'description',
+      'column-width-' + descriptionColumnWidth,
+      'align-' + (titleAlign ? descriptionAlign : align)
+    ]"
+  >
+    <fui-text
+      [weight]="descriptionTextWeight"
+      [color]="descriptionColor"
+      [size]="descriptionSize"
+      >{{ item.description }}</fui-text
+    >
+  </div>
+  }
+</div>

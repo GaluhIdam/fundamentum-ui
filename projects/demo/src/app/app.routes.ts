@@ -28,6 +28,7 @@ import { HighlightViewComponent } from './molecules/highlight-view/highlight-vie
 import { PopoverViewComponent } from './templates/popover-view/popover-view.component';
 import { CardViewComponent } from './templates/card-view/card-view.component';
 import { TreeViewViewComponent } from './templates/tree-view-view/tree-view-view.component';
+import { DescriptionListViewComponent } from './templates/description-list-view/description-list-view.component';
 
 export const routes: Routes = [
   {
@@ -156,6 +157,10 @@ export const routes: Routes = [
       {
         path: 'tree-view',
         component: TreeViewViewComponent,
+      },
+      {
+        path: 'description-list',
+        component: DescriptionListViewComponent,
       },
     ],
   },

@@ -83,3 +83,5 @@ export * from './lib/templates/toast/toast.component';
 export * from './lib/templates/toast/toast.service';
 
 export * from './lib/templates/tree-view/tree-view.component';
+
+export * from './lib/templates/description-list/description-list.component';
