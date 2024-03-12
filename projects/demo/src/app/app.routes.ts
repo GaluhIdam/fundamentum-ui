@@ -18,6 +18,7 @@ import { BreadcrumbViewComponent } from './molecules/breadcrumb-view/breadcrumb-
 import { ModalFlyoutViewComponent } from './template/modal-flyout-view/modal-flyout-view.component';
 import { TooltipViewComponent } from './templates/tooltip-view/tooltip-view.component';
 import { DemoComponent } from './pages/demo/demo.component';
+import { BottombarViewComponent } from './templates/bottombar-view/bottombar-view.component';
 
 export const routes: Routes = [
   {
@@ -126,6 +127,10 @@ export const routes: Routes = [
       {
         path: 'tooltip',
         component: TooltipViewComponent,
+      },
+      {
+        path: 'bottombar',
+        component: BottombarViewComponent,
       },
     ],
   },

@@ -56,3 +56,5 @@ export * from './lib/organisms/charts/chart-tree/chart-tree.component';
 export * from './lib/templates/modal/modal.component';
 
 export * from './lib/templates/tooltip/tooltip.component';
+
+export * from './lib/templates/bottombar/bottombar.component';
