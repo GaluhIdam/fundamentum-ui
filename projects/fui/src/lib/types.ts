@@ -283,3 +283,13 @@ export interface BreadcrumbData {
   label: string;
   link: string;
 }
+
+export interface AvatarGroupProps {
+  name?: string;
+  type?: AvatarType;
+  color?: Color;
+  image?: string;
+  icon?: Icon;
+}
+
+export type AvatarType = 'initial' | 'icon' | 'image';

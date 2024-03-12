@@ -1,0 +1,90 @@
+@import "./../../styles/index";
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-initial {
+  padding: .3rem;
+  }
+}
+
+.avatar-group {
+  display: flex;
+  align-items: center;
+
+  .avatar {
+    position: relative;
+  }
+}
+
+.border {
+  border: 1px solid $fuiColorGhost;
+}
+
+.user {
+  border-radius: 50rem;
+}
+
+.spaces {
+  border-radius: $fuiBorderRadiusSmall;
+}
+
+img {
+  width: 100%
+}
+
+.sizedefault {
+  @include fuiAvatar($fuiFontSize);
+}
+.sizexs {
+  @include fuiAvatar($fuiFontSizeXS);
+}
+.sizes {
+  @include fuiAvatar($fuiFontSizeS);
+}
+.sizem {
+  @include fuiAvatar($fuiFontSizeM);
+}
+
+.sizel {
+  @include fuiAvatar($fuiFontSizeL);
+}
+
+.sizexl {
+  @include fuiAvatar($fuiFontSizeXL);
+}
+
+.sizexxl {
+  @include fuiAvatar($fuiFontSizeXXL);
+}
+
+.primary {
+  background-color: $fuiColorPrimary;
+}
+
+.success {
+  background-color: $fuiColorSuccess;
+}
+
+.warning {
+  background-color: $fuiColorWarning;
+}
+
+.danger {
+  background-color: $fuiColorDanger;
+}
+
+.text {
+  background-color: $fuiTextColor;
+}
+.accent {
+  background-color: $fuiColorAccent;
+}
+
+.disabled {
+  background-color: $fuiColorDisabled;
+  cursor: not-allowed;
+  filter: grayscale(100%);
+}

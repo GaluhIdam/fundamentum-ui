@@ -20,6 +20,7 @@ import { TooltipViewComponent } from './templates/tooltip-view/tooltip-view.comp
 import { LoadingViewComponent } from './molecules/loading-view/loading-view.component';
 import { DemoComponent } from './pages/demo/demo.component';
 import { BottombarViewComponent } from './templates/bottombar-view/bottombar-view.component';
+import { AvatarViewComponent } from './molecules/avatar-view/avatar-view.component';
 
 export const routes: Routes = [
   {
@@ -145,6 +146,10 @@ export const routes: Routes = [
       {
         path: 'loading',
         component: LoadingViewComponent,
+      },
+      {
+        path: 'avatar',
+        component: AvatarViewComponent,
       },
     ],
   },

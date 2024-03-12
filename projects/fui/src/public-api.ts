@@ -30,6 +30,8 @@ export * from './lib/templates/modal/modal.component';
 export * from './lib/templates/modal-flyout/modal-flyout.component';
 export * from './lib/templates/panel/panel.component';
 
+export * from './lib/molecules/avatar/avatar.component';
+
 /* Line Componet export to be dist */
 export * from './lib/organisms/charts/chart-line/chart-line.component';
 /* Line Stacked Componet export to be dist */
@@ -60,3 +62,5 @@ export * from './lib/templates/modal/modal.component';
 export * from './lib/templates/tooltip/tooltip.component';
 
 export * from './lib/templates/bottombar/bottombar.component';
+
+export * from './lib/types';
