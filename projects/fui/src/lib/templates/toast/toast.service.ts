@@ -14,10 +14,13 @@ export class ToastService {
   constructor() {}
 
   toast(toast: ToastProps) {
-    const newToast = {
-      ...toast,
-      id: new Date().getTime().toString(),
-    };
-    this.toastMessageSource.next(newToast);
+    if (toast) {
+      const newToast = {
+        ...toast,
+        id: new Date().getTime().toString(),
+        position: toast?.position ? toast?.position : 'bottom-right',
+      };
+      this.toastMessageSource.next(newToast);
+    }
   }
 }

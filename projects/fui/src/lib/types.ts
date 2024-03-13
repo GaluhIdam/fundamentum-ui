@@ -298,6 +298,7 @@ export type AvatarType = 'initial' | 'icon' | 'image';
 export interface ToastProps {
   id?: string;
   type?: Color;
+  position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
   header?: {
     title?: string;
     sizeTitle?: Size;
