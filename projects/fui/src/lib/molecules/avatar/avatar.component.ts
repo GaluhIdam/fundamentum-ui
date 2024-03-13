@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AvatarGroupProps, AvatarType, Color, Icon, Size } from '../../types';
 import { CommonModule } from '@angular/common';
 import { IconsComponent } from '../../atoms/icons/icons.component';
@@ -12,6 +12,7 @@ import { TextComponent } from '../../atoms/text/text.component';
   imports: [CommonModule, IconsComponent, TextComponent],
 })
 export class AvatarComponent {
+  @Input() id: string = '';
   @Input() shape: 'user' | 'spaces' = 'user';
   @Input() type: AvatarType = 'initial';
   @Input() size: Size = 'sizedefault';
@@ -22,6 +23,8 @@ export class AvatarComponent {
   @Input() avatarBorder: boolean = false;
   @Input() isGroup: boolean = false;
   @Input() avatarGroupData: AvatarGroupProps[] = [];
+  @Output() onClickAvatar: EventEmitter<{ id: string; name: string }> =
+    new EventEmitter();
 
   initialName(name: string) {
     if (name) {
@@ -36,5 +39,10 @@ export class AvatarComponent {
       }
     }
     return this.name;
+  }
+
+  handleClickAvatar(id: string, name: string) {
+    const emitDataAvatar = { id, name };
+    this.onClickAvatar.emit(emitDataAvatar);
   }
 }

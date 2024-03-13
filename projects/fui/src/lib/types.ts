@@ -285,6 +285,7 @@ export interface BreadcrumbData {
 }
 
 export interface AvatarGroupProps {
+  id?: string;
   name?: string;
   type?: AvatarType;
   color?: Color;
