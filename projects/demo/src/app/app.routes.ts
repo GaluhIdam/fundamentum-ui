@@ -28,6 +28,7 @@ import { CommentListViewComponent } from './templates/comment-list-view/comment-
 import { SidenavViewComponent } from './templates/sidenav-view/sidenav-view.component';
 import { CollapsibleNavViewComponent } from './templates/collapsible-nav-view/collapsible-nav-view.component';
 import { ComboBoxViewComponent } from './molecules/combo-box-view/combo-box-view.component';
+import { FieldFilepickerViewComponent } from './molecules/field-filepicker-view/field-filepicker-view.component';
 
 export const routes: Routes = [
   {
@@ -57,7 +58,7 @@ export const routes: Routes = [
         component: DataGridViewComponent,
       },
       {
-        path: 'charts',
+        path: 'chart',
         children: [
           {
             path: '',
@@ -225,6 +226,10 @@ export const routes: Routes = [
       {
         path: 'combo-box',
         component: ComboBoxViewComponent,
+      },
+      {
+        path: 'field-filepicker',
+        component: FieldFilepickerViewComponent,
       },
     ],
   },

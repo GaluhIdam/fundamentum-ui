@@ -1,9 +1,106 @@
 @import "../../styles/index";
 
+.fui-flex-combox-parent {
+  width: 350px;
+  font-family: $fuiFontFamily;
+  display: grid;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+}
 .fui-flex-combox {
+  width: 350px;
+  font-family: $fuiFontFamily;
   display: flex;
+  border: 1px solid $fuiColorLightShade;
+  border-radius: 6px;
+  padding: 4px 8px 4px 4px;
+  align-items: center;
+  position: relative;
+}
+
+.active {
+  border-bottom-style: solid;
+  border-bottom-color: $fuiColorPrimary;
+  border-bottom-width: 2px;
+}
+
+.fui-flex-combox-sub {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .fui-selected {
   margin: 0px 5px 0px 5px;
+}
+
+.fui-mx-selected {
+  margin: 0px 3px 0px 3px;
+  padding: 3px 5px 3px 5px;
+  border: 1px solid $fuiColorLightShade;
+  border-radius: 3px;
+}
+
+.mr-3 {
+  margin-right: 3px;
+  font-size: $fuiSizeM;
+}
+
+.fui-icon-combox {
+  cursor: pointer;
+}
+
+.fui-input-combox {
+  padding: 3px 5px 3px 5px;
+  outline: none;
+  border: none;
+}
+
+.fui-multi-select {
+  font-family: $fuiFontFamily;
+  outline: none;
+  border: 1px solid $fuiColorLightShade;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  top: 100%;
+  height: 120px;
+  margin-top: 2px;
+  border-radius: 6px;
+}
+
+.fui-multi-select::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+.fui-multi-select::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.fui-multi-select::-webkit-scrollbar-thumb {
+  background: $fuiColorMediumShade;
+  border-radius: 25px;
+}
+.fui-multi-select::-webkit-scrollbar-thumb:hover {
+  background: $fuiColorDarkShade;
+}
+
+.fui-icon-combox-cross {
+  background-color: $fuiColorMediumShade;
+  color: $fuiColorGhost;
+  padding: 2px 5px 2px 5px;
+  border-radius: 100%;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.fui-option-select {
+  padding: 7px;
+  font-size: small;
+  border-bottom: 1px solid $fuiColorLightestShade;
+}
+
+.fui-option-select:checked {
+  background-color: $fuiColorSuccess;
+  color: $fuiColorGhost;
 }

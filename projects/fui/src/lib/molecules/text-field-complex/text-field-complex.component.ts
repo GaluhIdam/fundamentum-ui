@@ -28,7 +28,7 @@ import { IconsComponent } from '../../atoms/icons/icons.component';
      [message]="'This is required !'">
  * </fui-text-field-complex>
  * ```
- * <example-url>http://localhost:4200/atoms/text-field</example-url>
+ * <example-url>http://localhost:4200/molecules/text-field/text</example-url>
  */
 @Component({
   selector: 'fui-text-field-complex',

@@ -1,0 +1,981 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>fundamentum-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/postmark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">fundamentum-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ComboBoxComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+        <li class="nav-item">
+            <a href="#example" class="nav-link"
+                role="tab" id="example-tab" data-bs-toggle="tab" data-link="example">Examples</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/fui/src/lib/molecules/combo-box/combo-box.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>The ButtonIconComponent component</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-html">&lt;fui-combo-box
+[optionValue]=&quot;optionValue&quot;
+[selectedValue]=&quot;selectedValue&quot;&gt;
+&lt;/fui-combo-box&gt;</code></pre></div><p><example-url><a href="http://localhost:4200/molecules/combo-box">http://localhost:4200/molecules/combo-box</a></example-url></p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>fui-combo-box</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">Standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                                <code><a href="../components/IconsComponent.html" target="_self" >IconsComponent</a></code>
+                            <code>FormsModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./combo-box.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./combo-box.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#openSelector" >openSelector</a>
+                            </li>
+                            <li>
+                                <a href="#searchTerm" >searchTerm</a>
+                            </li>
+                            <li>
+                                <a href="#selectedValues" >selectedValues</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#calculateWidth" >calculateWidth</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#onClick" >onClick</a>
+                            </li>
+                            <li>
+                                <a href="#toggleClearData" >toggleClearData</a>
+                            </li>
+                            <li>
+                                <a href="#toggleOpenSelector" >toggleOpenSelector</a>
+                            </li>
+                            <li>
+                                <a href="#toggleOpenSelectorFocus" >toggleOpenSelectorFocus</a>
+                            </li>
+                            <li>
+                                <a href="#toggleSelection" >toggleSelection</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#optionValue" >optionValue</a>
+                            </li>
+                            <li>
+                                <a href="#placeholder" >placeholder</a>
+                            </li>
+                            <li>
+                                <a href="#selectedValue" >selectedValue</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#document:click" >document:click</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(elementRef: ElementRef)</code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>elementRef</td>
+                                                  
+                                                        <td>
+                                                                    <code>ElementRef</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="optionValue"></a>
+                        <b>optionValue</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Required : </i>&nbsp;<b>true</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="placeholder"></a>
+                        <b>placeholder</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Select or create options&#x27;</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedValue"></a>
+                        <b>selectedValue</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Required : </i>&nbsp;<b>true</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="document:click"></a>
+                    <span class="name">
+                        <span ><b>document:click</b></span>
+                        <a href="#document:click"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>document:click(event: MouseEvent)</code>
+                </td>
+            </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="calculateWidth"></a>
+                    <span class="name">
+                        <span ><b>calculateWidth</b></span>
+                        <a href="#calculateWidth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>calculateWidth()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClick"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>onClick</b></span>
+                        <a href="#onClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onClick(event: MouseEvent)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;document:click&#x27;, [&#x27;$event&#x27;])<br /></code>
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>MouseEvent</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleClearData"></a>
+                    <span class="name">
+                        <span ><b>toggleClearData</b></span>
+                        <a href="#toggleClearData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleClearData()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleOpenSelector"></a>
+                    <span class="name">
+                        <span ><b>toggleOpenSelector</b></span>
+                        <a href="#toggleOpenSelector"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleOpenSelector()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleOpenSelectorFocus"></a>
+                    <span class="name">
+                        <span ><b>toggleOpenSelectorFocus</b></span>
+                        <a href="#toggleOpenSelectorFocus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleOpenSelectorFocus()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleSelection"></a>
+                    <span class="name">
+                        <span ><b>toggleSelection</b></span>
+                        <a href="#toggleSelection"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleSelection(item: literal type)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>item</td>
+                                            <td>
+                                                        <code>literal type</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openSelector"></a>
+                    <span class="name">
+                        <span ><b>openSelector</b></span>
+                        <a href="#openSelector"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchTerm"></a>
+                    <span class="name">
+                        <span ><b>searchTerm</b></span>
+                        <a href="#searchTerm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedValues"></a>
+                    <span class="name">
+                        <span ><b>selectedValues</b></span>
+                        <a href="#selectedValues"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;width: fit-content; margin: 20px&quot;&gt;
+  &lt;div class&#x3D;&quot;fui-flex-combox-parent&quot;&gt;
+    &lt;div class&#x3D;&quot;fui-flex-combox&quot;&gt;
+      &lt;div class&#x3D;&quot;fui-flex-combox-sub&quot;&gt;
+        &lt;div *ngFor&#x3D;&quot;let item of selectedValue&quot; class&#x3D;&quot;fui-mx-selected&quot;&gt;
+          &lt;span class&#x3D;&quot;mr-3&quot;&gt;{{ item.name }}&lt;/span&gt;
+          &lt;fui-icons
+            class&#x3D;&quot;fui-icon-combox&quot;
+            [icon]&#x3D;&quot;&#x27;cross&#x27;&quot;
+            [size]&#x3D;&quot;&#x27;sizexs&#x27;&quot;
+            (click)&#x3D;&quot;toggleSelection(item)&quot;
+          &gt;&lt;/fui-icons&gt;
+        &lt;/div&gt;
+        &lt;input
+          [ngStyle]&#x3D;&quot;{
+            width:
+              searchTerm.length &gt; 29 || selectedValue.length &#x3D;&#x3D;&#x3D; 0
+                ? &#x27;100%&#x27;
+                : searchTerm.length &#x3D;&#x3D;&#x3D; 0
+                ? &#x27;5px&#x27;
+                : calculateWidth()
+          }&quot;
+          [(ngModel)]&#x3D;&quot;searchTerm&quot;
+          type&#x3D;&quot;text&quot;
+          [placeholder]&#x3D;&quot;selectedValue.length &#x3D;&#x3D;&#x3D; 0 ? placeholder : &#x27;&#x27;&quot;
+          class&#x3D;&quot;fui-input-combox&quot;
+          (focus)&#x3D;&quot;toggleOpenSelectorFocus()&quot;
+        /&gt;
+      &lt;/div&gt;
+      &lt;fui-icons
+        *ngIf&#x3D;&quot;selectedValue.length &gt; 0&quot;
+        (click)&#x3D;&quot;toggleClearData()&quot;
+        class&#x3D;&quot;fui-icon-combox-cross&quot;
+        [icon]&#x3D;&quot;&#x27;cross&#x27;&quot;
+        [size]&#x3D;&quot;&#x27;sizexs&#x27;&quot;
+      &gt;&lt;/fui-icons&gt;
+      &lt;fui-icons
+        (click)&#x3D;&quot;toggleOpenSelector()&quot;
+        class&#x3D;&quot;fui-icon-combox&quot;
+        [icon]&#x3D;&quot;&#x27;arrowDown&#x27;&quot;
+        [size]&#x3D;&quot;&#x27;sizem&#x27;&quot;
+      &gt;&lt;/fui-icons&gt;
+    &lt;/div&gt;
+    &lt;select
+      *ngIf&#x3D;&quot;openSelector&quot;
+      multiple
+      [(ngModel)]&#x3D;&quot;selectedValues&quot;
+      class&#x3D;&quot;fui-multi-select&quot;
+    &gt;
+      @for(item of optionValue; track $index; let last &#x3D; $last;) {
+      &lt;option
+        class&#x3D;&quot;fui-option-select&quot;
+        *ngIf&#x3D;&quot;item.name.toLowerCase().includes(searchTerm.toLowerCase())&quot;
+        [value]&#x3D;&quot;item.value&quot;
+        (click)&#x3D;&quot;toggleSelection(item)&quot;
+      &gt;
+        {{ item.name }}
+      &lt;/option&gt;
+      }
+    &lt;/select&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade " id="example">
+            <iframe class="exampleContainer" src="http://localhost:4200/molecules/combo-box">
+                <p>no-iframes</p>
+            </iframe>
+    </div>
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div style="width: fit-content; margin: 20px">  <div class="fui-flex-combox-parent">    <div class="fui-flex-combox">      <div class="fui-flex-combox-sub">        <div *ngFor="let item of selectedValue" class="fui-mx-selected">          <span class="mr-3">{{ item.name }}</span>          <fui-icons            class="fui-icon-combox"            [icon]="\'cross\'"            [size]="\'sizexs\'"            (click)="toggleSelection(item)"          ></fui-icons>        </div>        <input          [ngStyle]="{            width:              searchTerm.length > 29 || selectedValue.length === 0                ? \'100%\'                : searchTerm.length === 0                ? \'5px\'                : calculateWidth()          }"          [(ngModel)]="searchTerm"          type="text"          [placeholder]="selectedValue.length === 0 ? placeholder : \'\'"          class="fui-input-combox"          (focus)="toggleOpenSelectorFocus()"        />      </div>      <fui-icons        *ngIf="selectedValue.length > 0"        (click)="toggleClearData()"        class="fui-icon-combox-cross"        [icon]="\'cross\'"        [size]="\'sizexs\'"      ></fui-icons>      <fui-icons        (click)="toggleOpenSelector()"        class="fui-icon-combox"        [icon]="\'arrowDown\'"        [size]="\'sizem\'"      ></fui-icons>    </div>    <select      *ngIf="openSelector"      multiple      [(ngModel)]="selectedValues"      class="fui-multi-select"    >      @for(item of optionValue; track $index; let last = $last;) {      <option        class="fui-option-select"        *ngIf="item.name.toLowerCase().includes(searchTerm.toLowerCase())"        [value]="item.value"        (click)="toggleSelection(item)"      >        {{ item.name }}      </option>      }    </select>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'fui-accordion'},{'name': 'BadgeComponent', 'selector': 'fui-badge'},{'name': 'BreadcrumbComponent', 'selector': 'fui-breadcrumb'},{'name': 'ButtonComponent', 'selector': 'fui-button'},{'name': 'ButtonEmptyComponent', 'selector': 'fui-button-empty'},{'name': 'ButtonIconComponent', 'selector': 'fui-button-icon'},{'name': 'CalloutComponent', 'selector': 'fui-callout'},{'name': 'ChartAreaComponent', 'selector': 'fui-chart-area'},{'name': 'ChartAreaStackedComponent', 'selector': 'fui-chart-area-stacked'},{'name': 'ChartAreaStackedGradientComponent', 'selector': 'fui-chart-area-stacked-gradient'},{'name': 'ChartBarComponent', 'selector': 'fui-chart-bar'},{'name': 'ChartCandlestickComponent', 'selector': 'fui-chart-candlestick'},{'name': 'ChartLineComponent', 'selector': 'fui-chart-line'},{'name': 'ChartLineStackedComponent', 'selector': 'fui-chart-line-stacked'},{'name': 'ChartPieComponent', 'selector': 'fui-chart-pie'},{'name': 'ChartPieDoughnutComponent', 'selector': 'fui-chart-pie-doughnut'},{'name': 'ChartRadarComponent', 'selector': 'fui-chart-radar'},{'name': 'ChartScatterComponent', 'selector': 'fui-chart-scatter'},{'name': 'ChartTreeComponent', 'selector': 'fui-chart-tree'},{'name': 'CollapsibleNavComponent', 'selector': 'fui-collapsible-nav'},{'name': 'ComboBoxComponent', 'selector': 'fui-combo-box'},{'name': 'CommentListComponent', 'selector': 'fui-comment-list'},{'name': 'DataGridComponent', 'selector': 'fui-data-grid'},{'name': 'EmptyPromptComponent', 'selector': 'fui-empty-prompt'},{'name': 'FieldFilepickerComponent', 'selector': 'fui-field-filepicker'},{'name': 'FieldTextComponent', 'selector': 'fui-field-text'},{'name': 'IconsComponent', 'selector': 'fui-icons'},{'name': 'InlineEditComponent', 'selector': 'fui-inline-edit'},{'name': 'InputComponent', 'selector': 'fui-input-base'},{'name': 'LinkComponent', 'selector': 'fui-link'},{'name': 'LoadingComponent', 'selector': 'fui-loading'},{'name': 'ModalComponent', 'selector': 'fui-modal'},{'name': 'ModalFlyoutComponent', 'selector': 'fui-modal-flyout'},{'name': 'PaginationComponent', 'selector': 'fui-pagination'},{'name': 'PanelComponent', 'selector': 'fui-panel'},{'name': 'ProgressBaseComponent', 'selector': 'fui-progress-base'},{'name': 'ProgressComponent', 'selector': 'fui-progress'},{'name': 'SidenavComponent', 'selector': 'fui-sidenav'},{'name': 'TabsComponent', 'selector': 'fui-tabs'},{'name': 'TextComponent', 'selector': 'fui-text'},{'name': 'TextFieldComplexComponent', 'selector': 'fui-text-field-complex'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ComboBoxComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ComboBoxComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

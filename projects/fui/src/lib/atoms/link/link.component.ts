@@ -13,7 +13,7 @@ import { Color } from '../../types';
     [typeLink]="'external'">
  * </fui-link>
  * ```
- * <example-url>http://localhost:4200/callout</example-url>
+ * <example-url>http://localhost:4200/atoms/link</example-url>
  */
 
 @Component({

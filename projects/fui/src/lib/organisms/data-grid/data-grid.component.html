@@ -35,14 +35,9 @@
   <div class="fui-data-grid">
     <div class="fui-data-grid-content">
       <div class="fui-col-header">
-        <div class="fui-column-cell">Name</div>
-        <div class="fui-column-cell">Email Address</div>
-        <div class="fui-column-cell">Location</div>
-        <div class="fui-column-cell">Account</div>
-        <div class="fui-column-cell">Date</div>
-        <div class="fui-column-cell">Amount</div>
-        <div class="fui-column-cell">Phone</div>
-        <div class="fui-column-cell">Version</div>
+        <div class="fui-column-cell" *ngFor="let item of: header">
+          {{ item }}
+        </div>
         <div class="fui-column-cell"></div>
       </div>
       <div class="fui-row-content">

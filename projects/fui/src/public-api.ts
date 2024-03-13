@@ -57,6 +57,8 @@ export * from './lib/templates/sidenav/sidenav.component';
 export * from './lib/templates/collapsible-nav/collapsible-nav.component';
 /* Combo Box */
 export * from './lib/molecules/combo-box/combo-box.component';
+/* Field File Picker Box */
+export * from './lib/molecules/field-filepicker/field-filepicker.component';
 
 /* Type */
 export * from './lib/types';
