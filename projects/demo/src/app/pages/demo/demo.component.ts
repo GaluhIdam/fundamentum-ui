@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormsModule,
@@ -6,6 +6,7 @@ import {
   FormGroup,
   ReactiveFormsModule,
   Validators,
+  FormArray,
 } from '@angular/forms';
 import {
   ButtonComponent,
@@ -18,9 +19,11 @@ import {
   SpacerComponent,
   TextareaComponent,
   ImageComponent,
+  ButtonEmptyComponent,
+  InputSearchFieldComponent,
+  TitleComponent,
 } from '../../../../../fui/src/public-api';
 import { CommonModule } from '@angular/common';
-import { ThousandSeparatorDirective } from './../../../../../fui/src/lib/molecules/input-field-number/thousand-separator.directive';
 
 @Component({
   selector: 'app-demo',
@@ -34,17 +37,19 @@ import { ThousandSeparatorDirective } from './../../../../../fui/src/lib/molecul
     TextComponent,
     InputFieldNumberComponent,
     CommonModule,
-    ThousandSeparatorDirective,
     IconsComponent,
     InputFieldPasswordComponent,
     SpacerComponent,
     TextareaComponent,
     ImageComponent,
+    ButtonEmptyComponent,
+    InputSearchFieldComponent,
+    TitleComponent,
   ],
   templateUrl: './demo.component.html',
   styleUrl: './demo.component.scss',
 })
-export class DemoComponent {
+export class DemoComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   inputValueNumber = '';
@@ -52,27 +57,52 @@ export class DemoComponent {
   myValueNumber: any;
   myValuePrice: any = 0;
   myValuePassword?: string;
+  employee!: FormGroup;
+  inputValueSearch = '';
 
   // employee = this.fb.group({
   //   name:['', Validators.required],
   //   job:['', Validators.required]
   // });
 
-  demo!: FormGroup;
-  employee = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
-    ]),
-    job: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    alamat: new FormControl('', [Validators.required, Validators.minLength(5)]),
-    number: new FormControl(null, [Validators.required, Validators.min(1)]),
-    price: new FormControl(null, [Validators.required, Validators.min(1)]),
-  });
+  // employee!: FormGroup;
+
+  ngOnInit(): void {
+    this.employee = new FormGroup({
+      employeeData: new FormArray([]),
+    });
+  }
 
   onClick() {
     console.log('tester');
+  }
+
+  get employeeData() {
+    return (this.employee.get('employeeData') as FormArray).controls;
+  }
+
+  addAlamat() {
+    const address = new FormGroup({
+      name: new FormControl('', [Validators.required, Validators.minLength(4)]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6),
+      ]),
+      job: new FormControl('', [Validators.required, Validators.minLength(4)]),
+      number: new FormControl(0, [Validators.required, Validators.min(1)]),
+      price: new FormControl(null, [Validators.required, Validators.min(1)]),
+      kota: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      others: new FormControl('', [
+        Validators.required,
+        Validators.minLength(5),
+      ]),
+    });
+
+    this.employeeData.push(address);
+  }
+
+  removeAlamat() {
+    this.employeeData.pop();
   }
 
   onValueChangesPassword(e: any) {
@@ -84,9 +114,17 @@ export class DemoComponent {
   }
   onValueChangesPrice(e: any) {
     this.myValuePrice = e;
+    console.log(this.myValuePrice);
+  }
+
+  onValueChangesSearch(e: any) {
+    console.log('search ', e);
+    this.inputValueSearch = e;
   }
 
   onSubmit() {
+    console.log('content employe form ', this.employee);
     console.log(this.employee.value);
+    this.employee.value.price = this.myValuePrice;
   }
 }

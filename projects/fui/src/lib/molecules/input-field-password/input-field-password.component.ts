@@ -24,7 +24,7 @@ import { FormControl } from '@angular/forms';
 export class InputFieldPasswordComponent {
   @Input() control = new FormControl();
   @Input() valueInput?: string;
-  @Input() labelText?: string;
+  @Input('label') labelText?: string;
   @Output() valueChanges = new EventEmitter();
   showPassword = 'password';
   showPasswordIcon = 'eye';

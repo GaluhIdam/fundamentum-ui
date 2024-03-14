@@ -1,0 +1,48 @@
+@import "./../../../../../demo/src/styles";
+
+.title {
+  @include fuiBaseTitle;
+}
+
+.title.sizexxxs {
+  font-size: calc($fuiSize * 0.75);
+}
+.title.sizexxs {
+  font-size: calc($fuiSize * 0.875);
+}
+.title.sizexs {
+  font-size: $fuiSize;
+}
+.title.sizes {
+  font-size: $fuiSizeL;
+}
+.title.sizem {
+  font-size: $fuiSizeXL;
+}
+.title.sizel {
+  font-size: $fuiSizeXXL;
+}
+
+.primary {
+  color: $fuiColorPrimary;
+}
+.success {
+  color: $fuiColorSuccess;
+}
+.warning {
+  color: $fuiColorWarning;
+}
+
+.danger {
+  color: $fuiColorDanger;
+}
+
+.text {
+  color: $fuiColorDarkShade;
+}
+.textlight {
+  color: $fuiColorDarkestShade;
+}
+.accent {
+  color: $fuiColorAccent;
+}
