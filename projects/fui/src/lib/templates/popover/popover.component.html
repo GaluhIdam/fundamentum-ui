@@ -1,9 +1,5 @@
 <div [ngClass]="['popover']">
-  <div
-    class="popover-content"
-    #clickablePopover
-    (click)="onHandleDisplayPopover()"
-  >
+  <div class="popover-content" (click)="onHandleDisplayPopover()">
     <ng-content></ng-content>
   </div>
   <div
@@ -18,7 +14,6 @@
       displayPopover ? 'popover-display' : 'popover-hide',
       popoverRadius ? 'popover-radius-' + popoverRadius : ''
     ]"
-    #clickablePopoverContent
   >
     <div [ngClass]="['arrow-popover-' + position + '-' + align]"></div>
 
