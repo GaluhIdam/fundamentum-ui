@@ -19,6 +19,7 @@ export class ToastViewComponent {
 
   handleNormalToast(type?: Color) {
     let toastObject: ToastProps = {
+      position: 'bottom-right',
       header: {
         title: 'Normal Toast',
       },
@@ -35,6 +36,7 @@ export class ToastViewComponent {
 
   handleIconToast(type?: Color) {
     let toastObject: ToastProps = {
+      position: 'bottom-left',
       header: {
         title: 'Icon Toast',
         icon: 'faceHappy',
@@ -53,6 +55,7 @@ export class ToastViewComponent {
 
   handleNormalFooterToast(type?: Color) {
     let toastObject: ToastProps = {
+      position: 'top-left',
       header: {
         title: 'Normal Toast',
       },
@@ -72,6 +75,7 @@ export class ToastViewComponent {
 
   handleIconFooterToast(type?: Color) {
     let toastObject: ToastProps = {
+      position: 'top-right',
       header: {
         title: 'Icon Toast',
         icon: 'faceHappy',
