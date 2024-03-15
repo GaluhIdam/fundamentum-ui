@@ -337,3 +337,51 @@ export interface DescriptionListProps {
   title: string;
   description: string;
 }
+export interface ContextMenuProps {
+  id: string;
+  title?: string;
+  isMenu?: boolean;
+  items?: ContextMenuItemProps[];
+}
+
+export interface ContextMenuItemProps {
+  id: string;
+  label?: string;
+  labelSize?: Size;
+  labelColor?: Color;
+  icon?: Icon;
+  iconSize?: Size;
+  iconColor?: Color;
+  iconExpand?: Icon;
+  isDisabled?: boolean;
+  isTooltip?: boolean;
+  tooltipPosition?: 'left' | 'right' | 'top' | 'bottom';
+  tooltipAlign?: 'start' | 'center' | 'end';
+  tooltipTitle?: string;
+  tooltipContent?: string;
+  closeAfterClick?: boolean;
+  isLink?: boolean;
+  linkHref?: string;
+  linkTarget?: '_self' | '_blank';
+  action?: () => void;
+  children?: ContextMenuProps;
+}
+
+export interface PopoverConfigProps {
+  position?: 'left' | 'right' | 'top' | 'bottom';
+  align?: 'start' | 'center' | 'end';
+  popoverRadius?: 'none' | 's' | 'm';
+  popoverPadding?: 'none' | 's' | 'm' | 'l';
+  displayHeader?: boolean;
+  displayHeaderIcon?: boolean;
+  headerIcon?: Icon;
+  headerTitle?: string;
+  headerSize?: Size;
+  displayFooter?: boolean;
+  footerType?: 'text' | 'button';
+  footerText?: string;
+  footerSize?: Size;
+  footerButtonType?: 'button' | 'button-empty';
+  footerButtonText?: string;
+  footerButtonColor?: Color;
+}
