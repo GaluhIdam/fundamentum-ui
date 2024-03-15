@@ -250,6 +250,9 @@
       [footerType]="'button'"
       [footerButtonText]="'Popover Footer'"
       [position]="'left'"
+      [displayPopover]="isDisplayPopover"
+      (isPopoverDisplay)="getValueIsPopoverDisplay($event)"
+      (onClickFooterPopover)="handleClickFooterClosePopover()"
       >Popover left Header Footer Button
       <div popover-body>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui delectus,

@@ -1,0 +1,22 @@
+<div class="container">
+  <fui-context-menu
+    [data]="dataContextMenu"
+    [contextMenuConfig]="{
+      popoverPadding: 's',
+    }"
+    (onClickItem)="onClickMenuContextItem($event)"
+  >
+    <fui-button context-menu-trigger>Open Context Menu</fui-button>
+    @if (activeItem && activeItem.id === "dynamic-content") {
+    <fui-button>Dynamic Context</fui-button>
+    } @if (activeItem && activeItem.id === "use-an-app-icon") {
+    <div style="padding: 0.5rem; background-color: bisque; width: 600px">
+      <fui-icons
+        [icon]="'faceHappy'"
+        [size]="'sizem'"
+        [color]="'warning'"
+      ></fui-icons>
+    </div>
+    }
+  </fui-context-menu>
+</div>
