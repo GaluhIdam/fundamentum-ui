@@ -1,17 +1,27 @@
-<div class="container-input-field__text">
-  @if(!!labelText){
-  <div class="title">
-    <fui-text [weight]="'bold'">{{ labelText }} </fui-text>
-  </div>
-  } @else{}
+<div class="title">
+  <fui-text [size]="'sizep'" [weight]="'bold'">{{ labelText }} </fui-text>
+</div>
+<div class="container-input-field__search">
   <fui-input-base
     [controlName]="control"
-    (textChange)="onTextChange($event)"
+    [textValue]="valueInput"
+    (keyup)="onInput($event)"
+    [controlName]="control"
     [width]="'full'"
     [size]="'sizes'"
-  ></fui-input-base>
+    [passwordIcon]="'passwordicon'"
+    [placeholder]="placeholderValue"
+  >
+  </fui-input-base>
+  <span
+    style="position: absolute; left: 10px; top: 11px"
+    input-field-number__icon-search
+  >
+    <fui-icons [icon]="'search'"></fui-icons>
+  </span>
 
   @if(control.touched && control.invalid ){ @if(control.errors?.['required']){
+
   <div class="error">
     <fui-text [color]="'danger'" [weight]="'light'" [size]="'sizes'"
       >{{ labelText }} tidak boleh kosong
@@ -23,9 +33,11 @@
     <fui-text [color]="'danger'" [weight]="'light'" [size]="'sizes'"
       >{{control.errors?.['minlength'].actualLength}}
       character of minimum
-      {{control.errors?.['minlength'].requiredLength}} character</fui-text
+      {{control.errors?.['minlength'].requiredLength}}
+      character</fui-text
     >
   </div>
+
   } }
 </div>
 <fui-spacer [size]="'sizel'" [direction]="'vertical'"></fui-spacer>

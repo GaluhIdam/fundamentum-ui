@@ -13,6 +13,7 @@
 @mixin fuiTextArea {
   // max-width: calc(size_variable.$fuiSize * 25);
   width: 100%;
+  max-width: 100%;
   background-repeat: no-repeat;
   box-sizing: border-box;
   background-size: 0% 100%;

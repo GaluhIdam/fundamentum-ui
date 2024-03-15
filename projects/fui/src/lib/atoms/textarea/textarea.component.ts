@@ -13,7 +13,7 @@ import { TextComponent } from '../text/text.component';
 export class TextareaComponent {
   @Input() control = new FormControl();
   @Input() value: string = '';
-  @Input() labelText?: string;
+  @Input('label') labelText?: string;
   @Input() placeholder: string = '';
   @Input() rows: number = 3;
 }

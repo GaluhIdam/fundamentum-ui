@@ -1,4 +1,4 @@
-<div class="toasts-container">
+<div [ngClass]="['toasts-container', 'toast-position-' + position]">
   @for (toast of toastData; track $index) {
   <div [ngClass]="['toast', 'toast-' + toast?.type]" [@toast]>
     <div class="toast-header">

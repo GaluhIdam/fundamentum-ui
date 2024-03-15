@@ -33,7 +33,7 @@ export class InputFieldNumberComponent {
   @Input() valueInput?: any;
   @Input() showSeparator = false;
   @Input('min') minValue?: number;
-  @Input() labelText?: string;
+  @Input('label') labelText?: string;
   @Input() control = new FormControl();
   @Input() controlNumber = new FormControl();
   @Input('name') errorControlName?: string;
@@ -155,6 +155,7 @@ export class InputFieldNumberComponent {
     const formattedValue = this.formatNumberWithCommas(numericValue);
 
     this.valueInput = formattedValue;
+    console.log('valueInput: ', this.valueInput);
 
     let hasil = formattedValue.replace(/,/g, '');
     let hasilAkhir = hasil === '' || hasil == '0' ? '0' : hasil;

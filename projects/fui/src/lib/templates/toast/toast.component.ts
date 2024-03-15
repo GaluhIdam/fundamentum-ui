@@ -32,21 +32,28 @@ import {
 })
 export class ToastComponent {
   toastService = inject(ToastService);
+  position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' =
+    'bottom-right';
 
   toastData: ToastProps[] = [];
 
   ngOnInit() {
     this.toastService.$toastMessages.subscribe({
       next: (value) => {
-        if (value) {
+        if (value && Object.keys(value).length !== 0) {
           this.handleToastMessage(value);
+          this.position = value.position ? value.position : 'bottom-right';
         }
       },
     });
   }
 
   handleToastMessage(toast: ToastProps) {
-    this.toastData.push(toast);
+    if (toast?.position === 'top-left' || toast?.position === 'top-right') {
+      this.toastData.unshift(toast);
+    } else {
+      this.toastData.push(toast);
+    }
     const durationToast = toast.duration ? toast.duration : 3000;
     setTimeout(() => this.removeToastMessage(toast), durationToast);
   }

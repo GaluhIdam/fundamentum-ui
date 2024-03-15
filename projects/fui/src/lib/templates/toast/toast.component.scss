@@ -3,13 +3,9 @@
 @use "./../../styles//variables/size_variable" as size;
 @use "./../../styles//variables/border_variable" as border;
 
-
 .toasts-container {
   position: fixed;
-  right: 0;
-  bottom: 0;
 }
-
 .toast {
   margin: 1rem;
   z-index: z_index.$fuiZToastList;
@@ -31,8 +27,27 @@
   &-footer {
     display: flex;
     justify-content: flex-end;
-  }
+  }  
+}
 
+.toast-position-top-left {
+  top: 0;
+  left: 0;
+}
+
+.toast-position-top-right {
+  top: 0;
+  right: 0;
+}
+
+.toast-position-bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.toast-position-bottom-right {
+  bottom: 0;
+  right: 0;
 }
 
 $color-styles: (
