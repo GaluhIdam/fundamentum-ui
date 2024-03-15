@@ -18,7 +18,7 @@
     <div [ngClass]="['arrow-popover-' + position + '-' + align]"></div>
 
     @if (displayHeader) {
-    <div
+    <button
       [ngClass]="[
         'popover-header',
         displayHeader ? 'border-header' : '',
@@ -34,7 +34,7 @@
           {{ headerTitle }}
         </fui-text>
       </div>
-    </div>
+    </button>
     }
 
     <div

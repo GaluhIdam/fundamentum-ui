@@ -52,7 +52,10 @@ export class PopoverComponent {
   onClick(event: Event) {
     const clickedElement = event.target as HTMLElement;
     if (!this.elementRef.nativeElement.contains(event.target as Node)) {
-      if (this.hasAncestorWithClass(clickedElement, 'context-menu-item')) {
+      if (
+        this.hasAncestorWithClass(clickedElement, 'context-menu-item') ||
+        this.hasAncestorWithClass(clickedElement, 'context-menu-outer')
+      ) {
         return;
       }
       this.displayPopover = false;

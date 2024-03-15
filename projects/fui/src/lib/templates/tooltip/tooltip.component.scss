@@ -13,7 +13,7 @@
     z-index: 1;
     padding: .5rem;
     width: max-content;
-    max-width: 200px;
+    max-width: $fuiMaxWidthTooltip;
     margin: auto;
     background: $fuiTooltipBackgroundColor;
     border: $fuiTooltipBorderColor;
