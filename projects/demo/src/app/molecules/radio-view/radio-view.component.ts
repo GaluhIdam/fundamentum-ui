@@ -17,6 +17,7 @@ import { ButtonComponent, RadioComponent } from 'fui';
 export class RadioViewComponent {
   form!: FormGroup;
   errorMessageRequiredFruit: string = '';
+  errorMessageRequiredSport: string = '';
 
   dataArrays: { label: string; value: string }[][] = [];
 
@@ -35,12 +36,32 @@ export class RadioViewComponent {
     },
   ];
 
+  dataSport = [
+    {
+      label: 'Swimming',
+      value: 'swimming',
+    },
+    {
+      label: 'Soccer',
+      value: 'soccer',
+    },
+    {
+      label: 'Volleyball',
+      value: 'volleyball',
+    },
+  ];
+
+  favorite!: FormGroup;
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.generateDataArrays();
     this.form = this.fb.group({
       fruit: ['', Validators.required],
+    });
+    this.favorite = this.fb.group({
+      sports: ['', [Validators.required]],
     });
   }
 
@@ -59,6 +80,24 @@ export class RadioViewComponent {
       if (fruitControl?.errors) {
         if (fruitControl.errors?.['required']) {
           this.errorMessageRequiredFruit = 'Fruit field is required';
+        }
+      }
+    }
+  }
+
+  handleOnChangeOptionSport(item: any) {
+    this.errorMessageRequiredSport = '';
+  }
+
+  submitSport() {
+    console.log(this.favorite);
+    if (this.favorite.valid) {
+      console.log('onsubmit', this.favorite.value);
+    } else {
+      const sportsControl = this.favorite.get('sports');
+      if (sportsControl?.errors) {
+        if (sportsControl.errors?.['required']) {
+          this.errorMessageRequiredSport = 'Sports field is required';
         }
       }
     }

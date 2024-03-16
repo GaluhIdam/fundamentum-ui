@@ -14,22 +14,27 @@
     >
   </div>
   <div class="checkbox-options">
-    @for (item of mappedDataCheckbox; track $index) {
-    <div [ngClass]="['option', 'checkbox-' + size, 'checkbox-' + color]">
-      <input
-        type="checkbox"
-        [value]="item.value"
-        [id]="item.value"
-        [checked]="item.isChecked"
-        [indeterminate]="item.indeterminate"
-        [disabled]="color === 'disabled'"
-        (change)="onToggle($event, item.value)"
-      />
-      <fui-text [color]="color === 'disabled' ? 'disabled' : ''" [size]="size">
-        <label [for]="item.value">{{ item.label }}</label>
-      </fui-text>
+    <div [ngClass]="['option-item', 'option-align-' + optionAlign]">
+      @for (item of mappedDataCheckbox; track $index) {
+      <div [ngClass]="['option', 'checkbox-' + size, 'checkbox-' + color]">
+        <input
+          type="checkbox"
+          [value]="item.value"
+          [id]="item.value"
+          [checked]="item.isChecked"
+          [indeterminate]="item.indeterminate"
+          [disabled]="color === 'disabled'"
+          (change)="onToggle($event, item)"
+        />
+        <fui-text
+          [color]="color === 'disabled' ? 'disabled' : ''"
+          [size]="size"
+        >
+          <label [for]="item.value">{{ item.label }}</label>
+        </fui-text>
+      </div>
+      }
     </div>
-    }
     <fui-text [size]="size" [color]="'danger'">{{ errorMessage }}</fui-text>
   </div>
 </div>

@@ -3,7 +3,6 @@
     <fui-radio
       [color]="'warning'"
       [name]="'radio1'"
-      [defaultValue]="'apple1'"
       [options]="dataArrays[0]"
       [groupLabel]="'Label'"
     ></fui-radio>
@@ -43,7 +42,6 @@
     <fui-radio
       [options]="dataArrays[4]"
       [name]="'radio5'"
-      [defaultValue]="'apple5'"
       [direction]="'column'"
     ></fui-radio>
   </div>
@@ -83,6 +81,26 @@
       [color]="'disabled'"
       [direction]="'column'"
     ></fui-radio>
+  </div>
+</div>
+
+<div class="container">
+  <div class="block" [formGroup]="favorite">
+    <i>Radio using FormControlName</i>
+    <fui-radio
+      [name]="'sport'"
+      formControlName="sports"
+      [groupLabel]="'Favorite Sport'"
+      [options]="dataSport"
+      [errorMessage]="errorMessageRequiredSport"
+      [optionAlign]="'row'"
+      (onChangeOption)="handleOnChangeOptionSport($event)"
+    ></fui-radio>
+    <div class="btn" (click)="submitSport()">
+      <fui-button type="submit" [color]="'primary'" [size]="'sizes'"
+        >Submit</fui-button
+      >
+    </div>
   </div>
 </div>
 

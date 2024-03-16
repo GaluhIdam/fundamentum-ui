@@ -295,6 +295,18 @@ export interface AvatarGroupProps {
 
 export type AvatarType = 'initial' | 'icon' | 'image';
 
+export interface DataCheckboxProps {
+  label: string;
+  value: string;
+  isChecked?: boolean;
+  indeterminate?: boolean;
+}
+
+export interface DataRadioProps {
+  label: string;
+  value: string;
+}
+
 export interface ToastProps {
   id?: string;
   type?: Color;
