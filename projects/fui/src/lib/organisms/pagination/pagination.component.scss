@@ -39,6 +39,19 @@
   }
 }
 
+.pagination-space-between {
+  justify-content: space-between;
+}
+
+.pagination-space-evenly {
+  justify-content: space-evenly;
+}
+
+.pagination-space-around {
+  justify-content: space-around;
+}
+
+
 
 .sizedefault-empty-icon {
     @include size($fuiFontSize);
