@@ -20,6 +20,7 @@ import { LinkViewComponent } from './atoms/link-view/link-view.component';
 import { ButtonIconViewComponent } from './molecules/button-icon-view/button-icon-view.component';
 import { TextFieldComplexViewComponent } from './molecules/text-field-complex-view/text-field-complex-view.component';
 import { ModalFlyoutViewComponent } from './template/modal-flyout-view/modal-flyout-view.component';
+import { TooltipViewComponent } from './templates/tooltip-view/tooltip-view.component';
 import { LoadingViewComponent } from './molecules/loading-view/loading-view.component';
 import { InlineEditViewComponent } from './organisms/inline-edit-view/inline-edit-view.component';
 import { DataGridViewComponent } from './organisms/data-grid-view/data-grid-view.component';
@@ -29,6 +30,18 @@ import { SidenavViewComponent } from './templates/sidenav-view/sidenav-view.comp
 import { CollapsibleNavViewComponent } from './templates/collapsible-nav-view/collapsible-nav-view.component';
 import { ComboBoxViewComponent } from './molecules/combo-box-view/combo-box-view.component';
 import { FieldFilepickerViewComponent } from './molecules/field-filepicker-view/field-filepicker-view.component';
+import { ToastViewComponent } from './templates/toast-view/toast-view.component';
+import { DemoComponent } from './pages/demo/demo.component';
+import { BottombarViewComponent } from './templates/bottombar-view/bottombar-view.component';
+import { AvatarViewComponent } from './molecules/avatar-view/avatar-view.component';
+import { CheckboxViewComponent } from './molecules/checkbox-view/checkbox-view.component';
+import { RadioViewComponent } from './molecules/radio-view/radio-view.component';
+import { HighlightViewComponent } from './molecules/highlight-view/highlight-view.component';
+import { PopoverViewComponent } from './templates/popover-view/popover-view.component';
+import { CardViewComponent } from './templates/card-view/card-view.component';
+import { TreeViewViewComponent } from './templates/tree-view-view/tree-view-view.component';
+import { DescriptionListViewComponent } from './templates/description-list-view/description-list-view.component';
+import { ContextMenuViewComponent } from './templates/context-menu-view/context-menu-view.component';
 
 export const routes: Routes = [
   {
@@ -37,6 +50,12 @@ export const routes: Routes = [
     component: AppComponent,
   },
   /* Router for Organisms */
+  {
+    title: 'demo page',
+    path: 'demo',
+    component: DemoComponent,
+  },
+  /* Router for chart area */
   {
     path: 'organisms',
     children: [
@@ -195,6 +214,38 @@ export const routes: Routes = [
         path: 'collapsible-nav',
         component: CollapsibleNavViewComponent,
       },
+      {
+        path: 'tooltip',
+        component: TooltipViewComponent,
+      },
+      {
+        path: 'bottombar',
+        component: BottombarViewComponent,
+      },
+      {
+        path: 'popover',
+        component: PopoverViewComponent,
+      },
+      {
+        path: 'card',
+        component: CardViewComponent,
+      },
+      {
+        path: 'toast',
+        component: ToastViewComponent,
+      },
+      {
+        path: 'tree-view',
+        component: TreeViewViewComponent,
+      },
+      {
+        path: 'description-list',
+        component: DescriptionListViewComponent,
+      },
+      {
+        path: 'context-menu',
+        component: ContextMenuViewComponent,
+      },
     ],
   },
   /* Router for Templates */
@@ -230,6 +281,22 @@ export const routes: Routes = [
       {
         path: 'field-filepicker',
         component: FieldFilepickerViewComponent,
+      },
+      {
+        path: 'avatar',
+        component: AvatarViewComponent,
+      },
+      {
+        path: 'checkbox',
+        component: CheckboxViewComponent,
+      },
+      {
+        path: 'radio',
+        component: RadioViewComponent,
+      },
+      {
+        path: 'highlight',
+        component: HighlightViewComponent,
       },
     ],
   },

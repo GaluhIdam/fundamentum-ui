@@ -1,0 +1,49 @@
+@import "./../../styles/index";
+
+.bottombar {
+  background: $fuiColorDarkestShade;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+.bottombar-top {
+  top: 0;
+}
+
+.bottombar-bottom {
+  bottom: 0;
+}
+
+.alignContentWithButton-start {
+  align-items: flex-start;
+}
+
+.alignContentWithButton-center {
+  align-items: center;
+}
+
+.alignContentWithButton-end {
+  align-items: flex-end;
+}
+
+.buttonPosition-start {
+  flex-direction: row-reverse;
+}
+
+.buttonPosition-end {
+  flex-direction: row;
+}
+
+.bottombar-button {
+  display: flex;
+  align-items: center;
+}
+
+.revereverseButtonPosition {
+  flex-direction: row-reverse;
+}

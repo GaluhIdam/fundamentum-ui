@@ -1,0 +1,340 @@
+@use "./../../styles//variables/size_variable" as size;
+@use "./../../styles/variables/color_variable" as color;
+@use "./../../styles//variables/border_variable" as border;
+@use "./../../styles/mixins/size_mixin";
+
+.card {
+  
+  &-container {
+    display: flex;
+    background: color.$fuiColorEmptyShade;
+    box-shadow: rgba($color: color.$fuiColorDarkestShade, $alpha: .2) 0px 8px 24px;
+    position: relative;
+    cursor: pointer;
+    transition: all .3s ease;
+  
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 5px, rgba(0, 0, 0, 0.07) 0px 3.6px 13px, rgba(0, 0, 0, 0.06) 0px 8.4px 23px, rgba(0, 0, 0, 0.05) 0px 23px 35px;
+    }
+  }
+
+  &-badge {
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+    border-radius: 12px;
+    border: 1px solid color.$fuiColorLightShade;
+    background: color.$fuiColorEmptyShade;
+
+    &-primary {
+      background: color.$fuiColorPrimary;
+      border: 1px solid color.$fuiColorPrimary;
+    }
+
+    &-success {
+      background: color.$fuiColorSuccess;
+      border: 1px solid color.$fuiColorSuccess;
+    }
+
+    &-warning {
+      background: color.$fuiColorWarning;
+      border: 1px solid color.$fuiColorWarning;
+    }
+
+    &-danger {
+      background: color.$fuiColorDanger;
+      border: 1px solid color.$fuiColorDanger;
+    }
+
+    &-text {
+      background: color.$fuiTextColor;
+      border: 1px solid color.$fuiTextColor;
+    }
+
+    &-accent {
+      background: color.$fuiColorAccent;
+      border: 1px solid color.$fuiColorAccent;
+    }
+
+    &-disabled {
+      background: color.$fuiColorDisabled;
+      border: 1px solid color.$fuiColorDisabled;
+    }
+
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;  
+  }
+
+  &-image,
+  &-icon {
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &-image {
+    position: relative;
+
+    .card-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+    }
+  }
+
+  &-footer {
+    width: 100%;
+  }
+
+  &-icon-horizontal {
+    padding-right: .5rem;
+  }
+
+  &-icon-vertical,
+  &-title {
+    padding-bottom: .5rem;
+  }
+
+  &-body {
+    padding-bottom: 1rem;
+  }
+
+  &-primary {
+    background: color.$fuiColorPrimary;
+  }
+
+  &-success {
+    background: color.$fuiColorSuccess;
+  }
+
+  &-warning {
+    background: color.$fuiColorWarning;
+  }
+
+  &-danger {
+    background: color.$fuiColorDanger;
+  }
+
+  &-text {
+    background: color.$fuiTextColor;
+  }
+
+  &-accent {
+    background: color.$fuiColorAccent;
+  }
+
+  &-disabled {
+    background: color.$fuiColorCardDisabled;
+    box-shadow: none;
+    cursor: not-allowed;
+
+    &:hover {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+  }
+}
+
+.card-layout-vertical {
+  flex-direction: column;
+}
+.card-layout-horizontal {
+  flex-direction: row;
+}
+
+.card-content-align-start {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.card-content-align-center {
+  align-items: center;
+  text-align: center;
+}
+
+.card-content-align-end {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.card-p-none {
+  padding: 0;
+}
+
+.card-p-s {
+  padding: size.$fuiSizeS;
+}
+
+.card-p-m {
+  padding: size.$fuiSizeM;
+}
+
+.card-p-l {
+  padding: size.$fuiSizeL;
+}
+
+$padding-styles: (
+  none: 0,
+  s: size.$fuiSizeS,
+  m: size.$fuiSizeM,
+  l: size.$fuiSizeL,
+);
+
+.card-icon-p-none-vertical-start,
+.card-icon-p-none-vertical-center,
+.card-icon-p-none-vertical-end,
+.card-icon-p-none-horizontal-start,
+.card-icon-p-none-horizontal-center,
+.card-icon-p-none-horizontal-end {
+  padding: 0;
+}
+
+.card-icon-p-s-vertical-start {
+  padding-top: size.$fuiSizeS;
+  padding-left: size.$fuiSizeS;
+}
+
+.card-icon-p-s-vertical-center {
+  padding-top: size.$fuiSizeS;
+}
+
+.card-icon-p-s-vertical-end {
+  padding-top: size.$fuiSizeS;
+  padding-right: size.$fuiSizeS;
+}
+
+.card-icon-p-s-horizontal-start {
+  padding-top: size.$fuiSizeS;
+  padding-left: size.$fuiSizeS;
+}
+
+.card-icon-p-s-horizontal-center {
+  padding-left: size.$fuiSizeS;
+}
+
+.card-icon-p-s-horizontal-end {
+  padding-bottom: size.$fuiSizeS;
+  padding-left: size.$fuiSizeS;
+}
+
+.card-icon-p-m-vertical-start {
+  padding-top: size.$fuiSizeM;
+  padding-left: size.$fuiSizeM;
+}
+
+.card-icon-p-m-vertical-center {
+  padding-top: size.$fuiSizeM;
+}
+
+.card-icon-p-m-vertical-end {
+  padding-top: size.$fuiSizeM;
+  padding-right: size.$fuiSizeM;
+}
+.card-icon-p-m-horizontal-start {
+  padding-top: size.$fuiSizeM;
+  padding-left: size.$fuiSizeM;
+}
+
+.card-icon-p-m-horizontal-center {
+  padding-left: size.$fuiSizeM;
+}
+
+.card-icon-p-m-horizontal-end {
+  padding-bottom: size.$fuiSizeM;
+  padding-left: size.$fuiSizeM;
+}
+
+.card-icon-p-l-vertical-start {
+  padding-top: size.$fuiSizeL;
+  padding-left: size.$fuiSizeL;
+}
+.card-icon-p-l-vertical-center {
+  padding-top: size.$fuiSizeL;
+}
+
+.card-icon-p-l-vertical-end {
+  padding-top: size.$fuiSizeL;
+  padding-right: size.$fuiSizeL;
+}
+
+.card-icon-p-l-horizontal-start {
+  padding-top: size.$fuiSizeL;
+  padding-left: size.$fuiSizeL;
+}
+
+.card-icon-p-l-horizontal-center {
+  padding-left: size.$fuiSizeL;
+}
+
+.card-icon-p-l-horizontal-end {
+  padding-bottom: size.$fuiSizeL;
+  padding-left: size.$fuiSizeL;
+}
+
+.card-radius-none{
+  border-radius: 0;
+}
+
+.card-radius-s{
+  border-radius: border.$fuiBorderRadiusSmall;  
+}
+
+.card-radius-m{
+  border-radius: border.$fuiBorderRadius;
+}
+
+
+.card-image-radius-none {
+  img {
+    border-radius: 0;
+  }
+}
+
+.card-image-radius-s {
+  img {
+    border-radius: border.$fuiBorderRadiusSmall;
+  }
+}
+
+.card-image-radius-m {
+  img {
+    border-radius: border.$fuiBorderRadius;
+  }
+}
+
+.card-icon-sizedefault {
+  @include size_mixin.size(size.$fuiSize);
+}
+
+.card-icon-sizexs {
+  @include size_mixin.size(size.$fuiSizeXS);
+}
+
+.card-icon-sizes {
+  @include size_mixin.size(size.$fuiSizeS);
+}
+
+.card-icon-sizem {
+  @include size_mixin.size(size.$fuiSizeM);
+}
+
+.card-icon-sizel {
+  @include size_mixin.size(size.$fuiSizeL);
+}
+
+.card-icon-sizexl {
+  @include size_mixin.size(size.$fuiSizeXL);
+}
+
+.card-icon-sizexxl {
+  @include size_mixin.size(size.$fuiSizeXXL);
+}

@@ -1,0 +1,161 @@
+@use "./../../styles/variables/size_variable" as size;
+@use "./../../styles/variables/color_variable" as color;
+@use "./../../styles/variables/animation_variable" as animation;
+
+.context-menu {
+
+  &-outer {
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: left;
+
+    &:focus {
+      background-color: color.$fuiColorLightShade;
+    }
+  }
+
+  &-outer-disabled {
+    cursor: default;
+
+    &:focus {
+      background-color: transparent;
+    }
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+
+    &-content {
+      display: flex;
+      align-items: center;
+    }
+
+    &-icon {
+      padding-right: .5rem;
+    }
+
+    &-expand {
+      &.show-icon-expand {
+        opacity: 1;
+      }
+
+      &.hide-icon-expand {
+        opacity: 0;
+      }
+    }
+
+    &:hover {
+      .context-menu-item-label {
+        text-decoration: underline;
+      }
+    }
+
+    &-disabled:hover {
+      .context-menu-item-label {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.context-dynamic {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: color.$fuiColorLightShade;
+}
+
+.animation-slide-left {
+  animation: slideLeft animation.$fuiAnimSpeedNormal ease; //value time here should be same value with context menu animation in typescript file
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animation-slide-right {
+  animation: slideRight animation.$fuiAnimSpeedNormal ease; //value time here should be same value with context menu animation in typescript file
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+::ng-deep .context-menu-header-hover {
+  .popover-header {
+    cursor: pointer;
+
+    &:hover {
+      .popover-header-title {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+::ng-deep .popover-p-none {
+  padding: 0;
+
+  .context-menu-container {
+    min-width: size.$fuiMaxWidthPopover;
+  }
+}
+
+::ng-deep .popover-body.popover-p-s {
+  padding: 0 !important;
+  
+  .context-menu-outer,
+  .context-dynamic {
+    padding: size.$fuiSizeS;
+  }
+
+  .context-menu-container {
+    min-width: calc(size.$fuiMaxWidthPopover - (size.$fuiSizeS * 2));
+  }
+}
+
+::ng-deep .popover-body.popover-p-m {
+  padding: 0 !important;
+  
+  .context-menu-outer,
+  .context-dynamic {
+    padding: size.$fuiSizeM;
+  }
+
+  .context-menu-container {
+    min-width: calc(size.$fuiMaxWidthPopover - (size.$fuiSizeM * 2));
+  }
+}
+
+::ng-deep .popover-body.popover-p-l {
+  padding: 0 !important;
+  
+  .context-menu-outer,
+  .context-dynamic {
+    padding: size.$fuiSizeL;
+  }
+
+  .context-menu-container {
+    min-width: calc(size.$fuiMaxWidthPopover - (size.$fuiSizeL * 2));
+  }
+}

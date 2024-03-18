@@ -1,0 +1,7 @@
+@use "./../../styles//variables/color_variable" as color;
+
+.fui-highlight {
+  ::ng-deep .highlight {
+    background-color: color.$fuiColorHighlight;
+  }
+}

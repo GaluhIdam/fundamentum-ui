@@ -1,0 +1,63 @@
+<div [ngClass]="['tree-view', 'tree-view-' + size, 'tree-view-' + itemWrap]">
+  @for (item of dataTreeView; track $index) {
+  <div class="tree-view-outer">
+    <ng-container
+      *ngTemplateOutlet="treeview; context: { item: item }"
+    ></ng-container>
+    @if (item.children && item.isExpanded) {
+    <div class="tree-view-children">
+      <fui-tree-view
+        [dataTreeView]="item.children"
+        [size]="size"
+        [itemWrap]="itemWrap"
+        (onClickItem)="handleOnclickItem($event)"
+      ></fui-tree-view>
+    </div>
+    }
+  </div>
+  }
+</div>
+
+<ng-template #treeview let-item="item">
+  <div
+    class="tree-view-item"
+    (click)="item.isExpanded = !item.isExpanded; handleOnclickItem(item)"
+  >
+    @if (item.isExpanded) {
+    <div class="tree-view-icon-expanded">
+      @if (item.iconExpanded) {
+      <fui-icons
+        [icon]="item.iconExpanded"
+        [size]="item.iconSize ? item.iconSize : size"
+        [color]="item.iconColor ? item.iconColor : color"
+      ></fui-icons>
+      }
+    </div>
+    } @else {
+    <div class="tree-view-icon-collapsed">
+      @if (item.iconCollapsed) {
+      <fui-icons
+        [icon]="item.iconCollapsed"
+        [size]="item.iconSize ? item.iconSize : size"
+        [color]="item.iconColor ? item.iconColor : color"
+      ></fui-icons>
+      }
+    </div>
+    } @if (item.icon) {
+    <div class="tree-view-icon">
+      <fui-icons
+        [icon]="item.icon"
+        [size]="item.iconSize ? item.iconSize : size"
+        [color]="item.iconColor ? item.iconColor : color"
+      ></fui-icons>
+    </div>
+    }
+    <div class="tree-view-label">
+      <fui-text
+        [size]="item.labelSize ? item.labelSize : size"
+        [color]="item.labelColor ? item.labelColor : color"
+        >{{ item.label }}</fui-text
+      >
+    </div>
+  </div>
+</ng-template>

@@ -1,9 +1,11 @@
-<div [ngClass]="['pagination']">
+<div [ngClass]="['pagination', 'pagination-space-' + paginationSpace]">
   @if (showPageSizeOptions) {
-  <div class="page-size-options">
-    <fui-text [size]="size">Rows per page: {{ itemsPerPage }}</fui-text>
-    <fui-icons [icon]="'arrowDown'" [size]="size"></fui-icons>
-    <div class="page-sizes">
+  <fui-popover>
+    <div class="page-size-options">
+      <fui-text [size]="size">Rows per page: {{ itemsPerPage }}</fui-text>
+      <fui-icons [icon]="'arrowDown'" [size]="size"></fui-icons>
+    </div>
+    <div class="page-sizes" popover-body>
       @for (item of pageSizeOptionsValue; track $index) {
       <div class="size" (click)="selectSize(item.size, item.label)">
         <div class="selected-size">
@@ -22,7 +24,7 @@
       </div>
       }
     </div>
-  </div>
+  </fui-popover>
   }
   <div class="paginator">
     @if (showFirstLastButtons) {

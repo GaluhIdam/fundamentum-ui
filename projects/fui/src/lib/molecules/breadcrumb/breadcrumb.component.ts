@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TextComponent } from '../../atoms/text/text.component';
 import { IconsComponent } from '../../atoms/icons/icons.component';
+import { PopoverComponent } from '../../templates/popover/popover.component';
 
 export interface BreadCrubmbDataType extends BreadcrumbData {
   active?: boolean;
@@ -15,7 +16,13 @@ export interface BreadCrubmbDataType extends BreadcrumbData {
   standalone: true,
   templateUrl: './breadcrumb.component.html',
   styleUrl: './breadcrumb.component.scss',
-  imports: [CommonModule, RouterModule, TextComponent, IconsComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    TextComponent,
+    IconsComponent,
+    PopoverComponent,
+  ],
 })
 export class BreadcrumbComponent implements OnInit {
   @Input() data: BreadcrumbData[] = [];

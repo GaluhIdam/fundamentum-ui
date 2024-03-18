@@ -1,0 +1,71 @@
+@if (isGroup) {
+<div class="avatar-group">
+  @for (item of avatarGroupData; track $index) {
+  <ng-container
+    *ngTemplateOutlet="avatar;
+    context: {
+      type: item.type ? item?.type : 'initial',
+      size: size,
+      color: item.color ? item.color : 'primary',
+      shape: shape,
+      name: item.name,
+      image: item.image,
+      icon: item.icon ? item.icon : 'userAvatar',
+      index: $index,
+      id: item?.id,
+      item: item,
+      avatarGroupData: avatarGroupData,
+    }"
+  />
+  }
+</div>
+} @else {
+<ng-container
+  *ngTemplateOutlet="avatar;
+  context: {
+    id: id,
+    type: type ? type : 'initial',
+    size: size,
+    color: color ? color : 'primary',
+    shape: shape,
+    name: name,
+    image: image,
+    icon: icon ? icon : 'userAvatar',
+  }"
+/>
+}
+
+<ng-template
+  #avatar
+  let-type="type"
+  let-size="size"
+  let-color="color"
+  let-shape="shape"
+  let-name="name"
+  let-image="image"
+  let-icon="icon"
+  let-index="index"
+  let-id="id"
+  let-item="item"
+  let-avatarGroupData="avatarGroupData"
+>
+  <div
+    [ngClass]="['avatar', avatarBorder ? 'border' : '', size, color, shape]"
+    [title]="name"
+    [style.zIndex]="avatarGroupData?.length - index"
+    [style.left]="index === 0 ? 0 : -5 * index + 'px'"
+    (click)="
+      handleClickAvatar(isGroup ? item.id : id, isGroup ? item.name : name)
+    "
+  >
+    @if (type === 'initial') {
+    <fui-text [size]="size" [weight]="'bold'">
+      {{ initialName(name) }}
+    </fui-text>
+    } @else if (type === 'image') {
+    <img [src]="image" [alt]="name" [ngClass]="shape" />
+    } @else if (type === 'icon') {
+    <fui-icons [icon]="icon" [size]="size"></fui-icons>
+    }
+  </div>
+</ng-template>

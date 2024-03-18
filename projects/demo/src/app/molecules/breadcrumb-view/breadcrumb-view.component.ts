@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { BreadcrumbComponent } from '../../../../../fui/src/lib/molecules/breadcrumb/breadcrumb.component';
-import { BreadcrumbData } from '../../../../../fui/src/lib/types';
+import { BreadcrumbComponent, BreadcrumbData } from 'fui';
 
 @Component({
   selector: 'app-breadcrumb-view',

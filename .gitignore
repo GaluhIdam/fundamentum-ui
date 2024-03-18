@@ -40,8 +40,11 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
 /fundamentum-ui.iml
 /projects/demo/src/**/*.css
 /projects/demo/src/**/*.map
 /projects/fui/src/**/*.css
 /projects/fui/src/**/*.map
+
+/documentation

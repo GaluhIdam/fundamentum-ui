@@ -1,0 +1,69 @@
+@use "./../../styles//variables//color_variable" as color;
+@use "./../../styles/variables/typography_variable" as size;
+@use "./../../styles//variables//border_variable" as border;
+
+.tree-view {
+  &-outer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .35rem;
+    border-radius: border.$fuiBorderRadius;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba($color: color.$fuiColorDarkestShade, $alpha: .1);
+    }
+  }
+
+  &-children {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-elipsis {
+    .tree-view-label {
+      max-inline-size: 100%;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      white-space: nowrap !important;
+    }
+  }
+
+  &-wrap {
+    .tree-view-label {
+      max-inline-size: 100%;
+      white-space: wrap !important;
+    }
+  }
+}
+
+$size-style: (
+  sizedefault: size.$fuiFontSize,
+  sizexs: size.$fuiFontSizeXS,
+  sizes: size.$fuiFontSizeS,
+  sizem: size.$fuiFontSizeM,
+  sizel: size.$fuiFontSizeL,
+  sizexl: size.$fuiFontSizeXL,
+  sizexxl: size.$fuiFontSizeXXL,
+);
+
+@each $size, $value in $size-style {
+  .tree-view-#{$size} {
+    .tree-view-icon-expanded,
+    .tree-view-icon-collapsed,
+    .tree-view-icon {
+      min-width: $value;
+      min-height: $value;
+    }
+
+    .tree-view-children {
+      padding-left: calc($value + .5rem);
+    }
+  }
+}

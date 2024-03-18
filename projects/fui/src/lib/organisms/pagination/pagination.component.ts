@@ -4,6 +4,7 @@ import { ButtonComponent } from '../../atoms/button/button.component';
 import { TextComponent } from '../../atoms/text/text.component';
 import { Color, Size } from '../../types';
 import { CommonModule } from '@angular/common';
+import { PopoverComponent } from '../../templates/popover/popover.component';
 
 interface Page {
   page?: number;
@@ -16,16 +17,23 @@ interface Page {
   standalone: true,
   templateUrl: './pagination.component.html',
   styleUrl: './pagination.component.scss',
-  imports: [CommonModule, IconsComponent, ButtonComponent, TextComponent],
+  imports: [
+    CommonModule,
+    IconsComponent,
+    ButtonComponent,
+    TextComponent,
+    PopoverComponent,
+  ],
 })
 export class PaginationComponent implements OnInit {
   @Input({ required: true }) totalItems: number = 0;
   @Input() itemsPerPage: number = 10;
   @Input() pageSizeOptions: number[] = [5, 10, 20];
   @Input() maxDisplayPage: number = 7;
-  @Input() size: Size = 'sizel';
+  @Input() size: Size = 'sizem';
   @Input() activeColor: Color = 'primary';
   @Input() color: Color = 'text';
+  @Input() paginationSpace: 'between' | 'evenly' | 'around' = 'between';
   @Input() showFirstLastButtons: boolean = true;
   @Input() showPageSizeOptions: boolean = true;
   @Output() onPageChange: EventEmitter<{ page: number; itemsPerPage: number }> =
@@ -56,7 +64,6 @@ export class PaginationComponent implements OnInit {
 
   generatePages() {
     this.totalPages = this.totalItems / this.itemsPerPage;
-    console.log('totalPages', this.totalPages);
     const pageNumbers: number[] = [];
     const activePage = this.currentPage;
     const totalPagesToShow = this.totalPages < 1 ? 1 : this.totalPages;

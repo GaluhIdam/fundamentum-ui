@@ -1,0 +1,18 @@
+@use "../variables/button_variable";
+@use "../variables/animation_variable";
+@use "../variables/font_weight_variable";
+@use "../variables/typography_variable";
+@use "../variables/color_variable";
+@use "../variables/border_variable";
+@use "../variables/size_variable";
+@use "../mixins/helper_mixin";
+@use "../mixins/typography_mixin";
+@use "../mixins/loading_mixin";
+@use "../functions/color_function";
+
+@mixin fuiBaseTitle {
+  display: block;
+  margin-bottom: size_variable.$fuiSize;
+  margin-top: size_variable.$fuiSize;
+  font-weight: calc(size_variable.$fuiSizeXXL * 17.5);
+}

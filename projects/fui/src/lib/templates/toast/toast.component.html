@@ -1,0 +1,59 @@
+<div [ngClass]="['toasts-container', 'toast-position-' + position]">
+  @for (toast of toastData; track $index) {
+  <div [ngClass]="['toast', 'toast-' + toast?.type]" [@toast]>
+    <div class="toast-header">
+      @if (toast?.header?.icon) {
+      <div class="toast-icon">
+        <fui-icons
+          [icon]="
+            toast.header && toast.header.icon ? toast.header.icon : 'bell'
+          "
+          [color]="
+            toast.header && toast.header.colorIcon
+              ? toast.header.colorIcon
+              : 'text'
+          "
+          [size]="
+            toast.header && toast.header.sizeIcon
+              ? toast.header.sizeIcon
+              : 'sizes'
+          "
+        />
+      </div>
+      }
+      <div class="toast-title">
+        <fui-text
+          [weight]="'bold'"
+          [size]="
+            toast.header && toast.header.sizeTitle
+              ? toast.header.sizeTitle
+              : 'sizem'
+          "
+          [color]="
+            toast.header && toast.header.colorTitle
+              ? toast.header.colorTitle
+              : ''
+          "
+          >{{ toast?.header?.title }}</fui-text
+        >
+      </div>
+    </div>
+    <div class="toast-body">
+      <fui-text>{{ toast.body?.message }}</fui-text>
+    </div>
+
+    @if (toast?.footer && toast?.footer?.text) {
+    <div class="toast-footer" (click)="handleActionFooterToast(toast)">
+      <fui-button
+        [size]="toast.footer && toast.footer.size ? toast.footer.size : 'sizes'"
+        [color]="
+          toast.footer && toast.footer.color ? toast.footer.color : 'primary'
+        "
+      >
+        {{ toast?.footer?.text }}
+      </fui-button>
+    </div>
+    }
+  </div>
+  }
+</div>

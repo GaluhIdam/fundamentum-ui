@@ -1,0 +1,153 @@
+<div
+  [ngClass]="[
+    'context-menu',
+    contextMenuConfig.displayHeaderIcon ? 'context-menu-header-hover' : ''
+  ]"
+  #contextMenuContainer
+  (keydown)="handleKeyDown($event)"
+>
+  <fui-popover
+    [displayPopover]="isDisplayContextMenu"
+    [position]="
+      contextMenuConfig.position ? contextMenuConfig.position : 'left'
+    "
+    [align]="contextMenuConfig.align ? contextMenuConfig.align : 'center'"
+    [popoverRadius]="
+      contextMenuConfig.popoverRadius ? contextMenuConfig.popoverRadius : 's'
+    "
+    [popoverPadding]="
+      contextMenuConfig.popoverPadding ? contextMenuConfig.popoverPadding : 's'
+    "
+    [displayHeader]="
+      contextMenuConfig.displayHeader ? contextMenuConfig.displayHeader : false
+    "
+    [displayHeaderIcon]="
+      contextMenuConfig.displayHeaderIcon
+        ? contextMenuConfig.displayHeaderIcon
+        : false
+    "
+    [headerIcon]="
+      contextMenuConfig.headerIcon ? contextMenuConfig.headerIcon : 'arrowLeft'
+    "
+    [headerTitle]="
+      contextMenuConfig.headerTitle ? contextMenuConfig.headerTitle : ''
+    "
+    [headerSize]="
+      contextMenuConfig.headerSize ? contextMenuConfig.headerSize : 'sizem'
+    "
+    [displayFooter]="
+      contextMenuConfig.displayFooter ? contextMenuConfig.displayFooter : false
+    "
+    [footerType]="
+      contextMenuConfig.footerType ? contextMenuConfig.footerType : 'text'
+    "
+    [footerText]="
+      contextMenuConfig.footerText ? contextMenuConfig.footerText : ''
+    "
+    [footerSize]="
+      contextMenuConfig.footerSize ? contextMenuConfig.footerSize : 'sizes'
+    "
+    [footerButtonType]="
+      contextMenuConfig.footerButtonType
+        ? contextMenuConfig.footerButtonType
+        : 'button'
+    "
+    [footerButtonText]="
+      contextMenuConfig.footerButtonText
+        ? contextMenuConfig.footerButtonText
+        : ''
+    "
+    [footerButtonColor]="
+      contextMenuConfig.footerButtonColor
+        ? contextMenuConfig.footerButtonColor
+        : 'primary'
+    "
+    (isPopoverDisplay)="getValueIsPopoverDisplay($event)"
+    (onClickHeaderPopover)="handleBackContextMenu()"
+    (onClickFooterPopover)="handleClickFooterContextMenu()"
+  >
+    <div class="context-menu-display-text" (click)="initialValueContextMenu()">
+      <ng-content select="[context-menu-trigger]"></ng-content>
+    </div>
+    <div class="context-menu-container" popover-body>
+      @if (displayContextMenu.isMenu) { @for (item of displayContextMenu.items;
+      track $index) {
+
+      <fui-tooltip
+        [displayTooltip]="item?.isTooltip ? item?.isTooltip : false"
+        [position]="item?.tooltipPosition ? item?.tooltipPosition : 'right'"
+        [title]="item?.tooltipTitle ? item?.tooltipTitle : ''"
+        [content]="item?.tooltipContent ? item?.tooltipContent : ''"
+        [ngClass]="{
+          'animation-slide-left': isAnimateSlideLeft,
+          'animation-slide-right': isAnimateSlideRight
+        }"
+      >
+        <button
+          [ngClass]="[
+            'context-menu-outer',
+            item.isDisabled ? 'context-menu-outer-disabled' : ''
+          ]"
+          (click)="onHandleClickItem(displayContextMenu, item)"
+        >
+          <div
+            [ngClass]="[
+              'context-menu-item',
+              item.isDisabled ? 'context-menu-item-disabled' : '',
+              isAnimateSlideLeft ? 'animation-slide-left' : '',
+              isAnimateSlideRight ? 'animation-slide-right' : ''
+            ]"
+          >
+            <div class="context-menu-item-content">
+              @if (item.icon) {
+              <div class="context-menu-item-icon">
+                <fui-icons
+                  [icon]="item.icon"
+                  [size]="item.iconSize ? item.iconSize : 'sizedefault'"
+                  [color]="item.isDisabled ? 'disabled' : item.iconColor"
+                ></fui-icons>
+              </div>
+              }
+              <div class="context-menu-item-label">
+                <fui-text
+                  [size]="item.labelSize"
+                  [color]="item.isDisabled ? 'disabled' : item.labelColor"
+                >
+                  {{ item.label }}
+                </fui-text>
+              </div>
+            </div>
+            <div
+              [ngClass]="[
+                'context-menu-item-expand',
+                item.children &&
+                item.children &&
+                item.children.items &&
+                item.children.items.length > 0
+                  ? 'show-icon-expand'
+                  : 'hide-icon-expand'
+              ]"
+            >
+              <fui-icons
+                [icon]="item.iconExpand ? item.iconExpand : 'arrowRight'"
+                [size]="item.iconSize ? item.iconSize : 'sizedefault'"
+                [color]="item.isDisabled ? 'disabled' : item.iconColor"
+              ></fui-icons>
+            </div>
+          </div>
+        </button>
+      </fui-tooltip>
+      } } @if(!displayContextMenu.isMenu) {
+      <div
+        [ngClass]="{
+          'context-dynamic': true,
+          'animation-slide-left': isAnimateSlideLeft,
+          'animation-slide-right': isAnimateSlideRight
+        }"
+      >
+        <ng-content></ng-content>
+      </div>
+      }
+    </div>
+  </fui-popover>
+</div>

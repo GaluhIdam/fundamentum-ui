@@ -1,0 +1,31 @@
+<div class="container-input-field__text">
+  @if(!!labelText){
+  <div class="title">
+    <fui-text [weight]="'bold'">{{ labelText }} </fui-text>
+  </div>
+  } @else{}
+  <fui-input-base
+    [controlName]="control"
+    (textChange)="onTextChange($event)"
+    [width]="'full'"
+    [size]="'sizes'"
+  ></fui-input-base>
+
+  @if(control.touched && control.invalid ){ @if(control.errors?.['required']){
+  <div class="error">
+    <fui-text [color]="'danger'" [weight]="'light'" [size]="'sizes'"
+      >{{ labelText }} tidak boleh kosong
+    </fui-text>
+  </div>
+  } @else if(control.dirty && control.errors?.['minlength']){
+
+  <div class="error">
+    <fui-text [color]="'danger'" [weight]="'light'" [size]="'sizes'"
+      >{{control.errors?.['minlength'].actualLength}}
+      character of minimum
+      {{control.errors?.['minlength'].requiredLength}} character</fui-text
+    >
+  </div>
+  } }
+</div>
+<fui-spacer [size]="'sizel'" [direction]="'vertical'"></fui-spacer>

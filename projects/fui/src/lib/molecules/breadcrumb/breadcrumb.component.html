@@ -71,12 +71,12 @@
     <fui-text [size]="labelSize">
       <span class="link">{{ item.label }}</span>
     </fui-text>
-    @if (!last && !isLast) {
-    <fui-text [size]="labelSize">
-      <span class="separator">{{ separator }}</span>
-    </fui-text>
-    }
   </a>
+  @if (!last && !isLast) {
+  <fui-text [size]="labelSize">
+    <span class="separator">{{ separator }}</span>
+  </fui-text>
+  }
 </ng-template>
 
 <ng-template
@@ -86,24 +86,26 @@
 >
   <span class="container-truncated-breadcrumb">
     <span class="dropdown-menu-truncated-breadcrumb">
-      <span>...</span>
-      <fui-icons [icon]="'arrowDown'"></fui-icons>
-      <div class="content-breadcrumb-dropdown">
-        <div class="breadcrumb-dropdown-items">
-          <ng-container
-            *ngTemplateOutlet="
-              itemBreadcrumbLink;
-              context: {
-                item: itemsTruncated,
-                last: last,
-                isLast: true,
-                isItemTruncated: false
-              }
-            "
-          >
-          </ng-container>
+      <fui-popover>
+        <span>...</span>
+        <fui-icons [icon]="'arrowDown'"></fui-icons>
+        <div class="content-breadcrumb-dropdown" popover-body>
+          <div class="breadcrumb-dropdown-items">
+            <ng-container
+              *ngTemplateOutlet="
+                itemBreadcrumbLink;
+                context: {
+                  item: itemsTruncated,
+                  last: last,
+                  isLast: true,
+                  isItemTruncated: false
+                }
+              "
+            >
+            </ng-container>
+          </div>
         </div>
-      </div>
+      </fui-popover>
     </span>
     <fui-text [size]="labelSize">
       <span class="separator">{{ separator }}</span>

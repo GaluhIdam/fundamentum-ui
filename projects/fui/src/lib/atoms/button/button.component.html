@@ -1,6 +1,7 @@
 <!-- button.component.html -->
 <button
   [class]="colorValue"
+  [type]="typeValue"
   [class.sizeXS]="sizeValue === 'sizexs'"
   [class.sizeS]="sizeValue === 'sizes'"
   [class.sizeDefault]="sizeValue === 'sizedefault'"
@@ -8,7 +9,6 @@
   [class.sizeL]="sizeValue === 'sizel'"
   [class.sizeXL]="sizeValue === 'sizexl'"
   [class.sizeXXL]="sizeValue === 'sizexxl'"
-  [class.sizeM]="sizeValue === 'sizem'"
   [class]="colorValue"
   [class.autoWidth]="widthValue === 'auto'"
   [class.fullWidth]="widthValue === 'full'"

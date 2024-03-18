@@ -1,17 +1,11 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
-import { IconsComponent } from '../../atoms/icons/icons.component';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Color, Icon, Size } from '../../types';
+import { CommonModule } from '@angular/common';
+import { IconsComponent } from '../../atoms/icons/icons.component';
 import { TextComponent } from '../../atoms/text/text.component';
 import { ButtonComponent } from '../../atoms/button/button.component';
 import { ButtonEmptyComponent } from '../../atoms/button-empty/button-empty.component';
-import { CommonModule } from '@angular/common';
+import { OverlayMaskComponent } from '../../atoms/overlay-mask/overlay-mask.component';
 
 @Component({
   selector: 'fui-modal',
@@ -24,6 +18,7 @@ import { CommonModule } from '@angular/common';
     TextComponent,
     ButtonComponent,
     ButtonEmptyComponent,
+    OverlayMaskComponent,
   ],
 })
 export class ModalComponent {
@@ -49,6 +44,7 @@ export class ModalComponent {
   @Output() onCloseModal: EventEmitter<void> = new EventEmitter();
   @Output() onCancelButton: EventEmitter<void> = new EventEmitter();
   @Output() onConfirmButton: EventEmitter<void> = new EventEmitter();
+  @Output() onClickOverlayModal: EventEmitter<void> = new EventEmitter();
 
   onHandleCloseModal() {
     this.onCloseModal.emit();
@@ -60,5 +56,9 @@ export class ModalComponent {
 
   onHandleConfirmButton() {
     this.onConfirmButton.emit();
+  }
+
+  onHandleOverLayClick() {
+    this.onClickOverlayModal.emit();
   }
 }

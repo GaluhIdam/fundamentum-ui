@@ -1,0 +1,12 @@
+.container {
+  padding: 2rem;
+  display: flex;
+
+  .block {
+    flex: 1;
+  }
+
+  .btn {
+    margin-top: 1rem;
+  }
+}

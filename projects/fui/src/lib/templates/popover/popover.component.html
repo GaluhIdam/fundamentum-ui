@@ -1,0 +1,81 @@
+<div [ngClass]="['popover']">
+  <div class="popover-content" (click)="onHandleDisplayPopover()">
+    <ng-content></ng-content>
+  </div>
+  <div
+    [ngClass]="[
+      'popover-container',
+      position,
+      position === 'top' || position === 'bottom'
+        ? 'topBottom-' + align
+        : position === 'left'
+        ? 'left-' + align
+        : 'right-' + align,
+      displayPopover ? 'popover-display' : 'popover-hide',
+      popoverRadius ? 'popover-radius-' + popoverRadius : ''
+    ]"
+  >
+    <div [ngClass]="['arrow-popover-' + position + '-' + align]"></div>
+
+    @if (displayHeader) {
+    <button
+      [ngClass]="[
+        'popover-header',
+        displayHeader ? 'border-header' : '',
+        popoverPadding ? 'popover-p-' + popoverPadding : ''
+      ]"
+      (click)="onHandleClikHeader()"
+    >
+      @if (displayHeaderIcon) {
+      <fui-icons [icon]="headerIcon" [size]="headerSize"></fui-icons>
+      }
+      <div class="popover-header-title">
+        <fui-text [size]="headerSize" [weight]="'bold'">
+          {{ headerTitle }}
+        </fui-text>
+      </div>
+    </button>
+    }
+
+    <div
+      [ngClass]="[
+        'popover-body',
+        popoverPadding ? 'popover-p-' + popoverPadding : ''
+      ]"
+    >
+      <ng-content select="[popover-body]"></ng-content>
+    </div>
+
+    @if (displayFooter) {
+    <div
+      [ngClass]="[
+        'popover-footer',
+        displayFooter ? 'border-footer' : '',
+        popoverPadding ? 'popover-p-' + popoverPadding : ''
+      ]"
+    >
+      @if (footerType === 'text') {
+      <fui-text [size]="footerSize">{{ footerText }}</fui-text>
+      } @else {
+      <div class="popover-footer-button" (click)="onHandleClikFooterButton()">
+        @if(footerButtonType === 'button') {
+        <fui-button
+          [size]="footerSize"
+          [color]="footerButtonColor"
+          [width]="'full'"
+          >{{ footerButtonText }}</fui-button
+        >
+        } @else {
+        <fui-button-empty
+          [size]="footerSize"
+          [color]="footerButtonColor"
+          [width]="'full'"
+          >{{ footerButtonText }}</fui-button-empty
+        >
+        }
+      </div>
+      }
+    </div>
+    }
+  </div>
+</div>
