@@ -33,6 +33,7 @@ export class PaginationComponent implements OnInit {
   @Input() size: Size = 'sizem';
   @Input() activeColor: Color = 'primary';
   @Input() color: Color = 'text';
+  @Input() paginationSpace: 'between' | 'evenly' | 'around' = 'between';
   @Input() showFirstLastButtons: boolean = true;
   @Input() showPageSizeOptions: boolean = true;
   @Output() onPageChange: EventEmitter<{ page: number; itemsPerPage: number }> =

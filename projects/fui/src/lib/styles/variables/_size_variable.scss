@@ -13,3 +13,6 @@ $fuiScrollBar: $fuiSize !default;
 // Corner sizes are used as an inset border and therefore a smaller corner size means a larger thumb
 $fuiScrollBarCorner: $fuiSizeXS !default;
 $fuiScrollBarCornerThin: $fuiSizeS * .75 !default;
+
+$fuiMaxWidthTooltip: 265px;
+$fuiMaxWidthPopover: 265px;

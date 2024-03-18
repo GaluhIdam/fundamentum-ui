@@ -10,6 +10,7 @@ import { TextComponent } from '../../atoms/text/text.component';
   imports: [CommonModule, TextComponent],
 })
 export class TooltipComponent {
+  @Input() displayTooltip: boolean = true;
   @Input() title: string = '';
   @Input() content: string = '';
   @Input() position: 'left' | 'right' | 'top' | 'bottom' = 'top';

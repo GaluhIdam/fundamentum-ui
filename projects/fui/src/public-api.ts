@@ -75,7 +75,6 @@ export * from './lib/templates/tooltip/tooltip.component';
 
 export * from './lib/templates/bottombar/bottombar.component';
 
-
 export * from './lib/organisms/pagination/pagination.component';
 
 export * from './lib/templates/popover/popover.component';
@@ -88,3 +87,4 @@ export * from './lib/templates/toast/toast.service';
 export * from './lib/templates/tree-view/tree-view.component';
 
 export * from './lib/templates/description-list/description-list.component';
+export * from './lib/templates/context-menu/context-menu.component';

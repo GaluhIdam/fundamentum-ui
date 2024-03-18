@@ -32,6 +32,19 @@
   }
 }
 
+.option-item {
+  display: flex;
+  gap: 1rem;
+}
+
+.option-align-row {
+  flex-direction: row;
+}
+
+.option-align-column {
+  flex-direction: column;
+}
+
 .option,
 input, 
 label {

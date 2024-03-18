@@ -15,7 +15,7 @@
     position: absolute;
     z-index: 1;
     width: max-content;
-    max-width: 265px;
+    max-width: size.$fuiMaxWidthPopover;
     margin: auto;
     background: color.$fuiColorEmptyShade;
     box-shadow: rgba($color: color.$fuiColorDarkestShade, $alpha: .2) 0px 8px 24px;
@@ -52,6 +52,10 @@
     display: flex;
     align-items: center;
     gap: .5rem;
+    width: 100%;
+    border: none;
+    background: transparent;
+    text-align: left;
   }
 
   &-header,

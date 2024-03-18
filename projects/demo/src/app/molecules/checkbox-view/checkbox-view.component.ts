@@ -5,7 +5,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ButtonComponent, CheckboxComponent } from 'fui';
+import { ButtonComponent, CheckboxComponent, DataCheckboxProps } from 'fui';
 
 @Component({
   selector: 'app-checkbox-view',
@@ -17,6 +17,7 @@ import { ButtonComponent, CheckboxComponent } from 'fui';
 export class CheckboxViewComponent {
   form!: FormGroup;
   errorMessageRequiredFruit: string = '';
+  errorMessageRequiredSport: string = '';
 
   dataArrays: { label: string; value: string }[][] = [];
 
@@ -35,12 +36,32 @@ export class CheckboxViewComponent {
     },
   ];
 
+  dataSport = [
+    {
+      label: 'Swimming',
+      value: 'swimming',
+    },
+    {
+      label: 'Soccer',
+      value: 'soccer',
+    },
+    {
+      label: 'Volleyball',
+      value: 'volleyball',
+    },
+  ];
+
+  favorite!: FormGroup;
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.generateDataArrays();
     this.form = this.fb.group({
       fruits: ['', Validators.required],
+    });
+    this.favorite = this.fb.group({
+      sports: [[], [Validators.required]],
     });
   }
 
@@ -59,6 +80,24 @@ export class CheckboxViewComponent {
       if (fruitsControl?.errors) {
         if (fruitsControl.errors?.['required']) {
           this.errorMessageRequiredFruit = 'Fruits field is required';
+        }
+      }
+    }
+  }
+
+  handleOnChangeOptionSport(item: DataCheckboxProps) {
+    this.errorMessageRequiredSport = '';
+  }
+
+  submitSport() {
+    console.log(this.favorite);
+    if (this.favorite.valid) {
+      console.log('onsubmit', this.favorite.value);
+    } else {
+      const sportsControl = this.favorite.get('sports');
+      if (sportsControl?.errors) {
+        if (sportsControl.errors?.['required']) {
+          this.errorMessageRequiredSport = 'Sports field is required';
         }
       }
     }

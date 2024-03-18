@@ -6,7 +6,6 @@ import {
   HostListener,
   Input,
   Output,
-  ViewChild,
 } from '@angular/core';
 import { Color, Icon, Size } from '../../types';
 import { TextComponent } from '../../atoms/text/text.component';
@@ -47,21 +46,41 @@ export class PopoverComponent {
   @Input() footerButtonColor: Color = 'primary';
   @Output() onClickHeaderPopover: EventEmitter<void> = new EventEmitter();
   @Output() onClickFooterPopover: EventEmitter<void> = new EventEmitter();
-  @ViewChild('clickablePopover') clickablePopover!: ElementRef;
-  @ViewChild('clickablePopoverContent') clickablePopoverContent!: ElementRef;
+  @Output() isPopoverDisplay: EventEmitter<boolean> = new EventEmitter(false);
 
   @HostListener('document:click', ['$event'])
   onClick(event: Event) {
-    if (
-      !this.clickablePopover?.nativeElement?.contains(event?.target) &&
-      !this.clickablePopoverContent?.nativeElement?.contains(event?.target)
-    ) {
+    const clickedElement = event.target as HTMLElement;
+    if (!this.elementRef.nativeElement.contains(event.target as Node)) {
+      if (
+        this.hasAncestorWithClass(clickedElement, 'context-menu-item') ||
+        this.hasAncestorWithClass(clickedElement, 'context-menu-outer')
+      ) {
+        return;
+      }
       this.displayPopover = false;
+      this.isPopoverDisplay.emit(this.displayPopover);
     }
+  }
+
+  constructor(private elementRef: ElementRef) {}
+
+  hasAncestorWithClass(
+    element: HTMLElement | null,
+    className: string
+  ): boolean {
+    while (element) {
+      if (element.classList && element.classList.contains(className)) {
+        return true;
+      }
+      element = element.parentElement;
+    }
+    return false;
   }
 
   onHandleDisplayPopover() {
     this.displayPopover = !this.displayPopover;
+    this.isPopoverDisplay.emit(this.displayPopover);
   }
 
   onHandleClikHeader() {

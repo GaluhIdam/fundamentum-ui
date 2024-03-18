@@ -29,6 +29,7 @@ import { PopoverViewComponent } from './templates/popover-view/popover-view.comp
 import { CardViewComponent } from './templates/card-view/card-view.component';
 import { TreeViewViewComponent } from './templates/tree-view-view/tree-view-view.component';
 import { DescriptionListViewComponent } from './templates/description-list-view/description-list-view.component';
+import { ContextMenuViewComponent } from './templates/context-menu-view/context-menu-view.component';
 
 export const routes: Routes = [
   {
@@ -161,6 +162,10 @@ export const routes: Routes = [
       {
         path: 'description-list',
         component: DescriptionListViewComponent,
+      },
+      {
+        path: 'context-menu',
+        component: ContextMenuViewComponent,
       },
     ],
   },
