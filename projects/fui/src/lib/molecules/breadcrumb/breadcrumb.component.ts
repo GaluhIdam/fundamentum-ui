@@ -11,6 +11,17 @@ export interface BreadCrubmbDataType extends BreadcrumbData {
   order?: number;
   truncated?: boolean;
 }
+
+/**
+ * The BreadcrumbComponent
+ * @usage
+ * ```html
+ * <fui-breadcrumb
+ *  [data]="links"
+ *  (onChangeBreadcrumb)="handleChange($event)"
+ * ></fui-breadcrumb>
+ * ```
+ */
 @Component({
   selector: 'fui-breadcrumb',
   standalone: true,
