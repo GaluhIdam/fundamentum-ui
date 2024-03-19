@@ -83,6 +83,7 @@ export * from './lib/molecules/text-field-complex/text-field-complex.component';
 export * from './lib/organisms/pagination/pagination.component';
 /* Data Grid */
 export * from './lib/organisms/data-grid/data-grid.component';
+export * from './lib/organisms/data-grid/content-row/content-row.component';
 /* Tabs */
 export * from './lib/molecules/tabs/tabs.component';
 /* Comment List */

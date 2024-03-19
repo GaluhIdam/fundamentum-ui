@@ -11,12 +11,13 @@
   <div class="custom-select">
     <fui-icons
       *ngIf="search"
+      class="{{ size }}"
       [ngClass]="{
         'fui-icon-search': search && (inputGroup === 'append' || inputGroup === 'none'),
         'fui-icon-search-prepend': search && (inputGroup === 'prepend' || inputGroup === 'prepend-append'),
       }"
       [icon]="'search'"
-      [size]="'sizem'"
+      [size]="size === 's' ? 'sizes' : size === 'm' ? 'sizem' : 'sizel'"
       [color]="'text'"
     ></fui-icons>
     <input
@@ -97,6 +98,7 @@
         *ngIf="loading"
         [type]="'spinner'"
         class="fui-icon-mx"
+        [isLoading]="true"
         [size]="'sizel'"
       ></fui-loading>
       <fui-icons

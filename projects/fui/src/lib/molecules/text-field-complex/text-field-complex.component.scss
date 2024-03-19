@@ -117,13 +117,19 @@
   display: inline-block;
 }
 
-.fui-icon-search {
+.s {
+  top: 5px;
+}
+
+.m, .l {
   top: 10px;
+}
+
+.fui-icon-search {
   position: absolute;
   left: 8px;
 }
 .fui-icon-search-prepend {
-  top: 10px;
   position: absolute;
   left: 10px;
 }

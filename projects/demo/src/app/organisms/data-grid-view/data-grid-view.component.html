@@ -1,1 +1,187 @@
-<fui-data-grid></fui-data-grid>
+<div style="margin: 20px">
+  <h1>Data Grid Example</h1>
+  <fui-data-grid
+    (refreshClicked)="refresh()"
+    (input)="loadingSearch = true"
+    [textFieldControl]="searchForm"
+    [page]="page"
+    [limit]="limit"
+    [loadingSearch]="loadingSearch"
+    [totalItems]="totalItems"
+    (onPageChanges)="changePagination($event)"
+    (optionChange)="handleOptionChange($event)"
+    (heightChange)="handleHeightChange($event)"
+  >
+    <!-- Header -->
+    <fui-content-row
+      [density]="selectedDensity"
+      [rowHeight]="selectedRowHeight"
+      headerRow
+      [type]="'header'"
+      [text]="'Title'"
+    ></fui-content-row>
+    <fui-content-row
+      [density]="selectedDensity"
+      [rowHeight]="selectedRowHeight"
+      headerRow
+      [type]="'header'"
+      [text]="'Description'"
+    ></fui-content-row>
+    <fui-content-row
+      [density]="selectedDensity"
+      [rowHeight]="selectedRowHeight"
+      headerRow
+      [type]="'header'"
+      [text]="'Price'"
+    ></fui-content-row>
+    <fui-content-row
+      [density]="selectedDensity"
+      [rowHeight]="selectedRowHeight"
+      headerRow
+      [type]="'header'"
+      [text]="'Discount'"
+    ></fui-content-row>
+    <fui-content-row
+      [density]="selectedDensity"
+      [rowHeight]="selectedRowHeight"
+      headerRow
+      [type]="'header'"
+      [text]="'Rate'"
+    ></fui-content-row>
+    <fui-content-row
+      [density]="selectedDensity"
+      [rowHeight]="selectedRowHeight"
+      headerRow
+      [type]="'header'"
+      [text]="'Stock'"
+    ></fui-content-row>
+    <fui-content-row
+      [density]="selectedDensity"
+      [rowHeight]="selectedRowHeight"
+      headerRow
+      [type]="'header'"
+      [text]="'Brand'"
+    ></fui-content-row>
+    <fui-content-row
+      [density]="selectedDensity"
+      [rowHeight]="selectedRowHeight"
+      headerRow
+      [type]="'header'"
+      [text]="'Action'"
+    ></fui-content-row>
+    <!-- Header -->
+
+    <!-- Content -->
+    <fui-content-row
+      [density]="selectedDensity"
+      [rowHeight]="selectedRowHeight"
+      contentRow
+      [type]="'row'"
+      *ngFor="let item of dataContent"
+    >
+      <fui-content-row
+        row-content
+        [density]="selectedDensity"
+        [rowHeight]="selectedRowHeight"
+        [type]="'content'"
+        [colorActive]="colorActive"
+        [text]="item.title"
+      ></fui-content-row>
+      <fui-content-row
+        row-content
+        [density]="selectedDensity"
+        [rowHeight]="selectedRowHeight"
+        [type]="'content'"
+        [colorActive]="colorActive"
+        [text]="item.description"
+      ></fui-content-row>
+      <fui-content-row
+        row-content
+        [density]="selectedDensity"
+        [rowHeight]="selectedRowHeight"
+        [type]="'content'"
+        [colorActive]="colorActive"
+        [text]="item.price"
+      ></fui-content-row>
+      <fui-content-row
+        row-content
+        [density]="selectedDensity"
+        [rowHeight]="selectedRowHeight"
+        [type]="'content'"
+        [colorActive]="colorActive"
+        [text]="item.discountPercentage"
+      ></fui-content-row>
+      <fui-content-row
+        row-content
+        [density]="selectedDensity"
+        [rowHeight]="selectedRowHeight"
+        [type]="'content'"
+        [colorActive]="colorActive"
+        [text]="item.rating"
+      ></fui-content-row>
+      <fui-content-row
+        row-content
+        [density]="selectedDensity"
+        [rowHeight]="selectedRowHeight"
+        [type]="'content'"
+        [colorActive]="colorActive"
+        [bgColor]="
+          item.stock < 35 ? 'danger' : item.stock > 90 ? 'success' : 'blank'
+        "
+        [text]="item.stock"
+      ></fui-content-row>
+      <fui-content-row
+        row-content
+        [density]="selectedDensity"
+        [rowHeight]="selectedRowHeight"
+        [type]="'content'"
+        [colorActive]="colorActive"
+        [text]="item.brand"
+      ></fui-content-row>
+
+      <!-- Action -->
+      <fui-content-row
+        row-content
+        [density]="selectedDensity"
+        [rowHeight]="selectedRowHeight"
+        [type]="'action'"
+      >
+        <div row-action class="center">
+          <fui-button-icon
+            class="mx-5"
+            [size]="'s'"
+            [style]="'secondary'"
+            [type]="'button'"
+            [option]="'icon'"
+            [icon]="'pencil'"
+          ></fui-button-icon>
+          <fui-button-icon
+            class="mx-5"
+            [size]="'s'"
+            [style]="'secondary'"
+            [color]="'danger'"
+            [type]="'button'"
+            [option]="'icon'"
+            [icon]="'trash'"
+          ></fui-button-icon>
+        </div>
+      </fui-content-row>
+      <!-- Action -->
+    </fui-content-row>
+    <!-- Content -->
+
+    <!-- Not Available Content -->
+    <fui-content-row
+      [density]="selectedDensity"
+      [rowHeight]="selectedRowHeight"
+      contentRow
+      [type]="'row'"
+      *ngIf="dataContent.length === 0"
+    >
+      <p row-content style="text-align: center; width: 100%">
+        No data available for this item!
+      </p>
+    </fui-content-row>
+    <!-- Not Available Content -->
+  </fui-data-grid>
+</div>
