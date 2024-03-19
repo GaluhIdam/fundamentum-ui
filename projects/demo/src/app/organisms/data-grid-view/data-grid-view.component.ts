@@ -3,7 +3,7 @@ import {
   ButtonIconComponent,
   ContentRowComponent,
   DataGridComponent,
-} from '../../../../../fui/src/public-api';
+} from 'fui';
 import { DataGridViewService } from './data-grid-view.service';
 import { ProductsDTO } from './products.dto';
 import {
