@@ -18,6 +18,20 @@ import { TextComponent } from '../../atoms/text/text.component';
 import { CommonModule } from '@angular/common';
 import { TooltipComponent } from '../tooltip/tooltip.component';
 
+/**
+ * The ContextMenuComponent
+ * @usage
+ * ```html
+ * <fui-context-menu
+ *  [data]="dataContextMenu"
+ *  [contextMenuConfig]="{
+ *   popoverPadding: 's',
+ *  }"
+ *  (onClickItem)="handleOnClickItem($event)"
+ * > </fui-context-menu>
+ * ```
+ */
+
 @Component({
   selector: 'fui-context-menu',
   standalone: true,
