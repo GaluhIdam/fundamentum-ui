@@ -34,6 +34,7 @@ export class CommentListComponent {
   }[] = [];
 
   @Output() onClick: EventEmitter<void> = new EventEmitter<void>();
+
   handleOnClick(): void {
     this.onClick.emit();
   }

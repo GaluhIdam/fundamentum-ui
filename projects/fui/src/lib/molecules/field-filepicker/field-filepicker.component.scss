@@ -1,0 +1,81 @@
+@import "../../styles/index";
+
+.fui-filepicker {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.fui-title {
+  color: #000; /* Change to your desired color */
+  font-family: $fuiFontFamily;
+  white-space: nowrap;
+}
+
+.fui-dropzone {
+  width: 200px;
+  height: 50px;
+  border: 2px dashed #ccc; /* Change to your desired color */
+  display: grid;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  padding: 40px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.fui-dropzone-text {
+  font-family: $fuiFontFamily;
+  text-align: center;
+  font-size: small;
+  margin: 10px 0px 0px 0px;
+  color: #000; /* Change to your desired color */
+  white-space: nowrap;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.fui-input-file {
+  position: absolute;
+  overflow: hidden;
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.fui-content {
+  width: fit-content;
+}
+
+.fui-list-dropzone {
+  margin-left: 20px;
+}
+
+.fui-selected-files {
+  font-family: $fuiFontFamily;
+  font-weight: bold;
+  margin: 0px;
+}
+
+.fui-selected-files-rm {
+  font-family: $fuiFontFamily;
+  margin: 10px 0px 0px 0px;
+  font-size: small;
+  color: #007bff; /* Change to your desired color */
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.fui-list {
+  font-family: $fuiFontFamily;
+}
+
+.z-1 {
+  z-index: -1;
+}

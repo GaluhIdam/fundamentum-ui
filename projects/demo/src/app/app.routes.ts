@@ -26,7 +26,9 @@ import { DataGridViewComponent } from './organisms/data-grid-view/data-grid-view
 import { TabsViewComponent } from './molecules/tabs-view/tabs-view.component';
 import { CommentListViewComponent } from './templates/comment-list-view/comment-list-view.component';
 import { SidenavViewComponent } from './templates/sidenav-view/sidenav-view.component';
-import path from 'path';
+import { CollapsibleNavViewComponent } from './templates/collapsible-nav-view/collapsible-nav-view.component';
+import { ComboBoxViewComponent } from './molecules/combo-box-view/combo-box-view.component';
+import { FieldFilepickerViewComponent } from './molecules/field-filepicker-view/field-filepicker-view.component';
 
 export const routes: Routes = [
   {
@@ -56,7 +58,7 @@ export const routes: Routes = [
         component: DataGridViewComponent,
       },
       {
-        path: 'charts',
+        path: 'chart',
         children: [
           {
             path: '',
@@ -189,6 +191,10 @@ export const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'collapsible-nav',
+        component: CollapsibleNavViewComponent,
+      },
     ],
   },
   /* Router for Templates */
@@ -216,6 +222,14 @@ export const routes: Routes = [
       {
         path: 'text-field/:paramName',
         component: TextFieldComplexViewComponent,
+      },
+      {
+        path: 'combo-box',
+        component: ComboBoxViewComponent,
+      },
+      {
+        path: 'field-filepicker',
+        component: FieldFilepickerViewComponent,
       },
     ],
   },

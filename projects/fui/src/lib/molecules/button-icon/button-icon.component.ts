@@ -29,13 +29,13 @@ import { IconsComponent } from '../../atoms/icons/icons.component';
 })
 export class ButtonIconComponent {
   @Input({ required: true }) type: 'submit' | 'button' | 'reset' = 'button';
+  @Input({ required: true }) option: 'iconText' | 'icon' | 'text' = 'iconText';
   @Input() fullWidth?: 'full-width';
   @Input() disabled: boolean = false;
   @Input() style: 'secondary' | 'filled' = 'filled';
   @Input() text?: string;
   @Input() icon?: Icon;
   @Input() iconSide?: 'right' | 'left' = 'left';
-  @Input({ required: true }) option: 'iconText' | 'icon' | 'text' = 'iconText';
   @Input() color: Color = 'primary';
   @Input() size: 's' | 'm' | 'l' = 'm';
   @Output() onClick: EventEmitter<void> = new EventEmitter<void>();
