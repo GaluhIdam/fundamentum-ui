@@ -15,6 +15,18 @@ type TextStyleProps =
 
 type ColumnWidth = 1 | 2 | 3 | 4;
 
+/**
+ * The DescriptionListComponent
+ * @usage
+ * ```html
+ * <fui-description-list
+ *  [data]="descriptionListData"
+ *  [type]="'column'"
+ *  [gap]="'m'"
+ *  [align]="'left'"
+ * ></fui-description-list>
+ * ```
+ */
 @Component({
   selector: 'fui-description-list',
   standalone: true,
