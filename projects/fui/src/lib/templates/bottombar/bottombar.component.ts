@@ -5,6 +5,19 @@ import { ButtonEmptyComponent } from '../../atoms/button-empty/button-empty.comp
 import { CommonModule } from '@angular/common';
 import { animate, style, transition, trigger } from '@angular/animations';
 
+/**
+ * The BottombarComponent
+ * @usage
+ * ```html
+ * <fui-bottombar
+ *  [isDisplay]="true"
+ *  (onConfirmButton)="handleConfirmBottomBar()"
+ *  (onCancelButton)="handleCancelBottomBar()"
+ * > BottomBar Content
+ * </fui-bottombar>
+ * ```
+ */
+
 @Component({
   selector: 'fui-bottombar',
   standalone: true,
