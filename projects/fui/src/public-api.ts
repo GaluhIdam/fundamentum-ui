@@ -86,6 +86,7 @@ export * from './lib/organisms/data-grid/data-grid.component';
 export * from './lib/organisms/data-grid/content-row/content-row.component';
 /* Tabs */
 export * from './lib/molecules/tabs/tabs.component';
+export * from './lib/molecules/tabs/tabs-content/tabs-content.component';
 /* Comment List */
 export * from './lib/templates/comment-list/comment-list.component';
 /* Side Nav */

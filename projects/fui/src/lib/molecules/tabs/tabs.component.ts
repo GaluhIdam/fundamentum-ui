@@ -1,7 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  ContentChildren,
+  Input,
+  QueryList,
+} from '@angular/core';
 import { Icon } from '../../types';
 import { IconsComponent } from '../../../public-api';
+import { TabsContentComponent } from './tabs-content/tabs-content.component';
 
 /**
  * The TabsComponent component
@@ -21,35 +28,46 @@ import { IconsComponent } from '../../../public-api';
   styleUrl: './tabs.component.scss',
 })
 export class TabsComponent {
-  @Input({ required: true }) dataTabs?: {
+  @ContentChildren(TabsContentComponent)
+  contentComponents!: QueryList<TabsContentComponent>;
+  @Input({ required: true }) dataTabs!: {
     active: boolean | 'disabled';
     icon?: Icon;
     sideIcon?: 'right' | 'left';
     prepend?: string;
     append?: string;
     title: string;
-    content: string;
   }[];
 
-  onActive(
-    dataT: {
-      active: boolean | 'disabled';
-      icon?: Icon;
-      sideIcon?: 'right' | 'left';
-      prepend?: string;
-      append?: string;
-      title: string;
-      content: string;
-    }[],
-    index: number
-  ): void {
-    dataT.forEach((item) => {
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.contentComponents.forEach((content) => {
+        this.dataTabs.forEach((item) => {
+          if (item.active === true && content.id === item.title) {
+            content.show = true;
+          }
+        });
+      });
+      this.cdr.detectChanges();
+    }, 0);
+  }
+  onActive(index: number, title: string): void {
+    this.contentComponents.forEach((content) => {
+      if (content.id === title) {
+        content.show = true;
+      } else {
+        content.show = false;
+      }
+    });
+    this.dataTabs!.forEach((item) => {
       item.active === true
         ? (item.active = false)
         : item.active === false
         ? (item.active = false)
         : (item.active = 'disabled');
     });
-    dataT[index].active = true;
+    this.dataTabs[index].active = true;
   }
 }

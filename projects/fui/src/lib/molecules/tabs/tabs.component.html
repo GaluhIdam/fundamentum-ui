@@ -3,7 +3,7 @@
     <button
       type="button"
       *ngFor="let title of dataTabs; let i = index"
-      (click)="onActive(dataTabs!, i)"
+      (click)="onActive(i, title.title)"
       [disabled]="title.active === 'disabled'"
       [ngClass]="{
         'btn-tabs-selector-active': title.active === true,
@@ -27,8 +27,8 @@
     </button>
   </div>
   <div class="fui-tab-content">
-    <div class="fui-tabs-content-selector" *ngFor="let content of dataTabs">
-      <span *ngIf="content.active === true">{{ content.content }}</span>
+    <div class="fui-tabs-content-selector">
+      <span><ng-content></ng-content></span>
     </div>
   </div>
 </div>
