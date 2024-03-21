@@ -70,6 +70,9 @@ export * from './lib/organisms/charts/chart-candlestick/chart-candlestick.compon
 export * from './lib/organisms/charts/chart-tree/chart-tree.component';
 
 export * from './lib/templates/modal/modal.component';
+export * from './lib/templates/modal/modal-header/modal-header.component';
+export * from './lib/templates/modal/modal-body/modal-body.component';
+export * from './lib/templates/modal/modal-footer/modal-footer.component';
 
 export * from './lib/templates/tooltip/tooltip.component';
 
@@ -88,3 +91,4 @@ export * from './lib/templates/tree-view/tree-view.component';
 
 export * from './lib/templates/description-list/description-list.component';
 export * from './lib/templates/context-menu/context-menu.component';
+export * from './lib/templates/context-menu/context-menu-item/context-menu-item.component';
