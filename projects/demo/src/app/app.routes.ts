@@ -15,7 +15,7 @@ import { ChartTreeViewComponent } from './organisms/chart-tree-view/chart-tree-v
 import { ModalViewComponent } from './templates/modal-view/modal-view.component';
 import { PanelViewComponent } from './templates/panel-view/panel-view.component';
 import { BreadcrumbViewComponent } from './molecules/breadcrumb-view/breadcrumb-view.component';
-import { ModalFlyoutViewComponent } from './template/modal-flyout-view/modal-flyout-view.component';
+import { FlyoutViewComponent } from './templates/flyout-view/flyout-view.component';
 import { TooltipViewComponent } from './templates/tooltip-view/tooltip-view.component';
 import { LoadingViewComponent } from './molecules/loading-view/loading-view.component';
 import { ToastViewComponent } from './templates/toast-view/toast-view.component';
@@ -132,8 +132,8 @@ export const routes: Routes = [
         component: ModalViewComponent,
       },
       {
-        path: 'modal-flyout',
-        component: ModalFlyoutViewComponent,
+        path: 'flyout',
+        component: FlyoutViewComponent,
       },
       {
         path: 'tooltip',

@@ -1,0 +1,38 @@
+@if (open) { @if (withOverlay) {
+<fui-overlay-mask (onOverlayClick)="handleOverlayClick()">
+  <ng-container *ngTemplateOutlet="flyout"> </ng-container>
+</fui-overlay-mask>
+} @else {
+<ng-container *ngTemplateOutlet="flyout"> </ng-container>
+} }
+
+<ng-template #flyout>
+  <div [ngClass]="['flyout']">
+    <div
+      [ngClass]="[
+        'flyout-layout',
+        flyoutDirection === 'start'
+          ? 'flyout-direction-start'
+          : 'flyout-direction-end'
+      ]"
+    >
+      <div class="flyout-container">
+        <div
+          [ngClass]="[
+            'flyout-content',
+            open ? 'flyout-content-open' : '',
+            flyoutSize ? 'flyout-size-' + flyoutSize : ''
+          ]"
+          [@slideInOut]
+          [style.transform]="
+            flyoutDirection === 'start'
+              ? 'translateX(-200%)'
+              : 'translateX(200%)'
+          "
+        >
+          <ng-content></ng-content>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
