@@ -1,0 +1,11 @@
+@import "../../styles/index";
+
+.container-inline-edit-s {
+ @include inlineEditMixin($fuiSizeS);
+}
+.container-inline-edit-m {
+ @include inlineEditMixin($fuiSizeM);
+}
+.container-inline-edit-l {
+ @include inlineEditMixin($fuiSizeM + 4);
+}

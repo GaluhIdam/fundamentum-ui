@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
     [color]="'success'">
  * </fui-icons>
  * ```
- * <example-url>http://localhost:4200/chart/chart-area</example-url>
+ * <example-url>http://localhost:4200/organisms/chart/chart-area</example-url>
  */
 
 @Component({

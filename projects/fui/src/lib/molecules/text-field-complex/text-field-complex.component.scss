@@ -1,0 +1,183 @@
+@import "../../styles/index";
+
+.fui-text-field-s {
+  @include textFieldBaseStyles($fuiColorPrimary, $fuiSizeM, 6px);
+}
+.fui-text-field-m {
+  @include textFieldBaseStyles($fuiColorPrimary, $fuiSizeM + 3, 10px);
+}
+.fui-text-field-l {
+  @include textFieldBaseStyles($fuiColorPrimary, $fuiSizeM + 6, 10px);
+}
+
+.fui-text-field-invalid-s {
+  @include textFieldIconComplex($fuiColorDanger, $fuiSizeM, 6px);
+}
+.fui-text-field-invalid-m {
+  @include textFieldIconComplex($fuiColorDanger, $fuiSizeM + 3, 10px);
+}
+.fui-text-field-invalid-l {
+  @include textFieldIconComplex($fuiColorDanger, $fuiSizeM + 6, 10px);
+}
+
+.container-text-append-s {
+  @include containerTxtAppendPrepend(6px, 6px, 0px, 0px, 6px);
+}
+.container-text-append-m {
+  @include containerTxtAppendPrepend(6px, 6px, 0px, 0px, 11px);
+}
+.container-text-append-l {
+  @include containerTxtAppendPrepend(6px, 6px, 0px, 0px, 13px);
+}
+
+.container-text-prepend-s {
+  @include containerTxtAppendPrepend(0px, 0px, 6px, 6px, 6px);
+}
+.container-text-prepend-m {
+  @include containerTxtAppendPrepend(0px, 0px, 6px, 6px, 11px);
+}
+.container-text-prepend-l {
+  @include containerTxtAppendPrepend(0px, 0px, 6px, 6px, 12px);
+}
+
+.text-append-prepend-s {
+  @include textAppendPrepend(small, #e9edf3);
+}
+.text-append-prepend-m {
+  @include textAppendPrepend(medium, #e9edf3);
+}
+.text-append-prepend-l {
+  @include textAppendPrepend(large, #e9edf3);
+}
+
+.fui-icon-input-none-s,
+.fui-icon-input-prepend-s {
+  @include prependAppend(10px);
+}
+.fui-icon-input-none-m,
+.fui-icon-input-prepend-m {
+  @include prependAppend(10px);
+}
+.fui-icon-input-none-l,
+.fui-icon-input-prepend-l {
+  @include prependAppend(10px);
+}
+
+.fui-icon-input-append-s,
+.fui-icon-input-append-prepend-s {
+  @include prependAppend(65px);
+}
+.fui-icon-input-append-m,
+.fui-icon-input-append-prepend-m {
+  @include prependAppend(85px);
+}
+.fui-icon-input-append-l,
+.fui-icon-input-append-prepend-l {
+  @include prependAppend(95px);
+}
+
+/* Add On */
+.flex {
+  @include flexTextFieldComplex(fit-content, flex);
+}
+.flex-full {
+  @include flexTextFieldComplex(-webkit-fill-available, block);
+  display: flex;
+}
+.fui-icon-loading {
+  @include prependAppend(50px);
+}
+.msg-validation {
+  @include msgValidator($fuiSizeS, $fuiColorDanger);
+}
+
+.border-none {
+  @include borderInputTXTFC(6px, 6px, 6px, 6px);
+}
+.border-append {
+  @include borderInputTXTFC(0px, 0px, 6px, 6px);
+}
+.border-prepend {
+  @include borderInputTXTFC(6px, 6px, 0px, 0px);
+}
+.border-append-prepend {
+  @include borderInputTXTFC(0px, 0px, 0px, 0px);
+}
+
+.full-width {
+  width: -webkit-fill-available;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.fui-icon-mx {
+  margin: 0px 5px 0px 5px;
+  display: inline-block;
+}
+
+.s {
+  top: 5px;
+}
+
+.m, .l {
+  top: 10px;
+}
+
+.fui-icon-search {
+  position: absolute;
+  left: 8px;
+}
+.fui-icon-search-prepend {
+  position: absolute;
+  left: 10px;
+}
+
+.pl-35 {
+  padding-left: 35px;
+  padding-right: 45px;
+}
+.pl-10 {
+  padding-left: 10px;
+}
+.pr-10 {
+  padding-right: 10px;
+}
+.pr-70 {
+  padding-right: 70px;
+}
+
+.pr-100 {
+  padding-right: 100px;
+}
+
+.custom-select {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#my-select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #000;
+}
+
+.fui-icon-util {
+  z-index: -1;
+  margin-right: 25px;
+}

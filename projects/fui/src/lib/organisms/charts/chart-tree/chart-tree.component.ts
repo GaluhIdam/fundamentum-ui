@@ -18,7 +18,7 @@ import { ThemesChart } from '../theme-chart';
     [alignmentTitleY]="'top'">
  * </fui-chart-tree>
  * ```
- * <example-url>http://localhost:4200/chart/chart-tree</example-url>
+ * <example-url>http://localhost:4200/organisms/chart/chart-tree</example-url>
  */
 
 @Component({
