@@ -1,12 +1,30 @@
 import { Component } from '@angular/core';
-import { ButtonComponent, ModalComponent } from 'fui';
+import {
+  ButtonComponent,
+  IconsComponent,
+  ModalBodyComponent,
+  ModalComponent,
+  ModalFooterComponent,
+  ModalHeaderComponent,
+  SpacerComponent,
+  TextComponent,
+} from 'fui';
 
 @Component({
   selector: 'app-modal-view',
   standalone: true,
   templateUrl: './modal-view.component.html',
   styleUrl: './modal-view.component.scss',
-  imports: [ButtonComponent, ModalComponent],
+  imports: [
+    ButtonComponent,
+    ModalComponent,
+    ModalHeaderComponent,
+    ModalBodyComponent,
+    ModalFooterComponent,
+    TextComponent,
+    IconsComponent,
+    SpacerComponent,
+  ],
 })
 export class ModalViewComponent {
   isModalOpen: boolean = false;

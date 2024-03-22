@@ -1,0 +1,16 @@
+<div
+  [ngClass]="['flyout-header-container', padding ? 'flyout-p-' + padding : '']"
+>
+  <div class="flyout-header">
+    <div class="title">
+      <ng-content></ng-content>
+    </div>
+    <div class="close-flyout" (click)="onHandleCloseFlyout()">
+      <fui-icons
+        [icon]="iconClose"
+        [size]="iconCloseSize"
+        [color]="iconCloseColor"
+      />
+    </div>
+  </div>
+</div>

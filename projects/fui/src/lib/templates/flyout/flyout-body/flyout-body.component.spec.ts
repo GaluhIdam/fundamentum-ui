@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalFlyoutViewComponent } from './modal-flyout-view.component';
+import { FlyoutBodyComponent } from './flyout-body.component';
 
-describe('ModalFlyoutViewComponent', () => {
-  let component: ModalFlyoutViewComponent;
-  let fixture: ComponentFixture<ModalFlyoutViewComponent>;
+describe('FlyoutBodyComponent', () => {
+  let component: FlyoutBodyComponent;
+  let fixture: ComponentFixture<FlyoutBodyComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ModalFlyoutViewComponent]
+      imports: [FlyoutBodyComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ModalFlyoutViewComponent);
+    fixture = TestBed.createComponent(FlyoutBodyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

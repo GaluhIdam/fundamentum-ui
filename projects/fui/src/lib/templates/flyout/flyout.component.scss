@@ -1,0 +1,73 @@
+@use './../../styles//variables/color_variable' as color;
+@use './../../styles//variables/z_index_variable' as zIndex;
+@use './../../styles//variables//shadow_variable' as shadow;
+@use './../../styles/variables//responsive_variable' as responsive;
+
+.flyout {
+  &-layout {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: zIndex.$fuiZModal;
+    display: flex;
+  }
+
+  &-container {
+    position: relative;
+  }
+
+  &-content {
+    height: 100vh;
+    background-color: rgba($color: #fff, $alpha: 1.0);
+    min-width: 400px;
+    width: fit-content;
+    box-shadow:
+    0 2.7px 9px rgba(shadow.$fuiShadowColor, .13),
+    0 9.4px 24px rgba(shadow.$fuiShadowColor, .09),
+    0 21.8px 43px rgba(shadow.$fuiShadowColor, .08);
+
+    display: flex;
+    flex-direction: column;
+
+    ::ng-deep fui-flyout-body {
+      flex: 1;
+      overflow-y: scroll;
+
+      scrollbar-width: thin;
+      scrollbar-color: color.$fuiColorLightShade;
+    }
+  }
+
+
+  @media screen and (max-width: map-get($map: responsive.$fuiBreakpoints, $key: 's')){
+    &-container {
+    min-width: fit-content;
+    }
+  }
+}
+
+.flyout-direction-start {
+  justify-content: flex-start;
+  left: 0;
+}
+
+.flyout-direction-end {
+  justify-content: flex-end;
+  right: 0;
+}
+
+.flyout-size-s {
+  width: 25vw;
+}
+
+.flyout-size-m {
+  width: 50vw;
+}
+
+.flyout-size-l {
+  width: 75vw;
+}
+
+.flyout-size-auto {
+  width: fit-content;
+}
