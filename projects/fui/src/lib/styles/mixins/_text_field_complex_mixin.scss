@@ -1,8 +1,6 @@
 @import "../variables/index";
 
 @mixin textFieldBaseStyles($size, $padding) {
-  width: -webkit-fill-available;
-  min-width: 250px;
   font-family: $fuiFontFamily;
   font-size: $size;
   height: fit-content;
@@ -14,6 +12,7 @@
   padding-right: 10px;
   outline: none;
   background-color: transparent;
+  width: 100%;
   &:focus {
     outline: none;
   }
