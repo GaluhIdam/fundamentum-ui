@@ -1,7 +1,6 @@
 @import "../../../styles/index";
 :host {
   width: -webkit-fill-available;
-  margin: 0px -3px 0px -3px;
 }
 .fui-input-field {
   @include inputFieldContainer();
