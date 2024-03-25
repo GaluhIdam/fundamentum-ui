@@ -1,1 +1,37 @@
-<p>select-field works!</p>
+<div
+  class="fui-input-field radius-default"
+  [ngClass]="{
+    default: active && !invalid,
+    invalid: invalid
+  }"
+>
+  <ng-content select="[left-icon]"></ng-content>
+  <select
+    [formControl]="formControlField"
+    [ngClass]="{
+      'fui-input-field-s': size == 's',
+      'fui-input-field-m':  size == 'm',
+      'fui-input-field-l':  size == 'l',
+    }"
+  >
+    <option value="" selected hidden>{{ placeholder }}</option>
+    <option *ngFor="let option of selectOptions" [value]="option.value">
+      {{ option.label }}
+    </option>
+  </select>
+  <!-- <input
+    [formControl]="formControlField"
+    (blur)="active = false"
+    (focus)="active = true"
+    [type]="type"
+    [placeholder]="placeholder"
+    [ngClass]="{
+      'fui-input-field-s': size == 's',
+      'fui-input-field-m':  size == 'm',
+      'fui-input-field-l':  size == 'l',
+    }"
+  /> -->
+
+  <ng-content select="[right-icon]"></ng-content>
+</div>
+<ng-content select="[validator]"></ng-content>

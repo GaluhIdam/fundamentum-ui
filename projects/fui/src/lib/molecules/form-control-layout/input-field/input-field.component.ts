@@ -1,13 +1,10 @@
 import { CommonModule } from '@angular/common';
 import {
   Component,
-  ContentChild,
   ContentChildren,
   Input,
   QueryList,
-  ViewChild,
 } from '@angular/core';
-import { ValidatorFieldComponent } from '../validator-field/validator-field.component';
 import { IconsComponent } from '../../../../public-api';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 

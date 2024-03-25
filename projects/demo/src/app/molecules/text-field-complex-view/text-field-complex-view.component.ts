@@ -17,6 +17,7 @@ import {
   ValidatorFieldComponent,
   IconsComponent,
   LoadingComponent,
+  SelectFieldComponent,
 } from 'fui';
 interface TEST {
   nama: string;
@@ -32,6 +33,7 @@ interface TEST {
     AppendComponent,
     ValidatorFieldComponent,
     IconsComponent,
+    SelectFieldComponent,
     LoadingComponent,
     ReactiveFormsModule,
     CommonModule,

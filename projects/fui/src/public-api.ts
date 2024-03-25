@@ -85,6 +85,7 @@ export * from './lib/molecules/form-control-layout/append/append.component';
 export * from './lib/molecules/form-control-layout/prepend/prepend.component';
 export * from './lib/molecules/form-control-layout/input-field/input-field.component';
 export * from './lib/molecules/form-control-layout/validator-field/validator-field.component';
+export * from './lib/molecules/form-control-layout/select-field/select-field.component';
 /* Pagination */
 export * from './lib/organisms/pagination/pagination.component';
 /* Data Grid */

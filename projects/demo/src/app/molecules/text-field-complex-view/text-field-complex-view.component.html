@@ -34,8 +34,48 @@
     <fui-validator-field validator />
   </fui-form-control-layout>
 </div>
+<div class="fit">
+  <fui-form-control-layout>
+    <fui-prepend>
+      <p>Prepend</p>
+    </fui-prepend>
 
-<div class="fit flex" style="align-items: center;">
+    <fui-select-field
+      [invalid]="true"
+      [size]="'m'"
+      [selectOptions]="selectOptions"
+    >
+      <fui-icons
+        left-icon
+        [label]="'left'"
+        [icon]="'search'"
+        [size]="'sizel'"
+        [color]="'text'"
+      />
+      <fui-loading
+        class="mx-5"
+        right-icon
+        [type]="'spinner'"
+        [isLoading]="true"
+        [size]="'sizel'"
+      ></fui-loading>
+      <fui-icons
+        right-icon
+        [label]="'right'"
+        [icon]="'alert'"
+        [size]="'sizel'"
+        [color]="'danger'"
+      />
+    </fui-select-field>
+
+    <fui-append>
+      <p>Append</p>
+    </fui-append>
+    <fui-validator-field validator />
+  </fui-form-control-layout>
+</div>
+
+<div class="fit flex" style="align-items: center">
   <div class="max-width">
     <fui-form-control-layout>
       <fui-prepend>
