@@ -1,3 +1,4 @@
+import { TimelineViewComponent } from './organisms/timeline-view/timeline-view.component';
 import { Routes } from '@angular/router';
 import { ChartBarViewComponent } from './organisms/charts/chart-bar-view/chart-bar-view.component';
 import { ChartLineViewComponent } from './organisms/charts/chart-line-view/chart-line-view.component';
@@ -25,7 +26,6 @@ import { LoadingViewComponent } from './molecules/loading-view/loading-view.comp
 import { InlineEditViewComponent } from './organisms/inline-edit-view/inline-edit-view.component';
 import { DataGridViewComponent } from './organisms/data-grid-view/data-grid-view.component';
 import { TabsViewComponent } from './molecules/tabs-view/tabs-view.component';
-import { CommentListViewComponent } from './templates/comment-list-view/comment-list-view.component';
 import { SidenavViewComponent } from './templates/sidenav-view/sidenav-view.component';
 import { CollapsibleNavViewComponent } from './templates/collapsible-nav-view/collapsible-nav-view.component';
 import { ComboBoxViewComponent } from './molecules/combo-box-view/combo-box-view.component';
@@ -75,6 +75,10 @@ export const routes: Routes = [
       {
         path: 'data-grid',
         component: DataGridViewComponent,
+      },
+      {
+        path: 'timeline',
+        component: TimelineViewComponent,
       },
       {
         path: 'chart',
@@ -191,10 +195,6 @@ export const routes: Routes = [
       {
         path: 'flyout',
         component: FlyoutViewComponent,
-      },
-      {
-        path: 'comment-list',
-        component: CommentListViewComponent,
       },
       {
         path: 'side-nav',

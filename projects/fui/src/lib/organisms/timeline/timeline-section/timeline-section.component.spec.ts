@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CommentListViewComponent } from './comment-list-view.component';
+import { TimelineSectionComponent } from './timeline-section.component';
 
-describe('CommentListViewComponent', () => {
-  let component: CommentListViewComponent;
-  let fixture: ComponentFixture<CommentListViewComponent>;
+describe('TimelineSectionComponent', () => {
+  let component: TimelineSectionComponent;
+  let fixture: ComponentFixture<TimelineSectionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CommentListViewComponent]
+      imports: [TimelineSectionComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(CommentListViewComponent);
+    fixture = TestBed.createComponent(TimelineSectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

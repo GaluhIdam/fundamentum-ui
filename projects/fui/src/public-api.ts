@@ -94,8 +94,10 @@ export * from './lib/organisms/data-grid/content-row/content-row.component';
 /* Tabs */
 export * from './lib/molecules/tabs/tabs.component';
 export * from './lib/molecules/tabs/tabs-content/tabs-content.component';
-/* Comment List */
-export * from './lib/templates/comment-list/comment-list.component';
+/* Timeline */
+export * from './lib/organisms/timeline/timeline.component';
+export * from './lib/organisms/timeline/timeline-section/timeline-section.component';
+export * from './lib/organisms/timeline/comment-list/comment-list.component';
 /* Side Nav */
 export * from './lib/templates/sidenav/sidenav.component';
 /* Collapsible Nav */

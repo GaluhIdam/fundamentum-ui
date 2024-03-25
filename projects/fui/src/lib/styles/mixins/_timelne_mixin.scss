@@ -1,0 +1,24 @@
+@import "../variables/index";
+
+@mixin commentList($txtColor, $borderColor, $headerBgColor) {
+  color: $txtColor;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  border-color: $borderColor;
+  .header-comment {
+    padding: 10px;
+    background-color: $headerBgColor;
+    border-bottom-width: 1px;
+    border-bottom-color: $borderColor;
+    border-bottom-style: solid;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+  .content-comment {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding: 10px;
+    background-color: transparent;
+  }
+}
