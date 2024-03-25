@@ -17,42 +17,6 @@
     gap: 1rem;
   }
 
-  &-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .close-modal {
-      cursor: pointer;
-    }
-  }
-
-  &-footer {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-
-    &-button{
-      display: flex;
-          
-      &.reversed-button {
-        flex-direction: row-reverse;
-      }
-    }
-
-    &.button-position-start {
-      justify-content: flex-start;
-    }
-
-    &.button-position-center {
-      justify-content: center;
-    }
-
-    &.button-position-end {
-      justify-content: flex-end;
-    }
-  }
-
   @media screen and (max-width: map-get($map: $fuiBreakpoints, $key: 's')){
     &-container {
     min-width: fit-content;

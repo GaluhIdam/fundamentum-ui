@@ -32,8 +32,10 @@ export * from './lib/organisms/accordion/accordion.component';
 export * from './lib/organisms/empty-prompt/empty-prompt.component';
 export * from './lib/organisms/pagination/pagination.component';
 
-export * from './lib/templates/modal/modal.component';
-export * from './lib/templates/modal-flyout/modal-flyout.component';
+export * from './lib/templates/flyout/flyout.component';
+export * from './lib/templates/flyout/flyout-header/flyout-header.component';
+export * from './lib/templates/flyout/flyout-body/flyout-body.component';
+export * from './lib/templates/flyout/flyout-footer/flyout-footer.component';
 export * from './lib/templates/panel/panel.component';
 
 export * from './lib/molecules/avatar/avatar.component';
@@ -106,6 +108,9 @@ export * from './lib/molecules/field-filepicker/field-filepicker.component';
 export * from './lib/types';
 
 export * from './lib/templates/modal/modal.component';
+export * from './lib/templates/modal/modal-header/modal-header.component';
+export * from './lib/templates/modal/modal-body/modal-body.component';
+export * from './lib/templates/modal/modal-footer/modal-footer.component';
 
 export * from './lib/templates/tooltip/tooltip.component';
 
@@ -124,3 +129,4 @@ export * from './lib/templates/tree-view/tree-view.component';
 
 export * from './lib/templates/description-list/description-list.component';
 export * from './lib/templates/context-menu/context-menu.component';
+export * from './lib/templates/context-menu/context-menu-item/context-menu-item.component';

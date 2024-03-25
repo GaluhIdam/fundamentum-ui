@@ -1,0 +1,32 @@
+@use './../../../styles//variables/color_variable' as color;
+@use './../../../styles//variables/size_variable' as size;
+
+.flyout-header-container {
+  border-bottom: 1px solid color.$fuiColorLightShade;
+}
+
+.flyout-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  .close-flyout {
+    cursor: pointer;
+  }
+}
+
+.flyout-p-none {
+  padding: 0;
+}
+
+.flyout-p-s {
+  padding: size.$fuiSizeS;
+}
+
+.flyout-p-m {
+  padding: size.$fuiSizeM;
+}
+
+.flyout-p-l {
+  padding: size.$fuiSizeL;
+}

@@ -2,17 +2,22 @@ import { Component } from '@angular/core';
 import {
   ButtonComponent,
   ContextMenuComponent,
+  ContextMenuItemComponent,
   ContextMenuItemProps,
   ContextMenuProps,
   IconsComponent,
 } from 'fui';
-
 @Component({
   selector: 'app-context-menu-view',
   standalone: true,
   templateUrl: './context-menu-view.component.html',
   styleUrl: './context-menu-view.component.scss',
-  imports: [ContextMenuComponent, ButtonComponent, IconsComponent],
+  imports: [
+    ContextMenuComponent,
+    ButtonComponent,
+    IconsComponent,
+    ContextMenuItemComponent,
+  ],
 })
 export class ContextMenuViewComponent {
   dataContextMenu: ContextMenuProps = {
@@ -40,7 +45,7 @@ export class ContextMenuViewComponent {
         icon: 'wrench',
         iconExpand: 'arrowRight',
         children: {
-          id: 'nest-panels',
+          id: 'sub-nest-panels',
           title: 'Nest panels',
           isMenu: true,
           items: [
@@ -87,6 +92,10 @@ export class ContextMenuViewComponent {
         tooltipPosition: 'right',
         tooltipTitle: 'Optional tooltip title',
         tooltipContent: 'Optional content for a tooltip',
+        children: {
+          id: 'tooltip-dynamic-content',
+          title: 'Tooltip Dynamic Content',
+        },
       },
       {
         label: 'Dynamic Content',
