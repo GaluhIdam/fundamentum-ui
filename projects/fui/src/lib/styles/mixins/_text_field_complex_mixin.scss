@@ -1,18 +1,20 @@
 @import "../variables/index";
 
-@mixin textFieldBaseStyles($color, $size, $padding) {
+@mixin textFieldBaseStyles($size, $padding) {
+  width: -webkit-fill-available;
+  min-width: 250px;
   font-family: $fuiFontFamily;
   font-size: $size;
-  border-width: 1px;
-  border-color: #a7a7a738;
-  background-color: #fbfcfd;
+  height: fit-content;
   padding-top: $padding;
   padding-bottom: $padding;
+  border: none;
   box-shadow: none;
-
+  padding-left: 10px;
+  padding-right: 10px;
+  outline: none;
+  background-color: transparent;
   &:focus {
-    border-bottom-color: $color;
-    border-bottom-width: 2px;
     outline: none;
   }
 
@@ -26,33 +28,23 @@
   }
 }
 
-@mixin textFieldIconComplex($color, $size, $padding) {
-  @include textFieldBaseStyles($color, $size, $padding);
-
-  border-bottom-color: $color;
-  border-bottom-width: 2px;
-}
-
-@mixin prependAppend($right) {
-  right: $right;
-  position: absolute;
-}
-
-@mixin msgValidator($size, $color) {
-  font-family: $fuiFontFamily;
-  font-size: $size + 3;
-  color: $color;
-}
-
-@mixin flexTextFieldComplex($width, $display) {
-  display: $display;
-  align-items: center;
+@mixin inputFieldContainer() {
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
   position: relative;
-  width: $width;
-  margin-bottom: 3px;
+  align-items: center;
+  width: -webkit-fill-available;
+  height: 100%;
 }
 
-@mixin borderInputTXTFC($topRight, $bottomRight, $topLeft, $bottomLeft) {
+@mixin bottomLine($color) {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: $color;
+}
+
+@mixin borderRadius($topRight, $bottomRight, $topLeft, $bottomLeft) {
   border-top-right-radius: $topRight;
   border-bottom-right-radius: $bottomRight;
   border-top-left-radius: $topLeft;
@@ -66,19 +58,26 @@
   height: 100%;
 }
 
-@mixin containerTxtAppendPrepend(
-  $topRight,
-  $bottomRight,
-  $topLeft,
-  $bottomLeft,
-  $padding
-) {
-  height: 100%;
+@mixin appendPrepend($padding, $bgColor, $borderRadius) {
   padding: $padding;
-  width: fit-content;
-  align-items: center;
+  font-family: $fuiFontFamily;
+  background-color: $bgColor;
+  height: inherit;
+  z-index: 1;
+  border-radius: $borderRadius;
+}
+
+@mixin validatorInputField($color, $fontSize) {
+  color: $color;
+  margin: 10px 0px 0px 0px;
+  font-family: $fuiFontFamily;
+  font-size: $fontSize;
+}
+
+@mixin formControlLayout($borderColor, $borderWidth, $padding) {
   display: flex;
-  justify-content: center;
-  position: relative;
-  @include borderInputTXTFC($topRight, $bottomRight, $topLeft, $bottomLeft);
+  border-style: solid;
+  border-width: $borderWidth;
+  border-color: $borderColor;
+  padding: $padding;
 }

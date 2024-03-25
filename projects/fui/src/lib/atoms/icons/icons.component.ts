@@ -26,4 +26,5 @@ export class IconsComponent {
   @Input({ required: true }) icon!: Icon;
   @Input() size: Size = 'sizedefault';
   @Input() color!: Color;
+  @Input() label: string = '';
 }

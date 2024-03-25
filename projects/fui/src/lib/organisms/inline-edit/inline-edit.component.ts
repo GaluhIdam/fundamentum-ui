@@ -1,10 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { TextFieldComplexComponent } from '../../molecules/text-field-complex/text-field-complex.component';
 import { IconsComponent } from '../../atoms/icons/icons.component';
 import { ButtonIconComponent } from '../../molecules/button-icon/button-icon.component';
-
 /**
  * The CalloutComponent component
  * @usage
@@ -24,12 +22,7 @@ import { ButtonIconComponent } from '../../molecules/button-icon/button-icon.com
 @Component({
   selector: 'fui-inline-edit',
   standalone: true,
-  imports: [
-    TextFieldComplexComponent,
-    IconsComponent,
-    ButtonIconComponent,
-    CommonModule,
-  ],
+  imports: [IconsComponent, ButtonIconComponent, CommonModule],
   templateUrl: './inline-edit.component.html',
   styleUrl: './inline-edit.component.scss',
 })
