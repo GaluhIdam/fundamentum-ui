@@ -6,6 +6,7 @@ export type Color =
   | 'text'
   | 'accent'
   | 'ghost'
+  | 'ink'
   | 'disabled';
 
 export type Size =
@@ -399,4 +400,32 @@ export interface PopoverConfigProps {
   footerButtonType?: 'button' | 'button-empty';
   footerButtonText?: string;
   footerButtonColor?: Color;
+}
+
+export enum StepStatus {
+  CURRENT = 'current',
+  COMPLETE = 'complete',
+  INCOMPLETE = 'incomplete',
+  WARNING = 'warning',
+  ERROR = 'error',
+  DISABLED = 'disabled',
+}
+
+export interface StepProps {
+  id: string;
+  stepType?: 'number' | 'icon';
+  stepStatus: StepStatus;
+  stepIcon?: {
+    [key in StepStatus]?: Icon;
+  };
+  stepBackground?: {
+    [key in StepStatus]?: Color;
+  };
+  stepColor?: {
+    [key in StepStatus]?: Color;
+  };
+  stepSize?: Size;
+  title?: string;
+  titleColor?: Color;
+  titleSize?: Size;
 }
