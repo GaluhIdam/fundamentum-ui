@@ -75,7 +75,7 @@
   </fui-form-control-layout>
 </div>
 
-<div class="fit" style="align-items: center;">
+<div class="fit" style="align-items: center">
   <div class="max-width">
     <fui-form-control-layout>
       <fui-prepend>
@@ -196,6 +196,18 @@
           [color]="'text'"
         />
       </fui-append>
+    </fui-form-control-layout>
+  </div>
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-input-field
+        [formControlField]="passwordForm"
+        [type]="showPass ? 'text' : 'password'"
+        [size]="'l'"
+        [placeholder]="'Password'"
+        [invalid]="false"
+      >
+      </fui-input-field>
     </fui-form-control-layout>
   </div>
 </div>
