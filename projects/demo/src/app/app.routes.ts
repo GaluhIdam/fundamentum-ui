@@ -271,7 +271,7 @@ export const routes: Routes = [
         component: TabsViewComponent,
       },
       {
-        path: 'text-field/:paramName',
+        path: 'text-field',
         component: TextFieldComplexViewComponent,
       },
       {
