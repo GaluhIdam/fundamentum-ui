@@ -1,0 +1,39 @@
+@if (isCustomModalFooter) {
+<div class="modal-footer-custom">
+  <ng-content></ng-content>
+</div>
+} @else {
+<div [ngClass]="['modal-footer', 'button-position-' + modalButtonPosition]">
+  <div
+    [ngClass]="[
+      'modal-footer-button',
+      reverseButtonPosition ? 'reversed-button' : ''
+    ]"
+  >
+    <div class="cancel-button" (click)="onHandleCancelButton()">
+      @if (showCancelButton) { @if(cancelButtonType === 'button') {
+      <fui-button [size]="cancelButtonSize" [color]="cancelButtonColor">{{
+        cancelButtonText
+      }}</fui-button>
+      } @else {
+      <fui-button-empty [size]="cancelButtonSize" [color]="cancelButtonColor">{{
+        cancelButtonText
+      }}</fui-button-empty>
+      } }
+    </div>
+    <div class="confirm-button" (click)="onHandleConfirmButton()">
+      @if (showConfirmButton) { @if(confirmButtonType === 'button') {
+      <fui-button [size]="confirmButtonSize" [color]="confirmButtonColor">{{
+        confirmButtonText
+      }}</fui-button>
+      } @else {
+      <fui-button-empty
+        [size]="confirmButtonSize"
+        [color]="confirmButtonColor"
+        >{{ confirmButtonText }}</fui-button-empty
+      >
+      } }
+    </div>
+  </div>
+</div>
+}

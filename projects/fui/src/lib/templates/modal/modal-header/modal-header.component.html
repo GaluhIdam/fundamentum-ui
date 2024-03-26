@@ -1,0 +1,12 @@
+<div class="modal-header">
+  <div class="title">
+    <ng-content></ng-content>
+  </div>
+  <div class="close-modal" (click)="onHandleCloseModal()">
+    <fui-icons
+      [icon]="iconClose"
+      [size]="iconCloseSize"
+      [color]="iconCloseColor"
+    />
+  </div>
+</div>

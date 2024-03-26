@@ -23,7 +23,7 @@ import { TabsContentComponent } from './tabs-content/tabs-content.component';
 @Component({
   selector: 'fui-tabs',
   standalone: true,
-  imports: [CommonModule, IconsComponent],
+  imports: [CommonModule],
   templateUrl: './tabs.component.html',
   styleUrl: './tabs.component.scss',
 })

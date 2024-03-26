@@ -1,18 +1,24 @@
 <div class="container">
   <fui-button (click)="openModal()">Show Modal</fui-button>
-  <fui-modal
-    [open]="isModalOpen"
-    [title]="'Title'"
-    (onCancelButton)="handleCancelModal()"
-    (onConfirmButton)="handleConfirmButton()"
-    (onCloseModal)="handleCloseModal()"
-    (onClickOverlayModal)="handleClickOverlay()"
-  >
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error voluptatem
-    nobis totam quasi mollitia adipisci magnam qui corporis reprehenderit,
-    laboriosam, nulla distinctio minus blanditiis modi debitis, veniam soluta
-    corrupti numquam optio fugit quisquam explicabo ducimus? Labore amet animi
-    porro delectus.
+  <fui-modal [open]="isModalOpen" (onClickOverlayModal)="handleClickOverlay()">
+    <fui-modal-header (onCloseModal)="handleCloseModal()">
+      <fui-text [size]="'sizel'">
+        <fui-icons [icon]="'apps'" />
+        Title Modal Header
+      </fui-text>
+    </fui-modal-header>
+    <fui-modal-body>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error voluptatem
+      nobis totam quasi mollitia adipisci magnam qui corporis reprehenderit,
+      laboriosam, nulla distinctio minus blanditiis modi debitis, veniam soluta
+      corrupti numquam optio fugit quisquam explicabo ducimus? Labore amet animi
+      porro delectus.
+    </fui-modal-body>
+    <fui-modal-footer [isCustomModalFooter]="true">
+      <fui-text>Footer Modal</fui-text>
+      <fui-spacer [direction]="'horizontal'"></fui-spacer>
+      <fui-button (click)="handleCancelModal()">Close Modal</fui-button>
+    </fui-modal-footer>
   </fui-modal>
 </div>
 
@@ -20,18 +26,22 @@
   <fui-button (click)="openModalDelete()" [color]="'danger'"
     >Show Modal Delete</fui-button
   >
-  <fui-modal
-    [open]="isModalDeleteOpen"
-    [title]="'Delete 6 pipelines?'"
-    [titleSize]="'sizexl'"
-    [titleColor]="'danger'"
-    [iconCloseColor]="'danger'"
-    [confirmButtonColor]="'danger'"
-    [confirmButtonText]="'Delete'"
-    (onCancelButton)="handleCancelModalDelete()"
-    (onConfirmButton)="handleConfirmButtonModalDelete()"
-    (onCloseModal)="handleCloseModalDelete()"
-  >
-    You can’t recover deleted data.
+  <fui-modal [open]="isModalDeleteOpen">
+    <fui-modal-header
+      [iconCloseColor]="'danger'"
+      (onCloseModal)="handleCloseModalDelete()"
+    >
+      <fui-text [color]="'danger'" [size]="'sizexl'"
+        >Delete 6 pipelines?</fui-text
+      >
+    </fui-modal-header>
+    <fui-modal-body> You can’t recover deleted data. </fui-modal-body>
+    <fui-modal-footer
+      [confirmButtonColor]="'danger'"
+      [confirmButtonText]="'Delete'"
+      (onCancelButton)="handleCancelModalDelete()"
+      (onConfirmButton)="handleConfirmButtonModalDelete()"
+    >
+    </fui-modal-footer>
   </fui-modal>
 </div>

@@ -1,0 +1,58 @@
+@import "../../../styles/index";
+
+.fui-comment-list-primary {
+  @include commentList(
+    $fuiColorDarkestShade,
+    $fuiColorPrimary,
+    $fuiBtnPrimarySecondary
+  );
+}
+.fui-comment-list-success {
+  @include commentList(
+    $fuiColorDarkestShade,
+    $fuiColorSuccess,
+    $fuiBtnSuccessSecondary
+  );
+}
+.fui-comment-list-warning {
+  @include commentList(
+    $fuiColorDarkestShade,
+    $fuiColorWarning,
+    $fuiBtnWarningSecondary
+  );
+}
+.fui-comment-list-danger {
+  @include commentList(
+    $fuiColorDarkestShade,
+    $fuiColorDanger,
+    $fuiBtnDangerSecondary
+  );
+}
+.fui-comment-list-text {
+  @include commentList(
+    $fuiColorDarkestShade,
+    $fuiColorLightShade,
+    $fuiBtnTextSecondary
+  );
+}
+.fui-comment-list-accent {
+  @include commentList(
+    $fuiColorDarkestShade,
+    $fuiColorAccent,
+    $fuiBtnAccentSecondary
+  );
+}
+.fui-comment-list-ghost {
+  @include commentList(
+    $fuiColorDarkestShade,
+    $fuiColorDarkShade,
+    $fuiColorGhost
+  );
+}
+.fui-comment-list-disabled {
+  @include commentList($fuiColorDisabledText, $fuiColorLightShade, $fuiColorLightestShade);
+}
+
+:host {
+  width: 100%;
+}

@@ -1,3 +1,4 @@
+import { TimelineViewComponent } from './organisms/timeline-view/timeline-view.component';
 import { Routes } from '@angular/router';
 import { ChartBarViewComponent } from './organisms/charts/chart-bar-view/chart-bar-view.component';
 import { ChartLineViewComponent } from './organisms/charts/chart-line-view/chart-line-view.component';
@@ -15,17 +16,16 @@ import { ChartTreeViewComponent } from './organisms/charts/chart-tree-view/chart
 import { ModalViewComponent } from './templates/modal-view/modal-view.component';
 import { PanelViewComponent } from './templates/panel-view/panel-view.component';
 import { BreadcrumbViewComponent } from './molecules/breadcrumb-view/breadcrumb-view.component';
+import { FlyoutViewComponent } from './templates/flyout-view/flyout-view.component';
 import { CalloutViewComponent } from './organisms/callout-view/callout-view.component';
 import { LinkViewComponent } from './atoms/link-view/link-view.component';
 import { ButtonIconViewComponent } from './molecules/button-icon-view/button-icon-view.component';
 import { TextFieldComplexViewComponent } from './molecules/text-field-complex-view/text-field-complex-view.component';
-import { ModalFlyoutViewComponent } from './template/modal-flyout-view/modal-flyout-view.component';
 import { TooltipViewComponent } from './templates/tooltip-view/tooltip-view.component';
 import { LoadingViewComponent } from './molecules/loading-view/loading-view.component';
 import { InlineEditViewComponent } from './organisms/inline-edit-view/inline-edit-view.component';
 import { DataGridViewComponent } from './organisms/data-grid-view/data-grid-view.component';
 import { TabsViewComponent } from './molecules/tabs-view/tabs-view.component';
-import { CommentListViewComponent } from './templates/comment-list-view/comment-list-view.component';
 import { SidenavViewComponent } from './templates/sidenav-view/sidenav-view.component';
 import { CollapsibleNavViewComponent } from './templates/collapsible-nav-view/collapsible-nav-view.component';
 import { ComboBoxViewComponent } from './molecules/combo-box-view/combo-box-view.component';
@@ -80,6 +80,10 @@ export const routes: Routes = [
       {
         path: 'steps',
         component: StepsViewComponent,
+      },
+      {
+        path: 'timeline',
+        component: TimelineViewComponent,
       },
       {
         path: 'chart',
@@ -194,12 +198,8 @@ export const routes: Routes = [
         component: ModalViewComponent,
       },
       {
-        path: 'modal-flyout',
-        component: ModalFlyoutViewComponent,
-      },
-      {
-        path: 'comment-list',
-        component: CommentListViewComponent,
+        path: 'flyout',
+        component: FlyoutViewComponent,
       },
       {
         path: 'side-nav',
@@ -276,7 +276,7 @@ export const routes: Routes = [
         component: TabsViewComponent,
       },
       {
-        path: 'text-field/:paramName',
+        path: 'text-field',
         component: TextFieldComplexViewComponent,
       },
       {

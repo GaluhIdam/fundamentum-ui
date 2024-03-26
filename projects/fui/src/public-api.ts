@@ -32,8 +32,10 @@ export * from './lib/organisms/accordion/accordion.component';
 export * from './lib/organisms/empty-prompt/empty-prompt.component';
 export * from './lib/organisms/pagination/pagination.component';
 
-export * from './lib/templates/modal/modal.component';
-export * from './lib/templates/modal-flyout/modal-flyout.component';
+export * from './lib/templates/flyout/flyout.component';
+export * from './lib/templates/flyout/flyout-header/flyout-header.component';
+export * from './lib/templates/flyout/flyout-body/flyout-body.component';
+export * from './lib/templates/flyout/flyout-footer/flyout-footer.component';
 export * from './lib/templates/panel/panel.component';
 
 export * from './lib/molecules/avatar/avatar.component';
@@ -78,7 +80,12 @@ export * from './lib/atoms/link/link.component';
 /* Button Icon Component */
 export * from './lib/molecules/button-icon/button-icon.component';
 /* Text Field Complex */
-export * from './lib/molecules/text-field-complex/text-field-complex.component';
+export * from './lib/molecules/form-control-layout/form-control-layout.component';
+export * from './lib/molecules/form-control-layout/append/append.component';
+export * from './lib/molecules/form-control-layout/prepend/prepend.component';
+export * from './lib/molecules/form-control-layout/input-field/input-field.component';
+export * from './lib/molecules/form-control-layout/validator-field/validator-field.component';
+export * from './lib/molecules/form-control-layout/select-field/select-field.component';
 /* Pagination */
 export * from './lib/organisms/pagination/pagination.component';
 /* Data Grid */
@@ -92,8 +99,10 @@ export * from './lib/organisms/steps/step-content/step-content.component';
 /* Tabs */
 export * from './lib/molecules/tabs/tabs.component';
 export * from './lib/molecules/tabs/tabs-content/tabs-content.component';
-/* Comment List */
-export * from './lib/templates/comment-list/comment-list.component';
+/* Timeline */
+export * from './lib/organisms/timeline/timeline.component';
+export * from './lib/organisms/timeline/timeline-section/timeline-section.component';
+export * from './lib/organisms/timeline/comment-list/comment-list.component';
 /* Side Nav */
 export * from './lib/templates/sidenav/sidenav.component';
 /* Collapsible Nav */
@@ -107,6 +116,9 @@ export * from './lib/molecules/field-filepicker/field-filepicker.component';
 export * from './lib/types';
 
 export * from './lib/templates/modal/modal.component';
+export * from './lib/templates/modal/modal-header/modal-header.component';
+export * from './lib/templates/modal/modal-body/modal-body.component';
+export * from './lib/templates/modal/modal-footer/modal-footer.component';
 
 export * from './lib/templates/tooltip/tooltip.component';
 
@@ -125,3 +137,4 @@ export * from './lib/templates/tree-view/tree-view.component';
 
 export * from './lib/templates/description-list/description-list.component';
 export * from './lib/templates/context-menu/context-menu.component';
+export * from './lib/templates/context-menu/context-menu-item/context-menu-item.component';

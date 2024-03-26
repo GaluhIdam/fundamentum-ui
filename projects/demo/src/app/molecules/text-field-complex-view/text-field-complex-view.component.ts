@@ -9,7 +9,16 @@ import {
 import { Subscription, debounceTime } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { TextFieldComplexComponent } from '../../../../../fui/src/public-api';
+import {
+  FormControlLayoutComponent,
+  InputFieldComponent,
+  PrependComponent,
+  AppendComponent,
+  ValidatorFieldComponent,
+  IconsComponent,
+  LoadingComponent,
+  SelectFieldComponent,
+} from 'fui';
 interface TEST {
   nama: string;
   umur: number;
@@ -17,11 +26,24 @@ interface TEST {
 @Component({
   selector: 'app-text-field-view',
   standalone: true,
-  imports: [TextFieldComplexComponent, ReactiveFormsModule, CommonModule],
+  imports: [
+    FormControlLayoutComponent,
+    InputFieldComponent,
+    PrependComponent,
+    AppendComponent,
+    ValidatorFieldComponent,
+    IconsComponent,
+    SelectFieldComponent,
+    LoadingComponent,
+    ReactiveFormsModule,
+    CommonModule,
+  ],
   templateUrl: './text-field-complex-view.component.html',
   styleUrl: './text-field-complex-view.component.scss',
 })
 export class TextFieldComplexViewComponent implements OnInit, OnDestroy {
+  showPass: boolean = false;
+  passwordForm: FormControl = new FormControl('LaskaJowo2024!');
   params?: string;
   size: 's' | 'm' | 'l' = 'l';
   textValue: FormGroup = new FormGroup({

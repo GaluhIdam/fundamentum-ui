@@ -1,0 +1,46 @@
+@if (isFlyoutFooterCustom) {
+<div [ngClass]="['flyout-footer', padding ? 'flyout-p-' + padding : '']">
+  <ng-content></ng-content>
+</div>
+} @else {
+<div
+  [ngClass]="[
+    'flyout-footer',
+    'button-position-' + flyoutFooterButtonPosition,
+    padding ? 'flyout-p-' + padding : ''
+  ]"
+>
+  <div
+    [ngClass]="[
+      'flyout-footer-button',
+      reverseButtonPosition ? 'reversed-button' : '',
+      splitButton ? 'button-split-' + splitButton : ''
+    ]"
+  >
+    <div class="cancel-button" (click)="onHandleCancelButton()">
+      @if (showCancelButton) { @if(cancelButtonType === 'button') {
+      <fui-button [size]="cancelButtonSize" [color]="cancelButtonColor">{{
+        cancelButtonText
+      }}</fui-button>
+      } @else {
+      <fui-button-empty [size]="cancelButtonSize" [color]="cancelButtonColor">{{
+        cancelButtonText
+      }}</fui-button-empty>
+      } }
+    </div>
+    <div class="confirm-button" (click)="onHandleConfirmButton()">
+      @if (showConfirmButton) { @if(confirmButtonType === 'button') {
+      <fui-button [size]="confirmButtonSize" [color]="confirmButtonColor">{{
+        confirmButtonText
+      }}</fui-button>
+      } @else {
+      <fui-button-empty
+        [size]="confirmButtonSize"
+        [color]="confirmButtonColor"
+        >{{ confirmButtonText }}</fui-button-empty
+      >
+      } }
+    </div>
+  </div>
+</div>
+}
