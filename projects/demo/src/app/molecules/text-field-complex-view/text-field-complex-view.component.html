@@ -1,386 +1,212 @@
-<div *ngIf="params === 'text'">
-  <div class="fit">
-    <fui-text-field-complex
-      [size]="size"
-      [textFieldControl]="textFieldx"
-      [fullWidth]="true"
-      [validator]="false"
-      [message]="'This is required !'"
-    ></fui-text-field-complex>
-  </div>
-  <div class="fit">
-    <fui-text-field-complex
-      [size]="size"
-      [textFieldControl]="textFieldx"
-      [fullWidth]="false"
-      [validator]="false"
-      [message]="'This is required !'"
-    ></fui-text-field-complex>
-  </div>
+<div class="fit">
+  <fui-form-control-layout>
+    <fui-prepend>
+      <p>Prepend</p>
+    </fui-prepend>
 
-  <form [formGroup]="myForm!" class="fit">
-    <div class="max-width">
-      <fui-text-field-complex
-        [size]="size"
-        formControlName="email"
-        [loading]="true"
-        [fullWidth]="true"
-        [validator]="true"
-        [message]="'This is required!'"
-      >
-      </fui-text-field-complex>
-    </div>
-    <div class="max-width">
-      <fui-text-field-complex
-        [size]="size"
-        formControlName="email"
-        [loading]="true"
-        [fullWidth]="false"
-        [validator]="true"
-        [message]="'This is required!'"
-      >
-      </fui-text-field-complex>
-    </div>
+    <fui-input-field [type]="'text'" [size]="'l'" [invalid]="true">
+      <fui-icons
+        left-icon
+        [label]="'left'"
+        [icon]="'search'"
+        [size]="'sizel'"
+        [color]="'text'"
+      />
+      <fui-loading
+        class="mx-5"
+        right-icon
+        [type]="'spinner'"
+        [isLoading]="true"
+        [size]="'sizel'"
+      ></fui-loading>
+      <fui-icons
+        right-icon
+        [label]="'right'"
+        [icon]="'alert'"
+        [size]="'sizel'"
+        [color]="'danger'"
+      />
+    </fui-input-field>
 
-    <div class="flex">
-      <div class="max-width">
-        <fui-text-field-complex
-          [size]="size"
-          formControlName="firstName"
-          [fullWidth]="true"
-          [validator]="true"
-          [message]="'This is required!'"
-        >
-        </fui-text-field-complex>
-      </div>
-      <div class="max-width">
-        <fui-text-field-complex
-          [size]="size"
-          formControlName="lastName"
-          [fullWidth]="true"
-          [message]="'This is required!'"
-        >
-        </fui-text-field-complex>
-      </div>
-    </div>
-  </form>
-
-  <h1>Append & Prepend</h1>
-  <div class="fit">
-    <fui-text-field-complex
-      [size]="size"
-      [textFieldControl]="textFieldx"
-      [fullWidth]="true"
-      [inputGroup]="'prepend-append'"
-      [textAppend]="'Append'"
-      [textPrepend]="'Prepend'"
-      [validator]="false"
-      [message]="'This is required !'"
-    ></fui-text-field-complex>
-  </div>
-
-  <form [formGroup]="myForm!" class="fit">
-    <div class="max-width">
-      <fui-text-field-complex
-        [size]="size"
-        [inputGroup]="'prepend-append'"
-        [textAppend]="'Append'"
-        [textPrepend]="'Prepend'"
-        formControlName="email"
-        [loading]="true"
-        [fullWidth]="true"
-        [validator]="true"
-        [message]="'This is required!'"
-      >
-      </fui-text-field-complex>
-    </div>
-
-    <div class="flex">
-      <div class="max-width">
-        <fui-text-field-complex
-          [size]="size"
-          formControlName="firstName"
-          [inputGroup]="'append'"
-          [textAppend]="'Append'"
-          [fullWidth]="true"
-          [loading]="true"
-          [validator]="true"
-          [message]="'This is required!'"
-        >
-        </fui-text-field-complex>
-      </div>
-      <div class="max-width">
-        <fui-text-field-complex
-          [size]="size"
-          [validator]="true"
-          [loading]="true"
-          formControlName="lastName"
-          [fullWidth]="true"
-          [inputGroup]="'prepend'"
-          [textPrepend]="'Prepend'"
-          [message]="'This is required!'"
-        >
-        </fui-text-field-complex>
-      </div>
-    </div>
-    <div class="flex">
-      <div class="max-width">
-        <fui-text-field-complex
-          [size]="size"
-          formControlName="firstName"
-          [inputGroup]="'append'"
-          [textAppend]="'Append'"
-          [fullWidth]="true"
-          [loading]="true"
-          [message]="'This is required!'"
-        >
-        </fui-text-field-complex>
-      </div>
-      <div class="max-width">
-        <fui-text-field-complex
-          [size]="size"
-          [loading]="true"
-          formControlName="lastName"
-          [fullWidth]="true"
-          [inputGroup]="'prepend'"
-          [textPrepend]="'Prepend'"
-          [message]="'This is required!'"
-        >
-        </fui-text-field-complex>
-      </div>
-    </div>
-    <div class="flex">
-      <div class="max-width">
-        <fui-text-field-complex
-          [size]="size"
-          formControlName="firstName"
-          [inputGroup]="'append'"
-          [textAppend]="'Append'"
-          [fullWidth]="true"
-          [validator]="true"
-          [message]="'This is required!'"
-        >
-        </fui-text-field-complex>
-      </div>
-      <div class="max-width">
-        <fui-text-field-complex
-          [size]="size"
-          formControlName="lastName"
-          [fullWidth]="true"
-          [inputGroup]="'prepend'"
-          [textPrepend]="'Prepend'"
-          [validator]="true"
-          [message]="'This is required!'"
-        >
-        </fui-text-field-complex>
-      </div>
-    </div>
-  </form>
+    <fui-append>
+      <p>Append</p>
+    </fui-append>
+    <fui-validator-field validator />
+  </fui-form-control-layout>
 </div>
-<div *ngIf="params === 'select'">
-  <div class="fit">
-    <fui-text-field-complex
-      [size]="size"
-      [typeField]="'select'"
+<div class="fit">
+  <fui-form-control-layout>
+    <fui-prepend>
+      <p>Prepend</p>
+    </fui-prepend>
+
+    <fui-select-field
+      [invalid]="true"
+      [size]="'m'"
       [selectOptions]="selectOptions"
-      [textFieldControl]="textFieldSelect"
-      [fullWidth]="true"
-      [validator]="false"
-      [message]="'This is required !'"
-    ></fui-text-field-complex>
-  </div>
-  <div class="fit">
-    <fui-text-field-complex
-      [size]="size"
-      [typeField]="'select'"
-      [selectOptions]="selectOptions"
-      [textFieldControl]="textFieldSelect"
-      [fullWidth]="false"
-      [validator]="false"
-      [message]="'This is required !'"
-    ></fui-text-field-complex>
-  </div>
+    >
+      <fui-icons
+        left-icon
+        [label]="'left'"
+        [icon]="'search'"
+        [size]="'sizel'"
+        [color]="'text'"
+      />
+      <fui-loading
+        class="mx-5"
+        right-icon
+        [type]="'spinner'"
+        [isLoading]="true"
+        [size]="'sizel'"
+      ></fui-loading>
+      <fui-icons
+        right-icon
+        [label]="'right'"
+        [icon]="'alert'"
+        [size]="'sizel'"
+        [color]="'danger'"
+      />
+    </fui-select-field>
 
-  <form [formGroup]="myFormSelect!" class="fit">
-    <div class="max-width">
-      <fui-text-field-complex
-        [size]="size"
-        [typeField]="'select'"
-        [selectOptions]="selectOptions"
-        formControlName="email"
-        [loading]="true"
-        [fullWidth]="true"
-        [validator]="true"
-        [message]="'This is required!'"
+    <fui-append>
+      <p>Append</p>
+    </fui-append>
+    <fui-validator-field validator />
+  </fui-form-control-layout>
+</div>
+
+<div class="fit" style="align-items: center">
+  <div class="max-width">
+    <fui-form-control-layout>
+      <fui-prepend>
+        <p>IDR</p>
+      </fui-prepend>
+
+      <fui-input-field
+        [type]="'number'"
+        [size]="'l'"
+        [placeholder]="'Currency'"
+        [invalid]="false"
       >
-      </fui-text-field-complex>
-    </div>
-    <div class="max-width">
-      <fui-text-field-complex
-        [size]="size"
-        [typeField]="'select'"
-        [selectOptions]="selectOptions"
-        formControlName="email"
-        [loading]="true"
-        [fullWidth]="false"
-        [validator]="true"
-        [message]="'This is required!'"
+        <p left-icon>Rp.</p>
+      </fui-input-field>
+    </fui-form-control-layout>
+  </div>
+  <div class="max-width">
+    <fui-form-control-layout>
+      <fui-prepend>
+        <p>Dollar</p>
+      </fui-prepend>
+
+      <fui-input-field
+        [type]="'number'"
+        [size]="'l'"
+        [placeholder]="'Currency'"
+        [invalid]="false"
       >
-      </fui-text-field-complex>
-    </div>
+        <p left-icon>$</p>
+      </fui-input-field>
+    </fui-form-control-layout>
+  </div>
+</div>
 
-    <div class="flex">
-      <div class="max-width">
-        <fui-text-field-complex
-          [size]="size"
-          [typeField]="'select'"
-          [selectOptions]="selectOptions"
-          formControlName="firstName"
-          [fullWidth]="true"
-          [validator]="true"
-          [message]="'This is required!'"
-        >
-        </fui-text-field-complex>
-      </div>
-      <div class="max-width">
-        <fui-text-field-complex
-          [size]="size"
-          [typeField]="'select'"
-          [selectOptions]="selectOptions"
-          formControlName="lastName"
-          [fullWidth]="true"
-          [message]="'This is required!'"
-        >
-        </fui-text-field-complex>
-      </div>
-    </div>
-  </form>
+<div class="fit">
+  <fui-form-control-layout>
+    <fui-prepend>
+      <fui-icons [icon]="'email'" [size]="'sizel'" [color]="'text'" />
+    </fui-prepend>
+    <fui-input-field
+      [type]="'text'"
+      [size]="'l'"
+      [placeholder]="'Email'"
+      [invalid]="false"
+    >
+    </fui-input-field>
+  </fui-form-control-layout>
+</div>
 
-  <h1>Append & Prepend</h1>
-  <div class="fit">
-    <fui-text-field-complex
-      [size]="size"
-      [typeField]="'select'"
-      [selectOptions]="selectOptions"
-      [textFieldControl]="textFieldSelect"
-      [fullWidth]="true"
-      [inputGroup]="'prepend-append'"
-      [textAppend]="'Append'"
-      [textPrepend]="'Prepend'"
-      [validator]="false"
-      [message]="'This is required !'"
-    ></fui-text-field-complex>
+<div class="fit">
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-input-field
+        [type]="'text'"
+        [size]="'l'"
+        [placeholder]="'Username'"
+        [invalid]="false"
+      >
+        <fui-icons
+          left-icon
+          [label]="'left'"
+          [icon]="'user'"
+          [size]="'sizel'"
+          [color]="'text'"
+        />
+      </fui-input-field>
+    </fui-form-control-layout>
   </div>
 
-  <form [formGroup]="myFormSelect!" class="fit">
-    <div class="max-width">
-      <fui-text-field-complex
-        [size]="size"
-        [typeField]="'select'"
-        [selectOptions]="selectOptions"
-        [inputGroup]="'prepend-append'"
-        [textAppend]="'Append'"
-        [textPrepend]="'Prepend'"
-        formControlName="email"
-        [loading]="true"
-        [fullWidth]="true"
-        [validator]="true"
-        [message]="'This is required!'"
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-input-field
+        [type]="'email'"
+        [size]="'l'"
+        [placeholder]="'Email'"
+        [invalid]="true"
       >
-      </fui-text-field-complex>
-    </div>
+        <fui-icons
+          left-icon
+          [label]="'left'"
+          [icon]="'email'"
+          [size]="'sizel'"
+          [color]="'text'"
+        />
+        <fui-icons
+          right-icon
+          [label]="'right'"
+          [icon]="'alert'"
+          [size]="'sizel'"
+          [color]="'danger'"
+        />
+      </fui-input-field>
+      <fui-validator-field validator [message]="'Email is required!'" />
+    </fui-form-control-layout>
+  </div>
 
-    <div class="flex">
-      <div class="max-width">
-        <fui-text-field-complex
-          [size]="size"
-          [typeField]="'select'"
-          [selectOptions]="selectOptions"
-          formControlName="firstName"
-          [inputGroup]="'append'"
-          [textAppend]="'Append'"
-          [fullWidth]="true"
-          [loading]="true"
-          [validator]="true"
-          [message]="'This is required!'"
-        >
-        </fui-text-field-complex>
-      </div>
-      <div class="max-width">
-        <fui-text-field-complex
-          [size]="size"
-          [typeField]="'select'"
-          [selectOptions]="selectOptions"
-          [validator]="true"
-          [loading]="true"
-          formControlName="lastName"
-          [fullWidth]="true"
-          [inputGroup]="'prepend'"
-          [textPrepend]="'Prepend'"
-          [message]="'This is required!'"
-        >
-        </fui-text-field-complex>
-      </div>
-    </div>
-    <div class="flex">
-      <div class="max-width">
-        <fui-text-field-complex
-          [size]="size"
-          [typeField]="'select'"
-          [selectOptions]="selectOptions"
-          formControlName="firstName"
-          [inputGroup]="'append'"
-          [textAppend]="'Append'"
-          [fullWidth]="true"
-          [loading]="true"
-          [message]="'This is required!'"
-        >
-        </fui-text-field-complex>
-      </div>
-      <div class="max-width">
-        <fui-text-field-complex
-          [size]="size"
-          [typeField]="'select'"
-          [selectOptions]="selectOptions"
-          [loading]="true"
-          formControlName="lastName"
-          [fullWidth]="true"
-          [inputGroup]="'prepend'"
-          [textPrepend]="'Prepend'"
-          [message]="'This is required!'"
-        >
-        </fui-text-field-complex>
-      </div>
-    </div>
-    <div class="flex">
-      <div class="max-width">
-        <fui-text-field-complex
-          [size]="size"
-          [typeField]="'select'"
-          [selectOptions]="selectOptions"
-          formControlName="firstName"
-          [inputGroup]="'append'"
-          [textAppend]="'Append'"
-          [fullWidth]="true"
-          [validator]="true"
-          [message]="'This is required!'"
-        >
-        </fui-text-field-complex>
-      </div>
-      <div class="max-width">
-        <fui-text-field-complex
-          [size]="size"
-          [typeField]="'select'"
-          [selectOptions]="selectOptions"
-          formControlName="lastName"
-          [fullWidth]="true"
-          [inputGroup]="'prepend'"
-          [textPrepend]="'Prepend'"
-          [validator]="true"
-          [message]="'This is required!'"
-        >
-        </fui-text-field-complex>
-      </div>
-    </div>
-  </form>
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-input-field
+        [formControlField]="passwordForm"
+        [type]="showPass ? 'text' : 'password'"
+        [size]="'l'"
+        [placeholder]="'Password'"
+        [invalid]="false"
+      >
+        <fui-icons
+          left-icon
+          [label]="'left'"
+          [icon]="'lock'"
+          [size]="'sizel'"
+          [color]="'text'"
+        />
+      </fui-input-field>
+      <fui-append (click)="showPass = !showPass">
+        <fui-icons
+          [icon]="showPass ? 'eyeClosed' : 'eye'"
+          [size]="'sizel'"
+          [color]="'text'"
+        />
+      </fui-append>
+    </fui-form-control-layout>
+  </div>
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-input-field
+        [type]="'text'"
+        [size]="'l'"
+        [placeholder]="'Standard Text Field'"
+        [invalid]="false"
+      >
+      </fui-input-field>
+    </fui-form-control-layout>
+  </div>
 </div>

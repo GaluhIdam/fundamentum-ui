@@ -1,0 +1,7 @@
+@import "../../../styles/index";
+
+:host {
+  .fui-validator-message {
+    @include validatorInputField($fuiColorDanger, small);
+  }
+}

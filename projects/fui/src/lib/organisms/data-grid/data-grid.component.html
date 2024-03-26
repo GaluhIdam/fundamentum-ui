@@ -4,33 +4,6 @@
   <div>
     <div class="fui-utility-grid">
       <div class="fui-sub-utility-grid">
-        <div class="fui-item-icon mr-10" *ngIf="!searchStatus">
-          <fui-icons
-            [size]="'sizes'"
-            class="fui-icon-utilty-grid"
-            [icon]="'search'"
-          ></fui-icons>
-          <a class="fui-utility-link-grid" (click)="changeSearch()">Search</a>
-        </div>
-        <div class="fui-item-icon mr-10" *ngIf="searchStatus">
-          <fui-icons
-            [size]="'sizes'"
-            class="fui-icon-utilty-grid"
-            [icon]="'cross'"
-          ></fui-icons>
-          <a class="fui-utility-link-grid" (click)="changeSearch()">Close</a>
-        </div>
-        <div class="fui-item-icon mr-10">
-          <fui-icons
-            [size]="'sizes'"
-            class="fui-icon-utilty-grid"
-            [icon]="'tableDensityCompact'"
-          ></fui-icons>
-          <a class="fui-utility-link-grid">Total :</a
-          ><span class="fui-count-grid">{{ totalItems }}</span>
-        </div>
-      </div>
-      <div class="fui-sub-utility-grid">
         <fui-icons
           (click)="refreshOnClick()"
           class="fui-icon-only-utilty-grid"
@@ -119,18 +92,6 @@
           [size]="'sizes'"
           [icon]="'fullScreenExit'"
         ></fui-icons>
-      </div>
-    </div>
-    <div style="width: 100%">
-      <div class="fui-item-icon" *ngIf="searchStatus">
-        <fui-text-field-complex
-          [fullWidth]="true"
-          [textFieldControl]="textFieldControl"
-          [size]="'m'"
-          [search]="true"
-          [loading]="loadingSearch"
-          [placeholder]="'Type for search'"
-        ></fui-text-field-complex>
       </div>
     </div>
     <div class="fui-data-grid">

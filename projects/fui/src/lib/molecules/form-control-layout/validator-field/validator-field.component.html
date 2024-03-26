@@ -1,0 +1,6 @@
+<div *ngIf="content !== undefined">
+  <ng-content></ng-content>
+</div>
+<div *ngIf="content === undefined">
+  <p class="fui-validator-message">{{ message }}</p>
+</div>

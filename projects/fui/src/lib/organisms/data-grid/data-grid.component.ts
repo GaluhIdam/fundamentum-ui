@@ -4,7 +4,6 @@ import {
   IconsComponent,
   PaginationComponent,
   PopoverComponent,
-  TextFieldComplexComponent,
 } from '../../../public-api';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
@@ -18,7 +17,6 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
     ButtonIconComponent,
     PaginationComponent,
     PopoverComponent,
-    TextFieldComplexComponent,
     ReactiveFormsModule,
   ],
   templateUrl: './data-grid.component.html',

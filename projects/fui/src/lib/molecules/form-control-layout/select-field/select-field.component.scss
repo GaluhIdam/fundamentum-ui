@@ -1,0 +1,31 @@
+@import "../../../styles/index";
+:host {
+  width: -webkit-fill-available;
+}
+.fui-input-field {
+  @include inputFieldContainer();
+}
+.fui-input-field-s {
+  @include textFieldBaseStyles($fuiSizeM, 6px);
+}
+.fui-input-field-m {
+  @include textFieldBaseStyles($fuiSizeM + 3, 8px);
+}
+.fui-input-field-l {
+  @include textFieldBaseStyles($fuiSizeM + 6, 8px);
+}
+
+.radius-default {
+  @include borderRadius(6px, 6px, 6px, 6px);
+}
+
+.full-width {
+  width: -webkit-fill-available;
+}
+
+.default {
+  @include bottomLine($fuiColorPrimary);
+}
+.invalid {
+  @include bottomLine($fuiColorDanger);
+}

@@ -80,7 +80,12 @@ export * from './lib/atoms/link/link.component';
 /* Button Icon Component */
 export * from './lib/molecules/button-icon/button-icon.component';
 /* Text Field Complex */
-export * from './lib/molecules/text-field-complex/text-field-complex.component';
+export * from './lib/molecules/form-control-layout/form-control-layout.component';
+export * from './lib/molecules/form-control-layout/append/append.component';
+export * from './lib/molecules/form-control-layout/prepend/prepend.component';
+export * from './lib/molecules/form-control-layout/input-field/input-field.component';
+export * from './lib/molecules/form-control-layout/validator-field/validator-field.component';
+export * from './lib/molecules/form-control-layout/select-field/select-field.component';
 /* Pagination */
 export * from './lib/organisms/pagination/pagination.component';
 /* Data Grid */
@@ -89,8 +94,10 @@ export * from './lib/organisms/data-grid/content-row/content-row.component';
 /* Tabs */
 export * from './lib/molecules/tabs/tabs.component';
 export * from './lib/molecules/tabs/tabs-content/tabs-content.component';
-/* Comment List */
-export * from './lib/templates/comment-list/comment-list.component';
+/* Timeline */
+export * from './lib/organisms/timeline/timeline.component';
+export * from './lib/organisms/timeline/timeline-section/timeline-section.component';
+export * from './lib/organisms/timeline/comment-list/comment-list.component';
 /* Side Nav */
 export * from './lib/templates/sidenav/sidenav.component';
 /* Collapsible Nav */

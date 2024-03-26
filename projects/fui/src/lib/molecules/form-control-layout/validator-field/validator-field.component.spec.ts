@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CommentListViewComponent } from './comment-list-view.component';
+import { ValidatorFieldComponent } from './validator-field.component';
 
-describe('CommentListViewComponent', () => {
-  let component: CommentListViewComponent;
-  let fixture: ComponentFixture<CommentListViewComponent>;
+describe('ValidatorFieldComponent', () => {
+  let component: ValidatorFieldComponent;
+  let fixture: ComponentFixture<ValidatorFieldComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CommentListViewComponent]
+      imports: [ValidatorFieldComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(CommentListViewComponent);
+    fixture = TestBed.createComponent(ValidatorFieldComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

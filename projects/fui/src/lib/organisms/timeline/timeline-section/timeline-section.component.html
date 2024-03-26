@@ -1,0 +1,10 @@
+<div class="fui-timeline-section vertical-line">
+  <div class="fui-icon-timeline {{iconComponents.color ?? 'text'}}">
+    <div class="icon-adjust">
+      <ng-content select="[icon]"></ng-content>
+    </div>
+  </div>
+  <div class="fui-timeline-content {{commentComponents ? 'comment-list' : 'no-comment-list' }}">
+    <ng-content select="[content]"></ng-content>
+  </div>
+</div>

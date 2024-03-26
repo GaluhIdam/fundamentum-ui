@@ -1,5 +1,5 @@
 .fit {
-  margin: 20px;
+  margin: 10px;
 }
 
 .flex {
@@ -7,7 +7,16 @@
 }
 
 .max-width {
-  margin-top: 10px;
   margin-bottom: 10px;
-  width: -webkit-fill-available;
+}
+.mx-5 {
+  margin: 0px 5px 0px 5px;
+}
+
+p {
+  margin: 0px;
+}
+
+.mb-5 {
+  margin-bottom: 30px;
 }
