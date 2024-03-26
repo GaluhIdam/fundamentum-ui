@@ -3,6 +3,10 @@ import { FormControl } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { IconsComponent } from '../../atoms/icons/icons.component';
 import { ButtonIconComponent } from '../../molecules/button-icon/button-icon.component';
+import { FormControlLayoutComponent } from '../../molecules/form-control-layout/form-control-layout.component';
+import { InputFieldComponent } from '../../molecules/form-control-layout/input-field/input-field.component';
+import { ValidatorFieldComponent } from '../../molecules/form-control-layout/validator-field/validator-field.component';
+
 /**
  * The CalloutComponent component
  * @usage
@@ -22,7 +26,14 @@ import { ButtonIconComponent } from '../../molecules/button-icon/button-icon.com
 @Component({
   selector: 'fui-inline-edit',
   standalone: true,
-  imports: [IconsComponent, ButtonIconComponent, CommonModule],
+  imports: [
+    IconsComponent,
+    ButtonIconComponent,
+    FormControlLayoutComponent,
+    InputFieldComponent,
+    ValidatorFieldComponent,
+    CommonModule,
+  ],
   templateUrl: './inline-edit.component.html',
   styleUrl: './inline-edit.component.scss',
 })

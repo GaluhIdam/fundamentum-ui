@@ -1,7 +1,7 @@
 <div class="{{ 'container-inline-edit-' + size }}">
   <div *ngIf="!editMode" class="flex-input">
-    <span class="text">
-      <span class="edit-text">{{ textFieldControl.value }}</span>
+    <span class="text" (click)="onHandleSave()">
+      <ng-content></ng-content>
       <fui-icons
         class="icon-inline"
         [size]="
@@ -19,7 +19,17 @@
     </span>
   </div>
   <div class="inline-edit" *ngIf="editMode">
-    <ng-content></ng-content>
+    <fui-form-control-layout>
+      <fui-input-field
+        [formControlField]="textFieldControl"
+        [type]="'text'"
+        [size]="'l'"
+        [placeholder]="'Username'"
+        [invalid]="validator"
+      >
+      </fui-input-field>
+      <fui-validator-field validator [message]="message" />
+    </fui-form-control-layout>
     <fui-button-icon
       [disabled]="disabled"
       [size]="size"
