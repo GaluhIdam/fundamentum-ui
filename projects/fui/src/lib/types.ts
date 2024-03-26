@@ -424,7 +424,6 @@ export interface StepProps {
   stepColor?: {
     [key in StepStatus]?: Color;
   };
-  stepSize?: Size;
   title?: string;
   titleColor?: Color;
   titleSize?: Size;
