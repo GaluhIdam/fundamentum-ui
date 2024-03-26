@@ -11,6 +11,15 @@ import { ValidatorFieldComponent } from '../../molecules/form-control-layout/val
  * The CalloutComponent component
  * @usage
  * ```html
+ * <h1>Inline Edit Standard</h1>
+ * <fui-inline-edit
+    [textFieldControl]="textFieldControl"
+    (onSave)="funcSave()"
+    (onCancel)="funcCancel()">
+    <h1>{{ textFieldControl.value }}</h1>
+ * </fui-inline-edit>
+
+ * <h1>Inline Edit With Validation</h1>
  * <fui-inline-edit
     [size]="'l'"
     [disabled]="this.textFieldControl2.invalid"
@@ -19,7 +28,9 @@ import { ValidatorFieldComponent } from '../../molecules/form-control-layout/val
     [textFieldControl]="textFieldControl2"
     (onSave)="funcSave2()"
     (onCancel)="funcCancel2()">
+    <h1>{{ textFieldControl2.value }}</h1>
  * </fui-inline-edit>
+
  * ```
  * <example-url>http://localhost:4200/organisms/inline-edit</example-url>
  */
