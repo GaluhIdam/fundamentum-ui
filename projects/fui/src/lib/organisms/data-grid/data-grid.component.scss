@@ -34,6 +34,10 @@
         color: $fuiColorDarkestShade;
         text-decoration: none;
       }
+      .fui-item-icon {
+        display: flex;
+        align-items: center;
+      }
       .fui-count-grid {
         margin-right: 5px;
         font-size: $fuiSizeM;
