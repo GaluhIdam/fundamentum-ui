@@ -1,0 +1,103 @@
+<div [ngClass]="['steps', 'step-direction-' + direction]">
+  @for (step of steps; track $index) {
+  <div
+    [ngClass]="[
+      'step-container',
+      direction === 'vertical'
+        ? 'step-container-vertical'
+        : 'step-container-horizontal',
+      direction === 'vertical' ? 'vertical-line' : 'horizontal-line',
+      stepSize
+        ? direction === 'vertical'
+          ? 'vertical-line-left-' + stepSize
+          : 'horizontal-line-top-' + stepSize
+        : direction === 'vertical'
+        ? 'vertical-line-left-sizedefault'
+        : 'horizontal-line-top-sizedefault'
+    ]"
+  >
+    <div
+      [ngClass]="[
+        'step',
+        'step-' + direction,
+        'step-status-cursor-' + step.stepStatus,
+        step.id === activeStepId ? 'step-active' : ''
+      ]"
+      (click)="handleSelectStep(step)"
+    >
+      <div
+        [ngClass]="[
+          'step-icon',
+          'step-status-' + step.stepStatus,
+          getStepBackground(step.stepStatus, step.stepBackground),
+          stepSize ? 'step-size-' + stepSize : 'step-size-sizedefault'
+        ]"
+      >
+        @if (step.stepType === 'icon') {
+        <fui-icons
+          [icon]="getStepIcon(step.stepStatus, step.stepIcon)"
+          [color]="getStepColor(step.stepStatus, step.stepColor)"
+          [size]="stepSize ? stepSize : 'sizem'"
+        ></fui-icons>
+        } @else {
+        <fui-text
+          [color]="getStepColor(step.stepStatus, step.stepColor)"
+          [size]="stepSize ? stepSize : 'sizem'"
+          >{{ $index + 1 }}</fui-text
+        >
+        }
+      </div>
+      <div class="step-title">
+        <fui-text
+          [color]="step.titleColor"
+          [size]="step.titleSize"
+          [weight]="'semibold'"
+          >{{ step.title }}</fui-text
+        >
+      </div>
+    </div>
+    <div
+      [ngClass]="[
+        'step-content',
+        direction === 'vertical'
+          ? 'step-content-vertical'
+          : 'step-content-horizontal'
+      ]"
+    >
+      @if ((direction === 'vertical' && conditionDisplay === 'all') ||
+      (direction === 'vertical' && conditionDisplay === 'current' && step.id ===
+      activeStepId)) {
+      <div
+        [ngClass]="[
+          'step-content-indent',
+          stepSize ? 'step-size-' + stepSize : 'step-size-sizedefault'
+        ]"
+      ></div>
+      }
+      <div class="content">
+        <!-- content display all and direction vertical and horizontal -->
+        @if(conditionDisplay === 'all') { @for (stepContent of
+        getStepContents(step.id); track $index) {
+        <ng-container *ngTemplateOutlet="stepContent.template"></ng-container>
+        } }
+
+        <!-- content current id and direction vertical -->
+        @if (conditionDisplay === 'current' && direction === 'vertical') { @for
+        (stepContent of getStepContents(step.id); track $index) { @if (step.id
+        === activeStepId) {
+        <ng-container *ngTemplateOutlet="stepContent.template"></ng-container>
+        } } }
+      </div>
+    </div>
+  </div>
+  }
+</div>
+
+<!-- content current and direction horizontal -->
+@if(conditionDisplay === 'current' && direction === 'horizontal') {
+<div class="step-content-current">
+  @for (stepContent of getStepContents(activeStepId); track $index) {
+  <ng-container *ngTemplateOutlet="stepContent.template"></ng-container>
+  }
+</div>
+}

@@ -91,6 +91,11 @@ export * from './lib/organisms/pagination/pagination.component';
 /* Data Grid */
 export * from './lib/organisms/data-grid/data-grid.component';
 export * from './lib/organisms/data-grid/content-row/content-row.component';
+
+/* Steps */
+export * from './lib/organisms/steps/steps.component';
+export * from './lib/organisms/steps/step-content/step-content.component';
+
 /* Tabs */
 export * from './lib/molecules/tabs/tabs.component';
 export * from './lib/molecules/tabs/tabs-content/tabs-content.component';

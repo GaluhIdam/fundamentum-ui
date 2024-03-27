@@ -14,7 +14,9 @@
     ]"
   >
     @if (icon) {
-    <fui-icons [icon]="icon" [size]="iconSize" [color]="color"></fui-icons>
+    <div [ngClass]="[direction === 'horizontal' ? '' : 'mx-auto']">
+      <fui-icons [icon]="icon" [size]="iconSize" [color]="color"></fui-icons>
+    </div>
     }
     <h2 class="title">{{ title }}</h2>
     <div class="body">

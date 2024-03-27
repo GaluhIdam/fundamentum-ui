@@ -93,43 +93,43 @@ $reducer : 30;
 }
 
 .sizedefault-badge-icon {
-  ::ng-deep i {
+  ::ng-deep div {
     @include reduceSize($fuiFontSize, $reducer);
   }
 }
 
 .sizexs-badge-icon {
-  ::ng-deep i {
+  ::ng-deep div {
     @include reduceSize($fuiFontSizeXS, $reducer);
   }
 }
 
 .sizes-badge-icon {
-  ::ng-deep i {
+  ::ng-deep div {
     @include reduceSize($fuiFontSizeS, $reducer);
   }
 }
 
 .sizem-badge-icon {
-  ::ng-deep i {
+  ::ng-deep div {
     @include reduceSize($fuiFontSizeM, $reducer);
   }
 }
 
 .sizel-badge-icon {
-  ::ng-deep i {
+  ::ng-deep div {
     @include reduceSize($fuiFontSizeL, $reducer);
   }
 }
 
 .sizexl-badge-icon {
-  ::ng-deep i {
+  ::ng-deep div {
     @include reduceSize($fuiFontSizeXL, $reducer);
   }
 }
 
 .sizexxl-badge-icon {
-  ::ng-deep i {
+  ::ng-deep div {
     @include reduceSize($fuiFontSizeXXL, $reducer);
   }
 }

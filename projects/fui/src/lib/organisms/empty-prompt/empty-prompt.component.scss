@@ -46,6 +46,10 @@ $paddingLeftRight: 2rem;
   color: $fuiColorDarkShade;
 }
 
+.mx-auto {
+  margin: 0 auto;
+}
+
 .action {
   display: flex;
   gap: 1rem;
