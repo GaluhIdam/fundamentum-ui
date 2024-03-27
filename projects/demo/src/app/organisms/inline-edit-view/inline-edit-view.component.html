@@ -3,7 +3,9 @@
   [textFieldControl]="textFieldControl"
   (onSave)="funcSave()"
   (onCancel)="funcCancel()"
-></fui-inline-edit>
+>
+  <h1>{{ textFieldControl.value }}</h1>
+</fui-inline-edit>
 
 <h1>Inline Edit With Validation</h1>
 <fui-inline-edit
@@ -14,4 +16,6 @@
   [textFieldControl]="textFieldControl2"
   (onSave)="funcSave2()"
   (onCancel)="funcCancel2()"
-></fui-inline-edit>
+>
+  <h1>{{ textFieldControl2.value }}</h1>
+</fui-inline-edit>

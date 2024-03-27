@@ -6,6 +6,8 @@
     display: inline-flex;
     .text {
       font-family: $fuiFontFamily;
+      display: flex;
+      align-items: center;
       font-size: $size + 3;
       margin-top: 0px;
       margin-bottom: 0px;
