@@ -428,3 +428,44 @@ export interface StepProps {
   titleColor?: Color;
   titleSize?: Size;
 }
+
+export interface FacetButtonProps {
+  id: string;
+  type: 'avatar' | 'icon' | 'indicator' | 'none';
+  facetLabel: {
+    label: string;
+    color?: Color;
+    size?: Size;
+  };
+  facetIcon?: {
+    icon: Icon;
+    color?: Color;
+    size?: Size;
+  };
+  facetAvatar?: {
+    id?: string;
+    shape?: 'user' | 'spaces';
+    type: AvatarType;
+    size?: Size;
+    color?: Color;
+    name?: string;
+    image?: string;
+    icon?: Icon;
+    avatarBorder?: boolean;
+  };
+  facetIndicator?: {
+    size?: Size;
+    color?: Color;
+  };
+  facetQuantity: {
+    quantity: number;
+    color?: Color;
+    background?: Color;
+    activeColor?: Color;
+    activeBackground?: Color;
+    size?: Size;
+  };
+  isSelected?: boolean;
+  isDisabled?: boolean;
+  isLoading?: boolean;
+}

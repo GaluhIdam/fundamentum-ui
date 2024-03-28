@@ -1,0 +1,102 @@
+<div [ngClass]="['facet', 'facet-direction-' + direction]">
+  @for (item of facetItems; track $index) {
+  <button
+    [ngClass]="[
+      'facet-item',
+      item.isDisabled || item.isLoading ? 'facet-item-unclickable' : '',
+      'facet-item-space-' + facetSpace,
+      'facet-label-wrap-' + labelWrap
+    ]"
+    (click)="handleClickFacet(item)"
+  >
+    <div [ngClass]="['facet-icon-label']">
+      @if (item.type !== 'none') {
+      <div class="facet-icon">
+        @if (item.type === 'avatar') {
+        <fui-avatar
+          [id]="item.facetAvatar?.id"
+          [shape]="item.facetAvatar?.shape ? item.facetAvatar?.shape : 'user'"
+          [type]="item.facetAvatar?.type ? item.facetAvatar?.type : 'initial'"
+          [size]="item.facetAvatar?.size ? item.facetAvatar?.size : 'sizes'"
+          [color]="item.facetAvatar?.color"
+          [name]="item.facetAvatar?.name"
+          [image]="item.facetAvatar?.image"
+          [icon]="item.facetAvatar?.icon"
+          [avatarBorder]="item.facetAvatar?.avatarBorder"
+        >
+        </fui-avatar>
+        } @else if (item.type === 'icon') {
+        <fui-icons
+          [icon]="item.facetIcon?.icon"
+          [size]="item.facetIcon?.size ? item.facetIcon?.size : 'sizem'"
+          [color]="item.facetIcon?.color"
+        ></fui-icons>
+        } @else if (item.type === 'indicator') {
+        <fui-icons
+          [icon]="'dot'"
+          [size]="
+            item.facetIndicator?.size ? item.facetIndicator?.size : 'sizem'
+          "
+          [color]="item.facetIndicator?.color"
+        ></fui-icons>
+        }
+      </div>
+      }
+      <div class="facet-label">
+        <fui-text
+          [size]="item.facetLabel.size"
+          [color]="
+            item.isDisabled || item.isLoading
+              ? 'disabled'
+              : item.facetLabel.color
+          "
+          [weight]="item.isSelected ? 'bold' : 'normal'"
+          >{{ item.facetLabel.label }}</fui-text
+        >
+      </div>
+    </div>
+
+    <div
+      [ngClass]="[
+        'facet-quantity',
+        item.isDisabled
+          ? 'facet-quantity-background-disabled'
+          : item.isLoading
+          ? 'facet-quantity-background-trasnparent'
+          : item.isSelected && item.facetQuantity?.activeBackground
+          ? 'facet-quantity-background-' + item.facetQuantity.activeBackground
+          : item.facetQuantity?.background
+          ? 'facet-quantity-background-' + item.facetQuantity?.background
+          : 'facet-quantity-background-default',
+        item?.facetQuantity?.size
+          ? 'facet-quantity-size-' + item?.facetQuantity?.size
+          : 'facet-quantity-size-sizedefault',
+        item.isLoading ? 'facet-quantity-loading' : ''
+      ]"
+    >
+      @if (item.isLoading) {
+      <fui-loading
+        [type]="'spinner'"
+        [size]="item.facetQuantity.size ? item.facetQuantity.size : 'sizem'"
+        [isLoading]="item.isLoading"
+      ></fui-loading>
+      } @else {
+      <fui-text
+        [size]="item.facetQuantity.size ? item.facetQuantity.size : 'sizem'"
+        [color]="
+          item.isDisabled || item.isLoading
+            ? 'disabled'
+            : item.isSelected && item.facetQuantity?.activeColor
+            ? item.facetQuantity.activeColor
+            : item.facetQuantity?.color
+            ? item.facetQuantity?.color
+            : 'text'
+        "
+      >
+        {{ item.facetQuantity.quantity }}
+      </fui-text>
+      }
+    </div>
+  </button>
+  }
+</div>
