@@ -1,0 +1,29 @@
+<div class="container">
+  <h3>Normal Facet</h3>
+  <fui-facet-button [items]="facetItems"></fui-facet-button>
+</div>
+
+<div class="container" style="width: 160px">
+  <h3>Facet with space between</h3>
+  <fui-facet-button
+    [items]="facetItems"
+    [facetSpace]="'between'"
+  ></fui-facet-button>
+</div>
+
+<div class="container" style="width: 160px">
+  <h3>Facet with space between and label elipsis</h3>
+  <fui-facet-button
+    [items]="facetItems"
+    [facetSpace]="'between'"
+    [labelWrap]="'elipsis'"
+  ></fui-facet-button>
+</div>
+
+<div class="container">
+  <h3>Facet direction horizontal</h3>
+  <fui-facet-button
+    [items]="facetItems"
+    [direction]="'horizontal'"
+  ></fui-facet-button>
+</div>
