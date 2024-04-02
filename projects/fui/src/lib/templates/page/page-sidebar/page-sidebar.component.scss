@@ -1,0 +1,27 @@
+@use './../../../styles/variables/size_variable' as size;
+@use './../../../styles/variables/color_variable' as color;
+
+* {
+  box-sizing: border-box;
+}
+
+.page-sidebar {
+  height: 100%;
+  background: color.$fuiColorLightestShade;
+}
+
+.p-none {
+  padding: 0;
+}
+
+.p-s {
+  padding: size.$fuiSizeS;
+}
+
+.p-m {
+  padding: size.$fuiSizeM;
+}
+
+.p-l {
+  padding: size.$fuiSizeL;
+}
