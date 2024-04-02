@@ -32,6 +32,7 @@ import { ContextMenuViewComponent } from './templates/context-menu-view/context-
 import { ResizableContainerViewComponent } from './templates/resizable-container-view/resizable-container-view.component';
 import { EchartsViewComponent } from './organisms/echarts-view/echarts-view.component';
 import { AppComponent } from './app.component';
+import { HeaderViewComponent } from './templates/header-view/header-view.component';
 
 export const routes: Routes = [
   {
@@ -107,6 +108,10 @@ export const routes: Routes = [
       {
         path: 'modal',
         component: ModalViewComponent,
+      },
+      {
+        path: 'header',
+        component: HeaderViewComponent,
       },
       {
         path: 'panel',

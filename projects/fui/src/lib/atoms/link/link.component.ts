@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { IconsComponent } from '../icons/icons.component';
 import { Color } from '../../types';
+import { RouterModule } from '@angular/router';
 
 /**
  * The CalloutComponent component
@@ -19,7 +20,7 @@ import { Color } from '../../types';
 @Component({
   selector: 'fui-link',
   standalone: true,
-  imports: [CommonModule, IconsComponent],
+  imports: [CommonModule, IconsComponent, RouterModule],
   templateUrl: './link.component.html',
   styleUrl: './link.component.scss',
 })

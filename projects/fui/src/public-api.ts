@@ -95,6 +95,7 @@ export * from './lib/templates/resizable-container/resizable-panel/resizable-pan
 /* Header Component */
 export * from './lib/templates/header/header.component';
 export * from './lib/templates/header/header-panel/header-panel.component';
+export * from './lib/templates/header/header-panel/header-panel.component';
 
 export * from './lib/templates/modal/modal.component';
 export * from './lib/templates/modal/modal-header/modal-header.component';

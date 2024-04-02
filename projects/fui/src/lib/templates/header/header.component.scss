@@ -1,0 +1,31 @@
+@import "../../styles/index";
+
+.fui-header-container {
+  font-family: $fuiFontFamily;
+  display: flex;
+  align-items: center;
+  place-content: space-between;
+  padding: 10px 15px 10px 15px;
+  place-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+.fixed-top {
+  width: -webkit-fill-available;
+  position: fixed;
+  top: 0;
+}
+.fixed-bottom {
+  width: -webkit-fill-available;
+  position: fixed;
+  bottom: 0;
+}
+
+.bg-dark {
+  background-color: rgb(19, 19, 23);
+  color: $fuiColorGhost;
+}
+
+.bg-light {
+  background-color: $fuiColorGhost;
+  color: $fuiColorDarkestShade;
+}

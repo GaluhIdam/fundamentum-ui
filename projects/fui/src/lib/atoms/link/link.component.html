@@ -1,7 +1,7 @@
 <ng-container [ngSwitch]="typeLink">
   <!-- External -->
   <div *ngSwitchCase="'external'">
-    <a [ngClass]="colorLink" target="_blank" [href]="urlLink">{{
+    <a [ngClass]="colorLink" target="_blank" [routerLink]="urlLink">{{
       alias ?? urlLink
     }}</a
     ><fui-icons
@@ -14,7 +14,7 @@
   <!-- External -->
 
   <!-- Coloring -->
-  <a *ngSwitchCase="'coloring'" [ngClass]="colorLink" [href]="urlLink">{{
+  <a *ngSwitchCase="'coloring'" [ngClass]="colorLink" [routerLink]="urlLink">{{
     alias ?? urlLink
   }}</a>
   <!-- Coloring -->
@@ -29,7 +29,7 @@
   <a
     *ngSwitchCase="'validation'"
     [ngClass]="validatorLink(urlLink!) === true ? colorLink : 'danger'"
-    [href]="validatorLink(urlLink!) === true ? urlLink : '#'"
+    [routerLink]="validatorLink(urlLink!) === true ? urlLink : '#'"
     >{{
       validatorLink(urlLink!) === true ? alias ?? urlLink : "Invalid URL !"
     }}</a
