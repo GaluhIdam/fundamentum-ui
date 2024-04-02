@@ -1,0 +1,19 @@
+<div
+  [ngClass]="[
+    'page-header',
+    'p-' + padding,
+    isBorder && extendedBorder ? 'page-header-border' : 'p-bottom-none'
+  ]"
+>
+  <div
+    [ngClass]="[
+      'page-header-content',
+      isBorder && !extendedBorder ? 'page-header-border' : '',
+      isBorder && !extendedBorder
+        ? 'page-header-content-padding-bottom-' + padding
+        : ''
+    ]"
+  >
+    <ng-content></ng-content>
+  </div>
+</div>
