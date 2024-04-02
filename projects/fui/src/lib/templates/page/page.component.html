@@ -1,0 +1,10 @@
+<div
+  [ngClass]="[
+    'page',
+    'page-direction-' + direction,
+    isGrow ? 'page-full' : 'page-fit',
+    isRestrictWidth ? 'restrict-width' : ''
+  ]"
+>
+  <ng-content></ng-content>
+</div>

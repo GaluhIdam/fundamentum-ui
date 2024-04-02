@@ -140,3 +140,8 @@ export * from './lib/templates/tree-view/tree-view.component';
 export * from './lib/templates/description-list/description-list.component';
 export * from './lib/templates/context-menu/context-menu.component';
 export * from './lib/templates/context-menu/context-menu-item/context-menu-item.component';
+export * from './lib/templates/page/page.component';
+export * from './lib/templates/page/page-sidebar/page-sidebar.component';
+export * from './lib/templates/page/page-header/page-header.component';
+export * from './lib/templates/page/page-body/page-body.component';
+export * from './lib/templates/page/page-section/page-section.component';
