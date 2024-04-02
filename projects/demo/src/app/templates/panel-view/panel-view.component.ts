@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PanelComponent } from '../../../../../fui/src/lib/templates/panel/panel.component';
+import { PanelComponent } from 'fui';
 
 @Component({
   selector: 'app-panel-view',
