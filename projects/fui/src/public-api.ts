@@ -50,7 +50,9 @@ export * from './lib/molecules/breadcrumb/breadcrumb.component';
 /* Global Charts */
 export * from './lib/organisms/echarts/echarts.component';
 export * from './lib/organisms/echarts/utility/option.dto';
-
+/* Filter Group */
+export * from './lib/organisms/filter-group/filter-group.component';
+export * from './lib/organisms/filter-group/filter-group-button/filter-group-button.component';
 /* Callout Component */
 export * from './lib/organisms/callout/callout.component';
 /* Inline Edit Component */

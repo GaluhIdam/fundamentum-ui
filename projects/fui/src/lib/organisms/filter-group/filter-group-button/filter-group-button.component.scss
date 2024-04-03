@@ -1,0 +1,46 @@
+@import "../../../styles/index";
+
+:host {
+  width: 100%;
+  font-family: $fuiFontFamily;
+}
+
+.btn-filter-light {
+  border-style: solid;
+  border-width: 1px;
+  color: $fuiColorDarkestShade;
+  border-color: $fuiColorLightShade;
+  text-align: center;
+  outline: none;
+  padding: 10px 10px 10px 10px;
+  font-size: 1rem;
+  background-color: $fuiColorLightestShade;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.selected {
+  font-weight: 700;
+}
+
+.borderFirst {
+  border-start-start-radius: 6px;
+  border-end-start-radius: 6px;
+}
+.borderLast {
+  border-start-end-radius: 6px;
+  border-end-end-radius: 6px;
+}
+
+.withNext {
+  border-right-width: 0px;
+}
+.withBefore {
+  border-left-width: 0px;
+}
+
+.w-100 {
+  width: 100%;
+}

@@ -33,6 +33,7 @@ import { ResizableContainerViewComponent } from './templates/resizable-container
 import { EchartsViewComponent } from './organisms/echarts-view/echarts-view.component';
 import { AppComponent } from './app.component';
 import { HeaderViewComponent } from './templates/header-view/header-view.component';
+import { FilterGroupViewComponent } from './organisms/filter-group-view/filter-group-view.component';
 
 export const routes: Routes = [
   {
@@ -54,6 +55,10 @@ export const routes: Routes = [
         path: '',
         redirectTo: 'callout',
         pathMatch: 'full',
+      },
+      {
+        path: 'filter-group',
+        component: FilterGroupViewComponent,
       },
       {
         path: 'callout',

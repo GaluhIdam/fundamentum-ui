@@ -1,0 +1,10 @@
+<button
+  (click)="onHandleClick()"
+  class="btn-filter-light {{ withNext ? 'withNext' : '' }} {{
+    withBefore ? 'withBefore' : ''
+  }} {{ active ? 'selected' : '' }} {{ borderFirst ? 'borderFirst' : '' }} {{
+    borderLast ? 'borderLast' : ''
+  }} {{ fullWidth ? 'w-100' : '' }}"
+>
+  <ng-content></ng-content>
+</button>
