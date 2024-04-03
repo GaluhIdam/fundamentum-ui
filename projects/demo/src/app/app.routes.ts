@@ -34,6 +34,8 @@ import { EchartsViewComponent } from './organisms/echarts-view/echarts-view.comp
 import { AppComponent } from './app.component';
 import { HeaderViewComponent } from './templates/header-view/header-view.component';
 import { FilterGroupViewComponent } from './organisms/filter-group-view/filter-group-view.component';
+import { StepsViewComponent } from './organisms/steps-view/steps-view.component';
+import { FacetButtonViewComponent } from './organisms/facet-button-view/facet-button-view.component';
 
 export const routes: Routes = [
   {
@@ -73,8 +75,16 @@ export const routes: Routes = [
         component: DataGridViewComponent,
       },
       {
+        path: 'steps',
+        component: StepsViewComponent,
+      },
+      {
         path: 'timeline',
         component: TimelineViewComponent,
+      },
+      {
+        path: 'facet-button',
+        component: FacetButtonViewComponent,
       },
       {
         path: 'echarts',
