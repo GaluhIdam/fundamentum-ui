@@ -44,6 +44,7 @@ import { DescriptionListViewComponent } from './templates/description-list-view/
 import { ContextMenuViewComponent } from './templates/context-menu-view/context-menu-view.component';
 import { StepsViewComponent } from './organisms/steps-view/steps-view.component';
 import { FacetButtonViewComponent } from './organisms/facet-button-view/facet-button-view.component';
+import { FlexViewComponent } from "./templates/flex-view/flex-view.component";
 
 export const routes: Routes = [
   {
@@ -255,6 +256,10 @@ export const routes: Routes = [
       {
         path: 'context-menu',
         component: ContextMenuViewComponent,
+      },
+      {
+        path: 'flex',
+        component: FlexViewComponent,
       },
     ],
   },
