@@ -7,18 +7,18 @@
 
 @function fontSizeToRemOrEm($size, $sizingMethod: 'rem') {
   @if ($sizingMethod == 'rem') {
-    @return #{$size / typography_variable.$fuiFontSize}rem;
+    @return #{calc($size / typography_variable.$fuiFontSize)}rem;
   } @else if ($sizingMethod == 'em') {
-    @return #{$size / typography_variable.$fuiFontSize}em;
+    @return #{calc($size / typography_variable.$fuiFontSize)}em;
   }
 }
 
 // It can also be applied to calculate paddings
 @function marginToRemOrEm($elementSize, $elementFontSize, $sizingMethod: 'rem') {
   @if ($sizingMethod == 'rem') {
-    @return #{$elementSize / typography_variable.$fuiFontSize}rem;
+    @return #{calc($elementSize / typography_variable.$fuiFontSize)}rem;
   } @else if ($sizingMethod == 'em') {
-    @return #{$elementSize / $elementFontSize}em;
+    @return #{calc($elementSize / $elementFontSize)}em;
   }
 }
 

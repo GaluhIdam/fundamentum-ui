@@ -140,3 +140,6 @@ export * from './lib/templates/tree-view/tree-view.component';
 export * from './lib/templates/description-list/description-list.component';
 export * from './lib/templates/context-menu/context-menu.component';
 export * from './lib/templates/context-menu/context-menu-item/context-menu-item.component';
+
+export * from './lib/templates/flex/flex-group.component';
+export * from './lib/templates/flex/flex-item.component';
