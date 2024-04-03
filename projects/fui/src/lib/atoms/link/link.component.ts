@@ -26,13 +26,11 @@ import { RouterModule } from '@angular/router';
 })
 export class LinkComponent {
   @Input({ required: true }) colorLink: Color = 'text';
-  @Input() alias?: string;
   @Input({ required: true }) urlLink?: string;
   @Input({ required: true }) typeLink?:
     | 'external'
     | 'coloring'
-    | 'disabled'
-    | 'validation';
+    | 'disabled';
 
   /*Validator Link*/
   validatorLink(link: string): boolean {

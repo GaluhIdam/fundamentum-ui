@@ -14,7 +14,6 @@
 
 @mixin link($bgColor, $color) {
   color: $color;
-  background-color: $bgColor;
   font-family: $fuiFontFamily;
   height: fit-content;
   text-decoration: none;

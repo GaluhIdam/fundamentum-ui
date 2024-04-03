@@ -1,9 +1,10 @@
 .horizontal {
   display: flex;
   width: -webkit-fill-available;
-  max-width: -webkit-fill-available;
 }
 .vertical {
   width: -webkit-fill-available;
-  max-width: -webkit-fill-available;
+}
+:host {
+  width: 100%;
 }

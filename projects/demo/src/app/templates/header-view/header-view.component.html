@@ -1,32 +1,66 @@
-<fui-header>
+<fui-header [position]="'fixed-top'">
   <fui-header-panel left>
     <fui-icons class="p-8" [size]="'sizel'" [icon]="'heatmap'"></fui-icons>
     <h3 class="title">Elastic</h3>
     <fui-link
       class="nav-item"
-      [alias]="'Doc'"
       [colorLink]="'primary'"
       [urlLink]="'/template/header'"
       [typeLink]="'coloring'"
-    />
+      >Doc</fui-link
+    >
     <fui-link
       class="nav-item"
-      [alias]="'Code'"
       [colorLink]="'ghost'"
       [urlLink]="'/template/header'"
       [typeLink]="'external'"
-    />
+      >Code</fui-link
+    >
     <div class="nav-item">
       <div class="mr-5">
         <fui-icons logo [size]="'sizem'" [icon]="'help'"></fui-icons>
       </div>
       <fui-link
-        [alias]="'Help'"
         [colorLink]="'ghost'"
         [urlLink]="'/template/header'"
         [typeLink]="'coloring'"
-      />
+        >Help</fui-link
+      >
     </div>
+  </fui-header-panel>
+
+
+
+  <fui-header-panel right>
+    <div class="nav-item">
+      <fui-avatar
+        [shape]="'spaces'"
+        [name]="'User'"
+        [size]="'sizem'"
+        [color]="'accent'"
+      ></fui-avatar>
+      <p>User One</p>
+    </div>
+  </fui-header-panel>
+</fui-header>
+<fui-header [position]="'fixed-bottom'">
+  <fui-header-panel left>
+    <fui-icons class="p-8" [size]="'sizel'" [icon]="'heatmap'"></fui-icons>
+    <h3 class="title">Elastic</h3>
+    <fui-header-breadcrumb>
+      <fui-header-breadcrumb-panel [urlLink]="'/template/header/1'">
+        Management
+      </fui-header-breadcrumb-panel>
+      <fui-header-breadcrumb-panel [urlLink]="'/template/header/2'">
+        IT Department Solution
+      </fui-header-breadcrumb-panel>
+      <fui-header-breadcrumb-panel [urlLink]="'/template/header/3'">
+        Users
+      </fui-header-breadcrumb-panel>
+      <fui-header-breadcrumb-panel [urlLink]="'/template/header/5'">
+        Create
+      </fui-header-breadcrumb-panel>
+    </fui-header-breadcrumb>
   </fui-header-panel>
   <fui-header-panel right>
     <div class="nav-item">
@@ -40,98 +74,7 @@
     </div>
   </fui-header-panel>
 </fui-header>
-
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
-  nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
-  Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?
-</p>
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
-  nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
-  Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?
-</p>
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
-  nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
-  Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?
-</p>
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
-  nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
-  Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?
-</p>
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
-  nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
-  Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?
-</p>
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
-  nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
-  Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?
-</p>
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
-  nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
-  Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?
-</p>
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
-  nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
-  Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?
-</p>
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
-  nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
-  Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?
-</p>
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
-  nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
-  Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?
-</p>
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
-  nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
-  Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?
-</p>
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
-  nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
-  Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?
-</p>
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
-  nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
-  Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?
-</p>
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
-  nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
-  Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?
-</p>
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
-  nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
-  Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?
-</p>
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
-  nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
-  Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?
-</p>
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
-  nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
-  Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?
-</p>
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
-  nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
-  Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?
-</p>
-<p>
+<p style="margin-top: 80px">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quo natus
   nemo ad adipisci consequatur, ut amet distinctio libero facilis magni!
   Numquam, tempore optio soluta distinctio accusantium nisi perspiciatis?

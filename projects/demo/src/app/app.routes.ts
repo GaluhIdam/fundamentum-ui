@@ -114,6 +114,10 @@ export const routes: Routes = [
         component: HeaderViewComponent,
       },
       {
+        path: 'header/:id',
+        component: HeaderViewComponent,
+      },
+      {
         path: 'panel',
         component: PanelViewComponent,
       },

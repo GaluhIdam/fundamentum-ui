@@ -1,0 +1,70 @@
+@import "../../../styles/index";
+
+.container {
+  margin-inline-end: -4px;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+}
+a {
+  color: $fuiColorPrimary;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.active {
+  font-weight: bold;
+  text-decoration: none;
+  color: $fuiColorGhost;
+}
+
+.active-nav {
+  background-color: $fuiColorDarkShade;
+}
+
+
+span {
+  max-width: 120px;
+  font-family: $fuiFontFamily;
+  background-color: $fuiBtnPrimarySecondary;
+  color: $fuiColorPrimary;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  border-start-start-radius: 6px;
+  border-end-start-radius: 6px;
+  text-align: center;
+  padding-block: 8px;
+  padding-inline: 20px;
+  margin: 5px 0px 5px 0px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.8571rem;
+}
+
+.clip-first {
+  clip-path: polygon(
+    0px 0px,
+    calc(100% - 8px) 0px,
+    100% 50%,
+    calc(100% - 8px) 100%,
+    0px 100%
+  );
+}
+.clip-mid {
+  clip-path: polygon(
+    0px 0px,
+    calc(100% - 8px) 0px,
+    100% 50%,
+    calc(100% - 8px) 100%,
+    0px 100%,
+    8px 50%
+  );
+}
+.clip-last {
+  clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%, 8px 50%);
+  border-start-end-radius: 6px;
+  border-end-end-radius: 6px;
+}

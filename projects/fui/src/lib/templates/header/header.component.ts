@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  @Input() fixed: 'fixed-top' | 'fixed-bottom' | 'none' = 'fixed-top';
+  @Input() position: 'fixed-top' | 'fixed-bottom' | 'none' = 'none';
   @Input() bgMode: 'bg-dark' | 'bg-light' = 'bg-dark';
 }
