@@ -13,6 +13,5 @@ export class CollapsibleNavViewComponent {
 
   collapse(): void {
     this.show = !this.show;
-    console.log('ok');
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ComboBoxComponent } from '../../../../../fui/src/public-api';
+import { ComboBoxComponent } from 'fui';
 
 
 @Component({
