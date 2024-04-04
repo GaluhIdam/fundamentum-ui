@@ -44,6 +44,7 @@ import { DescriptionListViewComponent } from './templates/description-list-view/
 import { ContextMenuViewComponent } from './templates/context-menu-view/context-menu-view.component';
 import { StepsViewComponent } from './organisms/steps-view/steps-view.component';
 import { FacetButtonViewComponent } from './organisms/facet-button-view/facet-button-view.component';
+import { AspectRatioViewComponent } from './atoms/aspect-ratio-view/aspect-ratio-view.component';
 
 export const routes: Routes = [
   {
@@ -176,6 +177,10 @@ export const routes: Routes = [
       {
         path: 'link',
         component: LinkViewComponent,
+      },
+      {
+        path: 'aspect-ratio',
+        component: AspectRatioViewComponent,
       },
     ],
   },
