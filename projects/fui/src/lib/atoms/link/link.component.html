@@ -1,38 +1,16 @@
-<ng-container [ngSwitch]="typeLink">
-  <!-- External -->
-  <div *ngSwitchCase="'external'">
-    <a [ngClass]="colorLink" target="_blank" [href]="urlLink">{{
-      alias ?? urlLink
-    }}</a
-    ><fui-icons
-      class="icon-popout"
-      [color]="colorLink"
-      [icon]="'popout'"
-      [size]="'sizexs'"
-    ></fui-icons>
-  </div>
-  <!-- External -->
-
-  <!-- Coloring -->
-  <a *ngSwitchCase="'coloring'" [ngClass]="colorLink" [href]="urlLink">{{
-    alias ?? urlLink
-  }}</a>
-  <!-- Coloring -->
-
-  <!-- Disabled -->
-  <a *ngSwitchCase="'disabled'" [ngClass]="typeLink" aria-disabled="true">{{
-    alias ?? urlLink
-  }}</a>
-  <!-- Disabled -->
-
-  <!-- Validation -->
-  <a
-    *ngSwitchCase="'validation'"
-    [ngClass]="validatorLink(urlLink!) === true ? colorLink : 'danger'"
-    [href]="validatorLink(urlLink!) === true ? urlLink : '#'"
-    >{{
-      validatorLink(urlLink!) === true ? alias ?? urlLink : "Invalid URL !"
-    }}</a
-  >
-  <!-- Validation -->
-</ng-container>
+<!-- External -->
+<a
+  class="{{ colorLink }} {{ typeLink }}"
+  [target]="typeLink === 'external' ? true : false"
+  [routerLink]="urlLink"
+  routerLinkActive="active"
+>
+  <ng-content></ng-content> </a
+><fui-icons
+  *ngIf="typeLink === 'external'"
+  class="icon-popout"
+  [color]="colorLink"
+  [icon]="'popout'"
+  [size]="'sizexs'"
+></fui-icons>
+<!-- External -->

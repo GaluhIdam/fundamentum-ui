@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { IconsComponent } from '../icons/icons.component';
 import { Color } from '../../types';
+import { RouterModule } from '@angular/router';
 
 /**
  * The CalloutComponent component
@@ -19,19 +20,17 @@ import { Color } from '../../types';
 @Component({
   selector: 'fui-link',
   standalone: true,
-  imports: [CommonModule, IconsComponent],
+  imports: [CommonModule, IconsComponent, RouterModule],
   templateUrl: './link.component.html',
   styleUrl: './link.component.scss',
 })
 export class LinkComponent {
   @Input({ required: true }) colorLink: Color = 'text';
-  @Input() alias?: string;
   @Input({ required: true }) urlLink?: string;
   @Input({ required: true }) typeLink?:
     | 'external'
     | 'coloring'
-    | 'disabled'
-    | 'validation';
+    | 'disabled';
 
   /*Validator Link*/
   validatorLink(link: string): boolean {

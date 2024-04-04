@@ -48,30 +48,12 @@ export * from './lib/molecules/highlight/highlight.component';
 
 export * from './lib/molecules/breadcrumb/breadcrumb.component';
 
-/* Line Componet export to be dist */
-export * from './lib/organisms/charts/chart-line/chart-line.component';
-/* Line Stacked Component export to be dist */
-export * from './lib/organisms/charts/chart-line-stacked/chart-line-stacked.component';
-/* Bar Component export to be dist */
-export * from './lib/organisms/charts/chart-bar/chart-bar.component';
-/* Pie Component export to be dist */
-export * from './lib/organisms/charts/chart-pie/chart-pie.component';
-/* Pie Doughnut Component export to be dist */
-export * from './lib/organisms/charts/chart-pie-doughnut/chart-pie-doughnut.component';
-/* Radar Component export to be dist */
-export * from './lib/organisms/charts/chart-radar/chart-radar.component';
-/* Scatter Component export to be dist */
-export * from './lib/organisms/charts/chart-scatter/chart-scatter.component';
-/* Area Component export to be dist */
-export * from './lib/organisms/charts/chart-area/chart-area.component';
-/* Area Stacked Component export to be dist */
-export * from './lib/organisms/charts/chart-area-stacked/chart-area-stacked.component';
-/* Area Stacked Gradient Component export to be dist */
-export * from './lib/organisms/charts/chart-area-stacked-gradient/chart-area-stacked-gradient.component';
-/* Candlestick Component export to be dist */
-export * from './lib/organisms/charts/chart-candlestick/chart-candlestick.component';
-/* Tree Component export to be dist */
-export * from './lib/organisms/charts/chart-tree/chart-tree.component';
+/* Global Charts */
+export * from './lib/organisms/echarts/echarts.component';
+export * from './lib/organisms/echarts/utility/option.dto';
+/* Filter Group */
+export * from './lib/organisms/filter-group/filter-group.component';
+export * from './lib/organisms/filter-group/filter-group-button/filter-group-button.component';
 /* Callout Component */
 export * from './lib/organisms/callout/callout.component';
 /* Inline Edit Component */
@@ -117,6 +99,14 @@ export * from './lib/molecules/field-filepicker/field-filepicker.component';
 
 /* Type */
 export * from './lib/types';
+/* Resizable Container Component */
+export * from './lib/templates/resizable-container/resizable-container.component';
+export * from './lib/templates/resizable-container/resizable-panel/resizable-panel.component';
+/* Header Component */
+export * from './lib/templates/header/header.component';
+export * from './lib/templates/header/header-panel/header-panel.component';
+export * from './lib/templates/header/header-breadcrumb/header-breadcrumb.component';
+export * from './lib/templates/header/header-breadcrumb-panel/header-breadcrumb-panel.component';
 
 export * from './lib/templates/modal/modal.component';
 export * from './lib/templates/modal/modal-header/modal-header.component';
@@ -141,3 +131,8 @@ export * from './lib/templates/tree-view/tree-view.component';
 export * from './lib/templates/description-list/description-list.component';
 export * from './lib/templates/context-menu/context-menu.component';
 export * from './lib/templates/context-menu/context-menu-item/context-menu-item.component';
+export * from './lib/templates/page/page.component';
+export * from './lib/templates/page/page-sidebar/page-sidebar.component';
+export * from './lib/templates/page/page-header/page-header.component';
+export * from './lib/templates/page/page-body/page-body.component';
+export * from './lib/templates/page/page-section/page-section.component';

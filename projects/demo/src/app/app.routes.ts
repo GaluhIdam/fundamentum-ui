@@ -1,18 +1,5 @@
 import { TimelineViewComponent } from './organisms/timeline-view/timeline-view.component';
 import { Routes } from '@angular/router';
-import { ChartBarViewComponent } from './organisms/charts/chart-bar-view/chart-bar-view.component';
-import { ChartLineViewComponent } from './organisms/charts/chart-line-view/chart-line-view.component';
-import { AppComponent } from './app.component';
-import { ChartPieViewComponent } from './organisms/charts/chart-pie-view/chart-pie-view.component';
-import { ChartRadarViewComponent } from './organisms/charts/chart-radar-view/chart-radar-view.component';
-import { ChartScatterViewComponent } from './organisms/charts/chart-scatter-view/chart-scatter-view.component';
-import { ChartAreaViewComponent } from './organisms/charts/chart-area-view/chart-area-view.component';
-import { ChartAreaStackedViewComponent } from './organisms/charts/chart-area-stacked-view/chart-area-stacked-view.component';
-import { ChartLineStackedViewComponent } from './organisms/charts/chart-line-stacked-view/chart-line-stacked-view.component';
-import { ChartAreaStackedGradientViewComponent } from './organisms/charts/chart-area-stacked-gradient-view/chart-area-stacked-gradient-view.component';
-import { ChartPieDoughnutViewComponent } from './organisms/charts/chart-pie-doughnut-view/chart-pie-doughnut-view.component';
-import { ChartCandlestickViewComponent } from './organisms/charts/chart-candlestick-view/chart-candlestick-view.component';
-import { ChartTreeViewComponent } from './organisms/charts/chart-tree-view/chart-tree-view.component';
 import { ModalViewComponent } from './templates/modal-view/modal-view.component';
 import { PanelViewComponent } from './templates/panel-view/panel-view.component';
 import { BreadcrumbViewComponent } from './molecules/breadcrumb-view/breadcrumb-view.component';
@@ -42,8 +29,14 @@ import { CardViewComponent } from './templates/card-view/card-view.component';
 import { TreeViewViewComponent } from './templates/tree-view-view/tree-view-view.component';
 import { DescriptionListViewComponent } from './templates/description-list-view/description-list-view.component';
 import { ContextMenuViewComponent } from './templates/context-menu-view/context-menu-view.component';
+import { ResizableContainerViewComponent } from './templates/resizable-container-view/resizable-container-view.component';
+import { EchartsViewComponent } from './organisms/echarts-view/echarts-view.component';
+import { AppComponent } from './app.component';
+import { HeaderViewComponent } from './templates/header-view/header-view.component';
+import { FilterGroupViewComponent } from './organisms/filter-group-view/filter-group-view.component';
 import { StepsViewComponent } from './organisms/steps-view/steps-view.component';
 import { FacetButtonViewComponent } from './organisms/facet-button-view/facet-button-view.component';
+import { PageViewComponent } from './templates/page-view/page-view.component';
 import { AspectRatioViewComponent } from './atoms/aspect-ratio-view/aspect-ratio-view.component';
 
 export const routes: Routes = [
@@ -66,6 +59,10 @@ export const routes: Routes = [
         path: '',
         redirectTo: 'callout',
         pathMatch: 'full',
+      },
+      {
+        path: 'filter-group',
+        component: FilterGroupViewComponent,
       },
       {
         path: 'callout',
@@ -92,74 +89,8 @@ export const routes: Routes = [
         component: FacetButtonViewComponent,
       },
       {
-        path: 'chart',
-        children: [
-          {
-            path: '',
-            redirectTo: 'chart-bar',
-            pathMatch: 'full',
-          },
-          {
-            title: 'Chart Bar',
-            path: 'chart-bar',
-            component: ChartBarViewComponent,
-          },
-          {
-            title: 'Chart Line',
-            path: 'chart-line',
-            component: ChartLineViewComponent,
-          },
-          {
-            title: 'Chart Line Stacked',
-            path: 'chart-line-stacked',
-            component: ChartLineStackedViewComponent,
-          },
-          {
-            title: 'Chart Pie',
-            path: 'chart-pie',
-            component: ChartPieViewComponent,
-          },
-          {
-            title: 'Chart Pie Doughnut',
-            path: 'chart-pie-doughnut',
-            component: ChartPieDoughnutViewComponent,
-          },
-          {
-            title: 'Chart Radar',
-            path: 'chart-radar',
-            component: ChartRadarViewComponent,
-          },
-          {
-            title: 'Chart Scatter',
-            path: 'chart-scatter',
-            component: ChartScatterViewComponent,
-          },
-          {
-            title: 'Chart Area',
-            path: 'chart-area',
-            component: ChartAreaViewComponent,
-          },
-          {
-            title: 'Chart Area Stacked',
-            path: 'chart-area-stacked',
-            component: ChartAreaStackedViewComponent,
-          },
-          {
-            title: 'Chart Area Stacked Gradient',
-            path: 'chart-area-stacked-gradient',
-            component: ChartAreaStackedGradientViewComponent,
-          },
-          {
-            title: 'Chart Candlestick',
-            path: 'chart-candlestick',
-            component: ChartCandlestickViewComponent,
-          },
-          {
-            title: 'Chart Tree',
-            path: 'chart-tree',
-            component: ChartTreeViewComponent,
-          },
-        ],
+        path: 'echarts',
+        component: EchartsViewComponent,
       },
     ],
   },
@@ -198,6 +129,14 @@ export const routes: Routes = [
       {
         path: 'modal',
         component: ModalViewComponent,
+      },
+      {
+        path: 'header',
+        component: HeaderViewComponent,
+      },
+      {
+        path: 'header/:id',
+        component: HeaderViewComponent,
       },
       {
         path: 'panel',
@@ -260,6 +199,14 @@ export const routes: Routes = [
       {
         path: 'context-menu',
         component: ContextMenuViewComponent,
+      },
+      {
+        path: 'page',
+        component: PageViewComponent,
+      },
+      {
+        path: 'resizable-container',
+        component: ResizableContainerViewComponent,
       },
     ],
   },

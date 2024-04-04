@@ -22,7 +22,7 @@ import {
   ButtonEmptyComponent,
   InputSearchFieldComponent,
   TitleComponent,
-} from '../../../../../fui/src/public-api';
+} from 'fui';
 import { CommonModule } from '@angular/common';
 
 @Component({
