@@ -1,3 +1,5 @@
+@import "../variables/index";
+
 @mixin fuiLink {
   text-align: left;
 
@@ -6,6 +8,16 @@
   }
 
   &:focus {
+    text-decoration: underline;
+  }
+}
+
+@mixin link($bgColor, $color) {
+  color: $color;
+  font-family: $fuiFontFamily;
+  height: fit-content;
+  text-decoration: none;
+  &:hover {
     text-decoration: underline;
   }
 }

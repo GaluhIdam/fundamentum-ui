@@ -1,63 +1,8 @@
 @if (open) {
 <div class="modal">
   <fui-overlay-mask (onOverlayClick)="onHandleOverLayClick()">
-    <div class="modal-container">
-      <div class="modal-header">
-        <div class="title">
-          <fui-text [size]="titleSize" [weight]="'bold'" [color]="titleColor">{{
-            title
-          }}</fui-text>
-        </div>
-        <div class="close-modal" (click)="onHandleCloseModal()">
-          <fui-icons
-            [icon]="iconClose"
-            [size]="iconCloseSize"
-            [color]="iconCloseColor"
-          />
-        </div>
-      </div>
-      <div class="modal-body">
-        <ng-content></ng-content>
-      </div>
-      <div
-        [ngClass]="['modal-footer', 'button-position-' + modalButtonPosition]"
-      >
-        <div
-          [ngClass]="[
-            'modal-footer-button',
-            reverseButtonPosition ? 'reversed-button' : ''
-          ]"
-        >
-          <div class="cancel-button" (click)="onHandleCancelButton()">
-            @if (showCancelButton) { @if(cancelButtonType === 'button') {
-            <fui-button [size]="cancelButtonSize" [color]="cancelButtonColor">{{
-              cancelButtonText
-            }}</fui-button>
-            } @else {
-            <fui-button-empty
-              [size]="cancelButtonSize"
-              [color]="cancelButtonColor"
-              >{{ cancelButtonText }}</fui-button-empty
-            >
-            } }
-          </div>
-          <div class="confirm-button" (click)="onHandleConfirmButton()">
-            @if (showConfirmButton) { @if(confirmButtonType === 'button') {
-            <fui-button
-              [size]="confirmButtonSize"
-              [color]="confirmButtonColor"
-              >{{ confirmButtonText }}</fui-button
-            >
-            } @else {
-            <fui-button-empty
-              [size]="confirmButtonSize"
-              [color]="confirmButtonColor"
-              >{{ confirmButtonText }}</fui-button-empty
-            >
-            } }
-          </div>
-        </div>
-      </div>
+    <div class="modal-container" [@modalPopup]>
+      <ng-content></ng-content>
     </div>
   </fui-overlay-mask>
 </div>

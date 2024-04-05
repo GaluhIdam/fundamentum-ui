@@ -1,0 +1,16 @@
+<div style="display: flex">
+  <fui-button-icon
+    (click)="collapse()"
+    class="ml-20"
+    [text]="'Collapsible Nav'"
+    [size]="'s'"
+    [type]="'button'"
+    [icon]="'tableOfContents'"
+    [option]="'iconText'"
+    [color]="'primary'"
+  ></fui-button-icon>
+  <fui-collapsible-nav [show]="show" (onClick)="collapse()">
+    <h2>I am some nav</h2>
+    <p>The docked status is being stored in localStorage.</p>
+  </fui-collapsible-nav>
+</div>

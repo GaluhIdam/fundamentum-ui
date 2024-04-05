@@ -1,10 +1,12 @@
 import {
   Component,
+  ContentChildren,
   ElementRef,
   EventEmitter,
   HostListener,
   Input,
   Output,
+  QueryList,
   ViewChild,
 } from '@angular/core';
 import { PopoverComponent } from '../popover/popover.component';
@@ -17,6 +19,7 @@ import { IconsComponent } from '../../atoms/icons/icons.component';
 import { TextComponent } from '../../atoms/text/text.component';
 import { CommonModule } from '@angular/common';
 import { TooltipComponent } from '../tooltip/tooltip.component';
+import { ContextMenuItemComponent } from './context-menu-item/context-menu-item.component';
 
 /**
  * The ContextMenuComponent
@@ -55,9 +58,14 @@ export class ContextMenuComponent {
   @ViewChild('contextMenuContainer')
   contextMenuContainer!: ElementRef;
 
+  @ContentChildren(ContextMenuItemComponent)
+  contextItems!: QueryList<ContextMenuItemComponent>;
+
   isDisplayContextMenu: boolean = false;
   displayContextMenu!: ContextMenuProps;
   historyItemMenu: ContextMenuProps[] = [];
+
+  activeItemId!: string;
 
   isAnimateSlideLeft: boolean = false;
   isAnimateSlideRight: boolean = false;
@@ -135,10 +143,11 @@ export class ContextMenuComponent {
   }
 
   onHandleClickItem(data: ContextMenuProps, item: ContextMenuItemProps) {
+    this.activeItemId = item.id;
     this.onClickItem.emit(item);
     const children = item.children;
 
-    if (children) {
+    if (children && Object.keys(children).length !== 0) {
       this.handleDisplayContextMenu(children);
       if ((children.items && children.items.length > 0) || !children.isMenu) {
         this.historyItemMenu.push(data);
@@ -161,6 +170,8 @@ export class ContextMenuComponent {
     if (item.action) {
       item.action();
     }
+
+    this.renderActiveContent();
 
     const container = this.contextMenuContainer.nativeElement;
     const focusableElements = container.querySelectorAll(
@@ -192,6 +203,18 @@ export class ContextMenuComponent {
 
   handleClickFooterContextMenu() {
     this.onClickFooterContextMenu.emit();
+  }
+
+  renderActiveContent() {
+    this.contextItems.forEach((item) => {
+      if (this.activeItemId) {
+        if (item.id === this.activeItemId) {
+          item.isDisplay = true;
+        } else {
+          item.isDisplay = false;
+        }
+      }
+    });
   }
 
   setAnimationSlideLeft() {

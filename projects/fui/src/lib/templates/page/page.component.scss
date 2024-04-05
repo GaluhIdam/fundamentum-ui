@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  display: flex;
+}
+
+.page-direction-horizontal {
+  flex-direction: row;
+
+  ::ng-deep fui-page-sidebar {
+    width: min-content;
+  }
+}
+
+.page-direction-vertical {
+  flex-direction: column;
+
+  ::ng-deep fui-page-sidebar {
+    width: 100%;
+  }
+
+  ::ng-deep .page-body {
+    padding-bottom: 1rem;
+  }
+}
+
+.page-full {
+  min-height: 100vh;
+}
+
+.page-fit {
+  min-height: fit-content;
+
+  ::ng-deep .page-body {
+    padding-bottom: 1rem;
+  }
+}
+
+.restrict-width {
+  max-width: 75%;
+  margin-inline: auto;
+}

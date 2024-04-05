@@ -1,0 +1,699 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>fundamentum-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/postmark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">fundamentum-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  EmptyPromptComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/fui/src/lib/organisms/empty-prompt/empty-prompt.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>fui-empty-prompt</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">Standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                                <code><a href="../components/ButtonComponent.html" target="_self" >ButtonComponent</a></code>
+                                <code><a href="../components/ButtonEmptyComponent.html" target="_self" >ButtonEmptyComponent</a></code>
+                                <code><a href="../components/TextComponent.html" target="_self" >TextComponent</a></code>
+                                <code><a href="../components/IconsComponent.html" target="_self" >IconsComponent</a></code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./empty-prompt.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./empty-prompt.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#buttonColor" >buttonColor</a>
+                            </li>
+                            <li>
+                                <a href="#buttonSize" >buttonSize</a>
+                            </li>
+                            <li>
+                                <a href="#buttonText" >buttonText</a>
+                            </li>
+                            <li>
+                                <a href="#color" >color</a>
+                            </li>
+                            <li>
+                                <a href="#direction" >direction</a>
+                            </li>
+                            <li>
+                                <a href="#icon" >icon</a>
+                            </li>
+                            <li>
+                                <a href="#iconSize" >iconSize</a>
+                            </li>
+                            <li>
+                                <a href="#image" >image</a>
+                            </li>
+                            <li>
+                                <a href="#paddingSize" >paddingSize</a>
+                            </li>
+                            <li>
+                                <a href="#secondaryButtonColor" >secondaryButtonColor</a>
+                            </li>
+                            <li>
+                                <a href="#secondaryButtonSize" >secondaryButtonSize</a>
+                            </li>
+                            <li>
+                                <a href="#secondaryButtonText" >secondaryButtonText</a>
+                            </li>
+                            <li>
+                                <a href="#shadow" >shadow</a>
+                            </li>
+                            <li>
+                                <a href="#title" >title</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="buttonColor"></a>
+                        <b>buttonColor</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Color" target="_self" >Color</a></code>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="buttonSize"></a>
+                        <b>buttonSize</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Size" target="_self" >Size</a></code>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="buttonText"></a>
+                        <b>buttonText</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="color"></a>
+                        <b>color</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>&quot;primary&quot; | &quot;success&quot; | &quot;warning&quot; | &quot;danger&quot; | &quot;text&quot; | &quot;accent&quot; | &quot;disabled&quot;</code>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="direction"></a>
+                        <b>direction</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>&quot;vertical&quot; | &quot;horizontal&quot;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;vertical&#x27;</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="icon"></a>
+                        <b>icon</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Icon" target="_self" >Icon</a></code>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="iconSize"></a>
+                        <b>iconSize</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Size" target="_self" >Size</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;sizedefault&#x27;</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="image"></a>
+                        <b>image</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="paddingSize"></a>
+                        <b>paddingSize</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Size" target="_self" >Size</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;sizedefault&#x27;</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="secondaryButtonColor"></a>
+                        <b>secondaryButtonColor</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Color" target="_self" >Color</a></code>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="secondaryButtonSize"></a>
+                        <b>secondaryButtonSize</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Size" target="_self" >Size</a></code>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="secondaryButtonText"></a>
+                        <b>secondaryButtonText</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="shadow"></a>
+                        <b>shadow</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="title"></a>
+                        <b>title</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+</div>
+
+
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div
+  [ngClass]&#x3D;&quot;[
+    &#x27;container&#x27;,
+    shadow ? &#x27;prompt-shadow&#x27; : &#x27;&#x27;,
+    color ? color : &#x27;&#x27;,
+    direction &#x3D;&#x3D;&#x3D; &#x27;vertical&#x27; ? &#x27;vertical-max-width&#x27; : &#x27;horizontal-max-width&#x27;,
+    paddingSize ? &#x27;p-&#x27; + paddingSize : &#x27;p-sizedefault&#x27;
+  ]&quot;
+&gt;
+  &lt;div
+    [ngClass]&#x3D;&quot;[
+      &#x27;content&#x27;,
+      direction &#x3D;&#x3D;&#x3D; &#x27;horizontal&#x27; ? &#x27;text-left&#x27; : &#x27;text-center&#x27;
+    ]&quot;
+  &gt;
+    @if (icon) {
+    &lt;fui-icons [icon]&#x3D;&quot;icon&quot; [size]&#x3D;&quot;iconSize&quot; [color]&#x3D;&quot;color&quot;&gt;&lt;/fui-icons&gt;
+    }
+    &lt;h2 class&#x3D;&quot;title&quot;&gt;{{ title }}&lt;/h2&gt;
+    &lt;div class&#x3D;&quot;body&quot;&gt;
+      &lt;fui-text&gt;
+        &lt;ng-content&gt;&lt;/ng-content&gt;
+      &lt;/fui-text&gt;
+      @if (image &amp;&amp; direction &#x3D;&#x3D;&#x3D; &#x27;vertical&#x27;) {
+      &lt;img [src]&#x3D;&quot;image&quot; /&gt;
+      }
+    &lt;/div&gt;
+    &lt;div
+      [ngClass]&#x3D;&quot;[
+        &#x27;action&#x27;,
+        direction &#x3D;&#x3D;&#x3D; &#x27;horizontal&#x27; ? &#x27;flex-row&#x27; : &#x27;flex-column&#x27;
+      ]&quot;
+    &gt;
+      @if (buttonText) {
+      &lt;fui-button [color]&#x3D;&quot;buttonColor&quot; [size]&#x3D;&quot;buttonSize&quot;&gt;{{
+        buttonText
+      }}&lt;/fui-button&gt;
+      } @if (secondaryButtonText) {
+      &lt;fui-button-empty
+        [width]&#x3D;&quot;&#x27;auto&#x27;&quot;
+        [color]&#x3D;&quot;secondaryButtonColor&quot;
+        [size]&#x3D;&quot;secondaryButtonSize&quot;
+        &gt;{{ secondaryButtonText }}&lt;/fui-button-empty
+      &gt;
+      }
+    &lt;/div&gt;
+  &lt;/div&gt;
+  @if (image &amp;&amp; direction &#x3D;&#x3D;&#x3D; &#x27;horizontal&#x27;) {
+  &lt;div class&#x3D;&quot;image&quot;&gt;
+    &lt;img [src]&#x3D;&quot;image&quot; /&gt;
+  &lt;/div&gt;
+  }
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div  [ngClass]="[    \'container\',    shadow ? \'prompt-shadow\' : \'\',    color ? color : \'\',    direction === \'vertical\' ? \'vertical-max-width\' : \'horizontal-max-width\',    paddingSize ? \'p-\' + paddingSize : \'p-sizedefault\'  ]">  <div    [ngClass]="[      \'content\',      direction === \'horizontal\' ? \'text-left\' : \'text-center\'    ]"  >    @if (icon) {    <fui-icons [icon]="icon" [size]="iconSize" [color]="color"></fui-icons>    }    <h2 class="title">{{ title }}</h2>    <div class="body">      <fui-text>        <ng-content></ng-content>      </fui-text>      @if (image && direction === \'vertical\') {      <img [src]="image" />      }    </div>    <div      [ngClass]="[        \'action\',        direction === \'horizontal\' ? \'flex-row\' : \'flex-column\'      ]"    >      @if (buttonText) {      <fui-button [color]="buttonColor" [size]="buttonSize">{{        buttonText      }}</fui-button>      } @if (secondaryButtonText) {      <fui-button-empty        [width]="\'auto\'"        [color]="secondaryButtonColor"        [size]="secondaryButtonSize"        >{{ secondaryButtonText }}</fui-button-empty      >      }    </div>  </div>  @if (image && direction === \'horizontal\') {  <div class="image">    <img [src]="image" />  </div>  }</div></div>'
+    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'fui-accordion'},{'name': 'BadgeComponent', 'selector': 'fui-badge'},{'name': 'BreadcrumbComponent', 'selector': 'fui-breadcrumb'},{'name': 'ButtonComponent', 'selector': 'fui-button'},{'name': 'ButtonEmptyComponent', 'selector': 'fui-button-empty'},{'name': 'ButtonIconComponent', 'selector': 'fui-button-icon'},{'name': 'CalloutComponent', 'selector': 'fui-callout'},{'name': 'ChartAreaComponent', 'selector': 'fui-chart-area'},{'name': 'ChartAreaStackedComponent', 'selector': 'fui-chart-area-stacked'},{'name': 'ChartAreaStackedGradientComponent', 'selector': 'fui-chart-area-stacked-gradient'},{'name': 'ChartBarComponent', 'selector': 'fui-chart-bar'},{'name': 'ChartCandlestickComponent', 'selector': 'fui-chart-candlestick'},{'name': 'ChartLineComponent', 'selector': 'fui-chart-line'},{'name': 'ChartLineStackedComponent', 'selector': 'fui-chart-line-stacked'},{'name': 'ChartPieComponent', 'selector': 'fui-chart-pie'},{'name': 'ChartPieDoughnutComponent', 'selector': 'fui-chart-pie-doughnut'},{'name': 'ChartRadarComponent', 'selector': 'fui-chart-radar'},{'name': 'ChartScatterComponent', 'selector': 'fui-chart-scatter'},{'name': 'ChartTreeComponent', 'selector': 'fui-chart-tree'},{'name': 'CollapsibleNavComponent', 'selector': 'fui-collapsible-nav'},{'name': 'ComboBoxComponent', 'selector': 'fui-combo-box'},{'name': 'CommentListComponent', 'selector': 'fui-comment-list'},{'name': 'DataGridComponent', 'selector': 'fui-data-grid'},{'name': 'EmptyPromptComponent', 'selector': 'fui-empty-prompt'},{'name': 'FieldFilepickerComponent', 'selector': 'fui-field-filepicker'},{'name': 'FieldTextComponent', 'selector': 'fui-field-text'},{'name': 'IconsComponent', 'selector': 'fui-icons'},{'name': 'InlineEditComponent', 'selector': 'fui-inline-edit'},{'name': 'InputComponent', 'selector': 'fui-input-base'},{'name': 'LinkComponent', 'selector': 'fui-link'},{'name': 'LoadingComponent', 'selector': 'fui-loading'},{'name': 'ModalComponent', 'selector': 'fui-modal'},{'name': 'ModalFlyoutComponent', 'selector': 'fui-modal-flyout'},{'name': 'PaginationComponent', 'selector': 'fui-pagination'},{'name': 'PanelComponent', 'selector': 'fui-panel'},{'name': 'ProgressBaseComponent', 'selector': 'fui-progress-base'},{'name': 'ProgressComponent', 'selector': 'fui-progress'},{'name': 'SidenavComponent', 'selector': 'fui-sidenav'},{'name': 'TabsComponent', 'selector': 'fui-tabs'},{'name': 'TextComponent', 'selector': 'fui-text'},{'name': 'TextFieldComplexComponent', 'selector': 'fui-text-field-complex'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'EmptyPromptComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'EmptyPromptComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

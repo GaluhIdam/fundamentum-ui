@@ -1,0 +1,145 @@
+@use './../../styles/variables/color_variable' as color;
+@use './../../styles/variables//size_variable' as size;
+@use './../../styles//variables/border_variable' as border;
+
+.facet {
+  display: flex;
+  gap: 1rem;
+  
+  &-item {
+    background: transparent;
+    width: 100%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    &:focus {
+      .facet-label {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-icon-label {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    text-align: left;
+  }
+}
+
+.facet-item-unclickable {
+  cursor: default;
+  &:focus {
+    .facet-label {
+      text-decoration: none;
+    }
+  }
+}
+
+.facet-direction-vertical {
+  flex-direction: column;
+}
+
+.facet-direction-horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  .facet-item {
+    width: auto;
+  }
+
+  .facet-label {
+    width: max-content;
+  }
+}
+
+.facet-item-space-start {
+  justify-content: flex-start;
+}
+
+.facet-item-space-between {
+  justify-content: space-between;
+}
+
+.facet-label-wrap {
+  &-elipsis {
+    .facet-icon-label {
+      max-inline-size: 100%;
+      overflow: hidden !important;
+
+      .facet-label {
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+      }
+    }
+  }
+
+  &-wrap {
+    .facet-icon-label {
+      max-inline-size: 100%;
+      white-space: wrap !important;
+    }
+  }
+}
+
+.facet-quantity-background-transparent {
+  background: transparent;
+}
+
+.facet-quantity-background-default {
+  background: color.$fuiColorLightShade;
+}
+
+.facet-quantity-background-primary {
+  background: color.$fuiColorPrimary;
+}
+
+.facet-quantity-background-success {
+  background: color.$fuiColorSuccess;
+}
+
+.facet-quantity-background-warning {
+  background: color.$fuiColorWarning;
+}
+
+.facet-quantity-background-danger {
+  background: color.$fuiColorDanger;
+}
+
+.facet-quantity-background-text {
+  background: color.$fuiColorDarkShade;
+}
+
+.facet-quantity-background-accent {
+  background: color.$fuiColorAccent;
+}
+
+.facet-quantity-background-disabled {
+  background: color.$fuiColorDisabled;
+}
+
+$size-style: (
+  sizedefault: size.$fuiSize,
+  sizexs: size.$fuiSizeXS,
+  sizes: size.$fuiSizeS,
+  sizem: size.$fuiSizeM,
+  sizel: size.$fuiSizeL,
+  sizexl: size.$fuiSizeXL,
+  sizexxl: size.$fuiSizeXXL,
+);
+
+@each $size, $value in $size-style {
+  .facet-quantity-size-#{$size} {
+    padding-inline: calc($value / 3.5);
+    border-radius: border.$fuiBorderRadiusSmall;
+  }
+}
+
+.facet-quantity-loading {
+  padding-inline: 0;
+}

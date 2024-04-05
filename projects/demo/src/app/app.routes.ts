@@ -1,23 +1,22 @@
+import { TimelineViewComponent } from './organisms/timeline-view/timeline-view.component';
 import { Routes } from '@angular/router';
-import { ChartBarViewComponent } from './organisms/chart-bar-view/chart-bar-view.component';
-import { ChartLineViewComponent } from './organisms/chart-line-view/chart-line-view.component';
-import { AppComponent } from './app.component';
-import { ChartPieViewComponent } from './organisms/chart-pie-view/chart-pie-view.component';
-import { ChartRadarViewComponent } from './organisms/chart-radar-view/chart-radar-view.component';
-import { ChartScatterViewComponent } from './organisms/chart-scatter-view/chart-scatter-view.component';
-import { ChartAreaViewComponent } from './organisms/chart-area-view/chart-area-view.component';
-import { ChartAreaStackedViewComponent } from './organisms/chart-area-stacked-view/chart-area-stacked-view.component';
-import { ChartLineStackedViewComponent } from './organisms/chart-line-stacked-view/chart-line-stacked-view.component';
-import { ChartAreaStackedGradientViewComponent } from './organisms/chart-area-stacked-gradient-view/chart-area-stacked-gradient-view.component';
-import { ChartPieDoughnutViewComponent } from './organisms/chart-pie-doughnut-view/chart-pie-doughnut-view.component';
-import { ChartCandlestickViewComponent } from './organisms/chart-candlestick-view/chart-candlestick-view.component';
-import { ChartTreeViewComponent } from './organisms/chart-tree-view/chart-tree-view.component';
 import { ModalViewComponent } from './templates/modal-view/modal-view.component';
 import { PanelViewComponent } from './templates/panel-view/panel-view.component';
 import { BreadcrumbViewComponent } from './molecules/breadcrumb-view/breadcrumb-view.component';
-import { ModalFlyoutViewComponent } from './template/modal-flyout-view/modal-flyout-view.component';
+import { FlyoutViewComponent } from './templates/flyout-view/flyout-view.component';
+import { CalloutViewComponent } from './organisms/callout-view/callout-view.component';
+import { LinkViewComponent } from './atoms/link-view/link-view.component';
+import { ButtonIconViewComponent } from './molecules/button-icon-view/button-icon-view.component';
+import { TextFieldComplexViewComponent } from './molecules/text-field-complex-view/text-field-complex-view.component';
 import { TooltipViewComponent } from './templates/tooltip-view/tooltip-view.component';
 import { LoadingViewComponent } from './molecules/loading-view/loading-view.component';
+import { InlineEditViewComponent } from './organisms/inline-edit-view/inline-edit-view.component';
+import { DataGridViewComponent } from './organisms/data-grid-view/data-grid-view.component';
+import { TabsViewComponent } from './molecules/tabs-view/tabs-view.component';
+import { SidenavViewComponent } from './templates/sidenav-view/sidenav-view.component';
+import { CollapsibleNavViewComponent } from './templates/collapsible-nav-view/collapsible-nav-view.component';
+import { ComboBoxViewComponent } from './molecules/combo-box-view/combo-box-view.component';
+import { FieldFilepickerViewComponent } from './molecules/field-filepicker-view/field-filepicker-view.component';
 import { ToastViewComponent } from './templates/toast-view/toast-view.component';
 import { DemoComponent } from './pages/demo/demo.component';
 import { BottombarViewComponent } from './templates/bottombar-view/bottombar-view.component';
@@ -30,6 +29,14 @@ import { CardViewComponent } from './templates/card-view/card-view.component';
 import { TreeViewViewComponent } from './templates/tree-view-view/tree-view-view.component';
 import { DescriptionListViewComponent } from './templates/description-list-view/description-list-view.component';
 import { ContextMenuViewComponent } from './templates/context-menu-view/context-menu-view.component';
+import { ResizableContainerViewComponent } from './templates/resizable-container-view/resizable-container-view.component';
+import { EchartsViewComponent } from './organisms/echarts-view/echarts-view.component';
+import { AppComponent } from './app.component';
+import { HeaderViewComponent } from './templates/header-view/header-view.component';
+import { FilterGroupViewComponent } from './organisms/filter-group-view/filter-group-view.component';
+import { StepsViewComponent } from './organisms/steps-view/steps-view.component';
+import { FacetButtonViewComponent } from './organisms/facet-button-view/facet-button-view.component';
+import { PageViewComponent } from './templates/page-view/page-view.component';
 
 export const routes: Routes = [
   {
@@ -37,6 +44,7 @@ export const routes: Routes = [
     path: '',
     component: AppComponent,
   },
+  /* Router for Organisms */
   {
     title: 'demo page',
     path: 'demo',
@@ -44,75 +52,65 @@ export const routes: Routes = [
   },
   /* Router for chart area */
   {
-    path: 'chart',
+    path: 'organisms',
     children: [
       {
         path: '',
-        redirectTo: 'chart-bar',
+        redirectTo: 'callout',
         pathMatch: 'full',
       },
       {
-        title: 'Chart Bar',
-        path: 'chart-bar',
-        component: ChartBarViewComponent,
+        path: 'filter-group',
+        component: FilterGroupViewComponent,
       },
       {
-        title: 'Chart Line',
-        path: 'chart-line',
-        component: ChartLineViewComponent,
+        path: 'callout',
+        component: CalloutViewComponent,
       },
       {
-        title: 'Chart Line Stacked',
-        path: 'chart-line-stacked',
-        component: ChartLineStackedViewComponent,
+        path: 'inline-edit',
+        component: InlineEditViewComponent,
       },
       {
-        title: 'Chart Pie',
-        path: 'chart-pie',
-        component: ChartPieViewComponent,
+        path: 'data-grid',
+        component: DataGridViewComponent,
       },
       {
-        title: 'Chart Pie Doughnut',
-        path: 'chart-pie-doughnut',
-        component: ChartPieDoughnutViewComponent,
+        path: 'steps',
+        component: StepsViewComponent,
       },
       {
-        title: 'Chart Radar',
-        path: 'chart-radar',
-        component: ChartRadarViewComponent,
+        path: 'timeline',
+        component: TimelineViewComponent,
       },
       {
-        title: 'Chart Scatter',
-        path: 'chart-scatter',
-        component: ChartScatterViewComponent,
+        path: 'facet-button',
+        component: FacetButtonViewComponent,
       },
       {
-        title: 'Chart Area',
-        path: 'chart-area',
-        component: ChartAreaViewComponent,
-      },
-      {
-        title: 'Chart Area Stacked',
-        path: 'chart-area-stacked',
-        component: ChartAreaStackedViewComponent,
-      },
-      {
-        title: 'Chart Area Stacked Gradient',
-        path: 'chart-area-stacked-gradient',
-        component: ChartAreaStackedGradientViewComponent,
-      },
-      {
-        title: 'Chart Candlestick',
-        path: 'chart-candlestick',
-        component: ChartCandlestickViewComponent,
-      },
-      {
-        title: 'Chart Tree',
-        path: 'chart-tree',
-        component: ChartTreeViewComponent,
+        path: 'echarts',
+        component: EchartsViewComponent,
       },
     ],
   },
+  /* Router for Organisms */
+
+  /* Router for Atoms */
+  {
+    path: 'atoms',
+    children: [
+      {
+        path: '',
+        redirectTo: 'link',
+        pathMatch: 'full',
+      },
+      {
+        path: 'link',
+        component: LinkViewComponent,
+      },
+    ],
+  },
+  /* Router for Atoms */
 
   /* Router for template */
   {
@@ -124,6 +122,18 @@ export const routes: Routes = [
         pathMatch: 'full',
       },
       {
+        path: 'modal',
+        component: ModalViewComponent,
+      },
+      {
+        path: 'header',
+        component: HeaderViewComponent,
+      },
+      {
+        path: 'header/:id',
+        component: HeaderViewComponent,
+      },
+      {
         path: 'panel',
         component: PanelViewComponent,
       },
@@ -132,8 +142,26 @@ export const routes: Routes = [
         component: ModalViewComponent,
       },
       {
-        path: 'modal-flyout',
-        component: ModalFlyoutViewComponent,
+        path: 'flyout',
+        component: FlyoutViewComponent,
+      },
+      {
+        path: 'side-nav',
+        component: SidenavViewComponent,
+        children: [
+          {
+            path: 'test',
+            component: SidenavViewComponent,
+          },
+          {
+            path: 'test-2',
+            component: SidenavViewComponent,
+          },
+        ],
+      },
+      {
+        path: 'collapsible-nav',
+        component: CollapsibleNavViewComponent,
       },
       {
         path: 'tooltip',
@@ -167,18 +195,49 @@ export const routes: Routes = [
         path: 'context-menu',
         component: ContextMenuViewComponent,
       },
+      {
+        path: 'page',
+        component: PageViewComponent,
+      },
+      {
+        path: 'resizable-container',
+        component: ResizableContainerViewComponent,
+      },
     ],
   },
+  /* Router for Templates */
+
+  /* Router for Molecules */
   {
-    path: 'molecule',
+    path: 'molecules',
     children: [
       {
         path: 'breadcrumb',
         component: BreadcrumbViewComponent,
       },
       {
+        path: 'button-icon',
+        component: ButtonIconViewComponent,
+      },
+      {
         path: 'loading',
         component: LoadingViewComponent,
+      },
+      {
+        path: 'tabs',
+        component: TabsViewComponent,
+      },
+      {
+        path: 'text-field',
+        component: TextFieldComplexViewComponent,
+      },
+      {
+        path: 'combo-box',
+        component: ComboBoxViewComponent,
+      },
+      {
+        path: 'field-filepicker',
+        component: FieldFilepickerViewComponent,
       },
       {
         path: 'avatar',
@@ -198,4 +257,5 @@ export const routes: Routes = [
       },
     ],
   },
+  /* Router for Molecules */
 ];

@@ -1,0 +1,36 @@
+@import "../variables/index";
+
+@mixin inlineEditMixin($size) {
+  margin: 20px;
+  .flex-input {
+    display: inline-flex;
+    .text {
+      font-family: $fuiFontFamily;
+      display: flex;
+      align-items: center;
+      font-size: $size + 3;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      cursor: pointer;
+      &:hover {
+        .edit-text {
+          text-decoration: underline;
+        }
+      }
+    }
+    .icon-inline {
+      margin-left: 5px;
+    }
+  }
+  .inline-edit {
+    align-items: baseline;
+    display: flex;
+    .fui-text-field-complex {
+      flex: 1;
+      margin-right: 8px;
+    }
+    .icon-list {
+      margin: 0px 3px 0px 3px;
+    }
+  }
+}

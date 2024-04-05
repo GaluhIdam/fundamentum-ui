@@ -1,0 +1,270 @@
+@use './../../styles//variables//color_variable' as color;
+@use './../../styles/variables//size_variable' as size;
+
+.steps {
+  display: flex;
+}
+
+.step-container {
+  display: flex;
+  flex-direction: column;
+
+}
+.step-container-horizontal {
+  flex: 1;
+
+}
+
+.step {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+.step-status-cursor-disabled {
+  cursor: not-allowed;
+}
+
+.step-icon,
+.step-content-indent {
+  border-radius: 50rem;
+  padding: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+}
+
+.step-content {
+  display: flex;
+  gap: 1rem;
+}
+
+.step-content-vertical {
+  padding-bottom: 1rem;
+}
+
+.step-content-horizontal {
+  padding-right: 1rem;
+}
+
+.step-content-current {
+  padding-top: 1rem;
+}
+
+.step-direction-vertical {
+  flex-direction: column;
+}
+
+.step-direction-horizontal {
+  flex-direction: row;
+}
+
+.step-vertical {
+  flex-direction: row;
+}
+
+.step-horizontal {
+  flex-direction: column;
+}
+
+.step-status-incomplete {
+  border: 2px solid color.$fuiColorLightShade;
+}
+
+.step-active {
+  .step-icon {
+    border: 2px solid color.$fuiColorInk;
+  }
+  .step-title {
+    text-decoration: underline;
+  }
+}
+
+.step-background-ink {
+  background: color.$fuiColorInk;
+}
+
+.step-background-ghost {
+  background: color.$fuiColorGhost;
+}
+
+.step-background-primary {
+  background: color.$fuiColorPrimary;
+}
+
+.step-background-success {
+  background: color.$fuiColorSuccess;
+}
+
+.step-background-warning {
+  background: color.$fuiColorWarning;
+}
+
+.step-background-danger {
+  background: color.$fuiColorDanger;
+}
+
+.step-background-text {
+  background: color.$fuiTextColor;
+}
+
+.step-background-accent {
+  background: color.$fuiColorAccent;
+}
+
+.step-background-disabled {
+  background: color.$fuiColorDisabled;
+}
+
+.step-size-sizedefault {
+  width: size.$fuiSize;
+  height: size.$fuiSize;
+}
+.step-size-sizexs {
+  width: size.$fuiSizeXS;
+  height: size.$fuiSizeXS;
+}
+.step-size-sizes {
+  width: size.$fuiSizeS;
+  height: size.$fuiSizeS;
+}
+.step-size-sizem {
+  width: size.$fuiSizeM;
+  height: size.$fuiSizeM;
+}
+
+.step-size-sizel {
+  width: size.$fuiSizeL;
+  height: size.$fuiSizeL;
+}
+
+.step-size-sizexl {
+  width: size.$fuiSizeXL;
+  height: size.$fuiSizeXL;
+}
+
+.step-size-sizexxl {
+  width: size.$fuiSizeXXL;
+  height: size.$fuiSizeXXL;
+}
+
+.vertical-line {
+  position: relative;
+
+  &:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 2px;
+    z-index: -1;
+    background-color: color.$fuiColorLightShade;
+  }
+}
+
+
+.vertical-line-left-sizedefault {
+  &:not(:last-child)::after {
+    left: calc((size.$fuiSize / 2) + .5rem);
+  }
+}
+
+.vertical-line-left-sizexs {
+  &:not(:last-child)::after {
+    left: calc((size.$fuiSizeXS / 2) + .5rem);
+  }
+}
+
+.vertical-line-left-sizes {
+  &:not(:last-child)::after {
+    left: calc((size.$fuiSizeS / 2) + .5rem);
+  }
+}
+
+.vertical-line-left-sizem {
+  &:not(:last-child)::after {
+    left: calc((size.$fuiSizeM / 2) + .5rem);
+  }
+}
+
+.vertical-line-left-sizel {
+  &:not(:last-child)::after {
+    left: calc((size.$fuiSizeL / 2) + .5rem);
+  }
+}
+
+.vertical-line-left-sizexl {
+  &:not(:last-child)::after {
+    left: calc((size.$fuiSizeXL / 2) + .5rem);
+  }
+}
+
+.vertical-line-left-sizexxl {
+  &:not(:last-child)::after {
+    left: calc((size.$fuiSizeXXL / 2) + .5rem);
+  }
+}
+
+.horizontal-line {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    width: 100%;
+    z-index: -1;
+    background-color: color.$fuiColorLightShade;
+  }
+}
+
+
+.horizontal-line-top-sizedefault {
+  &::after {
+    top: calc((size.$fuiSize / 2) + .5rem) !important;
+  }
+}
+
+.horizontal-line-top-sizexs {
+  &::after {
+    top: calc((size.$fuiSizeXS / 2) + .5rem) !important;
+  }
+}
+
+.horizontal-line-top-sizes {
+  &::after {
+    top: calc((size.$fuiSizeS / 2) + .5rem) !important;
+  }
+}
+
+.horizontal-line-top-sizem {
+  &::after {
+    top: calc((size.$fuiSizeM / 2) + .5rem) !important;
+  }
+}
+
+.horizontal-line-top-sizel {
+  &::after {
+    top: calc((size.$fuiSizeL / 2) + .5rem) !important;
+  }
+}
+
+.horizontal-line-top-sizexl {
+  &::after {
+    top: calc((size.$fuiSizeXL / 2) + .5rem) !important;
+  }
+}
+
+.horizontal-line-top-sizexxl {
+  &::after {
+    top: calc((size.$fuiSizeXXL / 2) + .5rem) !important;
+  }
+}

@@ -1,0 +1,82 @@
+@import "../variables/index";
+
+@mixin textFieldBaseStyles($size, $padding) {
+  font-family: $fuiFontFamily;
+  font-size: $size;
+  height: fit-content;
+  padding-top: $padding;
+  padding-bottom: $padding;
+  border: none;
+  box-shadow: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    color: #9aa4b4;
+    background-color: #eef2f7;
+    cursor: not-allowed;
+    &::placeholder {
+      color: #9aa4b4;
+    }
+  }
+}
+
+@mixin inputFieldContainer() {
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: -webkit-fill-available;
+  height: 100%;
+}
+
+@mixin bottomLine($color) {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: $color;
+}
+
+@mixin borderRadius($topRight, $bottomRight, $topLeft, $bottomLeft) {
+  border-top-right-radius: $topRight;
+  border-bottom-right-radius: $bottomRight;
+  border-top-left-radius: $topLeft;
+  border-bottom-left-radius: $bottomLeft;
+}
+
+@mixin textAppendPrepend($size, $bgColor) {
+  font-family: $fuiFontFamily;
+  font-size: $size;
+  background-color: $bgColor;
+  height: 100%;
+}
+
+@mixin appendPrepend($padding, $bgColor, $borderRadius) {
+  padding: $padding;
+  font-family: $fuiFontFamily;
+  background-color: $bgColor;
+  height: inherit;
+  z-index: 1;
+  border-radius: $borderRadius;
+}
+
+@mixin validatorInputField($color, $fontSize) {
+  color: $color;
+  margin: 10px 0px 0px 0px;
+  font-family: $fuiFontFamily;
+  font-size: $fontSize;
+}
+
+@mixin formControlLayout($borderColor, $borderWidth, $padding) {
+  display: flex;
+  border-style: solid;
+  border-width: $borderWidth;
+  border-color: $borderColor;
+  padding: $padding;
+}

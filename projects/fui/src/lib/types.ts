@@ -5,6 +5,8 @@ export type Color =
   | 'danger'
   | 'text'
   | 'accent'
+  | 'ghost'
+  | 'ink'
   | 'disabled';
 
 export type Size =
@@ -398,4 +400,72 @@ export interface PopoverConfigProps {
   footerButtonType?: 'button' | 'button-empty';
   footerButtonText?: string;
   footerButtonColor?: Color;
+}
+
+export enum StepStatus {
+  CURRENT = 'current',
+  COMPLETE = 'complete',
+  INCOMPLETE = 'incomplete',
+  WARNING = 'warning',
+  ERROR = 'error',
+  DISABLED = 'disabled',
+}
+
+export interface StepProps {
+  id: string;
+  stepType?: 'number' | 'icon';
+  stepStatus: StepStatus;
+  stepIcon?: {
+    [key in StepStatus]?: Icon;
+  };
+  stepBackground?: {
+    [key in StepStatus]?: Color;
+  };
+  stepColor?: {
+    [key in StepStatus]?: Color;
+  };
+  title?: string;
+  titleColor?: Color;
+  titleSize?: Size;
+}
+
+export interface FacetButtonProps {
+  id: string;
+  type: 'avatar' | 'icon' | 'indicator' | 'none';
+  facetLabel: {
+    label: string;
+    color?: Color;
+    size?: Size;
+  };
+  facetIcon?: {
+    icon: Icon;
+    color?: Color;
+    size?: Size;
+  };
+  facetAvatar?: {
+    id?: string;
+    shape?: 'user' | 'spaces';
+    type: AvatarType;
+    size?: Size;
+    color?: Color;
+    name?: string;
+    image?: string;
+    icon?: Icon;
+    avatarBorder?: boolean;
+  };
+  facetIndicator?: {
+    size?: Size;
+    color?: Color;
+  };
+  facetQuantity: {
+    quantity: number;
+    color?: Color;
+    background?: Color;
+    activeColor?: Color;
+    activeBackground?: Color;
+    size?: Size;
+  };
+  isSelected?: boolean;
+  isDisabled?: boolean;
+  isLoading?: boolean;
 }

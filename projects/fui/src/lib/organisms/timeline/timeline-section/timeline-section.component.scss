@@ -1,0 +1,71 @@
+@import "../../../styles/index";
+
+.fui-timeline-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  font-family: $fuiFontFamily;
+  align-items: end;
+  align-items: start;
+  .fui-icon-timeline {
+    padding: 7px 10px 7px 10px;
+    border-radius: 100%;
+  }
+  .fui-timeline-content {
+    width: -webkit-fill-available;
+    align-items: start;
+  }
+  .icon-adjust {
+    margin-top: 2px;
+  }
+}
+
+.comment-list {
+  margin: 0px 0px 30px 15px;
+}
+.no-comment-list {
+  margin: 8px 0px 30px 15px;
+}
+:host {
+  position: relative;
+}
+
+:host::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transform: translateX(17px);
+  border-left: 2px solid $fuiColorLightShade;
+}
+
+:host:last-child::after {
+  content: none;
+}
+
+.primary {
+  background-color: $fuiBtnPrimarySecondary;
+}
+.success {
+  background-color: $fuiBtnSuccessSecondary;
+}
+.warning {
+  background-color: $fuiBtnWarningSecondary;
+}
+.danger {
+  background-color: $fuiBtnDangerSecondary;
+}
+.text {
+  background-color: $fuiBtnTextSecondary;
+}
+.accent {
+  background-color: $fuiBtnAccentSecondary;
+}
+.ghost {
+  background-color: $fuiColorGhost;
+}
+.disabled {
+  background-color: $fuiColorLightestShade;
+}

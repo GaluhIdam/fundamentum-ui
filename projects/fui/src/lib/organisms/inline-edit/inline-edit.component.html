@@ -1,0 +1,55 @@
+<div class="{{ 'container-inline-edit-' + size }}">
+  <div *ngIf="!editMode" class="flex-input">
+    <span class="text" (click)="onHandleSave()">
+      <ng-content></ng-content>
+      <fui-icons
+        class="icon-inline"
+        [size]="
+          size === 's'
+            ? 'sizexs'
+            : size === 'm'
+            ? 'sizes'
+            : size === 'l'
+            ? 'sizem'
+            : 'sizem'
+        "
+        (click)="editMode = !editMode"
+        [icon]="'pencil'"
+      ></fui-icons>
+    </span>
+  </div>
+  <div class="inline-edit" *ngIf="editMode">
+    <fui-form-control-layout>
+      <fui-input-field
+        [formControlField]="textFieldControl"
+        [type]="'text'"
+        [size]="'l'"
+        [placeholder]="'Username'"
+        [invalid]="validator"
+      >
+      </fui-input-field>
+      <fui-validator-field validator [message]="message" />
+    </fui-form-control-layout>
+    <fui-button-icon
+      [disabled]="disabled"
+      [size]="size"
+      [color]="disabled ? 'disabled' : 'success'"
+      (onClick)="onHandleSave()"
+      class="icon-list"
+      [type]="'button'"
+      [option]="'icon'"
+      [style]="'secondary'"
+      [icon]="'check'"
+    ></fui-button-icon>
+    <fui-button-icon
+      (onClick)="onHandleCancel()"
+      class="icon-list"
+      [size]="size"
+      [type]="'button'"
+      [option]="'icon'"
+      [style]="'secondary'"
+      [color]="'danger'"
+      [icon]="'cross'"
+    ></fui-button-icon>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+@import "../../styles/index";
+
+.fui-overlay-collapsible-nav {
+  display: flex;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: $fuiFontFamily;
+  transition: transform 0.5s ease;
+  transform: translateX(-325px);
+}
+
+.fui-overlay-collapsible-nav.show {
+  width: 200%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translateX(0);
+}
+
+.fui-content-collapsible-nav {
+  padding: 15px;
+  width: 240px;
+  height: 100%;
+  background-color: #fff;
+}
+
+.ml-20 {
+  width: fit-content;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.fui-flex-container-collapsible {
+  display: flex;
+}
+.fui-outside-area-collapsible {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}

@@ -1,0 +1,162 @@
+<div style="display: flex;">
+  <div style="display:block; width: 50%;">
+    <h1>Filled Button Without Icon</h1>
+    <fui-button-icon [type]="'button'" [option]="'text'" [style]="'filled'" [text]="'Button Primary'"
+      [color]="'primary'" (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'text'" [style]="'filled'" [text]="'Button Success'"
+      [color]="'success'" (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'text'" [style]="'filled'" [text]="'Button Danger'" [color]="'danger'"
+      (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'text'" [style]="'filled'" [text]="'Button Warning'"
+      [color]="'warning'" (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'text'" [style]="'filled'" [text]="'Button Text'" [color]="'text'"
+      (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'text'" [style]="'filled'" [text]="'Button Accent'" [color]="'accent'"
+      (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'text'" [disabled]="true" [style]="'filled'" [text]="'Button Disabled'"
+      [color]="'disabled'" (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+  </div>
+
+
+  <div style="display:block; width: 50%;">
+    <h1>Filled Button With Icon</h1>
+    <fui-button-icon [type]="'button'" [option]="'iconText'" [style]="'filled'" [text]="'Button Primary'"
+      [color]="'primary'" [icon]="'apps'" [iconSide]="'right'" (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'iconText'" [style]="'filled'" [text]="'Button Success'"
+      [color]="'success'" [icon]="'check'" [iconSide]="'right'" (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'iconText'" [style]="'filled'" [text]="'Button Danger'"
+      [color]="'danger'" [icon]="'cross'" [iconSide]="'right'" (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'iconText'" [style]="'filled'" [text]="'Button Warning'"
+      [color]="'warning'" [icon]="'alert'" [iconSide]="'right'" (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'iconText'" [style]="'filled'" [text]="'Button Text'" [color]="'text'"
+      [icon]="'wordWrap'" [iconSide]="'right'" (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'iconText'" [style]="'filled'" [text]="'Button Accent'"
+      [color]="'accent'" [icon]="'wordWrap'" [iconSide]="'right'" (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'iconText'" [disabled]="true" [style]="'filled'"
+      [text]="'Button Disabled'" [color]="'disabled'" [icon]="'wordWrap'" [iconSide]="'right'"
+      (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+  </div>
+</div>
+
+<div style="display: flex;">
+  <div style="display:block; width: 50%;">
+    <h1>Filled Button Only Icon</h1>
+    <fui-button-icon [type]="'button'" [option]="'icon'" [style]="'filled'" [color]="'primary'" [icon]="'apps'"
+      (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'icon'" [style]="'filled'" [color]="'success'" [icon]="'check'"
+      (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'icon'" [style]="'filled'" [color]="'danger'" [icon]="'cross'"
+      (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'icon'" [style]="'filled'" [color]="'warning'" [icon]="'cross'"
+      (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'icon'" [style]="'filled'" [color]="'text'" [icon]="'alert'"
+      (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'icon'" [style]="'filled'" [color]="'accent'" [icon]="'wordWrap'"
+      (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'icon'" [disabled]="true" [style]="'filled'" [color]="'disabled'"
+      [icon]="'wordWrap'" (onClick)="handleButtonClick($event)" />
+    <div style="margin-bottom: 20px;"></div>
+  </div>
+
+
+  <div style="display:block; width: 50%;">
+    <h1>Secondary Button With Icon</h1>
+    <fui-button-icon [type]="'button'" [option]="'icon'" [style]="'secondary'" [text]="'Button Primary'"
+      [color]="'primary'" [icon]="'apps'" [iconSide]="'left'" (onClick)="handleButtonClick($event)"></fui-button-icon>
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'icon'" [style]="'secondary'" [text]="'Button Success'"
+      [color]="'success'" [icon]="'check'" [iconSide]="'left'" (onClick)="handleButtonClick($event)"></fui-button-icon>
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'icon'" [style]="'secondary'" [text]="'Button Danger'"
+      [color]="'danger'" [icon]="'cross'" [iconSide]="'left'" (onClick)="handleButtonClick($event)"></fui-button-icon>
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'icon'" [style]="'secondary'" [text]="'Button Warning'"
+      [color]="'warning'" [icon]="'alert'" [iconSide]="'left'" (onClick)="handleButtonClick($event)"></fui-button-icon>
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'icon'" [style]="'secondary'" [text]="'Button Text'" [color]="'text'"
+      [icon]="'wordWrap'" [iconSide]="'left'" (onClick)="handleButtonClick($event)"></fui-button-icon>
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'icon'" [style]="'secondary'" [text]="'Button Accent'"
+      [color]="'accent'" [icon]="'wordWrap'" [iconSide]="'right'"
+      (onClick)="handleButtonClick($event)"></fui-button-icon>
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'icon'" [disabled]="true" [style]="'secondary'"
+      [text]="'Button Disabled'" [color]="'disabled'" [icon]="'wordWrap'" [iconSide]="'right'"
+      (onClick)="handleButtonClick($event)"></fui-button-icon>
+    <div style="margin-bottom: 20px;"></div>
+  </div>
+</div>
+
+
+<div style="display: flex;">
+  <div style="display:block; width: 50%;">
+    <h1>Secondary Button Without Icon</h1>
+    <fui-button-icon [type]="'button'" [option]="'text'" [style]="'secondary'" [text]="'Button Primary'"
+      [color]="'primary'" (onClick)="handleButtonClick($event)"></fui-button-icon>
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'text'" [style]="'secondary'" [text]="'Button Success'"
+      [color]="'success'" (onClick)="handleButtonClick($event)"></fui-button-icon>
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'text'" [style]="'secondary'" [text]="'Button Danger'"
+      [color]="'danger'" (onClick)="handleButtonClick($event)"></fui-button-icon>
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'text'" [style]="'secondary'" [text]="'Button Warning'"
+      [color]="'warning'" (onClick)="handleButtonClick($event)"></fui-button-icon>
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'text'" [style]="'secondary'" [text]="'Button Text'" [color]="'text'"
+      (onClick)="handleButtonClick($event)"></fui-button-icon>
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'text'" [style]="'secondary'" [text]="'Button Accent'"
+      [color]="'accent'" (onClick)="handleButtonClick($event)"></fui-button-icon>
+    <div style="margin-bottom: 20px;"></div>
+    <fui-button-icon [type]="'button'" [option]="'text'" [disabled]="true" [style]="'secondary'"
+      [text]="'Button Disabled'" [color]="'disabled'" (onClick)="handleButtonClick($event)"></fui-button-icon>
+    <div style="margin-bottom: 20px;"></div>
+  </div>
+
+    <div style="display:block; width: 50%;">
+      <h1>Secondary Button With Icon</h1>
+      <fui-button-icon [type]="'button'" [option]="'iconText'" [style]="'secondary'" [text]="'Button Primary'"
+        [color]="'primary'" [icon]="'apps'" [iconSide]="'left'" (onClick)="handleButtonClick($event)" />
+      <div style="margin-bottom: 20px;"></div>
+      <fui-button-icon [type]="'button'" [option]="'iconText'" [style]="'secondary'" [text]="'Button Success'"
+        [color]="'success'" [icon]="'check'" [iconSide]="'left'" (onClick)="handleButtonClick($event)" />
+      <div style="margin-bottom: 20px;"></div>
+      <fui-button-icon [type]="'button'" [option]="'iconText'" [style]="'secondary'" [text]="'Button Danger'"
+        [color]="'danger'" [icon]="'cross'" [iconSide]="'left'" (onClick)="handleButtonClick($event)" />
+      <div style="margin-bottom: 20px;"></div>
+      <fui-button-icon [type]="'button'" [option]="'iconText'" [style]="'secondary'" [text]="'Button Warning'"
+        [color]="'warning'" [icon]="'alert'" [iconSide]="'left'" (onClick)="handleButtonClick($event)" />
+      <div style="margin-bottom: 20px;"></div>
+      <fui-button-icon [type]="'button'" [option]="'iconText'" [style]="'secondary'" [text]="'Button Text'" [color]="'text'"
+        [icon]="'wordWrap'" [iconSide]="'left'" (onClick)="handleButtonClick($event)" />
+      <div style="margin-bottom: 20px;"></div>
+      <fui-button-icon [type]="'button'" [option]="'iconText'" [style]="'secondary'" [text]="'Button Accent'"
+        [color]="'accent'" [icon]="'wordWrap'" [iconSide]="'left'" (onClick)="handleButtonClick($event)" />
+      <div style="margin-bottom: 20px;"></div>
+      <fui-button-icon [type]="'button'" [option]="'iconText'" [disabled]="true" [style]="'secondary'"
+        [text]="'Button Disabled'" [color]="'disabled'" [icon]="'wordWrap'" [iconSide]="'left'"
+        (onClick)="handleButtonClick($event)" />
+      <div style="margin-bottom: 20px;"></div>
+    </div>
+</div>

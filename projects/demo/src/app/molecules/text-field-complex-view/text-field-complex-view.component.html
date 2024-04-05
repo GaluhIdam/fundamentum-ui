@@ -1,0 +1,212 @@
+<div class="fit">
+  <fui-form-control-layout>
+    <fui-prepend>
+      <p>Prepend</p>
+    </fui-prepend>
+
+    <fui-input-field [type]="'text'" [size]="'l'" [invalid]="true">
+      <fui-icons
+        left-icon
+        [label]="'left'"
+        [icon]="'search'"
+        [size]="'sizel'"
+        [color]="'text'"
+      />
+      <fui-loading
+        class="mx-5"
+        right-icon
+        [type]="'spinner'"
+        [isLoading]="true"
+        [size]="'sizel'"
+      ></fui-loading>
+      <fui-icons
+        right-icon
+        [label]="'right'"
+        [icon]="'alert'"
+        [size]="'sizel'"
+        [color]="'danger'"
+      />
+    </fui-input-field>
+
+    <fui-append>
+      <p>Append</p>
+    </fui-append>
+    <fui-validator-field validator />
+  </fui-form-control-layout>
+</div>
+<div class="fit">
+  <fui-form-control-layout>
+    <fui-prepend>
+      <p>Prepend</p>
+    </fui-prepend>
+
+    <fui-select-field
+      [invalid]="true"
+      [size]="'m'"
+      [selectOptions]="selectOptions"
+    >
+      <fui-icons
+        left-icon
+        [label]="'left'"
+        [icon]="'search'"
+        [size]="'sizel'"
+        [color]="'text'"
+      />
+      <fui-loading
+        class="mx-5"
+        right-icon
+        [type]="'spinner'"
+        [isLoading]="true"
+        [size]="'sizel'"
+      ></fui-loading>
+      <fui-icons
+        right-icon
+        [label]="'right'"
+        [icon]="'alert'"
+        [size]="'sizel'"
+        [color]="'danger'"
+      />
+    </fui-select-field>
+
+    <fui-append>
+      <p>Append</p>
+    </fui-append>
+    <fui-validator-field validator />
+  </fui-form-control-layout>
+</div>
+
+<div class="fit" style="align-items: center">
+  <div class="max-width">
+    <fui-form-control-layout>
+      <fui-prepend>
+        <p>IDR</p>
+      </fui-prepend>
+
+      <fui-input-field
+        [type]="'number'"
+        [size]="'l'"
+        [placeholder]="'Currency'"
+        [invalid]="false"
+      >
+        <p left-icon>Rp.</p>
+      </fui-input-field>
+    </fui-form-control-layout>
+  </div>
+  <div class="max-width">
+    <fui-form-control-layout>
+      <fui-prepend>
+        <p>Dollar</p>
+      </fui-prepend>
+
+      <fui-input-field
+        [type]="'number'"
+        [size]="'l'"
+        [placeholder]="'Currency'"
+        [invalid]="false"
+      >
+        <p left-icon>$</p>
+      </fui-input-field>
+    </fui-form-control-layout>
+  </div>
+</div>
+
+<div class="fit">
+  <fui-form-control-layout>
+    <fui-prepend>
+      <fui-icons [icon]="'email'" [size]="'sizel'" [color]="'text'" />
+    </fui-prepend>
+    <fui-input-field
+      [type]="'text'"
+      [size]="'l'"
+      [placeholder]="'Email'"
+      [invalid]="false"
+    >
+    </fui-input-field>
+  </fui-form-control-layout>
+</div>
+
+<div class="fit">
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-input-field
+        [type]="'text'"
+        [size]="'l'"
+        [placeholder]="'Username'"
+        [invalid]="false"
+      >
+        <fui-icons
+          left-icon
+          [label]="'left'"
+          [icon]="'user'"
+          [size]="'sizel'"
+          [color]="'text'"
+        />
+      </fui-input-field>
+    </fui-form-control-layout>
+  </div>
+
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-input-field
+        [type]="'email'"
+        [size]="'l'"
+        [placeholder]="'Email'"
+        [invalid]="true"
+      >
+        <fui-icons
+          left-icon
+          [label]="'left'"
+          [icon]="'email'"
+          [size]="'sizel'"
+          [color]="'text'"
+        />
+        <fui-icons
+          right-icon
+          [label]="'right'"
+          [icon]="'alert'"
+          [size]="'sizel'"
+          [color]="'danger'"
+        />
+      </fui-input-field>
+      <fui-validator-field validator [message]="'Email is required!'" />
+    </fui-form-control-layout>
+  </div>
+
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-input-field
+        [formControlField]="passwordForm"
+        [type]="showPass ? 'text' : 'password'"
+        [size]="'l'"
+        [placeholder]="'Password'"
+        [invalid]="false"
+      >
+        <fui-icons
+          left-icon
+          [label]="'left'"
+          [icon]="'lock'"
+          [size]="'sizel'"
+          [color]="'text'"
+        />
+      </fui-input-field>
+      <fui-append (click)="showPass = !showPass">
+        <fui-icons
+          [icon]="showPass ? 'eyeClosed' : 'eye'"
+          [size]="'sizel'"
+          [color]="'text'"
+        />
+      </fui-append>
+    </fui-form-control-layout>
+  </div>
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-input-field
+        [type]="'text'"
+        [size]="'l'"
+        [placeholder]="'Standard Text Field'"
+        [invalid]="false"
+      >
+      </fui-input-field>
+    </fui-form-control-layout>
+  </div>
+</div>

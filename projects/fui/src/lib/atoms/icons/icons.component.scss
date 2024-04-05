@@ -1599,6 +1599,12 @@ i {
   }
 }
 
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .sizedefault {
   font-size: $fuiFontSize;
 }
@@ -1622,6 +1628,38 @@ i {
 
 .sizexxl {
   font-size: $fuiFontSizeXXL;
+}
+
+.icon-size-sizedefault {
+  width: $fuiFontSize;
+  height: $fuiFontSize;
+}
+.icon-size-sizexs {
+  width: $fuiFontSizeXS;
+  height: $fuiFontSizeXS;
+}
+.icon-size-sizes {
+  width: $fuiFontSizeS;
+  height: $fuiFontSizeS;
+}
+.icon-size-sizem {
+  width: $fuiFontSizeM;
+  height: $fuiFontSizeM;
+}
+
+.icon-size-sizel {
+  width: $fuiFontSizeL;
+  height: $fuiFontSizeL;
+}
+
+.icon-size-sizexl {
+  width: $fuiFontSizeXL;
+  height: $fuiFontSizeXL;
+}
+
+.icon-size-sizexxl {
+  width: $fuiFontSizeXXL;
+  height: $fuiFontSizeXXL;
 }
 
 .primary {
@@ -1649,4 +1687,12 @@ i {
 
 .disabled {
   @include fuiIcon($fuiColorDisabledText);
+}
+
+.ink {
+  @include fuiIcon($fuiColorInk)
+}
+
+.ghost {
+  @include fuiIcon($fuiColorGhost)
 }

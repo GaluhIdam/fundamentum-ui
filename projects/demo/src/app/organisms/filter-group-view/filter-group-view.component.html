@@ -1,0 +1,37 @@
+<div class="container">
+  <fui-filter-group [fullWidth]="false">
+    <fui-filter-group-button (onClick)="test($event)">
+      Single Filter
+    </fui-filter-group-button>
+
+    <fui-filter-group-button
+      (onClick)="onOff(true)"
+      [active]="active"
+      [withNext]="true"
+    >
+      On
+    </fui-filter-group-button>
+    <fui-filter-group-button (onClick)="onOff(false)" [active]="!active">
+      Off
+    </fui-filter-group-button>
+  </fui-filter-group>
+</div>
+
+<div class="container">
+  <fui-filter-group [fullWidth]="true">
+    <fui-filter-group-button (onClick)="test($event)">
+      Single Filter
+    </fui-filter-group-button>
+
+    <fui-filter-group-button
+      (onClick)="onOffSec(true)"
+      [active]="activeSec"
+      [withNext]="true"
+    >
+      On
+    </fui-filter-group-button>
+    <fui-filter-group-button (onClick)="onOffSec(false)" [active]="!activeSec">
+      Off
+    </fui-filter-group-button>
+  </fui-filter-group>
+</div>

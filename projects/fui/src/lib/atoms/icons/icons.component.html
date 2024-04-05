@@ -1,8 +1,10 @@
-<i
-  [ngClass]="[
-    'fui-icon',
-    icon ? 'fui-icon-' + icon : '',
-    size,
-    color ? color : ''
-  ]"
-></i>
+<div [ngClass]="['icon-container', 'icon-size-' + size]">
+  <i
+    [ngClass]="[
+      'fui-icon',
+      icon ? 'fui-icon-' + icon : '',
+      size,
+      color ? color : ''
+    ]"
+  ></i>
+</div>
