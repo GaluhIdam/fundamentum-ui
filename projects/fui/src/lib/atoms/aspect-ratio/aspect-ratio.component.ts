@@ -6,6 +6,17 @@ import {
   Renderer2,
 } from '@angular/core';
 
+/**
+ * The AspectRatioComponent
+ * @usage
+ * ```html
+ * <fui-aspect-ratio
+ *  [width]="16"
+ *  [height]="9">
+ * </fui-aspect-ratio>
+ * ```
+ * <example-url>http://localhost:4200/atoms/aspect-ratio</example-url>
+ */
 @Component({
   selector: 'fui-aspect-ratio',
   standalone: true,
