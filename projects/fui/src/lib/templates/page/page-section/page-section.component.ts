@@ -1,6 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
+/**
+ * The PageSectionComponent
+ * @usage
+ * ```html
+ * <fui-page-section [extendedBorder]="isExtendedBorder" [padding]="'m'">
+ *  Content
+ * </fui-page-section>
+ * ```
+ * <example-url>http://localhost:4200/templates/page</example-url>
+ */
 @Component({
   selector: 'fui-page-section',
   standalone: true,

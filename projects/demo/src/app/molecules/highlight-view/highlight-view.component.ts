@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HighlightComponent } from 'fui';
+import { HighlightComponent } from '../../../../../fui/src/public-api';
+// import { HighlightComponent } from 'fui';
 
 @Component({
   selector: 'app-highlight-view',

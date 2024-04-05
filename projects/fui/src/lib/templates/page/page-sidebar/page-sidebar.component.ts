@@ -1,6 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
+/**
+ * The PageSidebarComponent
+ * @usage
+ * ```html
+ * <fui-page-sidebar>
+ *  Content
+ * </fui-page-sidebar>
+ * ```
+ * <example-url>http://localhost:4200/templates/page</example-url>
+ */
 @Component({
   selector: 'fui-page-sidebar',
   standalone: true,

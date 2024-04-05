@@ -11,10 +11,11 @@ import { ButtonComponent } from '../../atoms/button/button.component';
  * ```html
  * <fui-card
  *  [title]="'Card Title'"
- *  [icon]="'package'"
- * > Card Content
+ *  [icon]="'package'">
+ *    Content
  * </fui-card>
  * ```
+ * <example-url>http://localhost:4200/templates/card</example-url>
  */
 
 @Component({

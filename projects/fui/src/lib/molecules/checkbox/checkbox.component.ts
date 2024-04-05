@@ -21,6 +21,7 @@ import { Color, DataCheckboxProps, Size } from '../../types';
  *  (onChangeOption)="handleOnChangeOption($event)"
  * ></fui-checkbox>
  * ```
+ * <example-url>http://localhost:4200/molecules/checkbox</example-url>
  */
 
 @Component({

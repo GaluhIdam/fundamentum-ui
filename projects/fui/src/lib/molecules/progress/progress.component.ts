@@ -3,6 +3,21 @@ import { ProgressBaseComponent } from '../../atoms/progress-base/progress-base.c
 import { Color, Size } from '../../types';
 import { TextComponent } from '../../atoms/text/text.component';
 
+/**
+ * The ProgressComponent
+ * @usage
+ * ```html
+ * <fui-progress
+ *  [value]="50"
+ *  [max]="100"
+ *  [color]="'primary'"
+ *  [size]="'sizedefault'"
+ *  [label]="'Label'"
+ * > </fui-progress>
+ * ```
+ * <example-url>http://localhost:4200/atoms/progress</example-url>
+ */
+
 @Component({
   selector: 'fui-progress',
   standalone: true,

@@ -33,6 +33,7 @@ import { ContextMenuItemComponent } from './context-menu-item/context-menu-item.
  *  (onClickItem)="handleOnClickItem($event)"
  * > </fui-context-menu>
  * ```
+ * <example-url>http://localhost:4200/templates/context-menu</example-url>
  */
 
 @Component({

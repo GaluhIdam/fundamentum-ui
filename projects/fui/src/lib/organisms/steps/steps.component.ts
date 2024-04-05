@@ -13,6 +13,16 @@ import { TextComponent } from '../../atoms/text/text.component';
 import { IconsComponent } from '../../atoms/icons/icons.component';
 import { StepContentComponent } from './step-content/step-content.component';
 
+/**
+ * The StepsComponent
+ * @usage
+ * ```html
+ * <fui-steps [steps]="steps">
+ * </fui-steps>
+ * ```
+ * <example-url>http://localhost:4200/organisms/steps</example-url>
+ */
+
 @Component({
   selector: 'fui-steps',
   standalone: true,

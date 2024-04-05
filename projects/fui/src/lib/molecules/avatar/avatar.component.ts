@@ -17,6 +17,7 @@ import { TextComponent } from '../../atoms/text/text.component';
  *  (onClickAvatar)="handleClickAvatar($event)"
  * ></fui-avatar>
  * ```
+ * <example-url>http://localhost:4200/molecules/avatar</example-url>
  */
 
 @Component({

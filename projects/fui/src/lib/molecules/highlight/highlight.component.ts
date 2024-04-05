@@ -16,6 +16,7 @@ import { Color, Size } from '../../types';
  *  [color]="'text'"
  * ></fui-highlight>
  * ```
+ * <example-url>http://localhost:4200/molecules/highlight</example-url>
  */
 
 @Component({

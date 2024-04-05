@@ -3,6 +3,19 @@ import { Size } from '../../types';
 import { CommonModule } from '@angular/common';
 import { OverlayMaskComponent } from '../../atoms/overlay-mask/overlay-mask.component';
 
+/**
+ * The LoadingComponent
+ * @usage
+ * ```html
+ * <fui-loading
+ *  [isLoading]="true"
+ *  [type]="'spinner'"
+ *  [size]="'sizem'"
+ * ></fui-loading>
+ * ```
+ * <example-url>http://localhost:4200/molecules/loading</example-url>
+ */
+
 @Component({
   selector: 'fui-loading',
   standalone: true,

@@ -21,6 +21,7 @@ export interface BreadCrubmbDataType extends BreadcrumbData {
  *  (onChangeBreadcrumb)="handleChange($event)"
  * ></fui-breadcrumb>
  * ```
+ * <example-url>http://localhost:4200/molecules/breadcrumb</example-url>
  */
 @Component({
   selector: 'fui-breadcrumb',

@@ -8,11 +8,11 @@ import { CommonModule } from '@angular/common';
  * The AccordionComponent
  * @usage
  * ```html
- * <fui-accordion
- *  [title]="'Title Accordion'">
- * > Body Accordion
+ * <fui-accordion [title]="'Title Accordion'">
+ *  Content
  * </fui-accordion>
  * ```
+ * <example-url>http://localhost:4200/organisms/accordion</example-url>
  */
 
 @Component({

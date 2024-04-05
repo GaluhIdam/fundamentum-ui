@@ -15,6 +15,7 @@ import { IconsComponent } from '../icons/icons.component';
  *  [iconPosition]="'start'"
  * > Badge </fui-badge>
  * ```
+ * <example-url>http://localhost:4200/atoms/badge</example-url>
  */
 
 @Component({

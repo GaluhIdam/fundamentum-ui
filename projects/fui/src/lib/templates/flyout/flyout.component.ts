@@ -20,6 +20,28 @@ import {
 import { BehaviorSubject } from 'rxjs';
 import { OverlayMaskComponent } from '../../atoms/overlay-mask/overlay-mask.component';
 
+/**
+ * The FlyoutComponent
+ * @usage
+ * ```html
+ * <fui-flyout
+ *  [open]="isOpenFlyout"
+ *  [flyoutSize]="flyoutSize"
+ *  [flyoutPadding]="flyoutPaddingSize">
+ *   <fui-flyout-header (onCloseFlyout)="handleCloseFlyout()">
+ *    Content
+ *   </fui-flyout-header>
+ *   <fui-flyout-body>
+ *    Content
+ *   </fui-flyout-body>
+ *   <fui-flyout-footer [isFlyoutFooterCustom]="true">
+ *    Content
+ *   </fui-flyout-footer>
+ * </fui-flyout>
+ * ```
+ * <example-url>http://localhost:4200/templates/flyout</example-url>
+ */
+
 @Component({
   selector: 'fui-flyout',
   standalone: true,

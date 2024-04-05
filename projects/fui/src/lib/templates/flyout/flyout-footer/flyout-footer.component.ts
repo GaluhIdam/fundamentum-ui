@@ -6,6 +6,17 @@ import { Color, Size } from '../../../types';
 import { FlyoutComponent } from '../flyout.component';
 import { Subscription } from 'rxjs';
 
+/**
+ * The FlyoutBodyComponent
+ * @usage
+ * ```html
+ * <fui-flyout-footer [isFlyoutFooterCustom]="true">
+ *  Content
+ * </fui-flyout-footer>
+ * ```
+ * <example-url>http://localhost:4200/templates/flyout</example-url>
+ */
+
 @Component({
   selector: 'fui-flyout-footer',
   standalone: true,

@@ -4,6 +4,19 @@ import { IconsComponent } from '../../atoms/icons/icons.component';
 import { TextComponent } from '../../atoms/text/text.component';
 import { CommonModule } from '@angular/common';
 
+/**
+ * The TreeViewComponent
+ * @usage
+ * ```html
+ * <fui-tree-view
+ *  [dataTreeView]="dataTreeView"
+ *  [size]="'sizem'"
+ *  (onClickItem)="handleOnclikItem($event)"
+ * ></fui-tree-view>
+ * ```
+ * <example-url>http://localhost:4200/templates/tree-view</example-url>
+ */
+
 @Component({
   selector: 'fui-tree-view',
   standalone: true,

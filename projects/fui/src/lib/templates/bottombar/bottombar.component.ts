@@ -12,10 +12,11 @@ import { animate, style, transition, trigger } from '@angular/animations';
  * <fui-bottombar
  *  [isDisplay]="true"
  *  (onConfirmButton)="handleConfirmBottomBar()"
- *  (onCancelButton)="handleCancelBottomBar()"
- * > BottomBar Content
+ *  (onCancelButton)="handleCancelBottomBar()">
+ *    Content
  * </fui-bottombar>
  * ```
+ * <example-url>http://localhost:4200/templates/bottombar</example-url>
  */
 
 @Component({

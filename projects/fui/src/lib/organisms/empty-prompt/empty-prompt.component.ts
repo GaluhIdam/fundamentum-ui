@@ -15,9 +15,11 @@ import { IconsComponent } from '../../atoms/icons/icons.component';
  *  [buttonText]="'Button'"
  *  [secondaryButtonText]="'Secondary action'"
  *  [shadow]="true"
- *  [secondaryButtonColor]="'primary'"
- * > Empty Promp Content </fui-empty-prompt>
+ *  [secondaryButtonColor]="'primary'">
+ *    Content
+ * </fui-empty-prompt>
  * ```
+ * <example-url>http://localhost:4200/organisms/empty-prompt</example-url>
  */
 
 @Component({
