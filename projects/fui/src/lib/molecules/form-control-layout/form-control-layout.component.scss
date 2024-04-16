@@ -2,7 +2,7 @@
 
 :host {
   .fui-form-control-layout {
-    @include formControlLayout(#a7a7a738, 1px, 0px);
+    @include formControlLayout($fuiColorLightShade, 1px, 0px);
     @include borderRadius(6px, 6px, 6px, 6px);
   }
 }

@@ -1,9 +1,6 @@
 import {
   Component,
-  EventEmitter,
   Input,
-  Output,
-  SimpleChanges,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 

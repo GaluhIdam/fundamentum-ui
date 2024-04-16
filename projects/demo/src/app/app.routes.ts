@@ -36,6 +36,7 @@ import { HeaderViewComponent } from './templates/header-view/header-view.compone
 import { FilterGroupViewComponent } from './organisms/filter-group-view/filter-group-view.component';
 import { StepsViewComponent } from './organisms/steps-view/steps-view.component';
 import { FacetButtonViewComponent } from './organisms/facet-button-view/facet-button-view.component';
+import { SelectableViewComponent } from './organisms/selectable-view/selectable-view.component';
 
 export const routes: Routes = [
   {
@@ -89,6 +90,10 @@ export const routes: Routes = [
       {
         path: 'echarts',
         component: EchartsViewComponent,
+      },
+      {
+        path: 'selectable',
+        component: SelectableViewComponent,
       },
     ],
   },

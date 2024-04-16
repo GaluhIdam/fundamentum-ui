@@ -87,6 +87,10 @@ export * from './lib/molecules/tabs/tabs-content/tabs-content.component';
 export * from './lib/organisms/timeline/timeline.component';
 export * from './lib/organisms/timeline/timeline-section/timeline-section.component';
 export * from './lib/organisms/timeline/comment-list/comment-list.component';
+/* Selectable */
+export * from './lib/organisms/selectable/selectable.component';
+export * from './lib/organisms/selectable/selectable.dto';
+
 /* Side Nav */
 export * from './lib/templates/sidenav/sidenav.component';
 /* Collapsible Nav */

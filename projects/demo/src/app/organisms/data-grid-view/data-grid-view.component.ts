@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
   ButtonIconComponent,
   ContentRowComponent,
@@ -42,7 +42,7 @@ export class DataGridViewComponent implements OnInit, OnDestroy {
   loadingSearch: boolean = false;
   search: string = '';
   colorActive: 'primary' | 'danger' | 'warning' | 'success' | 'text' | 'blank' =
-    'danger';
+    'primary';
   activeSelect: boolean = false;
 
   private _onDestroy$: Subject<Boolean> = new Subject<Boolean>();
