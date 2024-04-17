@@ -1,0 +1,30 @@
+@use './../../styles/variables/size_variable' as size;
+@use './../../styles//variables/color_variable' as color;
+@use './../../styles//variables/border_variable' as border;
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.list-group-bordered {
+  border: 1px solid color.$fuiColorMediumShade;
+  border-radius: border.$fuiBorderRadiusSmall;
+}
+
+.list-group-p-flush    {
+  padding: 0;
+}
+
+.list-group-p-s {
+  padding: size.$fuiSizeS;
+}
+
+.list-group-p-m {
+  padding: size.$fuiSizeM;
+}
+
+.list-group-p-l {
+  padding: size.$fuiSizeL;
+}

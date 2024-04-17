@@ -1,0 +1,170 @@
+<div class="container">
+  <fui-list-group [isBordered]="true" [padding]="'none'">
+    <fui-list-group-item
+      [item]="{
+        id: 'id-1',
+        itemLabel: { label: 'First Item' }
+      }"
+    ></fui-list-group-item>
+    <fui-list-group-item
+      [item]="{
+        id: 'id-2',
+        itemLabel: { label: 'Second Item' }
+      }"
+    ></fui-list-group-item>
+    <fui-list-group-item
+      [item]="{
+        id: 'id-3',
+        itemLabel: { label: 'Third Item' },
+        isActive: true
+      }"
+    ></fui-list-group-item>
+    <fui-list-group-item
+      [item]="{
+        id: 'id-4',
+        itemLabel: { label: 'Fourth Item' },
+        isDisabled: true
+      }"
+    ></fui-list-group-item>
+  </fui-list-group>
+</div>
+
+<div class="container">
+  <fui-list-group [isBordered]="true" [padding]="'none'">
+    <fui-list-group-item
+      [item]="{
+        id: 'id-item-link-1',
+        itemLabel: {
+          label: 'First Link'
+        },
+        itemIcon: 'calendar',
+        isLink: true
+      }"
+    ></fui-list-group-item>
+    <fui-list-group-item
+      [item]="{
+        id: 'id-item-link-2',
+        itemLabel: {
+          label: 'This is an active link with very long label that truncates',
+          labelWrap: 'elipsis'
+        },
+        itemIcon: { icon: 'clock', color: 'warning' },
+        isLink: true,
+      }"
+    ></fui-list-group-item>
+    <fui-list-group-item
+      [item]="{
+        id: 'id-item-link-3',
+        itemLabel: {
+          label: 'Third link is disabled'
+        },
+        itemIcon: { icon: 'compute' },
+        isDisabled: true
+      }"
+    ></fui-list-group-item>
+    <fui-list-group-item
+      [item]="{
+        id: 'id-item-link-4',
+        itemLabel: {
+          label: 'Fourth link'
+        },
+        itemIcon: { icon: 'copyClipboard' },
+        isLink: true
+      }"
+    ></fui-list-group-item>
+    <fui-list-group-item
+      [item]="{
+      id:'id-item-link-4',
+      itemLabel: {
+        label: 'Fifth link will open in new tab',
+      },
+      itemIcon: { icon: 'crosshairs', color: 'accent' },
+      isLink:true,
+      itemLink: {
+          href:'https://eui.elastic.co',
+          target: '_blank',
+          withIcon: true,
+          size: 'sizes'
+        }
+    }"
+    ></fui-list-group-item>
+    <fui-list-group-item
+      [item]="{
+      id:'id-item-link-6',
+      itemLabel: {
+        label: 'Sixth link will open in same tab',
+      },
+      itemIcon: { icon: 'crosshairs', color: 'accent' },
+      isLink:true,
+      itemLink: {
+          href:'https://eui.elastic.co',
+          target: '_self',
+        }
+    }"
+    ></fui-list-group-item>
+  </fui-list-group>
+</div>
+
+<div class="container">
+  <fui-list-group [isBordered]="false" [padding]="'none'">
+    <fui-list-group-item
+      [item]="{
+        id: 'id-wrap-1',
+        itemOptions: {
+          background: 'success',
+          backgroundActive: 'warning'
+        },
+        itemLabel: { label: 'First Item', colorActive: 'accent' },
+        itemIcon: { icon: 'user', color: 'primary', colorActive: 'accent' },
+        itemTooltip: {
+          isTooltip: true,
+          tooltipPosition: 'right',
+          tooltipAlign: 'center',
+          tooltipContent: 'Tooltip First Item'
+        }
+      }"
+    ></fui-list-group-item>
+    <fui-list-group-item
+      [item]="{
+        id: 'id-wrap-2',
+        itemLabel: { label: 'Second Item' },
+        itemTooltip: {
+          isTooltip: true,
+          tooltipPosition: 'right',
+          tooltipAlign: 'center',
+          tooltipContent: 'Tooltip Second Item'
+        }
+      }"
+    ></fui-list-group-item>
+    <fui-list-group-item
+      [item]="{
+        id: 'id-wrap-3',
+        itemLabel: {
+          label: 'Third very, very long item that will surely force truncation',
+          labelWrap: 'elipsis'
+        },
+        itemTooltip: {
+          isTooltip: true,
+          tooltipPosition: 'right',
+          tooltipAlign: 'center',
+          tooltipContent:
+            'Third very, very long item that will surely force truncation'
+        },
+        isActive: true
+      }"
+    ></fui-list-group-item>
+    <fui-list-group-item
+      [item]="{
+        id: 'id-wrap-4',
+        itemLabel: { label: 'Fourth very long item with wrapping enabled, custom props, and will not force truncation.' },
+        itemTooltip: {
+          isTooltip: true,
+          tooltipPosition: 'top',
+          tooltipAlign: 'center',
+          tooltipContent: 'Fourth very long item with wrapping enabled, custom props, and will not force truncation.'
+        },
+      }"
+    ></fui-list-group-item>
+  </fui-list-group>
+</div>
+<a href="" target=""></a>

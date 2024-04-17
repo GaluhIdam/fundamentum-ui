@@ -31,7 +31,8 @@ export * from './lib/molecules/progress/progress.component';
 export * from './lib/organisms/accordion/accordion.component';
 export * from './lib/organisms/empty-prompt/empty-prompt.component';
 export * from './lib/organisms/pagination/pagination.component';
-
+export * from './lib/organisms/list-group/list-group.component';
+export * from './lib/organisms/list-group/list-group-item/list-group-item.component';
 export * from './lib/templates/flyout/flyout.component';
 export * from './lib/templates/flyout/flyout-header/flyout-header.component';
 export * from './lib/templates/flyout/flyout-body/flyout-body.component';

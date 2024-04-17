@@ -37,6 +37,7 @@ import { FilterGroupViewComponent } from './organisms/filter-group-view/filter-g
 import { StepsViewComponent } from './organisms/steps-view/steps-view.component';
 import { FacetButtonViewComponent } from './organisms/facet-button-view/facet-button-view.component';
 import { PageViewComponent } from './templates/page-view/page-view.component';
+import { ListGroupViewComponent } from './organisms/list-group-view/list-group-view.component';
 
 export const routes: Routes = [
   {
@@ -86,6 +87,10 @@ export const routes: Routes = [
       {
         path: 'facet-button',
         component: FacetButtonViewComponent,
+      },
+      {
+        path: 'list-group',
+        component: ListGroupViewComponent,
       },
       {
         path: 'echarts',

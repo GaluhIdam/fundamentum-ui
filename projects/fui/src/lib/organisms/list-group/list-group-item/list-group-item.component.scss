@@ -1,0 +1,102 @@
+@use './../../../styles/variables/color_variable' as color;
+
+.list-group-item {
+  background: transparent;
+  width: 100%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .25rem .5rem;
+
+  &-active,
+  &:hover, 
+  &:focus {
+    .list-group-item-label {
+      text-decoration: underline;
+    }
+
+  }
+  
+  &-label {
+    text-align: left;
+  }
+  
+  &-disabled {
+    cursor: not-allowed;
+  
+    &:hover, 
+    &:focus {
+      background: transparent;
+  
+      .list-group-item-label {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-label-wrap {
+    &-elipsis {
+      .list-group-item-label {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    &-wrap {
+      .list-group-item-label {
+        white-space: wrap;
+      }
+    }
+  }
+}
+
+$color-styles: (
+  primary: color.$fuiColorPrimary,
+  accent: color.$fuiColorAccent,
+  success: color.$fuiColorSuccess,
+  warning: color.$fuiColorWarning,
+  danger: color.$fuiColorDanger,
+  text: color.$fuiColorDarkShade,
+  ink: color.$fuiColorInk,
+  ghost: color.$fuiColorGhost,
+  disabled: color.$fuiColorDisabled,
+);
+
+@each $color, $value in $color-styles {
+  .list-group-item-active-color-#{$color} {
+    .list-group-item-label {
+      color: $value;
+    }
+  }
+}
+
+$bg-color-styles: (
+  default: rgba($color: color.$fuiColorDarkestShade, $alpha: .1),
+  primary: rgba($color: color.$fuiBtnPrimarySecondary, $alpha: 1),
+  success: rgba($color: color.$fuiBtnSuccessSecondary, $alpha: 1),
+  warning: rgba($color: color.$fuiBtnWarningSecondary, $alpha: 1),
+  danger: rgba($color: color.$fuiBtnDangerSecondary, $alpha: 1),
+  text: rgba($color: color.$fuiBtnTextSecondary, $alpha: 1),
+  accent: rgba($color: color.$fuiBtnAccentSecondary, $alpha: 1),
+  ghost: rgba($color: color.$fuiColorGhost, $alpha: 1),
+  ink: rgba($color: color.$fuiColorInk, $alpha: 1),
+  disabled: rgba($color: color.$fuiBtnDisabledSecondary, $alpha: 1),
+);
+
+@each $color, $value in $bg-color-styles {  
+  .list-group-item-bg-#{$color} {
+    background: $value;
+  }
+
+  .list-group-item-active-bg-#{$color} {
+    &:hover,
+    &:focus {
+      background: $value;
+    }
+  }
+}

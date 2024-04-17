@@ -1,0 +1,93 @@
+<fui-tooltip
+  [displayTooltip]="
+    item?.itemTooltip?.isTooltip ? item?.itemTooltip?.isTooltip : false
+  "
+  [position]="
+    item?.itemTooltip?.tooltipPosition
+      ? item?.itemTooltip?.tooltipPosition
+      : 'right'
+  "
+  [title]="
+    item?.itemTooltip?.tooltipTitle ? item?.itemTooltip?.tooltipTitle : ''
+  "
+  [content]="
+    item?.itemTooltip?.tooltipContent ? item?.itemTooltip?.tooltipContent : ''
+  "
+>
+  <button
+    [id]="item?.id"
+    [ngClass]="[
+      'list-group-item',
+      (isItemActive || isItemHover) && item?.itemLabel?.colorActive
+        ? 'list-group-item-active-color-' + item?.itemLabel?.colorActive
+        : item?.isLink
+        ? 'list-group-item-active-color-primary'
+        : 'list-group-item-color-' + item?.itemLabel?.color,
+      (isItemActive || isItemHover) && item?.itemOptions?.backgroundActive
+        ? 'list-group-item-active-bg-' + item?.itemOptions?.backgroundActive
+        : item?.isLink
+        ? 'list-group-item-active-bg-primary'
+        : item?.isDisabled
+        ? ''
+        : 'list-group-item-active-bg-default',
+      item?.itemOptions?.background
+        ? 'list-group-item-bg-' + item?.itemOptions?.background
+        : '',
+      item?.isDisabled ? 'list-group-item-disabled' : '',
+      'list-group-item-label-wrap-' + item?.itemLabel?.labelWrap
+    ]"
+    (click)="handleClickItem()"
+    (mouseenter)="handleMouseEnter()"
+    (mouseleave)="handleMouseLeave()"
+  >
+    @if (item?.itemIcon?.icon) {
+    <div class="list-group-item-icon">
+      <fui-icons
+        [icon]="item?.itemIcon?.icon"
+        [color]="
+          item?.isDisabled
+            ? 'disabled'
+            : (isItemActive || isItemHover) && item?.itemIcon?.colorActive
+            ? item?.itemIcon?.colorActive
+            : item?.isLink
+            ? 'primary'
+            : item?.itemIcon?.color
+        "
+        [size]="item?.itemIcon?.size ? item?.itemIcon?.size : 'sizedefault'"
+      ></fui-icons>
+    </div>
+    }
+    <div class="list-group-item-label">
+      <fui-text
+        [color]="
+          item?.isDisabled
+            ? 'disabled'
+            : isItemActive || isItemHover
+            ? item?.itemLabel?.colorActive
+            : item?.isLink
+            ? 'primary'
+            : item?.itemLabel?.color
+        "
+        [size]="item?.itemLabel?.size"
+        >{{ item?.itemLabel?.label }}</fui-text
+      >
+    </div>
+    @if (item?.itemLink?.withIcon) {
+    <div class="list-group-item-icon">
+      <fui-icons
+        [icon]="item?.itemLink?.icon ? item?.itemLink?.icon : 'popout'"
+        [color]="
+          item?.isDisabled
+            ? 'disabled'
+            : (isItemActive || isItemHover) && item?.itemLink?.colorActive
+            ? item?.itemLink?.colorActive
+            : item?.isLink
+            ? 'primary'
+            : item?.itemLink?.color
+        "
+        [size]="item?.itemLink?.size ? item?.itemLink?.size : 'sizedefault'"
+      ></fui-icons>
+    </div>
+    }
+  </button>
+</fui-tooltip>
