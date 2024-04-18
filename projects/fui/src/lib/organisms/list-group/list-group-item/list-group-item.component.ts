@@ -7,7 +7,7 @@ import {
   OnChanges,
   Output,
 } from '@angular/core';
-import { ListGroupItemProps } from '../../../types';
+import { Icon, ListGroupItemProps } from '../../../types';
 import { CommonModule } from '@angular/common';
 import { IconsComponent } from '../../../atoms/icons/icons.component';
 import { TextComponent } from '../../../atoms/text/text.component';
@@ -36,11 +36,22 @@ export class ListGroupItemComponent implements OnChanges {
     isActive: false,
     isDisabled: false,
     isLink: false,
+    extraAction: {
+      pinnable: true,
+      pinned: false,
+      iconPinned: 'starFilled',
+      iconUnpinned: 'starEmpty',
+    },
   };
   @Output() onClickItem: EventEmitter<ListGroupItemProps> = new EventEmitter();
+  @Output() onClickItemPin: EventEmitter<ListGroupItemProps> =
+    new EventEmitter();
 
   isItemActive: boolean = false;
   isItemHover: boolean = false;
+  isItemPinned: boolean = false;
+  itemIconPinned: Icon = 'starFilled';
+  itemIconUnpinned: Icon = 'starEmpty';
 
   @HostListener('document:click', ['$event'])
   onClick(event: Event) {
@@ -73,6 +84,13 @@ export class ListGroupItemComponent implements OnChanges {
   ngOnChanges() {
     this.isItemHover = this.item?.isActive ?? false;
     this.isItemActive = this.item?.isActive ?? false;
+    this.isItemPinned = this.item?.extraAction?.pinned ?? false;
+    this.itemIconPinned = this.item?.extraAction?.iconPinned
+      ? this.item?.extraAction?.iconPinned
+      : 'starFilled';
+    this.itemIconUnpinned = this.item?.extraAction?.iconUnpinned
+      ? this.item?.extraAction?.iconUnpinned
+      : 'starEmpty';
   }
 
   handleClickItem() {
@@ -85,8 +103,11 @@ export class ListGroupItemComponent implements OnChanges {
       const target = this.item?.itemLink?.target;
       window.open(url, target);
     }
-
-    this.onClickItem.emit(this.item);
+    const tempItem = {
+      ...this.item,
+      extraAction: { ...this.item?.extraAction, pinned: this.isItemPinned },
+    };
+    this.onClickItem.emit(tempItem);
   }
 
   handleMouseEnter() {
@@ -98,5 +119,20 @@ export class ListGroupItemComponent implements OnChanges {
     if (!this.item.isDisabled) {
       this.isItemHover = false;
     }
+  }
+
+  handleClickItemPin() {
+    if (
+      !this.item?.extraAction?.isDisabled &&
+      this.item?.extraAction?.pinnable
+    ) {
+      this.isItemPinned = !this.isItemPinned;
+    }
+
+    const tempItem = {
+      ...this.item,
+      extraAction: { ...this.item?.extraAction, pinned: this.isItemPinned },
+    };
+    this.onClickItemPin.emit(tempItem);
   }
 }

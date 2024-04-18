@@ -6,11 +6,12 @@
   display: flex;
   flex-direction: column;
   gap: .5rem;
+  padding: .5rem;
 }
 
 .list-group-bordered {
   border: 1px solid color.$fuiColorMediumShade;
-  border-radius: border.$fuiBorderRadiusSmall;
+  border-radius: border.$fuiBorderRadius;
 }
 
 .list-group-p-flush    {

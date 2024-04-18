@@ -1,4 +1,19 @@
 @use './../../../styles/variables/color_variable' as color;
+@use './../../../styles/variables/border_variable' as border;
+
+.list-group-content {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.max-inline-80 {
+  max-inline-size: 88%;
+}
+
+.max-inline-100 {
+  max-inline-size: 100%;
+}
 
 .list-group-item {
   background: transparent;
@@ -9,8 +24,10 @@
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: .5rem;
   padding: .25rem .5rem;
+  border-radius: border.$fuiBorderRadius;
 
   &-active,
   &:hover, 
@@ -23,6 +40,11 @@
   
   &-label {
     text-align: left;
+    &-content {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
   }
   
   &-disabled {
@@ -40,7 +62,8 @@
 
   &-label-wrap {
     &-elipsis {
-      .list-group-item-label {
+      .list-group-item-label,
+      .list-group-item-label-content {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -53,6 +76,17 @@
       }
     }
   }
+}
+
+.list-group-extra-action {
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.not-pinnable-item {
+  cursor: not-allowed;
 }
 
 $color-styles: (

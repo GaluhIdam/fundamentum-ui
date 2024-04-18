@@ -40,54 +40,95 @@
     (mouseenter)="handleMouseEnter()"
     (mouseleave)="handleMouseLeave()"
   >
-    @if (item?.itemIcon?.icon) {
-    <div class="list-group-item-icon">
+    <div
+      [ngClass]="[
+        'list-group-content',
+        item?.isExtraAction ? 'max-inline-80' : 'max-inline-100'
+      ]"
+    >
+      @if (item?.itemIcon?.icon) {
+      <div class="list-group-item-icon">
+        <fui-icons
+          [icon]="item?.itemIcon?.icon"
+          [color]="
+            item?.isDisabled
+              ? 'disabled'
+              : (isItemActive || isItemHover) && item?.itemIcon?.colorActive
+              ? item?.itemIcon?.colorActive
+              : item?.isLink
+              ? 'primary'
+              : item?.itemIcon?.color
+          "
+          [size]="item?.itemIcon?.size ? item?.itemIcon?.size : 'sizedefault'"
+        ></fui-icons>
+      </div>
+      }
+      <div class="list-group-item-label-content">
+        <div class="list-group-item-label">
+          <fui-text
+            [color]="
+              item?.isDisabled
+                ? 'disabled'
+                : isItemActive || isItemHover
+                ? item?.itemLabel?.colorActive
+                : item?.isLink
+                ? 'primary'
+                : item?.itemLabel?.color
+            "
+            [size]="item?.itemLabel?.size"
+            >{{ item?.itemLabel?.label }}</fui-text
+          >
+        </div>
+        @if (item?.itemLink?.withIcon) {
+        <div class="list-group-item-icon">
+          <fui-icons
+            [icon]="item?.itemLink?.icon ? item?.itemLink?.icon : 'popout'"
+            [color]="
+              item?.isDisabled
+                ? 'disabled'
+                : (isItemActive || isItemHover) && item?.itemLink?.colorActive
+                ? item?.itemLink?.colorActive
+                : item?.isLink
+                ? 'primary'
+                : item?.itemLink?.color
+            "
+            [size]="item?.itemLink?.size ? item?.itemLink?.size : 'sizedefault'"
+          ></fui-icons>
+        </div>
+        }
+      </div>
+    </div>
+    @if(item?.isExtraAction && item?.extraAction?.pinnable) {
+    <button (click)="handleClickItemPin()" class="list-group-extra-action">
+      @if(isItemPinned) {
       <fui-icons
-        [icon]="item?.itemIcon?.icon"
+        [icon]="itemIconPinned"
         [color]="
-          item?.isDisabled
-            ? 'disabled'
-            : (isItemActive || isItemHover) && item?.itemIcon?.colorActive
-            ? item?.itemIcon?.colorActive
-            : item?.isLink
-            ? 'primary'
-            : item?.itemIcon?.color
+          item?.extraAction?.colorPinned
+            ? item?.extraAction?.colorPinned
+            : 'text'
         "
-        [size]="item?.itemIcon?.size ? item?.itemIcon?.size : 'sizedefault'"
+        [size]="
+          item?.extraAction?.size ? item?.extraAction?.size : 'sizedefault'
+        "
       ></fui-icons>
-    </div>
-    }
-    <div class="list-group-item-label">
-      <fui-text
-        [color]="
-          item?.isDisabled
-            ? 'disabled'
-            : isItemActive || isItemHover
-            ? item?.itemLabel?.colorActive
-            : item?.isLink
-            ? 'primary'
-            : item?.itemLabel?.color
-        "
-        [size]="item?.itemLabel?.size"
-        >{{ item?.itemLabel?.label }}</fui-text
-      >
-    </div>
-    @if (item?.itemLink?.withIcon) {
-    <div class="list-group-item-icon">
+      } @else { @if(isItemHover) {
       <fui-icons
-        [icon]="item?.itemLink?.icon ? item?.itemLink?.icon : 'popout'"
+        [ngClass]="[
+          item?.extraAction?.isDisabled ? 'not-pinnable-item' : 'pinnable-item'
+        ]"
+        [icon]="itemIconUnpinned"
         [color]="
-          item?.isDisabled
-            ? 'disabled'
-            : (isItemActive || isItemHover) && item?.itemLink?.colorActive
-            ? item?.itemLink?.colorActive
-            : item?.isLink
-            ? 'primary'
-            : item?.itemLink?.color
+          item?.extraAction?.colorUnpinned
+            ? item?.extraAction?.colorUnpinned
+            : 'text'
         "
-        [size]="item?.itemLink?.size ? item?.itemLink?.size : 'sizedefault'"
+        [size]="
+          item?.extraAction?.size ? item?.extraAction?.size : 'sizedefault'
+        "
       ></fui-icons>
-    </div>
+      } }
+    </button>
     }
   </button>
 </fui-tooltip>

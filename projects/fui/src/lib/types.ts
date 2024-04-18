@@ -505,4 +505,16 @@ export interface ListGroupItemProps {
     tooltipTitle?: string;
     tooltipContent?: string;
   };
+  isExtraAction?: boolean;
+  extraAction?: {
+    disabled?: boolean;
+    pinnable?: boolean;
+    pinned?: boolean;
+    iconPinned?: Icon;
+    iconUnpinned?: Icon;
+    colorPinned?: Color;
+    colorUnpinned?: Color;
+    size?: Size;
+    isDisabled?: boolean;
+  };
 }
