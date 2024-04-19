@@ -13,6 +13,23 @@ import { IconsComponent } from '../../../atoms/icons/icons.component';
 import { TextComponent } from '../../../atoms/text/text.component';
 import { TooltipComponent } from '../../../templates/tooltip/tooltip.component';
 
+/**
+ * The ListGroupItemComponent
+ * @usage
+ * ```html
+ * <fui-list-group [isBordered]="true" [padding]="'none'">
+ *  <fui-list-group-item
+ *    [item]="{
+ *      id: 'id-1',
+ *      itemLabel: { label: 'List Item' }
+ *      }"
+ *      (onClickItem)="handleOnclickItem($event)"
+ *  >
+ *  </fui-list-group-item>
+ * </fui-list-group>
+ * ```
+ * <example-url>http://localhost:4200/organisms/list-group</example-url>
+ */
 @Component({
   selector: 'fui-list-group-item',
   standalone: true,

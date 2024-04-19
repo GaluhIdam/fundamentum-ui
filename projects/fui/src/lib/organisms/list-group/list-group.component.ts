@@ -3,6 +3,17 @@ import { Component, ContentChildren, Input, QueryList } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { ListGroupItemComponent } from './list-group-item/list-group-item.component';
 
+/**
+ * The ListGroupComponent
+ * @usage
+ * ```html
+ * <fui-list-group [isBordered]="true" [padding]="'none'">
+ *  <fui-list-group-item></fui-list-group-item>
+ * </fui-list-group>
+ * ```
+ * <example-url>http://localhost:4200/organisms/list-group</example-url>
+ */
+
 @Component({
   selector: 'fui-list-group',
   standalone: true,
