@@ -8,6 +8,22 @@ import { TextComponent } from '../../atoms/text/text.component';
 import { CommonModule } from '@angular/common';
 import { Color, DataCheckboxProps, Size } from '../../types';
 
+/**
+ * The CheckboxComponent
+ * @usage
+ * ```html
+ * <fui-checkbox
+ *  formControlName="formControlName"
+ *  [groupLabel]="'Checkbox Label'"
+ *  [options]="dataCheckbox"
+ *  [errorMessage]="errorMessage"
+ *  [optionAlign]="'row'"
+ *  (onChangeOption)="handleOnChangeOption($event)"
+ * ></fui-checkbox>
+ * ```
+ * <example-url>http://localhost:4200/molecules/checkbox</example-url>
+ */
+
 @Component({
   selector: 'fui-checkbox',
   standalone: true,

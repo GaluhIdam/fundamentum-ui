@@ -4,6 +4,22 @@ import { CommonModule } from '@angular/common';
 import { IconsComponent } from '../../atoms/icons/icons.component';
 import { TextComponent } from '../../atoms/text/text.component';
 
+/**
+ * The AvatarComponent
+ * @usage
+ * ```html
+ * <fui-avatar
+ *  [shape]="'user'"
+ *  [type]="'initial'"
+ *  [name]="'Fui Design'"
+ *  [size]="'sizem'"
+ *  [color]="'primary'"
+ *  (onClickAvatar)="handleClickAvatar($event)"
+ * ></fui-avatar>
+ * ```
+ * <example-url>http://localhost:4200/molecules/avatar</example-url>
+ */
+
 @Component({
   selector: 'fui-avatar',
   standalone: true,

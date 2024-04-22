@@ -2,6 +2,23 @@ import { Component, Input } from '@angular/core';
 import { TextComponent } from '../../atoms/text/text.component';
 import { Color, Size } from '../../types';
 
+/**
+ * The HighlightComponent
+ * @usage
+ * ```html
+ * <fui-highlight
+ *  [text]="'The quick brown fox jumped over the lazy dog'"
+ *  [textHighlight]="'the'"
+ *  [isCaseSensitive]="false"
+ *  [isHighlightAll]="true"
+ *  [searchSeparatedWord]="true"
+ *  [size]="'sizem'"
+ *  [color]="'text'"
+ * ></fui-highlight>
+ * ```
+ * <example-url>http://localhost:4200/molecules/highlight</example-url>
+ */
+
 @Component({
   selector: 'fui-highlight',
   standalone: true,

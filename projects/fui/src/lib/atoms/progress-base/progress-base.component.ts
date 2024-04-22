@@ -2,6 +2,20 @@ import { Component, Input } from '@angular/core';
 import { Color, Size } from '../../types';
 import { CommonModule } from '@angular/common';
 
+/**
+ * The ProgressBaseComponent
+ * @usage
+ * ```html
+ * <fui-progress-base
+ *  [value]="50"
+ *  [max]="100"
+ *  [color]="'primary'"
+ *  [size]="'sizedefault'"
+ * ></fui-progress-base>
+ * ```
+ * <example-url>http://localhost:4200/atoms/progress</example-url>
+ */
+
 @Component({
   selector: 'fui-progress-base',
   standalone: true,

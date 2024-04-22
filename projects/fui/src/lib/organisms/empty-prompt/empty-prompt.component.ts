@@ -6,6 +6,22 @@ import { ButtonEmptyComponent } from '../../atoms/button-empty/button-empty.comp
 import { TextComponent } from '../../atoms/text/text.component';
 import { IconsComponent } from '../../atoms/icons/icons.component';
 
+/**
+ * The EmptyPromptComponent
+ * @usage
+ * ```html
+ * <fui-empty-prompt
+ *  [title]="'Empty Prompt Title'"
+ *  [buttonText]="'Button'"
+ *  [secondaryButtonText]="'Secondary action'"
+ *  [shadow]="true"
+ *  [secondaryButtonColor]="'primary'">
+ *    Content
+ * </fui-empty-prompt>
+ * ```
+ * <example-url>http://localhost:4200/organisms/empty-prompt</example-url>
+ */
+
 @Component({
   selector: 'fui-empty-prompt',
   standalone: true,

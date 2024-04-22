@@ -38,6 +38,12 @@ import { StepsViewComponent } from './organisms/steps-view/steps-view.component'
 import { FacetButtonViewComponent } from './organisms/facet-button-view/facet-button-view.component';
 import { PageViewComponent } from './templates/page-view/page-view.component';
 import { AspectRatioViewComponent } from './atoms/aspect-ratio-view/aspect-ratio-view.component';
+import { IconsViewComponent } from './atoms/icons-view/icons-view.component';
+import { BadgeViewComponent } from './atoms/badge-view/badge-view.component';
+import { ProgressViewComponent } from './atoms/progress-view/progress-view.component';
+import { EmptyPromptViewComponent } from './organisms/empty-prompt-view/empty-prompt-view.component';
+import { AccordionViewComponent } from './organisms/accordion-view/accordion-view.component';
+import { PaginationViewComponent } from './organisms/pagination-view/pagination-view.component';
 
 export const routes: Routes = [
   {
@@ -77,6 +83,18 @@ export const routes: Routes = [
         component: DataGridViewComponent,
       },
       {
+        path: 'empty-prompt',
+        component: EmptyPromptViewComponent,
+      },
+      {
+        path: 'accordion',
+        component: AccordionViewComponent,
+      },
+      {
+        path: 'pagination',
+        component: PaginationViewComponent,
+      },
+      {
         path: 'steps',
         component: StepsViewComponent,
       },
@@ -113,13 +131,25 @@ export const routes: Routes = [
         path: 'aspect-ratio',
         component: AspectRatioViewComponent,
       },
+      {
+        path: 'icon',
+        component: IconsViewComponent,
+      },
+      {
+        path: 'badge',
+        component: BadgeViewComponent,
+      },
+      {
+        path: 'progress',
+        component: ProgressViewComponent,
+      },
     ],
   },
   /* Router for Atoms */
 
   /* Router for template */
   {
-    path: 'template',
+    path: 'templates',
     children: [
       {
         path: '',

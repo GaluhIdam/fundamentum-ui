@@ -6,6 +6,17 @@ import { TextComponent } from '../../atoms/text/text.component';
 import { CommonModule } from '@angular/common';
 import { LoadingComponent } from '../../molecules/loading/loading.component';
 
+/**
+ * The FacetButtonComponent
+ * @usage
+ * ```html
+ * <fui-facet-button
+ *  [items]="facetItems">
+ * </fui-facet-button>
+ * ```
+ * <example-url>http://localhost:4200/organisms/facet-button</example-url>
+ */
+
 @Component({
   selector: 'fui-facet-button',
   standalone: true,

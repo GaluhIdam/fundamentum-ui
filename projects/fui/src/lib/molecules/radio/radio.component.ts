@@ -4,6 +4,23 @@ import { Color, DataRadioProps, Size } from '../../types';
 import { TextComponent } from '../../atoms/text/text.component';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
+/**
+ * The RadioComponent
+ * @usage
+ * ```html
+ * <fui-radio
+ *  [name]="'radio'"
+ *  formControlName="formControl"
+ *  [groupLabel]="'Label Radio'"
+ *  [options]="options"
+ *  [errorMessage]="errorMessage"
+ *  [optionAlign]="'row'"
+ *  (onChangeOption)="handleOnChangeOption($event)"
+ * ></fui-radio>
+ * ```
+ * <example-url>http://localhost:4200/molecules/radio</example-url>
+ */
+
 @Component({
   selector: 'fui-radio',
   standalone: true,

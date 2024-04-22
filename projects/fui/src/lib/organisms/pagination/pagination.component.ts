@@ -12,6 +12,17 @@ interface Page {
   active: boolean;
 }
 
+/**
+ * The PaginationComponent
+ * @usage
+ * ```html
+ * <fui-pagination
+ *  [totalItems]="100"
+ * ></fui-pagination>
+ * ```
+ * <example-url>http://localhost:4200/organisms/pagination</example-url>
+ */
+
 @Component({
   selector: 'fui-pagination',
   standalone: true,

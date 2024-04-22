@@ -1,0 +1,8 @@
+<div class="icons">
+  @for (iconName of icons; track $index) {
+  <div class="text-center icon">
+    <fui-icons [icon]="iconName" [size]="'sizexl'"></fui-icons>
+    <div>{{ iconName }}</div>
+  </div>
+  }
+</div>

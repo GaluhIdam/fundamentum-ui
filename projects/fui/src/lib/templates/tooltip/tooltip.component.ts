@@ -2,6 +2,20 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { TextComponent } from '../../atoms/text/text.component';
 
+/**
+ * The TooltipComponent
+ * @usage
+ * ```html
+ * <fui-tooltip
+ *  [position]="'top'"
+ *  [title]="'Title Tooltip'"
+ *  [content]="'Tooltip Content'"
+ * > Tooltip
+ * </fui-tooltip>
+ * ```
+ * <example-url>http://localhost:4200/templates/tooltip</example-url>
+ */
+
 @Component({
   selector: 'fui-tooltip',
   standalone: true,

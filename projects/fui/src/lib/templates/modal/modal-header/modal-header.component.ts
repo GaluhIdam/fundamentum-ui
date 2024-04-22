@@ -2,6 +2,16 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IconsComponent } from '../../../atoms/icons/icons.component';
 import { Color, Icon, Size } from '../../../types';
 
+/**
+ * The ModalHeaderComponent
+ * @usage
+ * ```html
+ * <fui-modal-header (onCloseModal)="handleCloseModal()">
+ *  Content
+ * </fui-modal-header>
+ * ```
+ * <example-url>http://localhost:4200/templates/modal</example-url>
+ */
 @Component({
   selector: 'fui-modal-header',
   standalone: true,
