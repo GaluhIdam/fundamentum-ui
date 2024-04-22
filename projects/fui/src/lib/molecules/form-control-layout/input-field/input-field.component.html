@@ -8,8 +8,8 @@
   <ng-content select="[left-icon]"></ng-content>
   <input
     [formControl]="formControlField"
-    (blur)="active = false"
-    (focus)="active = true"
+    (focus)="handleOnFocus()"
+    (blur)="handleOnBlur()"
     [type]="type"
     [placeholder]="placeholder"
     [ngClass]="{

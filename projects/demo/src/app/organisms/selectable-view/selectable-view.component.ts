@@ -7,7 +7,7 @@ import {
   InputFieldComponent,
   SelectableComponent,
   SelectableDTO,
-} from '../../../../../fui/src/public-api';
+} from 'fui';
 import { CommonModule } from '@angular/common';
 import {
   debounceTime,
@@ -36,9 +36,9 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrl: './selectable-view.component.scss',
 })
 export class SelectableViewComponent {
-  singleSelection: boolean = true;
+  singleSelection: boolean = false;
   allowExclusions: boolean = true;
-  filterOptions: boolean = false;
+  filterOptions: boolean = true;
   options: SelectableDTO[] = [];
 
   dataSelected?: SelectableDTO[] | SelectableDTO;
@@ -78,6 +78,7 @@ export class SelectableViewComponent {
         .pipe(
           switchMap((data) => {
             const reconData: SelectableDTO[] = [];
+            this.totalItems = data.total;
             data.products.forEach((item) => {
               const dto: SelectableDTO = {
                 label: item.title,
@@ -85,11 +86,43 @@ export class SelectableViewComponent {
                   price: item.price,
                   rate: item.rating,
                 },
+                description: item.description,
                 onCheck: undefined,
               };
               reconData.push(dto);
             });
             return (this.options = reconData);
+          }),
+          takeUntil(this._onDestroy$)
+        )
+        .subscribe();
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async showMore(): Promise<void> {
+    try {
+      this._dataGridViewService
+        .getProducts(this.page + 10, this.limit, '')
+        .pipe(
+          switchMap((data) => {
+            const reconData: SelectableDTO[] = [];
+            this.totalItems = data.total;
+            data.products.forEach((item) => {
+              const dto: SelectableDTO = {
+                label: item.title,
+                value: {
+                  price: item.price,
+                  rate: item.rating,
+                },
+                description: item.description,
+                onCheck: undefined,
+              };
+              reconData.push(dto);
+            });
+            this.page = this.page + 10;
+            return (this.options = this.options.concat(reconData));
           }),
           takeUntil(this._onDestroy$)
         )

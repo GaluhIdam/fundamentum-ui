@@ -25,6 +25,17 @@
       class="fui-list-icon"
       [icon]="'minus'"
     ></fui-icons>
-    <span class="fui-list-label">{{ item.label }}</span>
+    <div class="flex">
+      <span class="fui-list-label">{{ item.label }}</span>
+      <span class="fui-list-desc" *ngIf="item.description">{{
+        item.description
+      }}</span>
+    </div>
   </li>
 </ul>
+<span
+  (click)="clickShowMore()"
+  class="fui-showMore"
+  *ngIf="options.length < totalData"
+  >View more results</span
+>

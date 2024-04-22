@@ -32,6 +32,7 @@
     <!-- Filter Option -->
     <fui-form-control-layout *ngIf="filterOptions">
       <fui-input-field
+        [formControlField]="searchForm"
         [type]="'text'"
         [size]="'m'"
         [placeholder]="'Filter Options'"
@@ -48,10 +49,12 @@
     </fui-form-control-layout>
     <!-- Selectable -->
     <fui-selectable
+      [totalData]="totalItems"
       [options]="options"
       [singleSelection]="singleSelection"
       [allowExclusions]="allowExclusions"
       (selectClick)="clickHandle($event)"
+      (showMoreClick)="showMore()"
     />
     <!-- Result -->
     <div class="result">

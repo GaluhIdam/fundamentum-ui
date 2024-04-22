@@ -31,18 +31,24 @@ import { DescriptionListViewComponent } from './templates/description-list-view/
 import { ContextMenuViewComponent } from './templates/context-menu-view/context-menu-view.component';
 import { ResizableContainerViewComponent } from './templates/resizable-container-view/resizable-container-view.component';
 import { EchartsViewComponent } from './organisms/echarts-view/echarts-view.component';
-import { AppComponent } from './app.component';
 import { HeaderViewComponent } from './templates/header-view/header-view.component';
 import { FilterGroupViewComponent } from './organisms/filter-group-view/filter-group-view.component';
 import { StepsViewComponent } from './organisms/steps-view/steps-view.component';
 import { FacetButtonViewComponent } from './organisms/facet-button-view/facet-button-view.component';
 import { SelectableViewComponent } from './organisms/selectable-view/selectable-view.component';
+import { SitewideViewComponent } from './templates/sitewide-view/sitewide-view.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 export const routes: Routes = [
   {
-    title: 'Demo',
     path: '',
-    component: AppComponent,
+    pathMatch: 'full',
+    redirectTo: 'introduce',
+  },
+  {
+    title: 'Fundamentum UI',
+    path: 'introduce',
+    component: LandingPageComponent,
   },
   /* Router for Organisms */
   {
@@ -148,6 +154,10 @@ export const routes: Routes = [
       {
         path: 'flyout',
         component: FlyoutViewComponent,
+      },
+      {
+        path: 'sitewide',
+        component: SitewideViewComponent,
       },
       {
         path: 'side-nav',
