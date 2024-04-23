@@ -64,62 +64,6 @@ export const routes: Routes = [
     path: 'demo',
     component: DemoComponent,
   },
-  /* Router for chart area */
-  {
-    path: 'organisms',
-    children: [
-      {
-        path: '',
-        redirectTo: 'callout',
-        pathMatch: 'full',
-      },
-      {
-        path: 'filter-group',
-        component: FilterGroupViewComponent,
-      },
-      {
-        path: 'callout',
-        component: CalloutViewComponent,
-      },
-      {
-        path: 'inline-edit',
-        component: InlineEditViewComponent,
-      },
-      {
-        path: 'data-grid',
-        component: DataGridViewComponent,
-      },
-      {
-        path: 'empty-prompt',
-        component: EmptyPromptViewComponent,
-      },
-      {
-        path: 'accordion',
-        component: AccordionViewComponent,
-      },
-      {
-        path: 'pagination',
-        component: PaginationViewComponent,
-      },
-      {
-        path: 'steps',
-        component: StepsViewComponent,
-      },
-      {
-        path: 'timeline',
-        component: TimelineViewComponent,
-      },
-      {
-        path: 'facet-button',
-        component: FacetButtonViewComponent,
-      },
-      {
-        path: 'echarts',
-        component: EchartsViewComponent,
-      },
-    ],
-  },
-  /* Router for Organisms */
 
   /* Router for Atoms */
   {

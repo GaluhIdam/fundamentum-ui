@@ -1,11 +1,18 @@
 import { Component } from '@angular/core';
-import { LinkComponent } from 'fui';
+import { ButtonIconComponent, LinkComponent } from '../../../../../fui/src/public-api';
+// import { ButtonIconComponent, LinkComponent } from 'fui';
 
 @Component({
   selector: 'app-link-view',
   standalone: true,
-  imports: [LinkComponent],
+  imports: [LinkComponent, ButtonIconComponent],
   templateUrl: './link-view.component.html',
   styleUrl: './link-view.component.scss',
 })
-export class LinkViewComponent {}
+export class LinkViewComponent {
+  disabled: boolean = false;
+
+  toggleLink(): void {
+    this.disabled = !this.disabled;
+  }
+}

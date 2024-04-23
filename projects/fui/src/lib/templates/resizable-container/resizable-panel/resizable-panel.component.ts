@@ -2,10 +2,8 @@ import { CommonModule } from '@angular/common';
 import {
   Component,
   ElementRef,
-  EventEmitter,
   HostListener,
   Input,
-  Output,
   ViewChild,
 } from '@angular/core';
 
@@ -32,7 +30,6 @@ export class ResizablePanelComponent {
     this.resizableWidth = this.resizable?.nativeElement.offsetWidth - 20;
     this.resizing = true;
     this.startX = event.clientX;
-    console.log(this.resizableWidth);
   }
 
   heightResize(event: MouseEvent) {

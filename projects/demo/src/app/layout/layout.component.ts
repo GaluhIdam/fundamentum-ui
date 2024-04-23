@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  ViewChild,
+} from '@angular/core';
 
 import {
   AvatarComponent,
@@ -33,8 +38,20 @@ import { CommonModule } from '@angular/common';
   styleUrl: './layout.component.scss',
 })
 export class LayoutComponent {
+  @ViewChild('headerHeight') headerHeight?: ElementRef;
   show: boolean = false;
   component: Routes = routes;
+  sidebarHeight: string = '0';
+
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  ngAfterViewInit(): void {
+    if (this.headerHeight) {
+      this.sidebarHeight = `${this.headerHeight.nativeElement.offsetHeight}px`;
+      this.cdr.detectChanges();
+    }
+  }
+
   collapse(): void {
     this.show = !this.show;
   }

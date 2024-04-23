@@ -29,19 +29,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './collapsible-nav.component.scss',
 })
 export class CollapsibleNavComponent {
+  @Input() remainingHeight: string = '0';
   @Input({ required: true }) show: boolean = false;
   @Input() docked: boolean = true;
   @Output() onClick: EventEmitter<void> = new EventEmitter<void>();
 
-  handleOnClick(): void {
-    this.onClick.emit();
-  }
-
   /**
    * @ignore
    */
-  handleOverlayClick(event: MouseEvent): void {
-    this.handleOnClick();
+  handleOnClick(): void {
+    this.onClick.emit();
   }
 
   /**
