@@ -1,23 +1,28 @@
 @import "../../styles/index";
-
+.flex {
+  display: flex;
+}
 .fui-overlay-collapsible-nav {
   display: flex;
   height: 100%;
   position: fixed;
-  top: 0;
   left: 0;
+  top: 0;
   font-family: $fuiFontFamily;
   transition: transform 0.5s ease;
   transform: translateX(-325px);
 }
 
 .fui-overlay-collapsible-nav.show {
+  z-index: 1;
   width: 200%;
   background-color: rgba(0, 0, 0, 0.5);
   transform: translateX(0);
 }
 
 .fui-content-collapsible-nav {
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 15px;
   width: 240px;
   height: 100%;
@@ -33,7 +38,132 @@
   display: flex;
 }
 .fui-outside-area-collapsible {
+  display: none;
   width: 100%;
   height: 100%;
   position: absolute;
+}
+
+.fui-content-collapsible-nav-docked {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 15px;
+  width: 225px;
+  max-height: 100%;
+}
+
+.content-router {
+  width: -webkit-fill-available;
+  position: fixed;
+  height: -webkit-fill-available;
+  flex: 1;
+  padding: 20px;
+  left: 255px;
+  animation: slideIn 0.5s ease forwards;
+}
+
+.content-router.show {
+  animation: slideOut 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    left: 0;
+  }
+  to {
+    left: 255px;
+  }
+}
+
+.content-router.hide {
+  animation: slideOut 0.5s ease forwards;
+}
+
+@keyframes slideOut {
+  from {
+    left: 255px;
+  }
+  to {
+    left: 0;
+  }
+}
+
+/* Navigation Overlay */
+@keyframes slideInX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-325px);
+  }
+}
+
+@keyframes slideOutX {
+  from {
+    transform: translateX(-325px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.fui-overlay-collapsible-nav-docked {
+  background-color: $fuiColorLightestShade;
+  box-shadow: inset -5px 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  position: fixed;
+  left: 0;
+  font-family: $fuiFontFamily;
+  animation: slideOutX 0.5s ease forwards;
+}
+
+.fui-overlay-collapsible-nav-docked.show {
+  animation: slideInX 0.5s ease forwards;
+}
+
+/* Flex Container */
+@keyframes slideInFlex {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-325px);
+    display: none;
+  }
+}
+
+@keyframes slideOutFlex {
+  from {
+    transform: translateX(-325px);
+    display: none;
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.fui-flex-container-collapsible-docked {
+  display: flex;
+  animation: slideInFlex 0.5s ease forwards;
+}
+
+.fui-flex-container-collapsible-docked.show {
+  animation: slideOutFlex 0.5s ease forwards;
+}
+
+/** Add On*/
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: $fuiColorMediumShade;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $fuiColorDarkShade;
 }

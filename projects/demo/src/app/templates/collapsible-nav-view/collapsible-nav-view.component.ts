@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { ButtonIconComponent, CollapsibleNavComponent } from 'fui';
+import {
+  ButtonIconComponent,
+  CollapsibleNavComponent,
+} from '../../../../../fui/src/public-api';
+// import { ButtonIconComponent, CollapsibleNavComponent } from 'fui';
 
 @Component({
   selector: 'app-collapsible-nav-view',
@@ -13,5 +17,6 @@ export class CollapsibleNavViewComponent {
 
   collapse(): void {
     this.show = !this.show;
+    console.log(this.show);
   }
 }

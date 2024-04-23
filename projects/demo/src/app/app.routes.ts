@@ -37,73 +37,25 @@ import { StepsViewComponent } from './organisms/steps-view/steps-view.component'
 import { FacetButtonViewComponent } from './organisms/facet-button-view/facet-button-view.component';
 import { SelectableViewComponent } from './organisms/selectable-view/selectable-view.component';
 import { SitewideViewComponent } from './templates/sitewide-view/sitewide-view.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
+import { IntroduceViewComponent } from './introduce-view/introduce-view.component';
 
+/** ATTENTION, ADD A TITLE IN CHILDREN ROUTE FOR THE DOCUMENTATION */
 export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'introduce',
+    redirectTo: 'getting-started',
   },
   {
     title: 'Fundamentum UI',
-    path: 'introduce',
-    component: LandingPageComponent,
+    path: 'getting-started',
+    component: IntroduceViewComponent,
   },
-  /* Router for Organisms */
   {
     title: 'demo page',
     path: 'demo',
     component: DemoComponent,
   },
-  /* Router for chart area */
-  {
-    path: 'organisms',
-    children: [
-      {
-        path: '',
-        redirectTo: 'callout',
-        pathMatch: 'full',
-      },
-      {
-        path: 'filter-group',
-        component: FilterGroupViewComponent,
-      },
-      {
-        path: 'callout',
-        component: CalloutViewComponent,
-      },
-      {
-        path: 'inline-edit',
-        component: InlineEditViewComponent,
-      },
-      {
-        path: 'data-grid',
-        component: DataGridViewComponent,
-      },
-      {
-        path: 'steps',
-        component: StepsViewComponent,
-      },
-      {
-        path: 'timeline',
-        component: TimelineViewComponent,
-      },
-      {
-        path: 'facet-button',
-        component: FacetButtonViewComponent,
-      },
-      {
-        path: 'echarts',
-        component: EchartsViewComponent,
-      },
-      {
-        path: 'selectable',
-        component: SelectableViewComponent,
-      },
-    ],
-  },
-  /* Router for Organisms */
 
   /* Router for Atoms */
   {
@@ -115,12 +67,139 @@ export const routes: Routes = [
         pathMatch: 'full',
       },
       {
+        title: 'Link Component',
         path: 'link',
         component: LinkViewComponent,
       },
     ],
   },
   /* Router for Atoms */
+
+  /* Router for Molecules */
+  {
+    path: 'molecules',
+    children: [
+      {
+        path: '',
+        redirectTo: 'breadcrumb',
+        pathMatch: 'full',
+      },
+      {
+        title: 'Breadcrumb',
+        path: 'breadcrumb',
+        component: BreadcrumbViewComponent,
+      },
+      {
+        title: 'Button Icon',
+        path: 'button-icon',
+        component: ButtonIconViewComponent,
+      },
+      {
+        title: 'Loading',
+        path: 'loading',
+        component: LoadingViewComponent,
+      },
+      {
+        title: 'Tabs',
+        path: 'tabs',
+        component: TabsViewComponent,
+      },
+      {
+        title: 'Text Field',
+        path: 'text-field',
+        component: TextFieldComplexViewComponent,
+      },
+      {
+        title: 'Combo Box',
+        path: 'combo-box',
+        component: ComboBoxViewComponent,
+      },
+      {
+        title: 'Field Filepicker',
+        path: 'field-filepicker',
+        component: FieldFilepickerViewComponent,
+      },
+      {
+        title: 'Avatar',
+        path: 'avatar',
+        component: AvatarViewComponent,
+      },
+      {
+        title: 'Checkbox',
+        path: 'checkbox',
+        component: CheckboxViewComponent,
+      },
+      {
+        title: 'Radio',
+        path: 'radio',
+        component: RadioViewComponent,
+      },
+      {
+        title: 'Highlight',
+        path: 'highlight',
+        component: HighlightViewComponent,
+      },
+    ],
+  },
+  /* Router for Molecules */
+
+  /* Router for Organisms */
+  {
+    path: 'organisms',
+    children: [
+      {
+        path: '',
+        redirectTo: 'callout',
+        pathMatch: 'full',
+      },
+      {
+        title: 'Filter Group',
+        path: 'filter-group',
+        component: FilterGroupViewComponent,
+      },
+      {
+        title: 'Callout',
+        path: 'callout',
+        component: CalloutViewComponent,
+      },
+      {
+        title: 'Inline Edit',
+        path: 'inline-edit',
+        component: InlineEditViewComponent,
+      },
+      {
+        title: 'Data Grid',
+        path: 'data-grid',
+        component: DataGridViewComponent,
+      },
+      {
+        title: 'Steps',
+        path: 'steps',
+        component: StepsViewComponent,
+      },
+      {
+        title: 'Timeline',
+        path: 'timeline',
+        component: TimelineViewComponent,
+      },
+      {
+        title: 'Facet Button',
+        path: 'facet-button',
+        component: FacetButtonViewComponent,
+      },
+      {
+        title: 'Echarts',
+        path: 'echarts',
+        component: EchartsViewComponent,
+      },
+      {
+        title: 'Selectable',
+        path: 'selectable',
+        component: SelectableViewComponent,
+      },
+    ],
+  },
+  /* Router for Organisms */
 
   /* Router for template */
   {
@@ -132,140 +211,98 @@ export const routes: Routes = [
         pathMatch: 'full',
       },
       {
+        title: 'Modal Component',
         path: 'modal',
         component: ModalViewComponent,
       },
       {
+        title: 'Header',
         path: 'header',
         component: HeaderViewComponent,
       },
       {
-        path: 'header/:id',
-        component: HeaderViewComponent,
-      },
-      {
+        title: 'Panel',
         path: 'panel',
         component: PanelViewComponent,
       },
       {
-        path: 'modal',
-        component: ModalViewComponent,
-      },
-      {
+        title: 'Flyout',
         path: 'flyout',
         component: FlyoutViewComponent,
       },
       {
+        title: 'Sitewide',
         path: 'sitewide',
         component: SitewideViewComponent,
       },
       {
+        title: 'Side Navigation',
         path: 'side-nav',
         component: SidenavViewComponent,
         children: [
           {
+            title: 'Test',
             path: 'test',
             component: SidenavViewComponent,
           },
           {
+            title: 'Test 2',
             path: 'test-2',
             component: SidenavViewComponent,
           },
         ],
       },
       {
+        title: 'Collapsible Navigation',
         path: 'collapsible-nav',
         component: CollapsibleNavViewComponent,
       },
       {
+        title: 'Tooltip',
         path: 'tooltip',
         component: TooltipViewComponent,
       },
       {
+        title: 'Bottom Bar',
         path: 'bottombar',
         component: BottombarViewComponent,
       },
       {
+        title: 'Popover',
         path: 'popover',
         component: PopoverViewComponent,
       },
       {
+        title: 'Card',
         path: 'card',
         component: CardViewComponent,
       },
       {
+        title: 'Toast',
         path: 'toast',
         component: ToastViewComponent,
       },
       {
+        title: 'Tree View',
         path: 'tree-view',
         component: TreeViewViewComponent,
       },
       {
+        title: 'Description List',
         path: 'description-list',
         component: DescriptionListViewComponent,
       },
       {
+        title: 'Context Menu',
         path: 'context-menu',
         component: ContextMenuViewComponent,
       },
       {
+        title: 'Resizable Container',
         path: 'resizable-container',
         component: ResizableContainerViewComponent,
       },
     ],
   },
   /* Router for Templates */
-
-  /* Router for Molecules */
-  {
-    path: 'molecules',
-    children: [
-      {
-        path: 'breadcrumb',
-        component: BreadcrumbViewComponent,
-      },
-      {
-        path: 'button-icon',
-        component: ButtonIconViewComponent,
-      },
-      {
-        path: 'loading',
-        component: LoadingViewComponent,
-      },
-      {
-        path: 'tabs',
-        component: TabsViewComponent,
-      },
-      {
-        path: 'text-field',
-        component: TextFieldComplexViewComponent,
-      },
-      {
-        path: 'combo-box',
-        component: ComboBoxViewComponent,
-      },
-      {
-        path: 'field-filepicker',
-        component: FieldFilepickerViewComponent,
-      },
-      {
-        path: 'avatar',
-        component: AvatarViewComponent,
-      },
-      {
-        path: 'checkbox',
-        component: CheckboxViewComponent,
-      },
-      {
-        path: 'radio',
-        component: RadioViewComponent,
-      },
-      {
-        path: 'highlight',
-        component: HighlightViewComponent,
-      },
-    ],
-  },
-  /* Router for Molecules */
 ];

@@ -1,0 +1,136 @@
+<fui-header [position]="'fixed-top'">
+  <fui-header-panel left>
+    <fui-icons
+      (click)="collapse()"
+      class="icon-nav"
+      [size]="'sizel'"
+      [icon]="'heatmap'"
+    ></fui-icons>
+    <h3 class="title">Fundamentum UI</h3>
+    <span class="version">v1.0.0 Alpha</span>
+  </fui-header-panel>
+
+  <fui-header-panel right>
+    <div class="nav-item">
+      <fui-avatar
+        [shape]="'spaces'"
+        [name]="'User'"
+        [type]="'image'"
+        [image]="
+          'https://media.licdn.com/dms/image/C4D0BAQGmcK5iCbCdCw/company-logo_200_200/0/1660032173167/assegaf_hamzah__partners_logo?e=2147483647&v=beta&t=UCq9SgVmNnTYVSuGNdmXLPLXuY6E8LxY3wvSJ5i1yN0'
+        "
+        [size]="'sizem'"
+        [color]="'accent'"
+      ></fui-avatar>
+      <div class="info-head">
+        <span class="dev">Developed By</span>
+        <p class="corp">Assegaf Hamzah & Partners</p>
+      </div>
+    </div>
+  </fui-header-panel>
+</fui-header>
+<div class="flex">
+  <fui-collapsible-nav [show]="show" [docked]="true">
+    <div left-content>
+      <p class="title-link">Guidelines</p>
+      <div>
+        <fui-link
+          class="link-route"
+          [colorLink]="'primary'"
+          [urlLink]="'/'"
+          [typeLink]="'coloring'"
+          [colorLink]="'text'"
+        >
+          Getting Started
+        </fui-link>
+        <fui-link
+          class="link-route"
+          [colorLink]="'primary'"
+          [urlLink]="'http://localhost:8080'"
+          [typeLink]="'external'"
+          [colorLink]="'text'"
+        >
+          Documentation
+        </fui-link>
+      </div>
+      <div *ngFor="let item of component">
+        <p
+          *ngIf="item.path === 'atoms' && item.children.length > 0"
+          class="title-link"
+        >
+          Atoms
+        </p>
+        <div *ngIf="item.path === 'atoms'">
+          <fui-link
+            class="link-route"
+            *ngFor="let comp of item.children"
+            [colorLink]="'primary'"
+            [urlLink]="item.path + '/' + comp.path"
+            [typeLink]="'coloring'"
+            [colorLink]="'text'"
+          >
+            {{ comp.title }}
+          </fui-link>
+        </div>
+
+        <p
+          *ngIf="item.path === 'molecules' && item.children.length > 0"
+          class="title-link"
+        >
+          Molecules
+        </p>
+        <div *ngIf="item.path === 'molecules'">
+          <fui-link
+            class="link-route"
+            *ngFor="let comp of item.children"
+            [colorLink]="'primary'"
+            [urlLink]="item.path + '/' + comp.path"
+            [typeLink]="'coloring'"
+            [colorLink]="'text'"
+          >
+            {{ comp.title }}
+          </fui-link>
+        </div>
+
+        <p
+          *ngIf="item.path === 'organisms' && item.children.length > 0"
+          class="title-link"
+        >
+          Organisms
+        </p>
+        <div *ngIf="item.path === 'organisms'">
+          <fui-link
+            class="link-route"
+            *ngFor="let comp of item.children"
+            [colorLink]="'primary'"
+            [urlLink]="item.path + '/' + comp.path"
+            [typeLink]="'coloring'"
+            [colorLink]="'text'"
+          >
+            {{ comp.title }}
+          </fui-link>
+        </div>
+
+        <p
+          *ngIf="item.path === 'template' && item.children.length > 0"
+          class="title-link"
+        >
+          Templates
+        </p>
+        <div *ngIf="item.path === 'template'">
+          <fui-link
+            class="link-route"
+            *ngFor="let comp of item.children"
+            [colorLink]="'primary'"
+            [urlLink]="item.path + '/' + comp.path"
+            [typeLink]="'coloring'"
+            [colorLink]="'text'"
+          >
+            {{ comp.title }}
+          </fui-link>
+        </div>
+      </div>
+    </div>
+    <ng-content right-content></ng-content>
+  </fui-collapsible-nav>
+</div>

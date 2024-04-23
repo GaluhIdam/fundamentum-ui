@@ -1,17 +1,38 @@
+<h1>Link</h1>
+<p>
+  FuiLink is any anchor or button element that is designed to display nicely
+  within a block of text. It also provides more anchor-specific styling onto
+  links and makes sure they are accessible.
+</p>
+
+<h1>External links</h1>
+<p>
+  This adds an icon indicator instructing users that a new window will open. You
+  can also manually apply this icon in case you handle the target behavior by
+  other means.
+</p>
+
+<h1>Disabled links</h1>
+<p>
+  When an Link is passed an onClick method, and is not passed an href, it can
+  optionally be set todisabled which disables the click behavior, and removes
+  the link styling.
+</p>
 <!-- External -->
-<p>Link External</p>
 <fui-link
   [colorLink]="'primary'"
   [urlLink]="'https://www.google.com'"
   [typeLink]="'external'"
-> Link Google
+>
+  Link Google
 </fui-link>
 <br />
 <fui-link
   [colorLink]="'success'"
   [urlLink]="'https://www.google.com'"
   [typeLink]="'external'"
-> Link Google
+>
+  Link Google
 </fui-link>
 <!-- External -->
 
@@ -21,14 +42,16 @@
   [colorLink]="'warning'"
   [urlLink]="'https://www.google.com'"
   [typeLink]="'coloring'"
-> Link Google
+>
+  Link Google
 </fui-link>
 <br />
 <fui-link
   [colorLink]="'danger'"
   [urlLink]="'https://www.google.com'"
   [typeLink]="'coloring'"
-> Link Google
+>
+  Link Google
 </fui-link>
 <!-- Coloring -->
 
@@ -38,13 +61,15 @@
   [colorLink]="'danger'"
   [urlLink]="'https://www.google.com'"
   [typeLink]="'disabled'"
-> Link Google
+>
+  Link Google
 </fui-link>
 <br />
 <fui-link
   [colorLink]="'warning'"
   [urlLink]="'https://www.google.com'"
   [typeLink]="'disabled'"
-> Link Google
+>
+  Link Google
 </fui-link>
 <!-- Disabled -->

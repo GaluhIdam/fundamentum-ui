@@ -1,9 +1,22 @@
-<div class="fui-flex-container-collapsible">
-  <div class="fui-overlay-collapsible-nav" [class.show]="show">
-    <div class="fui-content-collapsible-nav">
-      <ng-content></ng-content>
+<div class="flex">
+  <div
+    class="{{
+      docked
+        ? 'fui-overlay-collapsible-nav-docked'
+        : 'fui-overlay-collapsible-nav'
+    }}"
+    [class.show]="show"
+  >
+    <div
+      class="{{
+        docked
+          ? 'fui-content-collapsible-nav-docked'
+          : 'fui-content-collapsible-nav'
+      }}"
+    >
+      <ng-content select="[left-content]"></ng-content>
     </div>
-    <div style="width: 100%">
+    <div *ngIf="!docked" style="width: fit-content">
       <div class="ml-20">
         <fui-button-icon
           (click)="handleOnClick()"
@@ -17,5 +30,8 @@
       </div>
       <div (click)="handleOnClick()" class="fui-outside-area-collapsible"></div>
     </div>
+  </div>
+  <div [ngStyle]="{ 'display': !docked ? 'none' : 'block', 'padding': '0' }" class="content-router" [class.show]="show">
+    <ng-content select="[right-content]"></ng-content>
   </div>
 </div>

@@ -15,7 +15,6 @@
   width: 200px;
   height: 50px;
   border: 2px dashed #ccc; /* Change to your desired color */
-  display: grid;
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
@@ -48,7 +47,9 @@
 }
 
 .fui-content {
-  width: fit-content;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
 }
 
 .fui-list-dropzone {
@@ -78,4 +79,8 @@
 
 .z-1 {
   z-index: -1;
+}
+
+.fui-icons-container {
+  justify-content: center;
 }

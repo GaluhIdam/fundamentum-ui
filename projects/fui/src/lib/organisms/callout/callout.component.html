@@ -7,7 +7,7 @@
     <div class="flex">
       <!-- Title -->
       <ng-container *ngIf="size === 'm'; else smallTitle">
-        <h4 [ngClass]="color">
+        <h4 [ngClass]="color" class="title-callout">
           <!-- Icon -->
           <fui-icons
             [className]="'icon'"
@@ -21,7 +21,7 @@
       </ng-container>
 
       <ng-template #smallTitle>
-        <h5 [ngClass]="color">
+        <h5 [ngClass]="color" class="title-callout">
           <!-- Icon -->
           <fui-icons
             [className]="'icon'"

@@ -1,6 +1,5 @@
 import {
   Component,
-  ElementRef,
   EventEmitter,
   HostListener,
   Input,
@@ -31,12 +30,8 @@ import { CommonModule } from '@angular/common';
 })
 export class CollapsibleNavComponent {
   @Input({ required: true }) show: boolean = false;
+  @Input() docked: boolean = true;
   @Output() onClick: EventEmitter<void> = new EventEmitter<void>();
-
-  /**
-   * @ignore
-   */
-  constructor(private elementRef: ElementRef) {}
 
   handleOnClick(): void {
     this.onClick.emit();

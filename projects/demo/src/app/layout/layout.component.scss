@@ -1,0 +1,64 @@
+.title {
+  margin: 0px 0px 0px 5px;
+  font-weight: 600;
+  align-items: baseline;
+}
+.nav-item {
+  margin: 5px 10px 5px 10px;
+  align-items: center;
+  display: flex;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+p {
+  margin: 0px 0px 0px 10px;
+}
+
+.flex {
+  display: flex;
+}
+
+.icon-nav {
+  padding: 8px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.title-link {
+  font-weight: bold;
+  margin: 15px 0px 10px 0px;
+}
+
+.link-route {
+  margin: 5px 0px 5px 0px;
+}
+.version {
+  font-size: 11px;
+  color: black;
+  font-weight: bold;
+  padding: 6px;
+  border-radius: 3px;
+  margin-left: 10px;
+  background-color: rgb(211, 218, 230);
+}
+
+.info-head {
+  .dev {
+    margin: 0px 0px 0px 10px;
+    font-size: 10px;
+  }
+  .corp {
+    font-size: 13px;
+    margin: 0px 0px 0px 10px;
+  }
+}
+
+.content-router {
+  flex: 1; /* Fill remaining space */
+  padding: 20px; /* Optional: Add padding */
+  transition: margin-left 0.3s ease; /* Add transition effect for smoother hide/show */
+}

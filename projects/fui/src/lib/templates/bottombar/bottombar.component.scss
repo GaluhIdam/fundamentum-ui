@@ -1,6 +1,7 @@
 @import "./../../styles/index";
 
 .bottombar {
+  z-index: 1;
   background: $fuiColorDarkestShade;
   padding: 1rem;
   display: flex;
