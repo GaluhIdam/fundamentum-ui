@@ -38,6 +38,14 @@ import { FacetButtonViewComponent } from './organisms/facet-button-view/facet-bu
 import { SelectableViewComponent } from './organisms/selectable-view/selectable-view.component';
 import { SitewideViewComponent } from './templates/sitewide-view/sitewide-view.component';
 import { IntroduceViewComponent } from './introduce-view/introduce-view.component';
+import { PageViewComponent } from './templates/page-view/page-view.component';
+import { AspectRatioViewComponent } from './atoms/aspect-ratio-view/aspect-ratio-view.component';
+import { IconsViewComponent } from './atoms/icons-view/icons-view.component';
+import { BadgeViewComponent } from './atoms/badge-view/badge-view.component';
+import { ProgressViewComponent } from './atoms/progress-view/progress-view.component';
+import { EmptyPromptViewComponent } from './organisms/empty-prompt-view/empty-prompt-view.component';
+import { AccordionViewComponent } from './organisms/accordion-view/accordion-view.component';
+import { PaginationViewComponent } from './organisms/pagination-view/pagination-view.component';
 
 /** ATTENTION, ADD A TITLE IN CHILDREN ROUTE FOR THE DOCUMENTATION */
 export const routes: Routes = [
@@ -56,6 +64,62 @@ export const routes: Routes = [
     path: 'demo',
     component: DemoComponent,
   },
+  /* Router for chart area */
+  {
+    path: 'organisms',
+    children: [
+      {
+        path: '',
+        redirectTo: 'callout',
+        pathMatch: 'full',
+      },
+      {
+        path: 'filter-group',
+        component: FilterGroupViewComponent,
+      },
+      {
+        path: 'callout',
+        component: CalloutViewComponent,
+      },
+      {
+        path: 'inline-edit',
+        component: InlineEditViewComponent,
+      },
+      {
+        path: 'data-grid',
+        component: DataGridViewComponent,
+      },
+      {
+        path: 'empty-prompt',
+        component: EmptyPromptViewComponent,
+      },
+      {
+        path: 'accordion',
+        component: AccordionViewComponent,
+      },
+      {
+        path: 'pagination',
+        component: PaginationViewComponent,
+      },
+      {
+        path: 'steps',
+        component: StepsViewComponent,
+      },
+      {
+        path: 'timeline',
+        component: TimelineViewComponent,
+      },
+      {
+        path: 'facet-button',
+        component: FacetButtonViewComponent,
+      },
+      {
+        path: 'echarts',
+        component: EchartsViewComponent,
+      },
+    ],
+  },
+  /* Router for Organisms */
 
   /* Router for Atoms */
   {
@@ -70,6 +134,22 @@ export const routes: Routes = [
         title: 'Link Component',
         path: 'link',
         component: LinkViewComponent,
+      },
+      {
+        path: 'aspect-ratio',
+        component: AspectRatioViewComponent,
+      },
+      {
+        path: 'icon',
+        component: IconsViewComponent,
+      },
+      {
+        path: 'badge',
+        component: BadgeViewComponent,
+      },
+      {
+        path: 'progress',
+        component: ProgressViewComponent,
       },
     ],
   },
@@ -203,7 +283,7 @@ export const routes: Routes = [
 
   /* Router for template */
   {
-    path: 'template',
+    path: 'templates',
     children: [
       {
         path: '',
@@ -296,6 +376,10 @@ export const routes: Routes = [
         title: 'Context Menu',
         path: 'context-menu',
         component: ContextMenuViewComponent,
+      },
+      {
+        path: 'page',
+        component: PageViewComponent,
       },
       {
         title: 'Resizable Container',

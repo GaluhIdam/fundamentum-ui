@@ -13,6 +13,15 @@ import {
   trigger,
 } from '@angular/animations';
 
+/**
+ * The ToastComponent
+ * @usage
+ * ```html
+ * <fui-toast></fui-toast>
+ * ```
+ * <example-url>http://localhost:4200/templates/toast</example-url>
+ */
+
 @Component({
   selector: 'fui-toast',
   standalone: true,

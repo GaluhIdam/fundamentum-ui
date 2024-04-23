@@ -3,6 +3,27 @@ import { CommonModule } from '@angular/common';
 import { OverlayMaskComponent } from '../../atoms/overlay-mask/overlay-mask.component';
 import { animate, style, transition, trigger } from '@angular/animations';
 
+/**
+ * The ModalComponent
+ * @usage
+ * ```html
+ * <fui-modal
+ *  [open]="isModalOpen"
+ *  (onClickOverlayModal)="handleClickOverlay()">
+ *   <fui-modal-header (onCloseModal)="handleCloseModal()">
+ *    Content
+ *   </fui-modal-header>
+ *   <fui-modal-body (onCloseModal)="handleCloseModal()">
+ *    Content
+ *   </fui-modal-body>
+ *   <fui-modal-footer [isCustomModalFooter]="true">
+ *    Content
+ *   </fui-modal-footer>
+ * </fui-modal>
+ * ```
+ * <example-url>http://localhost:4200/templates/modal</example-url>
+ */
+
 @Component({
   selector: 'fui-modal',
   standalone: true,

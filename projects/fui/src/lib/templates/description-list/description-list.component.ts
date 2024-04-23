@@ -14,6 +14,19 @@ type TextStyleProps =
   | 'extrabold';
 
 type ColumnWidth = 1 | 2 | 3 | 4;
+/**
+ * The DescriptionListComponent
+ * @usage
+ * ```html
+ * <fui-description-list
+ *  [data]="descriptionListData"
+ *  [type]="'column'"
+ *  [gap]="'m'"
+ *  [align]="'left'"
+ * ></fui-description-list>
+ * ```
+ * <example-url>http://localhost:4200/templates/description-list</example-url>
+ */
 
 @Component({
   selector: 'fui-description-list',

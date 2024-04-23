@@ -10,7 +10,7 @@ import { BreadcrumbComponent, BreadcrumbData } from 'fui';
 })
 export class BreadcrumbViewComponent {
   links = [
-    { label: 'Breadcrumb1', link: '/molecule/breadcrumb' },
+    { label: 'Breadcrumb1', link: '/molecules/breadcrumb' },
     { label: 'Breadcrumb2', link: 'breadcrumb2' },
     { label: 'Breadcrumb3', link: 'breadcrumb3' },
     { label: 'Breadcrumb4', link: 'breadcrumb4' },

@@ -2,6 +2,28 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ToastProps } from '../../types';
 
+/**
+ * The ToastService
+ * @usage
+ * ```typescript
+ * toastService = inject(ToastService);
+ * displayToast() {
+ *  let toastObject: ToastProps = {
+ *   position: 'bottom-right',
+ *   header: {
+ *    title: 'Title Toast',
+ *   },
+ *   body: {
+ *    message: 'Message Toast',
+ *   },
+ *   duration: 3000,
+ *   type = 'primary',
+ *   };
+ *  this.toastService.toast(toastObject);
+ * }
+ * ```
+ */
+
 @Injectable({
   providedIn: 'root',
 })

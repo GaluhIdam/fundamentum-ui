@@ -7,12 +7,12 @@ import { CommonModule } from '@angular/common';
  * @usage
  * ```html
  * <fui-icons
-    [icon]="'wordWrap'"
-    [size]="'sizexs'"
-    [color]="'success'">
+ *  [icon]="'wordWrap'"
+ *  [size]="'sizexs'"
+ *  [color]="'success'">
  * </fui-icons>
  * ```
- * <example-url>http://localhost:4200/organisms/chart/chart-area</example-url>
+ * <example-url>http://localhost:4200/atoms/icon</example-url>
  */
 
 @Component({

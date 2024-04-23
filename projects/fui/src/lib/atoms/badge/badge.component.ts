@@ -3,6 +3,21 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Color, Icon, Size } from '../../types';
 import { IconsComponent } from '../icons/icons.component';
 
+/**
+ * The BadgeComponent
+ * @usage
+ * ```html
+ * <fui-badge
+ *  [color]="'primary'"
+ *  [size]="'sizedefault'"
+ *  [isBadgeIcon]="true"
+ *  [icon]="'cross'"
+ *  [iconPosition]="'start'"
+ * > Badge </fui-badge>
+ * ```
+ * <example-url>http://localhost:4200/atoms/badge</example-url>
+ */
+
 @Component({
   selector: 'fui-badge',
   standalone: true,

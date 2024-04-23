@@ -4,6 +4,16 @@ import { ButtonComponent } from '../../../atoms/button/button.component';
 import { ButtonEmptyComponent } from '../../../atoms/button-empty/button-empty.component';
 import { Color, Size } from '../../../types';
 
+/**
+ * The ModalFooterComponent
+ * @usage
+ * ```html
+ * <fui-modal-footer [isCustomModalFooter]="true">
+ *  Content
+ * </fui-modal-footer>
+ * ```
+ * <example-url>http://localhost:4200/templates/modal</example-url>
+ */
 @Component({
   selector: 'fui-modal-footer',
   standalone: true,

@@ -1,0 +1,19 @@
+<div
+  [ngClass]="[
+    'page-section',
+    'p-' + padding,
+    isBorder && extendedBorder ? 'page-section-border' : 'p-bottom-none'
+  ]"
+>
+  <div
+    [ngClass]="[
+      'page-section-content',
+      isBorder && !extendedBorder ? 'page-section-border' : '',
+      isBorder && !extendedBorder
+        ? 'page-section-content-padding-bottom-' + padding
+        : ''
+    ]"
+  >
+    <ng-content></ng-content>
+  </div>
+</div>

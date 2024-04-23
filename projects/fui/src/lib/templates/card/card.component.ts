@@ -5,6 +5,19 @@ import { IconsComponent } from '../../atoms/icons/icons.component';
 import { TextComponent } from '../../atoms/text/text.component';
 import { ButtonComponent } from '../../atoms/button/button.component';
 
+/**
+ * The CardComponent
+ * @usage
+ * ```html
+ * <fui-card
+ *  [title]="'Card Title'"
+ *  [icon]="'package'">
+ *    Content
+ * </fui-card>
+ * ```
+ * <example-url>http://localhost:4200/templates/card</example-url>
+ */
+
 @Component({
   selector: 'fui-card',
   standalone: true,

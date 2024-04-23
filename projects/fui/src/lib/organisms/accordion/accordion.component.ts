@@ -4,6 +4,17 @@ import { IconsComponent } from '../../atoms/icons/icons.component';
 import { TextComponent } from '../../atoms/text/text.component';
 import { CommonModule } from '@angular/common';
 
+/**
+ * The AccordionComponent
+ * @usage
+ * ```html
+ * <fui-accordion [title]="'Title Accordion'">
+ *  Content
+ * </fui-accordion>
+ * ```
+ * <example-url>http://localhost:4200/organisms/accordion</example-url>
+ */
+
 @Component({
   selector: 'fui-accordion',
   standalone: true,

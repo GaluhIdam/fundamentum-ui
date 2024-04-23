@@ -21,6 +21,21 @@ import { CommonModule } from '@angular/common';
 import { TooltipComponent } from '../tooltip/tooltip.component';
 import { ContextMenuItemComponent } from './context-menu-item/context-menu-item.component';
 
+/**
+ * The ContextMenuComponent
+ * @usage
+ * ```html
+ * <fui-context-menu
+ *  [data]="dataContextMenu"
+ *  [contextMenuConfig]="{
+ *   popoverPadding: 's',
+ *  }"
+ *  (onClickItem)="handleOnClickItem($event)"
+ * > </fui-context-menu>
+ * ```
+ * <example-url>http://localhost:4200/templates/context-menu</example-url>
+ */
+
 @Component({
   selector: 'fui-context-menu',
   standalone: true,
