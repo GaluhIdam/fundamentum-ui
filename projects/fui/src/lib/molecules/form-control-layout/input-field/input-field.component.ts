@@ -48,9 +48,11 @@ export class InputFieldComponent {
   }
 
   handleOnFocus(): void {
+    this.active = true;
     this.onFocus.emit();
   }
   handleOnBlur(): void {
+    this.active = false;
     this.onBlur.emit();
   }
 }

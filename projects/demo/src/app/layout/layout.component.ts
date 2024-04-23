@@ -14,6 +14,8 @@ import {
   HeaderPanelComponent,
   IconsComponent,
   LinkComponent,
+  FormControlLayoutComponent,
+  InputFieldComponent,
 } from 'fui';
 import { Routes } from '@angular/router';
 import { routes } from '../app.routes';
@@ -33,6 +35,8 @@ import { CommonModule } from '@angular/common';
     HeaderBreadcrumbPanelComponent,
     CollapsibleNavComponent,
     LinkComponent,
+    FormControlLayoutComponent,
+    InputFieldComponent,
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',

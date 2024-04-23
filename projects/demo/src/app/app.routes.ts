@@ -118,8 +118,8 @@ export const routes: Routes = [
         component: BreadcrumbViewComponent,
       },
       {
-        title: 'Button Icon',
-        path: 'button-icon',
+        title: 'Button',
+        path: 'button',
         component: ButtonIconViewComponent,
       },
       {
@@ -133,8 +133,8 @@ export const routes: Routes = [
         component: TabsViewComponent,
       },
       {
-        title: 'Text Field',
-        path: 'text-field',
+        title: 'Form Control',
+        path: 'form-control',
         component: TextFieldComplexViewComponent,
       },
       {

@@ -2,13 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { IconsComponent } from '../icons/icons.component';
 import { Color } from '../../types';
-import {
-  ActivatedRoute,
-  NavigationEnd,
-  Router,
-  RouterModule,
-} from '@angular/router';
-import { filter } from 'rxjs';
+import { Router, RouterModule } from '@angular/router';
 
 /**
  * The CalloutComponent component
@@ -37,25 +31,10 @@ export class LinkComponent {
 
   currentRoute: string = '';
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe(() => {
-        this.currentRoute = this.getCurrentRoute();
-      });
-  }
-
-  getCurrentRoute(): string {
-    if (
-      this.activatedRoute &&
-      this.activatedRoute.firstChild &&
-      this.activatedRoute.firstChild.routeConfig
-    ) {
-      return this.activatedRoute.firstChild.routeConfig.path || '';
-    }
-    return '';
+    this.currentRoute = this.router.url;
   }
 
   /*Validator Link*/

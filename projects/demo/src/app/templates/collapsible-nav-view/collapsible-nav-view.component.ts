@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {
   ButtonIconComponent,
   CollapsibleNavComponent,
-} from '../../../../../fui/src/public-api';
+} from 'fui';
 // import { ButtonIconComponent, CollapsibleNavComponent } from 'fui';
 
 @Component({
@@ -17,6 +17,5 @@ export class CollapsibleNavViewComponent {
 
   collapse(): void {
     this.show = !this.show;
-    console.log(this.show);
   }
 }
