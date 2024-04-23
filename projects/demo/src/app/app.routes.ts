@@ -131,23 +131,27 @@ export const routes: Routes = [
         pathMatch: 'full',
       },
       {
-        title: 'Link Component',
+        title: 'Link',
         path: 'link',
         component: LinkViewComponent,
       },
       {
+        title: 'Aspect Ratio',
         path: 'aspect-ratio',
         component: AspectRatioViewComponent,
       },
       {
+        title: 'Icon',
         path: 'icon',
         component: IconsViewComponent,
       },
       {
+        title: 'Badge',
         path: 'badge',
         component: BadgeViewComponent,
       },
       {
+        title: 'Progress',
         path: 'progress',
         component: ProgressViewComponent,
       },
@@ -379,6 +383,7 @@ export const routes: Routes = [
       },
       {
         path: 'page',
+        title: 'Page',
         component: PageViewComponent,
       },
       {
