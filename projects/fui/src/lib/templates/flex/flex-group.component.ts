@@ -1,10 +1,14 @@
-import {Component, Input} from '@angular/core';
+import {Component, ContentChildren, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {FlexGroupAlignItems, FlexGroupDirection, FlexGroupGutterSize, FlexGroupJustifyContent} from './flex-group.type';
+import {FlexItemComponent} from "./flex-item.component";
+import {NgClass} from "@angular/common";
 
 @Component({
   selector: 'fui-flex-group',
   standalone: true,
-  imports: [],
+  imports: [
+    NgClass
+  ],
   templateUrl: './flex-group.component.html',
   styleUrl: './flex-group.component.scss'
 })
@@ -13,6 +17,6 @@ export class FlexGroupComponent {
   @Input() direction: FlexGroupDirection = 'row';
   @Input() gutterSize: FlexGroupGutterSize = 'l';
   @Input() justifyContent: FlexGroupJustifyContent = 'flexStart';
-  @Input() responsive: boolean = true;
   @Input() wrap: boolean = false;
+
 }
