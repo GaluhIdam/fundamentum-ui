@@ -45,6 +45,7 @@ import { EmptyPromptViewComponent } from './organisms/empty-prompt-view/empty-pr
 import { AccordionViewComponent } from './organisms/accordion-view/accordion-view.component';
 import { PaginationViewComponent } from './organisms/pagination-view/pagination-view.component';
 import { FlexViewComponent } from "./templates/flex-view/flex-view.component";
+import { ListGroupViewComponent } from './organisms/list-group-view/list-group-view.component';
 
 export const routes: Routes = [
   {
@@ -106,6 +107,10 @@ export const routes: Routes = [
       {
         path: 'facet-button',
         component: FacetButtonViewComponent,
+      },
+      {
+        path: 'list-group',
+        component: ListGroupViewComponent,
       },
       {
         path: 'echarts',

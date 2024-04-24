@@ -469,3 +469,52 @@ export interface FacetButtonProps {
   isDisabled?: boolean;
   isLoading?: boolean;
 }
+
+export interface ListGroupItemProps {
+  id: string;
+  itemOptions?: { background?: Color; backgroundActive?: Color };
+  itemLabel: {
+    label: string;
+    color?: Color;
+    colorActive?: Color;
+    size?: Size;
+    labelWrap?: 'elipsis' | 'wrap';
+  };
+  itemIcon?: {
+    icon?: Icon;
+    color?: Color;
+    colorActive?: Color;
+    size?: Size;
+  };
+  isActive?: boolean;
+  isDisabled?: boolean;
+  isLink?: boolean;
+  itemLink?: {
+    href?: string;
+    target?: '_blank' | '_self';
+    withIcon?: boolean;
+    icon: Icon;
+    size: Size;
+    color: Color;
+    colorActive?: Color;
+  };
+  itemTooltip?: {
+    isTooltip?: boolean;
+    tooltipPosition?: 'left' | 'right' | 'top' | 'bottom';
+    tooltipAlign?: 'start' | 'center' | 'end';
+    tooltipTitle?: string;
+    tooltipContent?: string;
+  };
+  isExtraAction?: boolean;
+  extraAction?: {
+    disabled?: boolean;
+    pinnable?: boolean;
+    pinned?: boolean;
+    iconPinned?: Icon;
+    iconUnpinned?: Icon;
+    colorPinned?: Color;
+    colorUnpinned?: Color;
+    size?: Size;
+    isDisabled?: boolean;
+  };
+}
