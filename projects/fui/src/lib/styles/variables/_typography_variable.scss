@@ -26,7 +26,7 @@ $fuiBodyLineHeight: 1 !default;
 // Normally functions are imported before variables in `_index.scss` files
 // But because they need to consume some typography variables they need to live here
 @function convertToRem($size) {
-  @return #{$size / $fuiFontSize}rem;
+  @return #{calc($size / $fuiFontSize)}rem;
 }
 
 // Our base gridline is at 1/2 the font-size, ensure line-heights stay on that gridline.
@@ -34,7 +34,7 @@ $fuiBodyLineHeight: 1 !default;
 //     If our base font size (fuiFontSize) is 16, our baseline is 8 (16*1.5 / 3). To ensure the
 //     text stays on the baseline, we pass a multiplier to calculate a line-height in rems.
 @function lineHeightFromBaseline($multiplier: 3) {
-  @return convertToRem(($fuiFontSize / 2) * $multiplier);
+  @return convertToRem(calc($fuiFontSize / 2) * $multiplier);
 }
 
 // Titles map

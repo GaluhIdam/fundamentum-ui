@@ -39,7 +39,7 @@ SOFTWARE.
   } @else if $exp < 0 {
     @return 1 / powInt($number, -$exp);
   } @else {
-    $e: floor($exp / 2);
+    $e: floor($exp * 0.5);
     $pow: pow($number, $e);
     @if $e * 2 == $exp {
       @return $pow * $pow;
@@ -54,7 +54,7 @@ SOFTWARE.
   $result: 1;
 
   @for $index from 1 to 100 {
-    $item: $item * $value / $index;
+    $item: $item * calc($value / $index);
     $result: $result + $item;
   }
 
@@ -67,7 +67,7 @@ SOFTWARE.
 
   @while ($value > 1) {
     $tenExp: $tenExp + 1;
-    $value: $value / 10;
+    $value: calc($value / 10);
   }
 
   $item: -1;
@@ -75,7 +75,7 @@ SOFTWARE.
 
   @for $index from 1 to 100 {
     $item: $item * (1 - $value);
-    $result: $result + $item / $index;
+    $result: $result + calc($item / $index);
   }
 
   @return $result + $tenExp * $lnTen;

@@ -1,3 +1,9 @@
-<div>
+<div [ngClass]="[
+'flex__group',
+alignItems ? 'flex__group--alignItems-' + alignItems : 'flex__group--alignItems--row',
+direction? 'flex__group--direction-' + direction: 'flex__group--direction-row',
+justifyContent? 'flex__group--justifyContent-' + justifyContent: 'flex__group--justifyContent-flexStart',
+!wrap? '': 'flex__group--wrap'
+]">
   <ng-content></ng-content>
 </div>

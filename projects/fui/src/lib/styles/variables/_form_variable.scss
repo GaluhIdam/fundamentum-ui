@@ -58,7 +58,7 @@ $fuiFormControlIconSizes: (
 // Control Layout
 $fuiFormControlLayoutGroupInputHeight: $fuiFormControlHeight - 2px !default;
 $fuiFormControlLayoutGroupInputCompressedHeight: $fuiFormControlCompressedHeight - 2px !default;
-$fuiFormControlLayoutGroupInputCompressedBorderRadius: $fuiFormControlCompressedBorderRadius / 2 !default;
+$fuiFormControlLayoutGroupInputCompressedBorderRadius: $fuiFormControlCompressedBorderRadius * 0.5 !default;
 
 // Range
 $fuiRangeTrackColor: color_variable.$fuiColorLightShade !default;
@@ -70,7 +70,7 @@ $fuiRangeThumbBorderColor: color_variable.$fuiColorEmptyShade !default;
 $fuiRangeThumbBackgroundColor: $fuiRangeHighlightColor;
 
 $fuiRangeTrackWidth: 100% !default;
-$fuiRangeTrackHeight: size_variable.$fuiSizeM / 2 !default;
+$fuiRangeTrackHeight: size_variable.$fuiSizeM * 0.5 !default;
 $fuiRangeTrackCompressedHeight: size_variable.$fuiSizeXS;
 $fuiRangeTrackBorderWidth: 0 !default;
 $fuiRangeTrackBorderColor: $fuiRangeTrackColor !default;

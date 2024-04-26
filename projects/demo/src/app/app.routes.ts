@@ -46,6 +46,8 @@ import { ProgressViewComponent } from './atoms/progress-view/progress-view.compo
 import { EmptyPromptViewComponent } from './organisms/empty-prompt-view/empty-prompt-view.component';
 import { AccordionViewComponent } from './organisms/accordion-view/accordion-view.component';
 import { PaginationViewComponent } from './organisms/pagination-view/pagination-view.component';
+import { FlexViewComponent } from './templates/flex-view/flex-view.component';
+import { ListGroupViewComponent } from './organisms/list-group-view/list-group-view.component';
 
 /** ATTENTION, ADD A TITLE IN CHILDREN ROUTE FOR THE DOCUMENTATION */
 export const routes: Routes = [
@@ -64,6 +66,66 @@ export const routes: Routes = [
     path: 'demo',
     component: DemoComponent,
   },
+  /* Router for chart area */
+  {
+    path: 'organisms',
+    children: [
+      {
+        path: '',
+        redirectTo: 'callout',
+        pathMatch: 'full',
+      },
+      {
+        path: 'filter-group',
+        component: FilterGroupViewComponent,
+      },
+      {
+        path: 'callout',
+        component: CalloutViewComponent,
+      },
+      {
+        path: 'inline-edit',
+        component: InlineEditViewComponent,
+      },
+      {
+        path: 'data-grid',
+        component: DataGridViewComponent,
+      },
+      {
+        path: 'empty-prompt',
+        component: EmptyPromptViewComponent,
+      },
+      {
+        path: 'accordion',
+        component: AccordionViewComponent,
+      },
+      {
+        path: 'pagination',
+        component: PaginationViewComponent,
+      },
+      {
+        path: 'steps',
+        component: StepsViewComponent,
+      },
+      {
+        path: 'timeline',
+        component: TimelineViewComponent,
+      },
+      {
+        path: 'facet-button',
+        component: FacetButtonViewComponent,
+      },
+      {
+        path: 'list-group',
+        component: ListGroupViewComponent,
+      },
+      {
+        path: 'echarts',
+        component: EchartsViewComponent,
+      },
+    ],
+  },
+  /* Router for Organisms */
 
   /* Router for Atoms */
   {
@@ -334,6 +396,10 @@ export const routes: Routes = [
         title: 'Resizable Container',
         path: 'resizable-container',
         component: ResizableContainerViewComponent,
+      },
+      {
+        path: 'flex',
+        component: FlexViewComponent,
       },
     ],
   },

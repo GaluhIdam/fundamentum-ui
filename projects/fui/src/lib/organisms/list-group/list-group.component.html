@@ -1,0 +1,9 @@
+<div
+  [ngClass]="[
+    'list-group',
+    isBordered ? 'list-group-bordered' : '',
+    'list-group-p-' + padding
+  ]"
+>
+  <ng-content></ng-content>
+</div>
