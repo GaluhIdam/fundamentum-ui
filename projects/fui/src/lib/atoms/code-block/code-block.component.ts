@@ -21,7 +21,6 @@ import { TooltipComponent } from '../../templates/tooltip/tooltip.component';
 })
 export class CodeBlockComponent {
   @Input() code: string = '';
-  codes: string = `<html><head></head><body><h1>Hello, World!</h1></body></html>`;
   @Input() language: string = '';
   @Input() lineNumbers: boolean = false;
   @Input() allowFullscreen: boolean = true;
