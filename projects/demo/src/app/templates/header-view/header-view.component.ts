@@ -7,7 +7,7 @@ import {
   HeaderPanelComponent,
   IconsComponent,
   LinkComponent,
-} from 'fui';
+} from '../../../../../fui/src/public-api';
 
 @Component({
   selector: 'app-header-view',

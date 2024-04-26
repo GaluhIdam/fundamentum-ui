@@ -113,6 +113,10 @@
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
+        <li class="nav-item">
+            <a href="#example" class="nav-link"
+                role="tab" id="example-tab" data-bs-toggle="tab" data-link="example">Examples</a>
+        </li>
 </ul>
 
 <div class="tab-content">
@@ -124,6 +128,18 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>The LoadingComponent</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-html">&lt;fui-loading
+ [isLoading]=&quot;true&quot;
+ [type]=&quot;&#39;spinner&#39;&quot;
+ [size]=&quot;&#39;sizem&#39;&quot;
+&gt;&lt;/fui-loading&gt;</code></pre></div><p><example-url><a href="http://localhost:4200/molecules/loading">http://localhost:4200/molecules/loading</a></example-url></p>
+
+    </p>
 
 
 
@@ -158,6 +174,7 @@
                 <td class="col-md-3">imports</td>
                 <td class="col-md-9">
                             <code>CommonModule</code>
+                                <code><a href="../components/OverlayMaskComponent.html" target="_self" >OverlayMaskComponent</a></code>
                 </td>
             </tr>
 
@@ -199,6 +216,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#isLoading" >isLoading</a>
+                            </li>
+                            <li>
                                 <a href="#logoImage" >logoImage</a>
                             </li>
                             <li>
@@ -209,6 +229,9 @@
                             </li>
                             <li>
                                 <a href="#type" >type</a>
+                            </li>
+                            <li>
+                                <a href="#withOverlay" >withOverlay</a>
                             </li>
                         </ul>
                     </td>
@@ -224,6 +247,27 @@
 
     <section data-compodoc="block-inputs">
     <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isLoading"></a>
+                        <b>isLoading</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -308,6 +352,27 @@
                 </tr>
             </tbody>
         </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="withOverlay"></a>
+                        <b>withOverlay</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 </section>
 
 
@@ -319,54 +384,64 @@
 
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">@if (type &#x3D;&#x3D;&#x3D; &#x27;spinner&#x27;) {
-&lt;span [ngClass]&#x3D;&quot;[&#x27;spinner&#x27;, size + &#x27;-loader&#x27;]&quot;&gt;&lt;/span&gt;
-} @else if (type &#x3D;&#x3D;&#x3D; &#x27;logo&#x27;) {
-&lt;span [ngClass]&#x3D;&quot;[&#x27;loading-logo&#x27;, size + &#x27;-loader&#x27;]&quot;&gt;
-  &lt;img [src]&#x3D;&quot;logoImage&quot; [alt]&#x3D;&quot;logoImageAlt&quot; /&gt;
-&lt;/span&gt;
-} @else if (type &#x3D;&#x3D;&#x3D; &#x27;chart&#x27;) {
-&lt;span [ngClass]&#x3D;&quot;[&#x27;loading-chart&#x27;, size + &#x27;-loader&#x27;]&quot;&gt;
-  &lt;span class&#x3D;&quot;loading-chart-bar&quot;&gt;&lt;/span&gt;
-  &lt;span class&#x3D;&quot;loading-chart-bar&quot;&gt;&lt;/span&gt;
-  &lt;span class&#x3D;&quot;loading-chart-bar&quot;&gt;&lt;/span&gt;
-  &lt;span class&#x3D;&quot;loading-chart-bar&quot;&gt;&lt;/span&gt;
-&lt;/span&gt;
-} @else if (type &#x3D;&#x3D;&#x3D; &#x27;elastic&#x27;) {
-&lt;span class&#x3D;&quot;loadingElastic&quot;&gt;
-  &lt;svg
-    [ngClass]&#x3D;&quot;[size + &#x27;-loader&#x27;]&quot;
-    viewBox&#x3D;&quot;0 0 40 40&quot;
-    fill&#x3D;&quot;none&quot;
-    xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
-  &gt;
-    &lt;path
-      d&#x3D;&quot;M14.9171 16.4404L24.1089 20.6351L33.3831 12.5007C33.5173 11.8298 33.5828 11.1608 33.5828 10.4606C33.5828 4.73733 28.9323 0.0809326 23.2148 0.0809326C19.7945 0.0809326 16.6044 1.76674 14.6653 4.59353L13.1228 12.605L14.9171 16.4404Z&quot;
-      fill&#x3D;&quot;#FDD009&quot;
-    /&gt;
-    &lt;path
-      d&#x3D;&quot;M5.40284 26.1842C5.2686 26.8552 5.19971 27.5513 5.19971 28.2555C5.19971 33.9936 9.86387 38.6626 15.597 38.6626C19.0453 38.6626 22.2511 36.961 24.1872 34.1052L25.7181 26.1207L23.6751 22.2123L14.4469 18.0019L5.40284 26.1842Z&quot;
-      fill&#x3D;&quot;#23BAB1&quot;
-    /&gt;
-    &lt;path
-      d&#x3D;&quot;M5.3445 10.2606L11.6439 11.7495L13.0239 4.58003C12.1631 3.92146 11.1005 3.56097 10.0076 3.56097C7.27004 3.56097 5.0437 5.7907 5.0437 8.53111C5.0437 9.13635 5.14474 9.71671 5.3445 10.2606Z&quot;
-      fill&#x3D;&quot;#EE5097&quot;
-    /&gt;
-    &lt;path
-      d&#x3D;&quot;M4.7976 11.7625C1.98316 12.696 0.0263672 15.3966 0.0263672 18.3672C0.0263672 21.2598 1.8134 23.8427 4.49574 24.8648L13.3336 16.868L11.711 13.3972L4.7976 11.7625Z&quot;
-      fill&#x3D;&quot;#17A7E0&quot;
-    /&gt;
-    &lt;path
-      d&#x3D;&quot;M25.8027 34.1048C26.6668 34.7696 27.7242 35.1322 28.8036 35.1322C31.541 35.1322 33.7673 32.9036 33.7673 30.1632C33.7673 29.5588 33.6665 28.9785 33.4665 28.4347L27.1725 26.9603L25.8027 34.1048Z&quot;
-      fill&#x3D;&quot;#92C73D&quot;
-    /&gt;
-    &lt;path
-      d&#x3D;&quot;M27.0835 25.3087L34.0126 26.9309C36.8281 25.9995 38.7849 23.2978 38.7849 20.3261C38.7849 17.4389 36.9936 14.859 34.3061 13.84L25.2434 21.788L27.0835 25.3087Z&quot;
-      fill&#x3D;&quot;#0678A0&quot;
-    /&gt;
-  &lt;/svg&gt;
-&lt;/span&gt;
-}
+        <pre class="line-numbers"><code class="language-html">@if (isLoading) { @if (withOverlay) {
+&lt;fui-overlay-mask&gt;
+  &lt;ng-container *ngTemplateOutlet&#x3D;&quot;loadingItem&quot;&gt;&lt;/ng-container&gt;
+&lt;/fui-overlay-mask&gt;
+} @else {
+&lt;ng-container *ngTemplateOutlet&#x3D;&quot;loadingItem&quot;&gt;&lt;/ng-container&gt;
+} }
+
+&lt;ng-template #loadingItem&gt;
+  @if (type &#x3D;&#x3D;&#x3D; &#x27;spinner&#x27;) {
+  &lt;span [ngClass]&#x3D;&quot;[&#x27;spinner&#x27;, size + &#x27;-loader&#x27;]&quot;&gt;&lt;/span&gt;
+  } @else if (type &#x3D;&#x3D;&#x3D; &#x27;logo&#x27;) {
+  &lt;span [ngClass]&#x3D;&quot;[&#x27;loading-logo&#x27;, size + &#x27;-loader&#x27;]&quot;&gt;
+    &lt;img [src]&#x3D;&quot;logoImage&quot; [alt]&#x3D;&quot;logoImageAlt&quot; /&gt;
+  &lt;/span&gt;
+  } @else if (type &#x3D;&#x3D;&#x3D; &#x27;chart&#x27;) {
+  &lt;span [ngClass]&#x3D;&quot;[&#x27;loading-chart&#x27;, size + &#x27;-loader&#x27;]&quot;&gt;
+    &lt;span class&#x3D;&quot;loading-chart-bar&quot;&gt;&lt;/span&gt;
+    &lt;span class&#x3D;&quot;loading-chart-bar&quot;&gt;&lt;/span&gt;
+    &lt;span class&#x3D;&quot;loading-chart-bar&quot;&gt;&lt;/span&gt;
+    &lt;span class&#x3D;&quot;loading-chart-bar&quot;&gt;&lt;/span&gt;
+  &lt;/span&gt;
+  } @else if (type &#x3D;&#x3D;&#x3D; &#x27;elastic&#x27;) {
+  &lt;span class&#x3D;&quot;loadingElastic&quot;&gt;
+    &lt;svg
+      [ngClass]&#x3D;&quot;[size + &#x27;-loader&#x27;]&quot;
+      viewBox&#x3D;&quot;0 0 40 40&quot;
+      fill&#x3D;&quot;none&quot;
+      xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+    &gt;
+      &lt;path
+        d&#x3D;&quot;M14.9171 16.4404L24.1089 20.6351L33.3831 12.5007C33.5173 11.8298 33.5828 11.1608 33.5828 10.4606C33.5828 4.73733 28.9323 0.0809326 23.2148 0.0809326C19.7945 0.0809326 16.6044 1.76674 14.6653 4.59353L13.1228 12.605L14.9171 16.4404Z&quot;
+        fill&#x3D;&quot;#FDD009&quot;
+      /&gt;
+      &lt;path
+        d&#x3D;&quot;M5.40284 26.1842C5.2686 26.8552 5.19971 27.5513 5.19971 28.2555C5.19971 33.9936 9.86387 38.6626 15.597 38.6626C19.0453 38.6626 22.2511 36.961 24.1872 34.1052L25.7181 26.1207L23.6751 22.2123L14.4469 18.0019L5.40284 26.1842Z&quot;
+        fill&#x3D;&quot;#23BAB1&quot;
+      /&gt;
+      &lt;path
+        d&#x3D;&quot;M5.3445 10.2606L11.6439 11.7495L13.0239 4.58003C12.1631 3.92146 11.1005 3.56097 10.0076 3.56097C7.27004 3.56097 5.0437 5.7907 5.0437 8.53111C5.0437 9.13635 5.14474 9.71671 5.3445 10.2606Z&quot;
+        fill&#x3D;&quot;#EE5097&quot;
+      /&gt;
+      &lt;path
+        d&#x3D;&quot;M4.7976 11.7625C1.98316 12.696 0.0263672 15.3966 0.0263672 18.3672C0.0263672 21.2598 1.8134 23.8427 4.49574 24.8648L13.3336 16.868L11.711 13.3972L4.7976 11.7625Z&quot;
+        fill&#x3D;&quot;#17A7E0&quot;
+      /&gt;
+      &lt;path
+        d&#x3D;&quot;M25.8027 34.1048C26.6668 34.7696 27.7242 35.1322 28.8036 35.1322C31.541 35.1322 33.7673 32.9036 33.7673 30.1632C33.7673 29.5588 33.6665 28.9785 33.4665 28.4347L27.1725 26.9603L25.8027 34.1048Z&quot;
+        fill&#x3D;&quot;#92C73D&quot;
+      /&gt;
+      &lt;path
+        d&#x3D;&quot;M27.0835 25.3087L34.0126 26.9309C36.8281 25.9995 38.7849 23.2978 38.7849 20.3261C38.7849 17.4389 36.9936 14.859 34.3061 13.84L25.2434 21.788L27.0835 25.3087Z&quot;
+        fill&#x3D;&quot;#0678A0&quot;
+      /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+  }
+&lt;/ng-template&gt;
 </code></pre>
     </div>
 
@@ -389,6 +464,11 @@
         </div>
     </div>
 
+    <div class="tab-pane fade " id="example">
+            <iframe class="exampleContainer" src="http://localhost:4200/molecules/loading">
+                <p>no-iframes</p>
+            </iframe>
+    </div>
     
 </div>
 
@@ -396,9 +476,9 @@
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div>@if (type === \'spinner\') {<span [ngClass]="[\'spinner\', size + \'-loader\']"></span>} @else if (type === \'logo\') {<span [ngClass]="[\'loading-logo\', size + \'-loader\']">  <img [src]="logoImage" [alt]="logoImageAlt" /></span>} @else if (type === \'chart\') {<span [ngClass]="[\'loading-chart\', size + \'-loader\']">  <span class="loading-chart-bar"></span>  <span class="loading-chart-bar"></span>  <span class="loading-chart-bar"></span>  <span class="loading-chart-bar"></span></span>} @else if (type === \'elastic\') {<span class="loadingElastic">  <svg    [ngClass]="[size + \'-loader\']"    viewBox="0 0 40 40"    fill="none"    xmlns="http://www.w3.org/2000/svg"  >    <path      d="M14.9171 16.4404L24.1089 20.6351L33.3831 12.5007C33.5173 11.8298 33.5828 11.1608 33.5828 10.4606C33.5828 4.73733 28.9323 0.0809326 23.2148 0.0809326C19.7945 0.0809326 16.6044 1.76674 14.6653 4.59353L13.1228 12.605L14.9171 16.4404Z"      fill="#FDD009"    />    <path      d="M5.40284 26.1842C5.2686 26.8552 5.19971 27.5513 5.19971 28.2555C5.19971 33.9936 9.86387 38.6626 15.597 38.6626C19.0453 38.6626 22.2511 36.961 24.1872 34.1052L25.7181 26.1207L23.6751 22.2123L14.4469 18.0019L5.40284 26.1842Z"      fill="#23BAB1"    />    <path      d="M5.3445 10.2606L11.6439 11.7495L13.0239 4.58003C12.1631 3.92146 11.1005 3.56097 10.0076 3.56097C7.27004 3.56097 5.0437 5.7907 5.0437 8.53111C5.0437 9.13635 5.14474 9.71671 5.3445 10.2606Z"      fill="#EE5097"    />    <path      d="M4.7976 11.7625C1.98316 12.696 0.0263672 15.3966 0.0263672 18.3672C0.0263672 21.2598 1.8134 23.8427 4.49574 24.8648L13.3336 16.868L11.711 13.3972L4.7976 11.7625Z"      fill="#17A7E0"    />    <path      d="M25.8027 34.1048C26.6668 34.7696 27.7242 35.1322 28.8036 35.1322C31.541 35.1322 33.7673 32.9036 33.7673 30.1632C33.7673 29.5588 33.6665 28.9785 33.4665 28.4347L27.1725 26.9603L25.8027 34.1048Z"      fill="#92C73D"    />    <path      d="M27.0835 25.3087L34.0126 26.9309C36.8281 25.9995 38.7849 23.2978 38.7849 20.3261C38.7849 17.4389 36.9936 14.859 34.3061 13.84L25.2434 21.788L27.0835 25.3087Z"      fill="#0678A0"    />  </svg></span>}</div>'
-    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'fui-accordion'},{'name': 'BadgeComponent', 'selector': 'fui-badge'},{'name': 'BreadcrumbComponent', 'selector': 'fui-breadcrumb'},{'name': 'ButtonComponent', 'selector': 'fui-button'},{'name': 'ButtonEmptyComponent', 'selector': 'fui-button-empty'},{'name': 'ButtonIconComponent', 'selector': 'fui-button-icon'},{'name': 'CalloutComponent', 'selector': 'fui-callout'},{'name': 'ChartAreaComponent', 'selector': 'fui-chart-area'},{'name': 'ChartAreaStackedComponent', 'selector': 'fui-chart-area-stacked'},{'name': 'ChartAreaStackedGradientComponent', 'selector': 'fui-chart-area-stacked-gradient'},{'name': 'ChartBarComponent', 'selector': 'fui-chart-bar'},{'name': 'ChartCandlestickComponent', 'selector': 'fui-chart-candlestick'},{'name': 'ChartLineComponent', 'selector': 'fui-chart-line'},{'name': 'ChartLineStackedComponent', 'selector': 'fui-chart-line-stacked'},{'name': 'ChartPieComponent', 'selector': 'fui-chart-pie'},{'name': 'ChartPieDoughnutComponent', 'selector': 'fui-chart-pie-doughnut'},{'name': 'ChartRadarComponent', 'selector': 'fui-chart-radar'},{'name': 'ChartScatterComponent', 'selector': 'fui-chart-scatter'},{'name': 'ChartTreeComponent', 'selector': 'fui-chart-tree'},{'name': 'CollapsibleNavComponent', 'selector': 'fui-collapsible-nav'},{'name': 'ComboBoxComponent', 'selector': 'fui-combo-box'},{'name': 'CommentListComponent', 'selector': 'fui-comment-list'},{'name': 'DataGridComponent', 'selector': 'fui-data-grid'},{'name': 'EmptyPromptComponent', 'selector': 'fui-empty-prompt'},{'name': 'FieldFilepickerComponent', 'selector': 'fui-field-filepicker'},{'name': 'FieldTextComponent', 'selector': 'fui-field-text'},{'name': 'IconsComponent', 'selector': 'fui-icons'},{'name': 'InlineEditComponent', 'selector': 'fui-inline-edit'},{'name': 'InputComponent', 'selector': 'fui-input-base'},{'name': 'LinkComponent', 'selector': 'fui-link'},{'name': 'LoadingComponent', 'selector': 'fui-loading'},{'name': 'ModalComponent', 'selector': 'fui-modal'},{'name': 'ModalFlyoutComponent', 'selector': 'fui-modal-flyout'},{'name': 'PaginationComponent', 'selector': 'fui-pagination'},{'name': 'PanelComponent', 'selector': 'fui-panel'},{'name': 'ProgressBaseComponent', 'selector': 'fui-progress-base'},{'name': 'ProgressComponent', 'selector': 'fui-progress'},{'name': 'SidenavComponent', 'selector': 'fui-sidenav'},{'name': 'TabsComponent', 'selector': 'fui-tabs'},{'name': 'TextComponent', 'selector': 'fui-text'},{'name': 'TextFieldComplexComponent', 'selector': 'fui-text-field-complex'}];
-    var DIRECTIVES = [];
+        var COMPONENT_TEMPLATE = '<div>@if (isLoading) { @if (withOverlay) {<fui-overlay-mask>  <ng-container *ngTemplateOutlet="loadingItem"></ng-container></fui-overlay-mask>} @else {<ng-container *ngTemplateOutlet="loadingItem"></ng-container>} }<ng-template #loadingItem>  @if (type === \'spinner\') {  <span [ngClass]="[\'spinner\', size + \'-loader\']"></span>  } @else if (type === \'logo\') {  <span [ngClass]="[\'loading-logo\', size + \'-loader\']">    <img [src]="logoImage" [alt]="logoImageAlt" />  </span>  } @else if (type === \'chart\') {  <span [ngClass]="[\'loading-chart\', size + \'-loader\']">    <span class="loading-chart-bar"></span>    <span class="loading-chart-bar"></span>    <span class="loading-chart-bar"></span>    <span class="loading-chart-bar"></span>  </span>  } @else if (type === \'elastic\') {  <span class="loadingElastic">    <svg      [ngClass]="[size + \'-loader\']"      viewBox="0 0 40 40"      fill="none"      xmlns="http://www.w3.org/2000/svg"    >      <path        d="M14.9171 16.4404L24.1089 20.6351L33.3831 12.5007C33.5173 11.8298 33.5828 11.1608 33.5828 10.4606C33.5828 4.73733 28.9323 0.0809326 23.2148 0.0809326C19.7945 0.0809326 16.6044 1.76674 14.6653 4.59353L13.1228 12.605L14.9171 16.4404Z"        fill="#FDD009"      />      <path        d="M5.40284 26.1842C5.2686 26.8552 5.19971 27.5513 5.19971 28.2555C5.19971 33.9936 9.86387 38.6626 15.597 38.6626C19.0453 38.6626 22.2511 36.961 24.1872 34.1052L25.7181 26.1207L23.6751 22.2123L14.4469 18.0019L5.40284 26.1842Z"        fill="#23BAB1"      />      <path        d="M5.3445 10.2606L11.6439 11.7495L13.0239 4.58003C12.1631 3.92146 11.1005 3.56097 10.0076 3.56097C7.27004 3.56097 5.0437 5.7907 5.0437 8.53111C5.0437 9.13635 5.14474 9.71671 5.3445 10.2606Z"        fill="#EE5097"      />      <path        d="M4.7976 11.7625C1.98316 12.696 0.0263672 15.3966 0.0263672 18.3672C0.0263672 21.2598 1.8134 23.8427 4.49574 24.8648L13.3336 16.868L11.711 13.3972L4.7976 11.7625Z"        fill="#17A7E0"      />      <path        d="M25.8027 34.1048C26.6668 34.7696 27.7242 35.1322 28.8036 35.1322C31.541 35.1322 33.7673 32.9036 33.7673 30.1632C33.7673 29.5588 33.6665 28.9785 33.4665 28.4347L27.1725 26.9603L25.8027 34.1048Z"        fill="#92C73D"      />      <path        d="M27.0835 25.3087L34.0126 26.9309C36.8281 25.9995 38.7849 23.2978 38.7849 20.3261C38.7849 17.4389 36.9936 14.859 34.3061 13.84L25.2434 21.788L27.0835 25.3087Z"        fill="#0678A0"      />    </svg>  </span>  }</ng-template></div>'
+    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'fui-accordion'},{'name': 'AppendComponent', 'selector': 'fui-append'},{'name': 'AspectRatioComponent', 'selector': 'fui-aspect-ratio'},{'name': 'AvatarComponent', 'selector': 'fui-avatar'},{'name': 'BadgeComponent', 'selector': 'fui-badge'},{'name': 'BottombarComponent', 'selector': 'fui-bottombar'},{'name': 'BreadcrumbComponent', 'selector': 'fui-breadcrumb'},{'name': 'ButtonComponent', 'selector': 'fui-button'},{'name': 'ButtonEmptyComponent', 'selector': 'fui-button-empty'},{'name': 'ButtonIconComponent', 'selector': 'fui-button-icon'},{'name': 'CalloutComponent', 'selector': 'fui-callout'},{'name': 'CardComponent', 'selector': 'fui-card'},{'name': 'CheckboxComponent', 'selector': 'fui-checkbox'},{'name': 'CollapsibleNavComponent', 'selector': 'fui-collapsible-nav'},{'name': 'ComboBoxComponent', 'selector': 'fui-combo-box'},{'name': 'CommentListComponent', 'selector': 'fui-comment-list'},{'name': 'ContentRowComponent', 'selector': 'fui-content-row'},{'name': 'ContextMenuComponent', 'selector': 'fui-context-menu'},{'name': 'ContextMenuItemComponent', 'selector': 'fui-context-menu-item'},{'name': 'DataGridComponent', 'selector': 'fui-data-grid'},{'name': 'DescriptionListComponent', 'selector': 'fui-description-list'},{'name': 'EchartsComponent', 'selector': 'fui-echarts'},{'name': 'EmptyPromptComponent', 'selector': 'fui-empty-prompt'},{'name': 'FacetButtonComponent', 'selector': 'fui-facet-button'},{'name': 'FieldFilepickerComponent', 'selector': 'fui-field-filepicker'},{'name': 'FieldTextComponent', 'selector': 'fui-field-text'},{'name': 'FilterGroupButtonComponent', 'selector': 'fui-filter-group-button'},{'name': 'FilterGroupComponent', 'selector': 'fui-filter-group'},{'name': 'FlexGroupComponent', 'selector': 'fui-flex-group'},{'name': 'FlexItemComponent', 'selector': 'fui-flex-item'},{'name': 'FlyoutBodyComponent', 'selector': 'fui-flyout-body'},{'name': 'FlyoutComponent', 'selector': 'fui-flyout'},{'name': 'FlyoutFooterComponent', 'selector': 'fui-flyout-footer'},{'name': 'FlyoutHeaderComponent', 'selector': 'fui-flyout-header'},{'name': 'FormControlLayoutComponent', 'selector': 'fui-form-control-layout'},{'name': 'HeaderBreadcrumbComponent', 'selector': 'fui-header-breadcrumb'},{'name': 'HeaderBreadcrumbPanelComponent', 'selector': 'fui-header-breadcrumb-panel'},{'name': 'HeaderComponent', 'selector': 'fui-header'},{'name': 'HeaderPanelComponent', 'selector': 'fui-header-panel'},{'name': 'HighlightComponent', 'selector': 'fui-highlight'},{'name': 'IconsComponent', 'selector': 'fui-icons'},{'name': 'ImageComponent', 'selector': 'fui-image'},{'name': 'InlineEditComponent', 'selector': 'fui-inline-edit'},{'name': 'InputComponent', 'selector': 'fui-input-base'},{'name': 'InputFieldComponent', 'selector': 'fui-input-field'},{'name': 'InputFieldNumberComponent', 'selector': 'fui-input-field-number'},{'name': 'InputFieldPasswordComponent', 'selector': 'fui-input-field-password'},{'name': 'InputSearchFieldComponent', 'selector': 'fui-input-search-field'},{'name': 'LinkComponent', 'selector': 'fui-link'},{'name': 'LoadingComponent', 'selector': 'fui-loading'},{'name': 'ModalBodyComponent', 'selector': 'fui-modal-body'},{'name': 'ModalComponent', 'selector': 'fui-modal'},{'name': 'ModalFooterComponent', 'selector': 'fui-modal-footer'},{'name': 'ModalHeaderComponent', 'selector': 'fui-modal-header'},{'name': 'OverlayMaskComponent', 'selector': 'fui-overlay-mask'},{'name': 'PageBodyComponent', 'selector': 'fui-page-body'},{'name': 'PageComponent', 'selector': 'fui-page'},{'name': 'PageHeaderComponent', 'selector': 'fui-page-header'},{'name': 'PageSectionComponent', 'selector': 'fui-page-section'},{'name': 'PageSidebarComponent', 'selector': 'fui-page-sidebar'},{'name': 'PaginationComponent', 'selector': 'fui-pagination'},{'name': 'PanelComponent', 'selector': 'fui-panel'},{'name': 'PopoverComponent', 'selector': 'fui-popover'},{'name': 'PrependComponent', 'selector': 'fui-prepend'},{'name': 'ProgressBaseComponent', 'selector': 'fui-progress-base'},{'name': 'ProgressComponent', 'selector': 'fui-progress'},{'name': 'RadioComponent', 'selector': 'fui-radio'},{'name': 'ResizableContainerComponent', 'selector': 'fui-resizable-container'},{'name': 'ResizablePanelComponent', 'selector': 'fui-resizable-panel'},{'name': 'SelectableComponent', 'selector': 'fui-selectable'},{'name': 'SelectFieldComponent', 'selector': 'fui-select-field'},{'name': 'SidenavComponent', 'selector': 'fui-sidenav'},{'name': 'SitewideComponent', 'selector': 'fui-sitewide'},{'name': 'SpacerComponent', 'selector': 'fui-spacer'},{'name': 'StepContentComponent', 'selector': 'fui-step-content'},{'name': 'StepsComponent', 'selector': 'fui-steps'},{'name': 'TabsComponent', 'selector': 'fui-tabs'},{'name': 'TabsContentComponent', 'selector': 'fui-tabs-content'},{'name': 'TextareaComponent', 'selector': 'fui-textarea'},{'name': 'TextComponent', 'selector': 'fui-text'},{'name': 'TimelineComponent', 'selector': 'fui-timeline'},{'name': 'TimelineSectionComponent', 'selector': 'fui-timeline-section'},{'name': 'TitleComponent', 'selector': 'fui-title'},{'name': 'ToastComponent', 'selector': 'fui-toast'},{'name': 'TooltipComponent', 'selector': 'fui-tooltip'},{'name': 'TreeViewComponent', 'selector': 'fui-tree-view'},{'name': 'ValidatorFieldComponent', 'selector': 'fui-validator-field'}];
+    var DIRECTIVES = [{'name': 'ThousandSeparatorDirective', 'selector': '[fuiThousandSeparator]'}];
     var ACTUAL_COMPONENT = {'name': 'LoadingComponent'};
 </script>
 <script src="../js/tree.js"></script>

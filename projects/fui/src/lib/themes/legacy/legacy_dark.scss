@@ -1,5 +1,4 @@
-@import "lib/themes/legacy/globals";
-@import "lib/themes/legacy/colors_dark";
-@import "lib/themes/legacy/normalize";
-
-@import "lib/styles/index";
+@import "./globals";
+@import "./colors_dark";
+@import "./normalize";
+@import "../../styles/index";

@@ -1,9 +1,4 @@
-import {
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  ViewChild,
-} from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 
 import {
   AvatarComponent,
@@ -16,7 +11,8 @@ import {
   LinkComponent,
   FormControlLayoutComponent,
   InputFieldComponent,
-} from 'fui';
+  DarkModeService,
+} from '../../../../fui/src/public-api';
 import { Routes } from '@angular/router';
 import { routes } from '../app.routes';
 import { CommonModule } from '@angular/common';
@@ -38,25 +34,24 @@ import { CommonModule } from '@angular/common';
     FormControlLayoutComponent,
     InputFieldComponent,
   ],
+  providers: [DarkModeService],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
 })
 export class LayoutComponent {
-  @ViewChild('headerHeight') headerHeight?: ElementRef;
   show: boolean = false;
   component: Routes = routes;
-  sidebarHeight: string = '0';
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private darkModeService: DarkModeService) {}
 
-  ngAfterViewInit(): void {
-    if (this.headerHeight) {
-      this.sidebarHeight = `${this.headerHeight.nativeElement.offsetHeight}px`;
-      this.cdr.detectChanges();
-    }
+  collapse(event: any): void {
+    this.show = event;
+  }
+  collapseBtn(): void {
+    this.show = !this.show;
   }
 
-  collapse(): void {
-    this.show = !this.show;
+  toggleTheme() {
+    this.darkModeService.toggleTheme();
   }
 }

@@ -8,7 +8,7 @@
   border-width: 0;
   padding: $fuiSizeXS $fuiSizeM $fuiSizeXS $fuiSizeM;
   background-color: $bgColor;
-  padding: $padding $padding + 5 $padding $padding + 5;
+  padding: $padding;
   cursor: pointer;
   transition: transform 0.3s ease;
   &:hover {

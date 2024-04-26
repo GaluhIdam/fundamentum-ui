@@ -3,10 +3,9 @@
 .fui-header-container {
   z-index: 1;
   font-family: $fuiFontFamily;
-  display: flex;
   align-items: center;
   place-content: space-between;
-  padding: 10px 15px 10px 15px;
+  padding: 0px 8px 0px 8px;
   place-content: space-between;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
@@ -22,11 +21,23 @@
 }
 
 .bg-dark {
-  background-color: rgb(19, 19, 23);
+  background-color: $fuiColorDarkestShade;
   color: $fuiColorGhost;
 }
 
 .bg-light {
-  background-color: $fuiColorGhost;
+  background-color: $fuiColorLightestShade;
   color: $fuiColorDarkestShade;
+}
+
+@media screen and (max-width: 500px) {
+  .fui-header-containert {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 501px) {
+  .fui-header-container {
+    display: flex;
+  }
 }

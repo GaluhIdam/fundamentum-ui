@@ -1,3 +1,4 @@
+@import "../../styles.scss";
 .title {
   margin: 0px 0px 0px 5px;
   font-weight: 600;
@@ -29,6 +30,7 @@ p {
 }
 
 .title-link {
+  // color: $fuiColorPrimary;
   font-weight: bold;
   margin: 15px 0px 10px 0px;
 }
@@ -40,19 +42,20 @@ p {
   font-size: 11px;
   color: black;
   font-weight: bold;
-  padding: 6px;
+  padding: 5px;
   border-radius: 3px;
   margin-left: 10px;
-  background-color: rgb(211, 218, 230);
+  background-color: $fuiColorLightestShade;
 }
 
 .info-head {
+  height: 35px;
   .dev {
     margin: 0px 0px 0px 10px;
-    font-size: 10px;
+    font-size: 8px;
   }
   .corp {
-    font-size: 13px;
+    font-size: 10px;
     margin: 0px 0px 0px 10px;
   }
 }
@@ -64,6 +67,8 @@ p {
 }
 
 .container {
-  margin: 20px;
   width: -webkit-fill-available;
+  margin: 20px;
+  .sub-container {
+  }
 }

@@ -113,6 +113,10 @@
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
+        <li class="nav-item">
+            <a href="#example" class="nav-link"
+                role="tab" id="example-tab" data-bs-toggle="tab" data-link="example">Examples</a>
+        </li>
 </ul>
 
 <div class="tab-content">
@@ -124,6 +128,21 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>The EmptyPromptComponent</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-html">&lt;fui-empty-prompt
+ [title]=&quot;&#39;Empty Prompt Title&#39;&quot;
+ [buttonText]=&quot;&#39;Button&#39;&quot;
+ [secondaryButtonText]=&quot;&#39;Secondary action&#39;&quot;
+ [shadow]=&quot;true&quot;
+ [secondaryButtonColor]=&quot;&#39;primary&#39;&quot;&gt;
+   Content
+&lt;/fui-empty-prompt&gt;</code></pre></div><p><example-url><a href="http://localhost:4200/organisms/empty-prompt">http://localhost:4200/organisms/empty-prompt</a></example-url></p>
+
+    </p>
 
 
 
@@ -549,7 +568,9 @@
     ]&quot;
   &gt;
     @if (icon) {
-    &lt;fui-icons [icon]&#x3D;&quot;icon&quot; [size]&#x3D;&quot;iconSize&quot; [color]&#x3D;&quot;color&quot;&gt;&lt;/fui-icons&gt;
+    &lt;div [ngClass]&#x3D;&quot;[direction &#x3D;&#x3D;&#x3D; &#x27;horizontal&#x27; ? &#x27;&#x27; : &#x27;mx-auto&#x27;]&quot;&gt;
+      &lt;fui-icons [icon]&#x3D;&quot;icon&quot; [size]&#x3D;&quot;iconSize&quot; [color]&#x3D;&quot;color&quot;&gt;&lt;/fui-icons&gt;
+    &lt;/div&gt;
     }
     &lt;h2 class&#x3D;&quot;title&quot;&gt;{{ title }}&lt;/h2&gt;
     &lt;div class&#x3D;&quot;body&quot;&gt;
@@ -608,6 +629,11 @@
         </div>
     </div>
 
+    <div class="tab-pane fade " id="example">
+            <iframe class="exampleContainer" src="http://localhost:4200/organisms/empty-prompt">
+                <p>no-iframes</p>
+            </iframe>
+    </div>
     
 </div>
 
@@ -615,9 +641,9 @@
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div  [ngClass]="[    \'container\',    shadow ? \'prompt-shadow\' : \'\',    color ? color : \'\',    direction === \'vertical\' ? \'vertical-max-width\' : \'horizontal-max-width\',    paddingSize ? \'p-\' + paddingSize : \'p-sizedefault\'  ]">  <div    [ngClass]="[      \'content\',      direction === \'horizontal\' ? \'text-left\' : \'text-center\'    ]"  >    @if (icon) {    <fui-icons [icon]="icon" [size]="iconSize" [color]="color"></fui-icons>    }    <h2 class="title">{{ title }}</h2>    <div class="body">      <fui-text>        <ng-content></ng-content>      </fui-text>      @if (image && direction === \'vertical\') {      <img [src]="image" />      }    </div>    <div      [ngClass]="[        \'action\',        direction === \'horizontal\' ? \'flex-row\' : \'flex-column\'      ]"    >      @if (buttonText) {      <fui-button [color]="buttonColor" [size]="buttonSize">{{        buttonText      }}</fui-button>      } @if (secondaryButtonText) {      <fui-button-empty        [width]="\'auto\'"        [color]="secondaryButtonColor"        [size]="secondaryButtonSize"        >{{ secondaryButtonText }}</fui-button-empty      >      }    </div>  </div>  @if (image && direction === \'horizontal\') {  <div class="image">    <img [src]="image" />  </div>  }</div></div>'
-    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'fui-accordion'},{'name': 'BadgeComponent', 'selector': 'fui-badge'},{'name': 'BreadcrumbComponent', 'selector': 'fui-breadcrumb'},{'name': 'ButtonComponent', 'selector': 'fui-button'},{'name': 'ButtonEmptyComponent', 'selector': 'fui-button-empty'},{'name': 'ButtonIconComponent', 'selector': 'fui-button-icon'},{'name': 'CalloutComponent', 'selector': 'fui-callout'},{'name': 'ChartAreaComponent', 'selector': 'fui-chart-area'},{'name': 'ChartAreaStackedComponent', 'selector': 'fui-chart-area-stacked'},{'name': 'ChartAreaStackedGradientComponent', 'selector': 'fui-chart-area-stacked-gradient'},{'name': 'ChartBarComponent', 'selector': 'fui-chart-bar'},{'name': 'ChartCandlestickComponent', 'selector': 'fui-chart-candlestick'},{'name': 'ChartLineComponent', 'selector': 'fui-chart-line'},{'name': 'ChartLineStackedComponent', 'selector': 'fui-chart-line-stacked'},{'name': 'ChartPieComponent', 'selector': 'fui-chart-pie'},{'name': 'ChartPieDoughnutComponent', 'selector': 'fui-chart-pie-doughnut'},{'name': 'ChartRadarComponent', 'selector': 'fui-chart-radar'},{'name': 'ChartScatterComponent', 'selector': 'fui-chart-scatter'},{'name': 'ChartTreeComponent', 'selector': 'fui-chart-tree'},{'name': 'CollapsibleNavComponent', 'selector': 'fui-collapsible-nav'},{'name': 'ComboBoxComponent', 'selector': 'fui-combo-box'},{'name': 'CommentListComponent', 'selector': 'fui-comment-list'},{'name': 'DataGridComponent', 'selector': 'fui-data-grid'},{'name': 'EmptyPromptComponent', 'selector': 'fui-empty-prompt'},{'name': 'FieldFilepickerComponent', 'selector': 'fui-field-filepicker'},{'name': 'FieldTextComponent', 'selector': 'fui-field-text'},{'name': 'IconsComponent', 'selector': 'fui-icons'},{'name': 'InlineEditComponent', 'selector': 'fui-inline-edit'},{'name': 'InputComponent', 'selector': 'fui-input-base'},{'name': 'LinkComponent', 'selector': 'fui-link'},{'name': 'LoadingComponent', 'selector': 'fui-loading'},{'name': 'ModalComponent', 'selector': 'fui-modal'},{'name': 'ModalFlyoutComponent', 'selector': 'fui-modal-flyout'},{'name': 'PaginationComponent', 'selector': 'fui-pagination'},{'name': 'PanelComponent', 'selector': 'fui-panel'},{'name': 'ProgressBaseComponent', 'selector': 'fui-progress-base'},{'name': 'ProgressComponent', 'selector': 'fui-progress'},{'name': 'SidenavComponent', 'selector': 'fui-sidenav'},{'name': 'TabsComponent', 'selector': 'fui-tabs'},{'name': 'TextComponent', 'selector': 'fui-text'},{'name': 'TextFieldComplexComponent', 'selector': 'fui-text-field-complex'}];
-    var DIRECTIVES = [];
+        var COMPONENT_TEMPLATE = '<div><div  [ngClass]="[    \'container\',    shadow ? \'prompt-shadow\' : \'\',    color ? color : \'\',    direction === \'vertical\' ? \'vertical-max-width\' : \'horizontal-max-width\',    paddingSize ? \'p-\' + paddingSize : \'p-sizedefault\'  ]">  <div    [ngClass]="[      \'content\',      direction === \'horizontal\' ? \'text-left\' : \'text-center\'    ]"  >    @if (icon) {    <div [ngClass]="[direction === \'horizontal\' ? \'\' : \'mx-auto\']">      <fui-icons [icon]="icon" [size]="iconSize" [color]="color"></fui-icons>    </div>    }    <h2 class="title">{{ title }}</h2>    <div class="body">      <fui-text>        <ng-content></ng-content>      </fui-text>      @if (image && direction === \'vertical\') {      <img [src]="image" />      }    </div>    <div      [ngClass]="[        \'action\',        direction === \'horizontal\' ? \'flex-row\' : \'flex-column\'      ]"    >      @if (buttonText) {      <fui-button [color]="buttonColor" [size]="buttonSize">{{        buttonText      }}</fui-button>      } @if (secondaryButtonText) {      <fui-button-empty        [width]="\'auto\'"        [color]="secondaryButtonColor"        [size]="secondaryButtonSize"        >{{ secondaryButtonText }}</fui-button-empty      >      }    </div>  </div>  @if (image && direction === \'horizontal\') {  <div class="image">    <img [src]="image" />  </div>  }</div></div>'
+    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 'fui-accordion'},{'name': 'AppendComponent', 'selector': 'fui-append'},{'name': 'AspectRatioComponent', 'selector': 'fui-aspect-ratio'},{'name': 'AvatarComponent', 'selector': 'fui-avatar'},{'name': 'BadgeComponent', 'selector': 'fui-badge'},{'name': 'BottombarComponent', 'selector': 'fui-bottombar'},{'name': 'BreadcrumbComponent', 'selector': 'fui-breadcrumb'},{'name': 'ButtonComponent', 'selector': 'fui-button'},{'name': 'ButtonEmptyComponent', 'selector': 'fui-button-empty'},{'name': 'ButtonIconComponent', 'selector': 'fui-button-icon'},{'name': 'CalloutComponent', 'selector': 'fui-callout'},{'name': 'CardComponent', 'selector': 'fui-card'},{'name': 'CheckboxComponent', 'selector': 'fui-checkbox'},{'name': 'CollapsibleNavComponent', 'selector': 'fui-collapsible-nav'},{'name': 'ComboBoxComponent', 'selector': 'fui-combo-box'},{'name': 'CommentListComponent', 'selector': 'fui-comment-list'},{'name': 'ContentRowComponent', 'selector': 'fui-content-row'},{'name': 'ContextMenuComponent', 'selector': 'fui-context-menu'},{'name': 'ContextMenuItemComponent', 'selector': 'fui-context-menu-item'},{'name': 'DataGridComponent', 'selector': 'fui-data-grid'},{'name': 'DescriptionListComponent', 'selector': 'fui-description-list'},{'name': 'EchartsComponent', 'selector': 'fui-echarts'},{'name': 'EmptyPromptComponent', 'selector': 'fui-empty-prompt'},{'name': 'FacetButtonComponent', 'selector': 'fui-facet-button'},{'name': 'FieldFilepickerComponent', 'selector': 'fui-field-filepicker'},{'name': 'FieldTextComponent', 'selector': 'fui-field-text'},{'name': 'FilterGroupButtonComponent', 'selector': 'fui-filter-group-button'},{'name': 'FilterGroupComponent', 'selector': 'fui-filter-group'},{'name': 'FlexGroupComponent', 'selector': 'fui-flex-group'},{'name': 'FlexItemComponent', 'selector': 'fui-flex-item'},{'name': 'FlyoutBodyComponent', 'selector': 'fui-flyout-body'},{'name': 'FlyoutComponent', 'selector': 'fui-flyout'},{'name': 'FlyoutFooterComponent', 'selector': 'fui-flyout-footer'},{'name': 'FlyoutHeaderComponent', 'selector': 'fui-flyout-header'},{'name': 'FormControlLayoutComponent', 'selector': 'fui-form-control-layout'},{'name': 'HeaderBreadcrumbComponent', 'selector': 'fui-header-breadcrumb'},{'name': 'HeaderBreadcrumbPanelComponent', 'selector': 'fui-header-breadcrumb-panel'},{'name': 'HeaderComponent', 'selector': 'fui-header'},{'name': 'HeaderPanelComponent', 'selector': 'fui-header-panel'},{'name': 'HighlightComponent', 'selector': 'fui-highlight'},{'name': 'IconsComponent', 'selector': 'fui-icons'},{'name': 'ImageComponent', 'selector': 'fui-image'},{'name': 'InlineEditComponent', 'selector': 'fui-inline-edit'},{'name': 'InputComponent', 'selector': 'fui-input-base'},{'name': 'InputFieldComponent', 'selector': 'fui-input-field'},{'name': 'InputFieldNumberComponent', 'selector': 'fui-input-field-number'},{'name': 'InputFieldPasswordComponent', 'selector': 'fui-input-field-password'},{'name': 'InputSearchFieldComponent', 'selector': 'fui-input-search-field'},{'name': 'LinkComponent', 'selector': 'fui-link'},{'name': 'LoadingComponent', 'selector': 'fui-loading'},{'name': 'ModalBodyComponent', 'selector': 'fui-modal-body'},{'name': 'ModalComponent', 'selector': 'fui-modal'},{'name': 'ModalFooterComponent', 'selector': 'fui-modal-footer'},{'name': 'ModalHeaderComponent', 'selector': 'fui-modal-header'},{'name': 'OverlayMaskComponent', 'selector': 'fui-overlay-mask'},{'name': 'PageBodyComponent', 'selector': 'fui-page-body'},{'name': 'PageComponent', 'selector': 'fui-page'},{'name': 'PageHeaderComponent', 'selector': 'fui-page-header'},{'name': 'PageSectionComponent', 'selector': 'fui-page-section'},{'name': 'PageSidebarComponent', 'selector': 'fui-page-sidebar'},{'name': 'PaginationComponent', 'selector': 'fui-pagination'},{'name': 'PanelComponent', 'selector': 'fui-panel'},{'name': 'PopoverComponent', 'selector': 'fui-popover'},{'name': 'PrependComponent', 'selector': 'fui-prepend'},{'name': 'ProgressBaseComponent', 'selector': 'fui-progress-base'},{'name': 'ProgressComponent', 'selector': 'fui-progress'},{'name': 'RadioComponent', 'selector': 'fui-radio'},{'name': 'ResizableContainerComponent', 'selector': 'fui-resizable-container'},{'name': 'ResizablePanelComponent', 'selector': 'fui-resizable-panel'},{'name': 'SelectableComponent', 'selector': 'fui-selectable'},{'name': 'SelectFieldComponent', 'selector': 'fui-select-field'},{'name': 'SidenavComponent', 'selector': 'fui-sidenav'},{'name': 'SitewideComponent', 'selector': 'fui-sitewide'},{'name': 'SpacerComponent', 'selector': 'fui-spacer'},{'name': 'StepContentComponent', 'selector': 'fui-step-content'},{'name': 'StepsComponent', 'selector': 'fui-steps'},{'name': 'TabsComponent', 'selector': 'fui-tabs'},{'name': 'TabsContentComponent', 'selector': 'fui-tabs-content'},{'name': 'TextareaComponent', 'selector': 'fui-textarea'},{'name': 'TextComponent', 'selector': 'fui-text'},{'name': 'TimelineComponent', 'selector': 'fui-timeline'},{'name': 'TimelineSectionComponent', 'selector': 'fui-timeline-section'},{'name': 'TitleComponent', 'selector': 'fui-title'},{'name': 'ToastComponent', 'selector': 'fui-toast'},{'name': 'TooltipComponent', 'selector': 'fui-tooltip'},{'name': 'TreeViewComponent', 'selector': 'fui-tree-view'},{'name': 'ValidatorFieldComponent', 'selector': 'fui-validator-field'}];
+    var DIRECTIVES = [{'name': 'ThousandSeparatorDirective', 'selector': '[fuiThousandSeparator]'}];
     var ACTUAL_COMPONENT = {'name': 'EmptyPromptComponent'};
 </script>
 <script src="../js/tree.js"></script>

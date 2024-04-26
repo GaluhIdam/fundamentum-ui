@@ -6,7 +6,6 @@
 }
 
 .fui-title {
-  color: #000; /* Change to your desired color */
   font-family: $fuiFontFamily;
   white-space: nowrap;
 }
@@ -14,7 +13,7 @@
 .fui-dropzone {
   width: 200px;
   height: 50px;
-  border: 2px dashed #ccc; /* Change to your desired color */
+  border: 2px dashed $fuiColorDarkShade;
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
@@ -29,7 +28,6 @@
   text-align: center;
   font-size: small;
   margin: 10px 0px 0px 0px;
-  color: #000; /* Change to your desired color */
   white-space: nowrap;
   &:hover {
     text-decoration: underline;
@@ -48,8 +46,8 @@
 
 .fui-content {
   display: flex;
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
+  align-items: center;
+  justify-content: center;
 }
 
 .fui-list-dropzone {
@@ -66,7 +64,7 @@
   font-family: $fuiFontFamily;
   margin: 10px 0px 0px 0px;
   font-size: small;
-  color: #007bff; /* Change to your desired color */
+  color: $fuiColorPrimary;
   cursor: pointer;
   &:hover {
     text-decoration: underline;

@@ -1,42 +1,21 @@
-<div class="flex">
+<div>
   <div
-    [ngStyle]="{ height: 'calc(100vh - ' + remainingHeight + ')' }"
-    class="{{
-      docked
-        ? 'fui-overlay-collapsible-nav-docked'
-        : 'fui-overlay-collapsible-nav'
-    }}"
-    [class.show]="show"
+    class="fui-collapsible-nav"
+    [class.show]="show || docked"
+    [class.docked]="docked"
   >
-    <div
-      class="{{
-        docked
-          ? 'fui-content-collapsible-nav-docked'
-          : 'fui-content-collapsible-nav'
-      }}"
-    >
-      <ng-content select="[left-content]"></ng-content>
+    <div class="fui-collapsible-panel">
+      <ng-content></ng-content>
     </div>
-    <div *ngIf="!docked" style="width: fit-content">
-      <div class="ml-20">
-        <fui-button-icon
-          (click)="handleOnClick()"
-          class="ml-20"
-          [size]="'s'"
-          [type]="'button'"
-          [icon]="'cross'"
-          [option]="'icon'"
-          [color]="'text'"
-        ></fui-button-icon>
-      </div>
-      <div (click)="handleOnClick()" class="fui-outside-area-collapsible"></div>
-    </div>
-  </div>
-  <div
-    [ngStyle]="{ display: !docked ? 'none' : 'block', padding: '0' }"
-    class="content-router"
-    [class.show]="show"
-  >
-    <ng-content select="[right-content]"></ng-content>
+    <fui-button-icon
+      *ngIf="!docked"
+      (onClick)="handleOnClick()"
+      [type]="'button'"
+      [option]="'icon'"
+      class="dismiss-btn"
+      [icon]="'cross'"
+      [size]="'s'"
+      [color]="'text'"
+    />
   </div>
 </div>

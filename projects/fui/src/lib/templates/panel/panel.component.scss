@@ -1,4 +1,4 @@
-@import "./../../../../../demo/src/styles";
+@import "../../styles/index";
 
 * {
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 .panel-split {
   display: flex;
   width: 100%;
-  
+
   .panel-start,
   .panel-end {
     display: flex;
@@ -95,7 +95,7 @@
 
 .warning {
   @include fuiPanel($fuiColorWarning, 45%);
-} 
+}
 
 .danger {
   @include fuiPanel($fuiColorDanger, 50%);
@@ -127,7 +127,7 @@
 
 .shadow-warning {
   @include fuiBottomShadowMedium($fuiColorWarning);
-} 
+}
 
 .shadow-danger {
   @include fuiBottomShadowMedium($fuiColorDanger);
@@ -159,7 +159,7 @@
 
 .border-warning {
   @include fuiPanelBorder($fuiColorWarning, 40%);
-} 
+}
 
 .border-danger {
   @include fuiPanelBorder($fuiColorDanger, 45%);

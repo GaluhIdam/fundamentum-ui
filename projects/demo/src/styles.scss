@@ -1,23 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+// @import "~@quantum/fui/lib/styles/index";
+// @import "../../fui/src//lib/themes/theme.scss";
+@import "../../fui/src/lib/styles/index";
+body {
+  font-family: $fuiFontFamily;
+}
 
-// @import "../../fui/src/themes/legacy/globals";
-@import "./../../fui/src/lib/themes/legacy/_globals";
-// @import "../../fui/src/themes/legacy/colors_light";
-@import "./../../fui/src/lib/themes/legacy/colors_light";
-// @import "../../fui/src/styles/variables";
-@import "./../../fui/src/lib/styles/variables/index";
-// @import "../../fui/src/styles/mixins";
-@import "./../../fui/src/lib/styles/mixins/index";
+// /* Dark Theme */
+// .dark-theme {
+//   background-color: #2c3e50;
+//   color: #ecf0f1;
+// }
 
-@import "../../fui/src/lib/styles/utility/normalize";
-
-@import "../../fui/src/lib/themes/legacy/legacy_light";
-
-// fitur
-// @import "../../fui/src/themes/legacy/globals";
-// @import "../../fui/src/themes/legacy/colors_light";
-// @import "../../fui/src/styles/variables";
-// @import "../../fui/src/styles/mixins";
-
-// @import "../../fui/src/styles/utility/normalize";
-// @import "../../fui/src/themes/legacy/legacy_light";
+// /* Light Theme */
+// .light-theme {
+//   background-color: #ecf0f1;
+//   color: #2c3e50;
+// }
