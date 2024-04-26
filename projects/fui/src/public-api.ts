@@ -8,6 +8,7 @@ export * from './lib/atoms/aspect-ratio/aspect-ratio.component';
 export * from './lib/atoms/badge/badge.component';
 export * from './lib/atoms/button/button.component';
 export * from './lib/atoms/button-empty/button-empty.component';
+export * from './lib/atoms/code-block/code-block.component';
 export * from './lib/atoms/icons/icons.component';
 export * from './lib/atoms/input/input.component';
 export * from './lib/atoms/overlay-mask/overlay-mask.component';
