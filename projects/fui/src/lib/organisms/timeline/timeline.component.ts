@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
     <h1>Timeline Example</h1>
     <!-- ------ -->
     <fui-timeline-section>
-      <fui-icons icon [icon]="'email'"></fui-icons>
+      <fui-icons [icon]="'email'"></fui-icons>
       <div content>
         <p>
           <span style="font-weight: bold">janet.co</span> was invited to the
@@ -21,7 +21,7 @@ import { Component } from '@angular/core';
 
     <!-- ------ -->
     <fui-timeline-section>
-      <fui-icons icon [icon]="'pencil'"></fui-icons>
+      <fui-icons [icon]="'pencil'"></fui-icons>
       <div content>
         <p>
           The project was renamed to
@@ -33,7 +33,7 @@ import { Component } from '@angular/core';
 
     <!-- ------ -->
     <fui-timeline-section>
-      <fui-icons icon [icon]="'alert'" [color]="'warning'"></fui-icons>
+      <fui-icons [icon]="'alert'" [color]="'warning'"></fui-icons>
       <div content>
         <p>
           The project was renamed to
@@ -48,7 +48,7 @@ import { Component } from '@angular/core';
     <h1>Comment List Example</h1>
     <!-- ------ -->
     <fui-timeline-section>
-      <fui-icons icon [icon]="'email'"></fui-icons>
+      <fui-icons [icon]="'email'"></fui-icons>
       <div content>
         <p>
           <span style="font-weight: bold">janet.co</span> was invited to the
@@ -60,7 +60,7 @@ import { Component } from '@angular/core';
 
     <!-- ------ -->
     <fui-timeline-section>
-      <fui-icons icon [icon]="'pencil'" [color]="'success'"></fui-icons>
+      <fui-icons [icon]="'pencil'" [color]="'success'"></fui-icons>
       <div content>
         <p>
           The project was renamed to
@@ -72,7 +72,7 @@ import { Component } from '@angular/core';
 
     <!-- ------ -->
     <fui-timeline-section>
-      <fui-icons icon [icon]="'folderClosed'" [color]="'text'"></fui-icons>
+      <fui-icons [icon]="'folderClosed'" [color]="'text'"></fui-icons>
       <div content>
         <fui-comment-list [color]="'text'">
           <div header-comment>
@@ -86,7 +86,7 @@ import { Component } from '@angular/core';
 
     <!-- ------ -->
     <fui-timeline-section>
-      <fui-icons icon [icon]="'alert'" [color]="'primary'"></fui-icons>
+      <fui-icons [icon]="'alert'" [color]="'primary'"></fui-icons>
       <div content>
         <fui-comment-list [color]="'primary'">
           <div header-comment>
@@ -100,7 +100,7 @@ import { Component } from '@angular/core';
 
     <!-- ------ -->
     <fui-timeline-section>
-      <fui-icons icon [icon]="'alert'" [color]="'warning'"></fui-icons>
+      <fui-icons [icon]="'alert'" [color]="'warning'"></fui-icons>
       <div content>
         <fui-comment-list [color]="'warning'">
           <div header-comment>
@@ -114,7 +114,7 @@ import { Component } from '@angular/core';
 
     <!-- ------ -->
     <fui-timeline-section>
-      <fui-icons icon [icon]="'alert'" [color]="'danger'"></fui-icons>
+      <fui-icons [icon]="'alert'" [color]="'danger'"></fui-icons>
       <div content>
         <fui-comment-list [color]="'danger'">
           <div header-comment>
@@ -128,7 +128,7 @@ import { Component } from '@angular/core';
 
     <!-- ------ -->
     <fui-timeline-section>
-      <fui-icons icon [icon]="'alert'" [color]="'text'"></fui-icons>
+      <fui-icons [icon]="'alert'" [color]="'text'"></fui-icons>
       <div content>
         <fui-comment-list [color]="'text'">
           <div header-comment>
@@ -142,7 +142,7 @@ import { Component } from '@angular/core';
 
     <!-- ------ -->
     <fui-timeline-section>
-      <fui-icons icon [icon]="'alert'" [color]="'accent'"></fui-icons>
+      <fui-icons [icon]="'alert'" [color]="'accent'"></fui-icons>
       <div content>
         <fui-comment-list [color]="'accent'">
           <div header-comment>
@@ -156,7 +156,7 @@ import { Component } from '@angular/core';
 
     <!-- ------ -->
     <fui-timeline-section>
-      <fui-icons icon [icon]="'alert'" [color]="'ghost'"></fui-icons>
+      <fui-icons [icon]="'alert'" [color]="'ghost'"></fui-icons>
       <div content>
         <fui-comment-list [color]="'ghost'">
           <div header-comment>
@@ -170,7 +170,7 @@ import { Component } from '@angular/core';
 
     <!-- ------ -->
     <fui-timeline-section>
-      <fui-icons icon [icon]="'alert'" [color]="'disabled'"></fui-icons>
+      <fui-icons [icon]="'alert'" [color]="'disabled'"></fui-icons>
       <div content>
         <fui-comment-list [color]="'disabled'">
           <div header-comment>

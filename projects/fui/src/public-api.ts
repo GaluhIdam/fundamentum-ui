@@ -97,8 +97,8 @@ export * from './lib/organisms/selectable/selectable.dto';
 /* Side Nav */
 export * from './lib/templates/sidenav/sidenav.component';
 /* Sitewide */
-export * from './lib/templates/sitewide/sitewide.component';
-export * from './lib/templates/sitewide/sitewide.dto';
+export * from './lib/templates/sitewide-search/sitewide-search.component';
+export * from './lib/templates/sitewide-search/sitewide.dto';
 /* Collapsible Nav */
 export * from './lib/templates/collapsible-nav/collapsible-nav.component';
 /* Combo Box */

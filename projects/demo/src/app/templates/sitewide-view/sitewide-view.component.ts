@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {
-  SitewideComponent,
+  SitewideSearchComponent,
   SitewideDTO,
 } from 'fui';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-sitewide-view',
   standalone: true,
-  imports: [SitewideComponent, ReactiveFormsModule, CommonModule],
+  imports: [SitewideSearchComponent, ReactiveFormsModule, CommonModule],
   templateUrl: './sitewide-view.component.html',
   styleUrl: './sitewide-view.component.scss',
 })

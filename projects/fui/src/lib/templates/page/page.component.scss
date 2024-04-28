@@ -27,7 +27,7 @@
 }
 
 .page-full {
-  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 .page-fit {
@@ -41,4 +41,8 @@
 .restrict-width {
   max-width: 75%;
   margin-inline: auto;
+}
+
+fui-header {
+  width: 100vw;
 }

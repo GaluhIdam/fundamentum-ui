@@ -7,6 +7,10 @@
   place-content: space-between;
   padding: 0px 8px 0px 8px;
   place-content: space-between;
+  background-color: $fuiColorDarkestShade;
+}
+
+.shadow {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 .fixed-top {
@@ -18,16 +22,6 @@
   width: -webkit-fill-available;
   position: fixed;
   bottom: 0;
-}
-
-.bg-dark {
-  background-color: $fuiColorDarkestShade;
-  color: $fuiColorGhost;
-}
-
-.bg-light {
-  background-color: $fuiColorLightestShade;
-  color: $fuiColorDarkestShade;
 }
 
 @media screen and (max-width: 500px) {

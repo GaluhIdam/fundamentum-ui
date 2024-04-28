@@ -3,6 +3,7 @@
   margin: 0px 0px 0px 5px;
   font-weight: 600;
   align-items: baseline;
+  color: $fuiColorGhost;
 }
 .nav-item {
   margin: 5px 10px 5px 10px;
@@ -10,16 +11,8 @@
   display: flex;
 }
 
-.mr-5 {
-  margin-right: 5px;
-}
-
 p {
   margin: 0px 0px 0px 10px;
-}
-
-.flex {
-  display: flex;
 }
 
 .icon-nav {
@@ -27,12 +20,6 @@ p {
   &:hover {
     cursor: pointer;
   }
-}
-
-.title-link {
-  // color: $fuiColorPrimary;
-  font-weight: bold;
-  margin: 15px 0px 10px 0px;
 }
 
 .link-route {
@@ -49,6 +36,7 @@ p {
 }
 
 .info-head {
+  color: $fuiColorGhost;
   height: 35px;
   .dev {
     margin: 0px 0px 0px 10px;
@@ -60,15 +48,15 @@ p {
   }
 }
 
-.content-router {
-  flex: 1; /* Fill remaining space */
-  padding: 20px; /* Optional: Add padding */
-  transition: margin-left 0.3s ease; /* Add transition effect for smoother hide/show */
+.container {
+  margin: 20px 10px 10px 10px;
+  .title-link {
+    font-weight: bold;
+    margin: 10px 0px 10px 0px;
+    font-size: 20px;
+  }
 }
 
-.container {
-  width: -webkit-fill-available;
+.container-body {
   margin: 20px;
-  .sub-container {
-  }
 }

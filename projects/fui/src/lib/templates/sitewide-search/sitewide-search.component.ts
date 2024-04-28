@@ -20,7 +20,7 @@ import { CommonModule } from '@angular/common';
  * <example-url>http://localhost:4200/organisms/inline-edit</example-url>
  */
 @Component({
-  selector: 'fui-sitewide',
+  selector: 'fui-sitewide-search',
   standalone: true,
   imports: [
     FormControlLayoutComponent,
@@ -32,10 +32,10 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     AppendComponent,
   ],
-  templateUrl: './sitewide.component.html',
-  styleUrl: './sitewide.component.scss',
+  templateUrl: './sitewide-search.component.html',
+  styleUrl: './sitewide-search.component.scss',
 })
-export class SitewideComponent {
+export class SitewideSearchComponent {
   @Input({ required: true }) data: SitewideDTO[] = [];
   @Input({ required: true }) searchForm: FormControl = new FormControl('');
   @Input() placeholder: string = 'Search for anything...';

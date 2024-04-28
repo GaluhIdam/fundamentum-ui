@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SitewideComponent } from './sitewide.component';
+import { SitewideSearchComponent } from './sitewide-search.component';
 
-describe('SitewideComponent', () => {
-  let component: SitewideComponent;
-  let fixture: ComponentFixture<SitewideComponent>;
+describe('SitewideSearchComponent', () => {
+  let component: SitewideSearchComponent;
+  let fixture: ComponentFixture<SitewideSearchComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SitewideComponent]
+      imports: [SitewideSearchComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(SitewideComponent);
+
+    fixture = TestBed.createComponent(SitewideSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

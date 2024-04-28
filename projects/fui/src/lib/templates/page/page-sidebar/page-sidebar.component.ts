@@ -21,4 +21,5 @@ import { Component, Input } from '@angular/core';
 export class PageSidebarComponent {
   @Input() padding: 'none' | 's' | 'm' | 'l' = 'm';
   @Input() width: number = 248;
+  @Input() height: number = 0;
 }
