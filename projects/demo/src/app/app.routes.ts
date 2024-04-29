@@ -44,8 +44,9 @@ import { ProgressViewComponent } from './atoms/progress-view/progress-view.compo
 import { EmptyPromptViewComponent } from './organisms/empty-prompt-view/empty-prompt-view.component';
 import { AccordionViewComponent } from './organisms/accordion-view/accordion-view.component';
 import { PaginationViewComponent } from './organisms/pagination-view/pagination-view.component';
-import { FlexViewComponent } from "./templates/flex-view/flex-view.component";
+import { FlexViewComponent } from './templates/flex-view/flex-view.component';
 import { ListGroupViewComponent } from './organisms/list-group-view/list-group-view.component';
+import { CodeBlockViewComponent } from './atoms/code-block-view/code-block-view.component';
 
 export const routes: Routes = [
   {
@@ -148,6 +149,10 @@ export const routes: Routes = [
       {
         path: 'progress',
         component: ProgressViewComponent,
+      },
+      {
+        path: 'code-block',
+        component: CodeBlockViewComponent,
       },
     ],
   },

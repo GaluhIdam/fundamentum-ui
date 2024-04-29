@@ -29,6 +29,8 @@
     "@angular/ssr": "^17.1.0",
     "echarts": "^5.4.3",
     "express": "^4.18.2",
+    "highlight.js": "^11.9.0",
+    "ngx-highlightjs": "^11.0.0-beta.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "vite": "^5.1.1",

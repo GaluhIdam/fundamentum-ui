@@ -1,0 +1,173 @@
+@use './../../styles/variables/color_variable' as color;
+
+.code-block {
+  background: color.$fuiHighlightBackground;
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  
+  &-content {
+    flex: 1;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: color.$fuiColorLightShade;
+  }
+}
+  pre code.hljs {
+    display: block;
+  }
+
+  .hljs {
+    color: color.$fuiHighlightColor;
+    padding: 0 .5rem !important;
+  }
+  .hljs-subst {
+    color: color.$fuiHighlightSubset;
+  }
+  .hljs-comment {
+    color: color.$fuiHighlightComment;
+  }
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-meta .hljs-keyword,
+  .hljs-doctag,
+  .hljs-section {
+    color: color.$fuiHighlightKeyword;
+  }
+  .hljs-attr {
+    color: color.$fuiHighlightKeyword;
+  }
+  .hljs-attribute {
+    color: color.$fuiHighlightSymbol;
+  }
+  .hljs-name,
+  .hljs-type,
+  .hljs-number,
+  .hljs-selector-id,
+  .hljs-quote,
+  .hljs-template-tag {
+    color: color.$fuiHighlightNamespace;
+  }
+  .hljs-selector-class {
+    color: color.$fuiHighlightSelectorClass;
+  }
+  .hljs-string,
+  .hljs-regexp,
+  .hljs-symbol,
+  .hljs-variable,
+  .hljs-template-variable,
+  .hljs-link,
+  .hljs-selector-attr {
+    color: color.$fuiHighlightVariable;
+  }
+  .hljs-meta,
+  .hljs-selector-pseudo {
+    color: color.$fuiHighlightKeyword;
+  }
+  .hljs-built_in,
+  .hljs-title,
+  .hljs-literal {
+    color: color.$fuiHighlightLiteral;
+  }
+  .hljs-bullet,
+  .hljs-code {
+    color: color.$fuiHighlightPunctuation;
+  }
+  .hljs-meta .hljs-string {
+    color: color.$fuiHighlightVariable;
+  }
+  .hljs-deletion {
+    color: color.$fuiHighlightDeletion;
+  }
+  .hljs-addition {
+    color: color.$fuiHighlightAddition;
+  }
+  .hljs-emphasis {
+    font-style: italic
+  }
+  .hljs-strong {
+    font-weight: bold
+  }
+  .hljs-formula,
+  .hljs-operator,
+  .hljs-params,
+  .hljs-property,
+  .hljs-punctuation,
+  .hljs-tag {
+    /* purposely ignored */
+  }
+
+
+  // Line Numbers Styling
+
+  pre .hljs {
+    border: none;
+    transition: border ease 1s;
+  }
+
+  table,
+  tbody,
+  tr,
+  td {
+    background: inherit;
+  }
+
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+    background: inherit;
+  }
+
+  /* for block of numbers */
+  td.hljs-ln-numbers {
+    user-select: none;
+    text-align: center;
+    color: color.$fuiHighlightNumber;
+    border-right: 1px solid color.$fuiHighlightNumberBorderLine;
+    vertical-align: top;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+  }
+
+  /* for block of code */
+  td.hljs-ln-code {
+    padding-left: 10px !important;
+  }
+
+.code-block {
+  &-fullscreen {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    padding: 1rem;
+
+  }
+
+  &-action {
+    padding: 1rem .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    align-items: center;
+  }
+
+  .fui-icon-code-block-action {
+    padding: .2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    &:hover {
+      background-color: rgba(211, 218, 230, 0.2);
+      transform: translateY(-1px);
+    }
+    &:active {
+      background-color: rgba(211, 218, 230, 0.2);
+      transform: translateY(1.5px);
+    }
+  }
+
+}
+
+.body-overflow-hidden {
+  overflow: hidden; /* Prevent scrolling on the body */
+}
