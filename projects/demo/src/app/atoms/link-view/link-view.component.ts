@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ButtonIconComponent, LinkComponent } from '../../../../../fui/src/public-api';
+import { ButtonIconComponent, LinkComponent } from 'fui';
 // import { ButtonIconComponent, LinkComponent } from 'fui';
 
 @Component({

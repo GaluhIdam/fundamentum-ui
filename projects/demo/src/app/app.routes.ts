@@ -188,6 +188,21 @@ export const routes: Routes = [
         component: FilterGroupViewComponent,
       },
       {
+        title: 'Empty Prompt',
+        path: 'empty-prompt',
+        component: EmptyPromptViewComponent,
+      },
+      {
+        title: 'Accordion',
+        path: 'accordion',
+        component: AccordionViewComponent,
+      },
+      {
+        title: 'List Group',
+        path: 'list-group',
+        component: ListGroupViewComponent,
+      },
+      {
         title: 'Callout',
         path: 'callout',
         component: CalloutViewComponent,

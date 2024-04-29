@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {
   EchartsComponent,
   OptionChart,
-} from '../../../../../fui/src/public-api';
+} from 'fui';
 // import {
 //   EchartsComponent,
 //   OptionChart,

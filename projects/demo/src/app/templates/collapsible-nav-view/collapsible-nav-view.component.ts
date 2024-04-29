@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ButtonIconComponent, CollapsibleNavComponent } from '../../../../../fui/src/public-api';
+import { ButtonIconComponent, CollapsibleNavComponent } from 'fui';
 // import {
 //   ButtonIconComponent,
 //   CollapsibleNavComponent,

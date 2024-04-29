@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ResizableContainerComponent } from '../../../../../fui/src/public-api';
+import { ResizableContainerComponent } from 'fui';
 // import {
 //   ResizableContainerComponent,
 //   ResizablePanelComponent,

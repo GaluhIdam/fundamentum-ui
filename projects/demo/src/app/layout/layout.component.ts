@@ -18,7 +18,7 @@ import {
   PageSidebarComponent,
   TextComponent,
   ButtonIconComponent,
-} from '../../../../fui/src/public-api';
+} from 'fui';
 import { RouterModule, Routes } from '@angular/router';
 import { routes } from '../app.routes';
 import { CommonModule } from '@angular/common';
