@@ -1,3 +1,37 @@
-<div #container class="{{ direction }}">
-  <ng-content></ng-content>
+<div
+  [ngClass]="{
+    height: direction === 'vertical',
+    width: direction === 'horizontal'
+  }"
+>
+  <div
+    #resizable
+    class="resizable"
+    [ngStyle]="{
+      height:
+        direction === 'vertical'
+          ? resizableHeight === 0 || !last
+            ? 'auto'
+            : resizableHeight + 'px'
+          : '',
+      width:
+        direction === 'horizontal'
+          ? resizableWidth === 0 || !last
+            ? 'auto'
+            : resizableWidth + 'px'
+          : ''
+    }"
+  >
+    <ng-content></ng-content>
+  </div>
+  <button
+    class="btn-width"
+    *ngIf="last && direction === 'horizontal'"
+    (mousedown)="widthResize($event)"
+  ></button>
+  <button
+    class="btn-height"
+    *ngIf="last && direction === 'vertical'"
+    (mousedown)="heightResize($event)"
+  ></button>
 </div>

@@ -261,7 +261,7 @@ export const routes: Routes = [
         component: FlyoutViewComponent,
       },
       {
-        title: 'Sitewide',
+        title: 'Sitewide Search',
         path: 'sitewide',
         component: SitewideViewComponent,
       },

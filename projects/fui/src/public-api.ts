@@ -110,7 +110,7 @@ export * from './lib/molecules/field-filepicker/field-filepicker.component';
 export * from './lib/types';
 /* Resizable Container Component */
 export * from './lib/templates/resizable-container/resizable-container.component';
-export * from './lib/templates/resizable-container/resizable-panel/resizable-panel.component';
+export * from './lib/templates/resizable-container/resizable-container.component';
 /* Header Component */
 export * from './lib/templates/header/header.component';
 export * from './lib/templates/header/header-panel/header-panel.component';
@@ -147,6 +147,5 @@ export * from './lib/templates/page/page-body/page-body.component';
 export * from './lib/templates/page/page-section/page-section.component';
 
 /**Dark Mode Feature */
-export * from './lib/dark-mode/dark-mode.service';
 export * from './lib/templates/flex/flex-group.component';
 export * from './lib/templates/flex/flex-item.component';

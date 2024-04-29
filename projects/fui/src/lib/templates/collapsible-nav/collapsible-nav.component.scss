@@ -1,41 +1,69 @@
 @import "../../styles/index";
 .fui-collapsible-panel {
-  width: 240px;
-  display: flex;
-  overflow-y: auto;
-  background-color: $fuiColorEmptyShade;
   position: relative;
+  display: none;
 }
-.fui-collapsible-nav {
+.fui-collapsible-panel.show {
   z-index: 1;
-  height: 100%;
-  left: 0;
-  width: 100vw;
-  transition: transform 0.5s ease;
-  transform: translateX(-100vw);
-  position: fixed;
-}
-.fui-collapsible-nav.show {
   display: flex;
-  transition: transform 0.5s ease;
-  transform: translateX(0);
-  background-color: rgba(105, 112, 125, 0.5);
+  background-color: rgba($fuiColorDarkShade, 0.5);
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
   height: -webkit-fill-available;
 }
-.fui-collapsible-nav.docked {
-  border-right-width: 2px;
-  border-right-color: $fuiColorLightShade;
-  border-right-style: solid;
-  display: flex;
-  width: auto;
-  position: relative;
-  transition: transform 0.5s ease;
-  transform: translateX(0);
-  background-color: rgba(105, 112, 125, 0.5);
+
+.container {
+  z-index: 1;
+  max-width: 250px;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: $fuiColorEmptyShade;
+  animation: slideOut 0.5s forwards;
+  transform: translateX(-100%);
 }
 
-.dismiss-btn {
+.container.show {
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.btn {
   margin: 10px;
+}
+
+.fui-collapsible-panel-docked {
+  position: relative;
+  width: fit-content;
+  left: 0;
+}
+.container-docked {
+  z-index: 1;
+  max-width: 250px;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: $fuiColorEmptyShade;
 }
 
 /** Add On*/

@@ -16,7 +16,6 @@ import {
   PageHeaderComponent,
   PageSectionComponent,
   PageSidebarComponent,
-  DarkModeService,
   TextComponent,
   ButtonIconComponent,
 } from '../../../../fui/src/public-api';
@@ -49,7 +48,6 @@ import { CommonModule } from '@angular/common';
     ButtonIconComponent,
     RouterModule,
   ],
-  providers: [DarkModeService],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
 })
@@ -62,9 +60,6 @@ export class LayoutComponent {
   extendedBorder: boolean = false;
 
   show: boolean = false;
-  component: Routes = routes;
-
-  constructor(private darkModeService: DarkModeService) {}
 
   collapseBtn(): void {
     this.isSidebar = !this.isSidebar;

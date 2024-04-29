@@ -30,7 +30,7 @@ import { CommonModule } from '@angular/common';
 })
 export class CollapsibleNavComponent {
   @Input({ required: true }) show: boolean = false;
-  @Input() docked: boolean = true;
+  @Input() docked: boolean = false;
   @Output() onClick: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   /**

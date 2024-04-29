@@ -1,21 +1,23 @@
-<div>
+<div
+  class="{{
+    !docked ? 'fui-collapsible-panel' : 'fui-collapsible-panel-docked'
+  }}"
+  [class.show]="show"
+>
   <div
-    class="fui-collapsible-nav"
-    [class.show]="show || docked"
-    [class.docked]="docked"
+    class="{{ !docked ? 'container' : 'container-docked' }}"
+    [class.show]="show"
   >
-    <div class="fui-collapsible-panel">
-      <ng-content></ng-content>
-    </div>
-    <fui-button-icon
-      *ngIf="!docked"
-      (onClick)="handleOnClick()"
-      [type]="'button'"
-      [option]="'icon'"
-      class="dismiss-btn"
-      [icon]="'cross'"
-      [size]="'s'"
-      [color]="'text'"
-    />
+    <ng-content></ng-content>
   </div>
+  <fui-button-icon
+    *ngIf="!docked"
+    (onClick)="handleOnClick()"
+    class="btn"
+    [color]="'text'"
+    [type]="'button'"
+    [option]="'icon'"
+    [icon]="'cross'"
+    [size]="'s'"
+  ></fui-button-icon>
 </div>
