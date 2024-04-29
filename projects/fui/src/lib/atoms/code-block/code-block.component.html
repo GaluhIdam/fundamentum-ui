@@ -1,0 +1,41 @@
+<div [ngClass]="['code-block', fullScreen ? 'code-block-fullscreen' : '']">
+  <div class="code-block-content">
+    @if (lineNumbers) {
+    <pre><code [highlight]="code" [language]="language" lineNumbers></code></pre>
+    } @else {
+    <pre><code [highlight]="code" [language]="language"></code></pre>
+    }
+  </div>
+  <div class="code-block-action">
+    <fui-icons
+      *ngIf="allowFullscreen && !fullScreen"
+      class="fui-icon-code-block-action"
+      [icon]="'fullScreen'"
+      [size]="'sizes'"
+      (click)="fullScreenAct()"
+    ></fui-icons>
+    <fui-icons
+      *ngIf="allowFullscreen && fullScreen"
+      class="fui-icon-code-block-action"
+      [icon]="'fullScreenExit'"
+      [size]="'sizes'"
+      (click)="fullScreenAct()"
+    ></fui-icons>
+    <div class="fui-icon-code-block-action">
+      <fui-tooltip
+        *ngIf="allowCopy"
+        [displayTooltip]="isCopied"
+        [content]="'Copied'"
+        [position]="'top'"
+        [align]="'center'"
+      >
+        <fui-icons
+          [icon]="'copyClipboard'"
+          [size]="'sizes'"
+          (click)="copyAct()"
+        >
+        </fui-icons>
+      </fui-tooltip>
+    </div>
+  </div>
+</div>

@@ -95,3 +95,22 @@ $fuiBtnTextText: rgb(52, 55, 65);
 $fuiBtnAccentText: rgb(160, 52, 101);
 $fuiBtnDisabledText: rgb(162, 171, 186);
 $fuiColorCardDisabled: $fuiColorLightShade;
+
+
+// Color Code Highlight
+$fuiHighlightColor: #2f3337;
+$fuiHighlightBackground: #f1f4fa;
+$fuiHighlightSubset: $fuiHighlightColor;
+$fuiHighlightComment: #656e77;
+$fuiHighlightKeyword: #015692;
+$fuiHighlightAttribute: $fuiHighlightKeyword;
+$fuiHighlightSymbol: #803378;
+$fuiHighlightNamespace: #b75501;
+$fuiHighlightSelectorClass: $fuiHighlightKeyword;
+$fuiHighlightVariable: #54790d;
+$fuiHighlightLiteral: $fuiHighlightNamespace;
+$fuiHighlightPunctuation: #535a60;
+$fuiHighlightDeletion: #c02d2e;
+$fuiHighlightAddition: #2f6f44;
+$fuiHighlightNumber: #bfbfbf;
+$fuiHighlightNumberBorderLine: #d6d6d6;

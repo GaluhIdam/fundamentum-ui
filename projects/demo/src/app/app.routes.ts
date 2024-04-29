@@ -48,6 +48,7 @@ import { AccordionViewComponent } from './organisms/accordion-view/accordion-vie
 import { PaginationViewComponent } from './organisms/pagination-view/pagination-view.component';
 import { FlexViewComponent } from './templates/flex-view/flex-view.component';
 import { ListGroupViewComponent } from './organisms/list-group-view/list-group-view.component';
+import { CodeBlockViewComponent } from './atoms/code-block-view/code-block-view.component';
 
 /** ATTENTION, ADD A TITLE IN CHILDREN ROUTE FOR THE DOCUMENTATION */
 export const routes: Routes = [
@@ -100,6 +101,10 @@ export const routes: Routes = [
         title: 'Progress',
         path: 'progress',
         component: ProgressViewComponent,
+      },
+      {
+        path: 'code-block',
+        component: CodeBlockViewComponent,
       },
     ],
   },
