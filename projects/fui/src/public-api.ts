@@ -75,6 +75,7 @@ export * from './lib/molecules/form-control-layout/select-field/select-field.com
 /* Pagination */
 export * from './lib/organisms/pagination/pagination.component';
 /* Data Grid */
+export * from './lib/organisms/data-grid-v2/data-grid-v2.component';
 export * from './lib/organisms/data-grid/data-grid.component';
 export * from './lib/organisms/data-grid/content-row/content-row.component';
 
