@@ -1,0 +1,54 @@
+<fui-popover [position]="'bottom'">
+  <fui-form-control-layout>
+    <fui-input-field
+      [formControlField]="searchForm"
+      [type]="'text'"
+      [size]="'m'"
+      [placeholder]="placeholder"
+      [invalid]="false"
+    >
+      <fui-icons
+        left-icon
+        [label]="'left'"
+        [icon]="'search'"
+        [size]="'sizem'"
+        [color]="'text'"
+      />
+    </fui-input-field>
+    <fui-append>
+      <span class="shortcut-key">⌘K</span>
+    </fui-append>
+  </fui-form-control-layout>
+  <div popover-body>
+    <div class="fui-selection" *ngFor="let item of data">
+      <div class="flex">
+        <fui-icons
+          class="icon"
+          *ngIf="item.icon"
+          [size]="'sizexl'"
+          [color]="'disabled'"
+          [icon]="item.icon"
+        ></fui-icons>
+        <div class="selection-desc">
+          <span class="title">{{ item.title }}</span>
+          <span class="desc-title" *ngIf="item.description">{{
+            item.description
+          }}</span>
+        </div>
+      </div>
+      <fui-avatar
+        [size]="'sizem'"
+        [shape]="'spaces'"
+        [avatarBorder]="true"
+        [color]="'primary'"
+        [name]="item.title"
+        (onClickAvatar)="handleClickAvatar($event)"
+      ></fui-avatar>
+    </div>
+    <hr class="line" />
+    <div class="quick-search">
+      <span class="tips">Quickly search using</span>
+      <span class="shortcut">Command + K</span>
+    </div>
+  </div>
+</fui-popover>

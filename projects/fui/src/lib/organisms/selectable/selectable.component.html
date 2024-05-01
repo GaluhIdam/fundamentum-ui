@@ -1,0 +1,41 @@
+<ul class="fui-selectable">
+  <li
+    [tabindex]="i"
+    class="fui-list-item"
+    *ngFor="let item of options; let i = index"
+    (click)="clickHandle(item)"
+  >
+    <fui-icons
+      *ngIf="item.onCheck === undefined"
+      class="fui-list-icon"
+      [icon]="'empty'"
+    ></fui-icons>
+    <fui-icons
+      *ngIf="item.onCheck === 'on'"
+      class="fui-list-icon"
+      [icon]="'check'"
+    ></fui-icons>
+    <fui-icons
+      *ngIf="item.onCheck === 'off'"
+      class="fui-list-icon"
+      [icon]="'cross'"
+    ></fui-icons>
+    <fui-icons
+      *ngIf="item.onCheck === 'mixed'"
+      class="fui-list-icon"
+      [icon]="'minus'"
+    ></fui-icons>
+    <div class="flex">
+      <span class="fui-list-label">{{ item.label }}</span>
+      <span class="fui-list-desc" *ngIf="item.description">{{
+        item.description
+      }}</span>
+    </div>
+  </li>
+</ul>
+<span
+  (click)="clickShowMore()"
+  class="fui-showMore"
+  *ngIf="options.length < totalData"
+  >View more results</span
+>

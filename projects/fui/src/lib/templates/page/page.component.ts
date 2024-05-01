@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 /**
  * The PageComponent
@@ -35,4 +35,13 @@ export class PageComponent {
   @Input() direction: 'horzontal' | 'vertical' = 'horzontal';
   @Input() isGrow: boolean = true;
   @Input() isRestrictWidth: boolean = false;
+
+  @ViewChild('header', { static: false }) headerDiv!: ElementRef;
+  height: string = '0vh';
+  ngAfterViewInit() {
+    setTimeout(() => {
+      const headerHeight = this.headerDiv.nativeElement.offsetHeight;
+      this.height = (headerHeight / window.innerHeight) * 100 + 'vh';
+    });
+  }
 }

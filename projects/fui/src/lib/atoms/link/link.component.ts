@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { IconsComponent } from '../icons/icons.component';
 import { Color } from '../../types';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 /**
  * The CalloutComponent component
@@ -27,10 +27,15 @@ import { RouterModule } from '@angular/router';
 export class LinkComponent {
   @Input({ required: true }) colorLink: Color = 'text';
   @Input({ required: true }) urlLink?: string;
-  @Input({ required: true }) typeLink?:
-    | 'external'
-    | 'coloring'
-    | 'disabled';
+  @Input({ required: true }) typeLink?: 'external' | 'coloring' | 'disabled';
+
+  currentRoute: string = '';
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.currentRoute = this.router.url;
+  }
 
   /*Validator Link*/
   validatorLink(link: string): boolean {
@@ -39,5 +44,9 @@ export class LinkComponent {
     */
     const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
     return urlRegex.test(link);
+  }
+
+  navigateToExternalUrl() {
+    window.open(this.urlLink, '_blank');
   }
 }

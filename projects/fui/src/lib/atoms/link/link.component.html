@@ -1,8 +1,9 @@
 <!-- External -->
 <a
   class="{{ colorLink }} {{ typeLink }}"
+  (click)="typeLink === 'external' ? navigateToExternalUrl() : null"
   [target]="typeLink === 'external' ? true : false"
-  [routerLink]="urlLink"
+  [routerLink]="typeLink !== 'external' ? urlLink : currentRoute"
   routerLinkActive="active"
 >
   <ng-content></ng-content> </a

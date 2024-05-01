@@ -1,14 +1,15 @@
 <button
   *ngIf="iconSide === 'left' && option === 'iconText'"
   [type]="type"
+  [ngStyle]="{ 'justify-content': textAlign }"
   [disabled]="disabled"
   [ngClass]="
     style == 'filled'
       ? 'btn-fui-' + color + '-' + size
       : 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth
   "
+  class="{{ fullWidth === true ? 'full-width' : '' }}"
   (click)="handleOnClick()"
-  [type]="type"
 >
   <fui-icons
     [size]="
@@ -29,6 +30,7 @@
 <button
   *ngIf="iconSide === 'right' && option === 'iconText'"
   [type]="type"
+  [ngStyle]="{ 'justify-content': textAlign }"
   [disabled]="disabled"
   [ngClass]="
     style == 'filled'
@@ -36,7 +38,6 @@
       : 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth
   "
   (click)="handleOnClick()"
-  [type]="type"
 >
   <a>{{ text }}</a>
   <fui-icons
@@ -57,14 +58,15 @@
 <button
   *ngIf="option === 'icon'"
   [type]="type"
+  [ngStyle]="{ 'justify-content': textAlign }"
   [disabled]="disabled"
   [ngClass]="
     style == 'filled'
       ? 'btn-fui-' + color + '-' + size
       : 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth
   "
+  class="{{ fullWidth === true ? 'full-width' : '' }}"
   (click)="handleOnClick()"
-  [type]="type"
 >
   <fui-icons
     [size]="
@@ -83,14 +85,15 @@
 <button
   *ngIf="option === 'text'"
   [type]="type"
+  [ngStyle]="{ 'justify-content': textAlign }"
   [disabled]="disabled"
   [ngClass]="
     style == 'filled'
       ? 'btn-fui-' + color + '-' + size
       : 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth
   "
+  class="{{ fullWidth === true ? 'full-width' : '' }}"
   (click)="handleOnClick()"
-  [type]="type"
 >
   <a>{{ text }}</a>
 </button>

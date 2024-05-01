@@ -1,13 +1,15 @@
-@use './../../../styles/variables/size_variable' as size;
-@use './../../../styles/variables/color_variable' as color;
+@use "./../../../styles/variables/size_variable" as size;
+@use "./../../../styles/variables/color_variable" as color;
 
 * {
   box-sizing: border-box;
 }
 
 .page-sidebar {
-  height: 100%;
   background: color.$fuiColorLightestShade;
+  height: 100%;
+  overflow-y: auto;
+  max-width: 240px;
 }
 
 .p-none {
@@ -24,4 +26,20 @@
 
 .p-l {
   padding: size.$fuiSizeL;
+}
+
+/** Add On*/
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: color.$fuiColorMediumShade;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color.$fuiColorDarkShade;
 }

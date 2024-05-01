@@ -75,6 +75,7 @@ export * from './lib/molecules/form-control-layout/select-field/select-field.com
 /* Pagination */
 export * from './lib/organisms/pagination/pagination.component';
 /* Data Grid */
+export * from './lib/organisms/data-grid-v2/data-grid-v2.component';
 export * from './lib/organisms/data-grid/data-grid.component';
 export * from './lib/organisms/data-grid/content-row/content-row.component';
 
@@ -91,8 +92,15 @@ export * from './lib/molecules/tabs/tabs-content/tabs-content.component';
 export * from './lib/organisms/timeline/timeline.component';
 export * from './lib/organisms/timeline/timeline-section/timeline-section.component';
 export * from './lib/organisms/timeline/comment-list/comment-list.component';
+/* Selectable */
+export * from './lib/organisms/selectable/selectable.component';
+export * from './lib/organisms/selectable/selectable.dto';
+
 /* Side Nav */
 export * from './lib/templates/sidenav/sidenav.component';
+/* Sitewide */
+export * from './lib/templates/sitewide-search/sitewide-search.component';
+export * from './lib/templates/sitewide-search/sitewide.dto';
 /* Collapsible Nav */
 export * from './lib/templates/collapsible-nav/collapsible-nav.component';
 /* Combo Box */
@@ -104,7 +112,7 @@ export * from './lib/molecules/field-filepicker/field-filepicker.component';
 export * from './lib/types';
 /* Resizable Container Component */
 export * from './lib/templates/resizable-container/resizable-container.component';
-export * from './lib/templates/resizable-container/resizable-panel/resizable-panel.component';
+export * from './lib/templates/resizable-container/resizable-container.component';
 /* Header Component */
 export * from './lib/templates/header/header.component';
 export * from './lib/templates/header/header-panel/header-panel.component';
@@ -140,5 +148,6 @@ export * from './lib/templates/page/page-header/page-header.component';
 export * from './lib/templates/page/page-body/page-body.component';
 export * from './lib/templates/page/page-section/page-section.component';
 
+/**Dark Mode Feature */
 export * from './lib/templates/flex/flex-group.component';
 export * from './lib/templates/flex/flex-item.component';

@@ -1,21 +1,23 @@
-<div class="fui-flex-container-collapsible">
-  <div class="fui-overlay-collapsible-nav" [class.show]="show">
-    <div class="fui-content-collapsible-nav">
-      <ng-content></ng-content>
-    </div>
-    <div style="width: 100%">
-      <div class="ml-20">
-        <fui-button-icon
-          (click)="handleOnClick()"
-          class="ml-20"
-          [size]="'s'"
-          [type]="'button'"
-          [icon]="'cross'"
-          [option]="'icon'"
-          [color]="'text'"
-        ></fui-button-icon>
-      </div>
-      <div (click)="handleOnClick()" class="fui-outside-area-collapsible"></div>
-    </div>
+<div
+  class="{{
+    !docked ? 'fui-collapsible-panel' : 'fui-collapsible-panel-docked'
+  }}"
+  [class.show]="show"
+>
+  <div
+    class="{{ !docked ? 'container' : 'container-docked' }}"
+    [class.show]="show"
+  >
+    <ng-content></ng-content>
   </div>
+  <fui-button-icon
+    *ngIf="!docked"
+    (onClick)="handleOnClick()"
+    class="btn"
+    [color]="'text'"
+    [type]="'button'"
+    [option]="'icon'"
+    [icon]="'cross'"
+    [size]="'s'"
+  ></fui-button-icon>
 </div>

@@ -30,7 +30,7 @@ import { IconsComponent } from '../../atoms/icons/icons.component';
 export class ButtonIconComponent {
   @Input({ required: true }) type: 'submit' | 'button' | 'reset' = 'button';
   @Input({ required: true }) option: 'iconText' | 'icon' | 'text' = 'iconText';
-  @Input() fullWidth?: 'full-width';
+  @Input() fullWidth: boolean = false;
   @Input() disabled: boolean = false;
   @Input() style: 'secondary' | 'filled' = 'filled';
   @Input() text?: string;
@@ -38,6 +38,7 @@ export class ButtonIconComponent {
   @Input() iconSide?: 'right' | 'left' = 'left';
   @Input() color: Color = 'primary';
   @Input() size: 's' | 'm' | 'l' = 'm';
+  @Input() textAlign: 'left' | 'center' | 'right' = 'center';
   @Output() onClick: EventEmitter<void> = new EventEmitter<void>();
 
   handleOnClick(): void {

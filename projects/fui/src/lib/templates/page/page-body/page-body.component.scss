@@ -1,12 +1,16 @@
-@use './../../../styles/variables/size_variable' as size;
-@use './../../../styles/variables/color_variable' as color;
+@use "./../../../styles/variables/size_variable" as size;
+@use "./../../../styles/variables/color_variable" as color;
 
 * {
   box-sizing: border-box;
 }
-
+:host {
+  width: -webkit-fill-available;
+}
 .page-body {
   height: 100%;
+  overflow-y: auto;
+  width: 100%;
 }
 
 .p-none {
@@ -26,5 +30,6 @@
 }
 
 .page-body-shadow {
-  box-shadow: rgba($color: color.$fuiColorDarkestShade, $alpha: .2) 0px 8px 24px;
+  box-shadow: rgba($color: color.$fuiColorDarkestShade, $alpha: 0.2) 0px 24px
+    24px;
 }

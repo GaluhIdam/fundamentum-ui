@@ -31,11 +31,13 @@ import { DescriptionListViewComponent } from './templates/description-list-view/
 import { ContextMenuViewComponent } from './templates/context-menu-view/context-menu-view.component';
 import { ResizableContainerViewComponent } from './templates/resizable-container-view/resizable-container-view.component';
 import { EchartsViewComponent } from './organisms/echarts-view/echarts-view.component';
-import { AppComponent } from './app.component';
 import { HeaderViewComponent } from './templates/header-view/header-view.component';
 import { FilterGroupViewComponent } from './organisms/filter-group-view/filter-group-view.component';
 import { StepsViewComponent } from './organisms/steps-view/steps-view.component';
 import { FacetButtonViewComponent } from './organisms/facet-button-view/facet-button-view.component';
+import { SelectableViewComponent } from './organisms/selectable-view/selectable-view.component';
+import { SitewideViewComponent } from './templates/sitewide-view/sitewide-view.component';
+import { IntroduceViewComponent } from './introduce-view/introduce-view.component';
 import { PageViewComponent } from './templates/page-view/page-view.component';
 import { AspectRatioViewComponent } from './atoms/aspect-ratio-view/aspect-ratio-view.component';
 import { IconsViewComponent } from './atoms/icons-view/icons-view.component';
@@ -48,78 +50,23 @@ import { FlexViewComponent } from './templates/flex-view/flex-view.component';
 import { ListGroupViewComponent } from './organisms/list-group-view/list-group-view.component';
 import { CodeBlockViewComponent } from './atoms/code-block-view/code-block-view.component';
 
+/** ATTENTION, ADD A TITLE IN CHILDREN ROUTE FOR THE DOCUMENTATION */
 export const routes: Routes = [
   {
-    title: 'Demo',
     path: '',
-    component: AppComponent,
+    pathMatch: 'full',
+    redirectTo: 'getting-started',
   },
-  /* Router for Organisms */
+  {
+    title: 'Fundamentum UI',
+    path: 'getting-started',
+    component: IntroduceViewComponent,
+  },
   {
     title: 'demo page',
     path: 'demo',
     component: DemoComponent,
   },
-  /* Router for chart area */
-  {
-    path: 'organisms',
-    children: [
-      {
-        path: '',
-        redirectTo: 'callout',
-        pathMatch: 'full',
-      },
-      {
-        path: 'filter-group',
-        component: FilterGroupViewComponent,
-      },
-      {
-        path: 'callout',
-        component: CalloutViewComponent,
-      },
-      {
-        path: 'inline-edit',
-        component: InlineEditViewComponent,
-      },
-      {
-        path: 'data-grid',
-        component: DataGridViewComponent,
-      },
-      {
-        path: 'empty-prompt',
-        component: EmptyPromptViewComponent,
-      },
-      {
-        path: 'accordion',
-        component: AccordionViewComponent,
-      },
-      {
-        path: 'pagination',
-        component: PaginationViewComponent,
-      },
-      {
-        path: 'steps',
-        component: StepsViewComponent,
-      },
-      {
-        path: 'timeline',
-        component: TimelineViewComponent,
-      },
-      {
-        path: 'facet-button',
-        component: FacetButtonViewComponent,
-      },
-      {
-        path: 'list-group',
-        component: ListGroupViewComponent,
-      },
-      {
-        path: 'echarts',
-        component: EchartsViewComponent,
-      },
-    ],
-  },
-  /* Router for Organisms */
 
   /* Router for Atoms */
   {
@@ -131,22 +78,27 @@ export const routes: Routes = [
         pathMatch: 'full',
       },
       {
+        title: 'Link',
         path: 'link',
         component: LinkViewComponent,
       },
       {
+        title: 'Aspect Ratio',
         path: 'aspect-ratio',
         component: AspectRatioViewComponent,
       },
       {
+        title: 'Icon',
         path: 'icon',
         component: IconsViewComponent,
       },
       {
+        title: 'Badge',
         path: 'badge',
         component: BadgeViewComponent,
       },
       {
+        title: 'Progress',
         path: 'progress',
         component: ProgressViewComponent,
       },
@@ -158,6 +110,147 @@ export const routes: Routes = [
   },
   /* Router for Atoms */
 
+  /* Router for Molecules */
+  {
+    path: 'molecules',
+    children: [
+      {
+        path: '',
+        redirectTo: 'breadcrumb',
+        pathMatch: 'full',
+      },
+      {
+        title: 'Breadcrumb',
+        path: 'breadcrumb',
+        component: BreadcrumbViewComponent,
+      },
+      {
+        title: 'Button',
+        path: 'button',
+        component: ButtonIconViewComponent,
+      },
+      {
+        title: 'Loading',
+        path: 'loading',
+        component: LoadingViewComponent,
+      },
+      {
+        title: 'Tabs',
+        path: 'tabs',
+        component: TabsViewComponent,
+      },
+      {
+        title: 'Form Control',
+        path: 'form-control',
+        component: TextFieldComplexViewComponent,
+      },
+      {
+        title: 'Combo Box',
+        path: 'combo-box',
+        component: ComboBoxViewComponent,
+      },
+      {
+        title: 'Field Filepicker',
+        path: 'field-filepicker',
+        component: FieldFilepickerViewComponent,
+      },
+      {
+        title: 'Avatar',
+        path: 'avatar',
+        component: AvatarViewComponent,
+      },
+      {
+        title: 'Checkbox',
+        path: 'checkbox',
+        component: CheckboxViewComponent,
+      },
+      {
+        title: 'Radio',
+        path: 'radio',
+        component: RadioViewComponent,
+      },
+      {
+        title: 'Highlight',
+        path: 'highlight',
+        component: HighlightViewComponent,
+      },
+    ],
+  },
+  /* Router for Molecules */
+
+  /* Router for Organisms */
+  {
+    path: 'organisms',
+    children: [
+      {
+        path: '',
+        redirectTo: 'callout',
+        pathMatch: 'full',
+      },
+      {
+        title: 'Filter Group',
+        path: 'filter-group',
+        component: FilterGroupViewComponent,
+      },
+      {
+        title: 'Empty Prompt',
+        path: 'empty-prompt',
+        component: EmptyPromptViewComponent,
+      },
+      {
+        title: 'Accordion',
+        path: 'accordion',
+        component: AccordionViewComponent,
+      },
+      {
+        title: 'List Group',
+        path: 'list-group',
+        component: ListGroupViewComponent,
+      },
+      {
+        title: 'Callout',
+        path: 'callout',
+        component: CalloutViewComponent,
+      },
+      {
+        title: 'Inline Edit',
+        path: 'inline-edit',
+        component: InlineEditViewComponent,
+      },
+      {
+        title: 'Data Grid',
+        path: 'data-grid',
+        component: DataGridViewComponent,
+      },
+      {
+        title: 'Steps',
+        path: 'steps',
+        component: StepsViewComponent,
+      },
+      {
+        title: 'Timeline',
+        path: 'timeline',
+        component: TimelineViewComponent,
+      },
+      {
+        title: 'Facet Button',
+        path: 'facet-button',
+        component: FacetButtonViewComponent,
+      },
+      {
+        title: 'Echarts',
+        path: 'echarts',
+        component: EchartsViewComponent,
+      },
+      {
+        title: 'Selectable',
+        path: 'selectable',
+        component: SelectableViewComponent,
+      },
+    ],
+  },
+  /* Router for Organisms */
+
   /* Router for template */
   {
     path: 'templates',
@@ -168,84 +261,99 @@ export const routes: Routes = [
         pathMatch: 'full',
       },
       {
+        title: 'Modal Component',
         path: 'modal',
         component: ModalViewComponent,
       },
       {
+        title: 'Header',
         path: 'header',
         component: HeaderViewComponent,
       },
       {
-        path: 'header/:id',
-        component: HeaderViewComponent,
-      },
-      {
+        title: 'Panel',
         path: 'panel',
         component: PanelViewComponent,
       },
       {
-        path: 'modal',
-        component: ModalViewComponent,
-      },
-      {
+        title: 'Flyout',
         path: 'flyout',
         component: FlyoutViewComponent,
       },
       {
+        title: 'Sitewide Search',
+        path: 'sitewide',
+        component: SitewideViewComponent,
+      },
+      {
+        title: 'Side Navigation',
         path: 'side-nav',
         component: SidenavViewComponent,
         children: [
           {
+            title: 'Test',
             path: 'test',
             component: SidenavViewComponent,
           },
           {
+            title: 'Test 2',
             path: 'test-2',
             component: SidenavViewComponent,
           },
         ],
       },
       {
+        title: 'Collapsible Navigation',
         path: 'collapsible-nav',
         component: CollapsibleNavViewComponent,
       },
       {
+        title: 'Tooltip',
         path: 'tooltip',
         component: TooltipViewComponent,
       },
       {
+        title: 'Bottom Bar',
         path: 'bottombar',
         component: BottombarViewComponent,
       },
       {
+        title: 'Popover',
         path: 'popover',
         component: PopoverViewComponent,
       },
       {
+        title: 'Card',
         path: 'card',
         component: CardViewComponent,
       },
       {
+        title: 'Toast',
         path: 'toast',
         component: ToastViewComponent,
       },
       {
+        title: 'Tree View',
         path: 'tree-view',
         component: TreeViewViewComponent,
       },
       {
+        title: 'Description List',
         path: 'description-list',
         component: DescriptionListViewComponent,
       },
       {
+        title: 'Context Menu',
         path: 'context-menu',
         component: ContextMenuViewComponent,
       },
       {
         path: 'page',
+        title: 'Page',
         component: PageViewComponent,
       },
       {
+        title: 'Resizable Container',
         path: 'resizable-container',
         component: ResizableContainerViewComponent,
       },
@@ -256,56 +364,4 @@ export const routes: Routes = [
     ],
   },
   /* Router for Templates */
-
-  /* Router for Molecules */
-  {
-    path: 'molecules',
-    children: [
-      {
-        path: 'breadcrumb',
-        component: BreadcrumbViewComponent,
-      },
-      {
-        path: 'button-icon',
-        component: ButtonIconViewComponent,
-      },
-      {
-        path: 'loading',
-        component: LoadingViewComponent,
-      },
-      {
-        path: 'tabs',
-        component: TabsViewComponent,
-      },
-      {
-        path: 'text-field',
-        component: TextFieldComplexViewComponent,
-      },
-      {
-        path: 'combo-box',
-        component: ComboBoxViewComponent,
-      },
-      {
-        path: 'field-filepicker',
-        component: FieldFilepickerViewComponent,
-      },
-      {
-        path: 'avatar',
-        component: AvatarViewComponent,
-      },
-      {
-        path: 'checkbox',
-        component: CheckboxViewComponent,
-      },
-      {
-        path: 'radio',
-        component: RadioViewComponent,
-      },
-      {
-        path: 'highlight',
-        component: HighlightViewComponent,
-      },
-    ],
-  },
-  /* Router for Molecules */
 ];

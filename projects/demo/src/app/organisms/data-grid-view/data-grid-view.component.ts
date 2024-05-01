@@ -1,9 +1,4 @@
-import { Component, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
-import {
-  ButtonIconComponent,
-  ContentRowComponent,
-  DataGridComponent,
-} from 'fui';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DataGridViewService } from './data-grid-view.service';
 import { ProductsDTO } from './products.dto';
 import {
@@ -16,14 +11,13 @@ import {
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { DataGridV2Component } from '../../../../../fui/src/public-api';
 
 @Component({
   selector: 'app-data-grid-view',
   standalone: true,
   imports: [
-    DataGridComponent,
-    ContentRowComponent,
-    ButtonIconComponent,
+    DataGridV2Component,
     HttpClientModule,
     CommonModule,
     ReactiveFormsModule,
@@ -42,7 +36,7 @@ export class DataGridViewComponent implements OnInit, OnDestroy {
   loadingSearch: boolean = false;
   search: string = '';
   colorActive: 'primary' | 'danger' | 'warning' | 'success' | 'text' | 'blank' =
-    'danger';
+    'primary';
   activeSelect: boolean = false;
 
   private _onDestroy$: Subject<Boolean> = new Subject<Boolean>();
@@ -94,8 +88,6 @@ export class DataGridViewComponent implements OnInit, OnDestroy {
     }
   }
 
-
-
   /** Refresh data and clear form */
   refresh(): void {
     this.searchForm.setValue('');
@@ -116,5 +108,4 @@ export class DataGridViewComponent implements OnInit, OnDestroy {
   changePagination(event: { page: number; itemsPerPage: number }): void {
     this._gettingProducts(event.page - 1, event.itemsPerPage, this.search);
   }
-
 }

@@ -7,24 +7,21 @@
       (change)="onFileSelected($event)"
     />
     <div class="fui-content">
-      <fui-icons
-        [icon]="'download'"
-        [size]="'sizexl'"
-        [color]="'primary'"
-      ></fui-icons>
-      <p class="fui-dropzone-text" *ngIf="files.length === 0">
-        Select or drag and drop multiple files
-      </p>
+      <div class="fui-icons-container">
+        <fui-icons
+          style="width: auto"
+          [icon]="'download'"
+          [size]="'sizexl'"
+          [color]="'primary'"
+        ></fui-icons>
+      </div>
       <div class="fui-remove-action" *ngIf="files.length > 0">
         <p class="fui-selected-files">{{ files.length }} files selected</p>
         <p class="fui-selected-files-rm" (click)="clearFile()">Remove</p>
       </div>
     </div>
-  </div>
-  <div class="fui-list-dropzone">
-    <h3 class="fui-title">Files attached</h3>
-    <ul>
-      <li class="fui-list" *ngFor="let file of files">{{ file.name }}</li>
-    </ul>
+    <p class="fui-dropzone-text" *ngIf="files.length === 0">
+      Select or drag and drop multiple files
+    </p>
   </div>
 </div>

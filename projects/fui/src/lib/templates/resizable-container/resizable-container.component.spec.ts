@@ -11,7 +11,7 @@ describe('ResizableContainerComponent', () => {
       imports: [ResizableContainerComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ResizableContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

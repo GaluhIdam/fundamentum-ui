@@ -1,6 +1,5 @@
 import {
   Component,
-  ElementRef,
   EventEmitter,
   HostListener,
   Input,
@@ -31,22 +30,15 @@ import { CommonModule } from '@angular/common';
 })
 export class CollapsibleNavComponent {
   @Input({ required: true }) show: boolean = false;
-  @Output() onClick: EventEmitter<void> = new EventEmitter<void>();
+  @Input() docked: boolean = false;
+  @Output() onClick: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   /**
    * @ignore
    */
-  constructor(private elementRef: ElementRef) {}
-
   handleOnClick(): void {
-    this.onClick.emit();
-  }
-
-  /**
-   * @ignore
-   */
-  handleOverlayClick(event: MouseEvent): void {
-    this.handleOnClick();
+    this.show = !this.show;
+    this.onClick.emit(this.show);
   }
 
   /**

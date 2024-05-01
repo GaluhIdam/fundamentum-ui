@@ -1,4 +1,3 @@
-<div class="fui-header-container {{ position }} {{ bgMode }}">
-  <ng-content select="[left]"></ng-content>
-  <ng-content select="[right]"></ng-content>
+<div class="fui-header-container {{ position }} {{ shadow ? 'shadow' : '' }}">
+  <ng-content></ng-content>
 </div>

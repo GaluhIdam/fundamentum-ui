@@ -1,10 +1,56 @@
-.horizontal {
+@import "../../styles/index";
+
+.width {
   display: flex;
   width: -webkit-fill-available;
 }
-.vertical {
+.height {
   width: -webkit-fill-available;
 }
-:host {
+
+.resizable {
+  padding: 10px;
+  overflow: auto;
+  position: relative;
+  max-width: 100%;
+}
+
+.btn-width {
+  border: none;
+  padding: 2px;
+  background-color: transparent;
+  cursor: col-resize;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: $fuiColorLightShade;
+  &:hover {
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: $fuiColorDarkShade;
+  }
+  &:active {
+    border-left-color: $fuiColorDarkShade;
+    border-left-width: 1px;
+    border-left-style: solid;
+  }
+}
+.btn-height {
+  padding: 2px;
   width: 100%;
+  border: none;
+  background-color: transparent;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: $fuiColorLightShade;
+  cursor: row-resize;
+  &:hover {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: $fuiColorDarkShade;
+  }
+  &:active {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: $fuiColorDarkShade;
+  }
 }

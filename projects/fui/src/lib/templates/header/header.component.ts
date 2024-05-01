@@ -9,5 +9,5 @@ import { Component, Input } from '@angular/core';
 })
 export class HeaderComponent {
   @Input() position: 'fixed-top' | 'fixed-bottom' | 'none' = 'none';
-  @Input() bgMode: 'bg-dark' | 'bg-light' = 'bg-dark';
+  @Input() shadow: boolean = false;
 }

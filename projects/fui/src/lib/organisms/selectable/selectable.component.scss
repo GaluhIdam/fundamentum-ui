@@ -1,0 +1,87 @@
+@import "../../styles/index";
+:host {
+  font-family: $fuiFontFamily;
+}
+.fui-showMore {
+  font-family: $fuiFontFamily;
+  font-size: small;
+  color: $fuiColorPrimary;
+  padding: 10px 10px 10px 10px;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+.fui-selectable {
+  border-style: solid;
+  border-width: 1px;
+  padding: 0px;
+  border-color: $fuiColorLightShade;
+  border-radius: 6px;
+  font-family: $fuiFontFamily;
+  list-style-type: none;
+  width: -webkit-fill-available;
+  color: $fuiColorDarkestShade;
+  font-size: medium;
+  max-height: 260px;
+  overflow-x: hidden;
+  user-select: none;
+  margin: 0px 0px 10px 0px;
+  .fui-list-item {
+    align-items: center;
+    border-bottom-style: solid;
+    border-bottom-color: $fuiColorLightShade;
+    border-bottom-width: 1px;
+    display: flex;
+    padding: 10px 15px 10px 15px;
+    .flex {
+      display: grid;
+    }
+    .fui-list-desc {
+      font-size: small;
+      color: $fuiColorDarkShade;
+      margin-top: 5px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .fui-list-label {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    &:focus {
+      background-color: $fuiBtnPrimarySecondary;
+    }
+    &:hover {
+      background-color: $fuiBtnPrimarySecondary;
+      cursor: pointer;
+      .fui-list-desc {
+        font-size: small;
+        color: $fuiColorDarkShade;
+      }
+      .fui-list-label {
+        color: $fuiColorPrimary;
+        text-decoration: underline;
+      }
+    }
+    .fui-list-icon {
+      margin: 0px 10px 0px 0px;
+    }
+  }
+}
+
+/** Add On*/
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: $fuiColorMediumShade;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $fuiColorDarkShade;
+}

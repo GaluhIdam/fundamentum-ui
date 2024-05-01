@@ -1,12 +1,16 @@
 @import "../../styles/index";
 
 .fui-header-container {
+  z-index: 1;
   font-family: $fuiFontFamily;
-  display: flex;
   align-items: center;
   place-content: space-between;
-  padding: 10px 15px 10px 15px;
+  padding: 0px 8px 0px 8px;
   place-content: space-between;
+  background-color: $fuiColorDarkestShade;
+}
+
+.shadow {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 .fixed-top {
@@ -20,12 +24,14 @@
   bottom: 0;
 }
 
-.bg-dark {
-  background-color: rgb(19, 19, 23);
-  color: $fuiColorGhost;
+@media screen and (max-width: 500px) {
+  .fui-header-containert {
+    display: block;
+  }
 }
 
-.bg-light {
-  background-color: $fuiColorGhost;
-  color: $fuiColorDarkestShade;
+@media screen and (min-width: 501px) {
+  .fui-header-container {
+    display: flex;
+  }
 }

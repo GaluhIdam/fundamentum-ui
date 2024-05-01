@@ -8,13 +8,14 @@
   position: relative;
   width: fit-content;
 }
+
 .fui-flex-combox {
   width: 350px;
   font-family: $fuiFontFamily;
   display: flex;
   border: 1px solid $fuiColorLightShade;
   border-radius: 6px;
-  padding: 4px 8px 4px 4px;
+  padding: 7px 6px 7px 6px;
   align-items: center;
   position: relative;
 }
@@ -91,7 +92,7 @@
 .fui-icon-combox-cross {
   background-color: $fuiColorMediumShade;
   color: $fuiColorGhost;
-  padding: 2px 5px 2px 5px;
+  padding: 5px;
   border-radius: 100%;
   margin-right: 5px;
   cursor: pointer;

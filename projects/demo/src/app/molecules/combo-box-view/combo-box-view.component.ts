@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ComboBoxComponent } from 'fui';
 
-
 @Component({
   selector: 'app-combo-box-view',
   standalone: true,

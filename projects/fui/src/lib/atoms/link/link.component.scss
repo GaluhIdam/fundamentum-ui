@@ -1,4 +1,8 @@
 @import "../../styles/index";
+:host {
+  display: flex;
+  align-items: baseline;
+}
 .primary {
   @include link("transparant", $fuiColorPrimaryText);
 }

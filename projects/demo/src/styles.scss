@@ -1,23 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-
-// @import "../../fui/src/themes/legacy/globals";
-@import "./../../fui/src/lib/themes/legacy/_globals";
-// @import "../../fui/src/themes/legacy/colors_light";
-@import "./../../fui/src/lib/themes/legacy/colors_light";
-// @import "../../fui/src/styles/variables";
-@import "./../../fui/src/lib/styles/variables/index";
-// @import "../../fui/src/styles/mixins";
-@import "./../../fui/src/lib/styles/mixins/index";
-
-@import "../../fui/src/lib/styles/utility/normalize";
-
-@import "../../fui/src/lib/themes/legacy/legacy_light";
-
-// fitur
-// @import "../../fui/src/themes/legacy/globals";
-// @import "../../fui/src/themes/legacy/colors_light";
-// @import "../../fui/src/styles/variables";
-// @import "../../fui/src/styles/mixins";
-
-// @import "../../fui/src/styles/utility/normalize";
-// @import "../../fui/src/themes/legacy/legacy_light";
+@import "../../fui/src/lib/styles/index";
+body {
+  font-family: $fuiFontFamily;
+}

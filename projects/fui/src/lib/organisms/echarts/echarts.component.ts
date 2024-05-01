@@ -24,18 +24,6 @@ import {
 import { CanvasRenderer } from 'echarts/renderers';
 import { UniversalTransition } from 'echarts/features';
 
-/**
- * The CalloutComponent
- * @usage
- * ```html
- * <fui-echarts
-      [chartOption]="optionGauge"
-      [themeChart]="themeChart">
- * </fui-echarts>
- * ```
- * <example-url>http://localhost:4200/organisms/echarts</example-url>
- */
-
 @Component({
   selector: 'fui-echarts',
   standalone: true,
@@ -48,19 +36,10 @@ export class EchartsComponent {
   @Input({ required: true }) themeChart: 'light' | 'dark' = 'light';
   @Input() triggered: boolean = false;
 
-  /**
-   * @ignore
-   */
   @ViewChild('echarts') echartsRef?: ElementRef;
 
-  /**
-   * @ignore
-   */
   chartInstance?: echarts.ECharts;
 
-  /**
-   * @ignore
-   */
   constructor() {
     echarts.use([
       TitleComponent,
@@ -84,16 +63,13 @@ export class EchartsComponent {
     this.registerTheme();
   }
 
-  /**
-   * @ignore
-   */
   ngAfterViewInit(): void {
     this.initEchart();
+
+    // Watch for changes to the width of the element
+    this.observeWidthChanges();
   }
 
-  /**
-   * @ignore
-   */
   ngOnChanges(changes: any): void {
     if (this.chartInstance) {
       if (changes.themeChart) {
@@ -104,17 +80,11 @@ export class EchartsComponent {
     }
   }
 
-  /**
-   * @ignore
-   */
   registerTheme(): void {
     echarts.registerTheme('light', ThemesChart.light);
     echarts.registerTheme('dark', ThemesChart.dark);
   }
 
-  /**
-   * @ignore
-   */
   initEchart(): void {
     this.chartInstance = echarts.init(
       this.echartsRef?.nativeElement,
@@ -129,11 +99,21 @@ export class EchartsComponent {
     this.chartInstance.setOption(option);
   }
 
-  /**
-   * @ignore
-   */
   changeTheme(): void {
     this.chartInstance?.dispose();
     this.initEchart();
+  }
+
+  observeWidthChanges(): void {
+    const element = this.echartsRef!.nativeElement;
+    const observer = new ResizeObserver(() => {
+      if (this.chartInstance) {
+        this.chartInstance.dispose();
+        setTimeout(() => {
+          this.initEchart();
+        }, 100);
+      }
+    });
+    observer.observe(element);
   }
 }

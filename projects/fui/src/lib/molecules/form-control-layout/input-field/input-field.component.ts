@@ -2,7 +2,9 @@ import { CommonModule } from '@angular/common';
 import {
   Component,
   ContentChildren,
+  EventEmitter,
   Input,
+  Output,
   QueryList,
 } from '@angular/core';
 import { IconsComponent } from '../../../../public-api';
@@ -31,6 +33,8 @@ export class InputFieldComponent {
   iconRight: boolean = false;
   active: boolean = false;
   @ContentChildren(IconsComponent) iconComponents!: QueryList<IconsComponent>;
+  @Output() onFocus: EventEmitter<any> = new EventEmitter<any>();
+  @Output() onBlur: EventEmitter<any> = new EventEmitter<any>();
 
   ngAfterContentInit() {
     this.iconComponents.forEach((item) => {
@@ -41,5 +45,14 @@ export class InputFieldComponent {
         this.iconRight = true;
       }
     });
+  }
+
+  handleOnFocus(): void {
+    this.active = true;
+    this.onFocus.emit();
+  }
+  handleOnBlur(): void {
+    this.active = false;
+    this.onBlur.emit();
   }
 }

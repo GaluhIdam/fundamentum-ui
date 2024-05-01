@@ -3,6 +3,10 @@ import {
   EchartsComponent,
   OptionChart,
 } from 'fui';
+// import {
+//   EchartsComponent,
+//   OptionChart,
+// } from 'fui';
 
 @Component({
   selector: 'app-echarts-view',
@@ -380,6 +384,6 @@ export class EchartsViewComponent {
       this.gaugeData[1].value = +(Math.random() * 100).toFixed(2);
       this.gaugeData[2].value = +(Math.random() * 100).toFixed(2);
       this.triggeredAction();
-    }, 3000);
+    }, 1000);
   }
 }
