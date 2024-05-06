@@ -56,7 +56,7 @@
     >
       @if (footerType === 'text') {
       <fui-text [size]="footerSize">{{ footerText }}</fui-text>
-      } @else {
+      } @else if(footerType === 'button') {
       <div class="popover-footer-button" (click)="onHandleClikFooterButton()">
         @if(footerButtonType === 'button') {
         <fui-button
@@ -74,6 +74,9 @@
         >
         }
       </div>
+      }
+      @else {
+      <ng-content select="[popover-footer]"></ng-content>
       }
     </div>
     }

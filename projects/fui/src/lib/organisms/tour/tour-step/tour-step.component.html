@@ -1,0 +1,35 @@
+<div class="tour-step">
+  <fui-popover [displayPopover]="stepNumber === TourComponent.activeStep.value" [position]="position" [align]="align"
+    [isTour]="true" [displayHeader]="title ? true : false" [headerTitle]="title" [displayFooter]="true"
+    [footerType]="'custom'">
+    <ng-container *ngTemplateOutlet="stepTemplate"></ng-container>
+    <div popover-body>
+      <ng-content select="[tour-step-content]"></ng-content>
+    </div>
+    <div popover-footer>
+      <div class="tour-step-footer">
+        <div class="footer-step">
+          {{stepNumber}}/{{TourComponent.totalStep}}
+        </div>
+        <div class="footer-action">
+          @if (displaySkipTourText) {
+          <fui-button-empty [color]="skipTourColor" [size]="skipTourSize" [weight]="'light'"
+            (click)="endTour()">{{skipTourText}}
+          </fui-button-empty>
+          }
+
+          @if (displayNextFinishStepText) {
+          <fui-button-icon [type]="'button'" [option]="'text'"
+            [text]="stepNumber === TourComponent.totalStep ? finishStepText : nextStepText"
+            [color]="nextFinishTourColor" [size]="nextFinishTourSize" (onClick)="nextStep()">
+          </fui-button-icon>
+          }
+        </div>
+      </div>
+    </div>
+  </fui-popover>
+</div>
+
+<ng-template #stepTemplate>
+  <ng-content></ng-content>
+</ng-template>

@@ -53,12 +53,13 @@ export class PopoverComponent {
   @Input() headerTitle: string = '';
   @Input() headerSize: Size = 'sizem';
   @Input() displayFooter: boolean = false;
-  @Input() footerType: 'text' | 'button' = 'text';
+  @Input() footerType: 'text' | 'button' | 'custom' = 'text';
   @Input() footerText: string = '';
   @Input() footerSize: Size = 'sizes';
   @Input() footerButtonType: 'button' | 'button-empty' = 'button';
   @Input() footerButtonText: string = '';
   @Input() footerButtonColor: Color = 'primary';
+  @Input() isTour: boolean = false;
   @Output() onClickHeaderPopover: EventEmitter<void> = new EventEmitter();
   @Output() onClickFooterPopover: EventEmitter<void> = new EventEmitter();
   @Output() isPopoverDisplay: EventEmitter<boolean> = new EventEmitter(false);
@@ -73,8 +74,11 @@ export class PopoverComponent {
       ) {
         return;
       }
-      this.displayPopover = false;
-      this.isPopoverDisplay.emit(this.displayPopover);
+
+      if (!this.isTour) {
+        this.displayPopover = false;
+        this.isPopoverDisplay.emit(this.displayPopover);
+      }
     }
   }
 
@@ -94,8 +98,10 @@ export class PopoverComponent {
   }
 
   onHandleDisplayPopover() {
-    this.displayPopover = !this.displayPopover;
-    this.isPopoverDisplay.emit(this.displayPopover);
+    if (!this.isTour) {
+      this.displayPopover = !this.displayPopover;
+      this.isPopoverDisplay.emit(this.displayPopover);
+    }
   }
 
   onHandleClikHeader() {
