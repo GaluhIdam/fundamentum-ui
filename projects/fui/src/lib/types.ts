@@ -394,7 +394,7 @@ export interface PopoverConfigProps {
   headerTitle?: string;
   headerSize?: Size;
   displayFooter?: boolean;
-  footerType?: 'text' | 'button';
+  footerType?: 'text' | 'button' | 'custom';
   footerText?: string;
   footerSize?: Size;
   footerButtonType?: 'button' | 'button-empty';
