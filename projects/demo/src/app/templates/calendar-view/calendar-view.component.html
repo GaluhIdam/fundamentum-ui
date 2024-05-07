@@ -1,1 +1,11 @@
-<fui-calendar [events]="eventsInMay"></fui-calendar>
+<h1>Calendar</h1>
+<p>
+  The calendar component in Angular is a user interface element that allows
+  users to view and interact with dates in a structured manner. It typically
+  provides a visual representation of dates, allowing users to navigate through
+  months and years, select specific dates, and sometimes even display additional
+  information such as events or reminders.
+</p>
+<div style="margin-top: 50px; margin-bottom: 50px;">
+  <fui-calendar [events]="eventsInMay" [actions]="'modal'" />
+</div>

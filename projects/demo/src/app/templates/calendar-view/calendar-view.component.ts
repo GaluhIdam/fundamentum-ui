@@ -15,6 +15,37 @@ export class CalendarViewComponent {
       date: 1,
       year: '2024',
       month: 'May',
+      color: 'success',
+      event: {
+        title: 'Tech Conference',
+        subTitle: 'Innovation Summit',
+        start: '9:00 AM',
+        end: '6:00 PM',
+        place: 'Convention Center',
+        description:
+          'Join us for a day of groundbreaking discussions on innovation.',
+      },
+    },
+    {
+      date: 2,
+      year: '2024',
+      month: 'May',
+      color: 'success',
+      event: {
+        title: 'Tech Conference',
+        subTitle: 'Innovation Summit',
+        start: '9:00 AM',
+        end: '6:00 PM',
+        place: 'Convention Center',
+        description:
+          'Join us for a day of groundbreaking discussions on innovation.',
+      },
+    },
+    {
+      date: 3,
+      year: '2024',
+      month: 'May',
+      color: 'success',
       event: {
         title: 'Tech Conference',
         subTitle: 'Innovation Summit',
@@ -29,9 +60,40 @@ export class CalendarViewComponent {
       date: 1,
       year: '2024',
       month: 'May',
+      color: 'warning',
       event: {
-        title: 'Tech Home pay',
-        subTitle: 'Innovation Summit',
+        title: 'Offline Induction',
+        subTitle: 'Quantum Demonstration',
+        start: '9:00 AM',
+        end: '6:00 PM',
+        place: 'Convention Center',
+        description:
+          'Join us for a day of groundbreaking discussions on innovation.',
+      },
+    },
+    {
+      date: 1,
+      year: '2024',
+      month: 'May',
+      color: 'primary',
+      event: {
+        title: 'Training',
+        subTitle: 'Work Safety in office',
+        start: '9:00 AM',
+        end: '6:00 PM',
+        place: 'Convention Center',
+        description:
+          'Join us for a day of groundbreaking discussions on innovation.',
+      },
+    },
+    {
+      date: 1,
+      year: '2024',
+      month: 'May',
+      color: 'danger',
+      event: {
+        title: 'Spiderman Work From Home',
+        subTitle: 'Watch Movie for 1 hour',
         start: '9:00 AM',
         end: '6:00 PM',
         place: 'Convention Center',
@@ -43,6 +105,7 @@ export class CalendarViewComponent {
       date: 5,
       year: '2024',
       month: 'May',
+      color: 'warning',
       event: {
         title: 'Product Launch',
         subTitle: 'New Product Showcase',
@@ -56,6 +119,7 @@ export class CalendarViewComponent {
       date: 10,
       year: '2024',
       month: 'May',
+      color: 'danger',
       event: {
         title: 'Workshop',
         subTitle: 'Data Analytics Workshop',
@@ -69,6 +133,7 @@ export class CalendarViewComponent {
       date: 12,
       year: '2024',
       month: 'May',
+      color: 'primary',
       event: {
         title: 'Seminar',
         subTitle: 'Cybersecurity Seminar',
@@ -82,6 +147,7 @@ export class CalendarViewComponent {
       date: 15,
       year: '2024',
       month: 'May',
+      color: 'success',
       event: {
         title: 'Hackathon',
         subTitle: 'CodeFest Hackathon',
@@ -96,6 +162,7 @@ export class CalendarViewComponent {
       date: 18,
       year: '2024',
       month: 'May',
+      color: 'primary',
       event: {
         title: 'Panel Discussion',
         subTitle: 'Future of AI',
@@ -109,6 +176,7 @@ export class CalendarViewComponent {
       date: 20,
       year: '2024',
       month: 'May',
+      color: 'primary',
       event: {
         title: 'Networking Event',
         subTitle: 'Tech Mixer',
@@ -122,6 +190,7 @@ export class CalendarViewComponent {
       date: 23,
       year: '2024',
       month: 'May',
+      color: 'primary',
       event: {
         title: 'Seminar',
         subTitle: 'Blockchain Basics',
@@ -135,6 +204,7 @@ export class CalendarViewComponent {
       date: 27,
       year: '2024',
       month: 'May',
+      color: 'primary',
       event: {
         title: 'Webinar',
         subTitle: 'E-commerce Trends',
@@ -149,6 +219,7 @@ export class CalendarViewComponent {
       date: 30,
       year: '2024',
       month: 'May',
+      color: 'primary',
       event: {
         title: 'Training',
         subTitle: 'Agile Development Workshop',

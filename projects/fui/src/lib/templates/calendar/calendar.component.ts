@@ -1,17 +1,29 @@
 import { Component, Input } from '@angular/core';
 import {
-  FormControlLayoutComponent,
+  FlyoutBodyComponent,
+  FlyoutComponent,
+  FlyoutFooterComponent,
+  FlyoutHeaderComponent,
   IconsComponent,
   ModalBodyComponent,
   ModalComponent,
   ModalFooterComponent,
   ModalHeaderComponent,
-  SelectFieldComponent,
 } from '../../../public-api';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { EventDTO } from './event.dto';
 
+/**
+ * The CalendarComponent
+ * @usage
+ * ```html
+ * <fui-calendar
+     [events]="eventsInMay"
+     [actions]="'modal'" />
+ * ```
+ * <example-url>http://localhost:4200/templates/calendar</example-url>
+ */
 @Component({
   selector: 'fui-calendar',
   standalone: true,
@@ -19,20 +31,27 @@ import { EventDTO } from './event.dto';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    FormControlLayoutComponent,
-    SelectFieldComponent,
     IconsComponent,
     ModalComponent,
     ModalHeaderComponent,
     ModalBodyComponent,
     ModalFooterComponent,
+    FlyoutComponent,
+    FlyoutHeaderComponent,
+    FlyoutBodyComponent,
+    FlyoutFooterComponent,
   ],
   templateUrl: './calendar.component.html',
   styleUrl: './calendar.component.scss',
 })
 export class CalendarComponent {
   @Input() events: EventDTO[] = [];
+  @Input() actions: 'flyout' | 'modal' = 'modal';
 
+  /**
+   * @ignore
+   */
+  eventShow!: EventDTO;
   nowMonth: string = '';
   nowDate: number = 0;
   nowYear: string = '';
@@ -59,16 +78,27 @@ export class CalendarComponent {
   prevMonth: string = 'April';
   nextMonth: string = 'June';
   isModalOpen: boolean = false;
+  isOpenFlyout: boolean = false;
 
+  /**
+   * @ignore
+   */
   constructor() {
     this.getDateNow();
     this.dateNow();
     this.initMonthValues(this.selectedMonth);
   }
+
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
     this.updateDaysInMonth();
   }
 
+  /**
+   * @ignore
+   */
   initMonthValues(selectedMonth: string): void {
     const monthIndex = this.month.indexOf(selectedMonth);
 
@@ -91,6 +121,9 @@ export class CalendarComponent {
     }
   }
 
+  /**
+   * @ignore
+   */
   dateNow(): void {
     const currentYear: number = new Date().getFullYear();
     const years: string[] = [];
@@ -104,6 +137,9 @@ export class CalendarComponent {
     this.selectedYear = currentDate.getFullYear().toString();
   }
 
+  /**
+   * @ignore
+   */
   updateDaysInMonth(): void {
     this.initMonthValues(this.selectedMonth);
     const monthIndex = this.month.indexOf(this.selectedMonth);
@@ -120,6 +156,9 @@ export class CalendarComponent {
     this.generateWeeks();
   }
 
+  /**
+   * @ignore
+   */
   private generateWeeks(): void {
     this.weeks = [];
     let currentWeek: { date: number; day: string; month: string }[] = [];
@@ -174,14 +213,39 @@ export class CalendarComponent {
     }
   }
 
-  openModal() {
+  /**
+   * @ignore
+   */
+  openModal(obj: EventDTO) {
+    this.eventShow = obj;
     this.isModalOpen = true;
   }
 
+  /**
+   * @ignore
+   */
+  handleOpenFlyout(obj: EventDTO): void {
+    this.eventShow = obj;
+    this.isOpenFlyout = true;
+  }
+
+  /**
+   * @ignore
+   */
   handleCloseModal() {
     this.isModalOpen = false;
   }
 
+  /**
+   * @ignore
+   */
+  handleCloseFlyout() {
+    this.isOpenFlyout = false;
+  }
+
+  /**
+   * @ignore
+   */
   getDateNow(): void {
     const currentDateNow = new Date();
     const currentMonthIndex: number = currentDateNow.getMonth();
