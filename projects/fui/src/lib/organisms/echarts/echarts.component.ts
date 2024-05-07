@@ -65,8 +65,6 @@ export class EchartsComponent {
 
   ngAfterViewInit(): void {
     this.initEchart();
-
-    // Watch for changes to the width of the element
     this.observeWidthChanges();
   }
 

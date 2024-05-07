@@ -1,193 +1,245 @@
-<div class="fui-data-grid">
-  <!-- Table Utility -->
-  <div class="fui-data-grid-utility">
-    <!-- Left Utility -->
-    <div class="flex">
-      <fui-popover class="item-util" [position]="'bottom'" [align]="'start'">
-        <fui-button-icon
-          [type]="'button'"
-          [option]="'iconText'"
-          [icon]="'tableDensityNormal'"
-          [color]="'text'"
-          [size]="'m'"
-          [style]="'secondary'"
-          [text]="'Columns'"
-        />
-        <div class="display-option-left" popover-body>
-          <fui-form-control-layout>
-            <fui-input-field
-              [type]="'text'"
-              [size]="'m'"
-              [placeholder]="'Search'"
-              [invalid]="false"
-            >
-            </fui-input-field>
-          </fui-form-control-layout>
-          <hr class="line" />
-          <div class="column-selection">
-            <div
-              class="list-columns"
-              *ngFor="let key of _getObjectKeys(data[0])"
-            >
-              <fui-button-icon
-                [fullWidth]="true"
-                [textAlign]="'left'"
-                [type]="'button'"
-                [option]="'iconText'"
-                [icon]="'eye'"
-                [color]="'text'"
+<div
+  class="{{ fullScreen ? 'container-full' : 'container-fit' }}"
+  [ngStyle]="{ height: !fullScreen ? heightGrid + 20 + 'px' : '' }"
+>
+  <div #dataGridElement class="fui-data-grid {{ density }}"
+   [ngStyle]="{ width: fullScreen ? '100vw' : '' }"
+  >
+    <!-- Table Utility -->
+    <div class="fui-data-grid-utility">
+      <!-- Left Utility -->
+      <div class="flex">
+        <fui-popover class="item-util" [position]="'bottom'" [align]="'start'">
+          <fui-button-icon
+            [type]="'button'"
+            [option]="'iconText'"
+            [icon]="'tableDensityNormal'"
+            [color]="'text'"
+            [size]="'m'"
+            [style]="'secondary'"
+            [text]="'Columns'"
+          />
+          <div class="display-option-left" popover-body>
+            <fui-form-control-layout>
+              <fui-input-field
+                [type]="'text'"
                 [size]="'m'"
-                [style]="'secondary'"
-                [text]="key"
-              />
+                [placeholder]="'Search'"
+                [invalid]="false"
+              >
+              </fui-input-field>
+            </fui-form-control-layout>
+            <hr class="line" />
+            <div class="column-selection">
+              <div
+                class="list-columns"
+                *ngFor="let key of _getObjectKeys(data[0])"
+              >
+                <fui-button-icon
+                  (onClick)="toggleColumn(key)"
+                  [fullWidth]="true"
+                  [textAlign]="'left'"
+                  [type]="'button'"
+                  [option]="'iconText'"
+                  [icon]="isColumnVisible(key) ? 'eye' : 'eyeClosed'"
+                  [color]="isColumnVisible(key) ? 'text' : 'danger'"
+                  [size]="'m'"
+                  [style]="'secondary'"
+                  [text]="key"
+                />
+              </div>
             </div>
           </div>
-          <hr class="line" />
-          <div class="space-between">
-            <button class="reset-btn">Show All</button>
-            <button class="reset-btn">Hide All</button>
-          </div>
-        </div>
-      </fui-popover>
-    </div>
-    <!-- Left Utility -->
+        </fui-popover>
+      </div>
+      <!-- Left Utility -->
 
-    <!-- Right Utility -->
-    <div class="flex">
-      <fui-popover class="item-util" [position]="'bottom'" [align]="'end'">
+      <!-- Right Utility -->
+      <div class="flex">
+        <fui-popover class="item-util" [position]="'bottom'" [align]="'end'">
+          <fui-button-icon
+            [type]="'button'"
+            [option]="'icon'"
+            [icon]="'controlsHorizontal'"
+            [color]="'text'"
+            [size]="'m'"
+            [style]="'secondary'"
+          />
+          <div class="display-option-right" popover-body>
+            <div class="display-option-util">
+              <div class="wrap-util">
+                <p class="title">Density :</p>
+                <div class="density-util">
+                  <fui-button-icon
+                    (onClick)="changeOption('compact')"
+                    [fullWidth]="true"
+                    [type]="'button'"
+                    [option]="'text'"
+                    [color]="density === 'compact' ? 'primary' : 'text'"
+                    [size]="'s'"
+                    [style]="density === 'compact' ? 'filled' : 'secondary'"
+                    [text]="'Compact'"
+                  />
+                  <fui-button-icon
+                    (onClick)="changeOption('normal')"
+                    [fullWidth]="true"
+                    [type]="'button'"
+                    [option]="'text'"
+                    [color]="density === 'normal' ? 'primary' : 'text'"
+                    [size]="'s'"
+                    [style]="density === 'normal' ? 'filled' : 'secondary'"
+                    [text]="'Normal'"
+                  />
+                  <fui-button-icon
+                    (onClick)="changeOption('expanded')"
+                    [fullWidth]="true"
+                    [type]="'button'"
+                    [option]="'text'"
+                    [color]="density === 'expanded' ? 'primary' : 'text'"
+                    [size]="'s'"
+                    [style]="density === 'expanded' ? 'filled' : 'secondary'"
+                    [text]="'Expanded'"
+                  />
+                </div>
+              </div>
+              <div class="wrap-util">
+                <p class="title">Row Height :</p>
+                <div class="row-height-util">
+                  <fui-button-icon
+                    (onClick)="changeHeight('single')"
+                    [fullWidth]="true"
+                    [type]="'button'"
+                    [option]="'text'"
+                    [color]="rowHeight === 'single' ? 'primary' : 'text'"
+                    [size]="'s'"
+                    [style]="rowHeight === 'single' ? 'filled' : 'secondary'"
+                    [text]="'Single'"
+                  />
+                  <fui-button-icon
+                    (onClick)="changeHeight('autoFit')"
+                    [fullWidth]="true"
+                    [type]="'button'"
+                    [option]="'text'"
+                    [color]="rowHeight === 'autoFit' ? 'primary' : 'text'"
+                    [size]="'s'"
+                    [style]="rowHeight === 'autoFit' ? 'filled' : 'secondary'"
+                    [text]="'Auto Fit'"
+                  />
+                </div>
+              </div>
+              <hr class="line" />
+              <button class="reset-btn">Reset to default</button>
+            </div>
+          </div>
+        </fui-popover>
         <fui-button-icon
+          (onClick)="changeFullScreen()"
+          *ngIf="!fullScreen"
+          class="item-util"
           [type]="'button'"
           [option]="'icon'"
-          [icon]="'controlsHorizontal'"
+          [icon]="'fullScreen'"
           [color]="'text'"
           [size]="'m'"
           [style]="'secondary'"
         />
-        <div class="display-option-right" popover-body>
-          <div class="display-option-util">
-            <div class="wrap-util">
-              <p class="title">Density :</p>
-              <div class="density-util">
-                <fui-button-icon
-                  [fullWidth]="true"
-                  [type]="'button'"
-                  [option]="'text'"
-                  [color]="density === 'compact' ? 'primary' : 'text'"
-                  [size]="'s'"
-                  [style]="density === 'compact' ? 'filled' : 'secondary'"
-                  [text]="'Compact'"
-                />
-                <fui-button-icon
-                  [fullWidth]="true"
-                  [type]="'button'"
-                  [option]="'text'"
-                  [color]="density === 'normal' ? 'primary' : 'text'"
-                  [size]="'s'"
-                  [style]="density === 'normal' ? 'filled' : 'secondary'"
-                  [text]="'Normal'"
-                />
-                <fui-button-icon
-                  [fullWidth]="true"
-                  [type]="'button'"
-                  [option]="'text'"
-                  [color]="density === 'expanded' ? 'primary' : 'text'"
-                  [size]="'s'"
-                  [style]="density === 'expanded' ? 'filled' : 'secondary'"
-                  [text]="'Expanded'"
-                />
-              </div>
-            </div>
-            <div class="wrap-util">
-              <p class="title">Row Height :</p>
-              <div class="row-height-util">
-                <fui-button-icon
-                  [fullWidth]="true"
-                  [type]="'button'"
-                  [option]="'text'"
-                  [color]="rowHeight === 'single' ? 'primary' : 'text'"
-                  [size]="'s'"
-                  [style]="rowHeight === 'single' ? 'filled' : 'secondary'"
-                  [text]="'Single'"
-                />
-                <fui-button-icon
-                  [fullWidth]="true"
-                  [type]="'button'"
-                  [option]="'text'"
-                  [color]="rowHeight === 'autoFit' ? 'primary' : 'text'"
-                  [size]="'s'"
-                  [style]="rowHeight === 'autoFit' ? 'filled' : 'secondary'"
-                  [text]="'Auto Fit'"
-                />
-              </div>
-            </div>
-            <hr class="line" />
-            <button class="reset-btn">Reset to default</button>
-          </div>
-        </div>
-      </fui-popover>
-      <fui-button-icon
-        (onClick)="changeFullScreen()"
-        *ngIf="!fullScreen"
-        class="item-util"
-        [type]="'button'"
-        [option]="'icon'"
-        [icon]="'fullScreen'"
-        [color]="'text'"
-        [size]="'m'"
-        [style]="'secondary'"
-      />
-      <fui-button-icon
-        (onClick)="changeFullScreen()"
-        *ngIf="fullScreen"
-        class="item-util"
-        [type]="'button'"
-        [option]="'icon'"
-        [icon]="'fullScreenExit'"
-        [color]="'text'"
-        [size]="'m'"
-        [style]="'secondary'"
-      />
+        <fui-button-icon
+          (onClick)="changeFullScreen()"
+          *ngIf="fullScreen"
+          class="item-util"
+          [type]="'button'"
+          [option]="'icon'"
+          [icon]="'fullScreenExit'"
+          [color]="'text'"
+          [size]="'m'"
+          [style]="'secondary'"
+        />
+      </div>
+      <!-- Right Utility -->
     </div>
-    <!-- Right Utility -->
-  </div>
-  <!-- Table Utility -->
+    <!-- Table Utility -->
 
-  <!-- Table Content -->
-  <div class="fui-data-grid-table-wrap">
-    <table class="fui-data-grid-table" *ngIf="data.length > 0">
-      <thead>
-        <tr>
-          <th
-            class="table-head"
-            *ngFor="let key of _getObjectKeys(data[0]); let i = index"
-          >
-            <fui-popover
-              [position]="'bottom'"
-              [align]="
-                i === 0
-                  ? 'start'
-                  : i === _getObjectKeys(data[0]).length - 1
-                  ? 'end'
-                  : 'center'
-              "
+    <!-- Table Content -->
+    <div class="fui-data-grid-table-wrap" [ngStyle]="{ width: fullScreen ? '100vw' : '' }">
+      <table class="fui-data-grid-table" *ngIf="data.length > 0" [ngStyle]="{ width: fullScreen ? '100vw' : '' }">
+        <thead>
+          <tr>
+            @for (key of _getObjectKeys(data[0]); track $index) {
+            <th *ngIf="isColumnVisible(key)" class="table-head">
+              <fui-popover
+                [position]="'bottom'"
+                [align]="
+                  $index === 0
+                    ? 'start'
+                    : $index === _getObjectKeys(data[0]).length - 1
+                    ? 'end'
+                    : 'center'
+                "
+              >
+                <div class="item-pop-head">
+                  {{ key }}
+                </div>
+                <div popover-body style="border-radius: 10px">
+                  <fui-form-control-layout>
+                    <fui-input-field
+                      [type]="'text'"
+                      [size]="'s'"
+                      [placeholder]="'Search'"
+                      [invalid]="false"
+                    >
+                    </fui-input-field>
+                  </fui-form-control-layout>
+                  <div class="utility-link">
+                    <fui-icons
+                      [icon]="'sortUp'"
+                      [size]="'sizes'"
+                      [color]="'text'"
+                    />
+                    <a>Sort A-Z</a>
+                  </div>
+                  <div class="utility-link">
+                    <fui-icons
+                      [icon]="'sortDown'"
+                      [size]="'sizes'"
+                      [color]="'text'"
+                    />
+                    <a>Sort Z-A</a>
+                  </div>
+                </div>
+              </fui-popover>
+            </th>
+            }
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data">
+            @for (key of _getObjectKeys(item); track $index) {
+            <td
+              *ngIf="isColumnVisible(key)"
+              class="table-data {{ rowHeight }} {{ textAlign }}"
             >
-              {{ key }}
-              <div popover-body>Popover Body</div>
-            </fui-popover>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of data">
-          <td class="table-data" *ngFor="let key of _getObjectKeys(item)">
-            {{ item[key] }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <div *ngIf="data.length === 0" style="width: -webkit-fill-available">
-      <p class="empty-data-text">Data is empty</p>
+              {{ item[key] }}
+            </td>
+            }
+          </tr>
+        </tbody>
+      </table>
+      <div *ngIf="data.length === 0" style="width: -webkit-fill-available">
+        <p class="empty-data-text">Data is empty</p>
+      </div>
     </div>
+    <!-- Table Content -->
   </div>
-  <!-- Table Content -->
+  <div
+    class="data-pagination"
+    [ngStyle]="{ top: heightGrid + 10 + 'px' }"
+    *ngIf="pageShow"
+  >
+    <fui-pagination
+      (onPageChange)="onPageChange($event)"
+      [itemsPerPage]="limit"
+      [totalItems]="totalItems"
+      [size]="'sizes'"
+    ></fui-pagination>
+  </div>
 </div>

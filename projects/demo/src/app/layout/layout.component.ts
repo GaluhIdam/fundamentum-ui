@@ -53,7 +53,7 @@ import { CommonModule } from '@angular/common';
 })
 export class LayoutComponent {
   router: Routes = routes;
-  isSidebar: boolean = false;
+  isSidebar: boolean = true;
   isGrow: boolean = true;
   isRestrictWidth: boolean = false;
   direction: 'horizontal' | 'vertical' = 'horizontal';

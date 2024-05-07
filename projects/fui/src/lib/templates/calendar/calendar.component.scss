@@ -1,0 +1,206 @@
+@import "../../styles/index";
+
+.calendar {
+  width: -webkit-fill-available;
+  height: max-content;
+  overflow: hidden;
+}
+.head-calendar {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.now {
+  color: $fuiColorDarkShade;
+}
+.title {
+  .month {
+    margin: 0;
+    color: $fuiColorPrimary;
+    text-align: left;
+  }
+
+  .year {
+    margin: 0;
+    color: $fuiColorDarkShade;
+    text-align: left;
+  }
+}
+.utility {
+  align-content: center;
+}
+
+.select-form {
+  outline: none;
+  margin: 0px 3px 0px 3px;
+  border-width: 1px;
+  border-color: $fuiColorLightShade;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  background-color: $fuiColorLightestShade;
+  color: $fuiColorDarkestShade;
+}
+.content-calendar {
+  width: -webkit-fill-available;
+  border-collapse: collapse;
+}
+.week-calendar {
+  background-color: $fuiBtnPrimarySecondary;
+  padding: 5px 10px 5px 10px;
+  height: 30px;
+  color: $fuiColorPrimary;
+  text-align: left;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $fuiColorLightShade;
+}
+.day-calendar {
+  width: 142px;
+  position: relative;
+  padding: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $fuiColorLightShade;
+  background-color: $fuiColorEmptyShade;
+  color: $fuiColorDarkestShade;
+  height: 100px;
+  text-align: left;
+  align-content: baseline;
+  &:hover {
+    background-color: $fuiBtnPrimarySecondary;
+  }
+  .date-day {
+    margin: 10px;
+    color: $fuiColorDarkShade;
+    font-weight: bold;
+  }
+  .outside-month {
+    margin: 10px;
+    color: $fuiColorMediumShade;
+  }
+}
+
+.today {
+  width: 142px;
+  position: relative;
+  padding: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $fuiColorLightShade;
+  background-color: $fuiColorPrimary;
+  color: $fuiColorDarkestShade;
+  height: 100px;
+  text-align: left;
+  align-content: baseline;
+  &:hover {
+    background-color: $fuiBtnPrimarySecondary;
+    .date-day {
+      color: $fuiColorDarkestShade;
+    }
+  }
+  .date-day {
+    margin: 10px;
+    color: $fuiColorEmptyShade;
+    font-weight: bold;
+  }
+  .outside-month {
+    margin: 10px;
+    color: $fuiColorMediumShade;
+  }
+}
+.modal-body-content {
+  width: -webkit-fill-available; /* Default width */
+}
+
+@media (min-width: 501px) {
+  .modal-body-content {
+    width: 400px; /* Set width to 400px if screen width is greater than 500px */
+  }
+}
+
+.event-calendar {
+  margin: 5px 0px 0px 0px;
+  background-color: $fuiBtnSuccessSecondary;
+  color: $fuiBtnSuccessText;
+  padding: 7px 7px 7px 7px;
+  font-size: small;
+  border-left-width: 4px;
+  border-left-color: $fuiColorSuccess;
+  border-left-style: solid;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+.head-modal {
+  display: flex;
+  align-items: baseline;
+  span {
+    color: $fuiColorSuccess;
+    margin-left: 5px;
+  }
+}
+.head-event-detail {
+  display: grid;
+  .title {
+    font-size: medium;
+    color: $fuiColorSuccess;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .additional {
+    font-size: small;
+    color: $fuiColorDarkShade;
+  }
+}
+.date-event-detail {
+  display: flex;
+  margin: 10px 0px 10px 0px;
+  width: -webkit-fill-available;
+  p {
+    margin: 5px 0px 5px 0px;
+    font-size: small;
+    color: $fuiColorDarkestShade;
+  }
+  .content-schedule {
+    width: -webkit-fill-available;
+    text-align: left;
+    p {
+      margin: 5px 0px 5px 0px;
+      font-size: small;
+      font-weight: bold;
+      color: $fuiColorDarkestShade;
+    }
+  }
+}
+.content-event {
+  text-wrap: wrap;
+  .desc-content-event {
+    font-size: small;
+    font-weight: bold;
+  }
+  .desc-event {
+    margin: 5px 0px 5px 0px;
+    font-size: small;
+    color: $fuiColorDarkShade;
+    text-align: justify;
+  }
+}
+
+/** Add On*/
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: $fuiColorLightShade;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $fuiColorLightShade;
+}

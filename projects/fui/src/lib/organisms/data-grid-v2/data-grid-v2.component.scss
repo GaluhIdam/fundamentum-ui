@@ -1,8 +1,21 @@
 @import "../../styles/index";
-
-.fui-data-grid {
-  max-width: -webkit-fill-available;
+.container-fit {
   width: -webkit-fill-available;
+  position: relative;
+}
+.container-full {
+  width: 100vw;
+  position: fixed;
+  background-color: $fuiColorEmptyShade;
+  height: 100vh;
+  left: 0px;
+  right: 0;
+  top: 0;
+  overflow-y: auto;
+}
+.fui-data-grid {
+  position: absolute;
+  max-width: -webkit-fill-available;
   border-style: solid;
   border-color: $fuiColorLightShade;
   border-width: 1px;
@@ -87,28 +100,18 @@
     width: max-content;
     border-collapse: collapse;
     .table-head {
-      width: 80px;
-      min-width: 80px;
-      max-width: 100%;
-      // text-overflow: ellipsis;
-      // text-wrap: nowrap;
-      // overflow: hidden;
-      background-color: $fuiColorLightestShade;
+      min-width: 50px;
+      max-width: 300px;
+      text-wrap: nowrap;
       color: $fuiColorDarkestShade;
-      padding: 7px 10px 7px 10px;
+      background-color: $fuiColorLightestShade;
       border-style: solid;
       border-color: $fuiColorLightShade;
       border-width: 1px;
     }
     .table-data {
-      width: 80px;
-      min-width: 80px;
-      max-width: 100%;
-      // text-overflow: ellipsis;
-      // text-wrap: nowrap;
-      // overflow: hidden;
-      padding: 7px 10px 7px 10px;
-      background-color: $fuiColorEmptyShade;
+      min-width: 50px;
+      max-width: 300px;
       color: $fuiColorDarkestShade;
       border-style: solid;
       border-color: $fuiColorLightShade;
@@ -118,6 +121,24 @@
 }
 
 /** Additional Utility*/
+.item-pop-head {
+  padding: 5px 10px 5px 10px;
+  &:hover {
+    background-color: $fuiBtnPrimarySecondary;
+    outline: 1px solid $fuiColorPrimary;
+    cursor: pointer;
+  }
+}
+.item-pop-data {
+  padding: 5px 10px 5px 10px;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  overflow-x: hidden;
+  &:hover {
+    background-color: $fuiBtnPrimarySecondary;
+    outline: 1px solid $fuiColorPrimary;
+  }
+}
 .reset-btn {
   color: $fuiColorPrimary;
   outline: none;
@@ -141,10 +162,85 @@
   display: flex;
   justify-content: space-between;
 }
+.utility-link {
+  font-size: small;
+  margin-top: 10px;
+  color: $fuiColorDarkShade;
+  align-items: baseline;
+  display: flex;
+  &:hover {
+    a {
+      color: $fuiColorPrimary;
+      text-decoration: underline;
+    }
+    cursor: pointer;
+  }
+  fui-icons {
+    margin-right: 10px;
+  }
+}
+
+.data-pagination {
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+/** Density */
+.normal {
+  font-size: medium;
+}
+.compact {
+  font-size: small;
+}
+.expanded {
+  font-size: large;
+}
+
+/** Row Height */
+.single {
+  padding: 5px 10px 5px 10px;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  overflow-x: hidden;
+  &:hover {
+    background-color: $fuiBtnPrimarySecondary;
+    outline: 1px solid $fuiColorPrimary;
+  }
+}
+.autoFit {
+  height: 100%;
+  padding: 5px 10px 5px 10px;
+  white-space: nowrap;
+  text-wrap: wrap;
+  overflow-x: hidden;
+  text-align: start;
+  align-content: baseline;
+  &:hover {
+    background-color: $fuiBtnPrimarySecondary;
+    outline: 1px solid $fuiColorPrimary;
+  }
+}
+
+.active-link {
+  color: $fuiColorPrimary;
+}
+
+.left {
+  text-align: left;
+}
+.center {
+  text-align: left;
+}
+.right {
+  text-align: left;
+}
 
 /** Add On*/
 ::-webkit-scrollbar {
   height: 5px;
+  width: 5px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
