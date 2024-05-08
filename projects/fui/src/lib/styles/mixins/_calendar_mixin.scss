@@ -1,0 +1,164 @@
+@import "../variables/index";
+
+@mixin selectFormMix() {
+  outline: none;
+  margin: 0px 3px 0px 3px;
+  border-width: 1px;
+  border-color: $fuiColorLightShade;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  background-color: $fuiColorLightestShade;
+  color: $fuiColorDarkestShade;
+}
+
+@mixin monthYearMix($textColor) {
+  margin: 0;
+  color: $textColor;
+  text-align: left;
+}
+
+@mixin weekCalendarMix() {
+  background-color: $fuiColorLightestShade;
+  padding: 5px 10px 5px 10px;
+  height: 30px;
+  color: $fuiColorDarkestShade;
+  text-align: left;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $fuiColorLightShade;
+}
+
+@mixin dayCalendarTodayMix(
+  $textColor,
+  $bgColor,
+  $hoverBG,
+  $margin,
+  $todayTextColor
+) {
+  width: 142px;
+  position: relative;
+  padding: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $fuiColorLightShade;
+  background-color: $bgColor;
+  color: $textColor;
+  height: 100px;
+  text-align: left;
+  align-content: baseline;
+  &:hover {
+    background-color: $hoverBG;
+  }
+  .date-day {
+    margin: $margin;
+    color: $todayTextColor;
+    font-weight: bold;
+  }
+  .outside-month {
+    margin: $margin;
+    color: $fuiColorMediumShade;
+  }
+}
+
+@mixin modalBodyContentMix {
+  width: -webkit-fill-available;
+
+  @media (min-width: 501px) {
+    width: 400px;
+  }
+}
+
+@mixin eventCalendarMix($bgColor, $textColor) {
+  margin: 5px 0px 0px 0px;
+  background-color: $bgColor;
+  color: $textColor;
+  padding: 7px 7px 7px 7px;
+  font-size: small;
+  border-left-width: 4px;
+  border-left-color: $textColor;
+  border-left-style: solid;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  display: grid;
+  .title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .subTitle {
+    font-size: 0.75rem;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    overflow: hidden;
+  }
+}
+
+@mixin headModalMix($textColor) {
+  display: flex;
+  align-items: baseline;
+  span {
+    color: $textColor;
+    margin-left: 5px;
+  }
+}
+
+@mixin eventCalendarTextMix() {
+  margin: 5px 0px 0px 0px;
+  background-color: $fuiBtnSuccessSecondary;
+  color: $fuiBtnSuccessText;
+  padding: 7px 7px 7px 7px;
+  font-size: small;
+  border-left-width: 4px;
+  border-left-color: $fuiColorSuccess;
+  border-left-style: solid;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+@mixin titleMix($textColor) {
+  font-size: medium;
+  display: flex;
+  color: $textColor;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+@mixin detailEventMix() {
+  display: flex;
+  margin: 10px 0px 10px 0px;
+  width: -webkit-fill-available;
+  p {
+    margin: 5px 0px 5px 0px;
+    font-size: small;
+    color: $fuiColorDarkestShade;
+  }
+  .content-schedule {
+    width: -webkit-fill-available;
+    text-align: left;
+    p {
+      margin: 5px 0px 5px 0px;
+      font-size: small;
+      font-weight: bold;
+      color: $fuiColorDarkestShade;
+    }
+  }
+}
+
+@mixin contentEventMix() {
+  text-wrap: wrap;
+  .desc-content-event {
+    font-size: small;
+    font-weight: bold;
+  }
+  .desc-event {
+    margin: 5px 0px 5px 0px;
+    font-size: small;
+    color: $fuiColorDarkShade;
+    text-align: justify;
+  }
+}

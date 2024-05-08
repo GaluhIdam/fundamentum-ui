@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { CalendarComponent } from '../../../../../fui/src/public-api';
-import { EventDTO } from '../../../../../fui/src/lib/templates/calendar/event.dto';
+import { EventDTO, CalendarComponent } from 'fui';
 
 @Component({
   selector: 'app-calendar-view',

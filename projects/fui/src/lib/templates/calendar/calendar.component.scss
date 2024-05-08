@@ -14,300 +14,96 @@
 .now {
   color: $fuiColorDarkShade;
 }
-.title {
-  .month {
-    margin: 0;
-    color: $fuiColorDarkestShade;
-    text-align: left;
-  }
 
-  .year {
-    margin: 0;
-    color: $fuiColorDarkShade;
-    text-align: left;
-  }
-}
 .utility {
   align-content: center;
 }
 
+.title {
+  h1 {
+    @include monthYearMix($fuiColorDarkestShade);
+  }
+  h4 {
+    @include monthYearMix($fuiColorDarkShade);
+  }
+}
+
 .select-form {
-  outline: none;
-  margin: 0px 3px 0px 3px;
-  border-width: 1px;
-  border-color: $fuiColorLightShade;
-  border-style: solid;
-  border-radius: 5px;
-  padding: 5px 10px 5px 10px;
-  background-color: $fuiColorLightestShade;
-  color: $fuiColorDarkestShade;
+  @include selectFormMix();
 }
 .content-calendar {
   width: -webkit-fill-available;
   border-collapse: collapse;
 }
 .week-calendar {
-  background-color: $fuiColorLightestShade;
-  padding: 5px 10px 5px 10px;
-  height: 30px;
-  color: $fuiColorDarkestShade;
-  text-align: left;
-  border-width: 1px;
-  border-style: solid;
-  border-color: $fuiColorLightShade;
+  @include weekCalendarMix();
 }
 .day-calendar {
-  width: 142px;
-  position: relative;
-  padding: 0;
-  border-width: 1px;
-  border-style: solid;
-  border-color: $fuiColorLightShade;
-  background-color: $fuiColorEmptyShade;
-  color: $fuiColorDarkestShade;
-  height: 100px;
-  text-align: left;
-  align-content: baseline;
-  &:hover {
-    background-color: $fuiColorLightShade;
-  }
-  .date-day {
-    margin: 10px;
-    color: $fuiColorDarkShade;
-    font-weight: bold;
-  }
-  .outside-month {
-    margin: 10px;
-    color: $fuiColorMediumShade;
-  }
+  @include dayCalendarTodayMix(
+    $fuiColorDarkestShade,
+    $fuiColorEmptyShade,
+    $fuiColorLightShade,
+    10px,
+    $fuiColorDarkShade
+  );
 }
 
 .today {
-  width: 142px;
-  position: relative;
-  padding: 0;
-  border-width: 1px;
-  border-style: solid;
-  border-color: $fuiColorLightShade;
-  background-color: $fuiColorLightShade;
-  color: $fuiColorDarkestShade;
-  height: 100px;
-  text-align: left;
-  align-content: baseline;
-  &:hover {
-    background-color: $fuiColorLightShade;
-    .date-day {
-      color: $fuiColorDarkestShade;
-    }
-  }
-  .date-day {
-    margin: 10px;
-    color: $fuiColorDarkestShade;
-    font-weight: bold;
-  }
-  .outside-month {
-    margin: 10px;
-    color: $fuiColorMediumShade;
-  }
-}
-.modal-body-content {
-  width: -webkit-fill-available;
+  @include dayCalendarTodayMix(
+    $fuiColorDarkestShade,
+    $fuiColorLightShade,
+    $fuiColorLightShade,
+    10px,
+    $fuiColorDarkestShade
+  );
 }
 
-@media (min-width: 501px) {
-  .modal-body-content {
-    width: 400px;
-  }
+.modal-body-content {
+  @include modalBodyContentMix();
 }
 
 .event-calendar-primary {
-  margin: 5px 0px 0px 0px;
-  background-color: $fuiBtnPrimarySecondary;
-  color: $fuiColorPrimary;
-  padding: 7px 7px 7px 7px;
-  font-size: small;
-  border-left-width: 4px;
-  border-left-color: $fuiColorPrimary;
-  border-left-style: solid;
-  &:hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  display: grid;
-  .title {
-    font-size: 0.9rem;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  .subTitle {
-    font-size: 0.75rem;
-    text-overflow: ellipsis;
-    text-wrap: nowrap;
-    overflow: hidden;
-  }
+  @include eventCalendarMix($fuiBtnPrimarySecondary, $fuiColorPrimary);
 }
 .event-calendar-success {
-  margin: 5px 0px 0px 0px;
-  background-color: $fuiBtnSuccessSecondary;
-  color: $fuiColorSuccess;
-  padding: 7px 7px 7px 7px;
-  font-size: small;
-  border-left-width: 4px;
-  border-left-color: $fuiColorSuccess;
-  border-left-style: solid;
-  &:hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  display: grid;
-  .title {
-    font-size: 0.9rem;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  .subTitle {
-    font-size: 0.75rem;
-    text-overflow: ellipsis;
-    text-wrap: nowrap;
-    overflow: hidden;
-  }
+  @include eventCalendarMix($fuiBtnSuccessSecondary, $fuiColorSuccess);
 }
 .event-calendar-warning {
-  margin: 5px 0px 0px 0px;
-  background-color: $fuiBtnWarningSecondary;
-  color: $fuiColorWarning;
-  padding: 7px 7px 7px 7px;
-  font-size: small;
-  border-left-width: 4px;
-  border-left-color: $fuiColorWarning;
-  border-left-style: solid;
-  &:hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  display: grid;
-  .title {
-    font-size: 0.9rem;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  .subTitle {
-    font-size: 0.75rem;
-    text-overflow: ellipsis;
-    text-wrap: nowrap;
-    overflow: hidden;
-  }
+  @include eventCalendarMix($fuiBtnWarningSecondary, $fuiColorWarning);
 }
 .event-calendar-danger {
-  margin: 5px 0px 0px 0px;
-  background-color: $fuiBtnDangerSecondary;
-  color: $fuiColorDanger;
-  padding: 7px 7px 7px 7px;
-  font-size: small;
-  border-left-width: 4px;
-  border-left-color: $fuiColorDanger;
-  border-left-style: solid;
-  &:hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  display: grid;
-  .title {
-    font-size: 0.9rem;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  .subTitle {
-    font-size: 0.75rem;
-    text-overflow: ellipsis;
-    text-wrap: nowrap;
-    overflow: hidden;
-  }
+  @include eventCalendarMix($fuiBtnDangerSecondary, $fuiColorDanger);
 }
 
 .head-modal-primary {
-  display: flex;
-  align-items: baseline;
-  span {
-    color: $fuiColorPrimary;
-    margin-left: 5px;
-  }
+  @include headModalMix($fuiColorPrimary);
 }
 .head-modal-success {
-  display: flex;
-  align-items: baseline;
-  span {
-    color: $fuiColorSuccess;
-    margin-left: 5px;
-  }
+  @include headModalMix($fuiColorSuccess);
 }
 .head-modal-warning {
-  display: flex;
-  align-items: baseline;
-  span {
-    color: $fuiColorWarning;
-    margin-left: 5px;
-  }
+  @include headModalMix($fuiColorWarning);
 }
 .head-modal-danger {
-  display: flex;
-  align-items: baseline;
-  span {
-    color: $fuiColorDanger;
-    margin-left: 5px;
-  }
+  @include headModalMix($fuiColorDanger);
 }
+
 .event-calendar-text {
-  margin: 5px 0px 0px 0px;
-  background-color: $fuiBtnSuccessSecondary;
-  color: $fuiBtnSuccessText;
-  padding: 7px 7px 7px 7px;
-  font-size: small;
-  border-left-width: 4px;
-  border-left-color: $fuiColorSuccess;
-  border-left-style: solid;
-  &:hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
-}
-.head-modal {
-  display: flex;
-  align-items: baseline;
-  span {
-    color: $fuiColorSuccess;
-    margin-left: 5px;
-  }
+  @include eventCalendarTextMix();
 }
 .head-event-detail {
   display: grid;
   .title-primary {
-    font-size: medium;
-    display: flex;
-    color: $fuiColorPrimary;
-    font-weight: bold;
-    margin-bottom: 5px;
+    @include titleMix($fuiColorPrimary);
   }
   .title-success {
-    font-size: medium;
-    display: flex;
-    color: $fuiColorSuccess;
-    font-weight: bold;
-    margin-bottom: 5px;
+    @include titleMix($fuiColorSuccess);
   }
   .title-warning {
-    font-size: medium;
-    display: flex;
-    color: $fuiColorWarning;
-    font-weight: bold;
-    margin-bottom: 5px;
+    @include titleMix($fuiColorWarning);
   }
   .title-danger {
-    font-size: medium;
-    display: flex;
-    color: $fuiColorDanger;
-    font-weight: bold;
-    margin-bottom: 5px;
+    @include titleMix($fuiColorDanger);
   }
   .additional {
     font-size: small;
@@ -315,37 +111,10 @@
   }
 }
 .date-event-detail {
-  display: flex;
-  margin: 10px 0px 10px 0px;
-  width: -webkit-fill-available;
-  p {
-    margin: 5px 0px 5px 0px;
-    font-size: small;
-    color: $fuiColorDarkestShade;
-  }
-  .content-schedule {
-    width: -webkit-fill-available;
-    text-align: left;
-    p {
-      margin: 5px 0px 5px 0px;
-      font-size: small;
-      font-weight: bold;
-      color: $fuiColorDarkestShade;
-    }
-  }
+  @include detailEventMix();
 }
 .content-event {
-  text-wrap: wrap;
-  .desc-content-event {
-    font-size: small;
-    font-weight: bold;
-  }
-  .desc-event {
-    margin: 5px 0px 5px 0px;
-    font-size: small;
-    color: $fuiColorDarkShade;
-    text-align: justify;
-  }
+  @include contentEventMix();
 }
 
 /** Add On*/

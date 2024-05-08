@@ -1,8 +1,8 @@
 <div class="calendar">
   <div class="head-calendar">
     <div class="title">
-      <h1 class="month">{{ selectedMonth }}</h1>
-      <h4 class="year">{{ selectedYear }}</h4>
+      <h1>{{ selectedMonth }}</h1>
+      <h4>{{ selectedYear }}</h4>
     </div>
     <div class="utility">
       <select
@@ -142,9 +142,9 @@
   </fui-flyout-header>
   <fui-flyout-body>
     <div class="head-event-detail">
-      <span class="{{ 'title-' + eventShow.color }}"
-        >{{ eventShow.event.title }}</span
-      >
+      <span class="{{ 'title-' + eventShow.color }}">{{
+        eventShow.event.title
+      }}</span>
       <span class="additional">{{ eventShow.event.subTitle }}</span>
     </div>
     <div class="date-event-detail">

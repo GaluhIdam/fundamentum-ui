@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
 import { EventDTO } from './event.dto';
 
 /**
- * The CalendarComponent
+ * The Calendar Component
  * @usage
  * ```html
  * <fui-calendar
