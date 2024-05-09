@@ -1,10 +1,10 @@
 import {
+  ChangeDetectorRef,
   Component,
   ElementRef,
   EventEmitter,
   Input,
   Output,
-  SimpleChanges,
   ViewChild,
 } from '@angular/core';
 import {
@@ -17,7 +17,8 @@ import {
   PopoverComponent,
 } from '../../../public-api';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { debounceTime, Subscription } from 'rxjs';
 
 @Component({
   selector: 'fui-data-grid-v2',
@@ -37,115 +38,133 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrl: './data-grid-v2.component.scss',
 })
 export class DataGridV2Component {
+  /** Input */
   @Input() data: object[] = [];
+  @Input() title: string[] = [];
   @Input({ required: true }) totalItems: number = 100;
   @Input({ required: true }) limit: number = 10;
-  @Input({ required: true }) page: number = 1;
   @Input({ required: true }) density: 'compact' | 'normal' | 'expanded' =
     'normal';
+
+  /** Output */
   @Input({ required: true }) rowHeight: 'single' | 'autoFit' = 'single';
-  @Output() optionChange = new EventEmitter<
-    'normal' | 'compact' | 'expanded'
-  >();
+  @Output() toggleAction: EventEmitter<object> = new EventEmitter();
   @Output() onPageChanges: EventEmitter<{
     page: number;
     itemsPerPage: number;
   }> = new EventEmitter();
+  @Output() searchPerField: EventEmitter<object> = new EventEmitter();
+  @Output() sortPerField: EventEmitter<object> = new EventEmitter();
 
+  /** Display Config */
   fullScreen: boolean = false;
-  showColumns: { show: boolean; name: object }[] = [];
   textAlign: 'left' | 'center' | 'right' = 'left';
+
+  /** Columns Config */
   columnVisibility: { [key: string]: boolean } = {};
-  pageShow: boolean = false;
+  searchColumns: FormControl = new FormControl('');
+  visibleColumns: string[] = [];
+
+  /** Search per Field */
+  searchField: FormControl = new FormControl('');
+  fieldSelector: string = '';
 
   @ViewChild('dataGridElement', { static: false }) dataGridElement!: ElementRef;
   heightGrid: number = 0;
 
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      if (this.dataGridElement) {
-        this.heightGrid = this.dataGridElement.nativeElement.offsetHeight;
-        this.pageShow = true;
-      }
-    }, 1000);
+  /** Observable data changed */
+  obs!: Subscription;
+
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  ngOnInit(): void {
+    this.obs = this.searchField.valueChanges
+      .pipe(debounceTime(500))
+      .subscribe((data) => {
+        this.searchPerField.emit({ search: data, field: this.fieldSelector });
+      });
+  }
+
+  ngAfterViewChecked(): void {
+    if (this.dataGridElement) {
+      this.heightGrid = this.dataGridElement.nativeElement.offsetHeight;
+      this._insertObjToColumnVisibility();
+      this._updateVisibleColumns();
+      this.cdr.detectChanges();
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.obs.unsubscribe();
   }
 
   changeOption(density: 'normal' | 'compact' | 'expanded'): void {
     this.density = density;
-    this.pageShow = false;
-    setTimeout(() => {
-      if (this.dataGridElement) {
-        this.heightGrid = this.dataGridElement.nativeElement.offsetHeight;
-        this.pageShow = true;
-      }
-    }, 100);
   }
 
   changeHeight(rowHeight: 'single' | 'autoFit'): void {
     this.rowHeight = rowHeight;
-
-    this.pageShow = false;
-    setTimeout(() => {
-      if (this.dataGridElement) {
-        this.heightGrid = this.dataGridElement.nativeElement.offsetHeight;
-        this.pageShow = true;
-      }
-    }, 100);
   }
 
   changeFullScreen(): void {
     this.fullScreen = !this.fullScreen;
-
-    this.pageShow = false;
-    setTimeout(() => {
-      if (this.dataGridElement) {
-        this.heightGrid = this.dataGridElement.nativeElement.offsetHeight;
-        this.pageShow = true;
-      }
-    }, 100);
   }
 
   onPageChange(event: { page: number; itemsPerPage: number }): void {
-    this.page = event.page;
     this.limit = event.itemsPerPage;
     this.onPageChanges.emit({
-      page: this.page,
+      page: event.page,
       itemsPerPage: this.limit,
     });
-
-    this.pageShow = false;
-    setTimeout(() => {
-      if (this.dataGridElement) {
-        this.heightGrid = this.dataGridElement.nativeElement.offsetHeight;
-        this.pageShow = true;
-      }
-    }, 100);
   }
 
   protected _getObjectKeys(obj: any): string[] {
     if (obj && typeof obj === 'object') {
-      this.showColumns.push({ show: true, name: obj });
-
       return Object.keys(obj);
     } else {
       return [];
     }
   }
 
-  toggleColumn(key: string): void {
-    this.columnVisibility[key] = !this.columnVisibility[key];
+  protected _insertObjToColumnVisibility(): void {
+    if (this.data && this.data.length > 0) {
+      const keys = Object.keys(this.data[0]);
 
-    this.pageShow = false;
-    setTimeout(() => {
-      if (this.dataGridElement) {
-        this.heightGrid = this.dataGridElement.nativeElement.offsetHeight;
-        this.pageShow = true;
-      }
-    }, 100);
+      keys.forEach((key) => {
+        this.columnVisibility[key] = true;
+      });
+    }
+  }
+
+  toggleColumn(key: string): void {
+    console.log(this.columnVisibility);
+    this.columnVisibility[key] = !this.columnVisibility[key];
   }
 
   isColumnVisible(key: string): boolean {
     return this.columnVisibility[key] !== false;
   }
 
+  toggleActionClick(obj: object): void {
+    this.toggleAction.emit(obj);
+  }
+
+  protected _updateVisibleColumns(): void {
+    const searchTerm = this.searchColumns.value.toLowerCase();
+    this.visibleColumns = this._getObjectKeys(this.data[0]).filter((key) =>
+      key.toLowerCase().includes(searchTerm)
+    );
+  }
+
+  isButtonVisible(key: string): boolean {
+    return this.visibleColumns.includes(key);
+  }
+
+  searchByField(field: string): void {
+    this.fieldSelector = field;
+  }
+
+  sortByField(sort: 'asc' | 'desc', field: string): void {
+    this.sortPerField.emit({ sort: sort, field: field });
+  }
 }

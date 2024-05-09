@@ -1,9 +1,11 @@
 <div
   class="{{ fullScreen ? 'container-full' : 'container-fit' }}"
-  [ngStyle]="{ height: !fullScreen ? heightGrid + 20 + 'px' : '' }"
+  [ngStyle]="{ height: !fullScreen ? heightGrid + 'px' : '' }"
 >
-  <div #dataGridElement class="fui-data-grid {{ density }}"
-   [ngStyle]="{ width: fullScreen ? '100vw' : '' }"
+  <div
+    #dataGridElement
+    class="fui-data-grid {{ density }}"
+    [ngStyle]="{ width: fullScreen ? '100vw' : '' }"
   >
     <!-- Table Utility -->
     <div class="fui-data-grid-utility">
@@ -22,32 +24,77 @@
           <div class="display-option-left" popover-body>
             <fui-form-control-layout>
               <fui-input-field
+                (keyup)="_updateVisibleColumns()"
+                [formControlField]="searchColumns"
                 [type]="'text'"
                 [size]="'m'"
                 [placeholder]="'Search'"
                 [invalid]="false"
               >
+                <fui-icons
+                  left-icon
+                  [label]="'left'"
+                  [icon]="'search'"
+                  [size]="'sizem'"
+                  [color]="'text'"
+                />
               </fui-input-field>
             </fui-form-control-layout>
             <hr class="line" />
             <div class="column-selection">
-              <div
-                class="list-columns"
-                *ngFor="let key of _getObjectKeys(data[0])"
+              <ng-container
+                *ngIf="title.length !== _getObjectKeys(data[0]).length"
               >
-                <fui-button-icon
-                  (onClick)="toggleColumn(key)"
-                  [fullWidth]="true"
-                  [textAlign]="'left'"
-                  [type]="'button'"
-                  [option]="'iconText'"
-                  [icon]="isColumnVisible(key) ? 'eye' : 'eyeClosed'"
-                  [color]="isColumnVisible(key) ? 'text' : 'danger'"
-                  [size]="'m'"
-                  [style]="'secondary'"
-                  [text]="key"
-                />
-              </div>
+                <div
+                  class="list-columns"
+                  *ngFor="let key of _getObjectKeys(data[0])"
+                >
+                  <fui-button-icon
+                    *ngIf="isButtonVisible(key)"
+                    (click)="toggleColumn(key)"
+                    [fullWidth]="true"
+                    [textAlign]="'left'"
+                    [type]="'button'"
+                    [option]="'iconText'"
+                    [icon]="isColumnVisible(key) ? 'eye' : 'eyeClosed'"
+                    [color]="isColumnVisible(key) ? 'text' : 'danger'"
+                    [size]="'m'"
+                    [style]="'secondary'"
+                    [text]="key"
+                  ></fui-button-icon>
+                </div>
+              </ng-container>
+
+              <ng-container
+                *ngIf="title.length === _getObjectKeys(data[0]).length"
+              >
+                <div
+                  class="list-columns"
+                  *ngFor="let key of title; let i = index"
+                >
+                  <fui-button-icon
+                    *ngIf="isButtonVisible(_getObjectKeys(data[0])[i])"
+                    (click)="toggleColumn(_getObjectKeys(data[0])[i])"
+                    [fullWidth]="true"
+                    [textAlign]="'left'"
+                    [type]="'button'"
+                    [option]="'iconText'"
+                    [icon]="
+                      isColumnVisible(_getObjectKeys(data[0])[i])
+                        ? 'eye'
+                        : 'eyeClosed'
+                    "
+                    [color]="
+                      isColumnVisible(_getObjectKeys(data[0])[i])
+                        ? 'text'
+                        : 'danger'
+                    "
+                    [size]="'m'"
+                    [style]="'secondary'"
+                    [text]="key"
+                  ></fui-button-icon>
+                </div>
+              </ng-container>
             </div>
           </div>
         </fui-popover>
@@ -160,10 +207,17 @@
     <!-- Table Utility -->
 
     <!-- Table Content -->
-    <div class="fui-data-grid-table-wrap" [ngStyle]="{ width: fullScreen ? '100vw' : '' }">
-      <table class="fui-data-grid-table" *ngIf="data.length > 0" [ngStyle]="{ width: fullScreen ? '100vw' : '' }">
+    <div
+      class="fui-data-grid-table-wrap"
+      [ngStyle]="{ width: fullScreen ? '100vw' : '' }"
+    >
+      <table
+        class="fui-data-grid-table"
+        *ngIf="data.length > 0"
+        [ngStyle]="{ width: fullScreen ? '100vw' : '' }"
+      >
         <thead>
-          <tr>
+          <tr *ngIf="title.length !== _getObjectKeys(data[0]).length">
             @for (key of _getObjectKeys(data[0]); track $index) {
             <th *ngIf="isColumnVisible(key)" class="table-head">
               <fui-popover
@@ -182,14 +236,23 @@
                 <div popover-body style="border-radius: 10px">
                   <fui-form-control-layout>
                     <fui-input-field
+                      (keyup)="searchByField(key)"
                       [type]="'text'"
                       [size]="'s'"
                       [placeholder]="'Search'"
                       [invalid]="false"
+                      [formControlField]="searchField"
                     >
+                      <fui-icons
+                        left-icon
+                        [label]="'left'"
+                        [icon]="'search'"
+                        [size]="'sizes'"
+                        [color]="'text'"
+                      />
                     </fui-input-field>
                   </fui-form-control-layout>
-                  <div class="utility-link">
+                  <div class="utility-link" (click)="sortByField('asc', key)">
                     <fui-icons
                       [icon]="'sortUp'"
                       [size]="'sizes'"
@@ -197,7 +260,7 @@
                     />
                     <a>Sort A-Z</a>
                   </div>
-                  <div class="utility-link">
+                  <div class="utility-link" (click)="sortByField('desc', key)">
                     <fui-icons
                       [icon]="'sortDown'"
                       [size]="'sizes'"
@@ -209,6 +272,77 @@
               </fui-popover>
             </th>
             }
+            <th class="table-head"></th>
+          </tr>
+          <tr *ngIf="title.length === _getObjectKeys(data[0]).length">
+            @for (xItem of title; track $index) {
+            <th
+              *ngIf="isColumnVisible(_getObjectKeys(data[0])[$index])"
+              class="table-head"
+            >
+              <fui-popover
+                [position]="'bottom'"
+                [align]="
+                  $index === 0
+                    ? 'start'
+                    : $index === title.length - 1
+                    ? 'end'
+                    : 'center'
+                "
+              >
+                <div class="item-pop-head">
+                  {{ xItem }}
+                </div>
+                <div popover-body style="border-radius: 10px">
+                  <fui-form-control-layout>
+                    <fui-input-field
+                      [type]="'text'"
+                      [size]="'s'"
+                      [placeholder]="'Search'"
+                      [invalid]="false"
+                      [formControlField]="searchField"
+                      (keyup)="searchByField(_getObjectKeys(data[0])[$index])"
+                    >
+                      <fui-icons
+                        left-icon
+                        [label]="'left'"
+                        [icon]="'search'"
+                        [size]="'sizes'"
+                        [color]="'text'"
+                      />
+                    </fui-input-field>
+                  </fui-form-control-layout>
+                  <div
+                    class="utility-link"
+                    (click)="
+                      sortByField('asc', _getObjectKeys(data[0])[$index])
+                    "
+                  >
+                    <fui-icons
+                      [icon]="'sortUp'"
+                      [size]="'sizes'"
+                      [color]="'text'"
+                    />
+                    <a>Sort A-Z</a>
+                  </div>
+                  <div
+                    class="utility-link"
+                    (click)="
+                      sortByField('desc', _getObjectKeys(data[0])[$index])
+                    "
+                  >
+                    <fui-icons
+                      [icon]="'sortDown'"
+                      [size]="'sizes'"
+                      [color]="'text'"
+                    />
+                    <a>Sort Z-A</a>
+                  </div>
+                </div>
+              </fui-popover>
+            </th>
+            }
+            <th class="table-head"></th>
           </tr>
         </thead>
         <tbody>
@@ -221,6 +355,16 @@
               {{ item[key] }}
             </td>
             }
+            <td class="action {{ rowHeight }} {{ textAlign }}">
+              <fui-button-icon
+                [type]="'button'"
+                [option]="'icon'"
+                [style]="'secondary'"
+                [color]="'text'"
+                [icon]="'boxesHorizontal'"
+                (onClick)="toggleActionClick(item)"
+              />
+            </td>
           </tr>
         </tbody>
       </table>
@@ -228,18 +372,17 @@
         <p class="empty-data-text">Data is empty</p>
       </div>
     </div>
+    <div class="pagination">
+      <span class="showing">Showing {{ limit }} of {{ totalItems }}</span>
+      <div class="page">
+        <fui-pagination
+          (onPageChange)="onPageChange($event)"
+          [itemsPerPage]="limit"
+          [totalItems]="totalItems"
+          [size]="'sizes'"
+        ></fui-pagination>
+      </div>
+    </div>
     <!-- Table Content -->
-  </div>
-  <div
-    class="data-pagination"
-    [ngStyle]="{ top: heightGrid + 10 + 'px' }"
-    *ngIf="pageShow"
-  >
-    <fui-pagination
-      (onPageChange)="onPageChange($event)"
-      [itemsPerPage]="limit"
-      [totalItems]="totalItems"
-      [size]="'sizes'"
-    ></fui-pagination>
   </div>
 </div>

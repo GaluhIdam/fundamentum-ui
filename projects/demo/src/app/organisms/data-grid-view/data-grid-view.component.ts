@@ -11,7 +11,14 @@ import {
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { DataGridV2Component } from '../../../../../fui/src/public-api';
+import {
+  DataGridV2Component,
+  FlyoutBodyComponent,
+  FlyoutComponent,
+  FlyoutHeaderComponent,
+  IconsComponent,
+  PaginationComponent,
+} from '../../../../../fui/src/public-api';
 
 @Component({
   selector: 'app-data-grid-view',
@@ -21,6 +28,11 @@ import { DataGridV2Component } from '../../../../../fui/src/public-api';
     HttpClientModule,
     CommonModule,
     ReactiveFormsModule,
+    FlyoutBodyComponent,
+    FlyoutComponent,
+    FlyoutHeaderComponent,
+    IconsComponent,
+    PaginationComponent,
   ],
   templateUrl: './data-grid-view.component.html',
   styleUrl: './data-grid-view.component.scss',
@@ -28,6 +40,19 @@ import { DataGridV2Component } from '../../../../../fui/src/public-api';
 })
 export class DataGridViewComponent implements OnInit, OnDestroy {
   selectedDensity: string = 'normal';
+  title: string[] = [
+    'ID',
+    'Title',
+    'Description',
+    'Price',
+    'Discount Percentage',
+    'Rating',
+    'Stock',
+    'Brand',
+    'Category',
+    'Thumbnail',
+    'Images',
+  ];
   selectedRowHeight: string = 'single';
   dataContent: ProductsDTO[] = [];
   page: number = 0;
@@ -43,15 +68,17 @@ export class DataGridViewComponent implements OnInit, OnDestroy {
   watch!: Subscription;
   searchForm: FormControl = new FormControl('');
 
+  isOpenFlyout: boolean = false;
+
   constructor(private readonly _dataGridViewService: DataGridViewService) {}
 
   ngOnInit(): void {
-    this._gettingProducts(this.page, this.limit, this.search);
+    this._gettingProducts(this.page - 1, this.limit, this.search);
     this.watch = this.searchForm.valueChanges
       .pipe(
         debounceTime(500),
         switchMap((search) =>
-          this._gettingProducts(this.page, this.limit, search)
+          this._gettingProducts(this.page - 1, this.limit, search)
         ),
         takeUntil(this._onDestroy$)
       )
@@ -91,7 +118,7 @@ export class DataGridViewComponent implements OnInit, OnDestroy {
   /** Refresh data and clear form */
   refresh(): void {
     this.searchForm.setValue('');
-    this._gettingProducts(this.page, this.limit, this.searchForm.value);
+    this._gettingProducts(this.page - 1, this.limit, this.searchForm.value);
   }
 
   /** Handling For Option */
@@ -107,5 +134,37 @@ export class DataGridViewComponent implements OnInit, OnDestroy {
   /** Handling For Pagination */
   changePagination(event: { page: number; itemsPerPage: number }): void {
     this._gettingProducts(event.page - 1, event.itemsPerPage, this.search);
+  }
+
+  /** Handling For Open Flyout */
+  toggleOpen(event: ProductsDTO): void {
+    console.log(event);
+    this.isOpenFlyout = !this.isOpenFlyout;
+  }
+  /** Handling For Close Flyout */
+  toggleClose(): void {
+    this.isOpenFlyout = !this.isOpenFlyout;
+  }
+
+  /** Handling For Search PerField */
+  searchPerField(event: any): void {
+    console.log(event);
+  }
+
+  /** Handling For Sort PerField */
+  sortPerField(event: any): void {
+    console.log(event);
+  }
+
+  onPageChanges(event: any): void {
+    if (this.totalItems === event.itemsPerPage) {
+      this.page = 0;
+      this.limit = event.itemsPerPage;
+      this._gettingProducts(this.page * this.limit, this.limit, this.search);
+    } else {
+      this.page = event.page - 1;
+      this.limit = event.itemsPerPage;
+      this._gettingProducts(this.page * this.limit, this.limit, this.search);
+    }
   }
 }

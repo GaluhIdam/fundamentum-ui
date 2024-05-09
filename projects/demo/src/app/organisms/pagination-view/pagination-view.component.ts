@@ -8,4 +8,8 @@ import { PaginationComponent } from 'fui';
   styleUrl: './pagination-view.component.scss',
   imports: [PaginationComponent],
 })
-export class PaginationViewComponent {}
+export class PaginationViewComponent {
+  onPageChange(event: { page: number; itemsPerPage: number }): void {
+    console.log(event);
+  }
+}

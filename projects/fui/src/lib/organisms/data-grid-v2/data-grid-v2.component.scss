@@ -120,6 +120,17 @@
   }
 }
 
+.action {
+  width: 25px;
+  color: $fuiColorDarkestShade;
+  border-style: solid;
+  border-color: $fuiColorLightShade;
+  border-width: 1px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 /** Additional Utility*/
 .item-pop-head {
   padding: 5px 10px 5px 10px;
@@ -231,10 +242,29 @@
   text-align: left;
 }
 .center {
-  text-align: left;
+  text-align: center;
 }
 .right {
-  text-align: left;
+  text-align: right;
+}
+
+.pagination {
+  padding: 5px 10px 5px 10px;
+  display: flex;
+  align-items: baseline;
+  .showing {
+    width: max-content;
+    text-wrap: nowrap;
+    align-items: center;
+    display: flex;
+    color: $fuiColorDarkestShade;
+    font-size: small;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  .page {
+    width: -webkit-fill-available;
+  }
 }
 
 /** Add On*/

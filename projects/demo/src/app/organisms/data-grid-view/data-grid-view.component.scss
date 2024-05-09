@@ -4,3 +4,13 @@
 .center {
   text-align: center;
 }
+
+.title-action {
+  display: flex;
+  .title-icon {
+    margin-right: 10px;
+  }
+  .title {
+    font-size: large;
+  }
+}

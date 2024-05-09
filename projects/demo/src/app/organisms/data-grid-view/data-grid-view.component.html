@@ -1,9 +1,47 @@
 <h1>Data Grid</h1>
+<p>
+  FuiDataGrid is for displaying large amounts of tabular data. It is a better
+  choice over FUI tables when there are many columns, the data in those columns
+  is fairly uniform, and when schemas and sorting are important for comparison.
+  Although it is similar to traditional spreedsheet software, FuiDataGrid's
+  current strengths are in rendering rather than creating content.
+</p>
+
+<!-- Data Grid -->
 <fui-data-grid-v2
+  (sortPerField)="sortPerField($event)"
+  (toggleAction)="toggleOpen($event)"
+  (searchPerField)="searchPerField($event)"
+  (onPageChanges)="onPageChanges($event)"
+  [title]="title"
   [data]="dataContent"
   [limit]="limit"
-  [page]="page"
   [totalItems]="totalItems"
   [density]="'normal'"
   [rowHeight]="'single'"
 />
+<h1>Data Grid</h1>
+<!-- Modal Action -->
+
+<!-- Flyout Action -->
+<fui-flyout [open]="isOpenFlyout" [flyoutSize]="'s'" [flyoutPadding]="'m'">
+  <fui-flyout-header (onCloseFlyout)="toggleClose()">
+    <div class="title-action">
+      <fui-icons
+        class="title-icon"
+        [icon]="'boxesHorizontal'"
+        [size]="'sizem'"
+        [color]="'text'"
+      />
+      <span class="title">Action</span>
+    </div>
+  </fui-flyout-header>
+  <fui-flyout-body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
+      recusandae tempore corrupti obcaecati voluptate eos, totam illum in
+      mollitia repellendus possimus officia similique quis assumenda
+      perspiciatis nesciunt, quasi tenetur architecto!
+    </p>
+  </fui-flyout-body>
+</fui-flyout>

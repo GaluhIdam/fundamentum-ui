@@ -244,6 +244,11 @@ export const routes: Routes = [
         component: EchartsViewComponent,
       },
       {
+        title: 'Pagination',
+        path: 'pagination',
+        component: PaginationViewComponent,
+      },
+      {
         title: 'Selectable',
         path: 'selectable',
         component: SelectableViewComponent,

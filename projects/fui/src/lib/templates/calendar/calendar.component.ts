@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 import {
   FlyoutBodyComponent,
   FlyoutComponent,
-  FlyoutFooterComponent,
   FlyoutHeaderComponent,
   IconsComponent,
   ModalBodyComponent,
@@ -39,7 +38,6 @@ import { EventDTO } from './event.dto';
     FlyoutComponent,
     FlyoutHeaderComponent,
     FlyoutBodyComponent,
-    FlyoutFooterComponent,
   ],
   templateUrl: './calendar.component.html',
   styleUrl: './calendar.component.scss',
