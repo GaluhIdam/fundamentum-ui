@@ -50,6 +50,7 @@ import { FlexViewComponent } from './templates/flex-view/flex-view.component';
 import { ListGroupViewComponent } from './organisms/list-group-view/list-group-view.component';
 import { CodeBlockViewComponent } from './atoms/code-block-view/code-block-view.component';
 import { CalendarViewComponent } from './templates/calendar-view/calendar-view.component';
+import { TourViewComponent } from './organisms/tour-view/tour-view.component';
 
 /** ATTENTION, ADD A TITLE IN CHILDREN ROUTE FOR THE DOCUMENTATION */
 export const routes: Routes = [
@@ -252,6 +253,11 @@ export const routes: Routes = [
         title: 'Selectable',
         path: 'selectable',
         component: SelectableViewComponent,
+      },
+      {
+        title: 'Tour',
+        path: 'tour',
+        component: TourViewComponent,
       },
     ],
   },

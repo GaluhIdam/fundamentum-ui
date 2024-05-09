@@ -5,6 +5,31 @@ import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
 import { IconsComponent } from '../icons/icons.component';
 import { TooltipComponent } from '../../templates/tooltip/tooltip.component';
 
+/**
+ * The CodeBlockComponent component
+ * @usage
+ * ```html
+ * <fui-code-block
+ *  [code]="codeHTML"
+ *  [language]="'xml'"
+ *  [lineNumbers]="true"
+ * >
+ * </fui-code-block>
+ * ```
+ * ```typescript
+ * codeHTML = `<h1>Code Block</h1>
+ * <p>fui-code-block is intended to render static lines or blocks of code in read-only contexts.</p>
+ * <fui-code-block
+ *  [code]="codeHTML"
+ *  [language]="'xml'"
+ *  [lineNumbers]="true"
+ * >
+ * </fui-code-block>
+ * `;
+ * ```
+ * <example-url>http://localhost:4200/atoms/code-block</example-url>
+ */
+
 @Component({
   selector: 'fui-code-block',
   standalone: true,
