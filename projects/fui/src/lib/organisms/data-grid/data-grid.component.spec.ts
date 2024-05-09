@@ -11,7 +11,7 @@ describe('DataGridComponent', () => {
       imports: [DataGridComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(DataGridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

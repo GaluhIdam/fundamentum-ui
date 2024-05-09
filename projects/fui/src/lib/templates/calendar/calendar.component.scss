@@ -58,10 +58,6 @@
   );
 }
 
-.modal-body-content {
-  @include modalBodyContentMix();
-}
-
 .event-calendar-primary {
   @include eventCalendarMix($fuiBtnPrimarySecondary, $fuiColorPrimary);
 }
@@ -74,47 +70,8 @@
 .event-calendar-danger {
   @include eventCalendarMix($fuiBtnDangerSecondary, $fuiColorDanger);
 }
-
-.head-modal-primary {
-  @include headModalMix($fuiColorPrimary);
-}
-.head-modal-success {
-  @include headModalMix($fuiColorSuccess);
-}
-.head-modal-warning {
-  @include headModalMix($fuiColorWarning);
-}
-.head-modal-danger {
-  @include headModalMix($fuiColorDanger);
-}
-
 .event-calendar-text {
   @include eventCalendarTextMix();
-}
-.head-event-detail {
-  display: grid;
-  .title-primary {
-    @include titleMix($fuiColorPrimary);
-  }
-  .title-success {
-    @include titleMix($fuiColorSuccess);
-  }
-  .title-warning {
-    @include titleMix($fuiColorWarning);
-  }
-  .title-danger {
-    @include titleMix($fuiColorDanger);
-  }
-  .additional {
-    font-size: small;
-    color: $fuiColorDarkShade;
-  }
-}
-.date-event-detail {
-  @include detailEventMix();
-}
-.content-event {
-  @include contentEventMix();
 }
 
 /** Add On*/

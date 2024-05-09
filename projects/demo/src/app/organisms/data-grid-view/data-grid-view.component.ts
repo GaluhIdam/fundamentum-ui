@@ -12,19 +12,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import {
-  DataGridV2Component,
+  DataGridComponent,
   FlyoutBodyComponent,
   FlyoutComponent,
   FlyoutHeaderComponent,
   IconsComponent,
+  LinkComponent,
   PaginationComponent,
-} from '../../../../../fui/src/public-api';
+} from 'fui';
 
 @Component({
   selector: 'app-data-grid-view',
   standalone: true,
   imports: [
-    DataGridV2Component,
+    DataGridComponent,
     HttpClientModule,
     CommonModule,
     ReactiveFormsModule,
@@ -33,6 +34,7 @@ import {
     FlyoutHeaderComponent,
     IconsComponent,
     PaginationComponent,
+    LinkComponent,
   ],
   templateUrl: './data-grid-view.component.html',
   styleUrl: './data-grid-view.component.scss',
@@ -55,6 +57,7 @@ export class DataGridViewComponent implements OnInit, OnDestroy {
   ];
   selectedRowHeight: string = 'single';
   dataContent: ProductsDTO[] = [];
+  content!: ProductsDTO;
   page: number = 0;
   limit: number = 10;
   totalItems: number = 0;
@@ -69,6 +72,11 @@ export class DataGridViewComponent implements OnInit, OnDestroy {
   searchForm: FormControl = new FormControl('');
 
   isOpenFlyout: boolean = false;
+
+  sortSearchReturn: {
+    field: string;
+    sortSearch: { sort: 'asc' | 'desc'; search: string };
+  }[] = [];
 
   constructor(private readonly _dataGridViewService: DataGridViewService) {}
 
@@ -138,7 +146,7 @@ export class DataGridViewComponent implements OnInit, OnDestroy {
 
   /** Handling For Open Flyout */
   toggleOpen(event: ProductsDTO): void {
-    console.log(event);
+    this.content = event;
     this.isOpenFlyout = !this.isOpenFlyout;
   }
   /** Handling For Close Flyout */
@@ -147,15 +155,11 @@ export class DataGridViewComponent implements OnInit, OnDestroy {
   }
 
   /** Handling For Search PerField */
-  searchPerField(event: any): void {
-    console.log(event);
+  sortSearchEmit(event: any): void {
+    this.sortSearchReturn = event;
   }
 
-  /** Handling For Sort PerField */
-  sortPerField(event: any): void {
-    console.log(event);
-  }
-
+  /** Handling For Pagination */
   onPageChanges(event: any): void {
     if (this.totalItems === event.itemsPerPage) {
       this.page = 0;

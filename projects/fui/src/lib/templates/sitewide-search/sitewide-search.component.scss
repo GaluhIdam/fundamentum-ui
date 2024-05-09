@@ -17,6 +17,9 @@
           text-decoration: underline;
         }
         .desc-title {
+          text-wrap: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
           color: $fuiColorDarkShade;
         }
       }
@@ -42,10 +45,14 @@
   font-size: small;
   margin-top: 5px;
   color: $fuiColorPrimary;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
 }
 .line {
-  border: 0; /* Remove default border */
-  height: 1px; /* Set the height of the line */
+  border: 0;
+  height: 1px;
   background-color: $fuiColorLightShade;
 }
 
@@ -65,7 +72,31 @@
   }
 }
 
+.container-item {
+  min-width: 400px;
+  max-width: 700px;
+  overflow-y: auto;
+  max-height: 500px;
+  height: fit-content;
+}
+
 .shortcut-key {
   font-size: small;
   font-weight: 700;
+}
+
+/** Add On*/
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: $fuiColorLightShade;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $fuiColorLightShade;
 }

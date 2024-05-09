@@ -24,6 +24,17 @@ import {
 import { CanvasRenderer } from 'echarts/renderers';
 import { UniversalTransition } from 'echarts/features';
 
+/**
+ * The EchartsComponent
+ * @usage
+ * ```html
+ * <fui-echarts
+    [chartOption]="optionStacked"
+    [themeChart]="themeChart">
+ * </fui-echarts>
+ * ```
+ * <example-url>http://localhost:4200/organisms/echarts</example-url>
+ */
 @Component({
   selector: 'fui-echarts',
   standalone: true,

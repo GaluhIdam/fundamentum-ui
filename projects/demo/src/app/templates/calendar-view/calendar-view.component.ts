@@ -1,10 +1,37 @@
 import { Component } from '@angular/core';
-import { EventDTO, CalendarComponent } from 'fui';
+import {
+  CalendarComponent,
+  EventDTO,
+  FilterGroupButtonComponent,
+  FilterGroupComponent,
+  FlyoutBodyComponent,
+  FlyoutComponent,
+  FlyoutHeaderComponent,
+  IconsComponent,
+  ModalBodyComponent,
+  ModalComponent,
+  ModalFooterComponent,
+  ModalHeaderComponent,
+} from 'fui';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-calendar-view',
   standalone: true,
-  imports: [CalendarComponent],
+  imports: [
+    CommonModule,
+    CalendarComponent,
+    ModalComponent,
+    ModalHeaderComponent,
+    ModalBodyComponent,
+    ModalFooterComponent,
+    FlyoutComponent,
+    FlyoutHeaderComponent,
+    FlyoutBodyComponent,
+    IconsComponent,
+    FilterGroupComponent,
+    FilterGroupButtonComponent,
+  ],
   templateUrl: './calendar-view.component.html',
   styleUrl: './calendar-view.component.scss',
 })
@@ -230,4 +257,32 @@ export class CalendarViewComponent {
       },
     },
   ];
+  eventShow!: EventDTO;
+  isModalOpen: boolean = false;
+  isOpenFlyout: boolean = false;
+  active: boolean = true;
+
+  actionEvent(event: EventDTO): void {
+    this.eventShow = event;
+    if (this.active) {
+      this.handleModal();
+    } else {
+      this.handleFlyout();
+    }
+  }
+
+  handleModal(): void {
+    this.isModalOpen = !this.isModalOpen;
+  }
+  handleFlyout(): void {
+    this.isOpenFlyout = !this.isOpenFlyout;
+  }
+
+  test(event: any): void {
+    console.log(event);
+  }
+
+  onOff(value: boolean): void {
+    this.active = value;
+  }
 }

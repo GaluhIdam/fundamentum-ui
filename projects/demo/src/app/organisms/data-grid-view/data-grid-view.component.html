@@ -8,20 +8,37 @@
 </p>
 
 <!-- Data Grid -->
-<fui-data-grid-v2
-  (sortPerField)="sortPerField($event)"
-  (toggleAction)="toggleOpen($event)"
-  (searchPerField)="searchPerField($event)"
-  (onPageChanges)="onPageChanges($event)"
-  [title]="title"
-  [data]="dataContent"
-  [limit]="limit"
-  [totalItems]="totalItems"
-  [density]="'normal'"
-  [rowHeight]="'single'"
-/>
-<h1>Data Grid</h1>
-<!-- Modal Action -->
+<div class="wrap-grid">
+  <fui-data-grid
+    (toggleAction)="toggleOpen($event)"
+    (onPageChanges)="onPageChanges($event)"
+    (sortSearchEmit)="sortSearchEmit($event)"
+    [title]="title"
+    [data]="dataContent"
+    [limit]="limit"
+    [totalItems]="totalItems"
+    [density]="'normal'"
+    [rowHeight]="'single'"
+  />
+</div>
+
+<fui-link
+  [colorLink]="'success'"
+  [urlLink]="'https://dummyjson.com/docs/products'"
+  [typeLink]="'external'"
+>
+  Dummy Rest API
+</fui-link>
+<p>
+  Just an information that the current REST API being used does not provide sort
+  and search features per field. Here we only display objects returned by the
+  component to be used in the parent component to perform sort and search per
+  field.
+</p>
+<p>JSON :</p>
+<div>
+  {{ sortSearchReturn | json }}
+</div>
 
 <!-- Flyout Action -->
 <fui-flyout [open]="isOpenFlyout" [flyoutSize]="'s'" [flyoutPadding]="'m'">
@@ -37,11 +54,8 @@
     </div>
   </fui-flyout-header>
   <fui-flyout-body>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
-      recusandae tempore corrupti obcaecati voluptate eos, totam illum in
-      mollitia repellendus possimus officia similique quis assumenda
-      perspiciatis nesciunt, quasi tenetur architecto!
-    </p>
+    <div>
+      {{ content | json }}
+    </div>
   </fui-flyout-body>
 </fui-flyout>

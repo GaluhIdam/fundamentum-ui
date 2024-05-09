@@ -17,6 +17,10 @@
     </fui-header-panel>
 
     <fui-header-panel>
+      <fui-sitewide-search (onClick)="goTo($event)" [placeholder]="'Search Component'" [mode]="'dark'" [size]="'s'" [data]="filteredData" [searchForm]="searchForm" />
+    </fui-header-panel>
+
+    <fui-header-panel>
       <div class="nav-item">
         <fui-avatar
           [shape]="'spaces'"
@@ -39,10 +43,16 @@
   <fui-page-sidebar *ngIf="isSidebar">
     <div class="container">
       <h1 class="title-link">Guidelines</h1>
-      <fui-link class="nav-item" [typeLink]="'coloring'" [urlLink]="'getting-started'"
+      <fui-link
+        class="nav-item"
+        [typeLink]="'coloring'"
+        [urlLink]="'getting-started'"
         >Getting Started</fui-link
       >
-      <fui-link class="nav-item" [typeLink]="'external'" [urlLink]="'http://localhost:8080'"
+      <fui-link
+        class="nav-item"
+        [typeLink]="'external'"
+        [urlLink]="'http://localhost:8080'"
         >Documentation</fui-link
       >
     </div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {
   FlyoutBodyComponent,
   FlyoutComponent,
@@ -19,7 +19,7 @@ import { EventDTO } from './event.dto';
  * ```html
  * <fui-calendar
      [events]="eventsInMay"
-     [actions]="'modal'" />
+     (actionEvent)="actionEvent($event)" />
  * ```
  * <example-url>http://localhost:4200/templates/calendar</example-url>
  */
@@ -44,7 +44,7 @@ import { EventDTO } from './event.dto';
 })
 export class CalendarComponent {
   @Input() events: EventDTO[] = [];
-  @Input() actions: 'flyout' | 'modal' = 'modal';
+  @Output() actionEvent: EventEmitter<EventDTO> = new EventEmitter();
 
   /**
    * @ignore
@@ -75,8 +75,6 @@ export class CalendarComponent {
   weeks: { date: number; day: string; month: string }[][] = [];
   prevMonth: string = 'April';
   nextMonth: string = 'June';
-  isModalOpen: boolean = false;
-  isOpenFlyout: boolean = false;
 
   /**
    * @ignore
@@ -214,31 +212,8 @@ export class CalendarComponent {
   /**
    * @ignore
    */
-  openModal(obj: EventDTO) {
-    this.eventShow = obj;
-    this.isModalOpen = true;
-  }
-
-  /**
-   * @ignore
-   */
-  handleOpenFlyout(obj: EventDTO): void {
-    this.eventShow = obj;
-    this.isOpenFlyout = true;
-  }
-
-  /**
-   * @ignore
-   */
-  handleCloseModal() {
-    this.isModalOpen = false;
-  }
-
-  /**
-   * @ignore
-   */
-  handleCloseFlyout() {
-    this.isOpenFlyout = false;
+  parseData(obj: EventDTO): void {
+    this.actionEvent.emit(obj);
   }
 
   /**

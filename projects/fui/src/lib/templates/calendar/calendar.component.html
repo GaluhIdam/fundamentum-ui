@@ -54,11 +54,7 @@
               </p>
               <ng-container *ngFor="let event of events">
                 <div
-                  (click)="
-                    actions === 'flyout'
-                      ? handleOpenFlyout(event)
-                      : openModal(event)
-                  "
+                  (click)="parseData(event)"
                   *ngIf="
                     day.month === event.month &&
                     day.date === event.date &&
@@ -77,94 +73,3 @@
     </table>
   </div>
 </div>
-
-<!-- Modal Body -->
-<fui-modal [open]="isModalOpen" *ngIf="eventShow">
-  <fui-modal-header (onCloseModal)="handleCloseModal()">
-    <div class="{{ 'head-modal-' + eventShow.color }}">
-      <fui-icons
-        [icon]="'calendar'"
-        [size]="'sizes'"
-        [color]="eventShow.color"
-      />
-      <span>Event</span>
-    </div>
-  </fui-modal-header>
-  <fui-modal-body>
-    <div class="modal-body-content">
-      <div class="head-event-detail">
-        <span class="{{ 'title-' + eventShow.color }}">{{
-          eventShow.event.title
-        }}</span>
-        <span class="additional">{{ eventShow.event.subTitle }}</span>
-      </div>
-      <div class="date-event-detail">
-        <div style="width: 50px">
-          <p>Start</p>
-          <p>End</p>
-          <p>Place</p>
-        </div>
-        <div class="content-schedule">
-          <p>: {{ eventShow.event.start }}</p>
-          <p>: {{ eventShow.event.end }}</p>
-          <p>: {{ eventShow.event.place }}</p>
-        </div>
-      </div>
-      <div class="content-event">
-        <span class="desc-content-event">Description :</span>
-        <p class="desc-event">
-          {{ eventShow.event.description }}
-        </p>
-      </div>
-    </div>
-  </fui-modal-body>
-</fui-modal>
-<!-- Modal Body -->
-
-<!-- FlyOut -->
-<fui-flyout
-  *ngIf="eventShow"
-  [open]="isOpenFlyout"
-  [flyoutSize]="'s'"
-  [flyoutPadding]="'m'"
->
-  <fui-flyout-header (onCloseFlyout)="handleCloseFlyout()">
-    <div class="head-event-detail">
-      <span class="{{ 'title-' + eventShow.color }}"
-        ><fui-icons
-          style="margin-right: 5px"
-          [icon]="'calendar'"
-          [size]="'sizes'"
-          [color]="eventShow.color"
-        />Event</span
-      >
-    </div>
-  </fui-flyout-header>
-  <fui-flyout-body>
-    <div class="head-event-detail">
-      <span class="{{ 'title-' + eventShow.color }}">{{
-        eventShow.event.title
-      }}</span>
-      <span class="additional">{{ eventShow.event.subTitle }}</span>
-    </div>
-    <div class="date-event-detail">
-      <div style="width: 50px">
-        <p>Start</p>
-        <p>End</p>
-        <p>Place</p>
-      </div>
-      <div class="content-schedule">
-        <p>: {{ eventShow.event.start }}</p>
-        <p>: {{ eventShow.event.end }}</p>
-        <p>: {{ eventShow.event.place }}</p>
-      </div>
-    </div>
-    <div class="content-event">
-      <span class="desc-content-event">Description :</span>
-      <p class="desc-event">
-        {{ eventShow.event.description }}
-      </p>
-    </div>
-  </fui-flyout-body>
-</fui-flyout>
-<!-- FlyOut -->

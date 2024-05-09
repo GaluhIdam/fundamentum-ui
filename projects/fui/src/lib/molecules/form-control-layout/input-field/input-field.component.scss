@@ -2,6 +2,12 @@
 :host {
   width: -webkit-fill-available;
 }
+.dark {
+  color: $fuiColorEmptyShade;
+}
+.light {
+  color: $fuiColorDarkestShade;
+}
 .fui-input-field {
   @include inputFieldContainer();
 }
