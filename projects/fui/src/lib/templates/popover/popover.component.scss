@@ -9,14 +9,11 @@
 
 .popover {
   position: relative;
-  width: 100%;
+  width: -webkit-fill-available;
 
   &-container {
     position: absolute;
     z-index: 1;
-    width: -webkit-fill-available;
-    width: max-content;
-    max-width: size.$fuiMaxWidthPopover;
     margin: auto;
     background: color.$fuiColorEmptyShade;
     box-shadow: rgba($color: color.$fuiColorDarkestShade, $alpha: 0.2) 0px 8px
