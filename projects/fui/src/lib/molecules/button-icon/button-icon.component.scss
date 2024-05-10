@@ -1,7 +1,5 @@
 @import "../../styles/index";
-:host {
-  width: -webkit-fill-available;
-}
+
 /* Button Filled S*/
 .btn-fui-primary-s {
   @include buttonIconMix(

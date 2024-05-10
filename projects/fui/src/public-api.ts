@@ -38,6 +38,7 @@ export * from './lib/organisms/list-group/list-group-item/list-group-item.compon
 export * from './lib/organisms/list-group/list-group-pinnable/list-group-pinnable.component';
 export * from './lib/organisms/tour/tour.component';
 export * from './lib/organisms/tour/tour-step/tour-step.component';
+export * from './lib/organisms/collapsible-nav-group/collapsible-nav-group.component';
 export * from './lib/templates/flyout/flyout.component';
 export * from './lib/templates/flyout/flyout-header/flyout-header.component';
 export * from './lib/templates/flyout/flyout-body/flyout-body.component';

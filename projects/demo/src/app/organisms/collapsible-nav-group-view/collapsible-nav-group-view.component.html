@@ -1,0 +1,356 @@
+<h1>Collapsible Nav Group</h1>
+<p>
+  The fui-collapsible-nav-group component provides a collapsible navigation
+  group functionality, allowing users to toggle between displaying and hiding
+  content within a navigation section. This component is designed to enhance
+  user experience by optimizing space utilization and providing a clean
+  interface for navigating through content.
+</p>
+<p>
+  The fui-collapsible-nav-group component consists of a header section and a
+  body section. Users can toggle the visibility of the body section by clicking
+  on the header. When collapsed, the body content is hidden, and when expanded,
+  the content is revealed.
+</p>
+
+<div style="margin-bottom: 10px">
+  <fui-collapsible-nav-group
+    class="primary"
+    [isCollapsed]="isCollapsed2"
+    (isCollapse)="toggleCollapse2($event)"
+  >
+    <div header class="header {{ !isCollapsed2 ? 'btm' : '' }}">
+      <div class="logo">
+        <fui-icons [icon]="'package'" [size]="'sizel'" [color]="'primary'" />
+        <h4>Nav Group</h4>
+      </div>
+      <fui-button-icon
+        [type]="'button'"
+        [option]="'icon'"
+        [style]="'filled'"
+        [text]="'Button Primary'"
+        [color]="'primary'"
+        [fullWidth]="false"
+        [icon]="!isCollapsed2 ? 'arrowRight' : 'arrowDown'"
+        [iconSide]="'left'"
+      />
+    </div>
+    <div body class="body">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+    </div>
+  </fui-collapsible-nav-group>
+</div>
+
+<div style="margin-bottom: 10px">
+  <fui-collapsible-nav-group
+    class="success"
+    [isCollapsed]="isCollapsed3"
+    (isCollapse)="toggleCollapse3($event)"
+  >
+    <div header class="header {{ !isCollapsed3 ? 'btm' : '' }}">
+      <div class="logo">
+        <fui-icons [icon]="'package'" [size]="'sizel'" [color]="'success'" />
+        <h4>Nav Group</h4>
+      </div>
+      <fui-button-icon
+        [type]="'button'"
+        [option]="'icon'"
+        [style]="'filled'"
+        [text]="'Button Primary'"
+        [color]="'success'"
+        [fullWidth]="false"
+        [icon]="!isCollapsed3 ? 'arrowRight' : 'arrowDown'"
+        [iconSide]="'left'"
+      />
+    </div>
+    <div body class="body">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+    </div>
+  </fui-collapsible-nav-group>
+</div>
+
+<div style="margin-bottom: 10px">
+  <fui-collapsible-nav-group
+    class="warning"
+    [isCollapsed]="isCollapsed4"
+    (isCollapse)="toggleCollapse4($event)"
+  >
+    <div header class="header {{ !isCollapsed4 ? 'btm' : '' }}">
+      <div class="logo">
+        <fui-icons [icon]="'package'" [size]="'sizel'" [color]="'warning'" />
+        <h4>Nav Group</h4>
+      </div>
+      <fui-button-icon
+        [type]="'button'"
+        [option]="'icon'"
+        [style]="'filled'"
+        [text]="'Button Primary'"
+        [color]="'warning'"
+        [fullWidth]="false"
+        [icon]="!isCollapsed4 ? 'arrowRight' : 'arrowDown'"
+        [iconSide]="'left'"
+      />
+    </div>
+    <div body class="body">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+    </div>
+  </fui-collapsible-nav-group>
+</div>
+
+<div style="margin-bottom: 10px">
+  <fui-collapsible-nav-group
+    class="danger"
+    [isCollapsed]="isCollapsed5"
+    (isCollapse)="toggleCollapse5($event)"
+  >
+    <div header class="header {{ !isCollapsed5 ? 'btm' : '' }}">
+      <div class="logo">
+        <fui-icons [icon]="'package'" [size]="'sizel'" [color]="'danger'" />
+        <h4>Nav Group</h4>
+      </div>
+      <fui-button-icon
+        [type]="'button'"
+        [option]="'icon'"
+        [style]="'filled'"
+        [text]="'Button Primary'"
+        [color]="'danger'"
+        [fullWidth]="false"
+        [icon]="!isCollapsed5 ? 'arrowRight' : 'arrowDown'"
+        [iconSide]="'left'"
+      />
+    </div>
+    <div body class="body">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+    </div>
+  </fui-collapsible-nav-group>
+</div>
+
+<div style="margin-bottom: 10px">
+  <fui-collapsible-nav-group
+    class="dark"
+    [isCollapsed]="isCollapsed6"
+    (isCollapse)="toggleCollapse6($event)"
+  >
+    <div header class="header {{ !isCollapsed6 ? 'btm' : '' }}">
+      <div class="logo">
+        <fui-icons [icon]="'package'" [size]="'sizel'" [color]="'ghost'" />
+        <h4>Nav Group</h4>
+      </div>
+      <fui-button-icon
+        [type]="'button'"
+        [option]="'icon'"
+        [style]="'filled'"
+        [text]="'Button Primary'"
+        [color]="'text'"
+        [fullWidth]="false"
+        [icon]="!isCollapsed6 ? 'arrowRight' : 'arrowDown'"
+        [iconSide]="'left'"
+      />
+    </div>
+    <div body class="body">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+    </div>
+  </fui-collapsible-nav-group>
+</div>
+
+<div style="margin-bottom: 10px">
+  <fui-collapsible-nav-group
+    class="text"
+    [isCollapsed]="isCollapsed"
+    (isCollapse)="toggleCollapse($event)"
+  >
+    <div header class="header {{ !isCollapsed ? 'btm' : '' }}">
+      <div class="logo">
+        <fui-icons [icon]="'package'" [size]="'sizel'" [color]="'text'" />
+        <h4>Nav Group</h4>
+      </div>
+      <fui-button-icon
+        [type]="'button'"
+        [option]="'icon'"
+        [style]="'secondary'"
+        [text]="'Button Primary'"
+        [color]="'text'"
+        [fullWidth]="false"
+        [icon]="!isCollapsed ? 'arrowRight' : 'arrowDown'"
+        [iconSide]="'left'"
+      />
+    </div>
+    <div body class="body">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        commodi, fuga earum ab nobis accusamus delectus voluptatibus impedit
+        placeat? Facere minima commodi suscipit illo rerum doloremque illum
+        magni, est architecto?
+      </p>
+    </div>
+  </fui-collapsible-nav-group>
+</div>

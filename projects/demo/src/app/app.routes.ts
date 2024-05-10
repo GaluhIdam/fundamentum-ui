@@ -51,6 +51,7 @@ import { ListGroupViewComponent } from './organisms/list-group-view/list-group-v
 import { CodeBlockViewComponent } from './atoms/code-block-view/code-block-view.component';
 import { CalendarViewComponent } from './templates/calendar-view/calendar-view.component';
 import { TourViewComponent } from './organisms/tour-view/tour-view.component';
+import { CollapsibleNavGroupViewComponent } from './organisms/collapsible-nav-group-view/collapsible-nav-group-view.component';
 
 /** ATTENTION, ADD A TITLE IN CHILDREN ROUTE FOR THE DOCUMENTATION */
 export const routes: Routes = [
@@ -193,6 +194,11 @@ export const routes: Routes = [
         title: 'Filter Group',
         path: 'filter-group',
         component: FilterGroupViewComponent,
+      },
+      {
+        title: 'Collapsible Nav Group',
+        path: 'collapsible-nav-group',
+        component: CollapsibleNavGroupViewComponent,
       },
       {
         title: 'Empty Prompt',
