@@ -10,6 +10,7 @@
 .popover {
   position: relative;
   width: -webkit-fill-available;
+  min-width: max-content;
 
   &-container {
     position: absolute;
@@ -90,14 +91,20 @@
 }
 
 .popover-p-s {
+  width: -webkit-fill-available;
+  min-width: max-content;
   padding: size.$fuiSizeS;
 }
 
 .popover-p-m {
+  width: -webkit-fill-available;
+  min-width: max-content;
   padding: size.$fuiSizeM;
 }
 
 .popover-p-l {
+  width: -webkit-fill-available;
+  min-width: max-content;
   padding: size.$fuiSizeL;
 }
 
