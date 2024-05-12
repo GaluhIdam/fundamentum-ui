@@ -7,7 +7,7 @@ import {
   TableBodyRowComponent,
   TableComponent,
   TableHeadComponent,
-} from '../../../../../fui/src/public-api';
+} from 'fui';
 import { DataGridViewService } from '../data-grid-view/data-grid-view.service';
 import { ProductsDTO } from '../data-grid-view/products.dto';
 import {
