@@ -241,7 +241,7 @@
                 <div class="item-pop-head">
                   {{ key }}
                 </div>
-                <div popover-body style="border-radius: 10px; min-width: 180px;">
+                <div popover-body style="border-radius: 10px; min-width: 180px">
                   <fui-form-control-layout>
                     <fui-input-field
                       [type]="'text'"
@@ -318,7 +318,7 @@
                     />
                   </ng-container>
                 </div>
-                <div popover-body style="border-radius: 10px; min-width: 180px;">
+                <div popover-body style="border-radius: 10px; min-width: 180px">
                   <fui-form-control-layout>
                     <fui-input-field
                       [type]="'text'"
@@ -412,7 +412,10 @@
       </div>
     </div>
     <div class="pagination" *ngIf="data.length > 0">
-      <span class="showing">Showing {{ limit }} of {{ totalItems }}</span>
+      <span class="showing"
+        >Showing {{ getRangeStart() }} - {{ getRangeEnd() }} of
+        {{ totalItems }}</span
+      >
       <div class="page">
         <fui-pagination
           (onPageChange)="onPageChange($event)"

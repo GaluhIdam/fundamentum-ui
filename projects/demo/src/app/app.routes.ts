@@ -52,6 +52,7 @@ import { CodeBlockViewComponent } from './atoms/code-block-view/code-block-view.
 import { CalendarViewComponent } from './templates/calendar-view/calendar-view.component';
 import { TourViewComponent } from './organisms/tour-view/tour-view.component';
 import { CollapsibleNavGroupViewComponent } from './organisms/collapsible-nav-group-view/collapsible-nav-group-view.component';
+import { TableViewComponent } from './organisms/table-view/table-view.component';
 
 /** ATTENTION, ADD A TITLE IN CHILDREN ROUTE FOR THE DOCUMENTATION */
 export const routes: Routes = [
@@ -194,6 +195,11 @@ export const routes: Routes = [
         title: 'Filter Group',
         path: 'filter-group',
         component: FilterGroupViewComponent,
+      },
+      {
+        title: 'Table',
+        path: 'table',
+        component: TableViewComponent,
       },
       {
         title: 'Collapsible Nav Group',

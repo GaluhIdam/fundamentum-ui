@@ -1,0 +1,9 @@
+@import "../../../styles/index";
+
+:host {
+  display: table-row-group;
+  vertical-align: middle;
+  unicode-bidi: isolate;
+  border-color: inherit;
+}
+

@@ -9,7 +9,7 @@ $reducer : 30;
   font-family: $fuiFontFamily;
   font-weight: $fuiFontWeightMedium;
   padding: $paddingTopBottom $paddingLeftRight;
-  width: auto;
+  width: fit-content;
 
   display: flex !important;
   align-items: center;
@@ -36,7 +36,7 @@ $reducer : 30;
 }
 .warning {
   @include fuiBadge($fuiColorWarning, $fuiColorInk);
-} 
+}
 
 .danger {
   @include fuiBadge($fuiColorDanger, $fuiColorGhost);

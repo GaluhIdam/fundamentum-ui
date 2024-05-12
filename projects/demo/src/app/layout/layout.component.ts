@@ -102,7 +102,7 @@ export class LayoutComponent {
 
   ngOnInit(): void {
     this.obs = this.searchForm.valueChanges
-      .pipe(debounceTime(1000))
+      .pipe(debounceTime(400))
       .subscribe((data) => {
         console.log(data);
         this.filterData();

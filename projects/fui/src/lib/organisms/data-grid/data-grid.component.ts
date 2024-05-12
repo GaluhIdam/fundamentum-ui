@@ -83,6 +83,7 @@ export class DataGridComponent {
   heightGrid: number = 0;
   fullScreen: boolean = false;
   textAlign: 'left' | 'center' | 'right' = 'left';
+  page: number = 1;
 
   /** Columns Config */
   columnVisibility: { [key: string]: boolean } = {};
@@ -260,6 +261,7 @@ export class DataGridComponent {
   /** Pagination Function */
   onPageChange(event: { page: number; itemsPerPage: number }): void {
     this.limit = event.itemsPerPage;
+    this.page = event.page;
     this.onPageChanges.emit({
       page: event.page,
       itemsPerPage: this.limit,
@@ -269,5 +271,16 @@ export class DataGridComponent {
   /** Parsing data to parent */
   toggleActionClick(obj: object): void {
     this.toggleAction.emit(obj);
+  }
+
+  /** Handling Range Page Start */
+  getRangeStart(): number {
+    return (this.page - 1) * this.limit + 1;
+  }
+
+  /** Handling Range Page End */
+  getRangeEnd(): number {
+    const end = this.page * this.limit;
+    return end > this.totalItems ? this.totalItems : end;
   }
 }

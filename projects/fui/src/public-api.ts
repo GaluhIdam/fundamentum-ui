@@ -96,6 +96,11 @@ export * from './lib/organisms/timeline/comment-list/comment-list.component';
 /* Selectable */
 export * from './lib/organisms/selectable/selectable.component';
 export * from './lib/organisms/selectable/selectable.dto';
+export * from './lib/organisms/table/table.component';
+export * from './lib/organisms/table/table-head/table-head.component';
+export * from './lib/organisms/table/table-body/table-body.component';
+export * from './lib/organisms/table/table-body-data/table-body-data.component';
+export * from './lib/organisms/table/table-body-row/table-body-row.component';
 
 /* Side Nav */
 export * from './lib/templates/sidenav/sidenav.component';

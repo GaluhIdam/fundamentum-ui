@@ -1,0 +1,12 @@
+@import "../../../styles/index";
+
+:host {
+  display: table-cell;
+  vertical-align: inherit;
+  unicode-bidi: isolate;
+  border-bottom-color: $fuiColorLightShade;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  color: $fuiColorDarkestShade;
+  padding: 8px;
+}

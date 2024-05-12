@@ -1,46 +1,43 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { DataGridViewService } from './data-grid-view.service';
-import { ProductsDTO } from './products.dto';
+import { Component } from '@angular/core';
 import {
+  BadgeComponent,
+  LinkComponent,
+  TableBodyComponent,
+  TableBodyDataComponent,
+  TableBodyRowComponent,
+  TableComponent,
+  TableHeadComponent,
+} from '../../../../../fui/src/public-api';
+import { DataGridViewService } from '../data-grid-view/data-grid-view.service';
+import { ProductsDTO } from '../data-grid-view/products.dto';
+import {
+  debounceTime,
   Subject,
   Subscription,
-  debounceTime,
   switchMap,
   takeUntil,
 } from 'rxjs';
-import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import {
-  DataGridComponent,
-  FlyoutBodyComponent,
-  FlyoutComponent,
-  FlyoutHeaderComponent,
-  IconsComponent,
-  LinkComponent,
-  PaginationComponent,
-} from '../../../../../fui/src/public-api';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-data-grid-view',
+  selector: 'app-table-view',
   standalone: true,
   imports: [
-    DataGridComponent,
-    HttpClientModule,
+    TableComponent,
+    TableHeadComponent,
+    TableBodyComponent,
+    TableBodyDataComponent,
+    TableBodyRowComponent,
+    BadgeComponent,
+    LinkComponent,
     CommonModule,
     ReactiveFormsModule,
-    FlyoutBodyComponent,
-    FlyoutComponent,
-    FlyoutHeaderComponent,
-    IconsComponent,
-    PaginationComponent,
-    LinkComponent,
   ],
-  templateUrl: './data-grid-view.component.html',
-  styleUrl: './data-grid-view.component.scss',
-  providers: [DataGridViewService],
+  templateUrl: './table-view.component.html',
+  styleUrl: './table-view.component.scss',
 })
-export class DataGridViewComponent implements OnInit, OnDestroy {
+export class TableViewComponent {
   selectedDensity: string = 'normal';
   title: string[] = [
     'ID',
