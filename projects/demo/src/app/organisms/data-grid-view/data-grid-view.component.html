@@ -1,2 +1,61 @@
 <h1>Data Grid</h1>
-<fui-data-grid-v2 [data]="dataContent" />
+<p>
+  FuiDataGrid is for displaying large amounts of tabular data. It is a better
+  choice over FUI tables when there are many columns, the data in those columns
+  is fairly uniform, and when schemas and sorting are important for comparison.
+  Although it is similar to traditional spreedsheet software, FuiDataGrid's
+  current strengths are in rendering rather than creating content.
+</p>
+
+<!-- Data Grid -->
+<div class="wrap-grid">
+  <fui-data-grid
+    (toggleAction)="toggleOpen($event)"
+    (onPageChanges)="onPageChanges($event)"
+    (sortSearchEmit)="sortSearchEmit($event)"
+    [title]="title"
+    [data]="dataContent"
+    [limit]="limit"
+    [totalItems]="totalItems"
+    [density]="'normal'"
+    [rowHeight]="'single'"
+  />
+</div>
+
+<fui-link
+  [colorLink]="'success'"
+  [urlLink]="'https://dummyjson.com/docs/products'"
+  [typeLink]="'external'"
+>
+  Dummy Rest API
+</fui-link>
+<p>
+  Just an information that the current REST API being used does not provide sort
+  and search features per field. Here we only display objects returned by the
+  component to be used in the parent component to perform sort and search per
+  field.
+</p>
+<p>JSON :</p>
+<div>
+  {{ sortSearchReturn | json }}
+</div>
+
+<!-- Flyout Action -->
+<fui-flyout [open]="isOpenFlyout" [flyoutSize]="'s'" [flyoutPadding]="'m'">
+  <fui-flyout-header (onCloseFlyout)="toggleClose()">
+    <div class="title-action">
+      <fui-icons
+        class="title-icon"
+        [icon]="'boxesHorizontal'"
+        [size]="'sizem'"
+        [color]="'text'"
+      />
+      <span class="title">Action</span>
+    </div>
+  </fui-flyout-header>
+  <fui-flyout-body>
+    <div>
+      {{ content | json }}
+    </div>
+  </fui-flyout-body>
+</fui-flyout>

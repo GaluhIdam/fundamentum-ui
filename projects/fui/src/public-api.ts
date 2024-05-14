@@ -38,6 +38,7 @@ export * from './lib/organisms/list-group/list-group-item/list-group-item.compon
 export * from './lib/organisms/list-group/list-group-pinnable/list-group-pinnable.component';
 export * from './lib/organisms/tour/tour.component';
 export * from './lib/organisms/tour/tour-step/tour-step.component';
+export * from './lib/organisms/collapsible-nav-group/collapsible-nav-group.component';
 export * from './lib/templates/flyout/flyout.component';
 export * from './lib/templates/flyout/flyout-header/flyout-header.component';
 export * from './lib/templates/flyout/flyout-body/flyout-body.component';
@@ -77,9 +78,7 @@ export * from './lib/molecules/form-control-layout/select-field/select-field.com
 /* Pagination */
 export * from './lib/organisms/pagination/pagination.component';
 /* Data Grid */
-export * from './lib/organisms/data-grid-v2/data-grid-v2.component';
 export * from './lib/organisms/data-grid/data-grid.component';
-export * from './lib/organisms/data-grid/content-row/content-row.component';
 
 /* Steps */
 export * from './lib/organisms/steps/steps.component';
@@ -97,6 +96,11 @@ export * from './lib/organisms/timeline/comment-list/comment-list.component';
 /* Selectable */
 export * from './lib/organisms/selectable/selectable.component';
 export * from './lib/organisms/selectable/selectable.dto';
+export * from './lib/organisms/table/table.component';
+export * from './lib/organisms/table/table-head/table-head.component';
+export * from './lib/organisms/table/table-body/table-body.component';
+export * from './lib/organisms/table/table-body-data/table-body-data.component';
+export * from './lib/organisms/table/table-body-row/table-body-row.component';
 
 /* Side Nav */
 export * from './lib/templates/sidenav/sidenav.component';
@@ -149,6 +153,8 @@ export * from './lib/templates/page/page-sidebar/page-sidebar.component';
 export * from './lib/templates/page/page-header/page-header.component';
 export * from './lib/templates/page/page-body/page-body.component';
 export * from './lib/templates/page/page-section/page-section.component';
+export * from './lib/templates/calendar/calendar.component';
+export * from './lib/templates/calendar/event.dto';
 
 /**Dark Mode Feature */
 export * from './lib/templates/flex/flex-group.component';

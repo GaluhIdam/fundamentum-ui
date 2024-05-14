@@ -1,0 +1,12 @@
+<div
+  class="collapsible-wrap"
+  [class.collapsed]="!isCollapsed"
+  (click)="toggleCollapse()"
+>
+  <div class="nav-header">
+    <ng-content select="[header]"></ng-content>
+  </div>
+  <div class="nav-body">
+    <ng-content select="[body]"></ng-content>
+  </div>
+</div>

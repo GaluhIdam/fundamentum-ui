@@ -21,7 +21,6 @@ import { IconsComponent } from '../../atoms/icons/icons.component';
  * ```
  * <example-url>http://localhost:4200/organisms/empty-prompt</example-url>
  */
-
 @Component({
   selector: 'fui-empty-prompt',
   standalone: true,

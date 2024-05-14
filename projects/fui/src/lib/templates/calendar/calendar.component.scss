@@ -1,0 +1,91 @@
+@import "../../styles/index";
+
+.calendar {
+  width: -webkit-fill-available;
+  height: max-content;
+  overflow: hidden;
+}
+.head-calendar {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.now {
+  color: $fuiColorDarkShade;
+}
+
+.utility {
+  align-content: center;
+}
+
+.title {
+  h1 {
+    @include monthYearMix($fuiColorDarkestShade);
+  }
+  h4 {
+    @include monthYearMix($fuiColorDarkShade);
+  }
+}
+
+.select-form {
+  @include selectFormMix();
+}
+.content-calendar {
+  width: -webkit-fill-available;
+  border-collapse: collapse;
+}
+.week-calendar {
+  @include weekCalendarMix();
+}
+.day-calendar {
+  @include dayCalendarTodayMix(
+    $fuiColorDarkestShade,
+    $fuiColorEmptyShade,
+    $fuiColorLightShade,
+    10px,
+    $fuiColorDarkShade
+  );
+}
+
+.today {
+  @include dayCalendarTodayMix(
+    $fuiColorDarkestShade,
+    $fuiColorLightShade,
+    $fuiColorLightShade,
+    10px,
+    $fuiColorDarkestShade
+  );
+}
+
+.event-calendar-primary {
+  @include eventCalendarMix($fuiBtnPrimarySecondary, $fuiColorPrimary);
+}
+.event-calendar-success {
+  @include eventCalendarMix($fuiBtnSuccessSecondary, $fuiColorSuccess);
+}
+.event-calendar-warning {
+  @include eventCalendarMix($fuiBtnWarningSecondary, $fuiColorWarning);
+}
+.event-calendar-danger {
+  @include eventCalendarMix($fuiBtnDangerSecondary, $fuiColorDanger);
+}
+.event-calendar-text {
+  @include eventCalendarTextMix();
+}
+
+/** Add On*/
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: $fuiColorLightShade;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $fuiColorLightShade;
+}

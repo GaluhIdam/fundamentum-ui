@@ -49,7 +49,10 @@ import { PaginationViewComponent } from './organisms/pagination-view/pagination-
 import { FlexViewComponent } from './templates/flex-view/flex-view.component';
 import { ListGroupViewComponent } from './organisms/list-group-view/list-group-view.component';
 import { CodeBlockViewComponent } from './atoms/code-block-view/code-block-view.component';
+import { CalendarViewComponent } from './templates/calendar-view/calendar-view.component';
 import { TourViewComponent } from './organisms/tour-view/tour-view.component';
+import { CollapsibleNavGroupViewComponent } from './organisms/collapsible-nav-group-view/collapsible-nav-group-view.component';
+import { TableViewComponent } from './organisms/table-view/table-view.component';
 
 /** ATTENTION, ADD A TITLE IN CHILDREN ROUTE FOR THE DOCUMENTATION */
 export const routes: Routes = [
@@ -194,6 +197,16 @@ export const routes: Routes = [
         component: FilterGroupViewComponent,
       },
       {
+        title: 'Table',
+        path: 'table',
+        component: TableViewComponent,
+      },
+      {
+        title: 'Collapsible Nav Group',
+        path: 'collapsible-nav-group',
+        component: CollapsibleNavGroupViewComponent,
+      },
+      {
         title: 'Empty Prompt',
         path: 'empty-prompt',
         component: EmptyPromptViewComponent,
@@ -242,6 +255,11 @@ export const routes: Routes = [
         title: 'Echarts',
         path: 'echarts',
         component: EchartsViewComponent,
+      },
+      {
+        title: 'Pagination',
+        path: 'pagination',
+        component: PaginationViewComponent,
       },
       {
         title: 'Selectable',
@@ -364,8 +382,14 @@ export const routes: Routes = [
         component: ResizableContainerViewComponent,
       },
       {
+        title: 'Flex',
         path: 'flex',
         component: FlexViewComponent,
+      },
+      {
+        title: 'Calendar',
+        path: 'calendar',
+        component: CalendarViewComponent,
       },
     ],
   },

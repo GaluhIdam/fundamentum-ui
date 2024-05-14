@@ -1,0 +1,122 @@
+<h1>Calendar</h1>
+<p>
+  The calendar component in Angular is a user interface element that allows
+  users to view and interact with dates in a structured manner. It typically
+  provides a visual representation of dates, allowing users to navigate through
+  months and years, select specific dates, and sometimes even display additional
+  information such as events or reminders.
+</p>
+
+<p style="margin-top: 50px">Change Utility :</p>
+<fui-filter-group [fullWidth]="false">
+  <fui-filter-group-button
+    (onClick)="onOff(true)"
+    [active]="active"
+    [withNext]="true"
+  >
+    Modal
+  </fui-filter-group-button>
+  <fui-filter-group-button (onClick)="onOff(false)" [active]="!active">
+    Flyout
+  </fui-filter-group-button>
+</fui-filter-group>
+
+<p>
+  Regarding actions for utility customization, there are several ways to achieve
+  this. Here's an example using flyouts and modals.
+</p>
+
+<div style="margin-top: 50px; margin-bottom: 50px">
+  <fui-calendar [events]="eventsInMay" (actionEvent)="actionEvent($event)" />
+</div>
+
+<!-- Modal Body -->
+<fui-modal [open]="isModalOpen" *ngIf="eventShow">
+  <fui-modal-header (onCloseModal)="handleModal()">
+    <div class="{{ 'head-modal-' + eventShow.color }}">
+      <fui-icons
+        [icon]="'calendar'"
+        [size]="'sizes'"
+        [color]="eventShow.color"
+      />
+      <span>Event</span>
+    </div>
+  </fui-modal-header>
+  <fui-modal-body>
+    <div class="modal-body-content">
+      <div class="head-event-detail">
+        <span class="{{ 'title-' + eventShow.color }}">{{
+          eventShow.event.title
+        }}</span>
+        <span class="additional">{{ eventShow.event.subTitle }}</span>
+      </div>
+      <div class="date-event-detail">
+        <div style="width: 50px">
+          <p>Start</p>
+          <p>End</p>
+          <p>Place</p>
+        </div>
+        <div class="content-schedule">
+          <p>: {{ eventShow.event.start }}</p>
+          <p>: {{ eventShow.event.end }}</p>
+          <p>: {{ eventShow.event.place }}</p>
+        </div>
+      </div>
+      <div class="content-event">
+        <span class="desc-content-event">Description :</span>
+        <p class="desc-event">
+          {{ eventShow.event.description }}
+        </p>
+      </div>
+    </div>
+  </fui-modal-body>
+</fui-modal>
+<!-- Modal Body -->
+
+<!-- FlyOut -->
+<fui-flyout
+  *ngIf="eventShow"
+  [open]="isOpenFlyout"
+  [flyoutSize]="'s'"
+  [flyoutPadding]="'m'"
+>
+  <fui-flyout-header (onCloseFlyout)="handleFlyout()">
+    <div class="head-event-detail">
+      <span class="{{ 'title-' + eventShow.color }}"
+        ><fui-icons
+          style="margin-right: 5px"
+          [icon]="'calendar'"
+          [size]="'sizes'"
+          [color]="eventShow.color"
+        />Event</span
+      >
+    </div>
+  </fui-flyout-header>
+  <fui-flyout-body>
+    <div class="head-event-detail">
+      <span class="{{ 'title-' + eventShow.color }}">{{
+        eventShow.event.title
+      }}</span>
+      <span class="additional">{{ eventShow.event.subTitle }}</span>
+    </div>
+    <div class="date-event-detail">
+      <div style="width: 50px">
+        <p>Start</p>
+        <p>End</p>
+        <p>Place</p>
+      </div>
+      <div class="content-schedule">
+        <p>: {{ eventShow.event.start }}</p>
+        <p>: {{ eventShow.event.end }}</p>
+        <p>: {{ eventShow.event.place }}</p>
+      </div>
+    </div>
+    <div class="content-event">
+      <span class="desc-content-event">Description :</span>
+      <p class="desc-event">
+        {{ eventShow.event.description }}
+      </p>
+    </div>
+  </fui-flyout-body>
+</fui-flyout>
+<!-- FlyOut -->

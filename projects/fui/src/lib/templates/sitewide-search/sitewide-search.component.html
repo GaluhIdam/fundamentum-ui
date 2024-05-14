@@ -1,18 +1,19 @@
-<fui-popover [position]="'bottom'">
+<fui-popover [position]="'bottom'" [displayPopover]="isOpen">
   <fui-form-control-layout>
     <fui-input-field
       [formControlField]="searchForm"
       [type]="'text'"
-      [size]="'m'"
+      [size]="size"
       [placeholder]="placeholder"
       [invalid]="false"
+      [mode]="mode"
     >
       <fui-icons
         left-icon
         [label]="'left'"
         [icon]="'search'"
-        [size]="'sizem'"
-        [color]="'text'"
+        [size]="size === 'm' ? 'sizem' : size === 's' ? 'sizes' : 'sizel'"
+        [color]="mode === 'dark' ? 'ghost' : 'text'"
       />
     </fui-input-field>
     <fui-append>
@@ -20,30 +21,35 @@
     </fui-append>
   </fui-form-control-layout>
   <div popover-body>
-    <div class="fui-selection" *ngFor="let item of data">
-      <div class="flex">
-        <fui-icons
-          class="icon"
-          *ngIf="item.icon"
-          [size]="'sizexl'"
-          [color]="'disabled'"
-          [icon]="item.icon"
-        ></fui-icons>
-        <div class="selection-desc">
-          <span class="title">{{ item.title }}</span>
-          <span class="desc-title" *ngIf="item.description">{{
-            item.description
-          }}</span>
+    <div class="container-item">
+      <div
+        class="fui-selection"
+        *ngFor="let item of data"
+        (click)="handleOnClick(item)"
+      >
+        <div class="flex">
+          <fui-icons
+            class="icon"
+            *ngIf="item.icon"
+            [size]="'sizexl'"
+            [color]="'disabled'"
+            [icon]="item.icon"
+          ></fui-icons>
+          <div class="selection-desc">
+            <span class="title">{{ item.title }}</span>
+            <span class="desc-title" *ngIf="item.description">{{
+              item.description
+            }}</span>
+          </div>
         </div>
+        <fui-avatar
+          [size]="'sizem'"
+          [shape]="'spaces'"
+          [avatarBorder]="true"
+          [color]="'primary'"
+          [name]="item.title"
+        ></fui-avatar>
       </div>
-      <fui-avatar
-        [size]="'sizem'"
-        [shape]="'spaces'"
-        [avatarBorder]="true"
-        [color]="'primary'"
-        [name]="item.title"
-        (onClickAvatar)="handleClickAvatar($event)"
-      ></fui-avatar>
     </div>
     <hr class="line" />
     <div class="quick-search">

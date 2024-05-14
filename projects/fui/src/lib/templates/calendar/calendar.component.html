@@ -1,0 +1,75 @@
+<div class="calendar">
+  <div class="head-calendar">
+    <div class="title">
+      <h1>{{ selectedMonth }}</h1>
+      <h4>{{ selectedYear }}</h4>
+    </div>
+    <div class="utility">
+      <select
+        class="select-form"
+        name="month"
+        id="month"
+        [(ngModel)]="selectedMonth"
+        (change)="updateDaysInMonth()"
+      >
+        <option *ngFor="let item of month" [value]="item">{{ item }}</option>
+      </select>
+      <select
+        class="select-form"
+        name="year"
+        id="year"
+        [(ngModel)]="selectedYear"
+        (change)="updateDaysInMonth()"
+      >
+        <option *ngFor="let item of year" [value]="item">{{ item }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="body-calendar">
+    <table class="content-calendar">
+      <thead>
+        <tr>
+          <th class="week-calendar" *ngFor="let day of weekdays">{{ day }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="date-calendar" *ngFor="let week of weeks">
+          <ng-container *ngFor="let day of week">
+            <td
+              class="{{
+                nowDate === day.date &&
+                nowMonth === day.month &&
+                selectedYear === nowYear
+                  ? 'today'
+                  : 'day-calendar'
+              }}"
+            >
+              <p
+                [ngClass]="{
+                  'outside-month': day.month !== selectedMonth,
+                  'date-day': day.month === selectedMonth
+                }"
+              >
+                {{ day.date }}
+              </p>
+              <ng-container *ngFor="let event of events">
+                <div
+                  (click)="parseData(event)"
+                  *ngIf="
+                    day.month === event.month &&
+                    day.date === event.date &&
+                    selectedYear === event.year
+                  "
+                  class="{{ 'event-calendar-' + event.color }}"
+                >
+                  <span class="title">{{ event.event.title }}</span>
+                  <span class="subTitle">{{ event.event.subTitle }}</span>
+                </div>
+              </ng-container>
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

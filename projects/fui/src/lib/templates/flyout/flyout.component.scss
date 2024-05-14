@@ -31,7 +31,7 @@
 
     ::ng-deep fui-flyout-body {
       flex: 1;
-      overflow-y: scroll;
+      overflow-y: auto;
 
       scrollbar-width: thin;
       scrollbar-color: color.$fuiColorLightShade;

@@ -12,6 +12,7 @@ import { Router, RouterModule } from '@angular/router';
     [colorLink]="'success'"
     [urlLink]="'https://www.google.com'"
     [typeLink]="'external'">
+    Google
  * </fui-link>
  * ```
  * <example-url>http://localhost:4200/atoms/link</example-url>

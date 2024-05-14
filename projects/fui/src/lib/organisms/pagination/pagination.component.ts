@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { IconsComponent } from '../../atoms/icons/icons.component';
 import { ButtonComponent } from '../../atoms/button/button.component';
 import { TextComponent } from '../../atoms/text/text.component';
@@ -36,7 +43,7 @@ interface Page {
     PopoverComponent,
   ],
 })
-export class PaginationComponent implements OnInit {
+export class PaginationComponent {
   @Input({ required: true }) totalItems: number = 0;
   @Input() itemsPerPage: number = 10;
   @Input() pageSizeOptions: number[] = [5, 10, 20];
@@ -56,9 +63,12 @@ export class PaginationComponent implements OnInit {
   pageSizeOptionsValue: { size: number; label: string }[] = [];
   selectedSize: string = '';
 
-  ngOnInit(): void {
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  ngAfterViewChecked(): void {
     this.generatePages();
     this.generatePageSizeOption();
+    this.cdr.detectChanges();
   }
 
   generatePageSizeOption() {
@@ -166,6 +176,9 @@ export class PaginationComponent implements OnInit {
   selectSize(size: number, label: string) {
     this.itemsPerPage = size;
     this.selectedSize = label;
+    if (this.itemsPerPage === this.totalItems) {
+      this.currentPage = 1;
+    }
     this.onEmitPageChange();
   }
 

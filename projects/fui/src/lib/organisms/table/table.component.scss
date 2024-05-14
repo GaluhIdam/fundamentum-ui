@@ -1,0 +1,66 @@
+@import "../../styles/index";
+.container {
+  width: -webkit-fill-available;
+  position: relative;
+}
+.wrap-table {
+  position: absolute;
+  max-width: -webkit-fill-available;
+  width: -webkit-fill-available;
+}
+.wrap-content {
+  width: -webkit-fill-available;
+  max-width: -webkit-fill-available;
+  overflow-x: auto;
+}
+.table {
+  border-collapse: collapse;
+  text-indent: initial;
+  border-spacing: 2px;
+}
+.thead {
+  display: table-header-group;
+  vertical-align: middle;
+  unicode-bidi: isolate;
+  border-color: inherit;
+}
+.tr {
+  display: table-row;
+  vertical-align: inherit;
+  unicode-bidi: isolate;
+  border-color: inherit;
+}
+.tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  unicode-bidi: isolate;
+  border-color: inherit;
+}
+.page-info {
+  margin-bottom: 10px;
+  color: $fuiColorDarkestShade;
+  display: flex;
+  div {
+    font-weight: 600;
+    margin: 0px 4px 0px 4px;
+  }
+}
+.page {
+  margin-top: 8px;
+}
+
+/** Add On*/
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: $fuiColorMediumShade;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $fuiColorDarkShade;
+}

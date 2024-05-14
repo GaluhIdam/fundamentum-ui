@@ -17,12 +17,11 @@ import { IconsComponent } from '../../atoms/icons/icons.component';
  * The PopoverComponent
  * @usage
  * ```html
- * <fui-popover
- *  [position]="'top'"
- * > Popover
- *  <div popover-body>
- *   Popover Body
- *  </div>
+ * <fui-popover [position]="'top'">
+    Popover
+    <div popover-body>
+     Popover Body
+    </div>
  * </fui-popover>
  * ```
  * <example-url>http://localhost:4200/templates/popover</example-url>

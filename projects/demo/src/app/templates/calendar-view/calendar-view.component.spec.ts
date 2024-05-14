@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContentRowComponent } from './content-row.component';
+import { CalendarViewComponent } from './calendar-view.component';
 
-describe('ContentRowComponent', () => {
-  let component: ContentRowComponent;
-  let fixture: ComponentFixture<ContentRowComponent>;
+describe('CalendarViewComponent', () => {
+  let component: CalendarViewComponent;
+  let fixture: ComponentFixture<CalendarViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ContentRowComponent]
+      imports: [CalendarViewComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ContentRowComponent);
+    fixture = TestBed.createComponent(CalendarViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
