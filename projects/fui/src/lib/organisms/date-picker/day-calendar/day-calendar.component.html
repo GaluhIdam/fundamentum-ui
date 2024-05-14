@@ -1,0 +1,52 @@
+<div *ngIf="currentCalendarMode ===  CalendarMode.Day" class="fui-day-calendar-container" dir="ltr">
+  <fui-calendar-nav
+    (onGoToCurrent)="goToCurrent()"
+    (onLabelClick)="toggleCalendarMode(CalendarMode.Month)"
+    (onLeftNav)="onLeftNavClick()"
+    (onRightNav)="onRightNavClick()"
+    [isLabelClickable]="componentConfig.enableMonthSelector"
+    [label]="navLabel"
+    [showGoToCurrent]="_shouldShowCurrent"
+    [showLeftNav]="showLeftNav"
+    [showRightNav]="showRightNav"
+    [theme]="theme">
+  </fui-calendar-nav>
+
+  <div [ngClass]="{'fui-hide-near-month': !componentConfig.showNearMonthDays}"
+       class="fui-calendar-wrapper">
+    <div class="fui-weekdays">
+      <span *ngFor="let weekday of weekdays"
+            [innerText]="getWeekdayName(weekday)"
+            class="fui-calendar-weekday">
+      </span>
+    </div>
+    <div *ngFor="let week of weeks" class="fui-calendar-week">
+      <span *ngIf="componentConfig.showWeekNumbers"
+            [innerText]="week[0].date.isoWeek()"
+            class="fui-week-number">
+      </span>
+      <button (click)="dayClicked(day)"
+              *ngFor="let day of week"
+              [attr.data-date]="day.date.format(componentConfig.format)"
+              [disabled]="day.disabled"
+              [innerText]="getDayBtnText(day)"
+              [ngClass]="getDayBtnCssClass(day)"
+              class="fui-calendar-day"
+              type="button">
+      </button>
+    </div>
+  </div>
+</div>
+
+<fui-month-calendar
+  (onLeftNav)="onMonthCalendarLeftClick($event)"
+  (onLeftSecondaryNav)="onMonthCalendarSecondaryLeftClick($event)"
+  (onNavHeaderBtnClick)="toggleCalendarMode(CalendarMode.Day)"
+  (onRightNav)="onMonthCalendarRightClick($event)"
+  (onRightSecondaryNav)="onMonthCalendarSecondaryRightClick($event)"
+  (onSelect)="monthSelected($event)"
+  *ngIf="currentCalendarMode ===  CalendarMode.Month"
+  [config]="monthCalendarConfig"
+  [displayDate]="_currentDateView"
+  [ngModel]="_selected">
+</fui-month-calendar>
