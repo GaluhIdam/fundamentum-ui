@@ -1,5 +1,5 @@
 import { TimelineViewComponent } from './organisms/timeline-view/timeline-view.component';
-import { Routes } from '@angular/router';
+import { mapToCanActivate, Routes } from '@angular/router';
 import { ModalViewComponent } from './templates/modal-view/modal-view.component';
 import { PanelViewComponent } from './templates/panel-view/panel-view.component';
 import { BreadcrumbViewComponent } from './molecules/breadcrumb-view/breadcrumb-view.component';
@@ -53,6 +53,9 @@ import { CalendarViewComponent } from './templates/calendar-view/calendar-view.c
 import { TourViewComponent } from './organisms/tour-view/tour-view.component';
 import { CollapsibleNavGroupViewComponent } from './organisms/collapsible-nav-group-view/collapsible-nav-group-view.component';
 import { TableViewComponent } from './organisms/table-view/table-view.component';
+import { OidcAuthenticatorComponent } from './oidc-authenticator/oidc-authenticator.component';
+import { SecurePageComponent } from './oidc-authenticator/secure-page/secure-page.component';
+import { AuthGuard } from './core/guard/auth.guard';
 
 /** ATTENTION, ADD A TITLE IN CHILDREN ROUTE FOR THE DOCUMENTATION */
 export const routes: Routes = [
@@ -70,6 +73,28 @@ export const routes: Routes = [
     title: 'demo page',
     path: 'demo',
     component: DemoComponent,
+  },
+  {
+    title: 'Authenticator',
+    path: 'oidc-authenticator',
+    children: [
+      {
+        path: '',
+        redirectTo: 'authenticator',
+        pathMatch: 'full',
+      },
+      {
+        title: 'OpenID Connect',
+        path: 'authenticator',
+        component: OidcAuthenticatorComponent,
+      },
+      {
+        title: 'Secure Page',
+        path: 'secure-page',
+        component: SecurePageComponent,
+        canActivate: mapToCanActivate([AuthGuard]),
+      },
+    ],
   },
 
   /* Router for Atoms */

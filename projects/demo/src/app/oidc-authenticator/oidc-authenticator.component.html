@@ -1,0 +1,118 @@
+<h1>OpenID Connect Authenticator</h1>
+<h2>Usage Example</h2>
+<fui-button-icon
+  [type]="'button'"
+  [option]="'iconText'"
+  [style]="'secondary'"
+  [text]="'Sign In with Google'"
+  [color]="'primary'"
+  [icon]="'globe'"
+  [iconSide]="'left'"
+  (onClick)="login()"
+/>
+
+<h2 style="margin: 50px 0px 0px 0px">OidcAuthenticatorService</h2>
+
+<h3>Overview</h3>
+<p>
+  The <code>OidcAuthenticatorService</code> is an Angular service designed to
+  streamline authentication and authorization processes using OpenID Connect
+  (OIDC) in Angular applications. It offers a comprehensive set of methods for
+  user authentication, token management, and authentication status checks. This
+  service simplifies OIDC integration by handling token storage, retrieval, and
+  revocation, as well as interaction with OIDC endpoints for authentication and
+  authorization workflows.
+</p>
+
+<h3>Key Features</h3>
+<ul>
+  <li>
+    User login and logout functionalities with support for various
+    authentication flows.
+  </li>
+  <li>
+    Token management: storage (local, session, or cookie), retrieval, and
+    revocation.
+  </li>
+  <li>
+    Integration with OIDC endpoints for authentication, token exchange, and user
+    information retrieval.
+  </li>
+  <li>
+    Seamless handling of authentication callback and user session management.
+  </li>
+</ul>
+
+<h3>Methods</h3>
+<ol>
+  <li><code>loginAuth(config: ConfigDTO): Promise&lt;void&gt;</code></li>
+  <li><code>loginWithPopup(config: ConfigDTO): Promise&lt;void&gt;</code></li>
+  <li><code>callBackAuth(config: ConfigDTO): void</code></li>
+  <li><code>checkAuth(config: ConfigDTO): Observable&lt;boolean&gt;</code></li>
+  <li><code>logoutAuth(config: ConfigDTO): Observable&lt;unknown&gt;</code></li>
+  <li>
+    <code>getUserInfo(config: ConfigDTO): Observable&lt;unknown&gt;</code>
+  </li>
+</ol>
+
+<h3>Configuration</h3>
+<p>
+  The <code>ConfigDTO</code> interface defines the configuration options
+  required for OIDC authentication, including endpoints, client credentials, and
+  token storage preferences.
+</p>
+
+<hr style="margin: 50px 0px 50px 0px" />
+
+<h2>OidcUtilityService</h2>
+
+<h3>Overview</h3>
+<p>
+  The <code>OidcUtilityService</code> provides utility functions and methods to
+  support OIDC integration in Angular applications. It abstracts common
+  OIDC-related tasks such as token management, cryptographic operations, and
+  HTTP requests to OIDC endpoints. This service facilitates the implementation
+  of OIDC authentication and authorization processes by offering functionalities
+  like code exchange, nonce generation, and token storage management.
+</p>
+
+<h3>Key Features</h3>
+<ul>
+  <li>
+    Code exchange for tokens using PKCE (Proof Key for Code Exchange) flow.
+  </li>
+  <li>
+    Generation of nonces, code verifiers, and code challenges for OIDC security.
+  </li>
+  <li>
+    Storage management for tokens (localStorage, sessionStorage, and cookies).
+  </li>
+  <li>HTTP request handling for OIDC endpoints.</li>
+</ul>
+
+<h3>Methods</h3>
+<ol>
+  <li><code>generateNonce(length: number = 16): string</code></li>
+  <li><code>generateCodeVerifier(): string</code></li>
+  <li>
+    <code>generateCodeChallenge(verifier: string): Promise&lt;string&gt;</code>
+  </li>
+  <li><code>setLocalStorage(key: string, value: string): void</code></li>
+  <li><code>getLocalStorage(key: string): string | null</code></li>
+  <li><code>deleteLocalStorage(key: string): void</code></li>
+  <li><code>setSessionStorage(key: string, value: string): void</code></li>
+  <li><code>getSessionStorage(key: string): string | null</code></li>
+  <li><code>deleteSessionStorage(key: string): void</code></li>
+  <li>
+    <code>setCookie(name: string, value: string, days: number): void</code>
+  </li>
+  <li><code>getCookie(name: string): string | null</code></li>
+  <li><code>deleteCookie(name: string): void</code></li>
+  <li><code>deleteAllCookies(): void</code></li>
+</ol>
+
+<h3>Configuration</h3>
+<p>
+  The <code>TokenResponseDTO</code> interface defines the structure of the token
+  response received after code exchange with the OIDC token endpoint.
+</p>
