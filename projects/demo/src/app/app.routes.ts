@@ -84,12 +84,11 @@ export const routes: Routes = [
         pathMatch: 'full',
       },
       {
-        title: 'OpenID Connect',
+        title: 'OIDC Authenticator',
         path: 'authenticator',
         component: OidcAuthenticatorComponent,
       },
       {
-        title: 'Secure Page',
         path: 'secure-page',
         component: SecurePageComponent,
         canActivate: mapToCanActivate([AuthGuard]),
