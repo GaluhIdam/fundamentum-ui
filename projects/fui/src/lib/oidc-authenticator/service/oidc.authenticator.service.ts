@@ -27,204 +27,134 @@ export class OidcAuthenticatorService extends OidcUtilityService {
   private left: number = window.screen.width / 2 - this.width / 2;
   private top: number = window.screen.height / 2 - this.height / 2;
 
-  /** Login Method */
-  async loginAuth(config: ConfigDTO): Promise<void> {
-    const codeVerifier = this.generateCodeVerifier();
-    this.setLocalStorage(this.codeVerifierKey, codeVerifier);
-    const codeChallenge = await this.generateCodeChallenge(codeVerifier);
-    const url = `${config.authorization_endpoint}?client_id=${
+  /**
+   * Url Generator
+   *
+   * @private
+   * @async
+   * @param {ConfigDTO} config
+   * @param {string} codeChallenge
+   * @returns {Promise<string>}
+   */
+  private async generateAuthUrl(
+    config: ConfigDTO,
+    codeChallenge: string
+  ): Promise<string> {
+    return `${config.authorization_endpoint}?client_id=${
       config.client_id
     }&redirect_uri=${encodeURIComponent(
       config.redirect_uri
     )}&response_type=code&scope=${encodeURIComponent(
       config.scope
     )}&nonce=${this.generateNonce()}&code_challenge=${codeChallenge}&code_challenge_method=S256&access_type=offline`;
-    window.location.href = url;
   }
 
-  /** Login With Popup */
+  /**
+   * Login with Page
+   *
+   * @async
+   * @param {ConfigDTO} config
+   * @returns {Promise<void>}
+   */
+  async loginWithPage(config: ConfigDTO): Promise<void> {
+    const codeVerifier = this.generateCodeVerifier();
+    this.setLocalStorage(this.codeVerifierKey, codeVerifier);
+    const codeChallenge = await this.generateCodeChallenge(codeVerifier);
+    window.location.href = await this.generateAuthUrl(config, codeChallenge);
+  }
+
+  /**
+   * Login with Popup
+   *
+   * @async
+   * @param {ConfigDTO} config
+   * @returns {Promise<void>}
+   */
   async loginWithPopup(config: ConfigDTO): Promise<void> {
     const codeVerifier = this.generateCodeVerifier();
     this.setLocalStorage(this.codeVerifierKey, codeVerifier);
     const codeChallenge = await this.generateCodeChallenge(codeVerifier);
+    const authUrl = await this.generateAuthUrl(config, codeChallenge);
     this.authWindow = window.open(
-      `${config.authorization_endpoint}?client_id=${
-        config.client_id
-      }&redirect_uri=${encodeURIComponent(
-        config.redirect_uri
-      )}&response_type=code&scope=${encodeURIComponent(
-        config.scope
-      )}&nonce=${this.generateNonce()}&code_challenge=${codeChallenge}&code_challenge_method=S256&access_type=offline`,
+      authUrl,
       '_blank',
       `width=${this.width},height=${this.height},left=${this.left},top=${this.top}`
     );
   }
 
-  /** Callback Handler */
+  /**
+   * Callback Handler
+   *
+   * @param {ConfigDTO} config
+   */
   callBackAuth(config: ConfigDTO): void {
     const code = new URL(window.location.href).searchParams.get('code');
-    if (code) {
-      this._exchangeCodeForTokens(code, config)
-        .pipe(
-          tap((result) => {
-            if (result && 'access_token' in result && result.access_token) {
-              if (config.storageUsage === 'local') {
-                this.setLocalStorage('access_token', result.access_token);
-              }
-              if (config.storageUsage === 'session') {
-                this.setLocalStorage('access_token', result.access_token);
-              }
-              if (config.storageUsage === 'cookie') {
-                this.setCookie('access_token', result.access_token, 7);
-              }
+    if (!code) return;
+    this._exchangeCodeForTokens(code, config)
+      .pipe(
+        tap((result) => {
+          this.storeTokens(result, config);
+          this.clearVerifierData();
+          if (window.opener) {
+            window.close();
+            if (window.opener.location) {
+              window.opener.location.reload();
             }
-            if (result && 'id_token' in result && result.id_token) {
-              if (config.storageUsage === 'local') {
-                this.setLocalStorage('id_token', result.id_token);
-              }
-              if (config.storageUsage === 'session') {
-                this.setLocalStorage('id_token', result.id_token);
-              }
-              if (config.storageUsage === 'cookie') {
-                this.setCookie('id_token', result.id_token, 7);
-              }
-            }
-            if (result && 'refresh_token' in result && result.refresh_token) {
-              if (config.storageUsage === 'local') {
-                this.setLocalStorage('refresh_token', result.refresh_token);
-              }
-              if (config.storageUsage === 'session') {
-                this.setLocalStorage('refresh_token', result.refresh_token);
-              }
-              if (config.storageUsage === 'cookie') {
-                this.setCookie('refresh_token', result.refresh_token, 7);
-              }
-            }
-            this.deleteCookie(this.codeVerifierKey);
-            this.deleteLocalStorage(this.codeVerifierKey);
-            this.deleteSessionStorage(this.codeVerifierKey);
-            if (window.opener) {
-              window.close();
-              if (window.opener.location) {
-                window.opener.location.reload();
-              }
-            }
+          } else {
             window.location.reload();
-            history.replaceState(null, '', window.location.pathname);
-          }),
-          catchError((error) => {
-            console.error('Error during token exchange:', error);
-            return of(null);
-          })
-        )
-        .subscribe();
-    }
+          }
+          history.replaceState(null, '', window.location.pathname);
+        }),
+        catchError((error) => {
+          console.error('Error during token exchange:', error);
+          return of(null);
+        })
+      )
+      .subscribe();
   }
 
-  /** Checking Authentication */
+  /**
+   * Checking Authentication
+   *
+   * @param {ConfigDTO} config
+   * @returns {Observable<boolean>}
+   */
   checkAuth(config: ConfigDTO): Observable<boolean> {
-    if (config.storageUsage === 'session') {
-      const access_token = this.getLocalStorage('access_token');
-      const id_token = this.getLocalStorage('id_token');
-      const refresh_token = this.getLocalStorage('refresh_token');
-      if (access_token && id_token && refresh_token) {
-        this.setSessionStorage('access_token', access_token);
-        this.setSessionStorage('id_token', id_token);
-        this.setSessionStorage('refresh_token', refresh_token);
-      }
-      this.deleteAllLocalStorage();
-    }
-    const localAccessToken = this.getLocalStorage('access_token');
-    const localIdToken = this.getLocalStorage('id_token');
-
-    const sessionAccessToken = this.getSessionStorage('access_token');
-    const sessionIdToken = this.getSessionStorage('id_token');
-
-    const cookieAccessToken = this.getCookie('access_token');
-    const cookieIdToken = this.getCookie('id_token');
-
-    const hasLocalTokens = localAccessToken && localIdToken;
-    const hasSessionTokens = sessionAccessToken && sessionIdToken;
-    const hasCookieTokens = cookieAccessToken && cookieIdToken;
-
-    if (hasLocalTokens || hasSessionTokens || hasCookieTokens) {
+    const tokens = this.retrieveTokens(config);
+    if (tokens) {
       return this.getUserInfo(config).pipe(
         tap((res) => {
-          if (res === null) {
-            this.deleteAllCookies();
-            this.deleteAllLocalStorage();
-            this.deleteAllSessionStorage();
-          }
+          if (!res) this.clearAllStorage();
         }),
         map((res) => !!res),
-        catchError(() => {
-          return of(false);
-        })
+        catchError(() => of(false))
       );
     } else {
       return of(false);
     }
   }
 
-  /** Logout Method */
+  /**
+   * Logout
+   *
+   * @param {ConfigDTO} config
+   * @returns {Observable<unknown>}
+   */
   logoutAuth(config: ConfigDTO): Observable<unknown> {
-    let token: string | null = null;
-    let refresh_token: string | null = null;
-    if (config.storageUsage === 'local') {
-      token = this.getLocalStorage('access_token');
-      refresh_token = this.getLocalStorage('refresh_token');
-    } else if (config.storageUsage === 'session') {
-      token = this.getSessionStorage('access_token');
-      refresh_token = this.getSessionStorage('refresh_token');
-    } else if (config.storageUsage === 'cookie') {
-      token = this.getCookie('access_token');
-      refresh_token = this.getCookie('refresh_token');
-    }
-    if (!token) {
-      throw new Error('No access token found');
-    }
+    const tokens = this.retrieveTokens(config);
+    if (!tokens.accessToken) throw new Error('No access token found');
     return this._http
       .get<WellKnownEndPointDTO>(config.authWellknownEndpointUrl)
       .pipe(
         switchMap((res) => {
-          const revocationRequests: Observable<any>[] = [];
-          if (refresh_token && res.end_session_endpoint) {
-            const endSessionBody = new URLSearchParams();
-            endSessionBody.set('client_id', config.client_id);
-            endSessionBody.set('refresh_token', refresh_token);
-
-            const endSessionRequest = this._http.post(
-              res.end_session_endpoint,
-              endSessionBody.toString(),
-              {
-                headers: new HttpHeaders({
-                  'Content-Type': 'application/x-www-form-urlencoded',
-                }),
-              }
-            );
-            revocationRequests.push(endSessionRequest);
-          }
-          if (token) {
-            const revokeTokenBody = new URLSearchParams();
-            revokeTokenBody.set('token', token);
-            revokeTokenBody.set('client_id', config.client_id);
-
-            const revokeTokenRequest = this._http.post(
-              res.revocation_endpoint,
-              revokeTokenBody.toString(),
-              {
-                headers: new HttpHeaders({
-                  'Content-Type': 'application/x-www-form-urlencoded',
-                }),
-              }
-            );
-            revocationRequests.push(revokeTokenRequest);
-          }
+          const revocationRequests = this.generateRevocationRequests(
+            res,
+            config,
+            tokens
+          );
           return forkJoin(revocationRequests).pipe(
             tap(() => {
-              this.deleteAllCookies();
-              this.deleteAllLocalStorage();
-              this.deleteAllSessionStorage();
+              this.clearAllStorage();
               window.location.reload();
             }),
             catchError((error) => {
@@ -236,25 +166,17 @@ export class OidcAuthenticatorService extends OidcUtilityService {
       );
   }
 
-  /** Get User Info Method */
+  /**
+   * Get User Info
+   *
+   * @param {ConfigDTO} config
+   * @returns {Observable<unknown>}
+   */
   getUserInfo(config: ConfigDTO): Observable<unknown> {
-    let token: string | null = null;
-    if (config.storageUsage === 'local') {
-      token = localStorage.getItem('access_token');
-    }
-    if (config.storageUsage === 'cookie') {
-      token = this.getCookie('access_token');
-    }
-    if (config.storageUsage === 'session') {
-      token = this.getSessionStorage('access_token');
-    }
-    if (!token) {
-      return of(null);
-    }
+    const token = this.retrieveToken(config, 'access_token');
+    if (!token) return of(null);
 
-    const headers = new HttpHeaders({
-      Authorization: `Bearer ${token}`,
-    });
+    const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
 
     return this._http
       .get<WellKnownEndPointDTO>(config.authWellknownEndpointUrl)
@@ -262,14 +184,18 @@ export class OidcAuthenticatorService extends OidcUtilityService {
         switchMap((res) =>
           this._http.get<unknown>(res.userinfo_endpoint, { headers })
         ),
-        catchError(() => {
-          return of(null);
-        })
+        catchError(() => of(null))
       );
   }
 }
 
-/** Data Transfer Object for Config Authentication */
+/**
+ * Data Transfer Object for Config Authentication
+ *
+ * @export
+ * @interface ConfigDTO
+ * @typedef {ConfigDTO}
+ */
 export interface ConfigDTO {
   authorization_endpoint: string;
   client_id: string;
@@ -281,7 +207,13 @@ export interface ConfigDTO {
   storageUsage: 'local' | 'session' | 'cookie';
 }
 
-/** Data Transfer Object for WellKnownEndPoint */
+/**
+ * Data Transfer Object for WellKnownEndPoint
+ *
+ * @export
+ * @interface WellKnownEndPointDTO
+ * @typedef {WellKnownEndPointDTO}
+ */
 export interface WellKnownEndPointDTO {
   issuer: string;
   authorization_endpoint: string;

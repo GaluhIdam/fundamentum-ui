@@ -19,9 +19,15 @@ export class OidcUtilityService {
   protected readonly _http = inject(HttpClient);
   protected codeVerifierKey: string = 'pkce_code_verifier';
 
-  /** Proof of Key Code Exchange Process
+  /**
+   * Proof of Key Code Exchange Process
    * @description Run this process after login completed for getting token
    * and make sure there codeVerifier in localStorage, sessionStorage, or cookie.
+   *
+   * @protected
+   * @param {string} code
+   * @param {ConfigDTO} config
+   * @returns {Observable<TokenResponseDTO | WellKnownEndPointDTO | null>}
    */
   protected _exchangeCodeForTokens(
     code: string,
@@ -63,7 +69,12 @@ export class OidcUtilityService {
       );
   }
 
-  /** Nonce Generator */
+  /**
+   * Nonce Generator
+   *
+   * @param {number} [length=16]
+   * @returns {string}
+   */
   generateNonce(length: number = 16): string {
     const charset =
       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -75,7 +86,11 @@ export class OidcUtilityService {
     return nonce;
   }
 
-  /** Proof of Key Code Exchange Generator */
+  /**
+   * Proof of Key Code Exchange Generator
+   *
+   * @returns {string}
+   */
   generateCodeVerifier(): string {
     const array = new Uint32Array(56 / 2);
     window.crypto.getRandomValues(array);
@@ -84,7 +99,13 @@ export class OidcUtilityService {
     );
   }
 
-  /** Code Challenge Generator */
+  /**
+   * Code Challenge Generator
+   *
+   * @async
+   * @param {string} verifier
+   * @returns {Promise<string>}
+   */
   async generateCodeChallenge(verifier: string): Promise<string> {
     const encoder = new TextEncoder();
     const data = encoder.encode(verifier);
@@ -95,17 +116,31 @@ export class OidcUtilityService {
       .replace(/=+$/, '');
   }
 
-  /** Set Local Storage */
+  /**
+   * Set Local Storage
+   *
+   * @param {string} key
+   * @param {string} value
+   */
   setLocalStorage(key: string, value: string): void {
     localStorage.setItem(key, value);
   }
 
-  /** Get Local Storage */
+  /**
+   * Get Local Storage
+   *
+   * @param {string} key
+   * @returns {(string | null)}
+   */
   getLocalStorage(key: string): string | null {
     return localStorage.getItem(key);
   }
 
-  /** Delete Local Storage */
+  /**
+   * Delete Local Storage
+   *
+   * @param {string} key
+   */
   deleteLocalStorage(key: string): void {
     localStorage.removeItem(key);
   }
@@ -115,27 +150,49 @@ export class OidcUtilityService {
     localStorage.clear();
   }
 
-  /** Set Session Storage */
+  /**
+   * Set Session Storage
+   *
+   * @param {string} key
+   * @param {string} value
+   */
   setSessionStorage(key: string, value: string): void {
     sessionStorage.setItem(key, value);
   }
 
-  /** Get Session Storage */
+  /**
+   * Get Session Storage
+   *
+   * @param {string} key
+   * @returns {(string | null)}
+   */
   getSessionStorage(key: string): string | null {
     return sessionStorage.getItem(key);
   }
 
-  /** Delete Session Storage */
+  /**
+   * Delete Session Storage
+   *
+   * @param {string} key
+   */
   deleteSessionStorage(key: string): void {
     sessionStorage.removeItem(key);
   }
 
-  /** Delete All Session Storage */
+  /**
+   * Delete All Session Storage
+   */
   deleteAllSessionStorage(): void {
     sessionStorage.clear();
   }
 
-  /** Set Cookie */
+  /**
+   * Set Cookie
+   *
+   * @param {string} name
+   * @param {string} value
+   * @param {number} days
+   */
   setCookie(name: string, value: string, days: number): void {
     let expires = '';
     if (days) {
@@ -146,7 +203,12 @@ export class OidcUtilityService {
     document.cookie = name + '=' + (value || '') + expires + '; path=/';
   }
 
-  /** Get Cookie */
+  /**
+   * Get Cookie
+   *
+   * @param {string} name
+   * @returns {(string | null)}
+   */
   getCookie(name: string): string | null {
     const nameEQ = name + '=';
     const ca = document.cookie.split(';');
@@ -158,12 +220,18 @@ export class OidcUtilityService {
     return null;
   }
 
-  /** Delete Cookie */
+  /**
+   * Delete Cookie
+   *
+   * @param {string} name
+   */
   deleteCookie(name: string): void {
     document.cookie = name + '=; Max-Age=-99999999;';
   }
 
-  /** Delete All Cookie */
+  /**
+   * Delete All Cookie
+   */
   deleteAllCookies(): void {
     const cookies = document.cookie.split(';');
     for (let i = 0; i < cookies.length; i++) {
@@ -173,6 +241,145 @@ export class OidcUtilityService {
       document.cookie =
         name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
     }
+  }
+
+  /**
+   * Clear Verifier Data
+   *
+   * @protected
+   */
+  protected clearVerifierData(): void {
+    this.deleteCookie(this.codeVerifierKey);
+    this.deleteLocalStorage(this.codeVerifierKey);
+    this.deleteSessionStorage(this.codeVerifierKey);
+  }
+
+  /**
+   * Store Token for access token, id_token, refresh_token
+   *
+   * @protected
+   * @param {*} result
+   * @param {ConfigDTO} config
+   */
+  protected storeTokens(result: any, config: ConfigDTO): void {
+    if (!result) return;
+    this.storeToken(config, 'access_token', result.access_token);
+    this.storeToken(config, 'id_token', result.id_token);
+    this.storeToken(config, 'refresh_token', result.refresh_token);
+  }
+
+  /**
+   * Helper Store Token for access token, id_token, refresh_token
+   *
+   * @private
+   * @param {ConfigDTO} config
+   * @param {string} key
+   * @param {string} value
+   */
+  private storeToken(config: ConfigDTO, key: string, value: string): void {
+    if (value) {
+      if (config.storageUsage === 'local') {
+        this.setLocalStorage(key, value);
+      } else if (config.storageUsage === 'session') {
+        this.setSessionStorage(key, value);
+      } else if (config.storageUsage === 'cookie') {
+        this.setCookie(key, value, 7);
+      }
+    }
+  }
+
+  /**
+   * Retrieve Tokens for access token and refresh token
+   *
+   * @protected
+   * @param {ConfigDTO} config
+   * @returns {{
+   *     accessToken: string | null;
+   *     refreshToken: string | null;
+   *   }}
+   */
+  protected retrieveTokens(config: ConfigDTO): {
+    accessToken: string | null;
+    refreshToken: string | null;
+  } {
+    const accessToken = this.retrieveToken(config, 'access_token');
+    const refreshToken = this.retrieveToken(config, 'refresh_token');
+    return { accessToken, refreshToken };
+  }
+
+  /**
+   * Helper Retrieve Tokens for access token and refresh token
+   *
+   * @private
+   * @param {ConfigDTO} config
+   * @param {string} key
+   * @returns {(string | null)}
+   */
+  protected retrieveToken(config: ConfigDTO, key: string): string | null {
+    if (config.storageUsage === 'local') {
+      return this.getLocalStorage(key);
+    } else if (config.storageUsage === 'session') {
+      return this.getSessionStorage(key);
+    } else if (config.storageUsage === 'cookie') {
+      return this.getCookie(key);
+    }
+    return null;
+  }
+
+  /**
+   * Clear All Storage
+   *
+   * @protected
+   */
+  protected clearAllStorage(): void {
+    this.deleteAllCookies();
+    this.deleteAllLocalStorage();
+    this.deleteAllSessionStorage();
+  }
+
+  /**
+   * Generator Revocation Requests
+   *
+   * @protected
+   * @param {WellKnownEndPointDTO} res
+   * @param {ConfigDTO} config
+   * @param {({ accessToken: string | null; refreshToken: string | null })} tokens
+   * @returns {Observable<any>[]}
+   */
+  protected generateRevocationRequests(
+    res: WellKnownEndPointDTO,
+    config: ConfigDTO,
+    tokens: { accessToken: string | null; refreshToken: string | null }
+  ): Observable<any>[] {
+    const requests: Observable<any>[] = [];
+
+    if (tokens.refreshToken && res.end_session_endpoint) {
+      const endSessionBody = new URLSearchParams();
+      endSessionBody.set('client_id', config.client_id);
+      endSessionBody.set('refresh_token', tokens.refreshToken);
+      requests.push(
+        this._http.post(res.end_session_endpoint, endSessionBody.toString(), {
+          headers: new HttpHeaders({
+            'Content-Type': 'application/x-www-form-urlencoded',
+          }),
+        })
+      );
+    }
+
+    if (tokens.accessToken) {
+      const revokeTokenBody = new URLSearchParams();
+      revokeTokenBody.set('token', tokens.accessToken);
+      revokeTokenBody.set('client_id', config.client_id);
+      requests.push(
+        this._http.post(res.revocation_endpoint, revokeTokenBody.toString(), {
+          headers: new HttpHeaders({
+            'Content-Type': 'application/x-www-form-urlencoded',
+          }),
+        })
+      );
+    }
+
+    return requests;
   }
 }
 
