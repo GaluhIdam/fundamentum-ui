@@ -22,6 +22,7 @@ export class SecurePageComponent {
       .subscribe();
   }
 
+  /** Logout Method */
   logout(): void {
     this._authService.logoutAuth(google).subscribe();
   }
