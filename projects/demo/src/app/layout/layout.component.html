@@ -163,6 +163,31 @@
         </div>
       </div>
     </div>
+
+    <div class="container">
+      <div style="display: flex; align-items: baseline">
+        <fui-icons
+          style="margin-right: 5px"
+          [icon]="'lock'"
+          [size]="'sizem'"
+          [color]="'text'"
+        />
+        <h1 class="title-link">Authenticator</h1>
+      </div>
+      <fui-link
+        class="nav-item"
+        [typeLink]="'coloring'"
+        [urlLink]="'oidc-authenticator'"
+        >OIDC Authenticator</fui-link
+      >
+      <fui-link
+        class="nav-item"
+        [typeLink]="'coloring'"
+        [urlLink]="'oidc-authenticator/secure-page'"
+      >
+        Secure Page</fui-link
+      >
+    </div>
   </fui-page-sidebar>
 
   <fui-page-body [padding]="'none'">
