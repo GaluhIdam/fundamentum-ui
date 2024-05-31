@@ -412,10 +412,6 @@
       </div>
     </div>
     <div class="pagination" *ngIf="data.length > 0">
-      <span class="showing"
-        >Showing {{ getRangeStart() }} - {{ getRangeEnd() }} of
-        {{ totalItems }}</span
-      >
       <div class="page">
         <fui-pagination
           (onPageChange)="onPageChange($event)"

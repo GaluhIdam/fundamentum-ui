@@ -27,8 +27,8 @@
   transition-property: background-color color;
   transition-duration: 0.3s;
   &:hover {
-    background-color: lighten($bgCol, 10%);
-    color: darken($col, 10%);
+    background-color: $bgCol;
+    color: $col;
     transform: translateY(-1px);
   }
   &:active:not(:disabled) {

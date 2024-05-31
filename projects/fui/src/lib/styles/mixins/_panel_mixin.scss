@@ -1,7 +1,7 @@
 @mixin fuiPanel($bgCol, $light) {
-  background-color: lighten($bgCol, $light);
+  background-color: $bgCol;
 }
 
 @mixin fuiPanelBorder($color, $lighten) {
-  border: 1px solid lighten($color, $lighten);
+  border: 1px solid $color;
 }

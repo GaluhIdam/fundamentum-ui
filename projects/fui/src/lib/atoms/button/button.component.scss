@@ -1,31 +1,55 @@
 @import "../../styles/index";
 
 button {
-  @include fuiButton($fuiColorPrimary, $fuiColorGhost);
+  @include fuiButton(
+    var(--fuiColorPrimary, $fuiColorPrimary),
+    var(--fuiColorGhost, $fuiColorGhost)
+  );
 }
 
 .primary {
-  @include fuiButtonBase($fuiColorPrimary, $fuiColorGhost);
+  @include fuiButtonBase(
+    var(--fuiColorPrimary, $fuiColorPrimary),
+    var(--fuiColorGhost, $fuiColorGhost)
+  );
 }
 .success {
-  @include fuiButtonBase($fuiColorSuccess, $fuiColorInk);
+  @include fuiButtonBase(
+    var(--fuiColorSuccess, $fuiColorSuccess),
+    var(--fuiColorInk, $fuiColorInk)
+  );
 }
 .warning {
-  @include fuiButtonBase($fuiColorWarning, $fuiColorInk);
+  @include fuiButtonBase(
+    var(--fuiColorWarning, $fuiColorWarning),
+    var(--fuiColorInk, $fuiColorInk)
+  );
 }
 
 .danger {
-  @include fuiButtonBase($fuiColorDanger, $fuiColorGhost);
+  @include fuiButtonBase(
+    var(--fuiColorDanger, $fuiColorDanger),
+    var(--fuiColorGhost, $fuiColorGhost)
+  );
 }
 
 .text {
-  @include fuiButtonBase($fuiColorDarkShade, $fuiColorGhost);
+  @include fuiButtonBase(
+    var(--fuiColorDarkShade, $fuiColorDarkShade),
+    var(--fuiColorGhost, $fuiColorGhost)
+  );
 }
 .textlight {
-  @include fuiButtonBase($fuiColorDarkestShade, $fuiColorGhost);
+  @include fuiButtonBase(
+    $fuiColorDarkestShade,
+    var(--fuiColorGhost, $fuiColorGhost)
+  );
 }
 .accent {
-  @include fuiButtonBase($fuiColorAccent, $fuiColorInk);
+  @include fuiButtonBase(
+    var(--fuiColorAccent, $fuiColorAccent),
+    var(--fuiColorInk, $fuiColorInk)
+  );
 }
 
 .sizeXS {

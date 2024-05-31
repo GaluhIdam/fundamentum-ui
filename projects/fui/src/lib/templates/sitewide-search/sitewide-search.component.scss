@@ -1,6 +1,7 @@
 @import "../../styles/index";
 :host {
   font-family: $fuiFontFamily;
+  width: -webkit-fill-available;
 }
 .fui-selection {
   padding: 10px;
@@ -8,19 +9,19 @@
   align-items: center;
   justify-content: space-between;
   &:hover {
-    background-color: $fuiBtnPrimarySecondary;
+    background-color: var(--fuiPrimarySecondary, $fuiPrimarySecondary);
     cursor: pointer;
     .flex {
       .selection-desc {
         .title {
-          color: $fuiColorPrimary;
+          color: var(--fuiColorPrimary, $fuiColorPrimary);
           text-decoration: underline;
         }
         .desc-title {
           text-wrap: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          color: $fuiColorDarkShade;
+          color: var(--fuiColorFullShade, $fuiColorFullShade);
         }
       }
     }
@@ -36,7 +37,7 @@
   display: flex;
 }
 .title {
-  color: $fuiColorDarkShade;
+  color: var(--fuiColorFullShade, $fuiColorFullShade);
 }
 .icon {
   margin: 0px 12px 0px 0px;
@@ -44,7 +45,7 @@
 .desc-title {
   font-size: small;
   margin-top: 5px;
-  color: $fuiColorPrimary;
+  color: var(--fuiColorPrimary, $fuiColorPrimary);
   text-wrap: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -53,7 +54,7 @@
 .line {
   border: 0;
   height: 1px;
-  background-color: $fuiColorLightShade;
+  background-color: var(--fuiColorLightShade, $fuiColorLightShade);
 }
 
 .quick-search {
@@ -61,14 +62,14 @@
   padding: 5px;
   .tips {
     font-size: small;
-    color: $fuiColorMediumShade;
+    color: var(--fuiColorMediumShade, $fuiColorMediumShade);
     margin-right: 8px;
   }
   .shortcut {
     font-size: small;
     padding: 6px;
     border-radius: 4px;
-    background-color: $fuiColorLightShade;
+    background-color: var(--fuiColorLightShade, $fuiColorLightShade);
   }
 }
 
@@ -94,9 +95,9 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: $fuiColorLightShade;
+  background: var(--fuiColorLightShade, $fuiColorLightShade);
   border-radius: 25px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: $fuiColorLightShade;
+  background: var(--fuiColorLightShade, $fuiColorLightShade);
 }

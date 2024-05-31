@@ -4,12 +4,12 @@
   outline: none;
   margin: 0px 3px 0px 3px;
   border-width: 1px;
-  border-color: $fuiColorLightShade;
+  border-color: var(--fuiColorLightShade, $fuiColorLightShade);
   border-style: solid;
   border-radius: 5px;
   padding: 5px 10px 5px 10px;
-  background-color: $fuiColorLightestShade;
-  color: $fuiColorDarkestShade;
+  background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
+  color: var(--fuiColorDarkestShade, $fuiColorDarkestShade);
 }
 
 @mixin monthYearMix($textColor) {
@@ -19,14 +19,14 @@
 }
 
 @mixin weekCalendarMix() {
-  background-color: $fuiColorLightestShade;
+  background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
   padding: 5px 10px 5px 10px;
   height: 30px;
-  color: $fuiColorDarkestShade;
+  color: var(--fuiColorInk, $fuiColorInk);
   text-align: left;
   border-width: 1px;
   border-style: solid;
-  border-color: $fuiColorLightShade;
+  border-color: var(--fuiColorLightShade, $fuiColorLightShade);
 }
 
 @mixin dayCalendarTodayMix(
@@ -41,7 +41,7 @@
   padding: 0;
   border-width: 1px;
   border-style: solid;
-  border-color: $fuiColorLightShade;
+  border-color: var(--fuiColorLightShade, $fuiColorLightShade);
   background-color: $bgColor;
   color: $textColor;
   height: 100px;
@@ -57,7 +57,7 @@
   }
   .outside-month {
     margin: $margin;
-    color: $fuiColorMediumShade;
+    color: var(--fuiColorMediumShade, $fuiColorMediumShade);
   }
 }
 
@@ -107,12 +107,12 @@
 
 @mixin eventCalendarTextMix() {
   margin: 5px 0px 0px 0px;
-  background-color: $fuiBtnSuccessSecondary;
-  color: $fuiBtnSuccessText;
+  background-color: var(--fuiSuccessSecondary, $fuiSuccessSecondary);
+  color: var(--fuiBtnSuccessText, $fuiBtnSuccessText);
   padding: 7px 7px 7px 7px;
   font-size: small;
   border-left-width: 4px;
-  border-left-color: $fuiColorSuccess;
+  border-left-color: var(--fuiColorSuccess, $fuiColorSuccess);
   border-left-style: solid;
   &:hover {
     cursor: pointer;
@@ -129,13 +129,13 @@
 }
 
 @mixin detailEventMix() {
+  color: var(--fuiColorInk, $fuiColorInk);
   display: flex;
   margin: 10px 0px 10px 0px;
   width: -webkit-fill-available;
   p {
     margin: 5px 0px 5px 0px;
     font-size: small;
-    color: $fuiColorDarkestShade;
   }
   .content-schedule {
     width: -webkit-fill-available;
@@ -144,7 +144,6 @@
       margin: 5px 0px 5px 0px;
       font-size: small;
       font-weight: bold;
-      color: $fuiColorDarkestShade;
     }
   }
 }
@@ -158,7 +157,6 @@
   .desc-event {
     margin: 5px 0px 5px 0px;
     font-size: small;
-    color: $fuiColorDarkShade;
     text-align: justify;
   }
 }

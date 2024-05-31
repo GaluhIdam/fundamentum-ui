@@ -7,7 +7,6 @@ import {
   QueryList,
 } from '@angular/core';
 import { Icon } from '../../types';
-import { IconsComponent } from '../../../public-api';
 import { TabsContentComponent } from './tabs-content/tabs-content.component';
 
 /**

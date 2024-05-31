@@ -1,82 +1,78 @@
 @use "../variables//color_variable" as color;
 
 @mixin popoverArrowBottom {
-  border-color: color.$fuiColorEmptyShade transparent transparent transparent; 
+  border-color: var(--fuiColorEmptyShade, color.$fuiColorEmptyShade) transparent
+    transparent transparent;
   bottom: 0;
 }
 
 @mixin popoverArrowTop {
-  border-color: transparent transparent color.$fuiColorEmptyShade transparent; 
+  border-color: transparent transparent
+    var(--fuiColorEmptyShade, color.$fuiColorEmptyShade) transparent;
   top: 0;
 }
 
 @mixin popoverArrowLeft {
-  border-color: transparent color.$fuiColorEmptyShade transparent transparent; 
+  border-color: transparent var(--fuiColorEmptyShade, color.$fuiColorEmptyShade)
+    transparent transparent;
   left: 0;
 }
 
 @mixin popoverArrowRight {
-  border-color: transparent transparent transparent color.$fuiColorEmptyShade; 
+  border-color: transparent transparent transparent
+    var(--fuiColorEmptyShade, color.$fuiColorEmptyShade);
   right: 0;
 }
 
 @mixin fuiPopoverArrowAlign($position, $align) {
-  @if ($position == 'top' or $position == 'bottom') {
-    @if $align == 'start' {
-        left: 5%;
-        @if $position == 'top' {
-          transform: translateY(100%);
-        } @else {
-          transform: translateY(-100%);
-        }
-    }
-
-    @else if $align == 'center' {
+  @if ($position == "top" or $position == "bottom") {
+    @if $align == "start" {
+      left: 5%;
+      @if $position == "top" {
+        transform: translateY(100%);
+      } @else {
+        transform: translateY(-100%);
+      }
+    } @else if $align == "center" {
       left: 50%;
-      @if $position == 'top' {
+      @if $position == "top" {
         transform: translate(-50%, 100%);
       } @else {
         transform: translate(-50%, -100%);
       }
-    }
-
-    @else if $align == 'end' {
+    } @else if $align == "end" {
       right: 5%;
-      @if $position == 'top' {
+      @if $position == "top" {
         transform: translateY(100%);
       } @else {
         transform: translateY(-100%);
       }
     }
-  } @else if($position == 'left' or $position == 'right') {
-      @if $align == 'start' {
-        top: -5px;
-        @if($position == 'left') {
-          transform: translate(100%, 100%)
-        } @else {
-          transform: translate(-100%, 100%)
-        }
+  } @else if($position == "left" or $position == "right") {
+    @if $align == "start" {
+      top: -5px;
+      @if ($position == "left") {
+        transform: translate(100%, 100%);
+      } @else {
+        transform: translate(-100%, 100%);
       }
-      @else if $align == 'center' {
-        top: 50%;
-        @if($position == 'left') {
-          transform: translate(100%, -50%)
-        } @else {
-          transform: translate(-100%, -50%)
-        }
+    } @else if $align == "center" {
+      top: 50%;
+      @if ($position == "left") {
+        transform: translate(100%, -50%);
+      } @else {
+        transform: translate(-100%, -50%);
       }
-
-      @else if $align == 'end' {
-        bottom: -5px;
-        @if($position == 'left') {
-          transform: translate(100%, -100%)
-        } @else {
-          transform: translate(-100%, -100%)
-        }
+    } @else if $align == "end" {
+      bottom: -5px;
+      @if ($position == "left") {
+        transform: translate(100%, -100%);
+      } @else {
+        transform: translate(-100%, -100%);
       }
+    }
   }
 }
-
 
 @mixin fuiPopoverArrow($position, $align) {
   position: absolute;
@@ -84,25 +80,19 @@
   &::before {
     content: "";
     position: absolute;
-    border-style: solid; 
+    border-style: solid;
     border-width: 8px;
 
-    @if $position == 'top' {
+    @if $position == "top" {
       @include popoverArrowBottom;
       @include fuiPopoverArrowAlign($position, $align);
-    }
-
-    @else if $position == 'bottom' {
+    } @else if $position == "bottom" {
       @include popoverArrowTop;
       @include fuiPopoverArrowAlign($position, $align);
-    }
-
-    @else if $position == 'right' {
+    } @else if $position == "right" {
       @include popoverArrowLeft;
       @include fuiPopoverArrowAlign($position, $align);
-    }
-    
-    @else if $position == 'left' {
+    } @else if $position == "left" {
       @include popoverArrowRight;
       @include fuiPopoverArrowAlign($position, $align);
     }

@@ -1,42 +1,42 @@
 @import "../../../styles.scss";
 .primary {
-  color: $fuiColorPrimary;
+  color: var(--fuiColorPrimary, $fuiColorPrimary);
   .header {
-    background-color: $fuiBtnPrimarySecondary;
+    background-color: var(--fuiPrimarySecondary, $fuiPrimarySecondary);
   }
 }
 .success {
-  color: $fuiColorSuccess;
+  color: var(--fuiColorSuccess, $fuiColorSuccess);
   .header {
-    background-color: $fuiBtnSuccessSecondary;
+    background-color: var(--fuiSuccessSecondary, $fuiSuccessSecondary);
   }
 }
 .warning {
-  color: $fuiColorWarning;
+  color: var(--fuiColorWarning, $fuiColorWarning);
   .header {
-    background-color: $fuiBtnWarningSecondary;
+    background-color: var(--fuiWarningSecondary, $fuiWarningSecondary);
   }
 }
 .danger {
-  color: $fuiColorDanger;
+  color: var(--fuiColorDanger, $fuiColorDanger);
   .header {
-    background-color: $fuiBtnDangerSecondary;
+    background-color: var(--fuiDangerSecondary, $fuiDangerSecondary);
   }
 }
 .dark {
-  color: $fuiColorEmptyShade;
+  color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
   .header {
-    background-color: $fuiColorFullShade;
+    background-color: var(--fuiColorFullShade, $fuiColorFullShade);
     border: none;
   }
   .body {
-    background-color: $fuiColorDarkestShade;
+    background-color: var(--fuiColorDarkestShade, $fuiColorDarkestShade);
     border: none;
   }
 }
 .text {
   .header {
-    background-color: $fuiColorLightestShade;
+    background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
   }
 }
 .header {
@@ -46,7 +46,7 @@
   justify-content: space-between;
   border-style: solid;
   border-width: 1px;
-  border-color: $fuiColorLightShade;
+  border-color: var(--fuiColorLightShade, $fuiColorLightShade);
   border-bottom-width: 0px;
   .logo {
     align-items: flex-end;
@@ -62,12 +62,12 @@
 .header.btm {
   border-style: solid;
   border-width: 1px;
-  border-color: $fuiColorLightShade;
+  border-color: var(--fuiColorLightShade, $fuiColorLightShade);
 }
 .body {
   padding: 10px;
   border-style: solid;
   border-width: 1px;
-  border-color: $fuiColorLightShade;
+  border-color: var(--fuiColorLightShade, $fuiColorLightShade);
   border-top-width: 0px;
 }

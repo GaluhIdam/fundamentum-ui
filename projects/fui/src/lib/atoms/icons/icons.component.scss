@@ -1663,36 +1663,36 @@ i {
 }
 
 .primary {
-  @include fuiIcon($fuiColorPrimary);
+  @include fuiIcon(var(--fuiBtnPrimaryText, $fuiBtnPrimaryText));
 }
 
 .success {
-  @include fuiIcon($fuiColorSuccess);
+  @include fuiIcon(var(--fuiBtnSuccessText, $fuiBtnSuccessText));
 }
 
 .warning {
-  @include fuiIcon($fuiColorWarning);
+  @include fuiIcon(var(--fuiBtnWarningText, $fuiBtnWarningText));
 }
 
 .danger {
-  @include fuiIcon($fuiColorDanger);
+  @include fuiIcon(var(--fuiBtnDangerText, $fuiBtnDangerText));
 }
 
 .text {
-  @include fuiIcon($fuiTextColor);
+  @include fuiIcon(var(--fuiBtnTextText, $fuiBtnTextText));
 }
 .accent {
-  @include fuiIcon($fuiColorAccent);
+  @include fuiIcon(var(--fuiBtnAccentText, $fuiBtnAccentText));
 }
 
 .disabled {
-  @include fuiIcon($fuiColorDisabledText);
+  @include fuiIcon(var(--fuiBtnDisabledText, $fuiBtnDisabledText));
 }
 
 .ink {
-  @include fuiIcon($fuiColorInk)
+  @include fuiIcon(var(--fuiColorInk, $fuiColorInk));
 }
 
 .ghost {
-  @include fuiIcon($fuiColorGhost)
+  @include fuiIcon(var(--fuiColorGhost, $fuiColorGhost));
 }

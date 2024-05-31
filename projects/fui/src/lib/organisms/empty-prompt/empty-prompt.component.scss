@@ -12,7 +12,7 @@ $paddingLeftRight: 2rem;
   width: fit-content;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  border: 1px solid $fuiColorLightShade;
+  border: 1px solid var(--fuiColorLightShade, $fuiColorLightShade);
 }
 
 .vertical-max-width {
@@ -43,7 +43,7 @@ $paddingLeftRight: 2rem;
 .body {
   margin-block-start: 0;
   margin-block-end: 1.5rem;
-  color: $fuiColorDarkShade;
+  color: var(--fuiColorDarkShade, $fuiColorDarkShade);
 }
 
 .mx-auto {
@@ -64,7 +64,10 @@ img {
 }
 
 .prompt-shadow {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 0.9px 4px -1px rgba(0, 0, 0, 0.08), 0px 2.6px 8px -1px rgba(0, 0, 0, 0.06), 0px 5.7px 12px -1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 0.9px 4px -1px rgba(0, 0, 0, 0.08),
+    0px 2.6px 8px -1px rgba(0, 0, 0, 0.06),
+    0px 5.7px 12px -1px rgba(0, 0, 0, 0.05);
 }
 
 .text-center {
@@ -109,33 +112,37 @@ img {
 }
 
 .p-sizexxl {
-  @include addMorePadding($fuiFontSizeXXL, $paddingTopBottom, $paddingLeftRight);
+  @include addMorePadding(
+    $fuiFontSizeXXL,
+    $paddingTopBottom,
+    $paddingLeftRight
+  );
 }
 
 .primary {
-  @include fuiEmptyPromp($fuiColorPrimary, 25%);
+  @include fuiEmptyPromp(var(--fuiColorPrimary, $fuiColorPrimary));
 }
 
 .success {
-  @include fuiEmptyPromp($fuiColorSuccess, 25%);
+  @include fuiEmptyPromp(var(--fuiColorSuccess, $fuiColorSuccess));
 }
 
 .warning {
-  @include fuiEmptyPromp($fuiColorWarning);
-} 
+  @include fuiEmptyPromp(var(--fuiColorWarning, $fuiColorWarning));
+}
 
 .danger {
-  @include fuiEmptyPromp($fuiColorDanger, 35%);
+  @include fuiEmptyPromp(var(--fuiColorDanger, $fuiColorDanger));
 }
 
 .text {
-  @include fuiEmptyPromp($fuiColorDarkShade, 10%);
+  @include fuiEmptyPromp(var(--fuiColorDarkShade, $fuiColorDarkShade));
 }
 
 .accent {
-  @include fuiEmptyPromp($fuiColorAccent, 0%);
+  @include fuiEmptyPromp(var(--fuiColorAccent, $fuiColorAccent));
 }
 
 .disabled {
-  @include fuiEmptyPromp($fuiColorDisabled, 0%);
+  @include fuiEmptyPromp(var(--fuiColorDisabled, $fuiColorDisabled));
 }

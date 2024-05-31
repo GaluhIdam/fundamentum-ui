@@ -2,6 +2,9 @@
 :host {
   width: -webkit-fill-available;
 }
+select {
+  color: var(--fuiColorFullShade, $fuiColorFullShade);
+}
 .fui-input-field {
   @include inputFieldContainer();
 }
@@ -24,8 +27,8 @@
 }
 
 .default {
-  @include bottomLine($fuiColorPrimary);
+  @include bottomLine(var(--fuiColorPrimary, $fuiColorPrimary));
 }
 .invalid {
-  @include bottomLine($fuiColorDanger);
+  @include bottomLine(var(--fuiColorDanger, $fuiColorDanger));
 }

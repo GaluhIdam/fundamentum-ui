@@ -3,7 +3,6 @@
   margin: 0px 0px 0px 5px;
   font-weight: 600;
   align-items: baseline;
-  color: $fuiColorGhost;
 }
 .nav-item {
   margin: 5px 10px 5px 10px;
@@ -26,17 +25,16 @@ p {
   margin: 5px 0px 5px 0px;
 }
 .version {
+  color: var(--fuiColorInk, $fuiColorInk);
   font-size: 11px;
-  color: black;
   font-weight: bold;
   padding: 5px;
   border-radius: 3px;
   margin-left: 10px;
-  background-color: $fuiColorLightShade;
+  background-color: var(--fuiColorLightShade, $fuiColorLightShade);
 }
 
 .info-head {
-  color: $fuiColorGhost;
   height: 35px;
   .dev {
     margin: 0px 0px 0px 10px;
@@ -59,4 +57,29 @@ p {
 
 .container-body {
   margin: 20px;
+}
+
+.fundamentum {
+  color: var(--fuiColorInk, $fuiColorInk);
+}
+.u {
+  margin-left: 0px;
+  color: var(--fuiColorInk, $fuiColorInk);
+}
+
+.i {
+  color: var(--fuiColorInk, $fuiColorInk);
+}
+
+.con-select-theme {
+  display: grid;
+  .select-theme {
+    margin: 5px;
+    text-wrap: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

@@ -26,13 +26,15 @@ import { Router, RouterModule } from '@angular/router';
   styleUrl: './link.component.scss',
 })
 export class LinkComponent {
-  @Input({ required: true }) colorLink: Color = 'text';
+  @Input() colorLink: Color = 'text';
   @Input({ required: true }) urlLink?: string;
   @Input({ required: true }) typeLink?: 'external' | 'coloring' | 'disabled';
 
   currentRoute: string = '';
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.currentRoute = this.router.url;

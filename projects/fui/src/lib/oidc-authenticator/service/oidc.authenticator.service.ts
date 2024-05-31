@@ -124,7 +124,11 @@ export class OidcAuthenticatorService extends OidcUtilityService {
     if (tokens) {
       return this.getUserInfo(config).pipe(
         tap((res) => {
-          if (!res) this.clearAllStorage();
+          if (!res) {
+            localStorage.removeItem('access_token');
+            localStorage.removeItem('id_token');
+            localStorage.removeItem('refresh_token');
+          }
         }),
         map((res) => !!res),
         catchError(() => of(false))

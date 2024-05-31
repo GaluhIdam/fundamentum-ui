@@ -4,9 +4,9 @@
   display: none;
 }
 .fui-collapsible-panel.show {
-  z-index: 1;
+  z-index: 3;
   display: flex;
-  background-color: rgba($fuiColorDarkShade, 0.5);
+  background-color: rgba(#000, 0.5);
   width: 100%;
   position: fixed;
   left: 0;
@@ -21,7 +21,7 @@
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: $fuiColorEmptyShade;
+  background-color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
   animation: slideOut 0.5s forwards;
   transform: translateX(-100%);
 }
@@ -63,7 +63,7 @@
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: $fuiColorEmptyShade;
+  background-color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
 }
 
 /** Add On*/
@@ -75,9 +75,9 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: $fuiColorMediumShade;
+  background: var(--fuiColorMediumShade, $fuiColorMediumShade);
   border-radius: 25px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: $fuiColorDarkShade;
+  background: var(--fuiColorDarkShade, $fuiColorDarkShade);
 }

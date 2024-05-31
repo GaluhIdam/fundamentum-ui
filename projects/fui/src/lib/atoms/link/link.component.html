@@ -3,7 +3,9 @@
   class="{{ colorLink }} {{ typeLink }}"
   (click)="typeLink === 'external' ? navigateToExternalUrl() : null"
   [target]="typeLink === 'external' ? true : false"
-  [routerLink]="typeLink !== 'external' ? urlLink : currentRoute"
+  [routerLink]="
+    typeLink !== 'external' && typeLink !== 'coloring' ? currentRoute : urlLink
+  "
   routerLinkActive="active"
 >
   <ng-content></ng-content> </a

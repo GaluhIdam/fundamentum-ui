@@ -1,14 +1,14 @@
-@use './../variables/color_variable';
+@use "./../variables/color_variable";
 
 @mixin fuiAvatar($size) {
   width: calc($size * 1.8);
   height: calc($size * 1.8);
-  font-size: calc($size * .8);
+  font-size: calc($size * 0.8);
   font-weight: 600;
-  
+
   ::ng-deep fui-text,
   ::ng-deep fui-text span {
-    font-size: calc($size * .8) !important;
-    color: color_variable.$fuiColorInk;
+    font-size: calc($size * 0.8) !important;
+    color: #000;
   }
 }

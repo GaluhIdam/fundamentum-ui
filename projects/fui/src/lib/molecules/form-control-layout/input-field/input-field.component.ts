@@ -27,7 +27,6 @@ export class InputFieldComponent {
     | 'date'
     | 'time'
     | 'email' = 'text';
-  @Input() mode: 'dark' | 'light' = 'light';
   @Input({ required: true }) invalid: boolean = false;
   @Input({ required: true }) size: 's' | 'm' | 'l' = 'm';
   @Input() placeholder: string = 'Please type here...';

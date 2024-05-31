@@ -1,6 +1,6 @@
 @import "./../../styles/index";
 
-$defaultColorBar : $fuiColorLightShade;
+$defaultColorBar: $fuiColorLightShade;
 $reducer: 30;
 
 .progress {
@@ -10,31 +10,31 @@ $reducer: 30;
 }
 
 .primary {
-  @include fuiProgress($fuiColorPrimary);
+  @include fuiProgress(var(--fuiColorPrimary, $fuiColorPrimary));
 }
 
 .success {
-  @include fuiProgress($fuiColorSuccess);
+  @include fuiProgress(var(--fuiColorSuccess, $fuiColorSuccess));
 }
 
 .warning {
-  @include fuiProgress($fuiColorWarning);
-} 
+  @include fuiProgress(var(--fuiColorWarning, $fuiColorWarning));
+}
 
 .danger {
-  @include fuiProgress($fuiColorDanger);
+  @include fuiProgress(var(--fuiColorDanger, $fuiColorDanger));
 }
 
 .text {
-  @include fuiProgress($fuiColorDarkShade);
+  @include fuiProgress(var(--fuiColorDarkShade, $fuiColorDarkShade));
 }
 
 .accent {
-  @include fuiProgress($fuiColorAccent);
+  @include fuiProgress(var(--fuiColorAccent, $fuiColorAccent));
 }
 
 .disabled {
-  @include fuiProgress($fuiColorDisabled);
+  @include fuiProgress(var(--fuiColorDisabled, $fuiColorDisabled));
 }
 
 .defaultcolor-progress-bar {
@@ -42,31 +42,31 @@ $reducer: 30;
 }
 
 .primary-progress-bar {
-  @include fuiProgressBar($fuiColorPrimary);
+  @include fuiProgressBar(var(--fuiColorPrimary, $fuiColorPrimary));
 }
 
 .success-progress-bar {
-  @include fuiProgressBar($fuiColorSuccess);
+  @include fuiProgressBar(var(--fuiColorSuccess, $fuiColorSuccess));
 }
 
 .warning-progress-bar {
-  @include fuiProgressBar($fuiColorWarning);
-} 
+  @include fuiProgressBar(var(--fuiColorWarning, $fuiColorWarning));
+}
 
 .danger-progress-bar {
-  @include fuiProgressBar($fuiColorDanger);
+  @include fuiProgressBar(var(--fuiColorDanger, $fuiColorDanger));
 }
 
 .text-progress-bar {
-  @include fuiProgressBar($fuiColorDarkShade);
+  @include fuiProgressBar(var(--fuiColorDarkShade, $fuiColorDarkShade));
 }
 
 .accent-progress-bar {
-  @include fuiProgressBar($fuiColorAccent);
+  @include fuiProgressBar(var(--fuiColorAccent, $fuiColorAccent));
 }
 
 .disabled-progress-bar {
-  @include fuiProgressBar($fuiColorDisabled);
+  @include fuiProgressBar(var(--fuiColorDisabled, $fuiColorDisabled));
 }
 
 .sizedefault {

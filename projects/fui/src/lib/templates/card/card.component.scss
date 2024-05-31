@@ -4,18 +4,23 @@
 @use "./../../styles/mixins/size_mixin";
 
 .card {
-  
   &-container {
     display: flex;
-    background: color.$fuiColorEmptyShade;
-    box-shadow: rgba($color: color.$fuiColorDarkestShade, $alpha: .2) 0px 8px 24px;
+    background: var(--fuiColorEmptyShade, color.$fuiColorEmptyShade);
+    box-shadow: rgba(
+        $color: var(--fuiColorDarkestShade, color.$fuiColorDarkestShade),
+        $alpha: 0.2
+      )
+      0px 8px 24px;
     position: relative;
     cursor: pointer;
-    transition: all .3s ease;
-  
+    transition: all 0.3s ease;
+
     &:hover {
       transform: translateY(-2px);
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 5px, rgba(0, 0, 0, 0.07) 0px 3.6px 13px, rgba(0, 0, 0, 0.06) 0px 8.4px 23px, rgba(0, 0, 0, 0.05) 0px 23px 35px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 5px,
+        rgba(0, 0, 0, 0.07) 0px 3.6px 13px, rgba(0, 0, 0, 0.06) 0px 8.4px 23px,
+        rgba(0, 0, 0, 0.05) 0px 23px 35px;
     }
   }
 
@@ -28,49 +33,48 @@
     z-index: 1;
     transform: translateX(-50%);
     border-radius: 12px;
-    border: 1px solid color.$fuiColorLightShade;
-    background: color.$fuiColorEmptyShade;
+    border: 1px solid var(--fuiColorLightShade, color.$fuiColorLightShade);
+    background: var(--fuiColorEmptyShade, color.$fuiColorEmptyShade);
 
     &-primary {
-      background: color.$fuiColorPrimary;
-      border: 1px solid color.$fuiColorPrimary;
+      background: var(--fuiColorPrimary, color.$fuiColorPrimary);
+      border: 1px solid var(--fuiColorPrimary, color.$fuiColorPrimary);
     }
 
     &-success {
-      background: color.$fuiColorSuccess;
-      border: 1px solid color.$fuiColorSuccess;
+      background: var(--fuiColorSuccess, color.$fuiColorSuccess);
+      border: 1px solid var(--fuiColorSuccess, color.$fuiColorSuccess);
     }
 
     &-warning {
-      background: color.$fuiColorWarning;
-      border: 1px solid color.$fuiColorWarning;
+      background: var(--fuiColorWarning, color.$fuiColorWarning);
+      border: 1px solid var(--fuiColorWarning, color.$fuiColorWarning);
     }
 
     &-danger {
-      background: color.$fuiColorDanger;
-      border: 1px solid color.$fuiColorDanger;
+      background: var(--fuiColorDanger, color.$fuiColorDanger);
+      border: 1px solid var(--fuiColorDanger, color.$fuiColorDanger);
     }
 
     &-text {
-      background: color.$fuiTextColor;
-      border: 1px solid color.$fuiTextColor;
+      background: var(--fuiTextColor, color.$fuiTextColor);
+      border: 1px solid var(--fuiTextColor, color.$fuiTextColor);
     }
 
     &-accent {
-      background: color.$fuiColorAccent;
-      border: 1px solid color.$fuiColorAccent;
+      background: var(--fuiColorAccent, color.$fuiColorAccent);
+      border: 1px solid var(--fuiColorAccent, color.$fuiColorAccent);
     }
 
     &-disabled {
-      background: color.$fuiColorDisabled;
-      border: 1px solid color.$fuiColorDisabled;
+      background: var(--fuiColorDisabled, color.$fuiColorDisabled);
+      border: 1px solid var(--fuiColorDisabled, color.$fuiColorDisabled);
     }
-
   }
 
   &-content {
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
   }
 
   &-image,
@@ -96,12 +100,12 @@
   }
 
   &-icon-horizontal {
-    padding-right: .5rem;
+    padding-right: 0.5rem;
   }
 
   &-icon-vertical,
   &-title {
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
   }
 
   &-body {
@@ -109,31 +113,31 @@
   }
 
   &-primary {
-    background: color.$fuiColorPrimary;
+    background: var(--fuiColorPrimary, color.$fuiColorPrimary);
   }
 
   &-success {
-    background: color.$fuiColorSuccess;
+    background: var(--fuiColorSuccess, color.$fuiColorSuccess);
   }
 
   &-warning {
-    background: color.$fuiColorWarning;
+    background: var(--fuiColorWarning, color.$fuiColorWarning);
   }
 
   &-danger {
-    background: color.$fuiColorDanger;
+    background: var(--fuiColorDanger, color.$fuiColorDanger);
   }
 
   &-text {
-    background: color.$fuiTextColor;
+    background: var(--fuiTextColor, color.$fuiTextColor);
   }
 
   &-accent {
-    background: color.$fuiColorAccent;
+    background: var(--fuiColorAccent, color.$fuiColorAccent);
   }
 
   &-disabled {
-    background: color.$fuiColorCardDisabled;
+    background: var(--fuiColorCardDisabled, color.$fuiColorCardDisabled);
     box-shadow: none;
     cursor: not-allowed;
 
@@ -280,18 +284,17 @@ $padding-styles: (
   padding-left: size.$fuiSizeL;
 }
 
-.card-radius-none{
+.card-radius-none {
   border-radius: 0;
 }
 
-.card-radius-s{
-  border-radius: border.$fuiBorderRadiusSmall;  
+.card-radius-s {
+  border-radius: border.$fuiBorderRadiusSmall;
 }
 
-.card-radius-m{
+.card-radius-m {
   border-radius: border.$fuiBorderRadius;
 }
-
 
 .card-image-radius-none {
   img {

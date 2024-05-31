@@ -2,12 +2,14 @@
 :host {
   width: -webkit-fill-available;
 }
-.dark {
-  color: $fuiColorEmptyShade;
+
+input {
+  color: var(--fuiColorFullShade, $fuiColorFullShade);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
-.light {
-  color: $fuiColorDarkestShade;
-}
+
 .fui-input-field {
   @include inputFieldContainer();
 }
@@ -30,8 +32,8 @@
 }
 
 .default {
-  @include bottomLine($fuiColorPrimary);
+  @include bottomLine(var(--fuiColorPrimary, $fuiColorPrimary));
 }
 .invalid {
-  @include bottomLine($fuiColorDanger);
+  @include bottomLine(var(--fuiColorDanger, $fuiColorDanger));
 }

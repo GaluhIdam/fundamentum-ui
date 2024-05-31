@@ -11,23 +11,20 @@
   padding-left: 10px;
   padding-right: 10px;
   outline: none;
-  background-color: transparent;
+  background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
   width: 100%;
   &:focus {
     outline: none;
   }
 
   &:disabled {
-    color: #9aa4b4;
     background-color: #eef2f7;
     cursor: not-allowed;
-    &::placeholder {
-      color: #9aa4b4;
-    }
   }
 }
 
 @mixin inputFieldContainer() {
+  background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
   padding-left: 10px;
   padding-right: 10px;
   display: flex;

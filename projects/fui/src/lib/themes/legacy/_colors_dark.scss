@@ -1,48 +1,51 @@
-// stylelint-disable color-no-hex
+body.dark {
+  background-color: #1d1e24;
+  color: #fff;
+  :host {
+    --fuiColorGhost: #000;
+    --fuiColorInk: #fff;
 
-// This extra import allows any variables that are created via functions to work when loaded into JS
-@import "../../styles/functions/index";
+    // Core
+    --fuiColorPrimary: rgb(54, 162, 239);
+    --fuiColorAccent: rgb(246, 143, 190);
+    --fuiColorSuccess: rgb(125, 222, 216);
+    --fuiColorWarning: rgb(243, 211, 113);
+    --fuiColorDanger: rgb(248, 114, 107);
 
-// These colors stay the same no matter the theme
-$fuiColorGhost: #FFF !default;
-$fuiColorInk: #000 !default;
+    // Grays
+    --fuiColorEmptyShade: #000;
+    --fuiColorLightestShade: rgb(19, 19, 23);
+    --fuiColorLightShade: #343741;
+    --fuiColorMediumShade: #535966;
+    --fuiColorDarkShade: #98a2b3;
+    --fuiColorDarkestShade: #d4dae5;
+    --fuiColorFullShade: #fff;
 
-// Core
-$fuiColorAccent: #F990C0 !default;
+    /** Button */
+    --fuiBtnPrimary: rgb(54, 162, 239);
+    --fuiBtnSuccess: rgb(125, 222, 216);
+    --fuiBtnWarning: rgb(243, 211, 113);
+    --fuiBtnDanger: rgb(248, 107, 99);
+    --fuiBtnText: rgb(223, 229, 239);
+    --fuiBtnAccent: rgb(246, 143, 190);
+    --fuiBtnDisabled: rgba(52, 55, 65, 0.15);
 
-// Status
-$fuiColorSuccess: #7DE2D1 !default;
-$fuiColorWarning: #FFCE7A !default;
-$fuiColorDanger: #F66 !default;
+    /* Button Background Color Secondary */
+    --fuiPrimarySecondary: rgb(16, 49, 72);
+    --fuiSuccessSecondary: rgb(38, 67, 65);
+    --fuiWarningSecondary: rgb(73, 63, 34);
+    --fuiDangerSecondary: rgb(74, 32, 30);
+    --fuiTextSecondary: rgb(42, 44, 52);
+    --fuiAccentSecondary: rgb(74, 43, 57);
+    --fuiDisabledSecondary: rgba(52, 55, 65, 0.15);
 
-// Grays
-$fuiColorEmptyShade: #1D1E24 !default;
-$fuiColorLightestShade: #25262E !default;
-$fuiColorLightShade: #343741 !default;
-$fuiColorMediumShade: #535966 !default;
-$fuiColorDarkShade: #98A2B3 !default;
-$fuiColorDarkestShade: #D4DAE5 !default;
-$fuiColorFullShade: #FFF !default;
-
-// Backgrounds
-$fuiPageBackgroundColor: shade($fuiColorLightestShade, 45%) !default;
-$fuiColorHighlight: #2E2D25 !default;
-
-// Variations from core
-$fuiTextColor: #DFE5EF !default;
-$fuiTitleColor: $fuiTextColor !default;
-$fuiTextSubduedColor: makeHighContrastColor($fuiColorMediumShade) !default;
-$fuiColorDisabled: shade($fuiTextColor, 70%) !default;
-
-// Contrasty text variants
-$fuiColorPrimaryText: makeHighContrastColor($fuiColorPrimary) !default;
-$fuiColorSuccessText: makeHighContrastColor($fuiColorSuccess) !default;
-$fuiColorAccentText: makeHighContrastColor($fuiColorAccent) !default;
-$fuiColorWarningText: makeHighContrastColor($fuiColorWarning) !default;
-$fuiColorDangerText: makeHighContrastColor($fuiColorDanger) !default;
-$fuiColorDisabledText: makeDisabledContrastColor($fuiColorDisabled) !default;
-$fuiLinkColor: $fuiColorPrimaryText !default;
-
-// Charts
-$euiColorChartLines: $fuiColorLightShade !default;
-$euiColorChartBand: tint($fuiColorLightestShade, 2.5%) !default;
+    /* Button Text Color Secondary */
+    --fuiBtnPrimaryText: rgb(54, 162, 239);
+    --fuiBtnSuccessText: rgb(125, 222, 216);
+    --fuiBtnWarningText: rgb(243, 211, 113);
+    --fuiBtnDangerText: rgb(248, 114, 107);
+    --fuiBtnTextText: rgb(223, 229, 239);
+    --fuiBtnAccentText: rgb(246, 143, 190);
+    --fuiBtnDisabledText: rgb(81, 87, 97);
+  }
+}

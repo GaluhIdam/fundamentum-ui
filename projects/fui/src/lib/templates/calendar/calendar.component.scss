@@ -10,21 +10,25 @@
   margin-bottom: 10px;
   justify-content: space-between;
 }
+.body-calendar {
+  overflow-x: auto;
+}
 
 .now {
-  color: $fuiColorDarkShade;
+  color: var(--fuiColorDarkShade, $fuiColorDarkShade);
 }
 
 .utility {
+  display: grid;
   align-content: center;
 }
 
 .title {
   h1 {
-    @include monthYearMix($fuiColorDarkestShade);
+    @include monthYearMix(var(--fuiColorInk, $fuiColorInk));
   }
   h4 {
-    @include monthYearMix($fuiColorDarkShade);
+    @include monthYearMix(var(--fuiColorInk, $fuiColorInk));
   }
 }
 
@@ -32,6 +36,7 @@
   @include selectFormMix();
 }
 .content-calendar {
+  min-width: 800px;
   width: -webkit-fill-available;
   border-collapse: collapse;
 }
@@ -40,35 +45,47 @@
 }
 .day-calendar {
   @include dayCalendarTodayMix(
-    $fuiColorDarkestShade,
-    $fuiColorEmptyShade,
-    $fuiColorLightShade,
+    var(--fuiColorDarkestShade, $fuiColorDarkestShade),
+    var(--fuiColorLightestShade, $fuiColorLightestShade),
+    var(--fuiColorLightShade, $fuiColorLightShade),
     10px,
-    $fuiColorDarkShade
+    var(--fuiColorDarkShade, $fuiColorDarkShade)
   );
 }
 
 .today {
   @include dayCalendarTodayMix(
-    $fuiColorDarkestShade,
-    $fuiColorLightShade,
-    $fuiColorLightShade,
+    var(--fuiColorDarkestShade, $fuiColorDarkestShade),
+    var(--fuiColorLightShade, $fuiColorLightShade),
+    var(--fuiColorLightShade, $fuiColorLightShade),
     10px,
-    $fuiColorDarkestShade
+    var(--fuiColorDarkestShade, $fuiColorDarkestShade)
   );
 }
 
 .event-calendar-primary {
-  @include eventCalendarMix($fuiBtnPrimarySecondary, $fuiColorPrimary);
+  @include eventCalendarMix(
+    var(--fuiPrimarySecondary, $fuiPrimarySecondary),
+    var(--fuiColorPrimary, $fuiColorPrimary)
+  );
 }
 .event-calendar-success {
-  @include eventCalendarMix($fuiBtnSuccessSecondary, $fuiColorSuccess);
+  @include eventCalendarMix(
+    var(--fuiSuccessSecondary, $fuiSuccessSecondary),
+    var(--fuiColorSuccess, $fuiColorSuccess)
+  );
 }
 .event-calendar-warning {
-  @include eventCalendarMix($fuiBtnWarningSecondary, $fuiColorWarning);
+  @include eventCalendarMix(
+    var(--fuiWarningSecondary, $fuiWarningSecondary),
+    var(--fuiColorWarning, $fuiColorWarning)
+  );
 }
 .event-calendar-danger {
-  @include eventCalendarMix($fuiBtnDangerSecondary, $fuiColorDanger);
+  @include eventCalendarMix(
+    var(--fuiDangerSecondary, $fuiDangerSecondary),
+    var(--fuiColorDanger, $fuiColorDanger)
+  );
 }
 .event-calendar-text {
   @include eventCalendarTextMix();

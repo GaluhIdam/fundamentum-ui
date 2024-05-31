@@ -16,7 +16,6 @@
   }
 }
 
-
 .subdued-row {
   flex-direction: row;
 }
@@ -82,35 +81,35 @@
 }
 
 .panel-subdued-default {
-  @include fuiPanel($fuiColorLightShade, 10%)
+  @include fuiPanel(var(--fuiColorLightShade, $fuiColorLightShade), 10%);
 }
 
 .primary {
-  @include fuiPanel($fuiColorPrimary, 60%);
+  @include fuiPanel(var(--fuiColorPrimary, $fuiColorPrimary), 60%);
 }
 
 .success {
-  @include fuiPanel($fuiColorSuccess, 40%);
+  @include fuiPanel(var(--fuiColorSuccess, $fuiColorSuccess), 40%);
 }
 
 .warning {
-  @include fuiPanel($fuiColorWarning, 45%);
+  @include fuiPanel(var(--fuiColorWarning, $fuiColorWarning), 45%);
 }
 
 .danger {
-  @include fuiPanel($fuiColorDanger, 50%);
+  @include fuiPanel(var(--fuiColorDanger, $fuiColorDanger), 50%);
 }
 
 .text {
-  @include fuiPanel($fuiColorDarkShade, 50%);
+  @include fuiPanel(var(--fuiColorDarkShade, $fuiColorDarkShade), 50%);
 }
 
 .accent {
-  @include fuiPanel($fuiColorAccent, 22%);
+  @include fuiPanel(var(--fuiColorAccent, $fuiColorAccent), 22%);
 }
 
 .disabled {
-  @include fuiPanel($fuiColorDisabled, 20%);
+  @include fuiPanel(var(--fuiColorDisabled, $fuiColorDisabled), 20%);
 }
 
 .shadow-default {
@@ -118,63 +117,63 @@
 }
 
 .shadow-primary {
-  @include fuiBottomShadowMedium($fuiColorPrimary);
+  @include fuiBottomShadowMedium(var(--fuiColorPrimary, $fuiColorPrimary));
 }
 
 .shadow-success {
-  @include fuiBottomShadowMedium($fuiColorSuccess);
+  @include fuiBottomShadowMedium(var(--fuiColorSuccess, $fuiColorSuccess));
 }
 
 .shadow-warning {
-  @include fuiBottomShadowMedium($fuiColorWarning);
+  @include fuiBottomShadowMedium(var(--fuiColorWarning, $fuiColorWarning));
 }
 
 .shadow-danger {
-  @include fuiBottomShadowMedium($fuiColorDanger);
+  @include fuiBottomShadowMedium(var(--fuiColorDanger, $fuiColorDanger));
 }
 
 .shadow-text {
-  @include fuiBottomShadowMedium($fuiColorDarkShade);
+  @include fuiBottomShadowMedium(var(--fuiColorDarkShade, $fuiColorDarkShade));
 }
 
 .shadow-accent {
-  @include fuiBottomShadowMedium($fuiColorAccent);
+  @include fuiBottomShadowMedium(var(--fuiColorAccent, $fuiColorAccent));
 }
 
 .shadow-disabled {
-  @include fuiBottomShadowMedium($fuiColorDisabled);
+  @include fuiBottomShadowMedium(var(--fuiColorDisabled, 4fuiColorDisabled));
 }
 
 .border-default {
-  @include fuiPanelBorder($fuiColorDarkShade, 40%);
+  @include fuiPanelBorder(var(--fuiColorDarkShade, $fuiColorDarkShade), 40%);
 }
 
 .border-primary {
-  @include fuiPanelBorder($fuiColorPrimary, 55%);
+  @include fuiPanelBorder(var(--fuiColorPrimary, $fuiColorPrimary), 55%);
 }
 
 .border-success {
-  @include fuiPanelBorder($fuiColorSuccess, 35%);
+  @include fuiPanelBorder(var(--fuiColorSuccess, $fuiColorSuccess), 35%);
 }
 
 .border-warning {
-  @include fuiPanelBorder($fuiColorWarning, 40%);
+  @include fuiPanelBorder(var(--fuiColorWarning, $fuiColorWarning), 40%);
 }
 
 .border-danger {
-  @include fuiPanelBorder($fuiColorDanger, 45%);
+  @include fuiPanelBorder(var(--fuiColorDanger, $fuiColorDanger), 45%);
 }
 
 .border-text {
-  @include fuiPanelBorder($fuiColorDarkShade, 45%);
+  @include fuiPanelBorder(var(--fuiColorDarkShade, $fuiColorDarkShade), 45%);
 }
 
 .border-accent {
-  @include fuiPanelBorder($fuiColorAccent, 17%);
+  @include fuiPanelBorder(var(--fuiColorAccent, $fuiColorAccent), 17%);
 }
 
 .border-disabled {
-  @include fuiPanelBorder($fuiColorDisabled, 17%);
+  @include fuiPanelBorder(var(--fuiColorDisabled, $fuiColorDisabled), 17%);
 }
 
 .panel-radius {

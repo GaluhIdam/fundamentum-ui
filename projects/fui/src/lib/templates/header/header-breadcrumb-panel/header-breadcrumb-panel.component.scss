@@ -7,7 +7,7 @@
   align-items: center;
 }
 a {
-  color: $fuiColorPrimary;
+  color: var(--fuiColorPrimary, $fuiColorPrimary);
   cursor: pointer;
   text-decoration: none;
   &:hover {
@@ -17,18 +17,18 @@ a {
 .active {
   font-weight: bold;
   text-decoration: none;
-  color: $fuiColorGhost;
+  color: var(--fuiColorGhost, $fuiColorGhost);
 }
 
 .active-nav {
-  background-color: $fuiColorDarkShade;
+  background-color: var(--fuiColorDarkShade, $fuiColorDarkShade);
 }
 
 
 span {
   max-width: 120px;
   font-family: $fuiFontFamily;
-  background-color: $fuiBtnPrimarySecondary;
+  background-color: var(--fuiPrimarySecondary, $fuiPrimarySecondary);
   color: $fuiColorPrimary;
   overflow: hidden !important;
   text-overflow: ellipsis !important;

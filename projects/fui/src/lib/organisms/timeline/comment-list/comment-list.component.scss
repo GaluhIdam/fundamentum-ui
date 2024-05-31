@@ -2,55 +2,59 @@
 
 .fui-comment-list-primary {
   @include commentList(
-    $fuiColorDarkestShade,
-    $fuiColorPrimary,
-    $fuiBtnPrimarySecondary
+    var(--fuiColorDarkestShade, $fuiColorDarkestShade),
+    var(--fuiColorPrimary, $fuiColorPrimary),
+    var(--fuiPrimarySecondary, $fuiPrimarySecondary)
   );
 }
 .fui-comment-list-success {
   @include commentList(
-    $fuiColorDarkestShade,
-    $fuiColorSuccess,
-    $fuiBtnSuccessSecondary
+    var(--fuiColorDarkestShade, $fuiColorDarkestShade),
+    var(--fuiColorSuccess, $fuiColorSuccess),
+    var(--fuiSuccessSecondary, $fuiSuccessSecondary)
   );
 }
 .fui-comment-list-warning {
   @include commentList(
-    $fuiColorDarkestShade,
-    $fuiColorWarning,
-    $fuiBtnWarningSecondary
+    var(--fuiColorDarkestShade, $fuiColorDarkestShade),
+    var(--fuiColorWarning, $fuiColorWarning),
+    var(--fuiWarningSecondary, $fuiWarningSecondary)
   );
 }
 .fui-comment-list-danger {
   @include commentList(
-    $fuiColorDarkestShade,
-    $fuiColorDanger,
-    $fuiBtnDangerSecondary
+    var(--fuiColorDarkestShade, $fuiColorDarkestShade),
+    var(--fuiColorDanger, $fuiColorDanger),
+    var(--fuiDangerSecondary, $fuiDangerSecondary)
   );
 }
 .fui-comment-list-text {
   @include commentList(
-    $fuiColorDarkestShade,
-    $fuiColorLightShade,
-    $fuiBtnTextSecondary
+    var(--fuiColorDarkestShade, $fuiColorDarkestShade),
+    var(--fuiColorLightShade, $fuiColorLightShade),
+    var(--fuiTextSecondary, $fuiTextSecondary)
   );
 }
 .fui-comment-list-accent {
   @include commentList(
-    $fuiColorDarkestShade,
-    $fuiColorAccent,
-    $fuiBtnAccentSecondary
+    var(--fuiColorDarkestShade, $fuiColorDarkestShade),
+    var(--fuiColorAccent, $fuiColorAccent),
+    var(--fuiAccentSecondary, $fuiAccentSecondary)
   );
 }
 .fui-comment-list-ghost {
   @include commentList(
-    $fuiColorDarkestShade,
-    $fuiColorDarkShade,
-    $fuiColorGhost
+    var(--fuiColorDarkestShade, $fuiColorDarkestShade),
+    var(--fuiColorDarkShade, $fuiColorDarkShade),
+    var(--fuiColorGhost, $fuiColorGhost)
   );
 }
 .fui-comment-list-disabled {
-  @include commentList($fuiColorDisabledText, $fuiColorLightShade, $fuiColorLightestShade);
+  @include commentList(
+    var(--fuiColorDisabledText, $fuiColorDisabledText),
+    var(--fuiColorLightShade, $fuiColorLightShade),
+    var(--fuiColorLightestShade, $fuiColorLightestShade)
+  );
 }
 
 :host {

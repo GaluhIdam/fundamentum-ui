@@ -3,13 +3,28 @@
 
 * {
   box-sizing: border-box;
+  z-index: 1;
 }
-
 .page-sidebar {
-  background: color.$fuiColorLightestShade;
+  background: var(--fuiColorLightestShade, color.$fuiColorLightestShade);
   height: 100%;
   overflow-y: auto;
   max-width: 240px;
+}
+
+@media (max-height: 1000px) {
+  .page-sidebar {
+    height: -webkit-fill-available;
+  }
+}
+.docked {
+  position: static;
+  box-shadow: inset -8px 0 15px -5px rgba(0, 0, 0, 0.5);
+}
+
+.undocked {
+  position: absolute;
+  box-shadow: 2px 0 8px 0 rgba(0, 0, 0, 0.5);
 }
 
 .p-none {
@@ -37,9 +52,9 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: color.$fuiColorMediumShade;
+  background: var(--fuiColorMediumShade, color.$fuiColorMediumShade);
   border-radius: 25px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: color.$fuiColorDarkShade;
+  background: var(--fuiColorDarkShade, color.$fuiColorDarkShade);
 }

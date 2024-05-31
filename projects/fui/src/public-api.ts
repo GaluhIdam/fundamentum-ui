@@ -163,3 +163,6 @@ export * from './lib/templates/flex/flex-item.component';
 /** OpenID Connect */
 export * from './lib/oidc-authenticator/service/oidc.authenticator.service';
 export * from './lib/oidc-authenticator/utility/oidc.utility.service';
+
+/** Theme Service */
+export * from './lib/themes/service/theme.service';

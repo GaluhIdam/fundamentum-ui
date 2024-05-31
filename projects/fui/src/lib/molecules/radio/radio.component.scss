@@ -46,7 +46,7 @@
 }
 
 .option,
-input, 
+input,
 label {
   cursor: pointer;
 }
@@ -63,7 +63,7 @@ $color-styles: (
 
 @each $color, $value in $color-styles {
   .radio-#{$color} {
-    
+
     input[type="radio"]{
       appearance: none;
       accent-color: $value;
@@ -73,7 +73,7 @@ $color-styles: (
       &:hover {
         border: 2px solid $value;
       }
-      
+
       &:checked {
         background-color: $value;
         border: 2px solid $value;
@@ -89,7 +89,7 @@ $color-styles: (
           background-color: color.$fuiColorGhost;
         }
       }
-    } 
+    }
   }
 }
 

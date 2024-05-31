@@ -3,6 +3,7 @@
 .fui-flex-combox-parent {
   width: 350px;
   font-family: $fuiFontFamily;
+  background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
   display: grid;
   align-items: center;
   position: relative;
@@ -13,7 +14,7 @@
   width: 350px;
   font-family: $fuiFontFamily;
   display: flex;
-  border: 1px solid $fuiColorLightShade;
+  border: 1px solid var(--fuiColorLightShade, $fuiColorLightShade);
   border-radius: 6px;
   padding: 7px 6px 7px 6px;
   align-items: center;
@@ -22,7 +23,7 @@
 
 .active {
   border-bottom-style: solid;
-  border-bottom-color: $fuiColorPrimary;
+  border-bottom-color: var(--fuiColorPrimary, $fuiColorPrimary);
   border-bottom-width: 2px;
 }
 
@@ -37,9 +38,10 @@
 }
 
 .fui-mx-selected {
+  background-color: var(--fuiColorLightShade, $fuiColorLightShade);
   margin: 0px 3px 0px 3px;
   padding: 3px 5px 3px 5px;
-  border: 1px solid $fuiColorLightShade;
+  border: 1px solid var(--fuiColorLightShade, $fuiColorLightShade);
   border-radius: 3px;
   display: flex;
   align-items: center;
@@ -55,6 +57,8 @@
 }
 
 .fui-input-combox {
+  color: var(--fuiColorFullShade, $fuiColorFullShade);
+  background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
   padding: 3px 5px 3px 5px;
   outline: none;
   border: none;
@@ -63,7 +67,7 @@
 .fui-multi-select {
   font-family: $fuiFontFamily;
   outline: none;
-  border: 1px solid $fuiColorLightShade;
+  border: 1px solid var(--fuiColorLightShade, $fuiColorLightShade);
   position: absolute;
   left: 0;
   right: 0;
@@ -79,18 +83,18 @@
   width: 5px;
 }
 .fui-multi-select::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
 }
 .fui-multi-select::-webkit-scrollbar-thumb {
-  background: $fuiColorMediumShade;
+  background: var(--fuiColorMediumShade, $fuiColorMediumShade);
   border-radius: 25px;
 }
 .fui-multi-select::-webkit-scrollbar-thumb:hover {
-  background: $fuiColorDarkShade;
+  background: var(--fuiColorDarkShade, $fuiColorDarkShade);
 }
 
 .fui-icon-combox-cross {
-  background-color: $fuiColorMediumShade;
+  background-color: var(--fuiColorMediumShade, $fuiColorMediumShade);
   color: $fuiColorGhost;
   padding: 5px;
   border-radius: 100%;
@@ -100,10 +104,10 @@
 .fui-option-select {
   padding: 7px;
   font-size: small;
-  border-bottom: 1px solid $fuiColorLightestShade;
+  border-bottom: 1px solid var(--fuiColorLightestShade, $fuiColorLightestShade);
 }
 
 .fui-option-select:checked {
-  background-color: $fuiColorSuccess;
-  color: $fuiColorGhost;
+  background-color: var(--fuiColorLightShade, $fuiColorLightShade);
+  color: var(--fuiColorInk, $fuiColorInk);
 }

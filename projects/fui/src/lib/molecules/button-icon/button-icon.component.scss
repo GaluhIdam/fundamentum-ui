@@ -3,8 +3,8 @@
 /* Button Filled S*/
 .btn-fui-primary-s {
   @include buttonIconMix(
-    $fuiBtnPrimary,
-    $fuiColorGhost,
+    var(--fuiBtnPrimary, $fuiBtnPrimary),
+    var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
     $fuiSizeM,
     7px
@@ -12,8 +12,8 @@
 }
 .btn-fui-success-s {
   @include buttonIconMix(
-    $fuiBtnSuccess,
-    $fuiColorInk,
+    var(--fuiBtnSuccess, $fuiBtnSuccess),
+    #000,
     $fuiSizeXS,
     $fuiSizeM,
     7px
@@ -21,8 +21,8 @@
 }
 .btn-fui-danger-s {
   @include buttonIconMix(
-    $fuiBtnDanger,
-    $fuiColorGhost,
+    var(--fuiBtnDanger, $fuiBtnDanger),
+    var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
     $fuiSizeM,
     7px
@@ -30,8 +30,8 @@
 }
 .btn-fui-warning-s {
   @include buttonIconMix(
-    $fuiBtnWarning,
-    $fuiColorGhost,
+    var(--fuiBtnWarning, $fuiBtnWarning),
+    #000,
     $fuiSizeXS,
     $fuiSizeM,
     7px
@@ -39,8 +39,8 @@
 }
 .btn-fui-text-s {
   @include buttonIconMix(
-    $fuiBtnText,
-    $fuiColorGhost,
+    var(--fuiBtnText, $fuiBtnText),
+    var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
     $fuiSizeM,
     7px
@@ -48,8 +48,8 @@
 }
 .btn-fui-accent-s {
   @include buttonIconMix(
-    $fuiBtnAccent,
-    $fuiColorInk,
+    var(--fuiBtnAccent, $fuiBtnAccent),
+    #000,
     $fuiSizeXS,
     $fuiSizeM,
     7px
@@ -57,8 +57,8 @@
 }
 .btn-fui-disabled-s {
   @include buttonIconMix(
-    $fuiBtnDisabled,
-    $fuiBtnDisabledText,
+    var(--fuiBtnDisabled, $fuiBtnDisabled),
+    var(--fuiBtnDisabledText, $fuiBtnDisabledText),
     $fuiSizeXS,
     $fuiSizeM,
     7px
@@ -75,8 +75,8 @@
 /* Button Filled M*/
 .btn-fui-primary-m {
   @include buttonIconMix(
-    $fuiBtnPrimary,
-    $fuiColorGhost,
+    var(--fuiBtnPrimary, $fuiBtnPrimary),
+    var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
     $fuiSizeM + 3,
     8px
@@ -84,8 +84,8 @@
 }
 .btn-fui-success-m {
   @include buttonIconMix(
-    $fuiBtnSuccess,
-    $fuiColorInk,
+    var(--fuiBtnSuccess, $fuiBtnSuccess),
+    #000,
     $fuiSizeXS,
     $fuiSizeM + 3,
     8px
@@ -93,8 +93,8 @@
 }
 .btn-fui-danger-m {
   @include buttonIconMix(
-    $fuiBtnDanger,
-    $fuiColorGhost,
+    var(--fuiBtnDanger, $fuiBtnDanger),
+    var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
     $fuiSizeM + 3,
     8px
@@ -102,8 +102,8 @@
 }
 .btn-fui-warning-m {
   @include buttonIconMix(
-    $fuiBtnWarning,
-    $fuiColorGhost,
+    var(--fuiBtnWarning, $fuiBtnWarning),
+    #000,
     $fuiSizeXS,
     $fuiSizeM + 3,
     8px
@@ -111,8 +111,8 @@
 }
 .btn-fui-text-m {
   @include buttonIconMix(
-    $fuiBtnText,
-    $fuiColorGhost,
+    var(--fuiBtnText, $fuiBtnText),
+    var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
     $fuiSizeM + 3,
     8px
@@ -120,8 +120,8 @@
 }
 .btn-fui-accent-m {
   @include buttonIconMix(
-    $fuiBtnAccent,
-    $fuiColorInk,
+    var(--fuiBtnAccent, $fuiBtnAccent),
+    #000,
     $fuiSizeXS,
     $fuiSizeM + 3,
     8px
@@ -129,8 +129,8 @@
 }
 .btn-fui-disabled-m {
   @include buttonIconMix(
-    $fuiBtnDisabled,
-    $fuiBtnDisabledText,
+    var(--fuiBtnDisabled, $fuiBtnDisabled),
+    var(--fuiBtnDisabledText, $fuiBtnDisabledText),
     $fuiSizeXS,
     $fuiSizeM + 3,
     8px
@@ -147,8 +147,8 @@
 /* Button Filled L*/
 .btn-fui-primary-l {
   @include buttonIconMix(
-    $fuiBtnPrimary,
-    $fuiColorGhost,
+    var(--fuiBtnPrimary, $fuiBtnPrimary),
+    var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
     $fuiSizeM + 6,
     9px
@@ -156,8 +156,8 @@
 }
 .btn-fui-success-l {
   @include buttonIconMix(
-    $fuiBtnSuccess,
-    $fuiColorInk,
+    var(--fuiBtnSuccess, $fuiBtnSuccess),
+    #000,
     $fuiSizeXS,
     $fuiSizeM + 6,
     9px
@@ -165,8 +165,8 @@
 }
 .btn-fui-danger-l {
   @include buttonIconMix(
-    $fuiBtnDanger,
-    $fuiColorGhost,
+    var(--fuiBtnDanger, $fuiBtnDanger),
+    var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
     $fuiSizeM + 6,
     9px
@@ -174,8 +174,8 @@
 }
 .btn-fui-warning-l {
   @include buttonIconMix(
-    $fuiBtnWarning,
-    $fuiColorGhost,
+    var(--fuiBtnWarning, $fuiBtnWarning),
+    #000,
     $fuiSizeXS,
     $fuiSizeM + 6,
     9px
@@ -183,8 +183,8 @@
 }
 .btn-fui-text-l {
   @include buttonIconMix(
-    $fuiBtnText,
-    $fuiColorGhost,
+    var(--fuiBtnText, $fuiBtnText),
+    var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
     $fuiSizeM + 6,
     9px
@@ -192,8 +192,8 @@
 }
 .btn-fui-accent-l {
   @include buttonIconMix(
-    $fuiBtnAccent,
-    $fuiColorInk,
+    var(--fuiBtnAccent, $fuiBtnAccent),
+    #000,
     $fuiSizeXS,
     $fuiSizeM + 6,
     9px
@@ -201,8 +201,8 @@
 }
 .btn-fui-disabled-l {
   @include buttonIconMix(
-    $fuiBtnDisabled,
-    $fuiBtnDisabledText,
+    var(--fuiBtnDisabled, $fuiBtnDisabled),
+    var(--fuiBtnDisabledText, $fuiBtnDisabledText),
     $fuiSizeXS,
     $fuiSizeM + 6,
     9px
@@ -219,8 +219,8 @@
 /* Button Secondary S */
 .btn-fui-secondary-primary-s {
   @include buttonIconMix(
-    $fuiBtnPrimarySecondary,
-    $fuiBtnPrimaryText,
+    var(--fuiPrimarySecondary, $fuiPrimarySecondary),
+    var(--fuiBtnPrimaryText, $fuiBtnPrimaryText),
     $fuiSizeXS,
     $fuiSizeM,
     7px
@@ -228,8 +228,8 @@
 }
 .btn-fui-secondary-success-s {
   @include buttonIconMix(
-    $fuiBtnSuccessSecondary,
-    $fuiBtnSuccessText,
+    var(--fuiSuccessSecondary, $fuiSuccessSecondary),
+    var(--fuiBtnSuccessText, $fuiBtnSuccessText),
     $fuiSizeXS,
     $fuiSizeM,
     7px
@@ -237,8 +237,8 @@
 }
 .btn-fui-secondary-danger-s {
   @include buttonIconMix(
-    $fuiBtnDangerSecondary,
-    $fuiBtnDangerText,
+    var(--fuiDangerSecondary, $fuiDangerSecondary),
+    var(--fuiBtnDangerText, $fuiBtnDangerText),
     $fuiSizeXS,
     $fuiSizeM,
     7px
@@ -246,8 +246,8 @@
 }
 .btn-fui-secondary-warning-s {
   @include buttonIconMix(
-    $fuiBtnWarningSecondary,
-    $fuiBtnWarningText,
+    var(--fuiWarningSecondary, $fuiWarningSecondary),
+    var(--fuiBtnWarningText, $fuiBtnWarningText),
     $fuiSizeXS,
     $fuiSizeM,
     7px
@@ -255,8 +255,8 @@
 }
 .btn-fui-secondary-text-s {
   @include buttonIconMix(
-    $fuiBtnTextSecondary,
-    $fuiBtnTextText,
+    var(--fuiTextSecondary, $fuiTextSecondary),
+    var(--fuiBtnTextText, $fuiBtnTextText),
     $fuiSizeXS,
     $fuiSizeM,
     7px
@@ -264,8 +264,8 @@
 }
 .btn-fui-secondary-accent-s {
   @include buttonIconMix(
-    $fuiBtnAccentSecondary,
-    $fuiBtnAccentText,
+    var(--fuiAccentSecondary, $fuiAccentSecondary),
+    var(--fuiBtnAccentText, $fuiBtnAccentText),
     $fuiSizeXS,
     $fuiSizeM,
     7px
@@ -273,8 +273,8 @@
 }
 .btn-fui-secondary-disabled-s {
   @include buttonIconMix(
-    $fuiBtnDisabledSecondary,
-    $fuiBtnDisabledText,
+    var(--fuiDisabledSecondary, $fuiDisabledSecondary),
+    var(--fuiBtnDisabledText, $fuiBtnDisabledText),
     $fuiSizeXS,
     $fuiSizeM,
     7px
@@ -293,8 +293,8 @@
 /* Button Secondary M */
 .btn-fui-secondary-primary-m {
   @include buttonIconMix(
-    $fuiBtnPrimarySecondary,
-    $fuiBtnPrimaryText,
+    var(--fuiPrimarySecondary, $fuiPrimarySecondary),
+    var(--fuiBtnPrimaryText, $fuiBtnPrimaryText),
     $fuiSizeXS,
     $fuiSizeM + 3,
     8px
@@ -302,8 +302,8 @@
 }
 .btn-fui-secondary-success-m {
   @include buttonIconMix(
-    $fuiBtnSuccessSecondary,
-    $fuiBtnSuccessText,
+    var(--fuiSuccessSecondary, $fuiSuccessSecondary),
+    var(--fuiBtnSuccessText, $fuiBtnSuccessText),
     $fuiSizeXS,
     $fuiSizeM + 3,
     8px
@@ -311,8 +311,8 @@
 }
 .btn-fui-secondary-danger-m {
   @include buttonIconMix(
-    $fuiBtnDangerSecondary,
-    $fuiBtnDangerText,
+    var(--fuiDangerSecondary, $fuiDangerSecondary),
+    var(--fuiBtnDangerText, $fuiBtnDangerText),
     $fuiSizeXS,
     $fuiSizeM + 3,
     8px
@@ -320,8 +320,8 @@
 }
 .btn-fui-secondary-warning-m {
   @include buttonIconMix(
-    $fuiBtnWarningSecondary,
-    $fuiBtnWarningText,
+    var(--fuiWarningSecondary, $fuiWarningSecondary),
+    var(--fuiBtnWarningText, $fuiBtnWarningText),
     $fuiSizeXS,
     $fuiSizeM + 3,
     8px
@@ -329,8 +329,8 @@
 }
 .btn-fui-secondary-text-m {
   @include buttonIconMix(
-    $fuiBtnTextSecondary,
-    $fuiBtnTextText,
+    var(--fuiTextSecondary, $fuiTextSecondary),
+    var(--fuiBtnTextText, $fuiBtnTextText),
     $fuiSizeXS,
     $fuiSizeM + 3,
     8px
@@ -338,8 +338,8 @@
 }
 .btn-fui-secondary-accent-m {
   @include buttonIconMix(
-    $fuiBtnAccentSecondary,
-    $fuiBtnAccentText,
+    var(--fuiAccentSecondary, $fuiAccentSecondary),
+    var(--fuiBtnAccentText, $fuiBtnAccentText),
     $fuiSizeXS,
     $fuiSizeM + 3,
     8px
@@ -347,8 +347,8 @@
 }
 .btn-fui-secondary-disabled-m {
   @include buttonIconMix(
-    $fuiBtnDisabledSecondary,
-    $fuiBtnDisabledText,
+    var(--fuiDisabledSecondary, $fuiDisabledSecondary),
+    var(--fuiBtnDisabledText, $fuiBtnDisabledText),
     $fuiSizeXS,
     $fuiSizeM + 3,
     8px
@@ -367,8 +367,8 @@
 /* Button Secondary L */
 .btn-fui-secondary-primary-l {
   @include buttonIconMix(
-    $fuiBtnPrimarySecondary,
-    $fuiBtnPrimaryText,
+    var(--fuiPrimarySecondary, $fuiPrimarySecondary),
+    var(--fuiBtnPrimaryText, $fuiBtnPrimaryText),
     $fuiSizeXS,
     $fuiSizeM + 6,
     9px
@@ -376,8 +376,8 @@
 }
 .btn-fui-secondary-success-l {
   @include buttonIconMix(
-    $fuiBtnSuccessSecondary,
-    $fuiBtnSuccessText,
+    var(--fuiSuccessSecondary, $fuiSuccessSecondary),
+    var(--fuiBtnSuccessText, $fuiBtnSuccessText),
     $fuiSizeXS,
     $fuiSizeM + 6,
     9px
@@ -385,8 +385,8 @@
 }
 .btn-fui-secondary-danger-l {
   @include buttonIconMix(
-    $fuiBtnDangerSecondary,
-    $fuiBtnDangerText,
+    var(--fuiDangerSecondary, $fuiDangerSecondary),
+    var(--fuiBtnDangerText, $fuiBtnDangerText),
     $fuiSizeXS,
     $fuiSizeM + 6,
     9px
@@ -394,8 +394,8 @@
 }
 .btn-fui-secondary-warning-l {
   @include buttonIconMix(
-    $fuiBtnWarningSecondary,
-    $fuiBtnWarningText,
+    var(--fuiWarningSecondary, $fuiWarningSecondary),
+    var(--fuiBtnWarningText, $fuiBtnWarningText),
     $fuiSizeXS,
     $fuiSizeM + 6,
     9px
@@ -403,8 +403,8 @@
 }
 .btn-fui-secondary-text-l {
   @include buttonIconMix(
-    $fuiBtnTextSecondary,
-    $fuiBtnTextText,
+    var(--fuiTextSecondary, $fuiTextSecondary),
+    var(--fuiBtnTextText, $fuiBtnTextText),
     $fuiSizeXS,
     $fuiSizeM + 6,
     9px
@@ -412,8 +412,8 @@
 }
 .btn-fui-secondary-accent-l {
   @include buttonIconMix(
-    $fuiBtnAccentSecondary,
-    $fuiBtnAccentText,
+    var(--fuiAccentSecondary, $fuiAccentSecondary),
+    var(--fuiBtnAccentText, $fuiBtnAccentText),
     $fuiSizeXS,
     $fuiSizeM + 6,
     9px
@@ -421,8 +421,8 @@
 }
 .btn-fui-secondary-disabled-l {
   @include buttonIconMix(
-    $fuiBtnDisabledSecondary,
-    $fuiBtnDisabledText,
+    var(--fuiDisabledSecondary, $fuiDisabledSecondary),
+    var(--fuiBtnDisabledText, $fuiBtnDisabledText),
     $fuiSizeXS,
     $fuiSizeM + 6,
     9px

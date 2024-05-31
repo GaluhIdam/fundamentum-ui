@@ -23,36 +23,36 @@
 }
 
 .primary {
-  color: $fuiColorPrimary;
+  color: var(--fuiColorPrimary, $fuiColorPrimary);
 }
 .success {
-  color: $fuiColorSuccess;
+  color: var(--fuiColorSuccess, $fuiColorSuccess);
 }
 .warning {
-  color: $fuiColorWarning;
+  color: var(--fuiColorWarning, $fuiColorWarning);
 }
 
 .danger {
-  color: $fuiColorDanger;
+  color: var(--fuiColorDanger, $fuiColorDanger);
 }
 
 .text {
-  color: $fuiTextColor;
+  color: var(--fuiColorInk, $fuiColorInk);
 }
 .accent {
-  color: $fuiColorAccent;
+  color: var(--fuiColorAccent, $fuiColorAccent);
 }
 
 .disabled {
-  color: $fuiColorDisabledText;
+  color: var(--fuiColorDisabledText, $fuiColorDisabledText);
 }
 
 .ink {
-  color: $fuiColorInk
+  color: var(--fuiColorInk, $fuiColorInk)
 }
 
 .ghost {
-  color: $fuiColorGhost;
+  color: var(--fuiColorGhost, $fuiColorGhost);
 }
 
 .title {

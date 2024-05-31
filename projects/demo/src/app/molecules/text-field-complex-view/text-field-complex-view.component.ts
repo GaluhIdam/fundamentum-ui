@@ -18,7 +18,7 @@ import {
   IconsComponent,
   LoadingComponent,
   SelectFieldComponent,
-} from 'fui';
+} from '../../../../../fui/src/public-api';
 interface TEST {
   nama: string;
   umur: number;

@@ -2,6 +2,6 @@
 
 :host {
   .fui-validator-message {
-    @include validatorInputField($fuiColorDanger, small);
+    @include validatorInputField(var(--fuiColorDanger, $fuiColorDanger), small);
   }
 }

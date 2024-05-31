@@ -8,13 +8,13 @@
 .btn-filter-light {
   border-style: solid;
   border-width: 1px;
-  color: $fuiColorDarkestShade;
-  border-color: $fuiColorLightShade;
+  color: var(--fuiColorDarkestShade, $fuiColorDarkestShade);
+  border-color: var(--fuiColorLightShade, $fuiColorLightShade);
   text-align: center;
   outline: none;
   padding: 10px 10px 10px 10px;
   font-size: 1rem;
-  background-color: $fuiColorLightestShade;
+  background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
   cursor: pointer;
   &:hover {
     text-decoration: underline;

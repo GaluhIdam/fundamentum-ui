@@ -35,14 +35,14 @@
   }
 
   &.expanded {
-    max-height: fit-content; 
+    max-height: fit-content;
     opacity: 1;
   }
 }
 
 .loader {
-  border: .2rem solid $fuiColorLightShade;
-  border-bottom-color: $fuiColorPrimary;
+  border: .2rem solid var(--fuiColorLightShade, $fuiColorLightShade);
+  border-bottom-color: var(--fuiColorPrimary, $fuiColorPrimary);
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;
@@ -54,11 +54,11 @@
   0% {
     transform: rotate(0deg);
   }
-  
+
   100% {
     transform: rotate(360deg);
   }
-} 
+}
 
 
 .sizedefault-loader {

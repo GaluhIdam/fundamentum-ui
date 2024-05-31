@@ -1,16 +1,16 @@
 @import "../../../styles.scss";
 
 .head-modal-primary {
-  @include headModalMix($fuiColorPrimary);
+  @include headModalMix(var(--fuiColorPrimary, $fuiColorPrimary));
 }
 .head-modal-success {
-  @include headModalMix($fuiColorSuccess);
+  @include headModalMix(var(--fuiColorSuccess, $fuiColorSuccess));
 }
 .head-modal-warning {
-  @include headModalMix($fuiColorWarning);
+  @include headModalMix(var(--fuiColorWarning, $fuiColorWarning));
 }
 .head-modal-danger {
-  @include headModalMix($fuiColorDanger);
+  @include headModalMix(var(--fuiColorDanger, $fuiColorDanger));
 }
 
 .modal-body-content {
@@ -20,20 +20,20 @@
 .head-event-detail {
   display: grid;
   .title-primary {
-    @include titleMix($fuiColorPrimary);
+    @include titleMix(var(--fuiColorPrimary, $fuiColorPrimary));
   }
   .title-success {
-    @include titleMix($fuiColorSuccess);
+    @include titleMix(var(--fuiColorSuccess, $fuiColorSuccess));
   }
   .title-warning {
-    @include titleMix($fuiColorWarning);
+    @include titleMix(var(--fuiColorWarning, $fuiColorWarning));
   }
   .title-danger {
-    @include titleMix($fuiColorDanger);
+    @include titleMix(var(--fuiColorDanger, $fuiColorDanger));
   }
   .additional {
     font-size: small;
-    color: $fuiColorDarkShade;
+    color: var(--fuiColorInk, $fuiColorInk);
   }
 }
 .date-event-detail {

@@ -22,7 +22,7 @@ import { Color, Icon, Size } from '../../../types';
 export class ModalHeaderComponent {
   @Input() iconClose: Icon = 'cross';
   @Input() iconCloseSize: Size = 'sizem';
-  @Input() iconCloseColor!: Color;
+  @Input() iconCloseColor: Color = 'ink';
   @Output() onCloseModal: EventEmitter<void> = new EventEmitter();
 
   onHandleCloseModal() {

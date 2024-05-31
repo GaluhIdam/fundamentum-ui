@@ -20,3 +20,8 @@ p {
 .mb-5 {
   margin-bottom: 30px;
 }
+fui-icons {
+  &:hover {
+    cursor: pointer;
+  }
+}

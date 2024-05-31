@@ -72,7 +72,7 @@ export class StepsComponent {
         break;
 
       case StepStatus.WARNING:
-        stepColor = color?.warning ? color?.warning : 'ink';
+        stepColor = color?.warning ? color?.warning : 'ghost';
         break;
 
       case StepStatus.ERROR:

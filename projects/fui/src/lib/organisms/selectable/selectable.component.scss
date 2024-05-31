@@ -5,7 +5,7 @@
 .fui-showMore {
   font-family: $fuiFontFamily;
   font-size: small;
-  color: $fuiColorPrimary;
+  color: var(--fuiColorPrimary, $fuiColorPrimary);
   padding: 10px 10px 10px 10px;
   &:hover {
     text-decoration: underline;
@@ -16,12 +16,12 @@
   border-style: solid;
   border-width: 1px;
   padding: 0px;
-  border-color: $fuiColorLightShade;
+  border-color: var(--fuiColorLightShade, $fuiColorLightShade);
   border-radius: 6px;
   font-family: $fuiFontFamily;
   list-style-type: none;
   width: -webkit-fill-available;
-  color: $fuiColorDarkestShade;
+  color: var(--fuiColorDarkestShade, $fuiColorDarkestShade);
   font-size: medium;
   max-height: 260px;
   overflow-x: hidden;
@@ -30,7 +30,7 @@
   .fui-list-item {
     align-items: center;
     border-bottom-style: solid;
-    border-bottom-color: $fuiColorLightShade;
+    border-bottom-color: var(--fuiColorLightShade, $fuiColorLightShade);
     border-bottom-width: 1px;
     display: flex;
     padding: 10px 15px 10px 15px;
@@ -39,7 +39,7 @@
     }
     .fui-list-desc {
       font-size: small;
-      color: $fuiColorDarkShade;
+      color: var(--fuiColorDarkShade, $fuiColorDarkShade);
       margin-top: 5px;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -51,17 +51,17 @@
       overflow: hidden;
     }
     &:focus {
-      background-color: $fuiBtnPrimarySecondary;
+      background-color: var(--fuiPrimarySecondary, $fuiPrimarySecondary);
     }
     &:hover {
-      background-color: $fuiBtnPrimarySecondary;
+      background-color: var(--fuiPrimarySecondary, $fuiPrimarySecondary);
       cursor: pointer;
       .fui-list-desc {
         font-size: small;
-        color: $fuiColorDarkShade;
+        color: var(--fuiColorDarkShade, $fuiColorDarkShade);
       }
       .fui-list-label {
-        color: $fuiColorPrimary;
+        color: var(--fuiColorPrimary, $fuiColorPrimary);
         text-decoration: underline;
       }
     }
@@ -79,9 +79,9 @@
   background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background: $fuiColorMediumShade;
+  background: var(--fuiColorMediumShade, $fuiColorMediumShade);
   border-radius: 25px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: $fuiColorDarkShade;
+  background: var(--fuiColorDarkShade, $fuiColorDarkShade);
 }

@@ -60,11 +60,11 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/demo/src/favicon.ico",
-              "projects/demo/src/assets"
+              "projects/demo/src/assets",
+              "projects/demo/src/light-theme.scss",
+              "projects/demo/src/dark-theme.scss"
             ],
-            "styles": [
-              "projects/demo/src/styles.scss"
-            ],
+            "styles": ["projects/demo/src/styles.scss"],
             "stylePreprocessorOptions": {
               "includePaths": ["dist/styles"]
             },
@@ -127,11 +127,11 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/demo/src/favicon.ico",
-              "projects/demo/src/assets"
+              "projects/demo/src/assets",
+              "projects/demo/src/light-theme.scss",
+              "projects/demo/src/dark-theme.scss"
             ],
-            "styles": [
-              "projects/demo/src/styles.scss"
-            ],
+            "styles": ["projects/demo/src/styles.scss"],
             "scripts": []
           }
         }

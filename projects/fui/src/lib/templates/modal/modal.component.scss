@@ -5,7 +5,7 @@
     position: relative;
     z-index: $fuiZModal;
     padding: 1rem;
-    background-color: rgba($color: #fff, $alpha: 1.0);
+    background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
     min-width: 400px;
     max-width: map-get($map: $fuiBreakpoints, $key: 'm');
     width: fit-content;

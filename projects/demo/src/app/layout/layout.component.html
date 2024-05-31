@@ -3,31 +3,76 @@
   [isRestrictWidth]="isRestrictWidth"
   [direction]="direction"
 >
-  <fui-header [position]="'none'">
-    <fui-header-panel>
-      <fui-icons
-        (click)="collapseBtn()"
-        class="icon-nav"
-        [size]="'sizel'"
-        [color]="'ghost'"
-        [icon]="'heatmap'"
-      ></fui-icons>
-      <h4 class="title">Fundamentum UI</h4>
-      <span class="version">v0.0.1</span>
+  <fui-header [position]="'none'" [shadow]="true">
+    <fui-header-panel
+      style="width: -webkit-fill-available; justify-content: space-between"
+    >
+      <div style="display: flex; align-items: baseline">
+        <fui-button-icon
+          *ngIf="!isSidebar"
+          [type]="'button'"
+          [option]="'icon'"
+          [style]="'secondary'"
+          [color]="'primary'"
+          [icon]="'menu'"
+          [iconSide]="'left'"
+          (onClick)="collapseBtn()"
+        />
+        <fui-button-icon
+          *ngIf="isSidebar"
+          [type]="'button'"
+          [option]="'icon'"
+          [style]="'secondary'"
+          [color]="'primary'"
+          [icon]="'cross'"
+          [iconSide]="'left'"
+          (onClick)="collapseBtn()"
+        />
+        <div style="align-items: center; display: flex; margin-left: 10px">
+          <h4 class="title">
+            <span class="fundamentum"> Fundamentum </span>
+            <span class="u">U</span><span class="i">I</span>
+          </h4>
+          <span class="version">v0.0.1</span>
+        </div>
+      </div>
+      <div style="display: flex">
+        <fui-popover [position]="'bottom'">
+          <fui-button-icon
+            [type]="'button'"
+            [option]="'iconText'"
+            [style]="'secondary'"
+            [text]="
+              themeService.getTheme() === 'light'
+                ? 'Light'
+                : themeService.getTheme() === 'dark'
+                ? 'Dark'
+                : themeService.getTheme()
+            "
+            [color]="'primary'"
+            [icon]="'arrowDown'"
+            [iconSide]="'right'"
+          />
+          <div popover-body class="con-select-theme">
+            <a class="select-theme" (click)="toggleMode('light')">Light</a>
+            <a class="select-theme" (click)="toggleMode('dark')">Dark</a>
+            <a class="select-theme" (click)="toggleMode('Futuristic')"
+              >Futuristic</a
+            >
+            <a class="select-theme" (click)="toggleMode('Ocean')">Ocean</a>
+          </div>
+        </fui-popover>
+        <fui-icons
+          (click)="searchToggle()"
+          class="icon-nav"
+          [size]="'sizel'"
+          [color]="'ink'"
+          [icon]="'search'"
+        ></fui-icons>
+      </div>
     </fui-header-panel>
 
-    <fui-header-panel>
-      <fui-sitewide-search
-        (onClick)="goTo($event)"
-        [placeholder]="'Search Component'"
-        [mode]="'dark'"
-        [size]="'s'"
-        [data]="filteredData"
-        [searchForm]="searchForm"
-      />
-    </fui-header-panel>
-
-    <fui-header-panel>
+    <fui-header-panel style="width: 212px">
       <div class="nav-item">
         <fui-avatar
           [shape]="'spaces'"
@@ -46,15 +91,30 @@
       </div>
     </fui-header-panel>
   </fui-header>
+  <fui-header
+    *ngIf="searchTog"
+    [shadow]="true"
+    style="width: -webkit-fill-available; position: absolute"
+  >
+    <fui-sitewide-search
+      class="nav-item"
+      (onClick)="goTo($event)"
+      [placeholder]="'Search Component'"
+      [mode]="'dark'"
+      [size]="'s'"
+      [data]="filteredData"
+      [searchForm]="searchForm"
+    />
+  </fui-header>
 
-  <fui-page-sidebar *ngIf="isSidebar">
+  <fui-page-sidebar [show]="isSidebar" (showEvent)="showEvent($event)">
     <div class="container">
       <div style="display: flex; align-items: baseline">
         <fui-icons
           style="margin-right: 5px"
           [icon]="'documents'"
           [size]="'sizem'"
-          [color]="'text'"
+          [color]="'ink'"
         />
         <h1 class="title-link">Guidelines</h1>
       </div>
@@ -80,7 +140,7 @@
               style="margin-right: 5px"
               [icon]="'arrowRight'"
               [size]="'sizem'"
-              [color]="'text'"
+              [color]="'ink'"
             />
             <h1 class="title-link">Atoms</h1>
           </div>
@@ -103,7 +163,7 @@
               style="margin-right: 5px"
               [icon]="'arrowRight'"
               [size]="'sizem'"
-              [color]="'text'"
+              [color]="'ink'"
             />
             <h1 class="title-link">Molecules</h1>
           </div>
@@ -126,7 +186,7 @@
               style="margin-right: 5px"
               [icon]="'arrowRight'"
               [size]="'sizem'"
-              [color]="'text'"
+              [color]="'ink'"
             />
             <h1 class="title-link">Organisms</h1>
           </div>
@@ -149,7 +209,7 @@
               style="margin-right: 5px"
               [icon]="'arrowRight'"
               [size]="'sizem'"
-              [color]="'text'"
+              [color]="'ink'"
             />
             <h1 class="title-link">Templates</h1>
           </div>
@@ -170,7 +230,7 @@
           style="margin-right: 5px"
           [icon]="'lock'"
           [size]="'sizem'"
-          [color]="'text'"
+          [color]="'ink'"
         />
         <h1 class="title-link">Authenticator</h1>
       </div>
