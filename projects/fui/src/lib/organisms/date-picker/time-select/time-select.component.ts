@@ -40,7 +40,7 @@ export class TimeSelectComponent implements OnInit, OnChanges, ControlValueAcces
   isInited: boolean = false;
   componentConfig: ITimeSelectConfigInternal;
   inputValue: CalendarValue;
-  inputValueType: ECalendarValue;
+  inputValueType: ECalendarValue | undefined;
   validateFn: DateValidator;
   hours: string;
   minutes: string;

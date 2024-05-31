@@ -8,7 +8,7 @@ import {Component, EventEmitter, HostBinding, Input, Output} from '@angular/core
   styleUrl: './calendar-nav.component.scss'
 })
 export class CalendarNavComponent {
-  @Input() label: string;
+  @Input() label: string | undefined;
   @Input() isLabelClickable: boolean = false;
   @Input() showLeftNav: boolean = true;
   @Input() showLeftSecondaryNav: boolean = false;
@@ -19,7 +19,7 @@ export class CalendarNavComponent {
   @Input() rightNavDisabled: boolean = false;
   @Input() rightSecondaryNavDisabled: boolean = false;
   @Input() showGoToCurrent: boolean = true;
-  @HostBinding('class') @Input() theme: string;
+  @HostBinding('class') @Input() theme: string | undefined;
 
   @Output() onLeftNav: EventEmitter<null> = new EventEmitter();
   @Output() onLeftSecondaryNav: EventEmitter<null> = new EventEmitter();

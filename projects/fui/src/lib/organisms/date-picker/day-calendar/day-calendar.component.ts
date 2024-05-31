@@ -1,7 +1,7 @@
 import {ChangeDetectorRef, Component, EventEmitter, HostBinding, Input, OnChanges, OnInit, Output} from '@angular/core';
 import {ControlValueAccessor, Validator} from "@angular/forms";
 import {SingleCalendarValue} from "../common/types/single-calendar-value";
-import {Dayjs} from "dayjs";
+import dayjs, {Dayjs} from "dayjs";
 import {IDay} from "./day.model";
 import {ECalendarMode} from "../common/types/calendar-mode-enum";
 import {INavEvent} from "../common/models/navigation-event.mdel";
@@ -12,6 +12,8 @@ import {DayCalendarService} from "./day-calendar.service";
 import {UtilsService} from "../common/services/utils/utils.service";
 import {IDayCalendarConfig, IDayCalendarConfigInternal} from "./day-calendar-config.model";
 import {dayjsRef} from "../common/dayjs/dayjs.ref";
+import {IMonth} from "../month-calendar/month.model";
+import {IMonthCalendarConfig} from "../month-calendar/month-calendar-config";
 
 @Component({
   selector: 'fui-day-calendar',
@@ -21,11 +23,11 @@ import {dayjsRef} from "../common/dayjs/dayjs.ref";
   styleUrl: './day-calendar.component.scss'
 })
 export class DayCalendarComponent implements OnInit, OnChanges, ControlValueAccessor, Validator {
-  @Input() config: IDayCalendarConfig;
-  @Input() displayDate: SingleCalendarValue;
-  @Input() minDate: Dayjs;
-  @Input() maxDate: Dayjs;
-  @HostBinding('class') @Input() theme: string;
+  @Input() config: IDayCalendarConfig = {};
+  @Input() displayDate: SingleCalendarValue | undefined;
+  @Input() minDate: Dayjs | undefined;
+  @Input() maxDate: Dayjs | undefined;
+  @HostBinding('class') @Input() theme: string | undefined;
   @Output() onSelect: EventEmitter<IDay> = new EventEmitter();
   @Output() onMonthSelect: EventEmitter<IMonth> = new EventEmitter();
   @Output() onNavHeaderBtnClick: EventEmitter<ECalendarMode> = new EventEmitter();
@@ -34,18 +36,18 @@ export class DayCalendarComponent implements OnInit, OnChanges, ControlValueAcce
   @Output() onRightNav: EventEmitter<INavEvent> = new EventEmitter();
   CalendarMode = ECalendarMode;
   isInited: boolean = false;
-  componentConfig: IDayCalendarConfigInternal;
-  weeks: IDay[][];
-  weekdays: Dayjs[];
-  inputValue: CalendarValue;
-  inputValueType: ECalendarValue;
-  validateFn: DateValidator;
+  componentConfig: IDayCalendarConfigInternal | undefined;
+  weeks: IDay[][] | undefined;
+  weekdays: Dayjs[] | undefined;
+  inputValue: CalendarValue | undefined;
+  inputValueType: ECalendarValue | undefined;
+  validateFn: DateValidator | undefined;
   currentCalendarMode: ECalendarMode = ECalendarMode.Day;
-  monthCalendarConfig: IMonthCalendarConfig;
+  monthCalendarConfig: IMonthCalendarConfig | undefined;
   _shouldShowCurrent: boolean = true;
-  navLabel: string;
-  showLeftNav: boolean;
-  showRightNav: boolean;
+  navLabel: string | undefined;
+  showLeftNav: boolean | undefined;
+  showRightNav: boolean | undefined;
   api = {
     moveCalendarsBy: this.moveCalendarsBy.bind(this),
     moveCalendarTo: this.moveCalendarTo.bind(this),
@@ -57,9 +59,9 @@ export class DayCalendarComponent implements OnInit, OnChanges, ControlValueAcce
               public readonly cd: ChangeDetectorRef) {
   }
 
-  _selected: Dayjs[];
+  _selected: Dayjs[] | undefined;
 
-  get selected(): Dayjs[] {
+  get selected(): Dayjs[] | undefined {
     return this._selected;
   }
 
@@ -68,10 +70,10 @@ export class DayCalendarComponent implements OnInit, OnChanges, ControlValueAcce
     this.onChangeCallback(this.processOnChangeCallback(selected));
   }
 
-  _currentDateView: Dayjs;
+  _currentDateView: Dayjs | undefined;
 
   get currentDateView(): Dayjs {
-    return this._currentDateView;
+    return <Dayjs>this._currentDateView;
   }
 
   set currentDateView(current: Dayjs) {
@@ -79,8 +81,8 @@ export class DayCalendarComponent implements OnInit, OnChanges, ControlValueAcce
     this.weeks = this.dayCalendarService
       .generateMonthArray(this.componentConfig, this._currentDateView, this.selected);
     this.navLabel = this.dayCalendarService.getHeaderLabel(this.componentConfig, this._currentDateView);
-    this.showLeftNav = this.dayCalendarService.shouldShowLeft(this.componentConfig.min, this.currentDateView);
-    this.showRightNav = this.dayCalendarService.shouldShowRight(this.componentConfig.max, this.currentDateView);
+    this.showLeftNav = this.dayCalendarService.shouldShowLeft(this.componentConfig?.min, this.currentDateView);
+    this.showRightNav = this.dayCalendarService.shouldShowRight(this.componentConfig?.max, this.currentDateView);
   }
   ;
 

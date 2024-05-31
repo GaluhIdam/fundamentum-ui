@@ -359,7 +359,7 @@ export class UtilsService {
     return false;
   }
 
-  getNativeElement(elem: HTMLElement | string | ElementRef): HTMLElement {
+  getNativeElement(elem: HTMLElement | string | ElementRef): HTMLElement | null {
     if (!elem) {
       return null;
     } else if (typeof elem === 'string') {

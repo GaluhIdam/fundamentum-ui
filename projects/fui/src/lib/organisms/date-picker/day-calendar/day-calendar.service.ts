@@ -35,6 +35,9 @@ export class DayCalendarService {
       ...this.utilsService.clearUndefined(config)
     };
 
+    if (typeof _config.format === 'undefined') {
+      _config.format = 'YYYY-MM-DD';
+    }
     this.utilsService.convertPropsToDayjs(_config, _config.format, ['min', 'max']);
 
     return _config as IDayCalendarConfigInternal;
@@ -50,10 +53,10 @@ export class DayCalendarService {
     }, <{[key: string]: number}>{});
   }
 
-  generateMonthArray(config: IDayCalendarConfigInternal, month: Dayjs, selected: Dayjs[]): IDay[][] {
+  generateMonthArray(config: IDayCalendarConfigInternal | undefined, month: Dayjs, selected: Dayjs[]): IDay[][] {
     const parsedMonth = month.isValid() ? dayjsRef(month.toDate()) : dayjsRef();
     let monthArray: IDay[][] = [];
-    const firstDayOfWeekIndex = this.DAYS.indexOf(config.firstDayOfWeek);
+    const firstDayOfWeekIndex = config? this.DAYS.indexOf(config.firstDayOfWeek) : 1;
     let firstDayOfBoard = parsedMonth.startOf('month');
 
     while (firstDayOfBoard.day() !== firstDayOfWeekIndex) {
@@ -91,7 +94,7 @@ export class DayCalendarService {
       monthArray[weekIndex].push(day);
     });
 
-    if (!config.showNearMonthDays) {
+    if (!config?.showNearMonthDays) {
       monthArray = this.removeNearMonthWeeks(parsedMonth, monthArray);
     }
 
@@ -120,29 +123,29 @@ export class DayCalendarService {
     return weekdays;
   }
 
-  isDateDisabled(date: Dayjs, config: IDayCalendarConfigInternal): boolean {
-    if (config.isDayDisabledCallback) {
+  isDateDisabled(date: Dayjs, config: IDayCalendarConfigInternal | undefined): boolean {
+    if (config?.isDayDisabledCallback) {
       return config.isDayDisabledCallback(date);
     }
 
-    if (config.min && date.isBefore(config.min, 'day')) {
+    if (config?.min && date.isBefore(config.min, 'day')) {
       return true;
     }
 
-    return !!(config.max && date.isAfter(config.max, 'day'));
+    return !!(config?.max && date.isAfter(config.max, 'day'));
   }
 
   // todo:: add unit tests
-  getHeaderLabel(config: IDayCalendarConfigInternal, month: Dayjs): string {
-    if (config.monthFormatter) {
+  getHeaderLabel(config: IDayCalendarConfigInternal | undefined, month: Dayjs): string {
+    if (config?.monthFormatter) {
       return config.monthFormatter(month);
     }
 
-    return month.format(config.monthFormat);
+    return month.format(config?.monthFormat);
   }
 
   // todo:: add unit tests
-  shouldShowLeft(min: Dayjs, currentMonthView: Dayjs): boolean {
+  shouldShowLeft(min: Dayjs | undefined, currentMonthView: Dayjs | undefined): boolean {
     return min ? min.isBefore(currentMonthView, 'month') : true;
   }
 

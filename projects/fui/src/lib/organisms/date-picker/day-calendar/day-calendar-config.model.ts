@@ -10,7 +10,7 @@ interface IConfig {
   weekDayFormatter?: (dayIndex: number) => string;
   showNearMonthDays?: boolean;
   showWeekNumbers?: boolean;
-  firstDayOfWeek?: WeekDays;
+  firstDayOfWeek?: WeekDays | any;
   format?: string;
   allowMultiSelect?: boolean;
   monthFormat?: string;
