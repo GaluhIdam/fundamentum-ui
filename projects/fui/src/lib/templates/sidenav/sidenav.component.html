@@ -19,7 +19,7 @@
     <span
       *ngIf="!item.link"
       (click)="collapse(dataSide, i)"
-      class="fui-sidenav-heading {{ item.active ? 'active' : '' }}"
+      class="fui-sidenav-heading {{ item.active ? 'active' : '' }} {{ size }}"
     >
       {{ item.title }}
     </span>
@@ -29,7 +29,7 @@
       (click)="collapse(dataSide, i)"
       class="fui-sidenav-heading {{
         item.active && item.link === router.url ? 'active' : ''
-      }}"
+      }} {{ size }}"
     >
       {{ item.title }}
     </a>

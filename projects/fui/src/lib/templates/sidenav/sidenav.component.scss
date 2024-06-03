@@ -30,6 +30,34 @@
   user-select: none;
 }
 
+.sizedefault {
+  font-size: medium;
+}
+
+.sizexs {
+  font-size: 0.75rem; /* Extra small font size */
+}
+
+.sizes {
+  font-size: 0.875rem; /* Small font size */
+}
+
+.sizem {
+  font-size: 1rem; /* Medium font size (default) */
+}
+
+.sizel {
+  font-size: 1.25rem; /* Large font size */
+}
+
+.sizexl {
+  font-size: 1.5rem; /* Extra large font size */
+}
+
+.sizexxl {
+  font-size: 2rem; /* Extra extra large font size */
+}
+
 .active {
   font-weight: $fuiFontWeightSemiBold;
   color: $fuiColorPrimary;

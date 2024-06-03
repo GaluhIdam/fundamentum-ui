@@ -8,7 +8,7 @@ export interface DataSideDTO {
   heading?: string;
   icon?: {
     type: Icon;
-    size: Size;
+    size: Size
   };
   title: string;
   link?: string;
@@ -35,6 +35,7 @@ export interface DataSideDTO {
 })
 export class SidenavComponent {
   @Input({ required: true }) dataSide: DataSideDTO[] = [];
+  @Input() size: Size = 'sizedefault';
 
   /**
    * @ignore
