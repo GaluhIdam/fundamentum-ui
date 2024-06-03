@@ -168,7 +168,8 @@
           [size]="'sizel'"
           [color]="'ink'"
         />
-        <fui-icons *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+        <fui-icons
+          *ngIf="email?.invalid && (email?.dirty || email?.touched)"
           right-icon
           [label]="'right'"
           [icon]="'alert'"
