@@ -23,6 +23,7 @@ import {
 } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
 import { UniversalTransition } from 'echarts/features';
+import { CommonModule } from '@angular/common';
 
 /**
  * The EchartsComponent
@@ -38,7 +39,7 @@ import { UniversalTransition } from 'echarts/features';
 @Component({
   selector: 'fui-echarts',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './echarts.component.html',
   styleUrl: './echarts.component.scss',
 })
@@ -46,6 +47,7 @@ export class EchartsComponent {
   @Input({ required: true }) chartOption?: OptionChart;
   @Input({ required: true }) themeChart: 'light' | 'dark' = 'light';
   @Input() triggered: boolean = false;
+  @Input() height: string = '70vh';
 
   @ViewChild('echarts') echartsRef?: ElementRef;
 

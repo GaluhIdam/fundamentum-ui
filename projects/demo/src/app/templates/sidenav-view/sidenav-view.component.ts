@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { DataSideDTO, SidenavComponent } from '../../../../../fui/src/public-api';
-// import { DataSideDTO, SidenavComponent } from '@quantum/fui';
+import { DataSideDTO, SidenavComponent } from 'fui';
 
 @Component({
   selector: 'app-sidenav-view',
