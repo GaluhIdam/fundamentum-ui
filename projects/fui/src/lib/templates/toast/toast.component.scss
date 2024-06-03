@@ -5,6 +5,7 @@
 
 .toasts-container {
   position: fixed;
+  z-index: 20;
 }
 .toast {
   margin: 1rem;
@@ -12,7 +13,7 @@
   max-width: 320px;
   background: var(--fuiColorEmptyShade, color.$fuiColorEmptyShade);
   box-shadow: rgba(
-      $color: var(--fuiColorDarkestShade, color.$fuiColorDarkestShade),
+      $color: #000,
       $alpha: 0.2
     )
     0px 8px 24px;

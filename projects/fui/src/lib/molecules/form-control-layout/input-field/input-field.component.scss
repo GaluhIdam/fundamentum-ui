@@ -30,7 +30,9 @@ input {
 .full-width {
   width: -webkit-fill-available;
 }
-
+.inactive {
+  @include start();
+}
 .default {
   @include bottomLine(var(--fuiColorPrimary, $fuiColorPrimary));
 }

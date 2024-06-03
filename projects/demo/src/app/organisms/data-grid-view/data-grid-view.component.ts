@@ -19,7 +19,7 @@ import {
   IconsComponent,
   LinkComponent,
   PaginationComponent,
-} from '../../../../../fui/src/public-api';
+} from 'fui';
 
 @Component({
   selector: 'app-data-grid-view',

@@ -34,10 +34,23 @@
   height: 100%;
 }
 
+@mixin start() {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    transition: width 0.3s ease-out;
+  }
+}
 @mixin bottomLine($color) {
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  border-bottom-color: $color;
+  &:after {
+    background-color: $color;
+    width: 100%;
+  }
 }
 
 @mixin borderRadius($topRight, $bottomRight, $topLeft, $bottomLeft) {

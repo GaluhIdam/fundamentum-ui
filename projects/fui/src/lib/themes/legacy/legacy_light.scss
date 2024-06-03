@@ -3,17 +3,3 @@
 @use "normalize";
 
 @use "../../styles/_index.scss";
-
-// $fuiTextScale: 2.25, 1.75, 1.25, 1.125, 1, 0.875, 0.75 !default;
-
-// $fuiFontSize: size_variable.$fuiSize !default; // 5th position in scale
-// $fuiFontSizeXS: $fuiFontSize * nth($fuiTextScale, 7) !default; // 12px
-// $fuiFontSizeS: $fuiFontSize * nth($fuiTextScale, 6) !default; // 14px
-// $fuiFontSizeM: $fuiFontSize * nth($fuiTextScale, 4) !default; // 18px
-// $fuiFontSizeL: $fuiFontSize * nth($fuiTextScale, 3) !default; // 20px
-// $fuiFontSizeXL: $fuiFontSize * nth($fuiTextScale, 2) !default; // 28px
-// $fuiFontSizeXXL: $fuiFontSize * nth($fuiTextScale, 1) !default; // 36px
-// $fuiColorDisabledText: #a2abba;
-// $fuiColorDisabled: #d3dae626;
-//  $fuiFontFamily;
-//  $fuiFontWeightMedium;

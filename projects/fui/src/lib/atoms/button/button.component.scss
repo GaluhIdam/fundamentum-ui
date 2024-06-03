@@ -16,13 +16,13 @@ button {
 .success {
   @include fuiButtonBase(
     var(--fuiColorSuccess, $fuiColorSuccess),
-    var(--fuiColorInk, $fuiColorInk)
+    var(--fuiColorGhost, $fuiColorGhost)
   );
 }
 .warning {
   @include fuiButtonBase(
     var(--fuiColorWarning, $fuiColorWarning),
-    var(--fuiColorInk, $fuiColorInk)
+    var(--fuiColorGhost, $fuiColorGhost)
   );
 }
 

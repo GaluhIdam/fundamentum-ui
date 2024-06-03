@@ -20,7 +20,7 @@ import {
   ButtonIconComponent,
   SitewideSearchComponent,
   SitewideDTO,
-} from '../../../../fui/src/public-api';
+} from 'fui';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { routes } from '../app.routes';
 import { CommonModule } from '@angular/common';

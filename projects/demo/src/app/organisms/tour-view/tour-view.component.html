@@ -1,37 +1,81 @@
 <h1>Tour</h1>
+<p>
+  The tour components provided by FUI allow for a flexible and customizable way
+  to showcase items on a page in an ordered manner by augmenting existing
+  elements on the page without altering functionality.
+</p>
 <div class="container">
-  <fui-tour [totalStep]="4" [isStartTour]="isStartTour" (isTourFinished)="handleTourFinished($event)">
+  <fui-tour
+    [totalStep]="4"
+    [isStartTour]="isStartTour"
+    (isTourFinished)="handleTourFinished($event)"
+  >
     <fui-header [position]="'none'">
       <fui-header-panel>
-        <fui-tour-step [stepNumber]="4" [title]="'Menu'" [position]="'bottom'" [align]="'start'">
-          <fui-icons class="icon-nav" [size]="'sizel'" [color]="'ghost'" [icon]="'heatmap'"></fui-icons>
-          <div tour-step-content>
-            Button toggle to display sidebar menu
-          </div>
+        <fui-tour-step
+          [stepNumber]="4"
+          [title]="'Menu'"
+          [position]="'bottom'"
+          [align]="'start'"
+        >
+          <fui-icons
+            class="icon-nav"
+            [size]="'sizel'"
+            [color]="'ghost'"
+            [icon]="'heatmap'"
+          ></fui-icons>
+          <div tour-step-content>Button toggle to display sidebar menu</div>
         </fui-tour-step>
-        <fui-tour-step [stepNumber]="1" [title]="'Fundamentum UI'" [position]="'bottom'" [align]="'center'">
+        <fui-tour-step
+          [stepNumber]="1"
+          [title]="'Fundamentum UI'"
+          [position]="'bottom'"
+          [align]="'center'"
+        >
           <h4 class="title">Fundamentum UI</h4>
-          <div tour-step-content>
-            This is a Fundamentum UI Library
-          </div>
+          <div tour-step-content>This is a Fundamentum UI Library</div>
         </fui-tour-step>
-        <fui-tour-step [stepNumber]="2" [title]="'Version'" [position]="'right'" [align]="'center'"
-          [completeStep]="isStepTwoTourComplete" [displayNextFinishStepText]="false">
+        <fui-tour-step
+          [stepNumber]="2"
+          [title]="'Version'"
+          [position]="'right'"
+          [align]="'center'"
+          [completeStep]="isStepTwoTourComplete"
+          [displayNextFinishStepText]="false"
+        >
           <span class="version">v0.0.1</span>
           <div tour-step-content>
             Currently it's a version v0.0.1
-            <fui-button-icon [type]="'button'" [option]="'text'" [text]="'Next Step'" [color]="'success'" [size]="'s'"
-              (onClick)="goToNextStep()"></fui-button-icon>
+            <fui-button-icon
+              [type]="'button'"
+              [option]="'text'"
+              [text]="'Next Step'"
+              [color]="'success'"
+              [size]="'s'"
+              (onClick)="goToNextStep()"
+            ></fui-button-icon>
           </div>
         </fui-tour-step>
       </fui-header-panel>
 
       <fui-header-panel>
-        <fui-tour-step [stepNumber]="3" [title]="'AHP'" [position]="'bottom'" [align]="'end'">
+        <fui-tour-step
+          [stepNumber]="3"
+          [title]="'AHP'"
+          [position]="'bottom'"
+          [align]="'end'"
+        >
           <div class="nav-item">
-            <fui-avatar [shape]="'spaces'" [name]="'User'" [type]="'image'" [image]="
-              'https://media.licdn.com/dms/image/C4D0BAQGmcK5iCbCdCw/company-logo_200_200/0/1660032173167/assegaf_hamzah__partners_logo?e=2147483647&v=beta&t=UCq9SgVmNnTYVSuGNdmXLPLXuY6E8LxY3wvSJ5i1yN0'
-              " [size]="'sizes'" [color]="'accent'"></fui-avatar>
+            <fui-avatar
+              [shape]="'spaces'"
+              [name]="'User'"
+              [type]="'image'"
+              [image]="
+                'https://media.licdn.com/dms/image/C4D0BAQGmcK5iCbCdCw/company-logo_200_200/0/1660032173167/assegaf_hamzah__partners_logo?e=2147483647&v=beta&t=UCq9SgVmNnTYVSuGNdmXLPLXuY6E8LxY3wvSJ5i1yN0'
+              "
+              [size]="'sizes'"
+              [color]="'accent'"
+            ></fui-avatar>
             <div class="info-head">
               <span class="dev">Developed By</span>
               <p class="corp">Assegaf Hamzah & Partners</p>
@@ -45,8 +89,12 @@
     </fui-header>
 
     <div class="container-body">
-      <fui-button-icon [type]="'button'" [option]="'text'" [text]="'Start Tour'"
-        (onClick)="startTour()"></fui-button-icon>
+      <fui-button-icon
+        [type]="'button'"
+        [option]="'text'"
+        [text]="'Start Tour'"
+        (onClick)="startTour()"
+      ></fui-button-icon>
     </div>
   </fui-tour>
 </div>

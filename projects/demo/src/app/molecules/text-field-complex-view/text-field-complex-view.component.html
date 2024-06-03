@@ -152,12 +152,14 @@
   </div>
 
   <div class="mb-5">
+    <form action=""></form>
     <fui-form-control-layout>
       <fui-input-field
+        [formControlField]="email"
         [type]="'email'"
         [size]="'l'"
         [placeholder]="'Email'"
-        [invalid]="true"
+        [invalid]="email?.invalid && (email?.dirty || email?.touched)"
       >
         <fui-icons
           left-icon
@@ -166,7 +168,7 @@
           [size]="'sizel'"
           [color]="'ink'"
         />
-        <fui-icons
+        <fui-icons *ngIf="email?.invalid && (email?.dirty || email?.touched)"
           right-icon
           [label]="'right'"
           [icon]="'alert'"
@@ -216,3 +218,5 @@
     </fui-form-control-layout>
   </div>
 </div>
+
+<input type="text" class="test" />

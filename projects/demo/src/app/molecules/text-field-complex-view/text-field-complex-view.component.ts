@@ -110,6 +110,10 @@ export class TextFieldComplexViewComponent implements OnInit, OnDestroy {
       .subscribe((val) => console.log(val));
   }
 
+  get email() {
+    return this.myFormSelect?.get('email');
+  }
+
   onSubmit(): void {
     const dto: TEST = {
       nama: this.myForm?.get('firstName')?.value,
