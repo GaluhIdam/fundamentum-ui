@@ -12,6 +12,11 @@
   max-width: 240px;
 }
 
+@media (max-width: 950px) {
+  .page-sidebar {
+    height: -webkit-fill-available;
+  }
+}
 .docked {
   position: static;
   box-shadow: inset -8px 0 15px -5px rgba(0, 0, 0, 0.5);
