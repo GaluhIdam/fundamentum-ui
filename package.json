@@ -27,6 +27,7 @@
     "@angular/platform-server": "^17.1.0",
     "@angular/router": "^17.1.0",
     "@angular/ssr": "^17.1.0",
+    "@quantum/fui": "file:dist/fui/quantum-fui-1.0.0.tgz",
     "echarts": "^5.4.3",
     "express": "^4.18.2",
     "highlight.js": "^11.9.0",

@@ -44,13 +44,6 @@ export class SidenavComponent {
   /**
    * @ignore
    */
-  ngOnInit(): void {
-    this.checkActive(this.dataSide);
-  }
-
-  /**
-   * @ignore
-   */
   checkActive(data: DataSideDTO[]): void {
     data.forEach((item) => {
       if (item.link === this.router.url) {

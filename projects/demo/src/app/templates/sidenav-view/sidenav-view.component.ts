@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  DataSideDTO,
-  SidenavComponent,
-} from 'fui';
+import { DataSideDTO, SidenavComponent } from '@quantum/fui';
 
 @Component({
   selector: 'app-sidenav-view',
@@ -31,11 +28,8 @@ export class SidenavViewComponent {
           active: false,
           children: [
             {
-              icon: {
-                type: 'gear',
-                size: 'sizem',
-              },
               title: 'Operational',
+              link: '/templates/side-nav/test-2',
               active: false,
             },
             {
