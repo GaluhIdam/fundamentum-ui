@@ -2,9 +2,3 @@
   width: -webkit-fill-available;
 }
 
-/* Apply styles when width is under 500px */
-@media (max-width: 500px) {
-  .echarts {
-    min-height: 50vh;
-  }
-}
