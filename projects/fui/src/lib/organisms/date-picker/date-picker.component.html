@@ -1,0 +1,23 @@
+<div class="fui-date-picker">
+  <div class="fui-date-picker__header">
+    <button (click)="prevMonth()">&lt;&lt;</button>
+    <span>
+      <select>
+        <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+      </select>
+    </span>
+    <span>{{ displayMonth.format('MMMM YYYY') }}</span>
+    <button (click)="nextMonth()">&gt;&gt;</button>
+  </div>
+  <div class="fui-date-picker__calendar">
+    <div class="fui-date-picker__calendar--day-name" *ngFor="let day of days">{{ day }}</div>
+    <div class="fui-date-picker__calendar--day" *ngFor="let week of weeks">
+      <div *ngFor="let day of week"
+           [class.selected]="day.selected"
+           [class.not-current-month]="!day.date.isSame(displayMonth, 'month')"
+           (click)="selectDate(day.date)">
+        {{ day.date.date() }}
+      </div>
+    </div>
+  </div>
+</div>
