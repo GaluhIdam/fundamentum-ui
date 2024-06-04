@@ -12,4 +12,5 @@ export class HeaderComponent {
   @Input() position: 'fixed-top' | 'fixed-bottom' | 'none' = 'none';
   @Input() shadow: boolean = false;
   @Input() display: 'flex' | 'block' = 'block';
+  @Input() zIndex: number = 2;
 }
