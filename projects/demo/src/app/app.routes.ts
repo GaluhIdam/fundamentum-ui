@@ -56,6 +56,7 @@ import { TableViewComponent } from './organisms/table-view/table-view.component'
 import { OidcAuthenticatorComponent } from './oidc-authenticator/oidc-authenticator.component';
 import { SecurePageComponent } from './oidc-authenticator/secure-page/secure-page.component';
 import { AuthGuard } from './core/guard/auth.guard';
+import {DatePickerViewComponent} from "./organisms/date-picker-view/date-picker-view.component";
 
 /** ATTENTION, ADD A TITLE IN CHILDREN ROUTE FOR THE DOCUMENTATION */
 export const routes: Routes = [
@@ -294,6 +295,11 @@ export const routes: Routes = [
         title: 'Tour',
         path: 'tour',
         component: TourViewComponent,
+      },
+      {
+        title: 'Date Picker',
+        path: 'date-picker',
+        component: DatePickerViewComponent,
       },
     ],
   },
