@@ -166,3 +166,5 @@ export * from './lib/oidc-authenticator/utility/oidc.utility.service';
 
 /** Theme Service */
 export * from './lib/themes/service/theme.service';
+
+export * from './lib/organisms/date-picker/date-picker.component'

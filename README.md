@@ -25,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Publish to NPM Repository
+`npm login --registry https://quantum-dev.ahp.id/nexus/repository/npm-local/`
+
+`ng build fui`
+
+`cd dist/fui`
+
+`npm publish`
+
+## How to install in project
+`npm install @quantum/fui --registry https://quantum-dev.ahp.id/nexus/repository/npm-local/`

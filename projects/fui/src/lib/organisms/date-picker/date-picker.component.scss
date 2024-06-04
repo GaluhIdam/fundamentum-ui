@@ -1,0 +1,56 @@
+@import "../../styles/index";
+
+.fui-date-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    column-gap: 5px;
+  }
+
+  &__header button {
+    background-color: $fuiColorPrimary;
+    color: $fuiColorWhite;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  &__calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+
+    &--day-name {
+      font-weight: bold;
+    }
+
+    &--day {
+      display: contents;
+    }
+
+    &--day > div {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    &--day > div:hover {
+      background-color: $fuiColorLightestShade;
+    }
+  }
+}
+
+.selected {
+  background-color: $fuiColorPrimary;
+  color: $fuiColorWhite;
+}
+
+.not-current-month {
+  color: #cccccc;
+}
