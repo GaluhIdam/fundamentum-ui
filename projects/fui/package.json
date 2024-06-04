@@ -14,5 +14,8 @@
     ".": {
       "sass": "./styles/_index.scss"
     }
+  },
+  "publishConfig": {
+    "registry": "https://quantum-dev.ahp.id/nexus/repository/npm-local/"
   }
 }
