@@ -1,4 +1,4 @@
-<div style="width: fit-content;">
+<div style="width: fit-content">
   <div class="fui-flex-combox-parent">
     <div class="fui-flex-combox {{ openSelector ? 'active' : '' }}">
       <div class="fui-flex-combox-sub">
@@ -45,13 +45,15 @@
     </div>
     <select
       *ngIf="openSelector"
-      multiple
+      [attr.multiple]="!singleSelection"
       [(ngModel)]="selectedValues"
-      class="fui-multi-select"
+      class="fui-multi-select {{ selectedValue.length <= 4 ? 'mini' : '' }}"
     >
       @for(item of optionValue; track $index; let last = $last;) {
       <option
-        class="fui-option-select"
+        class="fui-option-select {{
+          isSelected(item) ? 'option-selected' : ''
+        }}"
         *ngIf="item.name.toLowerCase().includes(searchTerm.toLowerCase())"
         [value]="item.value"
         (click)="toggleSelection(item)"

@@ -31,6 +31,7 @@ export class ComboBoxComponent {
   @ViewChild('inputField') inputField?: ElementRef;
   @Input({ required: true }) selectedValue: { name: string; value: any }[] = [];
   @Input({ required: true }) optionValue: { name: string; value: any }[] = [];
+  @Input() singleSelection: boolean = false;
   @Input() placeholder: string = 'Select or create options';
 
   /**
@@ -55,7 +56,7 @@ export class ComboBoxComponent {
    */
   onClick(event: MouseEvent) {
     if (!this.elementRef.nativeElement.contains(event.target)) {
-      this.openSelector = false; // Close the select dropdown when clicking outside
+      this.openSelector = false;
     }
   }
 
@@ -63,13 +64,26 @@ export class ComboBoxComponent {
    * @ignore
    */
   toggleSelection(item: { name: string; value: any }): void {
-    const index = this.selectedValue.findIndex(
-      (itm) => itm.value === item.value
-    );
-    if (index !== -1) {
-      this.selectedValue.splice(index, 1);
+    if (this.singleSelection) {
+      if (
+        this.selectedValue.length === 1 &&
+        this.selectedValue[0].value === item.value
+      ) {
+        // If the item is already selected, remove it
+        this.selectedValue = [];
+      } else {
+        // Otherwise, set it as the only selected item
+        this.selectedValue = [item];
+      }
     } else {
-      this.selectedValue.push(item);
+      const index = this.selectedValue.findIndex(
+        (itm) => itm.value === item.value
+      );
+      if (index !== -1) {
+        this.selectedValue.splice(index, 1);
+      } else {
+        this.selectedValue.push(item);
+      }
     }
     this.selectedValues = this.selectedValue.map((item) => item.value);
     this.searchTerm = '';
@@ -126,5 +140,14 @@ export class ComboBoxComponent {
   calculateWidth() {
     const factor = 10;
     return this.searchTerm.length * factor + 'px';
+  }
+
+  /**
+   * @ignore
+   */
+  isSelected(item: { name: string; value: any }): boolean {
+    return this.selectedValue.some(
+      (selectedItem) => selectedItem.value === item.value
+    );
   }
 }

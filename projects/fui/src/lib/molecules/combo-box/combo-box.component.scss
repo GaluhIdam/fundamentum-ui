@@ -11,6 +11,7 @@
 }
 
 .fui-flex-combox {
+  @include start();
   width: 350px;
   font-family: $fuiFontFamily;
   display: flex;
@@ -22,9 +23,7 @@
 }
 
 .active {
-  border-bottom-style: solid;
-  border-bottom-color: var(--fuiColorPrimary, $fuiColorPrimary);
-  border-bottom-width: 2px;
+  @include bottomLine(var(--fuiColorPrimary, $fuiColorPrimary));
 }
 
 .fui-flex-combox-sub {
@@ -77,6 +76,19 @@
   margin-top: 2px;
   border-radius: 6px;
 }
+.fui-multi-select.mini {
+  font-family: $fuiFontFamily;
+  outline: none;
+  border: 1px solid var(--fuiColorLightShade, $fuiColorLightShade);
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  top: 100%;
+  height: fit-content;
+  margin-top: 2px;
+  border-radius: 6px;
+}
 
 .fui-multi-select::-webkit-scrollbar {
   height: 5px;
@@ -108,6 +120,11 @@
 }
 
 .fui-option-select:checked {
+  background-color: var(--fuiColorLightShade, $fuiColorLightShade);
+  color: var(--fuiColorInk, $fuiColorInk);
+}
+
+.option-selected {
   background-color: var(--fuiColorLightShade, $fuiColorLightShade);
   color: var(--fuiColorInk, $fuiColorInk);
 }
