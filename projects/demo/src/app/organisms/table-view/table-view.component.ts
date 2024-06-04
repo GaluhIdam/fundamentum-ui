@@ -50,7 +50,6 @@ export class TableViewComponent {
     'Brand',
     'Category',
     'Thumbnail',
-    'Images',
   ];
   selectedRowHeight: string = 'single';
   dataContent: ProductsDTO[] = [];

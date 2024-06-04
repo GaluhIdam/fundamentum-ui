@@ -1,8 +1,8 @@
 @import "./../../styles/index";
 
-$paddingTopBottom : 0.316rem;
-$paddingLeftRight : 0.693rem;
-$reducer : 30;
+$paddingTopBottom: 0.316rem;
+$paddingLeftRight: 0.693rem;
+$reducer: 30;
 
 .badge {
   border-radius: 0.35rem !important;
@@ -21,36 +21,48 @@ $reducer : 30;
 }
 
 .fuiColorGhostFill {
-  fill: $fuiColorGhost;
+  fill: var(--fuiColorGhost, $fuiColorGhost);
 }
 
 .fuiColorDisabledFill {
-  fill: $fuiColorDisabledText;
+  fill: var(--fuiColorDisabledText, $fuiColorDisabledText);
 }
 
 .primary {
-  @include fuiBadge($fuiColorPrimary, $fuiColorGhost);
+  @include fuiBadge(
+    var(--fuiBtnPrimary, $fuiBtnPrimary),
+    var(--fuiColorGhost, $fuiColorGhost)
+  );
 }
 .success {
-  @include fuiBadge($fuiColorSuccess, $fuiColorInk);
+  @include fuiBadge(var(--fuiBtnSuccess, $fuiBtnSuccess), #000);
 }
 .warning {
-  @include fuiBadge($fuiColorWarning, $fuiColorInk);
+  @include fuiBadge(var(--fuiBtnWarning, $fuiBtnWarning), #000);
 }
 
 .danger {
-  @include fuiBadge($fuiColorDanger, $fuiColorGhost);
+  @include fuiBadge(
+    var(--fuiBtnDanger, $fuiBtnDanger),
+    var(--fuiColorGhost, $fuiColorGhost)
+  );
 }
 
 .text {
-  @include fuiBadge($fuiColorDarkShade, $fuiColorGhost);
+  @include fuiBadge(
+    var(--fuiBtnText, $fuiBtnText),
+    var(--fuiColorGhost, $fuiColorGhost)
+  );
 }
 .accent {
-  @include fuiBadge($fuiColorAccent, $fuiColorInk);
+  @include fuiBadge(var(--fuiBtnAccent, $fuiBtnAccent), #000);
 }
 
 .disabled {
-  @include fuiBadge($fuiColorDisabled, $fuiColorDisabledText);
+  @include fuiBadge(
+    var(--fuiBtnDisabled, $fuiBtnDisabled),
+    var(--fuiColorDisabledText, $fuiColorDisabledText)
+  );
   cursor: not-allowed;
 }
 

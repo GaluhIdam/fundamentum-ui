@@ -1,6 +1,6 @@
 <div class="fui-sidenav" *ngFor="let item of dataSide; let i = index">
   <h3 *ngIf="item.heading">{{ item.heading }}</h3>
-  <div class="fui-sidenav-flex">
+  <div class="fui-sidenav-flex {{ size }}">
     <fui-icons
       class="fui-sidenav-icon"
       *ngIf="item.icon"

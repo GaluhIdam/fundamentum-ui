@@ -32,7 +32,7 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
   styleUrl: './page.component.scss',
 })
 export class PageComponent {
-  @Input() direction: 'horzontal' | 'vertical' = 'horzontal';
+  @Input() direction: 'horizontal' | 'vertical' = 'horizontal';
   @Input() isGrow: boolean = true;
   @Input() isRestrictWidth: boolean = false;
 

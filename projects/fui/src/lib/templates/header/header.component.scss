@@ -1,17 +1,17 @@
 @import "../../styles/index";
 
 .fui-header-container {
-  z-index: 1;
+  position: relative;
   font-family: $fuiFontFamily;
   align-items: center;
   place-content: space-between;
-  padding: 0px 8px 0px 8px;
+  padding: 8px 8px 8px 8px;
   place-content: space-between;
-  background-color: $fuiColorDarkestShade;
+  background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
 }
 
 .shadow {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .fixed-top {
   width: -webkit-fill-available;

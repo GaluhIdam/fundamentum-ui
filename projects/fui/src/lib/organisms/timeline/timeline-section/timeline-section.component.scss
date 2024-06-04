@@ -38,7 +38,7 @@
   left: 0;
   z-index: -1;
   transform: translateX(17px);
-  border-left: 2px solid $fuiColorLightShade;
+  border-left: 2px solid var(--fuiColorLightShade, $fuiColorLightShade);
 }
 
 :host:last-child::after {
@@ -46,26 +46,29 @@
 }
 
 .primary {
-  background-color: $fuiBtnPrimarySecondary;
+  background-color: var(--fuiPrimarySecondary, $fuiPrimarySecondary);
 }
 .success {
-  background-color: $fuiBtnSuccessSecondary;
+  background-color: var(--fuiSuccessSecondary, $fuiSuccessSecondary);
 }
 .warning {
-  background-color: $fuiBtnWarningSecondary;
+  background-color: var(--fuiWarningSecondary, fuiWarningSecondary);
 }
 .danger {
-  background-color: $fuiBtnDangerSecondary;
+  background-color: var(--fuiDangerSecondary, $fuiDangerSecondary);
 }
 .text {
-  background-color: $fuiBtnTextSecondary;
+  background-color: var(--fuiTextSecondary, $fuiTextSecondary);
 }
 .accent {
-  background-color: $fuiBtnAccentSecondary;
+  background-color: var(--fuiAccentSecondary, $fuiAccentSecondary);
 }
 .ghost {
-  background-color: $fuiColorGhost;
+  background-color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
+}
+.ink {
+  background-color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
 }
 .disabled {
-  background-color: $fuiColorLightestShade;
+  background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
 }

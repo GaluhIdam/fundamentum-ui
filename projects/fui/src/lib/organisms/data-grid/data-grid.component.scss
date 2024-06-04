@@ -6,7 +6,7 @@
 .container-full {
   width: 100vw;
   position: fixed;
-  background-color: $fuiColorEmptyShade;
+  background-color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
   height: 100vh;
   left: 0px;
   right: 0;
@@ -18,7 +18,7 @@
   max-width: -webkit-fill-available;
   width: -webkit-fill-available;
   border-style: solid;
-  border-color: $fuiColorLightShade;
+  border-color: var(--fuiColorLightShade, $fuiColorLightShade);
   border-width: 1px;
 }
 
@@ -28,7 +28,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 5px;
-  background-color: $fuiBtnTextSecondary;
+  background-color: var(--fuiTextSecondary, $fuiTextSecondary);
   .flex {
     display: inline-flex;
     .item-util {
@@ -54,6 +54,9 @@
   padding: 10px;
   align-items: center;
   .column-selection {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 5px;
     display: block;
     .list-columns {
       margin: 3px 0px 3px 0px;
@@ -66,7 +69,7 @@
   font-size: small;
   align-items: center;
   padding: 10px;
-  color: $fuiColorDarkestShade;
+  color: var(--fuiColorLightShade, $fuiColorLightShade);
   .display-option-util {
     display: block;
     text-align: end;
@@ -83,10 +86,10 @@
         margin: 10px 0px 10px 0px;
         padding: 2px;
         display: flex;
-        background-color: $fuiBtnTextSecondary;
+        background-color: var(--fuiTextSecondary, $fuiTextSecondary);
         border-radius: $fuiSizeXS;
         border-width: 1px;
-        border-color: $fuiColorLightShade;
+        border-color: var(--fuiColorLightShade, $fuiColorLightShade);
         border-style: solid;
         height: fit-content;
       }
@@ -105,18 +108,16 @@
       min-width: 50px;
       max-width: 300px;
       text-wrap: nowrap;
-      color: $fuiColorDarkestShade;
-      background-color: $fuiColorLightestShade;
+      background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
       border-style: solid;
-      border-color: $fuiColorLightShade;
+      border-color: var(--fuiColorLightShade, $fuiColorLightShade);
       border-width: 1px;
     }
     .table-data {
       min-width: 50px;
       max-width: 300px;
-      color: $fuiColorDarkestShade;
       border-style: solid;
-      border-color: $fuiColorLightShade;
+      border-color: var(--fuiColorLightShade, $fuiColorLightShade);
       border-width: 1px;
     }
   }
@@ -124,9 +125,9 @@
 
 .action {
   width: 25px;
-  color: $fuiColorDarkestShade;
+  color: var(--fuiColorLightShade, $fuiColorLightShade);
   border-style: solid;
-  border-color: $fuiColorLightShade;
+  border-color: var(--fuiColorLightShade, $fuiColorLightShade);
   border-width: 1px;
   &:hover {
     cursor: pointer;
@@ -140,8 +141,8 @@
   align-items: center;
   padding: 5px 10px 5px 10px;
   &:hover {
-    background-color: $fuiBtnPrimarySecondary;
-    outline: 1px solid $fuiColorPrimary;
+    background-color: var(--fuiPrimarySecondary, $fuiPrimarySecondary);
+    outline: 1px solid var(--fuiBtnPrimaryText, $fuiBtnPrimaryText);
     cursor: pointer;
   }
 }
@@ -151,12 +152,12 @@
   text-wrap: nowrap;
   overflow-x: hidden;
   &:hover {
-    background-color: $fuiBtnPrimarySecondary;
-    outline: 1px solid $fuiColorPrimary;
+    background-color: var(--fuiPrimarySecondary, $fuiPrimarySecondary);
+    outline: 1px solid var(--fuiBtnPrimaryText, $fuiBtnPrimaryText);
   }
 }
 .reset-btn {
-  color: $fuiColorPrimary;
+  color: var(--fuiBtnPrimaryText, $fuiBtnPrimaryText);
   outline: none;
   border: none;
   background-color: transparent;
@@ -167,12 +168,12 @@
   }
 }
 .line {
-  border-top-color: $fuiColorLightestShade;
+  border-top-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
 }
 .empty-data-text {
   text-align: center;
   font-size: small;
-  color: $fuiColorMediumShade;
+  color: var(--fuiColorMediumShade, $fuiColorMediumShade);
 }
 .space-between {
   display: flex;
@@ -181,12 +182,12 @@
 .utility-link {
   font-size: small;
   margin-top: 10px;
-  color: $fuiColorDarkShade;
+  color: var(--fuiColorDarkShade, $fuiColorDarkShade);
   align-items: baseline;
   display: flex;
   &:hover {
     a {
-      color: $fuiColorPrimary;
+      color: var(--fuiBtnPrimaryText, $fuiBtnPrimaryText);
       text-decoration: underline;
     }
     cursor: pointer;
@@ -221,8 +222,8 @@
   text-wrap: nowrap;
   overflow-x: hidden;
   &:hover {
-    background-color: $fuiBtnPrimarySecondary;
-    outline: 1px solid $fuiColorPrimary;
+    background-color: var(--fuiPrimarySecondary, $fuiPrimarySecondary);
+    outline: 1px solid var(--fuiBtnPrimaryText, $fuiBtnPrimaryText);
   }
 }
 .autoFit {
@@ -234,13 +235,13 @@
   text-align: start;
   align-content: baseline;
   &:hover {
-    background-color: $fuiBtnPrimarySecondary;
-    outline: 1px solid $fuiColorPrimary;
+    background-color: var(--fuiPrimarySecondary, $fuiPrimarySecondary);
+    outline: 1px solid var(--fuiBtnPrimaryText, $fuiBtnPrimaryText);
   }
 }
 
 .active-link {
-  color: $fuiColorPrimary;
+  color: var(--fuiBtnPrimaryText, $fuiBtnPrimaryText);
 }
 
 .left {
@@ -254,7 +255,7 @@
 }
 
 .pagination {
-  padding: 5px 10px 5px 10px;
+  padding: 10px 10px 10px 10px;
   display: flex;
   align-items: baseline;
   .showing {
@@ -262,7 +263,6 @@
     text-wrap: nowrap;
     align-items: center;
     display: flex;
-    color: $fuiColorDarkestShade;
     font-size: small;
     font-weight: bold;
     margin-right: 10px;
@@ -272,12 +272,18 @@
   }
 }
 
+@media (max-width: 600px) {
+  .pagination {
+    display: block;
+  }
+}
+
 .util-show-hide {
   margin-top: 10px;
   justify-content: space-between;
   display: flex;
   a {
-    color: $fuiColorPrimary;
+    color: var(--fuiBtnPrimaryText, $fuiBtnPrimaryText);
     font-size: small;
     &:hover {
       text-decoration: underline;
@@ -295,9 +301,9 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: $fuiColorMediumShade;
+  background: var(--fuiColorMediumShade, $fuiColorMediumShade);
   border-radius: 25px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: $fuiColorDarkShade;
+  background: var(--fuiColorDarkShade, $fuiColorDarkShade);
 }

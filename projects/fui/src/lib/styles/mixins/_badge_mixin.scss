@@ -15,13 +15,4 @@
   color: $col;
   transition-property: background-color color;
   transition-duration: 0.3s;
-  &:hover {
-    background-color: lighten($bgCol, 10%);
-    color: darken($col, 10%);
-    
-    svg, i {
-      color: darken($col, 10%);
-      fill: darken($col, 10%);
-    }
-  }
 }

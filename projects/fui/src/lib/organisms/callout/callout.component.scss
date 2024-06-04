@@ -2,8 +2,8 @@
 
 .container-callout-primary {
   @include container-callout(
-    $fuiBgPrimary,
-    $fuiColorPrimaryText,
+    var(--fuiBgPrimary, $fuiBgPrimary),
+    var(--fuiColorPrimaryText, $fuiColorPrimaryText),
     "primary",
     $fuiSizeM
   );
@@ -11,8 +11,8 @@
 
 .container-callout-success {
   @include container-callout(
-    $fuiBgSuccess,
-    $fuiColorSuccessText,
+    var(--fuiBgSuccess, $fuiBgSuccess),
+    var(--fuiColorSuccessText, $fuiColorSuccessText),
     "success",
     $fuiSizeM
   );
@@ -20,8 +20,8 @@
 
 .container-callout-warning {
   @include container-callout(
-    $fuiBgWarning,
-    $fuiColorWarningText,
+    var(--fuiBgWarning, $fuiBgWarning),
+    var(--fuiColorWarningText, $fuiColorWarningText),
     "warning",
     $fuiSizeM
   );
@@ -29,14 +29,30 @@
 
 .container-callout-danger {
   @include container-callout(
-    $fuiBgDanger,
-    $fuiColorDangerText,
+    var(--fuiBgDanger, $fuiBgDanger),
+    var(--fuiColorDangerText, $fuiColorDangerText),
     "danger",
     $fuiSizeM
   );
 }
 
-.title-callout {
+.title-callout-primary {
+  color: var(--fuiBtnPrimaryText, $fuiBtnPrimaryText);
+  display: flex;
+  align-items: baseline;
+}
+.title-callout-success {
+  color: var(--fuiBtnSuccessText, $fuiBtnSuccessText);
+  display: flex;
+  align-items: baseline;
+}
+.title-callout-warning {
+  color: var(--fuiBtnWarningText, $fuiBtnWarningText);
+  display: flex;
+  align-items: baseline;
+}
+.title-callout-danger {
+  color: var(--fuiBtnDangerText, $fuiBtnDangerText);
   display: flex;
   align-items: baseline;
 }

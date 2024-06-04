@@ -38,7 +38,6 @@
 }
 .page-info {
   margin-bottom: 10px;
-  color: $fuiColorDarkestShade;
   display: flex;
   div {
     font-weight: 600;
@@ -58,9 +57,9 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: $fuiColorMediumShade;
+  background: var(--fuiColorMediumShade, $fuiColorMediumShade);
   border-radius: 25px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: $fuiColorDarkShade;
+  background: var(--fuiColorDarkShade, $fuiColorDarkShade);
 }

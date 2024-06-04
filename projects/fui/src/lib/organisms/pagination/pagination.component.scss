@@ -9,9 +9,19 @@
   gap: .5rem;
 }
 
+@media (max-width: 600px) {
+  .pagination {
+    display: block;
+  }
+  .paginator {
+    margin-top: 5px;
+  }
+}
+
 .pagination {
   gap: 1rem;
 }
+
 
 .pagination-button,
 .page-size-options,
@@ -35,7 +45,7 @@
     width: 100%;
 
     &:hover {
-      background: rgba($color: $fuiColorDarkestShade, $alpha: .1);
+      background: rgba($color: var(--fuiColorFullShade, $fuiColorFullShade), $alpha: .1);
     }
   }
 }

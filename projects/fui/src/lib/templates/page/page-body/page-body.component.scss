@@ -6,6 +6,7 @@
 }
 :host {
   width: -webkit-fill-available;
+  overflow: hidden;
 }
 .page-body {
   height: 100%;
@@ -30,6 +31,6 @@
 }
 
 .page-body-shadow {
-  box-shadow: rgba($color: color.$fuiColorDarkestShade, $alpha: 0.2) 0px 24px
+  box-shadow: rgba($color: #000, $alpha: 0.2) 0px 24px
     24px;
 }

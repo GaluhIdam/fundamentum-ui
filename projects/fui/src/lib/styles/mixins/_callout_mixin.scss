@@ -13,7 +13,7 @@
 
   .text-callout-m,
   .text-callout-s {
-    color: $fuiColorDarkestShade;
+    color: var(--fuiColorFullShade, $fuiColorFullShade);
     margin-top: 5px;
     margin-bottom: 0;
     font-weight: $fuiFontWeightRegular;
@@ -50,7 +50,7 @@
   .flex,
   .flex-between {
     display: flex;
-    align-items: center;
+    align-items: baseline;
   }
 
   // Adjusting styles for flex-between to include spacing between items
@@ -61,12 +61,12 @@
 
 // Create a map to store color values based on their context
 $fuiColorMap: (
-  primary: $fuiColorPrimaryText,
-  success: $fuiColorSuccessText,
-  accent: $fuiColorAccentText,
-  warning: $fuiColorWarningText,
-  danger: $fuiColorDangerText,
-  disabled: $fuiColorDisabledText,
+  primary: var(--fuiColorPrimaryText, $fuiColorPrimaryText),
+  success: var(--fuiColorSuccessText, $fuiColorSuccessText),
+  accent: var(--fuiColorAccentText, $fuiColorAccentText),
+  warning: var(--fuiColorWarningText, $fuiColorWarningText),
+  danger: var(--fuiColorDangerText, $fuiColorDangerText),
+  disabled: var(--fuiColorDisabledText, $fuiColorDisabledText),
 ) !default;
 
 // Creating a reusable container class with the callout mixin

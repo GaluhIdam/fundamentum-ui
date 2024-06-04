@@ -10,24 +10,32 @@
   display: flex;
 }
 .btn-tabs-selector-none {
-  @include tabsMixin(pointer, $fuiColorDarkestShade, none);
+  @include tabsMixin(
+    pointer,
+    var(--fuiColorFullShade, $fuiColorFullShade),
+    none
+  );
 }
 
 .btn-tabs-selector-active {
   @include tabsMixin(
     pointer,
-    $fuiColorPrimary,
-    $fuiColorPrimary 0px -2px 0px inset
+    var(--fuiColorPrimary, $fuiColorPrimary),
+    var(--fuiColorPrimary, $fuiColorPrimary) 0px -2px 0px inset
   );
 }
 
 .btn-tabs-selector-disabled {
-  @include tabsMixin(not-allowed, $fuiColorMediumShade, none);
+  @include tabsMixin(
+    not-allowed,
+    var(--fuiColorMediumShade, $fuiColorMediumShade),
+    none
+  );
 }
 
 .fui-tabs-content-selector {
   margin: 10px 10px 10px 10px;
-  color: $fuiColorDarkestShade;
+  color: var(--fuiColorFullShade, $fuiColorFullShade);
 }
 
 .fui-icon-tabs-left {

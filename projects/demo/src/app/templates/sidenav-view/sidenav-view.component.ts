@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  DataSideDTO,
-  SidenavComponent,
-} from 'fui';
+import { DataSideDTO, SidenavComponent } from 'fui';
 
 @Component({
   selector: 'app-sidenav-view',
@@ -17,7 +14,7 @@ export class SidenavViewComponent {
       heading: 'Nav heading',
       icon: {
         type: 'folderOpen',
-        size: 'sizem',
+        size: 'sizexs',
       },
       title: 'Archive',
       active: false,
@@ -25,26 +22,23 @@ export class SidenavViewComponent {
         {
           icon: {
             type: 'payment',
-            size: 'sizem',
+            size: 'sizexs',
           },
           title: 'Finance',
           active: false,
           children: [
             {
-              icon: {
-                type: 'gear',
-                size: 'sizem',
-              },
               title: 'Operational',
+              link: '/templates/side-nav/test-2',
               active: false,
             },
             {
               title: 'Event',
               icon: {
                 type: 'calendar',
-                size: 'sizem',
+                size: 'sizexs',
               },
-              link: '/template/side-nav/test',
+              link: '/templates/side-nav/test',
               active: true,
             },
           ],
@@ -52,7 +46,7 @@ export class SidenavViewComponent {
         {
           icon: {
             type: 'user',
-            size: 'sizem',
+            size: 'sizexs',
           },
           title: 'Employee',
           active: false,
@@ -62,9 +56,9 @@ export class SidenavViewComponent {
     {
       icon: {
         type: 'alert',
-        size: 'sizem',
+        size: 'sizexs',
       },
-      link: '/template/side-nav/test-2',
+      link: '/templates/side-nav/test-2',
       title: 'Information',
       active: false,
     },

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Renderer2 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { OidcAuthenticatorService } from 'fui';
@@ -14,8 +14,9 @@ import { google } from './core/config/config';
 export class AppComponent {
   private readonly _authService = inject(OidcAuthenticatorService);
   title = 'demo';
-  constructor() {
+  constructor(private renderer: Renderer2) {
     /** Callback Handle */
     this._authService.callBackAuth(google);
   }
+
 }

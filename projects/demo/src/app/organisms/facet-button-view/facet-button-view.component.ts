@@ -15,6 +15,7 @@ export class FacetButtonViewComponent {
       type: 'none',
       facetLabel: {
         label: 'Simple, no icon',
+        color: 'ink',
       },
       facetQuantity: {
         quantity: 6,
@@ -27,9 +28,11 @@ export class FacetButtonViewComponent {
       type: 'icon',
       facetLabel: {
         label: 'Simple, with icon',
+        color: 'ink',
       },
       facetIcon: {
         icon: 'filter',
+        color: 'ink',
       },
       facetQuantity: {
         quantity: 6,
@@ -42,6 +45,7 @@ export class FacetButtonViewComponent {
       type: 'none',
       facetLabel: {
         label: 'Simple, selected',
+        color: 'ink',
       },
       facetQuantity: {
         quantity: 6,
@@ -55,6 +59,7 @@ export class FacetButtonViewComponent {
       type: 'indicator',
       facetLabel: {
         label: 'Facet with Indicator',
+        color: 'ink',
       },
       facetIndicator: {
         color: 'success',
@@ -71,6 +76,7 @@ export class FacetButtonViewComponent {
       type: 'avatar',
       facetLabel: {
         label: 'Facet avatar as icon',
+        color: 'ink',
       },
       facetAvatar: {
         id: 'avatar-1',
@@ -90,6 +96,7 @@ export class FacetButtonViewComponent {
       type: 'none',
       facetLabel: {
         label: 'Facet disabled',
+        color: 'ink',
       },
       facetQuantity: {
         quantity: 6,
@@ -101,6 +108,7 @@ export class FacetButtonViewComponent {
       type: 'none',
       facetLabel: {
         label: 'Facet loading',
+        color: 'ink',
       },
       facetQuantity: {
         quantity: 6,

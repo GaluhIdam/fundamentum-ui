@@ -11,23 +11,20 @@
   padding-left: 10px;
   padding-right: 10px;
   outline: none;
-  background-color: transparent;
+  background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
   width: 100%;
   &:focus {
     outline: none;
   }
 
   &:disabled {
-    color: #9aa4b4;
     background-color: #eef2f7;
     cursor: not-allowed;
-    &::placeholder {
-      color: #9aa4b4;
-    }
   }
 }
 
 @mixin inputFieldContainer() {
+  background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
   padding-left: 10px;
   padding-right: 10px;
   display: flex;
@@ -37,10 +34,23 @@
   height: 100%;
 }
 
+@mixin start() {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    transition: width 0.3s ease-out;
+  }
+}
 @mixin bottomLine($color) {
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  border-bottom-color: $color;
+  &:after {
+    background-color: $color;
+    width: 100%;
+  }
 }
 
 @mixin borderRadius($topRight, $bottomRight, $topLeft, $bottomLeft) {

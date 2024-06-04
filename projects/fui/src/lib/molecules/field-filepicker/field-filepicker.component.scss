@@ -13,7 +13,7 @@
 .fui-dropzone {
   width: 200px;
   height: 50px;
-  border: 2px dashed $fuiColorDarkShade;
+  border: 2px dashed var(--fuiColorDarkShade, $fuiColorDarkShade);
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
@@ -64,7 +64,7 @@
   font-family: $fuiFontFamily;
   margin: 10px 0px 0px 0px;
   font-size: small;
-  color: $fuiColorPrimary;
+  color: var(--fuiColorPrimary, $fuiColorPrimary);
   cursor: pointer;
   &:hover {
     text-decoration: underline;

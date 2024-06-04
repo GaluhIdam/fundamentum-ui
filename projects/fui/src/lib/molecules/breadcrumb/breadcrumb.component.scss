@@ -1,8 +1,8 @@
 @import "./../../styles/index";
 
-$linkColor : $fuiColorDarkShade;
-$linkActiveColor: $fuiColorDarkestShade;
-$separatorColor: $fuiColorDarkShade;
+$linkColor: var(--fuiColorDarkestShade, $fuiColorDarkestShade);
+$linkActiveColor: var(--fuiColorFullShade, $fuiColorFullShade);
+$separatorColor: var(--fuiColorDarkestShade, $fuiColorDarkestShade);
 
 a {
   text-decoration: none;
@@ -12,13 +12,13 @@ a {
   .link {
     color: $linkColor;
   }
-  .active .link{
+  .active .link {
     color: $linkActiveColor;
     font-weight: 600;
   }
 
   .separator {
-    margin: .5rem;
+    margin: 0.5rem;
     color: $separatorColor;
   }
 }
@@ -33,12 +33,14 @@ a {
   flex-direction: column;
 
   & .item-breadcrumb {
-    padding: .4rem;
+    padding: 0.4rem;
     &:hover {
-      background: rgba($color: $fuiColorDarkestShade, $alpha: .1);
+      background: rgba(
+        $color: var(--fuiColorFullShade, $fuiColorFullShade),
+        $alpha: 0.1
+      );
     }
   }
-
 }
 
 .truncated-icon {

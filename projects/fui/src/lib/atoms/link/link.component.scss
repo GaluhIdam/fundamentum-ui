@@ -4,28 +4,31 @@
   align-items: baseline;
 }
 .primary {
-  @include link("transparant", $fuiColorPrimaryText);
+  @include link(
+    "transparent",
+    var(--fuiColorPrimaryText, $fuiColorPrimaryText)
+  );
 }
 .success {
-  @include link("transparant", $fuiColorSuccess);
+  @include link("transparent", var(--fuiColorSuccess, $fuiColorSuccess));
 }
 .warning {
-  @include link("transparant", $fuiColorWarning);
+  @include link("transparent", var(--fuiColorWarning, $fuiColorWarning));
 }
 .danger {
-  @include link("transparant", $fuiColorDanger);
+  @include link("transparent", var(--fuiColorDanger, $fuiColorDanger));
 }
 .subdued {
-  @include link("transparant", $fuiTextSubduedColor);
+  @include link("transparent", var(--fuiTextSubduedColor, $fuiTextSubduedColor));
 }
 .accent {
-  @include link("transparant", $fuiColorAccent);
+  @include link("transparent", var(--fuiColorAccent, $fuiColorAccent));
 }
 .ghost {
-  @include link("transparant", $fuiColorGhost);
+  @include link("transparent", var(--fuiColorEmptyShade, $fuiColorEmptyShade));
 }
 .text {
-  @include link("transparant", $fuiTextColor);
+  @include link("transparent", var(--fuiColorFullShade, $fuiColorFullShade));
 }
 
 .icon-popout {
@@ -33,7 +36,7 @@
 }
 
 .disabled {
-  @include link("transparant", $fuiTextColor);
+  @include link("transparent", var(--fuiColorFullShade, $fuiColorFullShade));
   cursor: auto;
   text-decoration: none;
   &:hover {

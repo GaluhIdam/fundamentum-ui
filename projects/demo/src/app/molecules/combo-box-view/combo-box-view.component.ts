@@ -14,14 +14,6 @@ export class ComboBoxViewComponent {
       name: 'BMW',
       value: 'BMW-v',
     },
-    {
-      name: 'Toyota',
-      value: 'Toyota-v',
-    },
-    {
-      name: 'Volvo',
-      value: 'Volvo-v',
-    },
   ];
   optionValue: { name: string; value: any }[] = [
     {

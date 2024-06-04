@@ -1,4 +1,4 @@
-<fui-popover [position]="'bottom'" [displayPopover]="isOpen">
+<fui-popover [position]="'bottom'" [displayPopover]="isOpen" style="width: -webkit-fill-available;">
   <fui-form-control-layout>
     <fui-input-field
       [formControlField]="searchForm"
@@ -6,14 +6,13 @@
       [size]="size"
       [placeholder]="placeholder"
       [invalid]="false"
-      [mode]="mode"
     >
       <fui-icons
         left-icon
         [label]="'left'"
         [icon]="'search'"
         [size]="size === 'm' ? 'sizem' : size === 's' ? 'sizes' : 'sizel'"
-        [color]="mode === 'dark' ? 'ghost' : 'text'"
+        [color]="'ink'"
       />
     </fui-input-field>
     <fui-append>

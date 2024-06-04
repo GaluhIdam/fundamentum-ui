@@ -1,5 +1,5 @@
 @forward "../styles/variables/index";
 @forward "../styles/functions/index";
 @forward "../styles/mixins/index";
-
+@import "../themes/theme.scss";
 @import "../styles/utility/normalize";

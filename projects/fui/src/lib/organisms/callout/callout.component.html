@@ -7,29 +7,29 @@
     <div class="flex">
       <!-- Title -->
       <ng-container *ngIf="size === 'm'; else smallTitle">
-        <h4 [ngClass]="color" class="title-callout">
-          <!-- Icon -->
-          <fui-icons
-            [className]="'icon'"
-            [icon]="icon"
-            [size]="'sizem'"
-            [color]="color"
-          ></fui-icons>
-          <!-- Icon -->
+        <!-- Icon -->
+        <fui-icons
+          [className]="'icon'"
+          [icon]="icon"
+          [size]="'sizem'"
+          [color]="color"
+        ></fui-icons>
+        <!-- Icon -->
+        <h4 class="title-callout-{{ color }}">
           {{ title }}
         </h4>
       </ng-container>
 
       <ng-template #smallTitle>
-        <h5 [ngClass]="color" class="title-callout">
-          <!-- Icon -->
-          <fui-icons
-            [className]="'icon'"
-            [icon]="icon"
-            [size]="'sizes'"
-            [color]="color"
-          ></fui-icons>
-          <!-- Icon -->
+        <!-- Icon -->
+        <fui-icons
+          [className]="'icon'"
+          [icon]="icon"
+          [size]="'sizes'"
+          [color]="color"
+        ></fui-icons>
+        <!-- Icon -->
+        <h5 class="title-callout-{{color}}">
           {{ title }}
         </h5>
       </ng-template>

@@ -1,5 +1,5 @@
-@use './../../../styles//variables/color_variable' as color;
-@use './../../../styles//variables/size_variable' as size;
+@use "./../../../styles//variables/color_variable" as color;
+@use "./../../../styles//variables/size_variable" as size;
 
 .flyout-header-container {
   border-bottom: 1px solid color.$fuiColorLightShade;
@@ -29,4 +29,9 @@
 
 .flyout-p-l {
   padding: size.$fuiSizeL;
+}
+
+.title {
+  display: flex;
+  align-items: baseline;
 }

@@ -15,9 +15,12 @@
     position: absolute;
     z-index: 1;
     margin: auto;
-    background: color.$fuiColorEmptyShade;
-    box-shadow: rgba($color: color.$fuiColorDarkestShade, $alpha: 0.2) 0px 8px
-      24px;
+    background: var(--fuiColorLightestShade, color.$fuiColorLightestShade);
+    box-shadow: rgba(
+        $color: #000,
+        $alpha: 0.2
+      )
+      0px 8px 24px;
     transition: all 0.3s ease;
   }
 

@@ -5,7 +5,7 @@
 .facet {
   display: flex;
   gap: 1rem;
-  
+
   &-item {
     background: transparent;
     width: 100%;
@@ -92,36 +92,37 @@
 }
 
 .facet-quantity-background-default {
-  background: color.$fuiColorLightShade;
+  background: var(--fuiColorLightShade, color.$fuiColorLightShade);
 }
 
 .facet-quantity-background-primary {
-  background: color.$fuiColorPrimary;
+  background: var(--fuiColorPrimary, color.$fuiColorPrimary);
 }
 
 .facet-quantity-background-success {
-  background: color.$fuiColorSuccess;
+  background: var(--fuiColorSuccess, color.$fuiColorSuccess);
 }
 
 .facet-quantity-background-warning {
-  background: color.$fuiColorWarning;
+  background: var(--fuiColorWarning, color.$fuiColorWarning);
 }
 
 .facet-quantity-background-danger {
-  background: color.$fuiColorDanger;
+  background: var(--fuiColorDanger, color.$fuiColorDanger);
 }
 
 .facet-quantity-background-text {
-  background: color.$fuiColorDarkShade;
+  background: var(--fuiColorDarkShade, color.$fuiColorDarkShade);
 }
 
 .facet-quantity-background-accent {
-  background: color.$fuiColorAccent;
+  background: var(--fuiColorAccent, color.$fuiColorAccent);
 }
 
 .facet-quantity-background-disabled {
-  background: color.$fuiColorDisabled;
+  background: var(--fuiColorDisabled, color.$fuiColorDisabled);
 }
+
 
 $size-style: (
   sizedefault: size.$fuiSize,

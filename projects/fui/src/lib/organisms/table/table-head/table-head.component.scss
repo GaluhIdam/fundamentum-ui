@@ -7,12 +7,11 @@
   text-align: -internal-center;
   unicode-bidi: isolate;
   text-wrap: nowrap;
-  border-top-color: $fuiColorLightShade;
+  border-top-color: var(--fuiColorLightShade, $fuiColorLightShade);
   border-top-style: solid;
   border-top-width: 1px;
-  border-bottom-color: $fuiColorLightShade;
+  border-bottom-color: var(--fuiColorLightShade, $fuiColorLightShade);
   border-bottom-style: solid;
-  color: $fuiColorDarkestShade;
   border-bottom-width: 1px;
   padding: 8px;
 }

@@ -1,12 +1,4 @@
 .echarts {
   width: -webkit-fill-available;
-  height: 70vh;
-  padding: 20px;
 }
 
-/* Apply styles when width is under 500px */
-@media (max-width: 500px) {
-  .echarts {
-    min-height: 50vh;
-  }
-}

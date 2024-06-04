@@ -6,7 +6,7 @@
   justify-content: center;
 
   &-initial {
-  padding: .3rem;
+    padding: 0.3rem;
   }
 }
 
@@ -20,7 +20,7 @@
 }
 
 .border {
-  border: 1px solid $fuiColorGhost;
+  border: 1px solid var(--fuiColorGhost, $fuiColorGhost);
 }
 
 .user {
@@ -32,7 +32,7 @@
 }
 
 img {
-  width: 100%
+  width: 100%;
 }
 
 .sizedefault {
@@ -61,30 +61,30 @@ img {
 }
 
 .primary {
-  background-color: $fuiColorPrimary;
+  background-color: var(--fuiColorPrimary, $fuiColorPrimary);
 }
 
 .success {
-  background-color: $fuiColorSuccess;
+  background-color: var(--fuiColorSuccess, $fuiColorSuccess);
 }
 
 .warning {
-  background-color: $fuiColorWarning;
+  background-color: var(--fuiColorWarning, $fuiColorWarning);
 }
 
 .danger {
-  background-color: $fuiColorDanger;
+  background-color: var(--fuiColorDanger, $fuiColorDanger);
 }
 
 .text {
-  background-color: $fuiTextColor;
+  background-color: var(--fuiTextColor, $fuiTextColor);
 }
 .accent {
-  background-color: $fuiColorAccent;
+  background-color: var(--fuiColorAccent, $fuiColorAccent);
 }
 
 .disabled {
-  background-color: $fuiColorDisabled;
+  background-color: var(--fuiColorDisabled, $fuiColorDisabled);
   cursor: not-allowed;
   filter: grayscale(100%);
 }

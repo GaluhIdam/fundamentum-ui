@@ -4,9 +4,8 @@
   display: table-cell;
   vertical-align: inherit;
   unicode-bidi: isolate;
-  border-bottom-color: $fuiColorLightShade;
+  border-bottom-color: var(--fuiColorLightShade, $fuiColorLightShade);
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  color: $fuiColorDarkestShade;
   padding: 8px;
 }

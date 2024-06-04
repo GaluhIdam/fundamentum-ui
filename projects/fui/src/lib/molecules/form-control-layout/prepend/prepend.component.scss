@@ -1,5 +1,9 @@
 @import "../../../styles/index";
 
 :host {
-  @include appendPrepend(10px, $fuiColorLightestShade, 6px 0px 0px 6px);
+  @include appendPrepend(
+    10px,
+    var(--fuiColorLightShade, $fuiColorLightShade),
+    6px 0px 0px 6px
+  );
 }

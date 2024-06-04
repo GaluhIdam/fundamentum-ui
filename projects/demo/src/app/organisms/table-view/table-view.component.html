@@ -24,11 +24,11 @@
           [urlLink]="'http://localhost:4200/organisms/table'"
           [typeLink]="'external'"
         >
-          {{ data.title }}
+          <p style="text-wrap: nowrap">{{ data.title }}</p>
         </fui-link>
       </fui-table-body-data>
       <fui-table-body-data>
-        {{ data.description }}
+        <p style="text-wrap: nowrap">{{ data.description }}</p>
       </fui-table-body-data>
       <fui-table-body-data>
         {{ data.price }}
@@ -56,10 +56,7 @@
         </fui-badge>
       </fui-table-body-data>
       <fui-table-body-data>
-        {{ data.thumbnail }}
-      </fui-table-body-data>
-      <fui-table-body-data>
-        {{ data.images }}
+        <img [src]="data.thumbnail" style="height: 100px" />
       </fui-table-body-data>
     </fui-table-body-row>
   </fui-table-body>

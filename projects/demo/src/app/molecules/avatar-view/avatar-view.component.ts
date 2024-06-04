@@ -9,7 +9,8 @@ import { AvatarComponent, AvatarGroupProps } from 'fui';
   imports: [AvatarComponent],
 })
 export class AvatarViewComponent {
-  imageAvatar: string = 'https://source.unsplash.com/64x64/?cat';
+  imageAvatar: string =
+    'https://previews.123rf.com/images/yommy8008/yommy80081610/yommy8008161000081/67376534-square-photo-with-head-detail-of-few-weeks-old-tabby-cat-kitten-has-blue-eyes-and-dark-nose-baby.jpg';
   avatarGroupDataInitial: AvatarGroupProps[] = [
     {
       id: 'ab',

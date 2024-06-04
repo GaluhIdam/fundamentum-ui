@@ -18,7 +18,7 @@ import {
   IconsComponent,
   LoadingComponent,
   SelectFieldComponent,
-} from 'fui';
+} from '../../../../../fui/src/public-api';
 interface TEST {
   nama: string;
   umur: number;
@@ -108,6 +108,10 @@ export class TextFieldComplexViewComponent implements OnInit, OnDestroy {
     this.obs = this.myForm.valueChanges
       .pipe(debounceTime(500))
       .subscribe((val) => console.log(val));
+  }
+
+  get email() {
+    return this.myFormSelect?.get('email');
   }
 
   onSubmit(): void {

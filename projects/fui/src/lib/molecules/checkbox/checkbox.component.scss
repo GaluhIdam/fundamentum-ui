@@ -46,7 +46,7 @@
 }
 
 .option,
-input, 
+input,
 label {
   cursor: pointer;
 }
@@ -62,7 +62,7 @@ $color-styles: (
 );
 
 @each $color, $value in $color-styles {
-  .checkbox-#{$color} {    
+  .checkbox-#{$color} {
     input[type="checkbox"]{
       appearance: none;
       accent-color: $value;
@@ -124,13 +124,13 @@ $size-style: (
       &:checked::after {
         font-size: calc($value - 4px);
         @if $size == 'sizedefault' {
-          transform: translateX(1px);          
+          transform: translateX(1px);
         } @else if $size == 'sizexs' {
           transform: translateX(1px);
         } @else if $size == 'sizes' {
           transform: translateX(1px);
         } @else if $size == 'sizem' {
-          transform: translateX(2px); 
+          transform: translateX(2px);
         } @else if $size == 'sizel' {
           transform: translateX(2px);
         } @else if $size == 'sizexl' {

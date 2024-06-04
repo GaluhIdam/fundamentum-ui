@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 
 import {
   AvatarComponent,
@@ -26,6 +26,7 @@ import { routes } from '../app.routes';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { debounceTime, Subscription } from 'rxjs';
+import { PopoverComponent, ThemeService } from 'fui';
 
 @Component({
   selector: 'app-layout',
@@ -53,11 +54,13 @@ import { debounceTime, Subscription } from 'rxjs';
     PageSidebarComponent,
     TextComponent,
     ButtonIconComponent,
+    PopoverComponent,
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
 })
 export class LayoutComponent {
+  themeService = inject(ThemeService);
   router: Routes = routes;
   isSidebar: boolean = true;
   isGrow: boolean = true;
@@ -66,9 +69,42 @@ export class LayoutComponent {
   extendedBorder: boolean = false;
 
   show: boolean = false;
+  searchTog: boolean = false;
 
-  constructor(private navigation: Router) {
+  constructor(private navigation: Router, private cdr: ChangeDetectorRef) {
+    this.themeService.setTheme('light');
     this._sortRoutesAlphabetically(this.router);
+    this.themeService.applyTheme();
+  }
+
+  searchForm: FormControl = new FormControl('');
+  data: SitewideDTO[] = [];
+  filteredData: SitewideDTO[] = [];
+
+  obs!: Subscription;
+
+  ngOnInit(): void {
+    this.obs = this.searchForm.valueChanges
+      .pipe(debounceTime(400))
+      .subscribe((data) => {
+        console.log(data);
+        this.filterData();
+      });
+    this.restructureData();
+  }
+
+  ngAfterViewInit(): void {
+    this.cdr.detectChanges();
+  }
+
+  ngOnDestroy(): void {
+    if (this.obs) {
+      this.obs.unsubscribe();
+    }
+  }
+
+  searchToggle(): void {
+    this.searchTog = !this.searchTog;
   }
 
   collapseBtn(): void {
@@ -94,26 +130,12 @@ export class LayoutComponent {
     });
   }
 
-  searchForm: FormControl = new FormControl('');
-  data: SitewideDTO[] = [];
-  filteredData: SitewideDTO[] = [];
-
-  obs!: Subscription;
-
-  ngOnInit(): void {
-    this.obs = this.searchForm.valueChanges
-      .pipe(debounceTime(400))
-      .subscribe((data) => {
-        console.log(data);
-        this.filterData();
-      });
-    this.restructureData();
+  toggleMode(theme: string): void {
+    this.themeService.setTheme(theme);
   }
 
-  ngOnDestroy(): void {
-    if (this.obs) {
-      this.obs.unsubscribe();
-    }
+  showEvent(event: any): void {
+    this.isSidebar = event;
   }
 
   restructureData(): void {
@@ -146,9 +168,9 @@ export class LayoutComponent {
   }
 
   goTo(event: any): void {
-    console.log(event);
     this.navigation.navigate([
       event.anything.parent + '/' + event.anything.child,
     ]);
+    this.searchTog = false;
   }
 }
