@@ -29,6 +29,7 @@ export class BadgeComponent {
   isDisplay: boolean = true;
   @Input({ required: true }) color: Color = 'primary';
   @Input({ required: true }) size: Size = 'sizedefault';
+  @Input() sizeIcon: Size = 'sizedefault';
   @Input() isBadgeIcon: boolean = false;
   @Input() iconPosition: 'start' | 'end' = 'start';
   @Input() icon!: Icon;
