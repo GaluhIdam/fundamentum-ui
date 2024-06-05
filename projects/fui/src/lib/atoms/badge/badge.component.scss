@@ -47,15 +47,22 @@ $reducer: 30;
     var(--fuiColorGhost, $fuiColorGhost)
   );
 }
+.accent {
+  @include fuiBadge(var(--fuiBtnAccent, $fuiBtnAccent), #000);
+}
 
 .text {
   @include fuiBadge(
-    var(--fuiBtnText, $fuiBtnText),
-    var(--fuiColorGhost, $fuiColorGhost)
+    var(--fuiColorLightShade, $fuiColorLightShade),
+    var( #000, #000)
   );
 }
-.accent {
-  @include fuiBadge(var(--fuiBtnAccent, $fuiBtnAccent), #000);
+
+.ghost {
+  border-width: 1px;
+  border-color: var(--fuiColorLightShade, $fuiColorLightShade);
+  border-style: solid;
+  @include fuiBadge(var(--fuiColorEmptyShade, $fuiColorEmptyShade), #000);
 }
 
 .disabled {
