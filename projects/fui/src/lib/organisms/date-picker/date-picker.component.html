@@ -1,26 +1,52 @@
 <div class="fui-date-picker">
   <fui-popover [position]="'bottom'">
     <fui-flex-group>
-      <fui-input-field [invalid]="false" [ngModel]="selectedDate? formatDate(selectedDate): null" size="m" type="text">
+      <fui-input-field
+        [invalid]="isInvalid"
+        size="m"
+        type="text"
+        [placeholder]="format"
+        [formControlField]="dateFormControl"
+        (change)="changeTextInput($event)">
         <fui-icons
-          [color]="'text'"
-          [icon]="'calendar'"
-          [label]="'left'"
-          [size]="'sizel'"
+          color="text"
+          icon="calendar"
+          label="left"
+          size="sizel"
           left-icon
         />
+        @if (isInvalid) {
+        <fui-icons
+          color="danger"
+          icon="alert"
+          size="sizel"
+          right-icon
+        />
+        }
       </fui-input-field>
     </fui-flex-group>
     <div popover-body>
     <div class="fui-date-picker__header">
-      <fui-button-icon (click)="prevMonth()" color="text" icon="arrowLeft" option="icon" type="button"></fui-button-icon>
+      <fui-button-icon
+        (click)="prevMonth()"
+        color="text"
+        icon="arrowLeft"
+        option="icon"
+        type="button">
+      </fui-button-icon>
       <select (ngModelChange)="changeMonth()" [(ngModel)]="selectedMonth">
         <option *ngFor="let month of months; let i = index" [value]="i + 1">{{ month }}</option>
       </select>
       <select (ngModelChange)="changeYear()" [(ngModel)]="selectedYear">
         <option *ngFor="let year of years" [value]="year">{{ year }}</option>
       </select>
-      <fui-button-icon (click)="nextMonth()" color="text" icon="arrowRight" option="icon" type="button"></fui-button-icon>
+      <fui-button-icon
+        (click)="nextMonth()"
+        color="text"
+        icon="arrowRight"
+        option="icon"
+        type="button">
+      </fui-button-icon>
     </div>
     <div class="fui-date-picker__calendar">
       <div *ngFor="let day of days" class="fui-date-picker__calendar--day-name">{{ day }}</div>
