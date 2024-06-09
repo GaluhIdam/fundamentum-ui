@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, DoCheck, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
 import {NgForOf} from "@angular/common";
-import {FormsModule} from "@angular/forms";
+import {FormControl, FormsModule} from "@angular/forms";
 import {ButtonEmptyComponent} from "../../atoms/button-empty/button-empty.component";
 import {ButtonIconComponent} from "../../molecules/button-icon/button-icon.component";
 import {InputFieldComponent} from "../../molecules/form-control-layout/input-field/input-field.component";
@@ -28,10 +29,19 @@ import {PopoverComponent} from "../../templates/popover/popover.component";
   styleUrl: './date-picker.component.scss'
 })
 export class DatePickerComponent implements OnInit {
+
+  @Input() format: string = 'YYYY-MM-DD';
+  @Input() dateFormControl: FormControl = new FormControl();
+  @Input() isInvalid: boolean = false;
+  @Output() isInvalidChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  @Output() onChange: EventEmitter<string> = new EventEmitter<string>();
+
+  selectedDate: dayjs.Dayjs | null = null;
   currentDate: dayjs.Dayjs;
   displayMonth: dayjs.Dayjs;
   weeks: Array<Array<{date: dayjs.Dayjs, selected: boolean}>> = [];
-  selectedDate: dayjs.Dayjs | null = null;
+
   selectedMonth: number;
   selectedYear: number;
   days: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -77,6 +87,10 @@ export class DatePickerComponent implements OnInit {
   selectDate(date: dayjs.Dayjs): void {
     this.selectedDate = date;
     this.generateCalendar(this.displayMonth);
+    this.dateFormControl = new FormControl(this.formatDate(this.selectedDate));
+    this.isInvalid = false;
+    this.isInvalidChange.emit(this.isInvalid);
+    this.onChange.emit(this.dateFormControl.value);
   }
 
   prevMonth(): void {
@@ -90,7 +104,7 @@ export class DatePickerComponent implements OnInit {
   }
 
   formatDate(date: dayjs.Dayjs): string {
-    return date.format('YYYY-MM-DD');
+    return date.format(this.format);
   }
 
   changeMonth(): void {
@@ -102,4 +116,21 @@ export class DatePickerComponent implements OnInit {
     this.displayMonth = this.displayMonth.year(this.selectedYear);
     this.generateCalendar(this.displayMonth);
   }
+
+  changeTextInput(event: any): void {
+    const inputValue = event.target.value;
+    this.isInvalid = !this.validateDateInput(inputValue);
+    this.isInvalidChange.emit(this.isInvalid);
+    if (!this.isInvalid) {
+      this.selectedDate = dayjs(inputValue, this.format, true);
+      this.generateCalendar(this.displayMonth);
+      this.onChange.emit(this.dateFormControl.value);
+    }
+  }
+
+  validateDateInput(inputValue: string): boolean {
+    dayjs.extend(customParseFormat);
+    return dayjs(inputValue, this.format, true).isValid();
+  }
+
 }
