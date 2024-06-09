@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, Input, ViewChild } from '@angular/core';
 import { OptionChart } from './utility/option.dto';
 import * as echarts from 'echarts/core';
 import { ThemesChart } from './theme-chart';
@@ -24,6 +24,8 @@ import {
 import { CanvasRenderer } from 'echarts/renderers';
 import { UniversalTransition } from 'echarts/features';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from '../../../public-api';
+import { Subscription } from 'rxjs';
 
 /**
  * The EchartsComponent
@@ -45,12 +47,14 @@ import { CommonModule } from '@angular/common';
 })
 export class EchartsComponent {
   @Input({ required: true }) chartOption?: OptionChart;
-  @Input({ required: true }) themeChart: 'light' | 'dark' = 'light';
+  @Input() themeChart: 'light' | 'dark' = 'light';
   @Input() triggered: boolean = false;
   @Input() height: string = '70vh';
+  @Input() themeCustom: boolean = false;
 
   @ViewChild('echarts') echartsRef?: ElementRef;
-
+  themeService = inject(ThemeService);
+  private themeSubscription!: Subscription;
   chartInstance?: echarts.ECharts;
 
   constructor() {
@@ -73,12 +77,23 @@ export class EchartsComponent {
       CanvasRenderer,
       UniversalTransition,
     ]);
-    this.registerTheme();
+  }
+
+  ngOnInit(): void {
+    if (this.themeCustom === false) {
+      this.registerTheme();
+    }
   }
 
   ngAfterViewInit(): void {
     this.initEchart();
     this.observeWidthChanges();
+    this.themeSubscription = this.themeService.currentTheme$.subscribe(
+      (theme) => {
+        this.themeChart = theme === 'light' ? 'light' : 'dark';
+        this.changeTheme();
+      }
+    );
   }
 
   ngOnChanges(changes: any): void {
@@ -89,6 +104,10 @@ export class EchartsComponent {
       const option: any = this.chartOption;
       this.chartInstance.setOption(option);
     }
+  }
+
+  ngOnDestroy() {
+    this.themeSubscription.unsubscribe();
   }
 
   registerTheme(): void {
