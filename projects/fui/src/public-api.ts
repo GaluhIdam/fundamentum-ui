@@ -156,6 +156,9 @@ export * from './lib/templates/page/page-section/page-section.component';
 export * from './lib/templates/calendar/calendar.component';
 export * from './lib/templates/calendar/event.dto';
 
+/** Horizontal Stack */
+export * from './lib/molecules/horizontal-stack/horizontal-stack.component';
+
 /**Dark Mode Feature */
 export * from './lib/templates/flex/flex-group.component';
 export * from './lib/templates/flex/flex-item.component';
@@ -167,4 +170,4 @@ export * from './lib/oidc-authenticator/utility/oidc.utility.service';
 /** Theme Service */
 export * from './lib/themes/service/theme.service';
 
-export * from './lib/organisms/date-picker/date-picker.component'
+export * from './lib/organisms/date-picker/date-picker.component';

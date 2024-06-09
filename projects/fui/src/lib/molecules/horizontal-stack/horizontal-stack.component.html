@@ -1,0 +1,11 @@
+<div class="container">
+  @for (item of progress; track $index) {
+  <div
+    *ngIf="item.percentage > 0"
+    class="hr-stack {{ item.color }}"
+    [ngStyle]="{ width: item.percentage + '%' }"
+  >
+    <span *ngIf="showPercentage">{{ item.percentage }}%</span>
+  </div>
+  }
+</div>
