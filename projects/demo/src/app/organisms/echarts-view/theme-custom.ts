@@ -1,8 +1,8 @@
-export class ThemesChart {
+export class ThemesChartCustom {
   static readonly light = {
     color: [
-      '#54b399',
-      '#6092c0',
+      '#006bb4',
+      '#98a2b3',
       '#d36086',
       '#9170b8',
       '#ca8eae',
@@ -369,8 +369,8 @@ export class ThemesChart {
   };
   static readonly dark = {
     color: [
-      '#dd6b66',
-      '#759aa0',
+      '#006bb4',
+      '#98a2b3',
       '#e69d87',
       '#8dc1a9',
       '#ea7e53',

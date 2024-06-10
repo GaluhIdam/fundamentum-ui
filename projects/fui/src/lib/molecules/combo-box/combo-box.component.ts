@@ -7,7 +7,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IconsComponent } from '../../../public-api';
+import { IconsComponent, InputFieldComponent } from '../../../public-api';
 
 /**
  * The ComboBoxComponent component
@@ -23,12 +23,13 @@ import { IconsComponent } from '../../../public-api';
 @Component({
   selector: 'fui-combo-box',
   standalone: true,
-  imports: [CommonModule, IconsComponent, FormsModule],
+  imports: [CommonModule, IconsComponent, FormsModule, InputFieldComponent],
   templateUrl: './combo-box.component.html',
   styleUrl: './combo-box.component.scss',
 })
 export class ComboBoxComponent {
   @ViewChild('inputField') inputField?: ElementRef;
+  @Input() size: 's' | 'm' | 'l' = 'm';
   @Input({ required: true }) selectedValue: { name: string; value: any }[] = [];
   @Input({ required: true }) optionValue: { name: string; value: any }[] = [];
   @Input() singleSelection: boolean = false;

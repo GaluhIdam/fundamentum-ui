@@ -1,7 +1,7 @@
 @import "./../../styles/index";
 
-$paddingTopBottom: 0.316rem;
-$paddingLeftRight: 0.693rem;
+$paddingTopBottom: 0.2rem;
+$paddingLeftRight: 0.5rem;
 $reducer: 30;
 
 .badge {
@@ -47,15 +47,22 @@ $reducer: 30;
     var(--fuiColorGhost, $fuiColorGhost)
   );
 }
+.accent {
+  @include fuiBadge(var(--fuiBtnAccent, $fuiBtnAccent), #000);
+}
 
 .text {
   @include fuiBadge(
-    var(--fuiBtnText, $fuiBtnText),
-    var(--fuiColorGhost, $fuiColorGhost)
+    var(--fuiColorLightShade, $fuiColorLightShade),
+    var( #000, #000)
   );
 }
-.accent {
-  @include fuiBadge(var(--fuiBtnAccent, $fuiBtnAccent), #000);
+
+.ghost {
+  border-width: 1px;
+  border-color: var(--fuiColorMediumShade, $fuiColorMediumShade);
+  border-style: solid;
+  @include fuiBadge(transparent, var(--fuiColorFullShade, $fuiColorFullShade));
 }
 
 .disabled {

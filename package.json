@@ -30,6 +30,7 @@
     "dayjs": "^1.11.11",
     "echarts": "^5.4.3",
     "express": "^4.18.2",
+    "fui": "^0.1.0",
     "highlight.js": "^11.9.0",
     "ngx-highlightjs": "^11.0.0-beta.1",
     "rxjs": "~7.8.0",

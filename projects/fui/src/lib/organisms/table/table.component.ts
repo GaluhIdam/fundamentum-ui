@@ -1,11 +1,8 @@
 import {
-  ChangeDetectorRef,
   Component,
-  ElementRef,
   EventEmitter,
   Input,
   Output,
-  ViewChild,
 } from '@angular/core';
 import { TableHeadComponent } from './table-head/table-head.component';
 import { CommonModule } from '@angular/common';
@@ -21,21 +18,14 @@ import { PaginationComponent } from '../pagination/pagination.component';
 export class TableComponent {
   @Input({ required: true }) limit: number = 10;
   @Input({ required: true }) totalItems: number = 100;
-  @ViewChild('dataTable', { static: false }) dataTable!: ElementRef;
+  @Input() showInfo: boolean = true;
+  @Input() pagination: boolean = true;
   @Output() onPageChanges: EventEmitter<{
     page: number;
     itemsPerPage: number;
   }> = new EventEmitter();
   heightGrid: number = 0;
   page: number = 1;
-
-  constructor(private cdr: ChangeDetectorRef) {}
-  ngAfterViewChecked(): void {
-    if (this.dataTable) {
-      this.heightGrid = this.dataTable.nativeElement.offsetHeight;
-      this.cdr.detectChanges();
-    }
-  }
 
   /** Pagination Function */
   onPageChange(event: { page: number; itemsPerPage: number }): void {

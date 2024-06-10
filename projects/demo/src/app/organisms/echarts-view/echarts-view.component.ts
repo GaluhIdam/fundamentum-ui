@@ -3,11 +3,8 @@ import {
   EchartsComponent,
   OptionChart,
 } from 'fui';
-// import {
-//   EchartsComponent,
-//   OptionChart,
-// } from 'fui';
-
+import * as echarts from 'echarts/core';
+import { ThemesChartCustom } from './theme-custom';
 @Component({
   selector: 'app-echarts-view',
   standalone: true,
@@ -16,7 +13,6 @@ import {
   styleUrl: './echarts-view.component.scss',
 })
 export class EchartsViewComponent {
-  themeChart: 'light' | 'dark' = 'light';
   triggered: boolean = false;
 
   /** Line Stacked */
@@ -370,8 +366,9 @@ export class EchartsViewComponent {
     ],
   };
 
-  changeTheme(): void {
-    this.themeChart = this.themeChart === 'light' ? 'dark' : 'light';
+  constructor() {
+    echarts.registerTheme('light', ThemesChartCustom.light);
+    echarts.registerTheme('dark', ThemesChartCustom.dark);
   }
 
   triggeredAction(): void {

@@ -9,7 +9,7 @@
 }
 
 .with-group-label {
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .flex-row {
@@ -22,19 +22,19 @@
 
 .checkbox-options {
   display: flex;
-  gap: .5rem;
+  gap: 0.3rem;
   flex-direction: column;
 
   .option {
     display: flex;
-    align-items: center;
-    gap: .5rem;
+    align-items: flex-start;
+    gap: 0.3rem;
   }
 }
 
 .option-item {
   display: flex;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .option-align-row {
@@ -63,7 +63,7 @@ $color-styles: (
 
 @each $color, $value in $color-styles {
   .checkbox-#{$color} {
-    input[type="checkbox"]{
+    input[type="checkbox"] {
       appearance: none;
       accent-color: $value;
       border: 2px solid color.$fuiColorMediumShade;
@@ -79,7 +79,7 @@ $color-styles: (
         position: relative;
 
         &::after {
-          content: '✔';
+          content: "✔";
           position: absolute;
           width: 100%;
           height: 100%;
@@ -93,11 +93,11 @@ $color-styles: (
         position: relative;
 
         &::after {
-          content: '';
+          content: "";
           position: absolute;
           width: 100%;
           height: 100%;
-          scale: .5;
+          scale: 0.5;
           background-color: color.$fuiColorGhost;
         }
       }
@@ -123,19 +123,19 @@ $size-style: (
 
       &:checked::after {
         font-size: calc($value - 4px);
-        @if $size == 'sizedefault' {
+        @if $size == "sizedefault" {
           transform: translateX(1px);
-        } @else if $size == 'sizexs' {
+        } @else if $size == "sizexs" {
           transform: translateX(1px);
-        } @else if $size == 'sizes' {
+        } @else if $size == "sizes" {
           transform: translateX(1px);
-        } @else if $size == 'sizem' {
+        } @else if $size == "sizem" {
           transform: translateX(2px);
-        } @else if $size == 'sizel' {
+        } @else if $size == "sizel" {
           transform: translateX(2px);
-        } @else if $size == 'sizexl' {
+        } @else if $size == "sizexl" {
           transform: translateX(2px);
-        } @else if $size == 'sizexxl' {
+        } @else if $size == "sizexxl" {
           transform: translateX(3px);
         }
       }

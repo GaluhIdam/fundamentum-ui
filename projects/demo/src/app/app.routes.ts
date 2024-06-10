@@ -57,6 +57,7 @@ import { OidcAuthenticatorComponent } from './oidc-authenticator/oidc-authentica
 import { SecurePageComponent } from './oidc-authenticator/secure-page/secure-page.component';
 import { AuthGuard } from './core/guard/auth.guard';
 import {DatePickerViewComponent} from "./organisms/date-picker-view/date-picker-view.component";
+import { HorizontalStackViewComponent } from './molecules/horizontal-stack-view/horizontal-stack-view.component';
 
 /** ATTENTION, ADD A TITLE IN CHILDREN ROUTE FOR THE DOCUMENTATION */
 export const routes: Routes = [
@@ -203,6 +204,11 @@ export const routes: Routes = [
         path: 'highlight',
         component: HighlightViewComponent,
       },
+      {
+        title: 'Horizontal Stack',
+        path: 'hr-stack',
+        component: HorizontalStackViewComponent
+      }
     ],
   },
   /* Router for Molecules */

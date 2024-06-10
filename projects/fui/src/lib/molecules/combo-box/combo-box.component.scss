@@ -1,18 +1,19 @@
 @import "../../styles/index";
-
+:host {
+  height: fit-content;
+  display: block;
+}
 .fui-flex-combox-parent {
-  width: 350px;
   font-family: $fuiFontFamily;
   background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
   display: grid;
   align-items: center;
   position: relative;
-  width: fit-content;
+  width: -webkit-fill-available;
 }
 
 .fui-flex-combox {
   @include start();
-  width: 350px;
   font-family: $fuiFontFamily;
   display: flex;
   border: 1px solid var(--fuiColorLightShade, $fuiColorLightShade);
@@ -47,6 +48,7 @@
 }
 
 .mr-3 {
+  margin-top: 2px;
   margin-right: 3px;
   font-size: $fuiSizeM;
 }
@@ -58,12 +60,13 @@
 .fui-input-combox {
   color: var(--fuiColorFullShade, $fuiColorFullShade);
   background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
-  padding: 3px 5px 3px 5px;
   outline: none;
   border: none;
 }
 
 .fui-multi-select {
+  overflow-y: auto;
+  overflow-x: hidden;
   font-family: $fuiFontFamily;
   outline: none;
   border: 1px solid var(--fuiColorLightShade, $fuiColorLightShade);
@@ -77,6 +80,7 @@
   border-radius: 6px;
 }
 .fui-multi-select.mini {
+  z-index: 2;
   font-family: $fuiFontFamily;
   outline: none;
   border: 1px solid var(--fuiColorLightShade, $fuiColorLightShade);
@@ -127,4 +131,14 @@
 .option-selected {
   background-color: var(--fuiColorLightShade, $fuiColorLightShade);
   color: var(--fuiColorInk, $fuiColorInk);
+}
+
+.fui-input-field-s {
+  @include comboBoxMix($fuiSizeM, 6px);
+}
+.fui-input-field-m {
+  @include comboBoxMix($fuiSizeM + 3, 7px);
+}
+.fui-input-field-l {
+  @include comboBoxMix($fuiSizeM + 6, 8px);
 }

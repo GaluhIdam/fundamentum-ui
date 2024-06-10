@@ -1,0 +1,23 @@
+@import "../variables/index";
+
+@mixin comboBoxMix($size, $padding) {
+  width: -webkit-fill-available;
+  font-family: $fuiFontFamily;
+  font-size: $size;
+  height: fit-content;
+  padding-top: $padding;
+  padding-bottom: $padding;
+  box-shadow: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  outline: none;
+  background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: #eef2f7;
+    cursor: not-allowed;
+  }
+}

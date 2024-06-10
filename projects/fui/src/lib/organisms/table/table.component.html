@@ -1,6 +1,6 @@
-<div class="container" [ngStyle]="{ height: heightGrid + 'px' }">
+<div class="container">
   <div #dataTable class="wrap-table">
-    <span class="page-info"
+    <span class="page-info" *ngIf="showInfo"
       >Showing
       <div class="bold">{{ getRangeStart() }} - {{ getRangeEnd() }}</div>
       of 20 Data</span
@@ -15,7 +15,7 @@
         <ng-content select="fui-table-body"></ng-content>
       </div>
     </div>
-    <div class="page">
+    <div class="page" *ngIf="pagination">
       <fui-pagination
         (onPageChange)="onPageChange($event)"
         [itemsPerPage]="limit"

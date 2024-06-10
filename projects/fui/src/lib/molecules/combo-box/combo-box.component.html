@@ -1,66 +1,71 @@
-<div style="width: fit-content">
-  <div class="fui-flex-combox-parent">
-    <div class="fui-flex-combox {{ openSelector ? 'active' : '' }}">
-      <div class="fui-flex-combox-sub">
-        <div *ngFor="let item of selectedValue" class="fui-mx-selected">
-          <span class="mr-3">{{ item.name }}</span>
-          <fui-icons
-            class="fui-icon-combox"
-            [icon]="'cross'"
-            [size]="'sizexs'"
-            (click)="toggleSelection(item)"
-          ></fui-icons>
-        </div>
-        <input
-          #inputField
-          [autofocus]=""
-          [ngStyle]="{
-            width:
-              searchTerm.length > 29 || selectedValue.length === 0
-                ? '100%'
-                : searchTerm.length === 0
-                ? '5px'
-                : calculateWidth()
-          }"
-          [(ngModel)]="searchTerm"
-          type="text"
-          [placeholder]="selectedValue.length === 0 ? placeholder : ''"
-          class="fui-input-combox"
-          (focus)="toggleOpenSelectorFocus()"
-        />
+<div class="fui-flex-combox-parent">
+  <div
+    class="fui-flex-combox {{ openSelector ? 'active' : '' }}"
+    [ngClass]="{
+    'fui-input-field-s': size == 's',
+    'fui-input-field-m':  size == 'm',
+    'fui-input-field-l':  size == 'l',
+  }"
+  >
+    <div class="fui-flex-combox-sub">
+      <div *ngFor="let item of selectedValue" class="fui-mx-selected">
+        <span class="mr-3">{{ item.name }}</span>
+        <fui-icons
+          class="fui-icon-combox"
+          [icon]="'cross'"
+          [size]="'sizexs'"
+          (click)="toggleSelection(item)"
+        ></fui-icons>
       </div>
-      <fui-icons
-        *ngIf="selectedValue.length > 0"
-        (click)="toggleClearData()"
-        class="fui-icon-combox-cross"
-        [icon]="'cross'"
-        [size]="'sizexs'"
-      ></fui-icons>
-      <fui-icons
-        (click)="toggleOpenSelector()"
-        class="fui-icon-combox"
-        [icon]="'arrowDown'"
-        [size]="'sizem'"
-      ></fui-icons>
+      <input
+        #inputField
+        [autofocus]=""
+        [ngStyle]="{
+          width:
+            searchTerm.length > 29 || selectedValue.length === 0
+              ? '100%'
+              : searchTerm.length === 0
+              ? '5px'
+              : calculateWidth()
+        }"
+        [(ngModel)]="searchTerm"
+        type="text"
+        [placeholder]="selectedValue.length === 0 ? placeholder : ''"
+        class="fui-input-combox"
+        (focus)="toggleOpenSelectorFocus()"
+      />
     </div>
-    <select
-      *ngIf="openSelector"
-      [attr.multiple]="!singleSelection"
-      [(ngModel)]="selectedValues"
-      class="fui-multi-select {{ selectedValue.length <= 4 ? 'mini' : '' }}"
-    >
-      @for(item of optionValue; track $index; let last = $last;) {
-      <option
-        class="fui-option-select {{
-          isSelected(item) ? 'option-selected' : ''
-        }}"
-        *ngIf="item.name.toLowerCase().includes(searchTerm.toLowerCase())"
-        [value]="item.value"
-        (click)="toggleSelection(item)"
-      >
-        {{ item.name }}
-      </option>
-      }
-    </select>
+    <fui-icons
+      *ngIf="selectedValue.length > 0"
+      (click)="toggleClearData()"
+      class="fui-icon-combox-cross"
+      [icon]="'cross'"
+      [size]="'sizexs'"
+    ></fui-icons>
+    <fui-icons
+      (click)="toggleOpenSelector()"
+      class="fui-icon-combox"
+      [icon]="'arrowDown'"
+      [size]="'sizem'"
+    ></fui-icons>
   </div>
+  <select
+    *ngIf="openSelector"
+    [attr.multiple]="!singleSelection"
+    [(ngModel)]="selectedValues"
+    class="fui-multi-select {{ selectedValue.length <= 4 ? 'mini' : '' }}"
+  >
+    @for(item of optionValue; track $index; let last = $last;) {
+    <option
+      class="fui-option-select {{
+        isSelected(item) ? 'option-selected' : ''
+      }}"
+      *ngIf="item.name.toLowerCase().includes(searchTerm.toLowerCase())"
+      [value]="item.value"
+      (click)="toggleSelection(item)"
+    >
+      {{ item.name }}
+    </option>
+    }
+  </select>
 </div>

@@ -14,14 +14,14 @@
 .fui-sidenav-heading {
   cursor: pointer;
   font-size: 0.85rem;
-  color: $fuiColorDarkShade;
+  color: var(--fuiColorFullShade, $fuiColorFullShade);
   text-decoration: none;
   margin: 0px 18px 0px 0px;
   &:hover {
     text-decoration: underline;
   }
   &:active {
-    color: $fuiColorMediumShade;
+    color: var(--fuiColorMediumShade, $fuiColorMediumShade);
   }
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -33,7 +33,7 @@
 
 .active {
   font-weight: $fuiFontWeightSemiBold;
-  color: $fuiColorPrimary;
+  color: var(--fuiColorPrimary, $fuiColorPrimary);
   text-decoration: underline;
 }
 
