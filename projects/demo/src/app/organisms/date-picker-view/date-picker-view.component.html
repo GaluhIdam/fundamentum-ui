@@ -1,8 +1,10 @@
 <fui-date-picker
-  format="YYYY/DD/MM"
+  dateFormat="YYYY/MM/DD"
   [dateFormControl]="dateFormControl"
   (onChange)="onChangeHandler($event)"
-  [(isInvalid)]="isInvalid">
+  [(isInvalid)]="isInvalid"
+  [showTimeOptions]="true"
+  timeFormat="12h">
 
 </fui-date-picker>
 <div>{{selectedDate}}</div>
