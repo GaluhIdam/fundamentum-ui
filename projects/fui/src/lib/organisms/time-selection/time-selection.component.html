@@ -1,0 +1,41 @@
+<div class="fui-time-selection">
+  <fui-popover position="bottom" align="start" >
+    <fui-flex-group>
+      <fui-input-field
+        [invalid]="isInvalid"
+        size="m"
+        type="text"
+        [placeholder]="placeholder"
+        [formControlField]="timeFormControl"
+        (change)="changeTextInput($event)">
+        <fui-icons
+          color="text"
+          icon="clock"
+          label="left"
+          size="sizel"
+          left-icon
+        />
+        @if (isInvalid) {
+          <fui-icons
+            color="danger"
+            icon="alert"
+            size="sizel"
+            right-icon
+          />
+        }
+      </fui-input-field>
+    </fui-flex-group>
+    <div popover-body>
+<!--      <div class="fui-time-selection__date-time">-->
+        <div class="fui-time-selection__popover">
+          <div (click)="selectTime(time.time)"
+               *ngFor="let time of timeOptions"
+               [class.fui-time-selection__popover--item]="!time.selected"
+               [class.fui-time-selection__popover--item-selected]="time.selected">
+            {{ formatTime(time.time) }}
+          </div>
+        </div>
+<!--      </div>-->
+    </div>
+  </fui-popover>
+</div>
