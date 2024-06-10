@@ -54,3 +54,14 @@
 .not-current-month {
   color: #cccccc;
 }
+fui-popover {
+  width: -webkit-fill-available;
+}
+:host {
+  height: fit-content;
+  display: block;
+  border-radius: 6px;
+  border-width: 1px;
+  border-color: var(--fuiColorLightShade, #d3dae6);
+  border-style: solid;
+}

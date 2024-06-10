@@ -75,6 +75,7 @@ export class FlyoutComponent {
   @Input() flyoutPadding: 'none' | 's' | 'm' | 'l' = 'l';
   @Input() withOverlay: boolean = false;
   @Output() onOverlayClick: EventEmitter<void> = new EventEmitter();
+  @Input() zIndex: number = 2;
   flyoutPadding$ = new BehaviorSubject<'none' | 's' | 'm' | 'l'>('l');
 
   ngOnChanges(changes: SimpleChanges) {

@@ -9,6 +9,7 @@
 <ng-template #flyout>
   <div [ngClass]="['flyout']">
     <div
+      [ngStyle]="{ 'z-index': zIndex }"
       [ngClass]="[
         'flyout-layout',
         flyoutDirection === 'start'
