@@ -18,6 +18,17 @@ export type Size =
   | 'sizexl'
   | 'sizexxl';
 
+export type TimeFormat =
+  | '12h'
+  | '24h';
+
+export type MinuteInterval =
+  | '1 minute'
+  | '5 minutes'
+  | '10 minutes'
+  | '15 minutes'
+  | '30 minutes';
+
 export type Icon =
   | 'accessibility'
   | 'aggregate'

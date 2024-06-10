@@ -12,7 +12,7 @@ import dayjs from "dayjs";
 })
 export class DatePickerViewComponent {
   selectedDate: string = "";
-  dateFormControl:FormControl = new FormControl(dayjs().format("YYYY/MM/DD"));
+  dateFormControl:FormControl = new FormControl();
   isInvalid:boolean = false;
   errorMessage: string = "Input is not valid.";
 
