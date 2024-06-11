@@ -2,12 +2,13 @@
   <fui-popover position="bottom" align="start">
 
       <fui-input-field
-        [invalid]="isInvalid"
+        [invalid]="isInvalidStartDate"
         size="m"
         type="text"
         [placeholder]="placeholder"
         [formControlField]="startDateControl"
-        (change)="changeTextInput($event)">
+        (change)="changeTextInput($event, true)"
+        (click)="onStartDateClick()">
         <fui-icons
           color="text"
           icon="calendar"
@@ -20,7 +21,7 @@
     <div popover-body>
       <div class="fui-date-picker__header">
         <fui-button-icon
-          (click)="prevMonth()"
+          (click)="prevMonth(true)"
           color="text"
           icon="arrowLeft"
           option="icon"
@@ -29,19 +30,19 @@
         <select
           name="monthSelector"
           class="fui-date-picker__month"
-          (change)="changeMonth($event.target.value)"
-          [ngModel]="selectedMonth">
+          (change)="changeMonth($event.target.value, true)"
+          [ngModel]="selectedStartMonth">
           <option *ngFor="let month of months ; let i = index" [value]="i">{{ month }}</option>
         </select>
         <select
           name="yearSelector"
           class="fui-date-picker__year"
-          (change)="changeYear($event.target.value)"
-          [ngModel]="selectedYear">
+          (change)="changeYear($event.target.value, true)"
+          [ngModel]="selectedStartYear">
           <option *ngFor="let year of years" [value]="year">{{ year }}</option>
         </select>
         <fui-button-icon
-          (click)="nextMonth()"
+          (click)="nextMonth(true)"
           color="text"
           icon="arrowRight"
           option="icon"
@@ -52,17 +53,18 @@
         <div class="fui-date-picker__calendar">
           <div *ngFor="let day of days" class="fui-date-picker__calendar--day-name">{{ day }}</div>
           <div *ngFor="let week of weeks" class="fui-date-picker__calendar--day">
-            <div (click)="selectDate(day.date)"
+            <div (click)="selectDate(day.date, true)"
                  *ngFor="let day of week"
                  [class.not-current-month]="!day.date.isSame(displayMonth, 'month')"
-                 [class.selected]="day.selected">
+                 [class.selected]="day.selected"
+                 [class.between-range]="day.betweenRange && day.date.isSame(displayMonth, 'month')">
               {{ day.date.date() }}
             </div>
           </div>
         </div>
         @if (showTimeOptions) {
           <div class="fui-date-picker__time-selection">
-            <div (click)="selectTime(time.time)"
+            <div (click)="selectTime(time.time, true)"
                  *ngFor="let time of timeOptions"
                  [class.fui-date-picker__time-selection--item]="!time.selected"
                  [class.fui-date-picker__time-selection--item-selected]="time.selected">
@@ -79,13 +81,14 @@
   <fui-popover position="bottom" align="end" >
 
       <fui-input-field
-        [invalid]="isInvalid"
+        [invalid]="isInvalidEndDate"
         size="m"
         type="text"
         [placeholder]="placeholder"
         [formControlField]="endDateControl"
-        (change)="changeTextInput($event)">
-        @if (isInvalid) {
+        (change)="changeTextInput($event, false)"
+        (click)="onEndDateClick()">
+        @if (isInvalidEndDate) {
           <fui-icons
             color="danger"
             icon="alert"
@@ -97,7 +100,7 @@
     <div popover-body>
       <div class="fui-date-picker__header">
         <fui-button-icon
-          (click)="prevMonth()"
+          (click)="prevMonth(false)"
           color="text"
           icon="arrowLeft"
           option="icon"
@@ -106,19 +109,19 @@
         <select
           name="monthSelector"
           class="fui-date-picker__month"
-          (change)="changeMonth($event.target.value)"
-          [ngModel]="selectedMonth">
+          (change)="changeMonth($event.target.value, false)"
+          [ngModel]="selectedEndMonth">
           <option *ngFor="let month of months ; let i = index" [value]="i">{{ month }}</option>
         </select>
         <select
           name="yearSelector"
           class="fui-date-picker__year"
-          (change)="changeYear($event.target.value)"
-          [ngModel]="selectedYear">
+          (change)="changeYear($event.target.value, false)"
+          [ngModel]="selectedEndYear">
           <option *ngFor="let year of years" [value]="year">{{ year }}</option>
         </select>
         <fui-button-icon
-          (click)="nextMonth()"
+          (click)="nextMonth(false)"
           color="text"
           icon="arrowRight"
           option="icon"
@@ -129,17 +132,18 @@
         <div class="fui-date-picker__calendar">
           <div *ngFor="let day of days" class="fui-date-picker__calendar--day-name">{{ day }}</div>
           <div *ngFor="let week of weeks" class="fui-date-picker__calendar--day">
-            <div (click)="selectDate(day.date)"
+            <div (click)="selectDate(day.date, false)"
                  *ngFor="let day of week"
                  [class.not-current-month]="!day.date.isSame(displayMonth, 'month')"
-                 [class.selected]="day.selected">
+                 [class.selected]="day.selected"
+                 [class.between-range]="day.betweenRange && day.date.isSame(displayMonth, 'month')">
               {{ day.date.date() }}
             </div>
           </div>
         </div>
         @if (showTimeOptions) {
           <div class="fui-date-picker__time-selection">
-            <div (click)="selectTime(time.time)"
+            <div (click)="selectTime(time.time, false)"
                  *ngFor="let time of timeOptions"
                  [class.fui-date-picker__time-selection--item]="!time.selected"
                  [class.fui-date-picker__time-selection--item-selected]="time.selected">
