@@ -2,6 +2,7 @@
 
 .fui-highlight {
   ::ng-deep .highlight {
-    background-color: var(--fuiColorHighlight, color.$fuiColorHighlight);
+    background-color: var(--fuiBtnWarning, color.$fuiBtnWarning);
+    color: black;
   }
 }

@@ -5,7 +5,7 @@
       class="fui-sidenav-icon"
       *ngIf="item.icon"
       [icon]="item.icon.type"
-      [size]="item.icon.size"
+      [size]="item.size"
       [color]="
         item.link
           ? item.active && item.link === router.url
@@ -21,7 +21,23 @@
       (click)="collapse(dataSide, i)"
       class="fui-sidenav-heading {{ item.active ? 'active' : '' }}"
     >
-      {{ item.title }}
+      <fui-highlight
+        [text]="item.title"
+        [textHighlight]="highlightText"
+        [isHighlightAll]="false"
+        [isCaseSensitive]="false"
+        [searchSeparatedWord]="false"
+        [size]="item.size"
+        [color]="
+          item.link
+            ? item.active && item.link === router.url
+              ? 'primary'
+              : 'text'
+            : item.active
+            ? 'primary'
+            : 'text'
+        "
+      ></fui-highlight>
     </span>
     <a
       *ngIf="item.link"
@@ -31,24 +47,60 @@
         item.active && item.link === router.url ? 'active' : ''
       }}"
     >
-      {{ item.title }}
+      <fui-highlight
+        [text]="item.title"
+        [textHighlight]="highlightText"
+        [isHighlightAll]="false"
+        [isCaseSensitive]="false"
+        [searchSeparatedWord]="false"
+        [size]="item.size"
+        [color]="
+          item.link
+            ? item.active && item.link === router.url
+              ? 'primary'
+              : 'text'
+            : item.active
+            ? 'primary'
+            : 'text'
+        "
+      ></fui-highlight>
     </a>
     <fui-icons
       *ngIf="item.children?.length && !item.active && !item.link"
       class="fui-sidenav-icon"
       [icon]="'arrowRight'"
       [size]="'sizexs'"
-      [color]="'text'"
+      [color]="
+        item.link
+          ? item.active && item.link === router.url
+            ? 'primary'
+            : 'text'
+          : item.active
+          ? 'primary'
+          : 'text'
+      "
     ></fui-icons>
     <fui-icons
       *ngIf="item.children?.length && item.active && !item.link"
       class="fui-sidenav-icon"
       [icon]="'arrowDown'"
       [size]="'sizexs'"
-      [color]="'text'"
+      [color]="
+        item.link
+          ? item.active && item.link === router.url
+            ? 'primary'
+            : 'text'
+          : item.active
+          ? 'primary'
+          : 'text'
+      "
     ></fui-icons>
   </div>
   <div class="fui-children-sidenav" *ngIf="item.active && !item.link">
-    <fui-sidenav *ngIf="item.children" [dataSide]="item.children"></fui-sidenav>
+    <fui-sidenav
+      *ngIf="item.children"
+      [highlightText]="highlightText"
+      [dataSide]="item.children"
+    />
   </div>
 </div>

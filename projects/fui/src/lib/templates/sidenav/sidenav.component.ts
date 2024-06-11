@@ -1,14 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { Icon, Size } from '../../types';
 import { CommonModule } from '@angular/common';
-import { IconsComponent } from '../../../public-api';
+import { HighlightComponent, IconsComponent } from '../../../public-api';
 import { Router, RouterModule } from '@angular/router';
 
 export interface DataSideDTO {
   heading?: string;
+  size?: Size;
   icon?: {
     type: Icon;
-    size: Size;
   };
   title: string;
   link?: string;
@@ -29,12 +29,13 @@ export interface DataSideDTO {
 @Component({
   selector: 'fui-sidenav',
   standalone: true,
-  imports: [CommonModule, IconsComponent, RouterModule],
+  imports: [CommonModule, IconsComponent, RouterModule, HighlightComponent],
   templateUrl: './sidenav.component.html',
   styleUrl: './sidenav.component.scss',
 })
 export class SidenavComponent {
   @Input({ required: true }) dataSide: DataSideDTO[] = [];
+  @Input() highlightText: string = '';
 
   /**
    * @ignore

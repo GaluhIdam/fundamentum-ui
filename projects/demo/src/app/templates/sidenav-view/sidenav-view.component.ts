@@ -12,17 +12,17 @@ export class SidenavViewComponent {
   dataSide: DataSideDTO[] = [
     {
       heading: 'Nav heading',
+      size: 'sizem',
       icon: {
         type: 'folderOpen',
-        size: 'sizexs',
       },
       title: 'Archive',
       active: false,
       children: [
         {
+          size: 'sizem',
           icon: {
             type: 'payment',
-            size: 'sizexs',
           },
           title: 'Finance',
           active: false,
@@ -33,10 +33,10 @@ export class SidenavViewComponent {
               active: false,
             },
             {
+              size: 'sizem',
               title: 'Event',
               icon: {
                 type: 'calendar',
-                size: 'sizexs',
               },
               link: '/templates/side-nav/test',
               active: true,
@@ -44,9 +44,9 @@ export class SidenavViewComponent {
           ],
         },
         {
+          size: 'sizem',
           icon: {
             type: 'user',
-            size: 'sizexs',
           },
           title: 'Employee',
           active: false,
@@ -54,9 +54,9 @@ export class SidenavViewComponent {
       ],
     },
     {
+      size: 'sizem',
       icon: {
         type: 'alert',
-        size: 'sizexs',
       },
       link: '/templates/side-nav/test-2',
       title: 'Information',
