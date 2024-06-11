@@ -2,10 +2,9 @@
   <h3 *ngIf="item.heading">{{ item.heading }}</h3>
   <div class="fui-sidenav-flex {{ size }}">
     <fui-icons
-      class="fui-sidenav-icon"
-      *ngIf="item.icon"
-      [icon]="item.icon"
-      [size]="item.size"
+      class="fui-sidenav-icon {{ item.icon ? 'visible' : 'invsible' }}"
+      [icon]="item.icon ?? 'cross'"
+      [size]="item.size ?? 'sizes'"
       [color]="
         item.link
           ? item.active && item.link === router.url
