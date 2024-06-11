@@ -7,7 +7,11 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IconsComponent, InputFieldComponent } from '../../../public-api';
+import {
+  IconsComponent,
+  InputFieldComponent,
+  PopoverComponent,
+} from '../../../public-api';
 
 /**
  * The ComboBoxComponent component
@@ -23,7 +27,13 @@ import { IconsComponent, InputFieldComponent } from '../../../public-api';
 @Component({
   selector: 'fui-combo-box',
   standalone: true,
-  imports: [CommonModule, IconsComponent, FormsModule, InputFieldComponent],
+  imports: [
+    CommonModule,
+    IconsComponent,
+    FormsModule,
+    InputFieldComponent,
+    PopoverComponent,
+  ],
   templateUrl: './combo-box.component.html',
   styleUrl: './combo-box.component.scss',
 })
@@ -109,6 +119,19 @@ export class ComboBoxComponent {
       });
     }
     this.searchTerm = '';
+  }
+
+  clickableOpen(): void {
+    this.openSelector = true;
+    if (this.selectedValue.length > 0) {
+      this.selectedValue.forEach((item) => {
+        const index = this.selectedValue.findIndex(
+          (itm) => itm.value === item.value
+        );
+        this.selectedValues = this.selectedValue.map((item) => item.value);
+      });
+    }
+    this.inputField!.nativeElement.focus();
   }
 
   /**

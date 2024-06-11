@@ -7,7 +7,7 @@
     'fui-input-field-l':  size == 'l',
   }"
   >
-    <div class="fui-flex-combox-sub">
+    <div class="fui-flex-combox-sub" (click)="clickableOpen()">
       <div *ngFor="let item of selectedValue" class="fui-mx-selected">
         <span class="mr-3">{{ item.name }}</span>
         <fui-icons
@@ -49,23 +49,20 @@
       [size]="'sizem'"
     ></fui-icons>
   </div>
-  <select
+  <div
     *ngIf="openSelector"
     [attr.multiple]="!singleSelection"
-    [(ngModel)]="selectedValues"
     class="fui-multi-select {{ selectedValue.length <= 4 ? 'mini' : '' }}"
   >
     @for(item of optionValue; track $index; let last = $last;) {
-    <option
-      class="fui-option-select {{
-        isSelected(item) ? 'option-selected' : ''
-      }}"
+    <div
+      class="fui-option-select {{ isSelected(item) ? 'option-selected' : '' }}"
       *ngIf="item.name.toLowerCase().includes(searchTerm.toLowerCase())"
       [value]="item.value"
       (click)="toggleSelection(item)"
     >
       {{ item.name }}
-    </option>
+    </div>
     }
-  </select>
+  </div>
 </div>

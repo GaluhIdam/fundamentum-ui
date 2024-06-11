@@ -70,32 +70,34 @@
   font-family: $fuiFontFamily;
   outline: none;
   border: 1px solid var(--fuiColorLightShade, $fuiColorLightShade);
+  width: -webkit-fill-available;
+  display: grid;
+  height: 150px;
+  margin-top: 2px;
   position: absolute;
+  top: 40px;
   left: 0;
   right: 0;
-  width: 100%;
-  top: 100%;
-  height: 120px;
-  margin-top: 2px;
   border-radius: 6px;
+  background-color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
 }
 .fui-multi-select.mini {
+  display: grid;
   z-index: 2;
   font-family: $fuiFontFamily;
   outline: none;
   border: 1px solid var(--fuiColorLightShade, $fuiColorLightShade);
+  width: -webkit-fill-available;
   position: absolute;
   left: 0;
   right: 0;
-  width: 100%;
-  top: 100%;
-  height: fit-content;
+  height: 150px;
   margin-top: 2px;
   border-radius: 6px;
 }
 
 .fui-multi-select::-webkit-scrollbar {
-  height: 5px;
+  height: 50px;
   width: 5px;
 }
 .fui-multi-select::-webkit-scrollbar-track {
