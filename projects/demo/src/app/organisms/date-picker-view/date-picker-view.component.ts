@@ -2,17 +2,18 @@ import { Component } from '@angular/core';
 import {DatePickerComponent} from "fui";
 import {FormControl} from "@angular/forms";
 import dayjs from "dayjs";
+import {TimeSelectionComponent} from "../../../../../fui/src/lib/organisms/time-selection/time-selection.component";
 
 @Component({
   selector: 'app-date-picker-view',
   standalone: true,
-  imports: [DatePickerComponent],
+  imports: [DatePickerComponent, TimeSelectionComponent],
   templateUrl: './date-picker-view.component.html',
   styleUrl: './date-picker-view.component.scss'
 })
 export class DatePickerViewComponent {
   selectedDate: string = "";
-  dateFormControl:FormControl = new FormControl(dayjs().format("YYYY/MM/DD"));
+  dateFormControl:FormControl = new FormControl();
   isInvalid:boolean = false;
   errorMessage: string = "Input is not valid.";
 
