@@ -7,9 +7,7 @@ import { Router, RouterModule } from '@angular/router';
 export interface DataSideDTO {
   heading?: string;
   size?: Size;
-  icon?: {
-    type: Icon;
-  };
+  icon?: Icon;
   title: string;
   link?: string;
   active: boolean;

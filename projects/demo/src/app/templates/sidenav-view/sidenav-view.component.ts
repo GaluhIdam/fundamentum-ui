@@ -13,17 +13,13 @@ export class SidenavViewComponent {
     {
       heading: 'Nav heading',
       size: 'sizem',
-      icon: {
-        type: 'folderOpen',
-      },
+      icon: 'folderOpen',
       title: 'Archive',
       active: false,
       children: [
         {
           size: 'sizem',
-          icon: {
-            type: 'payment',
-          },
+          icon: 'payment',
           title: 'Finance',
           active: false,
           children: [
@@ -35,9 +31,7 @@ export class SidenavViewComponent {
             {
               size: 'sizem',
               title: 'Event',
-              icon: {
-                type: 'calendar',
-              },
+              icon: 'calendar',
               link: '/templates/side-nav/test',
               active: true,
             },
@@ -45,9 +39,7 @@ export class SidenavViewComponent {
         },
         {
           size: 'sizem',
-          icon: {
-            type: 'user',
-          },
+          icon: 'user',
           title: 'Employee',
           active: false,
         },
@@ -55,9 +47,7 @@ export class SidenavViewComponent {
     },
     {
       size: 'sizem',
-      icon: {
-        type: 'alert',
-      },
+      icon: 'alert',
       link: '/templates/side-nav/test-2',
       title: 'Information',
       active: false,
