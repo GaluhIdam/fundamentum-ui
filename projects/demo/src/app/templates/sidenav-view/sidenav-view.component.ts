@@ -13,7 +13,6 @@ export class SidenavViewComponent {
     {
       heading: 'Nav heading',
       size: 'sizem',
-      icon: 'folderOpen',
       title: 'Archive',
       active: false,
       children: [
@@ -24,6 +23,7 @@ export class SidenavViewComponent {
           active: false,
           children: [
             {
+              size: 'sizem',
               title: 'Operational',
               link: '/templates/side-nav/test-2',
               active: false,

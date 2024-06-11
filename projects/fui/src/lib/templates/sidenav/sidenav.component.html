@@ -19,7 +19,7 @@
     <span
       *ngIf="!item.link"
       (click)="collapse(dataSide, i)"
-      class="fui-sidenav-heading {{ item.active ? 'active' : '' }} "
+      class="fui-sidenav-heading {{ item.active ? 'active' : '' }}"
     >
       <fui-highlight
         [text]="item.title"
@@ -45,7 +45,7 @@
       (click)="collapse(dataSide, i)"
       class="fui-sidenav-heading {{
         item.active && item.link === router.url ? 'active' : ''
-      }} {{ item.icon ? 'visible' : 'invsible' }}"
+      }}"
     >
       <fui-highlight
         [text]="item.title"
