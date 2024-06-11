@@ -1,10 +1,16 @@
+<div>
 <fui-date-picker
-  dateFormat="YYYY/MM/DD"
+  dateFormat="DD-MM-YY"
   [dateFormControl]="dateFormControl"
   (onChange)="onChangeHandler($event)"
   [(isInvalid)]="isInvalid"
   [showTimeOptions]="true"
   timeFormat="12h">
-
 </fui-date-picker>
+</div>
+<div>
 <fui-time-selection></fui-time-selection>
+</div>
+<div>
+<fui-date-range></fui-date-range>
+</div>

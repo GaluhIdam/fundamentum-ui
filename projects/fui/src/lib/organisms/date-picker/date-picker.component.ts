@@ -43,6 +43,7 @@ export class DatePickerComponent implements OnInit {
   @Output() onChange: EventEmitter<string> = new EventEmitter<string>();
 
   placeholder: string = "";
+  preventClose:boolean = true;
 
   selectedDate: dayjs.Dayjs | null = null;
   currentDate: dayjs.Dayjs;
@@ -114,15 +115,18 @@ export class DatePickerComponent implements OnInit {
     this.selectedDate = date;
     this.generateCalendar(this.displayMonth);
     if (!this.showTimeOptions) {
+      this.preventClose = false;
       this.dateFormControl = new FormControl(this.formatDate(this.selectedDate));
       this.isInvalid = false;
       this.isInvalidChange.emit(this.isInvalid);
       this.onChange.emit(this.dateFormControl.value);
+
     }
   }
 
   selectTime(time: dayjs.Dayjs): void {
     this.selectedTime = time;
+    this.preventClose = false;
     if (this.selectedDate) {
       this.generateTimeOptions();
       const date: string = this.formatDate(this.selectedDate);

@@ -59,6 +59,7 @@ export class PopoverComponent {
   @Input() footerButtonText: string = '';
   @Input() footerButtonColor: Color = 'primary';
   @Input() isTour: boolean = false;
+  @Input() preventClose: boolean = false;
   @Output() onClickHeaderPopover: EventEmitter<void> = new EventEmitter();
   @Output() onClickFooterPopover: EventEmitter<void> = new EventEmitter();
   @Output() isPopoverDisplay: EventEmitter<boolean> = new EventEmitter(false);
@@ -74,7 +75,7 @@ export class PopoverComponent {
         return;
       }
 
-      if (!this.isTour) {
+      if (!this.isTour || !this.preventClose) {
         this.displayPopover = false;
         this.isPopoverDisplay.emit(this.displayPopover);
       }
