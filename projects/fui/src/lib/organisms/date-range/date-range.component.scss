@@ -111,3 +111,7 @@
 .not-current-month {
   color: #cccccc;
 }
+
+.between-range {
+  background-color: tint($fuiColorPrimary, 50);
+}
