@@ -4,8 +4,23 @@
   font-size: $fuiFontSizeS;
 }
 
+.fui-date-range {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  @include borderRadius(6px, 6px, 6px, 6px);
+
+}
+
+.fui-date-range__delimiter {
+  background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
+  height: 100%;
+  padding: 7px;
+}
 .fui-date-picker {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &__header {
     display: flex;
@@ -95,15 +110,4 @@
 
 .not-current-month {
   color: #cccccc;
-}
-fui-popover {
-  width: -webkit-fill-available;
-}
-:host {
-  height: fit-content;
-  display: block;
-  border-radius: 6px;
-  border-width: 1px;
-  border-color: var(--fuiColorLightShade, #d3dae6);
-  border-style: solid;
 }
