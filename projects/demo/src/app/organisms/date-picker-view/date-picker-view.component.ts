@@ -3,11 +3,15 @@ import {DatePickerComponent} from "fui";
 import {FormControl} from "@angular/forms";
 import dayjs from "dayjs";
 import {TimeSelectionComponent} from "../../../../../fui/src/lib/organisms/time-selection/time-selection.component";
+import {SpacerComponent} from "../../../../../../out-tsc/lib/lib/atoms/spacer/spacer.component";
+import {DateRangeComponent} from "../../../../../fui/src/lib/organisms/date-range/date-range.component";
 
 @Component({
   selector: 'app-date-picker-view',
   standalone: true,
-  imports: [DatePickerComponent, TimeSelectionComponent],
+  imports: [DatePickerComponent
+    , TimeSelectionComponent
+    , DateRangeComponent],
   templateUrl: './date-picker-view.component.html',
   styleUrl: './date-picker-view.component.scss'
 })
