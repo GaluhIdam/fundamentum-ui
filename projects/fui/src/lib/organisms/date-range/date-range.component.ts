@@ -1,16 +1,17 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {FormControl, FormsModule} from "@angular/forms";
-import {DatePickerComponent} from "../date-picker/date-picker.component";
-import {IconsComponent} from "../../atoms/icons/icons.component";
-import {MinuteInterval, TimeFormat} from "../../types";
-import dayjs from "dayjs";
-import customParseFormat from "dayjs/plugin/customParseFormat";
-import {ButtonIconComponent} from "../../molecules/button-icon/button-icon.component";
-import {FlexGroupComponent} from "../../templates/flex/flex-group.component";
-import {InputFieldComponent} from "../../molecules/form-control-layout/input-field/input-field.component";
-import {NgForOf} from "@angular/common";
-import {PopoverComponent} from "../../templates/popover/popover.component";
-import {b} from "vite/dist/node/types.d-aGj9QkWt";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormControl, FormsModule } from '@angular/forms';
+import { DatePickerComponent } from '../date-picker/date-picker.component';
+import { IconsComponent } from '../../atoms/icons/icons.component';
+import { MinuteInterval, TimeFormat } from '../../types';
+import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+import { ButtonIconComponent } from '../../molecules/button-icon/button-icon.component';
+import { FlexGroupComponent } from '../../templates/flex/flex-group.component';
+import { InputFieldComponent } from '../../molecules/form-control-layout/input-field/input-field.component';
+import { NgForOf } from '@angular/common';
+import { PopoverComponent } from '../../templates/popover/popover.component';
+import { b } from 'vite/dist/node/types.d-aGj9QkWt';
+import { FormControlLayoutComponent } from '../../../public-api';
 
 @Component({
   selector: 'fui-date-range',
@@ -23,36 +24,54 @@ import {b} from "vite/dist/node/types.d-aGj9QkWt";
     FormsModule,
     InputFieldComponent,
     NgForOf,
-    PopoverComponent
+    PopoverComponent,
+    FormControlLayoutComponent,
   ],
   templateUrl: './date-range.component.html',
-  styleUrl: './date-range.component.scss'
+  styleUrl: './date-range.component.scss',
 })
 export class DateRangeComponent {
-
-  @Input() startDateControl:FormControl = new FormControl();
-  @Input() endDateControl:FormControl = new FormControl();
+  @Input() startDateControl: FormControl = new FormControl();
+  @Input() endDateControl: FormControl = new FormControl();
 
   @Input() dateFormat: string = 'YYYY-MM-DD';
-  @Input() timeFormat: TimeFormat = "12h";
-  @Input() minuteInterval: MinuteInterval = "30 minutes";
+  @Input() timeFormat: TimeFormat = '12h';
+  @Input() minuteInterval: MinuteInterval = '30 minutes';
   @Input() showTimeOptions: boolean = false;
 
   @Input() isInvalidStartDate: boolean = false;
-  @Output() isInvalidStartDateChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() isInvalidStartDateChange: EventEmitter<boolean> =
+    new EventEmitter<boolean>();
 
   @Input() isInvalidEndDate: boolean = false;
-  @Output() isInvalidEndDateChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() isInvalidEndDateChange: EventEmitter<boolean> =
+    new EventEmitter<boolean>();
 
-  @Output() onChangeStartDate: EventEmitter<string> = new EventEmitter<string>();
+  @Output() onChangeStartDate: EventEmitter<string> =
+    new EventEmitter<string>();
   @Output() onChangeEndDate: EventEmitter<string> = new EventEmitter<string>();
 
-  placeholder: string = "";
+  placeholder: string = '';
   days: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  months: string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  months: string[] = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
   years: number[] = [];
-  weeks: Array<Array<{date: dayjs.Dayjs, selected: boolean, betweenRange: boolean}>> = [];
-  timeOptions: Array<{time: dayjs.Dayjs, selected: boolean}> = [];
+  weeks: Array<
+    Array<{ date: dayjs.Dayjs; selected: boolean; betweenRange: boolean }>
+  > = [];
+  timeOptions: Array<{ time: dayjs.Dayjs; selected: boolean }> = [];
 
   displayMonth: dayjs.Dayjs | null = null;
 
@@ -72,7 +91,10 @@ export class DateRangeComponent {
   ngOnInit(): void {
     this.placeholder = this.dateFormat;
     if (this.showTimeOptions) {
-      this.placeholder = this.placeholder + ' ' + (this.timeFormat === "12h"? 'HH:MM AM': 'HH:MM');
+      this.placeholder =
+        this.placeholder +
+        ' ' +
+        (this.timeFormat === '12h' ? 'HH:MM AM' : 'HH:MM');
     }
   }
 
@@ -83,14 +105,21 @@ export class DateRangeComponent {
     return date.isSame(selectedDate, 'day');
   }
 
-  isBetweenRange(date: dayjs.Dayjs, selectedStartDate: dayjs.Dayjs | null, selectedEndDate: dayjs.Dayjs | null): boolean {
+  isBetweenRange(
+    date: dayjs.Dayjs,
+    selectedStartDate: dayjs.Dayjs | null,
+    selectedEndDate: dayjs.Dayjs | null
+  ): boolean {
     if (selectedStartDate === null) {
       return false;
     }
     if (selectedEndDate === null) {
       return false;
     }
-    return date.isAfter(selectedStartDate, 'day') && date.isBefore(selectedEndDate, 'day');
+    return (
+      date.isAfter(selectedStartDate, 'day') &&
+      date.isBefore(selectedEndDate, 'day')
+    );
   }
 
   isTimeSelected(time: dayjs.Dayjs, selectedTime: dayjs.Dayjs | null): boolean {
@@ -99,7 +128,8 @@ export class DateRangeComponent {
     }
     let interval: number = this.generateMinuteInterval();
 
-    const roundedMinute: number = Math.trunc(selectedTime.minute() / interval) * interval;
+    const roundedMinute: number =
+      Math.trunc(selectedTime.minute() / interval) * interval;
     const isSameHour = time.hour() === selectedTime.hour();
     const isSameMinute = time.minute() === roundedMinute;
     return isSameHour && isSameMinute;
@@ -112,11 +142,23 @@ export class DateRangeComponent {
     let startDate = startOfMonth.startOf('week');
 
     while (startDate.isBefore(endOfMonth.endOf('week'))) {
-      const week: Array<{date: dayjs.Dayjs, selected: boolean, betweenRange: boolean}> = [];
+      const week: Array<{
+        date: dayjs.Dayjs;
+        selected: boolean;
+        betweenRange: boolean;
+      }> = [];
       for (let i = 0; i < 7; i++) {
-        week.push({date: startDate
-          , selected: this.isDateSelected(startDate, this.selectedStartDate) || this.isDateSelected(startDate, this.selectedEndDate)
-          , betweenRange: this.isBetweenRange(startDate, this.selectedStartDate, this.selectedEndDate)});
+        week.push({
+          date: startDate,
+          selected:
+            this.isDateSelected(startDate, this.selectedStartDate) ||
+            this.isDateSelected(startDate, this.selectedEndDate),
+          betweenRange: this.isBetweenRange(
+            startDate,
+            this.selectedStartDate,
+            this.selectedEndDate
+          ),
+        });
         startDate = startDate.add(1, 'day');
       }
       this.weeks.push(week);
@@ -146,20 +188,23 @@ export class DateRangeComponent {
     if (!this.showTimeOptions) {
       if (isStartDate) {
         if (this.selectedStartDate) {
-          this.startDateControl = new FormControl(this.formatDate(this.selectedStartDate));
+          this.startDateControl = new FormControl(
+            this.formatDate(this.selectedStartDate)
+          );
           this.isInvalidStartDate = false;
           this.isInvalidStartDateChange.emit(this.isInvalidStartDate);
           this.onChangeStartDate.emit(this.startDateControl.value);
         }
-      } else{
+      } else {
         if (this.selectedEndDate) {
-          this.endDateControl = new FormControl(this.formatDate(this.selectedEndDate));
+          this.endDateControl = new FormControl(
+            this.formatDate(this.selectedEndDate)
+          );
           this.isInvalidEndDate = false;
           this.isInvalidEndDateChange.emit(this.isInvalidEndDate);
           this.onChangeEndDate.emit(this.endDateControl.value);
         }
       }
-
     }
   }
 
@@ -171,7 +216,7 @@ export class DateRangeComponent {
       if (this.selectedStartDate) {
         const date: string = this.formatDate(this.selectedStartDate);
         const time: string = this.formatTime(this.selectedStartTime);
-        this.startDateControl = new FormControl(date + " " + time);
+        this.startDateControl = new FormControl(date + ' ' + time);
         this.isInvalidStartDate = false;
         this.isInvalidStartDateChange.emit(this.isInvalidStartDate);
         this.onChangeStartDate.emit(this.startDateControl.value);
@@ -182,7 +227,7 @@ export class DateRangeComponent {
       if (this.selectedEndDate) {
         const date: string = this.formatDate(this.selectedEndDate);
         const time: string = this.formatTime(this.selectedEndTime);
-        this.endDateControl = new FormControl(date + " " + time);
+        this.endDateControl = new FormControl(date + ' ' + time);
         this.isInvalidEndDate = false;
         this.isInvalidEndDateChange.emit(this.isInvalidEndDate);
         this.onChangeEndDate.emit(this.endDateControl.value);
@@ -209,10 +254,10 @@ export class DateRangeComponent {
   }
 
   formatTime(date: dayjs.Dayjs): string {
-    if (this.timeFormat === "12h") {
-      return date.format("hh:mm A");
+    if (this.timeFormat === '12h') {
+      return date.format('hh:mm A');
     } else {
-      return date.format("HH:mm");
+      return date.format('HH:mm');
     }
   }
 
@@ -248,7 +293,7 @@ export class DateRangeComponent {
     const inputValue = event.target.value;
     let format: string = this.dateFormat;
     if (this.showTimeOptions) {
-      format = format +  ' ' + (this.timeFormat === "12h"? 'hh:mm A': 'HH:mm');
+      format = format + ' ' + (this.timeFormat === '12h' ? 'hh:mm A' : 'HH:mm');
     }
 
     if (isStartDate) {
@@ -282,7 +327,7 @@ export class DateRangeComponent {
     dayjs.extend(customParseFormat);
     let format: string = this.dateFormat;
     if (this.showTimeOptions) {
-      format = format +  ' ' + (this.timeFormat === "12h"? 'hh:mm A': 'HH:mm');
+      format = format + ' ' + (this.timeFormat === '12h' ? 'hh:mm A' : 'HH:mm');
     }
     return dayjs(inputValue, format, true).isValid();
   }
@@ -298,23 +343,27 @@ export class DateRangeComponent {
       const minutesSize = 60 / interval;
       for (let i = 0; i < 24; i++) {
         for (let j = 0; j < minutesSize; j++) {
-          const timeOption = dayjs().hour(i).minute(j * interval);
-          this.timeOptions.push({time: timeOption, selected: this.isTimeSelected(timeOption, selectedTime)});
+          const timeOption = dayjs()
+            .hour(i)
+            .minute(j * interval);
+          this.timeOptions.push({
+            time: timeOption,
+            selected: this.isTimeSelected(timeOption, selectedTime),
+          });
         }
       }
     }
-
   }
 
   generateMinuteInterval(): number {
     let interval: number = 30;
-    if (this.minuteInterval === "1 minute") {
+    if (this.minuteInterval === '1 minute') {
       interval = 1;
-    } else if (this.minuteInterval === "5 minutes") {
+    } else if (this.minuteInterval === '5 minutes') {
       interval = 5;
-    } else if (this.minuteInterval === "10 minutes") {
+    } else if (this.minuteInterval === '10 minutes') {
       interval = 10;
-    } else if (this.minuteInterval === "15 minutes") {
+    } else if (this.minuteInterval === '15 minutes') {
       interval = 15;
     }
     return interval;

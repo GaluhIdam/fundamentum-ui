@@ -82,7 +82,7 @@
   background-color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
 }
 .fui-multi-select.mini {
-  display: grid;
+  display: block;
   z-index: 2;
   font-family: $fuiFontFamily;
   outline: none;
@@ -120,6 +120,7 @@
   cursor: pointer;
 }
 .fui-option-select {
+  height: fit-content;
   padding: 7px;
   font-size: small;
   border-bottom: 1px solid var(--fuiColorLightestShade, $fuiColorLightestShade);

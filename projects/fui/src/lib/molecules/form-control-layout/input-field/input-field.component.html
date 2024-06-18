@@ -1,5 +1,11 @@
 <div
-  class="fui-input-field radius-default inactive"
+  class="fui-input-field inactive"
+  [ngStyle]="{
+    'border-top-right-radius': borderRadius[0],
+    'border-bottom-right-radius': borderRadius[1],
+    'border-top-left-radius': borderRadius[2],
+    'border-bottom-left-radius': borderRadius[3]
+  }"
   [ngClass]="{
     default: active && !invalid,
     invalid: invalid

@@ -6,8 +6,9 @@ import {
   Input,
   ViewChild,
 } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule } from '@angular/forms';
 import {
+  FormControlLayoutComponent,
   IconsComponent,
   InputFieldComponent,
   PopoverComponent,
@@ -31,6 +32,7 @@ import {
     CommonModule,
     IconsComponent,
     FormsModule,
+    FormControlLayoutComponent,
     InputFieldComponent,
     PopoverComponent,
   ],
@@ -44,6 +46,7 @@ export class ComboBoxComponent {
   @Input({ required: true }) optionValue: { name: string; value: any }[] = [];
   @Input() singleSelection: boolean = false;
   @Input() placeholder: string = 'Select or create options';
+  @Input() comboxForm: FormControl = new FormControl('');
 
   /**
    * @ignore
@@ -56,6 +59,12 @@ export class ComboBoxComponent {
    * @ignore
    */
   constructor(private elementRef: ElementRef) {}
+
+  ngOnInit(): void {
+    if (this.selectedValue.length === 1 && this.singleSelection === true) {
+      this.comboxForm.setValue(this.selectedValue[0].name);
+    }
+  }
 
   /**
    * @ignore
@@ -82,10 +91,13 @@ export class ComboBoxComponent {
       ) {
         // If the item is already selected, remove it
         this.selectedValue = [];
+        this.comboxForm.setValue('');
       } else {
+        this.comboxForm.setValue(item.name);
         // Otherwise, set it as the only selected item
         this.selectedValue = [item];
       }
+      this.openSelector = false;
     } else {
       const index = this.selectedValue.findIndex(
         (itm) => itm.value === item.value
@@ -107,9 +119,10 @@ export class ComboBoxComponent {
     this.openSelector = !this.openSelector;
     if (this.selectedValue.length > 0) {
       this.selectedValue.forEach((item) => {
-        const index = this.selectedValue.findIndex(
-          (itm) => itm.value === item.value
-        );
+        const index = this.selectedValue.findIndex((itm) => {
+          itm.value === item.value;
+          this.comboxForm.setValue(item.name);
+        });
         this.selectedValues = this.selectedValue.map((item) => item.value);
       });
     }
@@ -156,6 +169,7 @@ export class ComboBoxComponent {
     this.selectedValue = [];
     this.selectedValues = [];
     this.searchTerm = '';
+    this.comboxForm.setValue('');
   }
 
   /**

@@ -1,5 +1,6 @@
 <div class="fui-flex-combox-parent">
   <div
+    *ngIf="singleSelection === false"
     class="fui-flex-combox {{ openSelector ? 'active' : '' }}"
     [ngClass]="{
     'fui-input-field-s': size == 's',
@@ -49,19 +50,62 @@
       [size]="'sizem'"
     ></fui-icons>
   </div>
+  <fui-form-control-layout *ngIf="singleSelection === true">
+    <fui-input-field
+      (onFocus)="toggleOpenSelectorFocus()"
+      [type]="'text'"
+      [formControlField]="comboxForm"
+      [size]="'m'"
+      [invalid]="false"
+    >
+      <fui-icons
+        right-icon
+        *ngIf="selectedValue.length > 0"
+        (click)="toggleClearData()"
+        class="fui-icon-combox-cross"
+        [icon]="'cross'"
+        [size]="'sizexs'"
+      ></fui-icons>
+      <fui-icons
+        right-icon
+        (click)="toggleOpenSelector()"
+        class="fui-icon-combox"
+        [icon]="'arrowDown'"
+        [size]="'sizem'"
+      ></fui-icons>
+    </fui-input-field>
+  </fui-form-control-layout>
   <div
     *ngIf="openSelector"
     [attr.multiple]="!singleSelection"
     class="fui-multi-select {{ selectedValue.length <= 4 ? 'mini' : '' }}"
   >
     @for(item of optionValue; track $index; let last = $last;) {
-    <div
-      class="fui-option-select {{ isSelected(item) ? 'option-selected' : '' }}"
-      *ngIf="item.name.toLowerCase().includes(searchTerm.toLowerCase())"
-      [value]="item.value"
-      (click)="toggleSelection(item)"
-    >
-      {{ item.name }}
+    <div *ngIf="!singleSelection">
+      <div
+        class="fui-option-select {{
+          isSelected(item) ? 'option-selected' : ''
+        }}"
+        *ngIf="item.name.toLowerCase().includes(searchTerm.toLowerCase())"
+        [value]="item.value"
+        (click)="toggleSelection(item)"
+      >
+        {{ item.name }}
+      </div>
+    </div>
+    <div *ngIf="singleSelection">
+      <div
+        class="fui-option-select {{
+          isSelected(item) ? 'option-selected' : ''
+        }}"
+        *ngIf="
+          item.name.toLowerCase().includes(comboxForm.value!.toLowerCase())
+        "
+        [value]="item.value"
+        (click)="toggleSelection(item)"
+      >
+        {{ item.name }}
+      </div>
     </div>
     }
   </div>

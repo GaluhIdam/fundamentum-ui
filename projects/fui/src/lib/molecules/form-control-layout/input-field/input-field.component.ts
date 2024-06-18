@@ -31,6 +31,7 @@ export class InputFieldComponent {
   @Input({ required: true }) size: 's' | 'm' | 'l' = 'm';
   @Input() placeholder: string = 'Please type here...';
   @Input() formControlField: FormControl = new FormControl('');
+  @Input() borderRadius: string[] = ['6px', '6px', '6px', '6px'];
   iconLeft: boolean = false;
   iconRight: boolean = false;
   active: boolean = false;

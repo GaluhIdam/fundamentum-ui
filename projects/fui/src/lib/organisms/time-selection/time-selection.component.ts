@@ -7,7 +7,7 @@ import {MinuteInterval, TimeFormat} from "../../types";
 import {FormControl} from "@angular/forms";
 import dayjs from "dayjs";
 import {NgForOf} from "@angular/common";
-import customParseFormat from "dayjs/plugin/customParseFormat";
+import { FormControlLayoutComponent } from '../../../public-api';
 
 @Component({
   selector: 'fui-time-selection',
@@ -15,6 +15,7 @@ import customParseFormat from "dayjs/plugin/customParseFormat";
   imports: [
     FlexGroupComponent,
     IconsComponent,
+    FormControlLayoutComponent,
     InputFieldComponent,
     PopoverComponent,
     NgForOf
