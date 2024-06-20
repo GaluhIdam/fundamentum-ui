@@ -8,13 +8,25 @@
   new tab or window) for more information.
 </p>
 <fui-combo-box
+  [comboxForm]="searchMatter"
   [size]="'s'"
   [singleSelection]="false"
   [optionValue]="optionValue"
   [selectedValue]="selectedValue"
 ></fui-combo-box>
 <fui-combo-box
+  [comboxForm]="searchMatter"
   [size]="'s'"
+  [singleSelection]="false"
+  [optionValue]="optionValue"
+  [selectedValue]="selectedValue"
+></fui-combo-box>
+<fui-combo-box
+  [invalid]="
+    searchMatter.invalid && (searchMatter.dirty || searchMatter.touched)
+  "
+  [size]="'l'"
+  [comboxForm]="searchMatter"
   [singleSelection]="true"
   [optionValue]="optionValue"
   [selectedValue]="[]"

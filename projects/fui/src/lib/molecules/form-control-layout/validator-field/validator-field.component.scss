@@ -3,5 +3,7 @@
 :host {
   .fui-validator-message {
     @include validatorInputField(var(--fuiColorDanger, $fuiColorDanger), small);
+    position: absolute;
+    z-index: 5;
   }
 }

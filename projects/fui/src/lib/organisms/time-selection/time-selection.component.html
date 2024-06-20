@@ -4,7 +4,7 @@
       <fui-form-control-layout>
         <fui-input-field
           [invalid]="isInvalid"
-          size="m"
+          [size]="size"
           type="text"
           [placeholder]="placeholder"
           [formControlField]="timeFormControl"
@@ -14,13 +14,19 @@
             color="text"
             icon="clock"
             label="left"
-            size="sizel"
+            [size]="'size' + size"
             left-icon
           />
           @if (isInvalid) {
-          <fui-icons color="danger" icon="alert" size="sizel" right-icon />
+          <fui-icons
+            color="danger"
+            icon="alert"
+            [size]="'size' + size"
+            right-icon
+          />
           }
         </fui-input-field>
+        <fui-validator-field validator [message]="message" />
       </fui-form-control-layout>
     </fui-flex-group>
     <div popover-body>

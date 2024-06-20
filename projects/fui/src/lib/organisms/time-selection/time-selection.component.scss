@@ -7,7 +7,7 @@
 .fui-time-selection {
   display: flex;
 
-&__popover {
+  &__popover {
     height: 245px;
     overflow-y: auto;
     display: flex;
@@ -32,4 +32,10 @@
     cursor: pointer;
     background-color: tint($fuiColorPrimary, 50);
   }
+}
+fui-popover {
+  width: -webkit-fill-available;
+}
+fui-form-control-layout {
+  width: -webkit-fill-available;
 }

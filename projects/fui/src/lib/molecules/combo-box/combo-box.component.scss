@@ -65,6 +65,7 @@
 }
 
 .fui-multi-select {
+  z-index: 6;
   overflow-y: auto;
   overflow-x: hidden;
   font-family: $fuiFontFamily;
@@ -83,7 +84,7 @@
 }
 .fui-multi-select.mini {
   display: block;
-  z-index: 2;
+  z-index: 6;
   font-family: $fuiFontFamily;
   outline: none;
   border: 1px solid var(--fuiColorLightShade, $fuiColorLightShade);

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { ComboBoxComponent } from 'fui';
 
 @Component({
@@ -9,6 +10,7 @@ import { ComboBoxComponent } from 'fui';
   styleUrl: './combo-box-view.component.scss',
 })
 export class ComboBoxViewComponent {
+  searchMatter: FormControl = new FormControl('', Validators.required);
   selectedValue: { name: string; value: any }[] = [
     {
       name: 'BMW',

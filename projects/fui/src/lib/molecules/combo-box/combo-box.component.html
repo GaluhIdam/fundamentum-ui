@@ -29,7 +29,7 @@
               ? '5px'
               : calculateWidth()
         }"
-        [(ngModel)]="searchTerm"
+        [formControl]="comboxForm"
         type="text"
         [placeholder]="selectedValue.length === 0 ? placeholder : ''"
         class="fui-input-combox"
@@ -55,14 +55,30 @@
       (onFocus)="toggleOpenSelectorFocus()"
       [type]="'text'"
       [formControlField]="comboxForm"
-      [size]="'m'"
-      [invalid]="false"
+      [placeholder]="selectedValue.length === 0 ? placeholder : ''"
+      [size]="size"
+      [invalid]="invalid"
     >
       <fui-icons
+        *ngIf="leftIcon"
+        left-icon
+        [icon]="leftIcon"
+        [size]="'size' + size"
+      ></fui-icons>
+      <fui-icons
+        style="margin-right: 8px"
+        *ngIf="invalid"
+        right-icon
+        [label]="'right'"
+        [icon]="'alert'"
+        [size]="'size' + size"
+        [color]="'danger'"
+      />
+      <fui-icons
+        style="margin-right: 8px"
         right-icon
         *ngIf="selectedValue.length > 0"
         (click)="toggleClearData()"
-        class="fui-icon-combox-cross"
         [icon]="'cross'"
         [size]="'sizexs'"
       ></fui-icons>
@@ -71,9 +87,10 @@
         (click)="toggleOpenSelector()"
         class="fui-icon-combox"
         [icon]="'arrowDown'"
-        [size]="'sizem'"
+        [size]="'size' + size"
       ></fui-icons>
     </fui-input-field>
+    <fui-validator-field validator [message]="message" />
   </fui-form-control-layout>
   <div
     *ngIf="openSelector"
@@ -108,5 +125,11 @@
       </div>
     </div>
     }
+    <p
+      style="text-align: center; font-size: small; margin-top: 10px"
+      *ngIf="optionValue.length === 0"
+    >
+      Option is not available!
+    </p>
   </div>
 </div>

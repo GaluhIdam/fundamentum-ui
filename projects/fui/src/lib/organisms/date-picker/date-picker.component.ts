@@ -1,16 +1,24 @@
-import {Component, DoCheck, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import dayjs from "dayjs";
-import customParseFormat from "dayjs/plugin/customParseFormat";
-import {NgForOf} from "@angular/common";
-import {FormControl, FormsModule} from "@angular/forms";
-import {ButtonEmptyComponent} from "../../atoms/button-empty/button-empty.component";
-import {ButtonIconComponent} from "../../molecules/button-icon/button-icon.component";
-import {InputFieldComponent} from "../../molecules/form-control-layout/input-field/input-field.component";
-import {IconsComponent} from "../../atoms/icons/icons.component";
-import {FormControlLayoutComponent} from "../../molecules/form-control-layout/form-control-layout.component";
-import {FlexGroupComponent} from "../../templates/flex/flex-group.component";
-import {PopoverComponent} from "../../templates/popover/popover.component";
-import {MinuteInterval, TimeFormat} from "../../types";
+import {
+  Component,
+  DoCheck,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
+import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+import { NgForOf } from '@angular/common';
+import { FormControl, FormsModule } from '@angular/forms';
+import { ButtonEmptyComponent } from '../../atoms/button-empty/button-empty.component';
+import { ButtonIconComponent } from '../../molecules/button-icon/button-icon.component';
+import { InputFieldComponent } from '../../molecules/form-control-layout/input-field/input-field.component';
+import { IconsComponent } from '../../atoms/icons/icons.component';
+import { FormControlLayoutComponent } from '../../molecules/form-control-layout/form-control-layout.component';
+import { FlexGroupComponent } from '../../templates/flex/flex-group.component';
+import { PopoverComponent } from '../../templates/popover/popover.component';
+import { MinuteInterval, TimeFormat } from '../../types';
+import { ValidatorFieldComponent } from '../../../public-api';
 
 @Component({
   selector: 'fui-date-picker',
@@ -24,39 +32,54 @@ import {MinuteInterval, TimeFormat} from "../../types";
     IconsComponent,
     FormControlLayoutComponent,
     FlexGroupComponent,
-    PopoverComponent
+    PopoverComponent,
+    ValidatorFieldComponent,
   ],
   templateUrl: './date-picker.component.html',
-  styleUrl: './date-picker.component.scss'
+  styleUrl: './date-picker.component.scss',
 })
 export class DatePickerComponent implements OnInit {
-
   @Input() dateFormat: string = 'YYYY-MM-DD';
-  @Input() timeFormat: TimeFormat = "12h";
-  @Input() minuteInterval: MinuteInterval = "30 minutes";
+  @Input() timeFormat: TimeFormat = '12h';
+  @Input() minuteInterval: MinuteInterval = '30 minutes';
   @Input() showTimeOptions: boolean = false;
   @Input() dateFormControl: FormControl = new FormControl();
 
   @Input() isInvalid: boolean = false;
-  @Output() isInvalidChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Input() message: string = 'This is required!';
+  @Output() isInvalidChange: EventEmitter<boolean> =
+    new EventEmitter<boolean>();
 
   @Output() onChange: EventEmitter<string> = new EventEmitter<string>();
 
-  placeholder: string = "";
-  preventClose:boolean = true;
+  placeholder: string = '';
+  preventClose: boolean = true;
 
   selectedDate: dayjs.Dayjs | null = null;
   currentDate: dayjs.Dayjs;
   displayMonth: dayjs.Dayjs;
-  weeks: Array<Array<{date: dayjs.Dayjs, selected: boolean}>> = [];
+  weeks: Array<Array<{ date: dayjs.Dayjs; selected: boolean }>> = [];
   selectedMonth: number;
   selectedYear: number;
   days: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  months: string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  months: string[] = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
   years: number[] = [];
 
   selectedTime: dayjs.Dayjs | null = null;
-  timeOptions: Array<{time: dayjs.Dayjs, selected: boolean}> = [];
+  timeOptions: Array<{ time: dayjs.Dayjs; selected: boolean }> = [];
 
   constructor() {
     this.currentDate = dayjs();
@@ -67,15 +90,18 @@ export class DatePickerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.placeholder = this.dateFormat
+    this.placeholder = this.dateFormat;
     if (this.showTimeOptions) {
-      this.placeholder = this.placeholder + ' ' + (this.timeFormat === "12h"? 'HH:MM AM': 'HH:MM');
+      this.placeholder =
+        this.placeholder +
+        ' ' +
+        (this.timeFormat === '12h' ? 'HH:MM AM' : 'HH:MM');
     }
     this.generateCalendar(this.displayMonth);
   }
 
   isDateSelected(date: dayjs.Dayjs): boolean {
-    return this.selectedDate ? date.isSame(this.selectedDate, 'day'): false;
+    return this.selectedDate ? date.isSame(this.selectedDate, 'day') : false;
   }
 
   isTimeSelected(time: dayjs.Dayjs): boolean {
@@ -83,7 +109,8 @@ export class DatePickerComponent implements OnInit {
       return false;
     }
     let interval: number = this.generateMinuteInterval();
-    const roundedMinute: number = Math.trunc(this.selectedTime.minute() / interval) * interval;
+    const roundedMinute: number =
+      Math.trunc(this.selectedTime.minute() / interval) * interval;
     const isSameHour = time.hour() === this.selectedTime.hour();
     const isSameMinute = time.minute() === roundedMinute;
     return isSameHour && isSameMinute;
@@ -96,9 +123,12 @@ export class DatePickerComponent implements OnInit {
     let startDate = startOfMonth.startOf('week');
 
     while (startDate.isBefore(endOfMonth.endOf('week'))) {
-      const week: Array<{date: dayjs.Dayjs, selected: boolean}> = [];
+      const week: Array<{ date: dayjs.Dayjs; selected: boolean }> = [];
       for (let i = 0; i < 7; i++) {
-        week.push({date: startDate, selected: this.isDateSelected(startDate)});
+        week.push({
+          date: startDate,
+          selected: this.isDateSelected(startDate),
+        });
         startDate = startDate.add(1, 'day');
       }
       this.weeks.push(week);
@@ -116,11 +146,12 @@ export class DatePickerComponent implements OnInit {
     this.generateCalendar(this.displayMonth);
     if (!this.showTimeOptions) {
       this.preventClose = false;
-      this.dateFormControl = new FormControl(this.formatDate(this.selectedDate));
+      this.dateFormControl = new FormControl(
+        this.formatDate(this.selectedDate)
+      );
       this.isInvalid = false;
       this.isInvalidChange.emit(this.isInvalid);
       this.onChange.emit(this.dateFormControl.value);
-
     }
   }
 
@@ -131,7 +162,7 @@ export class DatePickerComponent implements OnInit {
       this.generateTimeOptions();
       const date: string = this.formatDate(this.selectedDate);
       const time: string = this.formatTime(this.selectedTime);
-      this.dateFormControl = new FormControl(date + " " + time);
+      this.dateFormControl = new FormControl(date + ' ' + time);
       this.isInvalid = false;
       this.isInvalidChange.emit(this.isInvalid);
       this.onChange.emit(this.dateFormControl.value);
@@ -153,10 +184,10 @@ export class DatePickerComponent implements OnInit {
   }
 
   formatTime(date: dayjs.Dayjs): string {
-    if (this.timeFormat === "12h") {
-      return date.format("hh:mm A");
+    if (this.timeFormat === '12h') {
+      return date.format('hh:mm A');
     } else {
-      return date.format("HH:mm");
+      return date.format('HH:mm');
     }
   }
 
@@ -179,7 +210,8 @@ export class DatePickerComponent implements OnInit {
     if (!this.isInvalid) {
       let format: string = this.dateFormat;
       if (this.showTimeOptions) {
-        format = format +  ' ' + (this.timeFormat === "12h"? 'hh:mm A': 'HH:mm');
+        format =
+          format + ' ' + (this.timeFormat === '12h' ? 'hh:mm A' : 'HH:mm');
       }
       this.selectedDate = dayjs(inputValue, format, true);
       if (this.showTimeOptions) {
@@ -194,7 +226,7 @@ export class DatePickerComponent implements OnInit {
     dayjs.extend(customParseFormat);
     let format: string = this.dateFormat;
     if (this.showTimeOptions) {
-      format = format +  ' ' + (this.timeFormat === "12h"? 'hh:mm A': 'HH:mm');
+      format = format + ' ' + (this.timeFormat === '12h' ? 'hh:mm A' : 'HH:mm');
     }
     return dayjs(inputValue, format, true).isValid();
   }
@@ -206,26 +238,29 @@ export class DatePickerComponent implements OnInit {
       const minutesSize = 60 / interval;
       for (let i = 0; i < 24; i++) {
         for (let j = 0; j < minutesSize; j++) {
-          const timeOption = dayjs().hour(i).minute(j * interval);
-          this.timeOptions.push({time: timeOption, selected: this.isTimeSelected(timeOption)});
+          const timeOption = dayjs()
+            .hour(i)
+            .minute(j * interval);
+          this.timeOptions.push({
+            time: timeOption,
+            selected: this.isTimeSelected(timeOption),
+          });
         }
       }
     }
-
   }
 
   generateMinuteInterval(): number {
     let interval: number = 30;
-    if (this.minuteInterval === "1 minute") {
+    if (this.minuteInterval === '1 minute') {
       interval = 1;
-    } else if (this.minuteInterval === "5 minutes") {
+    } else if (this.minuteInterval === '5 minutes') {
       interval = 5;
-    } else if (this.minuteInterval === "10 minutes") {
+    } else if (this.minuteInterval === '10 minutes') {
       interval = 10;
-    } else if (this.minuteInterval === "15 minutes") {
+    } else if (this.minuteInterval === '15 minutes') {
       interval = 15;
     }
     return interval;
   }
-
 }

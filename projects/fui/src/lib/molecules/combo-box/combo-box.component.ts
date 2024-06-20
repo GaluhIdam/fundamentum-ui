@@ -2,16 +2,20 @@ import { CommonModule } from '@angular/common';
 import {
   Component,
   ElementRef,
+  EventEmitter,
   HostListener,
   Input,
+  Output,
   ViewChild,
 } from '@angular/core';
-import { FormControl, FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   FormControlLayoutComponent,
+  Icon,
   IconsComponent,
   InputFieldComponent,
   PopoverComponent,
+  ValidatorFieldComponent,
 } from '../../../public-api';
 
 /**
@@ -32,8 +36,10 @@ import {
     CommonModule,
     IconsComponent,
     FormsModule,
+    ReactiveFormsModule,
     FormControlLayoutComponent,
     InputFieldComponent,
+    ValidatorFieldComponent,
     PopoverComponent,
   ],
   templateUrl: './combo-box.component.html',
@@ -46,7 +52,11 @@ export class ComboBoxComponent {
   @Input({ required: true }) optionValue: { name: string; value: any }[] = [];
   @Input() singleSelection: boolean = false;
   @Input() placeholder: string = 'Select or create options';
-  @Input() comboxForm: FormControl = new FormControl('');
+  @Input() comboxForm: FormControl = new FormControl();
+  @Input() leftIcon: Icon | null = null;
+  @Input() invalid: boolean = false;
+  @Input() message: string = 'This is required!';
+  @Output() selection: EventEmitter<any> = new EventEmitter();
 
   /**
    * @ignore
@@ -110,6 +120,7 @@ export class ComboBoxComponent {
     }
     this.selectedValues = this.selectedValue.map((item) => item.value);
     this.searchTerm = '';
+    this.selection.emit(this.selectedValue);
   }
 
   /**
@@ -128,8 +139,10 @@ export class ComboBoxComponent {
     }
     if (this.openSelector) {
       setTimeout(() => {
-        this.inputField!.nativeElement.focus();
-      });
+        if (this.inputField) {
+          this.inputField!.nativeElement.focus();
+        }
+      }, 500);
     }
     this.searchTerm = '';
   }
@@ -170,6 +183,7 @@ export class ComboBoxComponent {
     this.selectedValues = [];
     this.searchTerm = '';
     this.comboxForm.setValue('');
+    this.selection.emit(this.selectedValue);
   }
 
   /**
