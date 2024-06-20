@@ -4,6 +4,6 @@
   .fui-validator-message {
     @include validatorInputField(var(--fuiColorDanger, $fuiColorDanger), small);
     position: absolute;
-    z-index: 5;
+    z-index: 2;
   }
 }
