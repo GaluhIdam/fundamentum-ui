@@ -36,7 +36,7 @@ import { ValidatorFieldComponent } from '../../../public-api';
     ValidatorFieldComponent,
   ],
   templateUrl: './date-picker.component.html',
-  styleUrl: './date-picker.component.scss',
+  styleUrls: ['./date-picker.component.scss'],
 })
 export class DatePickerComponent implements OnInit {
   @Input() dateFormat: string = 'YYYY-MM-DD';
@@ -146,9 +146,13 @@ export class DatePickerComponent implements OnInit {
     this.generateCalendar(this.displayMonth);
     if (!this.showTimeOptions) {
       this.preventClose = false;
-      this.dateFormControl = new FormControl(
-        this.formatDate(this.selectedDate)
-      );
+      this.dateFormControl.setValue(this.formatDate(this.selectedDate));
+      this.isInvalid = false;
+      this.isInvalidChange.emit(this.isInvalid);
+      this.onChange.emit(this.dateFormControl.value);
+    } else {
+      this.preventClose = false;
+      this.dateFormControl.setValue(this.formatDate(this.selectedDate));
       this.isInvalid = false;
       this.isInvalidChange.emit(this.isInvalid);
       this.onChange.emit(this.dateFormControl.value);
@@ -162,7 +166,7 @@ export class DatePickerComponent implements OnInit {
       this.generateTimeOptions();
       const date: string = this.formatDate(this.selectedDate);
       const time: string = this.formatTime(this.selectedTime);
-      this.dateFormControl = new FormControl(date + ' ' + time);
+      this.dateFormControl.setValue(date + ' ' + time);
       this.isInvalid = false;
       this.isInvalidChange.emit(this.isInvalid);
       this.onChange.emit(this.dateFormControl.value);
@@ -262,5 +266,15 @@ export class DatePickerComponent implements OnInit {
       interval = 15;
     }
     return interval;
+  }
+
+  reset(): void {
+    this.selectedDate = null;
+    this.selectedTime = null;
+    this.dateFormControl.reset();
+    this.generateCalendar(this.currentDate);
+    if (this.showTimeOptions) {
+      this.generateTimeOptions();
+    }
   }
 }

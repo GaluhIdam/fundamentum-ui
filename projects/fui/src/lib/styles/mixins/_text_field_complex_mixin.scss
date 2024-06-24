@@ -77,7 +77,7 @@
 
 @mixin validatorInputField($color, $fontSize) {
   color: $color;
-  margin: 10px 0px 0px 0px;
+  margin: 5px 0px 0px 0px;
   font-family: $fuiFontFamily;
   font-size: $fontSize;
 }

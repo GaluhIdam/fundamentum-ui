@@ -1,135 +1,86 @@
 <div class="fui-flex-combox-parent">
-  <div
-    *ngIf="singleSelection === false"
-    class="fui-flex-combox {{ openSelector ? 'active' : '' }}"
-    [ngClass]="{
-    'fui-input-field-s': size == 's',
-    'fui-input-field-m':  size == 'm',
-    'fui-input-field-l':  size == 'l',
-  }"
-  >
-    <div class="fui-flex-combox-sub" (click)="clickableOpen()">
-      <div *ngFor="let item of selectedValue" class="fui-mx-selected">
-        <span class="mr-3">{{ item.name }}</span>
+  <fui-popover [position]="'bottom'">
+    <fui-form-control-layout>
+      <fui-input-field
+        (onFocus)="toggleOpenSelectorFocus()"
+        [type]="'text'"
+        [formControlField]="comboxForm"
+        [placeholder]="placeholder"
+        [size]="size"
+        [invalid]="invalid"
+      >
         <fui-icons
-          class="fui-icon-combox"
+          *ngIf="leftIcon"
+          left-icon
+          [icon]="leftIcon"
+          [size]="'size' + size"
+        ></fui-icons>
+        <div left-icon *ngIf="!singleSelection">
+          <span class="badge" *ngFor="let data of selectedValue">
+            {{ data.name }}
+            <fui-icons
+              (click)="toggleSelection(data)"
+              [icon]="'cross'"
+              [size]="'sizexs'"
+            />
+          </span>
+        </div>
+        <fui-icons
+          style="margin-right: 8px"
+          *ngIf="invalid"
+          right-icon
+          [label]="'right'"
+          [icon]="'alert'"
+          [size]="'size' + size"
+          [color]="'danger'"
+        />
+        <fui-icons
+          style="margin-right: 8px"
+          right-icon
+          *ngIf="selectedValue.length > 0"
+          (click)="toggleClearData()"
           [icon]="'cross'"
           [size]="'sizexs'"
-          (click)="toggleSelection(item)"
         ></fui-icons>
-      </div>
-      <input
-        #inputField
-        [autofocus]=""
-        [ngStyle]="{
-          width:
-            searchTerm.length > 29 || selectedValue.length === 0
-              ? '100%'
-              : searchTerm.length === 0
-              ? '5px'
-              : calculateWidth()
-        }"
-        [formControl]="comboxForm"
-        type="text"
-        [placeholder]="selectedValue.length === 0 ? placeholder : ''"
-        class="fui-input-combox"
-        (focus)="toggleOpenSelectorFocus()"
-      />
-    </div>
-    <fui-icons
-      *ngIf="selectedValue.length > 0"
-      (click)="toggleClearData()"
-      class="fui-icon-combox-cross"
-      [icon]="'cross'"
-      [size]="'sizexs'"
-    ></fui-icons>
-    <fui-icons
-      (click)="toggleOpenSelector()"
-      class="fui-icon-combox"
-      [icon]="'arrowDown'"
-      [size]="'sizem'"
-    ></fui-icons>
-  </div>
-  <fui-form-control-layout *ngIf="singleSelection === true">
-    <fui-input-field
-      (onFocus)="toggleOpenSelectorFocus()"
-      [type]="'text'"
-      [formControlField]="comboxForm"
-      [placeholder]="selectedValue.length === 0 ? placeholder : ''"
-      [size]="size"
-      [invalid]="invalid"
-    >
-      <fui-icons
-        *ngIf="leftIcon"
-        left-icon
-        [icon]="leftIcon"
-        [size]="'size' + size"
-      ></fui-icons>
-      <fui-icons
-        style="margin-right: 8px"
-        *ngIf="invalid"
-        right-icon
-        [label]="'right'"
-        [icon]="'alert'"
-        [size]="'size' + size"
-        [color]="'danger'"
-      />
-      <fui-icons
-        style="margin-right: 8px"
-        right-icon
-        *ngIf="selectedValue.length > 0"
-        (click)="toggleClearData()"
-        [icon]="'cross'"
-        [size]="'sizexs'"
-      ></fui-icons>
-      <fui-icons
-        right-icon
-        (click)="toggleOpenSelector()"
-        class="fui-icon-combox"
-        [icon]="'arrowDown'"
-        [size]="'size' + size"
-      ></fui-icons>
-    </fui-input-field>
-    <fui-validator-field validator [message]="message" />
-  </fui-form-control-layout>
-  <div
-    *ngIf="openSelector"
-    [attr.multiple]="!singleSelection"
-    class="fui-multi-select {{ selectedValue.length <= 4 ? 'mini' : '' }}"
-  >
-    @for(item of optionValue; track $index; let last = $last;) {
-    <div *ngIf="!singleSelection">
+        <fui-icons
+          right-icon
+          (click)="toggleOpenSelector()"
+          class="fui-icon-combox"
+          [icon]="'arrowDown'"
+          [size]="'size' + size"
+        ></fui-icons>
+      </fui-input-field>
+      <fui-validator-field validator [message]="message" />
+    </fui-form-control-layout>
+    <div popover-body>
       <div
-        class="fui-option-select {{
-          isSelected(item) ? 'option-selected' : ''
-        }}"
-        *ngIf="item.name.toLowerCase().includes(searchTerm.toLowerCase())"
-        [value]="item.value"
-        (click)="toggleSelection(item)"
+        *ngIf="openSelector"
+        [attr.multiple]="!singleSelection"
+        class="fui-multi-select {{ selectedValue.length <= 4 ? 'mini' : '' }}"
       >
-        {{ item.name }}
+        @for(item of optionValue; track $index; let last = $last;) {
+        <div>
+          <div
+            class="fui-option-select {{
+              isSelected(item) ? 'option-selected' : ''
+            }}"
+            *ngIf="
+              item.name.toLowerCase().includes(comboxForm.value!.toLowerCase())
+            "
+            [value]="item.value"
+            (click)="toggleSelection(item)"
+          >
+            {{ item.name }}
+          </div>
+        </div>
+        }
+        <p
+          style="text-align: center; font-size: small; margin-top: 10px"
+          *ngIf="optionValue.length === 0"
+        >
+          Option is not available!
+        </p>
       </div>
     </div>
-    <div *ngIf="singleSelection">
-      <div
-        class="fui-option-select {{
-          isSelected(item) ? 'option-selected' : ''
-        }}"
-        *ngIf="
-          item.name.toLowerCase().includes(comboxForm.value!.toLowerCase())
-        "
-        [value]="item.value"
-        (click)="toggleSelection(item)"
-      >
-        {{ item.name }}
-      </div>
-    </div>
-    }
-    <p
-      style="text-align: center; font-size: small; margin-top: 10px"
-      *ngIf="optionValue.length === 0"
-    >
-      Option is not available!
-    </p>
-  </div>
+  </fui-popover>
 </div>

@@ -104,7 +104,7 @@ export class TimeSelectionComponent implements OnInit {
     this.selectedTime = time;
     this.generateTimeOptions();
     const formatedTime: string = this.formatTime(this.selectedTime);
-    this.timeFormControl = new FormControl(formatedTime);
+    this.timeFormControl.setValue(formatedTime);
     this.isInvalid = false;
     this.isInvalidChange.emit(this.isInvalid);
     this.onChange.emit(this.timeFormControl.value);

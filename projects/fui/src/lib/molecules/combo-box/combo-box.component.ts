@@ -99,12 +99,10 @@ export class ComboBoxComponent {
         this.selectedValue.length === 1 &&
         this.selectedValue[0].value === item.value
       ) {
-        // If the item is already selected, remove it
         this.selectedValue = [];
         this.comboxForm.setValue('');
       } else {
         this.comboxForm.setValue(item.name);
-        // Otherwise, set it as the only selected item
         this.selectedValue = [item];
       }
       this.openSelector = false;

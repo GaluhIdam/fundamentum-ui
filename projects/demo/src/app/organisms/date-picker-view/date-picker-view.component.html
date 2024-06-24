@@ -1,16 +1,22 @@
 <div>
-<fui-date-picker
-  dateFormat="DD-MM-YY"
-  [dateFormControl]="dateFormControl"
-  (onChange)="onChangeHandler($event)"
-  [isInvalid]="true"
-  [showTimeOptions]="true"
-  timeFormat="12h">
-</fui-date-picker>
+  <fui-date-picker
+    dateFormat="DD-MM-YY"
+    [dateFormControl]="dateFormControl"
+    (onChange)="onChangeHandler($event)"
+    [isInvalid]="
+      dateFormControl.invalid &&
+      (dateFormControl.dirty || dateFormControl.touched)
+    "
+    [showTimeOptions]="true"
+    timeFormat="12h"
+  >
+  </fui-date-picker>
+  <p class="reset" (click)="resetAct()">Reset</p>
 </div>
 <div>
-<fui-time-selection></fui-time-selection>
+  <fui-time-selection [timeFormControl]="clockForm" />
+  <p class="reset" (click)="resetClock()">Reset</p>
 </div>
 <div>
-<fui-date-range></fui-date-range>
+  <fui-date-range></fui-date-range>
 </div>
