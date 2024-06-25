@@ -75,8 +75,6 @@ export class CollapsibleNavGroupComponent {
 
   toggleCollapse(): void {
     this.isCollapsed = !this.isCollapsed;
-    setTimeout(() => {
-      this.isCollapse.emit(this.isCollapsed);
-    }, 300);
+    this.isCollapse.emit(this.isCollapsed);
   }
 }

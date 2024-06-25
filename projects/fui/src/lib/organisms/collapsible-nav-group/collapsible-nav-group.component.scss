@@ -3,14 +3,13 @@
 .collapsible-wrap {
   .nav-body {
     display: block;
-    transition: max-height 0.3s ease-in-out;
-    max-height: 1000px;
-    overflow-y: auto;
+    visibility: visible;
   }
 
   &.collapsed {
     .nav-body {
-      max-height: 0;
+      display: none;
+      visibility: hidden;
     }
   }
 }

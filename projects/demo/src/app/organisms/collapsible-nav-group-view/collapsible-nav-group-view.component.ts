@@ -20,8 +20,13 @@ export class CollapsibleNavGroupViewComponent {
   isCollapsed5: boolean = false;
   isCollapsed6: boolean = false;
 
+  test(): void {
+    this.isCollapsed2 = !this.isCollapsed2;
+  }
+
   toggleCollapse(event: any): void {
     this.isCollapsed = event;
+    console.log(event);
   }
   toggleCollapse2(event: any): void {
     this.isCollapsed2 = event;
