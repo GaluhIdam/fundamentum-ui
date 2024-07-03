@@ -30,4 +30,5 @@ export class TooltipComponent {
   @Input() position: 'left' | 'right' | 'top' | 'bottom' = 'top';
   @Input() align: 'start' | 'center' | 'end' = 'center';
   @Input() tooltipRadius: 'none' | 's' | 'm' = 's';
+  @Input() custom: boolean = false;
 }

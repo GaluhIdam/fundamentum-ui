@@ -6,8 +6,9 @@ import {
   Input,
   QueryList,
 } from '@angular/core';
-import { Icon } from '../../types';
+import { Icon, Size } from '../../types';
 import { TabsContentComponent } from './tabs-content/tabs-content.component';
+import { IconsComponent } from '../../../public-api';
 
 /**
  * The TabsComponent component
@@ -22,7 +23,7 @@ import { TabsContentComponent } from './tabs-content/tabs-content.component';
 @Component({
   selector: 'fui-tabs',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, IconsComponent],
   templateUrl: './tabs.component.html',
   styleUrl: './tabs.component.scss',
 })
@@ -33,8 +34,7 @@ export class TabsComponent {
     active: boolean | 'disabled';
     icon?: Icon;
     sideIcon?: 'right' | 'left';
-    prepend?: string;
-    append?: string;
+    sizeIcon?: Size;
     title: string;
   }[];
 

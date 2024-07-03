@@ -5,6 +5,7 @@
       *ngFor="let title of dataTabs; let i = index"
       (click)="onActive(i, title.title)"
       [disabled]="title.active === 'disabled'"
+      class="margin-tab"
       [ngClass]="{
         'btn-tabs-selector-active': title.active === true,
         'btn-tabs-selector-none': title.active === false,
@@ -13,16 +14,16 @@
     >
       <fui-icons
         class="fui-icon-tabs-left"
-        *ngIf="title.sideIcon === 'left'"
+        *ngIf="title.sideIcon === 'left' && title.icon && title.sizeIcon"
         [icon]="title.icon!"
-        [size]="'sizes'"
+        [size]="title.sizeIcon"
       ></fui-icons>
       <span class="fui-text-title">{{ title.title }}</span>
       <fui-icons
         class="fui-icon-tabs-right"
-        *ngIf="title.sideIcon === 'right'"
+        *ngIf="title.sideIcon === 'right' && title.icon && title.sizeIcon"
         [icon]="title.icon!"
-        [size]="'sizes'"
+        [size]="title.sizeIcon"
       ></fui-icons>
     </button>
   </div>

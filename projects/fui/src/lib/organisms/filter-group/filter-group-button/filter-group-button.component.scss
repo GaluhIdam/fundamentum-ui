@@ -1,8 +1,9 @@
 @import "../../../styles/index";
 
 :host {
-  width: 100%;
+  width: -webkit-fill-available;
   font-family: $fuiFontFamily;
+  text-wrap: nowrap;
 }
 
 .btn-filter-light {
@@ -12,13 +13,9 @@
   border-color: var(--fuiColorLightShade, $fuiColorLightShade);
   text-align: center;
   outline: none;
-  padding: 10px 10px 10px 10px;
   font-size: 1rem;
   background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
   cursor: pointer;
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 .selected {
@@ -43,4 +40,8 @@
 
 .w-100 {
   width: 100%;
+}
+
+.w-fit {
+  width: fit-content;
 }

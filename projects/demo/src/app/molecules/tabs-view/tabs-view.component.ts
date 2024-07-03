@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Icon, TabsComponent, TabsContentComponent } from 'fui';
-
+import { Icon, Size, TabsComponent, TabsContentComponent } from 'fui';
 
 @Component({
   selector: 'app-tabs-view',
@@ -14,6 +13,7 @@ export class TabsViewComponent {
     active: boolean | 'disabled';
     icon?: Icon;
     sideIcon?: 'right' | 'left';
+    sizeIcon?: Size;
     prepend?: string;
     append?: string;
     title: string;
@@ -30,6 +30,7 @@ export class TabsViewComponent {
       active: 'disabled',
       icon: 'heatmap',
       sideIcon: 'left',
+      sizeIcon: 'sizexs',
       title: 'Hydrogen',
     },
     {

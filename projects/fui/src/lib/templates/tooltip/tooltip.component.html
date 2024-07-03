@@ -14,14 +14,20 @@
     ]"
   >
     <div [ngClass]="['arrow-tooltip-' + position + '-' + align]"></div>
-    @if (title) {
-    <div class="title">
+
+    <div class="title" *ngIf="!custom">
       {{ title }}
     </div>
+    <div class="title" *ngIf="custom">
+      <ng-content select="[title]"></ng-content>
+    </div>
     <hr />
-    }
-    <div class="content">
+
+    <div class="content" *ngIf="!custom">
       {{ content }}
+    </div>
+    <div class="content" *ngIf="custom">
+      <ng-content select="[content]"></ng-content>
     </div>
   </div>
   }
