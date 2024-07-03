@@ -1,6 +1,7 @@
 @import "../../styles/index";
 
 :host {
+  align-self: center;
   .fui-form-control-layout {
     @include formControlLayout(
       var(--fuiColorLightShade, $fuiColorLightShade),
