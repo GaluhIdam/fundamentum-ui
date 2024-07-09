@@ -37,8 +37,11 @@ export class BadgeComponent {
   @Input() rounded: boolean = false;
   @Output() onClickBadge: EventEmitter<void> = new EventEmitter();
 
-  handleClicked() {
+  closeClicked() {
     this.onClickBadge.emit();
     this.isDisplay = false;
+  }
+  handleClicked() {
+    this.onClickBadge.emit();
   }
 }

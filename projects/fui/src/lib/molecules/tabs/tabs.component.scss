@@ -2,7 +2,7 @@
 
 .fui-panel-tabs {
   font-family: $fuiFontFamily;
-  width: fit-content;
+  width: -webkit-fill-available;
 }
 
 .fui-tab-selector {
