@@ -21,7 +21,7 @@
     <div class="title" *ngIf="custom">
       <ng-content select="[title]"></ng-content>
     </div>
-    <hr />
+    <hr *ngIf="title !== '' && content !== ''" />
 
     <div class="content" *ngIf="!custom">
       {{ content }}

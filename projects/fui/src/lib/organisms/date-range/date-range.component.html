@@ -1,6 +1,6 @@
 <div class="fui-date-range">
   <fui-form-control-layout>
-    <fui-popover position="bottom" align="start">
+    <fui-popover [position]="position" align="start">
       <fui-input-field
         [borderRadius]="['0px', '0px', '6px', '6px']"
         [invalid]="isInvalidStartDate"
@@ -106,7 +106,7 @@
     <div class="fui-date-range__delimiter">
       <fui-icons icon="sortRight" size="sizel"></fui-icons>
     </div>
-    <fui-popover position="bottom" align="end">
+    <fui-popover [position]="position" align="end">
       <fui-input-field
         [borderRadius]="['6px', '6px', '0px', '0px']"
         [invalid]="isInvalidEndDate"

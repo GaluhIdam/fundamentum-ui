@@ -40,6 +40,7 @@ export class DateRangeComponent {
   @Input() showTimeOptions: boolean = false;
 
   @Input() isInvalidStartDate: boolean = false;
+  @Input() position: 'left' | 'right' | 'top' | 'bottom' = 'bottom';
   @Output() isInvalidStartDateChange: EventEmitter<boolean> =
     new EventEmitter<boolean>();
 

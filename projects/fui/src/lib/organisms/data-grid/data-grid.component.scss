@@ -1,9 +1,15 @@
 @import "../../styles/index";
+
+:host {
+z-index: 9999;
+}
+
 .container-fit {
   width: -webkit-fill-available;
   position: relative;
 }
 .container-full {
+  z-index: 1000;
   width: 100vw;
   position: fixed;
   background-color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);

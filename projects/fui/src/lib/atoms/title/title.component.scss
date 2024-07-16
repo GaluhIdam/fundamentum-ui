@@ -24,25 +24,35 @@
 }
 
 .primary {
-  color: $fuiColorPrimary;
+  color: var(--fuiColorPrimary, $fuiColorPrimary);
 }
 .success {
-  color: $fuiColorSuccess;
+  color: var(--fuiColorSuccess, $fuiColorSuccess);
 }
 .warning {
-  color: $fuiColorWarning;
+  color: var(--fuiColorWarning, $fuiColorWarning);
 }
 
 .danger {
-  color: $fuiColorDanger;
+  color: var(--fuiColorDanger, $fuiColorDanger);
 }
 
 .text {
-  color: $fuiColorDarkShade;
+  color: var(--fuiColorFullShade, $fuiColorFullShade);
 }
 .textlight {
-  color: $fuiColorDarkestShade;
+  color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
 }
 .accent {
-  color: $fuiColorAccent;
+  color: var(--fuiColorAccent, $fuiColorAccent);
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+.fw-light {
+  font-weight: light;
+}
+.fw-normal {
+  font-weight: normal;
 }

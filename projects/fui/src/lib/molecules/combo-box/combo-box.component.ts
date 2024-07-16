@@ -56,6 +56,7 @@ export class ComboBoxComponent {
   @Input() leftIcon: Icon | null = null;
   @Input() invalid: boolean = false;
   @Input() message: string = 'This is required!';
+  @Input() position: 'left' | 'right' | 'top' | 'bottom' = 'bottom';
   @Output() selection: EventEmitter<any> = new EventEmitter();
 
   /**

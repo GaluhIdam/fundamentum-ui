@@ -15,7 +15,7 @@
     position: absolute;
     z-index: 1;
     margin: auto;
-    background: var(--fuiColorLightestShade, color.$fuiColorLightestShade);
+    background: var(--fuiColorEmptyShade, color.$fuiColorEmptyShade);
     box-shadow: rgba(
         $color: #000,
         $alpha: 0.2

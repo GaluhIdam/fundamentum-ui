@@ -24,6 +24,7 @@ export class TitleComponent {
     | 'sizes'
     | 'sizem'
     | 'sizel' = 'sizel';
+  @Input() fontWeight: 'bold' | 'normal' | 'light' = 'normal';
   @Input('position') positionValue: 'left' | 'center' | 'right' | 'justify' =
     'left';
 }

@@ -11,6 +11,8 @@
   [class.sizeXXL]="sizeValue === 'sizexxl'"
   [class.sizeM]="sizeValue === 'sizem'"
   [class]="[colorValue, decoration, 'weight-' + weight]"
+  [class.wrap]="textWrap === 'wrap'"
+  [class.nowrap]="textWrap === 'nowrap'"
 >
   <ng-content></ng-content>
 </span>

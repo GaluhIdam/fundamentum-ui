@@ -34,6 +34,9 @@ export class TimeSelectionComponent implements OnInit {
   @Input() size: 's' | 'm' | 'l' = 'm';
   @Input() isInvalid: boolean = false;
   @Input() message: string = 'This is required!';
+  @Input() position: 'left' | 'right' | 'top' | 'bottom' = 'bottom';
+  @Input() align: 'center' | 'start' | 'end' = 'start';
+
   @Output() isInvalidChange: EventEmitter<boolean> =
     new EventEmitter<boolean>();
 

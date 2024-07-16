@@ -44,6 +44,8 @@ export class DatePickerComponent implements OnInit {
   @Input() minuteInterval: MinuteInterval = '30 minutes';
   @Input() showTimeOptions: boolean = false;
   @Input() dateFormControl: FormControl = new FormControl();
+  @Input() position: 'left' | 'right' | 'top' | 'bottom' = 'bottom';
+  @Input() align: 'center' | 'start' | 'end' = 'start';
 
   @Input() isInvalid: boolean = false;
   @Input() message: string = 'This is required!';

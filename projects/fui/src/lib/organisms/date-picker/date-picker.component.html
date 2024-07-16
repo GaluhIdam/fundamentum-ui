@@ -1,5 +1,9 @@
 <div class="fui-date-picker">
-  <fui-popover position="bottom" align="start" [preventClose]="preventClose">
+  <fui-popover
+    [position]="position"
+    [align]="align"
+    [preventClose]="preventClose"
+  >
     <fui-form-control-layout>
       <fui-input-field
         [invalid]="isInvalid"

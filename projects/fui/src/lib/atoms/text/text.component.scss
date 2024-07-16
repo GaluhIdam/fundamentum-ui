@@ -48,7 +48,7 @@
 }
 
 .ink {
-  color: var(--fuiColorInk, $fuiColorInk)
+  color: var(--fuiColorInk, $fuiColorInk);
 }
 
 .ghost {
@@ -101,4 +101,12 @@
 
 .weight-black {
   font-weight: 900;
+}
+
+.wrap {
+  text-wrap: wrap;
+}
+
+.nowrap {
+  text-wrap: nowrap;
 }
