@@ -101,7 +101,6 @@ export class OidcAuthenticatorService extends OidcUtilityService {
               window.opener.location.reload();
             }
           }
-          // Remove query parameters from URL
           const cleanUrl = `${url.origin}${url.pathname}`;
           history.replaceState(null, '', cleanUrl);
         }),
@@ -110,9 +109,7 @@ export class OidcAuthenticatorService extends OidcUtilityService {
           return of(null);
         })
       )
-      .subscribe(() => {
-        this.clearVerifierData();
-      });
+      .subscribe();
   }
 
   /**

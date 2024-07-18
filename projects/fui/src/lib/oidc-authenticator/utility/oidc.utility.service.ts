@@ -249,9 +249,7 @@ export class OidcUtilityService {
    * @protected
    */
   protected clearVerifierData(): void {
-    this.deleteCookie(this.codeVerifierKey);
     this.deleteLocalStorage(this.codeVerifierKey);
-    this.deleteSessionStorage(this.codeVerifierKey);
   }
 
   /**
