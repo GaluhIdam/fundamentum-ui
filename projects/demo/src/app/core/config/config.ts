@@ -1,7 +1,7 @@
 import { ConfigDTO } from "fui";
 
 
-export const google: ConfigDTO = {
+export const keycloak: ConfigDTO = {
   authorization_endpoint: 'https://accounts.google.com/o/oauth2/v2/auth',
   client_id:
     '1078904476244-f15frfo2n070aft1jm66o73rfv7kcs51.apps.googleusercontent.com',
@@ -14,14 +14,14 @@ export const google: ConfigDTO = {
   storageUsage: 'local',
 };
 
-export const keycloak: ConfigDTO = {
+export const google: ConfigDTO = {
   authorization_endpoint:
-    'http://localhost:8080/realms/nex-km/protocol/openid-connect/auth',
-  client_id: 'nex-km',
+    'http://localhost:8080/realms/quantum-demo/protocol/openid-connect/auth',
+  client_id: 'quantum-client',
   redirect_uri: 'http://localhost:4200',
   response_type: 'id_token token',
   scope: 'openid email profile roles',
   authWellknownEndpointUrl:
-    'http://localhost:8080/realms/nex-km/.well-known/openid-configuration',
-  storageUsage: 'session',
+    'http://localhost:8080/realms/quantum-demo/.well-known/openid-configuration',
+  storageUsage: 'local',
 };

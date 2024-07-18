@@ -88,29 +88,31 @@ export class OidcAuthenticatorService extends OidcUtilityService {
    * @param {ConfigDTO} config
    */
   callBackAuth(config: ConfigDTO): void {
+    const url = new URL(window.location.href);
     const code = new URL(window.location.href).searchParams.get('code');
     if (!code) return;
     this._exchangeCodeForTokens(code, config)
       .pipe(
         tap((result) => {
           this.storeTokens(result, config);
-          this.clearVerifierData();
           if (window.opener) {
             window.close();
             if (window.opener.location) {
               window.opener.location.reload();
             }
-          } else {
-            window.location.reload();
           }
-          history.replaceState(null, '', window.location.pathname);
+          // Remove query parameters from URL
+          const cleanUrl = `${url.origin}${url.pathname}`;
+          history.replaceState(null, '', cleanUrl);
         }),
         catchError((error) => {
           console.error('Error during token exchange:', error);
           return of(null);
         })
       )
-      .subscribe();
+      .subscribe(() => {
+        this.clearVerifierData();
+      });
   }
 
   /**
