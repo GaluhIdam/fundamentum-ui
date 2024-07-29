@@ -174,9 +174,9 @@ export class OidcAuthenticatorService extends OidcUtilityService {
    * Get User Info
    *
    * @param {ConfigDTO} config
-   * @returns {Observable<unknown>}
+   * @returns {Observable<any>}
    */
-  getUserInfo(config: ConfigDTO): Observable<unknown> {
+  getUserInfo(config: ConfigDTO): Observable<any> {
     const token = this.retrieveToken(config, 'access_token');
     if (!token) return of(null);
 
@@ -186,7 +186,7 @@ export class OidcAuthenticatorService extends OidcUtilityService {
       .get<WellKnownEndPointDTO>(config.authWellknownEndpointUrl)
       .pipe(
         switchMap((res) =>
-          this._http.get<unknown>(res.userinfo_endpoint, { headers })
+          this._http.get<any>(res.userinfo_endpoint, { headers })
         ),
         catchError(() => of(null))
       );

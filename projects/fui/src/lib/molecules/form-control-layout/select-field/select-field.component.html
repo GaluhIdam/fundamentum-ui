@@ -14,7 +14,7 @@
       'fui-input-field-l':  size == 'l',
     }"
   >
-    <option value="" selected hidden>{{ placeholder }}</option>
+    <option value="" selected disabled>{{ placeholder }}</option>
     <option *ngFor="let option of selectOptions" [value]="option.value">
       {{ option.label }}
     </option>
