@@ -10,11 +10,18 @@
 .wrap-content {
   width: -webkit-fill-available;
   max-width: -webkit-fill-available;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 .table {
+  width: 100%;
   border-collapse: collapse;
   text-indent: initial;
   border-spacing: 2px;
+  display: table;
+  box-sizing: border-box;
+  text-indent: initial;
+  unicode-bidi: isolate;
 }
 .thead {
   display: table-header-group;
