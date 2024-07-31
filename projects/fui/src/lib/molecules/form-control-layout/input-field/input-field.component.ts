@@ -31,7 +31,8 @@ export class InputFieldComponent {
   @Input({ required: true }) size: 's' | 'm' | 'l' = 'm';
   @Input() placeholder: string = 'Please type here...';
   @Input() formControlField: FormControl = new FormControl('');
-  @Input() borderRadius: string[] = ['6px', '6px', '6px', '6px'];
+  @Input() borderRadius: string[] = ['4px', '4px', '4px', '4px'];
+  @Input() disabled: boolean = false;
   iconLeft: boolean = false;
   iconRight: boolean = false;
   active: boolean = false;
@@ -44,6 +45,9 @@ export class InputFieldComponent {
   focusX: boolean = false;
 
   ngAfterContentInit() {
+    if (this.disabled) {
+      this.formControlField.disable();
+    }
     this.iconComponents.forEach((item) => {
       if (item.label === 'left') {
         this.iconLeft = true;

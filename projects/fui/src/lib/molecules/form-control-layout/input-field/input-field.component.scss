@@ -12,6 +12,9 @@ input {
 
 .fui-input-field {
   @include inputFieldContainer();
+  &.disabled {
+    background-color: var(--fuiColorLightShade, $fuiColorLightShade);
+  }
 }
 .fui-input-field-s {
   @include textFieldBaseStyles($fuiSizeM, 6px);
@@ -21,10 +24,6 @@ input {
 }
 .fui-input-field-l {
   @include textFieldBaseStyles($fuiSizeM + 6, 8px);
-}
-
-.radius-default {
-  @include borderRadius(6px, 6px, 6px, 6px);
 }
 
 .full-width {

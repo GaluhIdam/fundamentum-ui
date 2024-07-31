@@ -74,6 +74,7 @@ export class TextFieldComplexViewComponent implements OnInit, OnDestroy {
 
   textFieldx: FormControl = new FormControl('Hello World!');
   textFieldSelect: FormControl = new FormControl('');
+  disabledForm: FormControl = new FormControl('Password');
   obs?: Subscription;
 
   apa: any[] = [
@@ -88,6 +89,7 @@ export class TextFieldComplexViewComponent implements OnInit, OnDestroy {
   ];
 
   ngOnInit(): void {
+    this.disabledForm.disable();
     this.params = this.route.snapshot.params['paramName'];
     this.myForm = this.formBuilder.group({
       firstName: ['Hello World!', [Validators.required, Validators.email]],

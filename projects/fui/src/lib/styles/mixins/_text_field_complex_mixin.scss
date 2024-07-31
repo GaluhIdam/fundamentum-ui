@@ -18,8 +18,9 @@
   }
 
   &:disabled {
-    background-color: #eef2f7;
-    cursor: not-allowed;
+    background-color: var(--fuiColorLightShade, $fuiColorLightShade);
+    color: var(--fuiColorDarkShade, $fuiColorDarkShade);
+    cursor: auto;
   }
 }
 
@@ -32,6 +33,7 @@
   align-items: center;
   width: -webkit-fill-available;
   height: 100%;
+  border-radius: 4px;
 }
 
 @mixin start() {

@@ -4,6 +4,6 @@
   @include appendPrepend(
     10px,
     var(--fuiColorLightShade, $fuiColorLightShade),
-    6px 0px 0px 6px
+    4px 0px 0px 4px
   );
 }

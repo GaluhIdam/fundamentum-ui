@@ -2,39 +2,22 @@
 @use "./../../styles/variables/typography_variable" as typography;
 @use "./../../styles/variables/border_variable" as border;
 
-.checkbox {
+.custom {
+  align-items: center;
   display: flex;
-  align-items: flex-start;
-  width: fit-content;
+  input {
+    margin-right: 5px;
+  }
 }
 
 .with-group-label {
   gap: 0.5rem;
 }
 
-.flex-row {
-  flex-direction: row;
-}
-
-.flex-column {
-  flex-direction: column;
-}
-
-.checkbox-options {
-  display: flex;
-  gap: 0.3rem;
-  flex-direction: column;
-
-  .option {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.3rem;
-  }
-}
-
 .option-item {
-  display: flex;
-  gap: 0.5rem;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
 }
 
 .option-align-row {

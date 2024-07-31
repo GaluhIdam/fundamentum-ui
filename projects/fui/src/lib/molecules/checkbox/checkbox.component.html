@@ -13,10 +13,10 @@
       >{{ groupLabel }}</fui-text
     >
   </div>
-  <div class="checkbox-options">
+  <div>
     <div [ngClass]="['option-item', 'option-align-' + optionAlign]">
       @for (item of mappedDataCheckbox; track $index) {
-      <div [ngClass]="['option', 'checkbox-' + size, 'checkbox-' + color]">
+      <div class="custom" [ngClass]="['option', 'checkbox-' + size, 'checkbox-' + color]">
         <input
           type="checkbox"
           [value]="item.value"
