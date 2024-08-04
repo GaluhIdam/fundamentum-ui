@@ -1,10 +1,13 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import {
   Component,
+  ElementRef,
   EventEmitter,
   HostListener,
+  Inject,
   Input,
   Output,
+  Renderer2,
 } from '@angular/core';
 
 /**
@@ -33,17 +36,23 @@ export class PageSidebarComponent {
   @Output() showEvent: EventEmitter<any> = new EventEmitter();
   @Input() zIndex: number = 1;
 
+  constructor(private elRef: ElementRef) {}
+
   ngAfterViewInit(): void {
-    this.logWindowWidth();
+    this.logWindowWidth(
+      this.elRef.nativeElement.ownerDocument.body.clientWidth
+    );
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
-    this.logWindowWidth();
+    this.logWindowWidth(
+      this.elRef.nativeElement.ownerDocument.body.clientWidth
+    );
   }
 
-  logWindowWidth(): void {
-    if (window.innerWidth < 1080) {
+  logWindowWidth(width: number): void {
+    if (width < 1080) {
       this.docked = false;
       this.show = false;
       this.showEvent.emit(this.show);

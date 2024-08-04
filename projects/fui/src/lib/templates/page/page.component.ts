@@ -1,5 +1,12 @@
-import { CommonModule } from '@angular/common';
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  Inject,
+  Input,
+  ViewChild,
+} from '@angular/core';
 
 /**
  * The PageComponent
@@ -38,10 +45,25 @@ export class PageComponent {
 
   @ViewChild('header', { static: false }) headerDiv!: ElementRef;
   height: string = '0vh';
+
+  constructor(private elRef: ElementRef) {}
+
   ngAfterViewInit() {
-    setTimeout(() => {
-      const headerHeight = this.headerDiv.nativeElement.offsetHeight;
-      this.height = (headerHeight / window.innerHeight) * 100 + 'vh';
-    });
+    this.logHeight();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    console.log(event);
+    this.logHeight();
+  }
+
+  logHeight(): void {
+    const headerHeight = this.headerDiv.nativeElement.offsetHeight;
+    this.height =
+      (headerHeight /
+        this.elRef.nativeElement.ownerDocument.body.clientHeight) *
+        100 +
+      'vh';
   }
 }
