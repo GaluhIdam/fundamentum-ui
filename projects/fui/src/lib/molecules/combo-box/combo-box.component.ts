@@ -52,7 +52,7 @@ export class ComboBoxComponent {
   @Input({ required: true }) optionValue: { name: string; value: any }[] = [];
   @Input() singleSelection: boolean = false;
   @Input() placeholder: string = 'Select or create options';
-  @Input() comboxForm: FormControl = new FormControl();
+  @Input() comboxForm: FormControl = new FormControl('');
   @Input() leftIcon: Icon | null = null;
   @Input() invalid: boolean = false;
   @Input() message: string = 'This is required!';

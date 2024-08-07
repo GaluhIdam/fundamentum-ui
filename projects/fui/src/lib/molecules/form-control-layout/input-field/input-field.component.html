@@ -1,15 +1,21 @@
 <div
-  class="fui-input-field inactive"
+  class="{{
+    disabled
+      ? 'fui-input-field inactive disabled'
+      : 'fui-input-field inactive disabled'
+  }}"
   [ngStyle]="{
-    'border-top-right-radius': borderRadius[0],
-    'border-bottom-right-radius': borderRadius[1],
-    'border-top-left-radius': borderRadius[2],
-    'border-bottom-left-radius': borderRadius[3]
+    'border-top-right-radius': append === true ? 0 : borderRadius[0],
+    'border-bottom-right-radius': append === true ? 0 : borderRadius[1],
+    'border-top-left-radius': prepend === true ? 0 : borderRadius[2],
+    'border-bottom-left-radius': prepend == true ? 0 : borderRadius[3]
   }"
   [ngClass]="{
     default: active && !invalid,
     invalid: invalid,
-    disabled: disabled
+    disabled: disabled,
+    prepend: prepend,
+    append: append
   }"
 >
   <ng-content select="[left-icon]"></ng-content>

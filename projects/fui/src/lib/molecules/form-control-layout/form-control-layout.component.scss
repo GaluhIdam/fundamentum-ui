@@ -11,3 +11,8 @@
     @include borderRadius(6px, 6px, 6px, 6px);
   }
 }
+fui-input-field {
+  .fui-input-field {
+    border-radius: 0px;
+  }
+}

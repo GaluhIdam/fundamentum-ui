@@ -40,6 +40,9 @@ export class InputFieldComponent {
   @Output() onFocus: EventEmitter<any> = new EventEmitter<any>();
   @Output() onBlur: EventEmitter<any> = new EventEmitter<any>();
 
+  prepend: boolean = false;
+  append: boolean = false;
+
   @ViewChild('inputX') inputX: any;
 
   focusX: boolean = false;
@@ -56,6 +59,14 @@ export class InputFieldComponent {
         this.iconRight = true;
       }
     });
+  }
+
+  ngOnChanges(): void {
+    if (this.disabled) {
+      this.formControlField.disable();
+    } else {
+      this.formControlField.enable();
+    }
   }
 
   @HostListener('document:keydown', ['$event'])

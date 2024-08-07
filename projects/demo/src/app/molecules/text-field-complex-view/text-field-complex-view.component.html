@@ -10,7 +10,12 @@
       <p>Prepend</p>
     </fui-prepend>
 
-    <fui-input-field [type]="'text'" [size]="'l'" [invalid]="true">
+    <fui-input-field
+      [disabled]="true"
+      [type]="'text'"
+      [size]="'l'"
+      [invalid]="true"
+    >
       <fui-icons
         left-icon
         [label]="'left'"
@@ -122,6 +127,23 @@
       <fui-icons [icon]="'email'" [size]="'sizel'" [color]="'ink'" />
     </fui-prepend>
     <fui-input-field
+      [type]="'text'"
+      [size]="'l'"
+      [placeholder]="'Email'"
+      [invalid]="false"
+    >
+    </fui-input-field>
+  </fui-form-control-layout>
+</div>
+
+<div class="fit">
+  <fui-form-control-layout>
+    <fui-prepend>
+      <fui-icons [icon]="'email'" [size]="'sizel'" [color]="'ink'" />
+    </fui-prepend>
+    <fui-input-field
+      [formControlField]="emailForm"
+      [disabled]="true"
       [type]="'text'"
       [size]="'l'"
       [placeholder]="'Email'"

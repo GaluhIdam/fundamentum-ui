@@ -75,6 +75,7 @@ export class TextFieldComplexViewComponent implements OnInit, OnDestroy {
   textFieldx: FormControl = new FormControl('Hello World!');
   textFieldSelect: FormControl = new FormControl('');
   disabledForm: FormControl = new FormControl('Password');
+  emailForm: FormControl = new FormControl('');
   obs?: Subscription;
 
   apa: any[] = [

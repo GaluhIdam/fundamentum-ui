@@ -1,6 +1,8 @@
 import { Component, ContentChild } from '@angular/core';
 import { InputFieldComponent } from './input-field/input-field.component';
 import { CommonModule } from '@angular/common';
+import { PrependComponent } from './prepend/prepend.component';
+import { AppendComponent } from './append/append.component';
 
 /**
  * The CalloutComponent
@@ -52,4 +54,17 @@ import { CommonModule } from '@angular/common';
 })
 export class FormControlLayoutComponent {
   @ContentChild(InputFieldComponent) inputComponents!: InputFieldComponent;
+  @ContentChild(PrependComponent) prependComponent!: PrependComponent;
+  @ContentChild(AppendComponent) appendComponent!: AppendComponent;
+
+  ngAfterContentInit() {
+    if (this.inputComponents) {
+      if (this.prependComponent) {
+        this.inputComponents.prepend = true;
+      }
+      if (this.appendComponent) {
+        this.inputComponents.append = true;
+      }
+    }
+  }
 }
