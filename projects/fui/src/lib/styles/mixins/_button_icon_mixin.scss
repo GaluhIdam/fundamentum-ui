@@ -1,6 +1,7 @@
 @import "../variables/index";
 
 @mixin buttonIconMix($bgColor, $color, $BorderRadius, $fontSize, $padding) {
+  height: $fontSize + 23;
   color: $color;
   font-family: $fuiFontFamily;
   font-size: $fontSize;
@@ -14,9 +15,15 @@
   transition: transform 0.3s ease;
   &:hover {
     transform: translateY(-1px);
+    a {
+      text-decoration: underline;
+    }
   }
   &:active {
     transform: translateY(1.5px);
+  }
+  a {
+    font-size: $fontSize + 2;
   }
   border-radius: $BorderRadius;
 }

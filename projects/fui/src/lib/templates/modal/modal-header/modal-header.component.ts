@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IconsComponent } from '../../../atoms/icons/icons.component';
 import { Color, Icon, Size } from '../../../types';
+import { CommonModule } from '@angular/common';
 
 /**
  * The ModalHeaderComponent
@@ -17,9 +18,10 @@ import { Color, Icon, Size } from '../../../types';
   standalone: true,
   templateUrl: './modal-header.component.html',
   styleUrl: './modal-header.component.scss',
-  imports: [IconsComponent],
+  imports: [CommonModule, IconsComponent],
 })
 export class ModalHeaderComponent {
+  @Input() iconCloseShow: boolean = true;
   @Input() iconClose: Icon = 'cross';
   @Input() iconCloseSize: Size = 'sizem';
   @Input() iconCloseColor: Color = 'ink';

@@ -2,6 +2,7 @@
   <fui-popover [position]="position">
     <fui-form-control-layout>
       <fui-input-field
+        [disabled]="disabled"
         (onFocus)="toggleOpenSelectorFocus()"
         [type]="'text'"
         [formControlField]="comboxForm"

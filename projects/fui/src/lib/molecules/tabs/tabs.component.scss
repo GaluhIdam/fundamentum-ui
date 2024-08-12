@@ -8,6 +8,7 @@
 .fui-tab-selector {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 .btn-tabs-selector-none {
@@ -41,7 +42,6 @@
 }
 
 .fui-tabs-content-selector {
-  margin: 10px 10px 10px 10px;
   color: var(--fuiColorFullShade, $fuiColorFullShade);
 }
 

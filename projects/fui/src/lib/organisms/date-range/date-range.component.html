@@ -6,6 +6,7 @@
         [invalid]="isInvalidStartDate"
         size="m"
         type="text"
+        [disabled]="disabled"
         [placeholder]="placeholder"
         [formControlField]="startDateControl"
         (change)="changeTextInput($event, true)"
@@ -108,6 +109,7 @@
     </div>
     <fui-popover [position]="position" align="end">
       <fui-input-field
+        [disabled]="disabled"
         [borderRadius]="['6px', '6px', '0px', '0px']"
         [invalid]="isInvalidEndDate"
         size="m"

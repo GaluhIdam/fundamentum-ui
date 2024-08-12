@@ -6,10 +6,10 @@
     z-index: $fuiZModal;
     padding: 1rem;
     background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
-    min-width: 400px;
+    min-width: 100px;
     max-width: map-get($map: $fuiBreakpoints, $key: 'm');
     width: fit-content;
-    border-radius: 6px;
+    border-radius: 20px;
     @include fuiBottomShadowLarge();
 
     display: flex;

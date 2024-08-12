@@ -39,6 +39,7 @@ import { ValidatorFieldComponent } from '../../../public-api';
   styleUrls: ['./date-picker.component.scss'],
 })
 export class DatePickerComponent implements OnInit {
+  @Input() disabled: boolean = false;
   @Input() dateFormat: string = 'YYYY-MM-DD';
   @Input() timeFormat: TimeFormat = '12h';
   @Input() minuteInterval: MinuteInterval = '30 minutes';

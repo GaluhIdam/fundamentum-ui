@@ -39,6 +39,7 @@ export class ButtonIconComponent {
   @Input() color: Color = 'primary';
   @Input() size: 's' | 'm' | 'l' = 'm';
   @Input() textAlign: 'left' | 'center' | 'right' = 'center';
+  @Input() shadow: boolean = true;
   @Output() onClick: EventEmitter<void> = new EventEmitter<void>();
 
   handleOnClick(): void {

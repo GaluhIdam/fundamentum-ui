@@ -1,12 +1,26 @@
 <div
-  class="fui-input-field radius-default"
+  class="{{
+    disabled
+      ? 'fui-input-field inactive disabled'
+      : 'fui-input-field inactive'
+  }}"
+  [ngStyle]="{
+    'border-top-right-radius': append === true ? 0 : borderRadius[0],
+    'border-bottom-right-radius': append === true ? 0 : borderRadius[1],
+    'border-top-left-radius': prepend === true ? 0 : borderRadius[2],
+    'border-bottom-left-radius': prepend == true ? 0 : borderRadius[3]
+  }"
   [ngClass]="{
     default: active && !invalid,
-    invalid: invalid
+    invalid: invalid,
+    disabled: disabled,
+    prepend: prepend,
+    append: append
   }"
 >
   <ng-content select="[left-icon]"></ng-content>
   <select
+    [disabled]="disabled"
     [formControl]="formControlField"
     [ngClass]="{
       'fui-input-field-s': size == 's',

@@ -6,15 +6,17 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'fui-select-field',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './select-field.component.html',
   styleUrl: './select-field.component.scss',
 })
 export class SelectFieldComponent {
   @Input({ required: true }) invalid: boolean = false;
   @Input({ required: true }) size: 's' | 'm' | 'l' = 'm';
+  @Input() borderRadius: string[] = ['4px', '4px', '4px', '4px'];
   @Input() placeholder: string = 'Please type here...';
   @Input() formControlField: FormControl = new FormControl('');
+  @Input() disabled: boolean = false;
   @Input({ required: true }) selectOptions?: Array<{
     label: string;
     value: any;
@@ -24,7 +26,13 @@ export class SelectFieldComponent {
   active: boolean = false;
   @ContentChildren(IconsComponent) iconComponents!: QueryList<IconsComponent>;
 
+  prepend: boolean = false;
+  append: boolean = false;
+
   ngAfterContentInit() {
+    if (this.disabled) {
+      this.formControlField.disable();
+    }
     this.iconComponents.forEach((item) => {
       if (item.label === 'left') {
         this.iconLeft = true;

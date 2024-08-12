@@ -54,7 +54,6 @@ export class PageComponent {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
-    console.log(event);
     this.logHeight();
   }
 

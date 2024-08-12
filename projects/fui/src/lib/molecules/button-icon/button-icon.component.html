@@ -3,12 +3,13 @@
   [type]="type"
   [ngStyle]="{ 'justify-content': textAlign }"
   [disabled]="disabled"
-  [ngClass]="
+  [ngClass]="[
     style == 'filled'
       ? 'btn-fui-' + color + '-' + size
-      : 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth
-  "
-  class="{{ fullWidth === true ? 'full-width' : '' }}"
+      : 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth,
+    shadow === true ? 'shadow' : '',
+    fullWidth === true ? 'full-width' : ''
+  ]"
   (click)="handleOnClick()"
 >
   <fui-icons
@@ -25,75 +26,110 @@
     [ngClass]="iconSide === 'left' ? 'mr' : 'ml'"
     [icon]="icon"
   ></fui-icons>
-  <a>{{ text }}</a>
+  <a
+    class="{{
+      icon && iconSide === 'left'
+        ? 'icon-left'
+        : icon && iconSide === 'right'
+        ? 'icon-right'
+        : ''
+    }}"
+    >{{ text }}</a
+  >
 </button>
 <button
   *ngIf="iconSide === 'right' && option === 'iconText'"
   [type]="type"
   [ngStyle]="{ 'justify-content': textAlign }"
   [disabled]="disabled"
-  [ngClass]="
+  [ngClass]="[
     style == 'filled'
       ? 'btn-fui-' + color + '-' + size
-      : 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth
-  "
+      : 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth,
+    shadow === true ? 'shadow' : '',
+    fullWidth === true ? 'full-width' : ''
+  ]"
   (click)="handleOnClick()"
 >
-  <a>{{ text }}</a>
+  <a
+    class="{{
+      icon && iconSide === 'left'
+        ? 'icon-left'
+        : icon && iconSide === 'right'
+        ? 'icon-right'
+        : ''
+    }}"
+    >{{ text }}</a
+  >
   <fui-icons
     [size]="
       size === 's'
-        ? 'sizes'
+        ? 'sizexs'
         : size === 'm'
-        ? 'sizem'
+        ? 'sizes'
         : size === 'l'
-        ? 'sizel'
-        : 'sizem'
+        ? 'sizem'
+        : 'sizes'
     "
     *ngIf="icon"
     [ngClass]="iconSide === 'right' ? 'ml' : 'mr'"
     [icon]="icon"
   ></fui-icons>
 </button>
+
 <button
   *ngIf="option === 'icon'"
   [type]="type"
   [ngStyle]="{ 'justify-content': textAlign }"
   [disabled]="disabled"
-  [ngClass]="
+  [ngClass]="[
     style == 'filled'
       ? 'btn-fui-' + color + '-' + size
-      : 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth
-  "
-  class="{{ fullWidth === true ? 'full-width' : '' }}"
+      : 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth,
+    shadow === true ? 'shadow' : '',
+    fullWidth === true ? 'full-width' : '',
+    'btn-icon-only-' + size
+  ]"
   (click)="handleOnClick()"
 >
   <fui-icons
     [size]="
       size === 's'
-        ? 'sizes'
+        ? 'sizexs'
         : size === 'm'
-        ? 'sizem'
+        ? 'sizes'
         : size === 'l'
-        ? 'sizel'
-        : 'sizem'
+        ? 'sizem'
+        : 'sizes'
     "
     *ngIf="icon"
     [icon]="icon"
+    [ngClass]="'icon-' + size"
   ></fui-icons>
 </button>
+
 <button
   *ngIf="option === 'text'"
   [type]="type"
   [ngStyle]="{ 'justify-content': textAlign }"
   [disabled]="disabled"
-  [ngClass]="
+  [ngClass]="[
     style == 'filled'
       ? 'btn-fui-' + color + '-' + size
-      : 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth
-  "
-  class="{{ fullWidth === true ? 'full-width' : '' }}"
+      : 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth,
+    shadow === true ? 'shadow' : '',
+    fullWidth === true ? 'full-width' : ''
+  ]"
   (click)="handleOnClick()"
 >
-  <a>{{ text }}</a>
+  <a
+    class="{{
+      icon && iconSide === 'left'
+        ? 'icon-left'
+        : icon && iconSide === 'right'
+        ? 'icon-right'
+        : ''
+    }}"
+    >{{ text }}</a
+  >
 </button>

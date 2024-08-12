@@ -33,6 +33,7 @@ import { FormControlLayoutComponent } from '../../../public-api';
 export class DateRangeComponent {
   @Input() startDateControl: FormControl = new FormControl();
   @Input() endDateControl: FormControl = new FormControl();
+  @Input() disabled: boolean = false;
 
   @Input() dateFormat: string = 'YYYY-MM-DD';
   @Input() timeFormat: TimeFormat = '12h';

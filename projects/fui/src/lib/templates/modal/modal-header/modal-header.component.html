@@ -2,7 +2,7 @@
   <div class="title">
     <ng-content></ng-content>
   </div>
-  <div class="close-modal" (click)="onHandleCloseModal()">
+  <div class="close-modal" *ngIf="iconCloseShow" (click)="onHandleCloseModal()">
     <fui-icons
       [icon]="iconClose"
       [size]="iconCloseSize"

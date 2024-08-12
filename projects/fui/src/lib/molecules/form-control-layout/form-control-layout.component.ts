@@ -3,6 +3,7 @@ import { InputFieldComponent } from './input-field/input-field.component';
 import { CommonModule } from '@angular/common';
 import { PrependComponent } from './prepend/prepend.component';
 import { AppendComponent } from './append/append.component';
+import { SelectFieldComponent } from './select-field/select-field.component';
 
 /**
  * The CalloutComponent
@@ -54,6 +55,7 @@ import { AppendComponent } from './append/append.component';
 })
 export class FormControlLayoutComponent {
   @ContentChild(InputFieldComponent) inputComponents!: InputFieldComponent;
+  @ContentChild(SelectFieldComponent) selectComponents!: SelectFieldComponent;
   @ContentChild(PrependComponent) prependComponent!: PrependComponent;
   @ContentChild(AppendComponent) appendComponent!: AppendComponent;
 
@@ -64,6 +66,14 @@ export class FormControlLayoutComponent {
       }
       if (this.appendComponent) {
         this.inputComponents.append = true;
+      }
+    }
+    if (this.selectComponents) {
+      if (this.prependComponent) {
+        this.selectComponents.prepend = true;
+      }
+      if (this.appendComponent) {
+        this.selectComponents.append = true;
       }
     }
   }

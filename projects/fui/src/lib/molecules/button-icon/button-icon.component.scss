@@ -1,13 +1,17 @@
 @import "../../styles/index";
 
+$s: 7px;
+$m: 8px;
+$l: 9px;
+
 /* Button Filled S*/
 .btn-fui-primary-s {
   @include buttonIconMix(
     var(--fuiBtnPrimary, $fuiBtnPrimary),
     var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
-    $fuiSizeM,
-    7px
+    $fuiSizeS,
+    $s
   );
 }
 .btn-fui-success-s {
@@ -15,8 +19,8 @@
     var(--fuiBtnSuccess, $fuiBtnSuccess),
     #000,
     $fuiSizeXS,
-    $fuiSizeM,
-    7px
+    $fuiSizeS,
+    $s
   );
 }
 .btn-fui-danger-s {
@@ -24,8 +28,8 @@
     var(--fuiBtnDanger, $fuiBtnDanger),
     var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
-    $fuiSizeM,
-    7px
+    $fuiSizeS,
+    $s
   );
 }
 .btn-fui-warning-s {
@@ -33,8 +37,8 @@
     var(--fuiBtnWarning, $fuiBtnWarning),
     #000,
     $fuiSizeXS,
-    $fuiSizeM,
-    7px
+    $fuiSizeS,
+    $s
   );
 }
 .btn-fui-text-s {
@@ -42,8 +46,8 @@
     var(--fuiBtnText, $fuiBtnText),
     var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
-    $fuiSizeM,
-    7px
+    $fuiSizeS,
+    $s
   );
 }
 .btn-fui-accent-s {
@@ -51,8 +55,8 @@
     var(--fuiBtnAccent, $fuiBtnAccent),
     #000,
     $fuiSizeXS,
-    $fuiSizeM,
-    7px
+    $fuiSizeS,
+    $s
   );
 }
 .btn-fui-disabled-s {
@@ -60,8 +64,8 @@
     var(--fuiBtnDisabled, $fuiBtnDisabled),
     var(--fuiBtnDisabledText, $fuiBtnDisabledText),
     $fuiSizeXS,
-    $fuiSizeM,
-    7px
+    $fuiSizeS,
+    $s
   );
   &:disabled,
   :hover {
@@ -78,8 +82,8 @@
     var(--fuiBtnPrimary, $fuiBtnPrimary),
     var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
-    $fuiSizeM + 3,
-    8px
+    $fuiSizeM,
+    $m
   );
 }
 .btn-fui-success-m {
@@ -87,8 +91,8 @@
     var(--fuiBtnSuccess, $fuiBtnSuccess),
     #000,
     $fuiSizeXS,
-    $fuiSizeM + 3,
-    8px
+    $fuiSizeM,
+    $m
   );
 }
 .btn-fui-danger-m {
@@ -96,8 +100,8 @@
     var(--fuiBtnDanger, $fuiBtnDanger),
     var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
-    $fuiSizeM + 3,
-    8px
+    $fuiSizeM,
+    $m
   );
 }
 .btn-fui-warning-m {
@@ -105,8 +109,8 @@
     var(--fuiBtnWarning, $fuiBtnWarning),
     #000,
     $fuiSizeXS,
-    $fuiSizeM + 3,
-    8px
+    $fuiSizeM,
+    $m
   );
 }
 .btn-fui-text-m {
@@ -114,8 +118,8 @@
     var(--fuiBtnText, $fuiBtnText),
     var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
-    $fuiSizeM + 3,
-    8px
+    $fuiSizeM,
+    $m
   );
 }
 .btn-fui-accent-m {
@@ -123,8 +127,8 @@
     var(--fuiBtnAccent, $fuiBtnAccent),
     #000,
     $fuiSizeXS,
-    $fuiSizeM + 3,
-    8px
+    $fuiSizeM,
+    $m
   );
 }
 .btn-fui-disabled-m {
@@ -132,8 +136,8 @@
     var(--fuiBtnDisabled, $fuiBtnDisabled),
     var(--fuiBtnDisabledText, $fuiBtnDisabledText),
     $fuiSizeXS,
-    $fuiSizeM + 3,
-    8px
+    $fuiSizeM,
+    $m
   );
   &:disabled,
   :hover {
@@ -150,8 +154,8 @@
     var(--fuiBtnPrimary, $fuiBtnPrimary),
     var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
-    $fuiSizeM + 6,
-    9px
+    $fuiSizeL,
+    $l
   );
 }
 .btn-fui-success-l {
@@ -159,8 +163,8 @@
     var(--fuiBtnSuccess, $fuiBtnSuccess),
     #000,
     $fuiSizeXS,
-    $fuiSizeM + 6,
-    9px
+    $fuiSizeL,
+    $l
   );
 }
 .btn-fui-danger-l {
@@ -168,8 +172,8 @@
     var(--fuiBtnDanger, $fuiBtnDanger),
     var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
-    $fuiSizeM + 6,
-    9px
+    $fuiSizeL,
+    $l
   );
 }
 .btn-fui-warning-l {
@@ -177,8 +181,8 @@
     var(--fuiBtnWarning, $fuiBtnWarning),
     #000,
     $fuiSizeXS,
-    $fuiSizeM + 6,
-    9px
+    $fuiSizeL,
+    $l
   );
 }
 .btn-fui-text-l {
@@ -186,8 +190,8 @@
     var(--fuiBtnText, $fuiBtnText),
     var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
-    $fuiSizeM + 6,
-    9px
+    $fuiSizeL,
+    $l
   );
 }
 .btn-fui-accent-l {
@@ -195,8 +199,8 @@
     var(--fuiBtnAccent, $fuiBtnAccent),
     #000,
     $fuiSizeXS,
-    $fuiSizeM + 6,
-    9px
+    $fuiSizeL,
+    $l
   );
 }
 .btn-fui-disabled-l {
@@ -204,8 +208,8 @@
     var(--fuiBtnDisabled, $fuiBtnDisabled),
     var(--fuiBtnDisabledText, $fuiBtnDisabledText),
     $fuiSizeXS,
-    $fuiSizeM + 6,
-    9px
+    $fuiSizeL,
+    $l
   );
   &:disabled,
   :hover {
@@ -223,7 +227,7 @@
     var(--fuiBtnPrimaryText, $fuiBtnPrimaryText),
     $fuiSizeXS,
     $fuiSizeM,
-    7px
+    $s
   );
 }
 .btn-fui-secondary-success-s {
@@ -231,8 +235,8 @@
     var(--fuiSuccessSecondary, $fuiSuccessSecondary),
     var(--fuiBtnSuccessText, $fuiBtnSuccessText),
     $fuiSizeXS,
-    $fuiSizeM,
-    7px
+    $fuiSizeS,
+    $s
   );
 }
 .btn-fui-secondary-danger-s {
@@ -240,8 +244,8 @@
     var(--fuiDangerSecondary, $fuiDangerSecondary),
     var(--fuiBtnDangerText, $fuiBtnDangerText),
     $fuiSizeXS,
-    $fuiSizeM,
-    7px
+    $fuiSizeS,
+    $s
   );
 }
 .btn-fui-secondary-warning-s {
@@ -249,8 +253,8 @@
     var(--fuiWarningSecondary, $fuiWarningSecondary),
     var(--fuiBtnWarningText, $fuiBtnWarningText),
     $fuiSizeXS,
-    $fuiSizeM,
-    7px
+    $fuiSizeS,
+    $s
   );
 }
 .btn-fui-secondary-text-s {
@@ -258,8 +262,8 @@
     var(--fuiTextSecondary, $fuiTextSecondary),
     var(--fuiBtnTextText, $fuiBtnTextText),
     $fuiSizeXS,
-    $fuiSizeM,
-    7px
+    $fuiSizeS,
+    $s
   );
 }
 .btn-fui-secondary-accent-s {
@@ -267,8 +271,8 @@
     var(--fuiAccentSecondary, $fuiAccentSecondary),
     var(--fuiBtnAccentText, $fuiBtnAccentText),
     $fuiSizeXS,
-    $fuiSizeM,
-    7px
+    $fuiSizeS,
+    $s
   );
 }
 .btn-fui-secondary-disabled-s {
@@ -276,8 +280,8 @@
     var(--fuiDisabledSecondary, $fuiDisabledSecondary),
     var(--fuiBtnDisabledText, $fuiBtnDisabledText),
     $fuiSizeXS,
-    $fuiSizeM,
-    7px
+    $fuiSizeS,
+    $s
   );
   &:disabled {
     @include effectBtnIcon(transform 0.3s ease, none, not-allowed, none);
@@ -296,8 +300,8 @@
     var(--fuiPrimarySecondary, $fuiPrimarySecondary),
     var(--fuiBtnPrimaryText, $fuiBtnPrimaryText),
     $fuiSizeXS,
-    $fuiSizeM + 3,
-    8px
+    $fuiSizeM,
+    $m
   );
 }
 .btn-fui-secondary-success-m {
@@ -305,8 +309,8 @@
     var(--fuiSuccessSecondary, $fuiSuccessSecondary),
     var(--fuiBtnSuccessText, $fuiBtnSuccessText),
     $fuiSizeXS,
-    $fuiSizeM + 3,
-    8px
+    $fuiSizeM,
+    $m
   );
 }
 .btn-fui-secondary-danger-m {
@@ -314,8 +318,8 @@
     var(--fuiDangerSecondary, $fuiDangerSecondary),
     var(--fuiBtnDangerText, $fuiBtnDangerText),
     $fuiSizeXS,
-    $fuiSizeM + 3,
-    8px
+    $fuiSizeM,
+    $m
   );
 }
 .btn-fui-secondary-warning-m {
@@ -323,8 +327,8 @@
     var(--fuiWarningSecondary, $fuiWarningSecondary),
     var(--fuiBtnWarningText, $fuiBtnWarningText),
     $fuiSizeXS,
-    $fuiSizeM + 3,
-    8px
+    $fuiSizeM,
+    $m
   );
 }
 .btn-fui-secondary-text-m {
@@ -332,8 +336,8 @@
     var(--fuiTextSecondary, $fuiTextSecondary),
     var(--fuiBtnTextText, $fuiBtnTextText),
     $fuiSizeXS,
-    $fuiSizeM + 3,
-    8px
+    $fuiSizeM,
+    $m
   );
 }
 .btn-fui-secondary-accent-m {
@@ -341,8 +345,8 @@
     var(--fuiAccentSecondary, $fuiAccentSecondary),
     var(--fuiBtnAccentText, $fuiBtnAccentText),
     $fuiSizeXS,
-    $fuiSizeM + 3,
-    8px
+    $fuiSizeM,
+    $m
   );
 }
 .btn-fui-secondary-disabled-m {
@@ -350,8 +354,8 @@
     var(--fuiDisabledSecondary, $fuiDisabledSecondary),
     var(--fuiBtnDisabledText, $fuiBtnDisabledText),
     $fuiSizeXS,
-    $fuiSizeM + 3,
-    8px
+    $fuiSizeM,
+    $m
   );
   &:disabled {
     @include effectBtnIcon(transform 0.3s ease, none, not-allowed, none);
@@ -370,8 +374,8 @@
     var(--fuiPrimarySecondary, $fuiPrimarySecondary),
     var(--fuiBtnPrimaryText, $fuiBtnPrimaryText),
     $fuiSizeXS,
-    $fuiSizeM + 6,
-    9px
+    $fuiSizeL,
+    $l
   );
 }
 .btn-fui-secondary-success-l {
@@ -379,8 +383,8 @@
     var(--fuiSuccessSecondary, $fuiSuccessSecondary),
     var(--fuiBtnSuccessText, $fuiBtnSuccessText),
     $fuiSizeXS,
-    $fuiSizeM + 6,
-    9px
+    $fuiSizeL,
+    $l
   );
 }
 .btn-fui-secondary-danger-l {
@@ -388,8 +392,8 @@
     var(--fuiDangerSecondary, $fuiDangerSecondary),
     var(--fuiBtnDangerText, $fuiBtnDangerText),
     $fuiSizeXS,
-    $fuiSizeM + 6,
-    9px
+    $fuiSizeL,
+    $l
   );
 }
 .btn-fui-secondary-warning-l {
@@ -397,8 +401,8 @@
     var(--fuiWarningSecondary, $fuiWarningSecondary),
     var(--fuiBtnWarningText, $fuiBtnWarningText),
     $fuiSizeXS,
-    $fuiSizeM + 6,
-    9px
+    $fuiSizeL,
+    $l
   );
 }
 .btn-fui-secondary-text-l {
@@ -406,8 +410,8 @@
     var(--fuiTextSecondary, $fuiTextSecondary),
     var(--fuiBtnTextText, $fuiBtnTextText),
     $fuiSizeXS,
-    $fuiSizeM + 6,
-    9px
+    $fuiSizeL,
+    $l
   );
 }
 .btn-fui-secondary-accent-l {
@@ -415,8 +419,8 @@
     var(--fuiAccentSecondary, $fuiAccentSecondary),
     var(--fuiBtnAccentText, $fuiBtnAccentText),
     $fuiSizeXS,
-    $fuiSizeM + 6,
-    9px
+    $fuiSizeL,
+    $l
   );
 }
 .btn-fui-secondary-disabled-l {
@@ -424,8 +428,8 @@
     var(--fuiDisabledSecondary, $fuiDisabledSecondary),
     var(--fuiBtnDisabledText, $fuiBtnDisabledText),
     $fuiSizeXS,
-    $fuiSizeM + 6,
-    9px
+    $fuiSizeL,
+    $l
   );
   &:disabled {
     @include effectBtnIcon(transform 0.3s ease, none, not-allowed, none);
@@ -441,19 +445,25 @@
 /* Add On */
 .mr {
   margin-right: 6px;
+  margin-left: 6px;
 }
 .ml {
+  margin-right: 6px;
   margin-left: 6px;
 }
 
 a {
   width: fit-content;
   text-decoration: none;
+  margin: 0px 6px;
   &:disabled {
     text-decoration: underline;
   }
-  &:hover {
-    text-decoration: underline;
+  &.icon-left {
+    margin: 0px 6px 0px 0px;
+  }
+  &.icon-right {
+    margin: 0px 0px 0px 6px;
   }
 }
 
@@ -463,4 +473,32 @@ a {
 }
 a {
   text-wrap: nowrap;
+}
+
+.shadow {
+  box-shadow: 0px 2px 3px -1px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+  &-s {
+    margin: 0px ($s / 2);
+  }
+  &-m {
+    margin: 0px ($m / 2);
+  }
+  &-l {
+    margin: 0px ($l / 2);
+  }
+}
+
+.btn-icon-only {
+  &-s {
+    width: $fuiSizeS + 23;
+  }
+  &-m {
+    width: $fuiSizeM + 23;
+  }
+  &-l {
+    width: $fuiSizeL + 23;
+  }
 }

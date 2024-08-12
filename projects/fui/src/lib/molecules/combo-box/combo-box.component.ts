@@ -55,6 +55,7 @@ export class ComboBoxComponent {
   @Input() comboxForm: FormControl = new FormControl('');
   @Input() leftIcon: Icon | null = null;
   @Input() invalid: boolean = false;
+  @Input() disabled: boolean = false;
   @Input() message: string = 'This is required!';
   @Input() position: 'left' | 'right' | 'top' | 'bottom' = 'bottom';
   @Output() selection: EventEmitter<any> = new EventEmitter();
