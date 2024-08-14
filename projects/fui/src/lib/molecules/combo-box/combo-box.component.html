@@ -20,18 +20,27 @@
           [size]="'size' + size"
         ></fui-icons>
         <div class="wrap-badge" center *ngIf="!singleSelection">
+          <p
+            class="placeholder-txt"
+            *ngIf="
+              selectedValue.length === 0 &&
+              !openSelector &&
+              comboxForm.value.length === 0
+            "
+          >
+            {{ placeholder }}
+          </p>
           <span
             class="badge"
             [ngStyle]="{
-              'font-size':
-                size === 's' ? '9px' : size === 'm' ? '11px' : '13px'
+              'font-size': size === 's' ? '9px' : size === 'm' ? '11px' : '13px'
             }"
             *ngFor="let data of selectedValue"
           >
             {{ data.name }}
-           <div style="margin-left: 5px;" (click)="toggleSelection(data)">
-            x
-           </div>
+            <div style="margin-left: 5px" (click)="toggleSelection(data)">
+              x
+            </div>
           </span>
           <span class="badge-input">
             <input
@@ -45,7 +54,10 @@
               }"
               type="text"
               [formControl]="comboxForm"
+              (click)="toggleOpenSelectorFocus()"
               (focus)="toggleOpenSelectorFocus()"
+              (change)="toggleOpenSelectorFocus()"
+              (blur)="openSelector = false"
               #comboxInput
             />
           </span>

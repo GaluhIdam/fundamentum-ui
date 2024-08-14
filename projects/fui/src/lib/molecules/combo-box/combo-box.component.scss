@@ -131,10 +131,12 @@
 }
 
 .wrap-badge {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
   width: 100%;
+  overflow: hidden;
 }
 .badge {
   text-wrap: nowrap;
@@ -160,12 +162,21 @@
   height: fit-content;
   border-radius: 3px;
   input {
-    // position: absolute;
-
     border: none;
     outline: none;
     background-color: transparent;
   }
+}
+
+.placeholder-txt {
+  position: absolute;
+  text-wrap: nowrap;
+  margin: 0;
+  color: var(--fuiColorDarkShade, $fuiColorDarkShade);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 fui-input-field {
