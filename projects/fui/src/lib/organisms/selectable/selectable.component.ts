@@ -63,9 +63,6 @@ export class SelectableComponent {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['singleSelection'] || changes['allowExclusions']) {
-      this.options.forEach((opt) => {
-        opt.onCheck = undefined;
-      });
       this.data = [];
     }
     if (changes['options']) {

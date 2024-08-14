@@ -8,10 +8,10 @@
     underline ? 'underline' : '',
     rounded ? 'rounded' : ''
   ]"
+  (click)="iconForClose === true ? closeClicked() : handleClicked()"
 >
   @if (isBadgeIcon && icon) {
   <fui-icons
-    (click)="icon === 'cross' ? closeClicked() : handleClicked()"
     [icon]="icon"
     [size]="sizeIcon"
     [ngClass]="['badge-icon', size + '-badge-icon']"

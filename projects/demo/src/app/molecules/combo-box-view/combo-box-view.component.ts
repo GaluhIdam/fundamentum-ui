@@ -13,13 +13,17 @@ export class ComboBoxViewComponent {
   searchMatter: FormControl = new FormControl('', Validators.required);
   selectedValue: { name: string; value: any }[] = [
     {
-      name: 'BMW',
+      name: 'Bmw',
       value: 'BMW-v',
     },
+    {
+      name: 'Toyota',
+      value: 'Toyota-v',
+    }
   ];
   optionValue: { name: string; value: any }[] = [
     {
-      name: 'BMW',
+      name: 'Bmw',
       value: 'BMW-v',
     },
     {

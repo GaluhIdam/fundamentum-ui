@@ -37,7 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class SelectableViewComponent {
   singleSelection: boolean = false;
-  allowExclusions: boolean = true;
+  allowExclusions: boolean = false;
   filterOptions: boolean = true;
   options: SelectableDTO[] = [];
 
@@ -86,8 +86,7 @@ export class SelectableViewComponent {
                   price: item.price,
                   rate: item.rating,
                 },
-                description: item.description,
-                onCheck: undefined,
+                onCheck: 'on',
               };
               reconData.push(dto);
             });

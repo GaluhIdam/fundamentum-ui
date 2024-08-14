@@ -33,7 +33,10 @@
     border-bottom-color: var(--fuiColorLightShade, $fuiColorLightShade);
     border-bottom-width: 1px;
     display: flex;
-    padding: 10px 15px 10px 15px;
+    padding: 5px 15px 5px 15px;
+    &:last-child {
+      border-bottom-width: 0px;
+    }
     .flex {
       display: grid;
     }

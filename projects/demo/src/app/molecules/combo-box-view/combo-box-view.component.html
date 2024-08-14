@@ -7,25 +7,68 @@
   component to use, see FUI's in-depth guide to selection components(opens in a
   new tab or window) for more information.
 </p>
-<fui-combo-box
-  [comboxForm]="searchMatter"
-  [size]="'l'"
-  [singleSelection]="false"
-  [optionValue]="optionValue"
-  [selectedValue]="selectedValue"
->
-</fui-combo-box>
-<br>
-<fui-combo-box
-  [invalid]="
-    searchMatter.invalid && (searchMatter.dirty || searchMatter.touched)
-  "
-  [size]="'l'"
-  [comboxForm]="searchMatter"
-  [singleSelection]="true"
-  [optionValue]="optionValue"
-  [selectedValue]="[]"
->
-</fui-combo-box>
-
-<p (click)="test()">Console</p>
+<div class="flex">
+  <div>
+    <p>S</p>
+    <fui-combo-box
+      [leftIcon]="'search'"
+      [comboxForm]="searchMatter"
+      [size]="'s'"
+      [singleSelection]="false"
+      [optionValue]="optionValue"
+      [selectedValue]="selectedValue"
+    />
+    <p>M</p>
+    <fui-combo-box
+      [comboxForm]="searchMatter"
+      [size]="'m'"
+      [singleSelection]="false"
+      [optionValue]="optionValue"
+      [selectedValue]="selectedValue"
+    />
+    <p>L</p>
+    <fui-combo-box
+      [comboxForm]="searchMatter"
+      [size]="'l'"
+      [singleSelection]="false"
+      [optionValue]="optionValue"
+      [selectedValue]="selectedValue"
+    />
+  </div>
+  <div>
+    <p>S</p>
+    <fui-combo-box
+      [leftIcon]="'search'"
+      [invalid]="
+        searchMatter.invalid && (searchMatter.dirty || searchMatter.touched)
+      "
+      [size]="'s'"
+      [comboxForm]="searchMatter"
+      [singleSelection]="true"
+      [optionValue]="optionValue"
+      [selectedValue]="[]"
+    />
+    <p>M</p>
+    <fui-combo-box
+      [invalid]="
+        searchMatter.invalid && (searchMatter.dirty || searchMatter.touched)
+      "
+      [size]="'m'"
+      [comboxForm]="searchMatter"
+      [singleSelection]="true"
+      [optionValue]="optionValue"
+      [selectedValue]="[]"
+    />
+    <p>L</p>
+    <fui-combo-box
+      [invalid]="
+        searchMatter.invalid && (searchMatter.dirty || searchMatter.touched)
+      "
+      [size]="'l'"
+      [comboxForm]="searchMatter"
+      [singleSelection]="true"
+      [optionValue]="optionValue"
+      [selectedValue]="[]"
+    />
+  </div>
+</div>

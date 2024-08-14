@@ -71,10 +71,10 @@
   font-family: $fuiFontFamily;
   outline: none;
   display: grid;
-  height: 150px;
+  height: fit-content;
+  max-height: 150px;
   margin-top: 6px;
   width: 250px;
-  border-radius: 6px;
 }
 .fui-multi-select.mini {
   width: 250px;
@@ -82,9 +82,9 @@
   z-index: 6;
   font-family: $fuiFontFamily;
   outline: none;
-  height: 150px;
+  height: fit-content;
+  max-height: 150px;
   margin-top: 6px;
-  border-radius: 6px;
 }
 
 .fui-multi-select::-webkit-scrollbar {
@@ -114,7 +114,10 @@
   height: fit-content;
   padding: 7px;
   font-size: small;
-  border-bottom: 1px solid var(--fuiColorMediumShade, $fuiColorMediumShade);
+  border-bottom: 1px solid var(--fuiColorLightShade, $fuiColorLightShade);
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 .fui-option-select:checked {
@@ -127,17 +130,53 @@
   color: var(--fuiColorInk, $fuiColorInk);
 }
 
-.badge {
-  margin: 5px;
-  text-wrap: nowrap;
+.wrap-badge {
   display: flex;
-  font-size: small;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 100%;
+}
+.badge {
+  text-wrap: nowrap;
+  flex-wrap: wrap;
+  display: flex;
+  width: fit-content;
   background-color: var(--fuiColorLightShade, $fuiColorLightShade);
-  padding: 3px 5px;
+  padding: 2px 5px;
   height: fit-content;
   border-radius: 3px;
+  &:hover {
+    cursor: pointer;
+  }
   fui-icons {
     margin-left: 5px;
+  }
+}
+.badge-input {
+  text-wrap: nowrap;
+  margin-left: 5px;
+  flex-wrap: wrap;
+  display: flex;
+  height: fit-content;
+  border-radius: 3px;
+  input {
+    // position: absolute;
+
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+}
+
+fui-input-field {
+  &:hover {
+    cursor: text;
+  }
+}
+
+fui-icons {
+  &:hover {
+    cursor: pointer;
   }
 }
 

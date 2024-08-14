@@ -35,6 +35,7 @@ export class BadgeComponent {
   @Input() icon!: Icon;
   @Input() underline: boolean = false;
   @Input() rounded: boolean = false;
+  @Input() iconForClose: boolean = false;
   @Output() onClickBadge: EventEmitter<void> = new EventEmitter();
 
   closeClicked() {

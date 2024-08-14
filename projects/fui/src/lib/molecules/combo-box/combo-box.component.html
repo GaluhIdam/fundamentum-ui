@@ -1,14 +1,17 @@
 <div class="fui-flex-combox-parent">
-  <fui-popover [position]="position">
+  <fui-popover [position]="position" *ngIf="!singleSelection">
     <fui-form-control-layout>
       <fui-input-field
+        (click)="focusInput()"
+        [showInput]="false"
         [disabled]="disabled"
-        (onFocus)="toggleOpenSelectorFocus()"
-        [type]="'text'"
         [formControlField]="comboxForm"
+        [type]="'text'"
+        (onFocus)="focusInput()"
         [placeholder]="placeholder"
         [size]="size"
         [invalid]="invalid"
+        [active]="openSelector"
       >
         <fui-icons
           *ngIf="leftIcon"
@@ -16,13 +19,34 @@
           [icon]="leftIcon"
           [size]="'size' + size"
         ></fui-icons>
-        <div left-icon *ngIf="!singleSelection">
-          <span class="badge" *ngFor="let data of selectedValue">
+        <div class="wrap-badge" center *ngIf="!singleSelection">
+          <span
+            class="badge"
+            [ngStyle]="{
+              'font-size':
+                size === 's' ? '9px' : size === 'm' ? '11px' : '13px'
+            }"
+            *ngFor="let data of selectedValue"
+          >
             {{ data.name }}
-            <fui-icons
-              (click)="toggleSelection(data)"
-              [icon]="'cross'"
-              [size]="'sizexs'"
+           <div style="margin-left: 5px;" (click)="toggleSelection(data)">
+            x
+           </div>
+          </span>
+          <span class="badge-input">
+            <input
+              [ngStyle]="{
+                width:
+                  comboxForm.value.length > 0
+                    ? comboxForm.value.length * 10 + 'px'
+                    : '10px',
+                'font-size':
+                  size === 's' ? '11px' : size === 'm' ? '13px' : '16px'
+              }"
+              type="text"
+              [formControl]="comboxForm"
+              (focus)="toggleOpenSelectorFocus()"
+              #comboxInput
             />
           </span>
         </div>
@@ -60,19 +84,91 @@
         class="fui-multi-select {{ selectedValue.length <= 4 ? 'mini' : '' }}"
       >
         @for(item of optionValue; track $index; let last = $last;) {
-        <div>
-          <div
-            class="fui-option-select {{
-              isSelected(item) ? 'option-selected' : ''
-            }}"
-            *ngIf="
-              item.name.toLowerCase().includes(comboxForm.value!.toLowerCase())
-            "
-            [value]="item.value"
-            (click)="toggleSelection(item)"
-          >
-            {{ item.name }}
-          </div>
+        <div
+          class="fui-option-select {{
+            isSelected(item) ? 'option-selected' : ''
+          }}"
+          *ngIf="
+            item.name.toLowerCase().includes(comboxForm.value!.toLowerCase())
+          "
+          [value]="item.value"
+          (click)="toggleSelection(item)"
+        >
+          {{ item.name }}
+        </div>
+        }
+        <p
+          style="text-align: center; font-size: small; margin-top: 10px"
+          *ngIf="optionValue.length === 0"
+        >
+          Option is not available!
+        </p>
+      </div>
+    </div>
+  </fui-popover>
+
+  <fui-popover *ngIf="singleSelection">
+    <fui-form-control-layout>
+      <fui-input-field
+        [disabled]="disabled"
+        [type]="'text'"
+        (onFocus)="toggleOpenSelector()"
+        [placeholder]="placeholder"
+        [formControlField]="comboxForm"
+        [size]="size"
+        [invalid]="invalid"
+      >
+        <fui-icons
+          *ngIf="leftIcon"
+          left-icon
+          [icon]="leftIcon"
+          [size]="'size' + size"
+        ></fui-icons>
+        <fui-icons
+          style="margin-right: 8px"
+          *ngIf="invalid"
+          right-icon
+          [label]="'right'"
+          [icon]="'alert'"
+          [size]="'size' + size"
+          [color]="'danger'"
+        />
+        <fui-icons
+          style="margin-right: 8px"
+          right-icon
+          *ngIf="selectedValue.length > 0"
+          (click)="toggleClearData()"
+          [icon]="'cross'"
+          [size]="'sizexs'"
+        ></fui-icons>
+        <fui-icons
+          right-icon
+          (click)="toggleOpenSelector()"
+          class="fui-icon-combox"
+          [icon]="'arrowDown'"
+          [size]="'size' + size"
+        ></fui-icons>
+      </fui-input-field>
+      <fui-validator-field validator [message]="message" />
+    </fui-form-control-layout>
+    <div popover-body>
+      <div
+        *ngIf="openSelector"
+        [attr.multiple]="!singleSelection"
+        class="fui-multi-select {{ selectedValue.length <= 4 ? 'mini' : '' }}"
+      >
+        @for(item of optionValue; track $index; let last = $last;) {
+        <div
+          class="fui-option-select {{
+            isSelected(item) ? 'option-selected' : ''
+          }}"
+          *ngIf="
+            item.name.toLowerCase().includes(comboxForm.value!.toLowerCase())
+          "
+          [value]="item.value"
+          (click)="toggleSelection(item)"
+        >
+          {{ item.name }}
         </div>
         }
         <p

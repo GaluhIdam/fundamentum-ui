@@ -60,6 +60,8 @@ export class ComboBoxComponent {
   @Input() position: 'left' | 'right' | 'top' | 'bottom' = 'bottom';
   @Output() selection: EventEmitter<any> = new EventEmitter();
 
+  @ViewChild('comboxInput', { static: false }) comboxInput!: ElementRef;
+
   /**
    * @ignore
    */
@@ -117,6 +119,7 @@ export class ComboBoxComponent {
       } else {
         this.selectedValue.push(item);
       }
+      this.comboxForm.setValue('');
     }
     this.selectedValues = this.selectedValue.map((item) => item.value);
     this.searchTerm = '';
@@ -201,5 +204,10 @@ export class ComboBoxComponent {
     return this.selectedValue.some(
       (selectedItem) => selectedItem.value === item.value
     );
+  }
+
+  focusInput(): void {
+    this.comboxInput.nativeElement.focus();
+    this.openSelector = true;
   }
 }

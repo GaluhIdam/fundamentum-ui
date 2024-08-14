@@ -32,10 +32,11 @@ export class InputFieldComponent {
   @Input() placeholder: string = 'Please type here...';
   @Input() formControlField: FormControl = new FormControl('');
   @Input() borderRadius: string[] = ['4px', '4px', '4px', '4px'];
+  @Input() showInput: boolean = true;
   @Input() disabled: boolean = false;
   iconLeft: boolean = false;
   iconRight: boolean = false;
-  active: boolean = false;
+  @Input() active: boolean = false;
   @ContentChildren(IconsComponent) iconComponents!: QueryList<IconsComponent>;
   @Output() onFocus: EventEmitter<any> = new EventEmitter<any>();
   @Output() onBlur: EventEmitter<any> = new EventEmitter<any>();
