@@ -9,7 +9,7 @@
     min-width: 100px;
     max-width: map-get($map: $fuiBreakpoints, $key: 'm');
     width: fit-content;
-    border-radius: 20px;
+    border-radius: 6px;
     @include fuiBottomShadowLarge();
 
     display: flex;
