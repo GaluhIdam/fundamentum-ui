@@ -6,23 +6,17 @@
 }
 .page-sidebar {
   background: var(--fuiColorLightestShade, color.$fuiColorLightestShade);
-  height: 100%;
-  overflow-y: auto;
+  height: 100vh;
   max-width: 240px;
 }
 
-@media (max-width: 950px) {
-  .page-sidebar {
-    height: -webkit-fill-available;
-  }
-}
 .docked {
   position: static;
   box-shadow: inset -2px 0 8px -2px rgba(0, 0, 0, 0.5);
 }
 
 .undocked {
-  position: absolute;
+  position: fixed;
   box-shadow: 2px 0 8px 0 rgba(0, 0, 0, 0.5);
 }
 

@@ -14,12 +14,11 @@
   }
 
   &-content {
-    height: 100vh;
+    height: -webkit-fill-available;
     background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
     min-width: 350px;
     width: fit-content;
-    box-shadow: 0 2.7px 9px rgba(#000, 0.13),
-      0 9.4px 24px rgba(#000, 0.09),
+    box-shadow: 0 2.7px 9px rgba(#000, 0.13), 0 9.4px 24px rgba(#000, 0.09),
       0 21.8px 43px rgba(#000, 0.08);
 
     display: flex;

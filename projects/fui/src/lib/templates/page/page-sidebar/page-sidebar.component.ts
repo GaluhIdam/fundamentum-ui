@@ -3,11 +3,8 @@ import {
   Component,
   ElementRef,
   EventEmitter,
-  HostListener,
-  Inject,
   Input,
   Output,
-  Renderer2,
 } from '@angular/core';
 
 /**
@@ -39,13 +36,6 @@ export class PageSidebarComponent {
   constructor(private elRef: ElementRef) {}
 
   ngAfterViewInit(): void {
-    this.logWindowWidth(
-      this.elRef.nativeElement.ownerDocument.body.clientWidth
-    );
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event): void {
     this.logWindowWidth(
       this.elRef.nativeElement.ownerDocument.body.clientWidth
     );
