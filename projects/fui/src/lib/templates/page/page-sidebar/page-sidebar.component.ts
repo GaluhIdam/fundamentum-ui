@@ -31,7 +31,6 @@ export class PageSidebarComponent {
   @Input() width: number = 248;
   @Input() height: number = 0;
   @Output() showEvent: EventEmitter<any> = new EventEmitter();
-  @Input() zIndex: number = 1;
 
   constructor(private elRef: ElementRef) {}
 
