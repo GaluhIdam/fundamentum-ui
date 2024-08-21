@@ -76,7 +76,11 @@ export class ComboBoxComponent {
   constructor(private elementRef: ElementRef) {}
 
   ngOnInit(): void {
-    if (this.selectedValue.length === 1 && this.singleSelection === true) {
+    if (
+      this.selectedValue &&
+      this.selectedValue.length > 1 &&
+      this.singleSelection === true
+    ) {
       this.comboxForm.setValue(this.selectedValue[0].name);
     }
   }

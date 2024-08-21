@@ -20,13 +20,14 @@ import {
   ButtonIconComponent,
   SitewideSearchComponent,
   SitewideDTO,
+  PopoverComponent,
+  ThemeService
 } from 'fui';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { routes } from '../app.routes';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { debounceTime, Subscription } from 'rxjs';
-import { PopoverComponent, ThemeService } from 'fui';
 
 @Component({
   selector: 'app-layout',

@@ -36,7 +36,7 @@
           <span class="version">v0.0.1</span>
         </div>
       </div>
-      <div style="display: flex; align-items: center;">
+      <div style="display: flex; align-items: center">
         <fui-popover [position]="'bottom'">
           <fui-button-icon
             [type]="'button'"
@@ -108,145 +108,147 @@
   </fui-header>
 
   <fui-page-sidebar [show]="isSidebar" (showEvent)="showEvent($event)">
-    <div class="container">
-      <div style="display: flex; align-items: baseline">
-        <fui-icons
-          style="margin-right: 5px"
-          [icon]="'documents'"
-          [size]="'sizem'"
-          [color]="'ink'"
-        />
-        <h1 class="title-link">Guidelines</h1>
+    <div class="overflow">
+      <div class="container">
+        <div style="display: flex; align-items: baseline">
+          <fui-icons
+            style="margin-right: 5px"
+            [icon]="'documents'"
+            [size]="'sizem'"
+            [color]="'ink'"
+          />
+          <h1 class="title-link">Guidelines</h1>
+        </div>
+        <fui-link
+          class="nav-item"
+          [typeLink]="'coloring'"
+          [urlLink]="'getting-started'"
+          >Getting Started</fui-link
+        >
+        <fui-link
+          class="nav-item"
+          [typeLink]="'external'"
+          [urlLink]="'http://localhost:8080'"
+          >Documentation</fui-link
+        >
       </div>
-      <fui-link
-        class="nav-item"
-        [typeLink]="'coloring'"
-        [urlLink]="'getting-started'"
-        >Getting Started</fui-link
-      >
-      <fui-link
-        class="nav-item"
-        [typeLink]="'external'"
-        [urlLink]="'http://localhost:8080'"
-        >Documentation</fui-link
-      >
-    </div>
 
-    <div class="container">
-      <div *ngFor="let link of router">
-        <div *ngIf="link.path === 'atoms'">
-          <div style="display: flex; align-items: baseline">
-            <fui-icons
-              style="margin-right: 5px"
-              [icon]="'arrowRight'"
-              [size]="'sizem'"
-              [color]="'ink'"
-            />
-            <h1 class="title-link">Atoms</h1>
+      <div class="container">
+        <div *ngFor="let link of router">
+          <div *ngIf="link.path === 'atoms'">
+            <div style="display: flex; align-items: baseline">
+              <fui-icons
+                style="margin-right: 5px"
+                [icon]="'arrowRight'"
+                [size]="'sizem'"
+                [color]="'ink'"
+              />
+              <h1 class="title-link">Atoms</h1>
+            </div>
+            <fui-link
+              class="nav-item"
+              *ngFor="let navitem of link.children"
+              [typeLink]="'coloring'"
+              [urlLink]="'atoms/' + navitem.path"
+              >{{ navitem.title }}</fui-link
+            >
           </div>
-          <fui-link
-            class="nav-item"
-            *ngFor="let navitem of link.children"
-            [typeLink]="'coloring'"
-            [urlLink]="'atoms/' + navitem.path"
-            >{{ navitem.title }}</fui-link
-          >
         </div>
       </div>
-    </div>
 
-    <div class="container">
-      <div *ngFor="let link of router">
-        <div *ngIf="link.path === 'molecules'">
-          <div style="display: flex; align-items: baseline">
-            <fui-icons
-              style="margin-right: 5px"
-              [icon]="'arrowRight'"
-              [size]="'sizem'"
-              [color]="'ink'"
-            />
-            <h1 class="title-link">Molecules</h1>
+      <div class="container">
+        <div *ngFor="let link of router">
+          <div *ngIf="link.path === 'molecules'">
+            <div style="display: flex; align-items: baseline">
+              <fui-icons
+                style="margin-right: 5px"
+                [icon]="'arrowRight'"
+                [size]="'sizem'"
+                [color]="'ink'"
+              />
+              <h1 class="title-link">Molecules</h1>
+            </div>
+            <fui-link
+              class="nav-item"
+              *ngFor="let navitem of link.children"
+              [typeLink]="'coloring'"
+              [urlLink]="'molecules/' + navitem.path"
+              >{{ navitem.title }}</fui-link
+            >
           </div>
-          <fui-link
-            class="nav-item"
-            *ngFor="let navitem of link.children"
-            [typeLink]="'coloring'"
-            [urlLink]="'molecules/' + navitem.path"
-            >{{ navitem.title }}</fui-link
-          >
         </div>
       </div>
-    </div>
 
-    <div class="container">
-      <div *ngFor="let link of router">
-        <div *ngIf="link.path === 'organisms'">
-          <div style="display: flex; align-items: baseline">
-            <fui-icons
-              style="margin-right: 5px"
-              [icon]="'arrowRight'"
-              [size]="'sizem'"
-              [color]="'ink'"
-            />
-            <h1 class="title-link">Organisms</h1>
+      <div class="container">
+        <div *ngFor="let link of router">
+          <div *ngIf="link.path === 'organisms'">
+            <div style="display: flex; align-items: baseline">
+              <fui-icons
+                style="margin-right: 5px"
+                [icon]="'arrowRight'"
+                [size]="'sizem'"
+                [color]="'ink'"
+              />
+              <h1 class="title-link">Organisms</h1>
+            </div>
+            <fui-link
+              class="nav-item"
+              *ngFor="let navitem of link.children"
+              [typeLink]="'coloring'"
+              [urlLink]="'organisms/' + navitem.path"
+              >{{ navitem.title }}</fui-link
+            >
           </div>
-          <fui-link
-            class="nav-item"
-            *ngFor="let navitem of link.children"
-            [typeLink]="'coloring'"
-            [urlLink]="'organisms/' + navitem.path"
-            >{{ navitem.title }}</fui-link
-          >
         </div>
       </div>
-    </div>
 
-    <div class="container">
-      <div *ngFor="let link of router">
-        <div *ngIf="link.path === 'templates'">
-          <div style="display: flex; align-items: baseline">
-            <fui-icons
-              style="margin-right: 5px"
-              [icon]="'arrowRight'"
-              [size]="'sizem'"
-              [color]="'ink'"
-            />
-            <h1 class="title-link">Templates</h1>
+      <div class="container">
+        <div *ngFor="let link of router">
+          <div *ngIf="link.path === 'templates'">
+            <div style="display: flex; align-items: baseline">
+              <fui-icons
+                style="margin-right: 5px"
+                [icon]="'arrowRight'"
+                [size]="'sizem'"
+                [color]="'ink'"
+              />
+              <h1 class="title-link">Templates</h1>
+            </div>
+            <fui-link
+              class="nav-item"
+              *ngFor="let navitem of link.children"
+              [typeLink]="'coloring'"
+              [urlLink]="'templates/' + navitem.path"
+              >{{ navitem.title }}</fui-link
+            >
           </div>
-          <fui-link
-            class="nav-item"
-            *ngFor="let navitem of link.children"
-            [typeLink]="'coloring'"
-            [urlLink]="'templates/' + navitem.path"
-            >{{ navitem.title }}</fui-link
-          >
         </div>
       </div>
-    </div>
 
-    <div class="container">
-      <div style="display: flex; align-items: baseline">
-        <fui-icons
-          style="margin-right: 5px"
-          [icon]="'lock'"
-          [size]="'sizem'"
-          [color]="'ink'"
-        />
-        <h1 class="title-link">Authenticator</h1>
+      <div class="container">
+        <div style="display: flex; align-items: baseline">
+          <fui-icons
+            style="margin-right: 5px"
+            [icon]="'lock'"
+            [size]="'sizem'"
+            [color]="'ink'"
+          />
+          <h1 class="title-link">Authenticator</h1>
+        </div>
+        <fui-link
+          class="nav-item"
+          [typeLink]="'coloring'"
+          [urlLink]="'oidc-authenticator'"
+          >OIDC Authenticator</fui-link
+        >
+        <fui-link
+          class="nav-item"
+          [typeLink]="'coloring'"
+          [urlLink]="'oidc-authenticator/secure-page'"
+        >
+          Secure Page</fui-link
+        >
       </div>
-      <fui-link
-        class="nav-item"
-        [typeLink]="'coloring'"
-        [urlLink]="'oidc-authenticator'"
-        >OIDC Authenticator</fui-link
-      >
-      <fui-link
-        class="nav-item"
-        [typeLink]="'coloring'"
-        [urlLink]="'oidc-authenticator/secure-page'"
-      >
-        Secure Page</fui-link
-      >
     </div>
   </fui-page-sidebar>
 
