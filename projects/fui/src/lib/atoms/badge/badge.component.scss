@@ -9,7 +9,13 @@ $reducer: 30;
   font-family: $fuiFontFamily;
   font-weight: $fuiFontWeightMedium;
   padding: $paddingTopBottom $paddingLeftRight;
-  width: fit-content;
+
+  &.fit {
+    width: fit-content;
+  }
+  &.full {
+    width: auto;
+  }
 
   display: flex !important;
   align-items: center;
@@ -54,7 +60,7 @@ $reducer: 30;
 .text {
   @include fuiBadge(
     var(--fuiColorLightShade, $fuiColorLightShade),
-    var( #000, #000)
+    var(#000, #000)
   );
 }
 

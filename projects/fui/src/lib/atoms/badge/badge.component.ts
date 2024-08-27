@@ -27,6 +27,7 @@ import { IconsComponent } from '../icons/icons.component';
 })
 export class BadgeComponent {
   isDisplay: boolean = true;
+  @Input() fullWidth: boolean = false;
   @Input({ required: true }) color: Color = 'primary';
   @Input({ required: true }) size: Size = 'sizedefault';
   @Input() sizeIcon: Size = 'sizedefault';

@@ -221,6 +221,15 @@ $l: 9px;
 }
 
 /* Button Secondary S */
+.btn-fui-secondary-ghost-s {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnPrimaryText, $fuiBtnPrimaryText),
+    $fuiSizeXS,
+    $fuiSizeM,
+    0
+  );
+}
 .btn-fui-secondary-primary-s {
   @include buttonIconMix(
     var(--fuiPrimarySecondary, $fuiPrimarySecondary),
@@ -295,6 +304,15 @@ $l: 9px;
 }
 
 /* Button Secondary M */
+.btn-fui-secondary-ghost-m {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnPrimaryText, $fuiBtnPrimaryText),
+    $fuiSizeXS,
+    $fuiSizeM,
+    0
+  );
+}
 .btn-fui-secondary-primary-m {
   @include buttonIconMix(
     var(--fuiPrimarySecondary, $fuiPrimarySecondary),
@@ -369,6 +387,15 @@ $l: 9px;
 }
 
 /* Button Secondary L */
+.btn-fui-secondary-ghost-l {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnPrimaryText, $fuiBtnPrimaryText),
+    $fuiSizeXS,
+    $fuiSizeL,
+    0
+  );
+}
 .btn-fui-secondary-primary-l {
   @include buttonIconMix(
     var(--fuiPrimarySecondary, $fuiPrimarySecondary),
@@ -445,10 +472,8 @@ $l: 9px;
 /* Add On */
 .mr {
   margin-right: 6px;
-  margin-left: 6px;
 }
 .ml {
-  margin-right: 6px;
   margin-left: 6px;
 }
 

@@ -6,7 +6,8 @@
     size,
     iconPosition === 'start' ? 'dismissLeft' : 'dismissRight',
     underline ? 'underline' : '',
-    rounded ? 'rounded' : ''
+    rounded ? 'rounded' : '',
+    fullWidth ? 'full' : 'fit'
   ]"
   (click)="iconForClose === true ? closeClicked() : handleClicked()"
 >
