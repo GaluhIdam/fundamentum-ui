@@ -1,0 +1,40 @@
+@import "../../../styles/index";
+:host {
+  width: -webkit-fill-available;
+}
+
+input {
+  color: var(--fuiColorFullShade, $fuiColorFullShade);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.fui-input-field {
+  @include inputFieldContainer();
+  &.disabled {
+    background-color: var(--fuiColorLightShade, $fuiColorLightShade);
+  }
+}
+.fui-input-field-s {
+  @include textFieldBaseStyles($fuiSizeM, 6px);
+}
+.fui-input-field-m {
+  @include textFieldBaseStyles($fuiSizeM + 3, 8px);
+}
+.fui-input-field-l {
+  @include textFieldBaseStyles($fuiSizeM + 6, 8px);
+}
+
+.full-width {
+  width: -webkit-fill-available;
+}
+.inactive {
+  @include start();
+}
+.default {
+  @include bottomLine(var(--fuiColorPrimary, $fuiColorPrimary));
+}
+.invalid {
+  @include bottomLine(var(--fuiColorDanger, $fuiColorDanger));
+}

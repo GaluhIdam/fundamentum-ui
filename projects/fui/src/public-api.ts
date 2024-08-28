@@ -15,7 +15,6 @@ export * from './lib/atoms/overlay-mask/overlay-mask.component';
 export * from './lib/atoms/progress-base/progress-base.component';
 export * from './lib/atoms/text/text.component';
 export * from './lib/atoms/spacer/spacer.component';
-export * from './lib/atoms/textarea/textarea.component';
 export * from './lib/atoms/text/text.component';
 export * from './lib/atoms/title/title.component';
 export * from './lib/molecules/input-field-text/field-text.component';
@@ -75,6 +74,7 @@ export * from './lib/molecules/form-control-layout/prepend/prepend.component';
 export * from './lib/molecules/form-control-layout/input-field/input-field.component';
 export * from './lib/molecules/form-control-layout/validator-field/validator-field.component';
 export * from './lib/molecules/form-control-layout/select-field/select-field.component';
+export * from './lib/molecules/form-control-layout/textarea/textarea.component';
 /* Pagination */
 export * from './lib/organisms/pagination/pagination.component';
 /* Data Grid */

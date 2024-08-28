@@ -115,6 +115,10 @@
   padding: 7px;
   font-size: small;
   border-bottom: 1px solid var(--fuiColorLightShade, $fuiColorLightShade);
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
   &:last-child {
     border-bottom: none;
   }
@@ -140,7 +144,7 @@
 }
 .badge {
   text-wrap: nowrap;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   display: flex;
   width: fit-content;
   background-color: var(--fuiColorLightShade, $fuiColorLightShade);
@@ -199,4 +203,7 @@ fui-icons {
 }
 .fui-input-field-l {
   @include comboBoxMix($fuiSizeM + 6, 8px);
+}
+.mr-8 {
+  margin-right: 8px;
 }

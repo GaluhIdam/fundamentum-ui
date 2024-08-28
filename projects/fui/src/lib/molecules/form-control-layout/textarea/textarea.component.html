@@ -1,0 +1,54 @@
+<div
+  class="{{
+    disabled ? 'fui-input-field inactive disabled' : 'fui-input-field inactive'
+  }}"
+  [ngStyle]="{
+    'border-top-right-radius': append === true ? 0 : borderRadius[0],
+    'border-bottom-right-radius': append === true ? 0 : borderRadius[1],
+    'border-top-left-radius': prepend === true ? 0 : borderRadius[2],
+    'border-bottom-left-radius': prepend == true ? 0 : borderRadius[3]
+  }"
+  [ngClass]="{
+    default: active && !invalid,
+    invalid: invalid,
+    disabled: disabled,
+    prepend: prepend,
+    append: append
+  }"
+>
+  <ng-content select="[left-icon]"></ng-content>
+  <div
+    *ngIf="!showInput"
+    [ngClass]="{
+    'fui-input-field-s': size == 's',
+    'fui-input-field-m':  size == 'm',
+    'fui-input-field-l':  size == 'l',
+  }"
+  >
+    <ng-content select="[center]"></ng-content>
+  </div>
+  <textarea
+    [cols]="cols"
+    [rows]="rows"
+    *ngIf="showInput"
+    #inputX
+    [formControl]="formControlField"
+    (focus)="handleOnFocus()"
+    (blur)="handleOnBlur()"
+    [placeholder]="placeholder"
+    [ngStyle]="{
+      'border-top-right-radius': append === true ? 0 : borderRadius[0],
+      'border-bottom-right-radius': append === true ? 0 : borderRadius[1],
+      'border-top-left-radius': prepend === true ? 0 : borderRadius[2],
+      'border-bottom-left-radius': prepend == true ? 0 : borderRadius[3]
+    }"
+    [ngClass]="{
+    'fui-input-field-s': size == 's',
+    'fui-input-field-m':  size == 'm',
+    'fui-input-field-l':  size == 'l',
+  }"
+  ></textarea>
+  <div style="position: absolute; right: 10px; bottom: 10px">
+    <ng-content select="[right-icon]"></ng-content>
+  </div>
+</div>

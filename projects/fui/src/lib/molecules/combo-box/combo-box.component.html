@@ -63,7 +63,7 @@
           </span>
         </div>
         <fui-icons
-          style="margin-right: 8px"
+          [ngClass]="{ 'mr-8': rightIcon }"
           *ngIf="invalid"
           right-icon
           [label]="'right'"
@@ -80,10 +80,11 @@
           [size]="'sizexs'"
         ></fui-icons>
         <fui-icons
+          *ngIf="rightIcon"
           right-icon
           (click)="toggleOpenSelector()"
           class="fui-icon-combox"
-          [icon]="'arrowDown'"
+          [icon]="rightIcon"
           [size]="'size' + size"
         ></fui-icons>
       </fui-input-field>
@@ -91,8 +92,6 @@
     </fui-form-control-layout>
     <div popover-body>
       <div
-        *ngIf="openSelector"
-        [attr.multiple]="!singleSelection"
         class="fui-multi-select {{ selectedValue.length <= 4 ? 'mini' : '' }}"
       >
         @for(item of optionValue; track $index; let last = $last;) {
@@ -137,7 +136,7 @@
           [size]="'size' + size"
         ></fui-icons>
         <fui-icons
-          style="margin-right: 8px"
+          [ngClass]="{ 'mr-8': rightIcon }"
           *ngIf="invalid"
           right-icon
           [label]="'right'"
@@ -154,10 +153,11 @@
           [size]="'sizexs'"
         ></fui-icons>
         <fui-icons
+          *ngIf="rightIcon"
           right-icon
           (click)="toggleOpenSelector()"
           class="fui-icon-combox"
-          [icon]="'arrowDown'"
+          [icon]="rightIcon"
           [size]="'size' + size"
         ></fui-icons>
       </fui-input-field>

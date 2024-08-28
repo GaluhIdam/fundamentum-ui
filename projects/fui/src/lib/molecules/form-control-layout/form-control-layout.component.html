@@ -1,4 +1,8 @@
 <div class="fui-form-control-layout">
   <ng-content></ng-content>
 </div>
-<ng-content *ngIf="inputComponents && (inputComponents.invalid)" select="[validator]"></ng-content>
+
+<ng-content
+  *ngIf="inputComponent && inputComponent.invalid || selectComponent && selectComponent.invalid || textareaComponent && textareaComponent.invalid"
+  select="[validator]"
+></ng-content>

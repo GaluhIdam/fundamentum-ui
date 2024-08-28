@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PrependComponent } from './prepend/prepend.component';
 import { AppendComponent } from './append/append.component';
 import { SelectFieldComponent } from './select-field/select-field.component';
+import { TextareaComponent } from './textarea/textarea.component';
 
 /**
  * The CalloutComponent
@@ -54,27 +55,11 @@ import { SelectFieldComponent } from './select-field/select-field.component';
   styleUrl: './form-control-layout.component.scss',
 })
 export class FormControlLayoutComponent {
-  @ContentChild(InputFieldComponent) inputComponents!: InputFieldComponent;
-  @ContentChild(SelectFieldComponent) selectComponents!: SelectFieldComponent;
+  @ContentChild(InputFieldComponent) inputComponent!: InputFieldComponent;
+  @ContentChild(TextareaComponent) textareaComponent!: TextareaComponent;
+  @ContentChild(SelectFieldComponent) selectComponent!: SelectFieldComponent;
   @ContentChild(PrependComponent) prependComponent!: PrependComponent;
   @ContentChild(AppendComponent) appendComponent!: AppendComponent;
 
-  ngAfterContentInit() {
-    if (this.inputComponents) {
-      if (this.prependComponent) {
-        this.inputComponents.prepend = true;
-      }
-      if (this.appendComponent) {
-        this.inputComponents.append = true;
-      }
-    }
-    if (this.selectComponents) {
-      if (this.prependComponent) {
-        this.selectComponents.prepend = true;
-      }
-      if (this.appendComponent) {
-        this.selectComponents.append = true;
-      }
-    }
-  }
 }
+

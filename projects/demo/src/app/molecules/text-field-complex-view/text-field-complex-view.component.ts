@@ -18,6 +18,7 @@ import {
   IconsComponent,
   LoadingComponent,
   SelectFieldComponent,
+  TextareaComponent,
 } from 'fui';
 interface TEST {
   nama: string;
@@ -37,6 +38,7 @@ interface TEST {
     LoadingComponent,
     ReactiveFormsModule,
     CommonModule,
+    TextareaComponent,
   ],
   templateUrl: './text-field-complex-view.component.html',
   styleUrl: './text-field-complex-view.component.scss',

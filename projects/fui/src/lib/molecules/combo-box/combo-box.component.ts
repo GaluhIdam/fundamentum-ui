@@ -55,6 +55,7 @@ export class ComboBoxComponent {
   @Input() placeholder: string = 'Select or create options';
   @Input() comboxForm: FormControl = new FormControl('');
   @Input() leftIcon: Icon | null = null;
+  @Input() rightIcon: Icon | null = null;
   @Input() invalid: boolean = false;
   @Input() disabled: boolean = false;
   @Input() message: string = 'This is required!';
@@ -89,10 +90,6 @@ export class ComboBoxComponent {
    * @ignore
    */
   @HostListener('document:click', ['$event'])
-
-  /**
-   * @ignore
-   */
   onClick(event: MouseEvent) {
     if (!this.elementRef.nativeElement.contains(event.target)) {
       this.openSelector = false;
@@ -114,7 +111,6 @@ export class ComboBoxComponent {
         this.comboxForm.setValue(item.name);
         this.selectedValue = [item];
       }
-      this.openSelector = false;
     } else {
       const index = this.selectedValue.findIndex(
         (itm) => itm.value === item.value

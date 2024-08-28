@@ -12,17 +12,16 @@
     <p>S</p>
     <fui-combo-box
       [leftIcon]="'search'"
-      [comboxForm]="searchMatter"
+      (selection)="test($event)"
+      [comboxForm]="searchMatter1"
       [size]="'s'"
-      [singleSelection]="false"
-      [optionValue]="optionValue"
-      [selectedValue]="selectedValue"
+      [optionValue]="optionValue1"
+      [selectedValue]="selectedValue1"
     />
     <p>M</p>
     <fui-combo-box
       [comboxForm]="searchMatter"
       [size]="'m'"
-      [singleSelection]="false"
       [optionValue]="optionValue"
       [selectedValue]="selectedValue"
     />
@@ -30,7 +29,6 @@
     <fui-combo-box
       [comboxForm]="searchMatter"
       [size]="'l'"
-      [singleSelection]="false"
       [optionValue]="optionValue"
       [selectedValue]="selectedValue"
     />

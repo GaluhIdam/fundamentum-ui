@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import {
   Component,
   ContentChildren,
@@ -11,22 +10,18 @@ import {
 } from '@angular/core';
 import { IconsComponent } from '../../../../public-api';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'fui-input-field',
+  selector: 'fui-textarea',
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
-  templateUrl: './input-field.component.html',
-  styleUrl: './input-field.component.scss',
+  templateUrl: './textarea.component.html',
+  styleUrl: './textarea.component.scss',
 })
-export class InputFieldComponent {
-  @Input({ required: true }) type:
-    | 'text'
-    | 'number'
-    | 'password'
-    | 'date'
-    | 'time'
-    | 'email' = 'text';
+export class TextareaComponent {
+  @Input() cols: number | 'auto' = 'auto';
+  @Input() rows: number | 'auto' = 5;
   @Input({ required: true }) invalid: boolean = false;
   @Input({ required: true }) size: 's' | 'm' | 'l' = 'm';
   @Input() placeholder: string = 'Please type here...';
@@ -34,14 +29,33 @@ export class InputFieldComponent {
   @Input() borderRadius: string[] = ['4px', '4px', '4px', '4px'];
   @Input() showInput: boolean = true;
   @Input() disabled: boolean = false;
+  iconLeft: boolean = false;
+  iconRight: boolean = false;
   @Input() active: boolean = false;
   @ContentChildren(IconsComponent) iconComponents!: QueryList<IconsComponent>;
   @Output() onFocus: EventEmitter<any> = new EventEmitter<any>();
   @Output() onBlur: EventEmitter<any> = new EventEmitter<any>();
 
+  prepend: boolean = false;
+  append: boolean = false;
+
   @ViewChild('inputX') inputX: any;
 
   focusX: boolean = false;
+
+  ngAfterContentInit() {
+    if (this.disabled) {
+      this.formControlField.disable();
+    }
+    this.iconComponents.forEach((item) => {
+      if (item.label === 'left') {
+        this.iconLeft = true;
+      }
+      if (item.label === 'right') {
+        this.iconRight = true;
+      }
+    });
+  }
 
   ngOnChanges(): void {
     if (this.disabled) {
