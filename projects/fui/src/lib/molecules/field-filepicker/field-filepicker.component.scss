@@ -11,7 +11,7 @@
 }
 
 .fui-dropzone {
-  width: 200px;
+  width: -webkit-fill-available;
   height: 50px;
   border: 2px dashed var(--fuiColorDarkShade, $fuiColorDarkShade);
   border-radius: 5px;

@@ -34,6 +34,7 @@ export class InputFieldComponent {
   @Input() borderRadius: string[] = ['4px', '4px', '4px', '4px'];
   @Input() showInput: boolean = true;
   @Input() disabled: boolean = false;
+  @Input() readonly: boolean = false;
   @Input() active: boolean = false;
   @ContentChildren(IconsComponent) iconComponents!: QueryList<IconsComponent>;
   @Output() onFocus: EventEmitter<any> = new EventEmitter<any>();

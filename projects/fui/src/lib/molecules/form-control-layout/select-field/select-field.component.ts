@@ -1,12 +1,18 @@
 import { Component, ContentChildren, Input, QueryList } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { IconsComponent } from '../../../../public-api';
+import { IconsComponent, TextComponent } from '../../../../public-api';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'fui-select-field',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
+    TextComponent,
+  ],
   templateUrl: './select-field.component.html',
   styleUrl: './select-field.component.scss',
 })
@@ -30,9 +36,6 @@ export class SelectFieldComponent {
   append: boolean = false;
 
   ngAfterContentInit() {
-    if (this.disabled) {
-      this.formControlField.disable();
-    }
     this.iconComponents.forEach((item) => {
       if (item.label === 'left') {
         this.iconLeft = true;
@@ -41,5 +44,13 @@ export class SelectFieldComponent {
         this.iconRight = true;
       }
     });
+  }
+
+  ngOnChanges(): void {
+    if (this.disabled) {
+      this.formControlField.disable();
+    } else {
+      this.formControlField.enable();
+    }
   }
 }

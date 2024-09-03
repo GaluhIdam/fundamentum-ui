@@ -38,3 +38,9 @@ input {
 .invalid {
   @include bottomLine(var(--fuiColorDanger, $fuiColorDanger));
 }
+.text-disabled {
+  color: var(--fuiColorDarkShade, $fuiColorDarkShade);
+}
+.text-black {
+  color: var(--fuiColorInk, $fuiColorInk);
+}

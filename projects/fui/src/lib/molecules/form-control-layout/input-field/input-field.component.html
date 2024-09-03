@@ -2,11 +2,11 @@
   class="{{
     disabled ? 'fui-input-field inactive disabled' : 'fui-input-field inactive'
   }}"
-
   [ngClass]="{
-    default: active && !invalid,
+    default: active && !invalid && !readonly,
     invalid: invalid,
-    disabled: disabled
+    disabled: disabled,
+    readonly: readonly
   }"
 >
   <ng-content select="[left-icon]"></ng-content>
@@ -28,10 +28,12 @@
     (blur)="handleOnBlur()"
     [type]="type"
     [placeholder]="placeholder"
+    [readonly]="readonly"
     [ngClass]="{
       'fui-input-field-s': size == 's',
-      'fui-input-field-m':  size == 'm',
-      'fui-input-field-l':  size == 'l',
+      'fui-input-field-m': size == 'm',
+      'fui-input-field-l': size == 'l',
+      readonly: readonly
     }"
   />
 

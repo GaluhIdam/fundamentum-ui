@@ -38,3 +38,8 @@ input {
 .invalid {
   @include bottomLine(var(--fuiColorDanger, $fuiColorDanger));
 }
+.readonly {
+  &:hover {
+    cursor: default;
+  }
+}
