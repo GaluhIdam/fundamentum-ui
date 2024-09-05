@@ -18,6 +18,7 @@
 >
   <ng-content select="[left-icon]"></ng-content>
   <select
+    class="text-black"
     [disabled]="disabled"
     [formControl]="formControlField"
     [ngClass]="{
@@ -30,7 +31,11 @@
     <option value="" selected disabled>
       {{ placeholder }}
     </option>
-    <option class="text-black" *ngFor="let option of selectOptions" [value]="option.value">
+    <option
+      class="text-black"
+      *ngFor="let option of selectOptions"
+      [value]="option.value"
+    >
       {{ option.label }}
     </option>
   </select>

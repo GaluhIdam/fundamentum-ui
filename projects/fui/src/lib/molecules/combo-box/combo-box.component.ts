@@ -74,15 +74,23 @@ export class ComboBoxComponent {
   /**
    * @ignore
    */
+
   constructor(private elementRef: ElementRef) {}
 
   ngOnInit(): void {
+
     if (
       this.selectedValue &&
       this.selectedValue.length > 1 &&
       this.singleSelection === true
     ) {
       this.comboxForm.setValue(this.selectedValue[0].name);
+    }
+  }
+
+  ngOnChanges(): void {
+    if (this.disabled) {
+      this.openSelector = false;
     }
   }
 
@@ -169,6 +177,8 @@ export class ComboBoxComponent {
    */
   toggleOpenSelectorFocus(): void {
     this.openSelector = true;
+    this.comboxInput.nativeElement.focus();
+
     if (this.selectedValue.length > 0) {
       this.selectedValue.forEach((item) => {
         const index = this.selectedValue.findIndex(
@@ -210,5 +220,9 @@ export class ComboBoxComponent {
   focusInput(): void {
     this.comboxInput.nativeElement.focus();
     this.openSelector = true;
+  }
+
+  blurAct(): void {
+    this.openSelector = false;
   }
 }

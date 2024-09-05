@@ -147,7 +147,12 @@
   flex-wrap: nowrap;
   display: flex;
   width: fit-content;
-  background-color: var(--fuiColorLightShade, $fuiColorLightShade);
+  &.enable {
+    background-color: var(--fuiColorLightShade, $fuiColorLightShade);
+  }
+  &.disable {
+    background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
+  }
   padding: 2px 5px;
   height: fit-content;
   border-radius: 3px;
@@ -173,6 +178,7 @@
 }
 
 .placeholder-txt {
+  z-index: 0;
   position: absolute;
   text-wrap: nowrap;
   margin: 0;
@@ -206,4 +212,8 @@ fui-icons {
 }
 .mr-8 {
   margin-right: 8px;
+}
+
+.disabled {
+  left: 10px;
 }

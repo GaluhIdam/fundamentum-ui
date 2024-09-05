@@ -1,9 +1,9 @@
 <div class="fui-flex-combox-parent">
-  <fui-popover [position]="position" *ngIf="!singleSelection">
+  <fui-popover [position]="position" *ngIf="!singleSelection && !disabled">
     <fui-form-control-layout>
       <fui-input-field
         (click)="focusInput()"
-        [showInput]="false"
+        [showInput]="disabled"
         [disabled]="disabled"
         [formControlField]="comboxForm"
         [type]="'text'"
@@ -19,19 +19,12 @@
           [icon]="leftIcon"
           [size]="'size' + size"
         ></fui-icons>
-        <div class="wrap-badge" center *ngIf="!singleSelection">
-          <p
-            class="placeholder-txt"
-            *ngIf="
-              selectedValue.length === 0 &&
-              !openSelector &&
-              comboxForm.value.length === 0
-            "
-          >
-            {{ placeholder }}
-          </p>
+        <p class="placeholder-txt" center *ngIf="!openSelector && selectedValue.length === 0">
+          {{ placeholder }}
+        </p>
+        <div class="wrap-badge" center *ngIf="!singleSelection && !disabled">
           <span
-            class="badge"
+            class="badge enable"
             [ngStyle]="{
               'font-size': size === 's' ? '9px' : size === 'm' ? '11px' : '13px'
             }"
@@ -44,6 +37,7 @@
           </span>
           <span class="badge-input">
             <input
+              [disabled]="disabled"
               [ngStyle]="{
                 width:
                   comboxForm.value.length > 0
@@ -54,10 +48,10 @@
               }"
               type="text"
               [formControl]="comboxForm"
-              (click)="toggleOpenSelectorFocus()"
-              (focus)="toggleOpenSelectorFocus()"
-              (change)="toggleOpenSelectorFocus()"
-              (blur)="openSelector = false"
+              (click)="focusInput()"
+              (focus)="focusInput()"
+              (change)="focusInput()"
+              (blur)="blurAct()"
               #comboxInput
             />
           </span>
@@ -118,7 +112,68 @@
     </div>
   </fui-popover>
 
-  <fui-popover *ngIf="singleSelection">
+  <fui-form-control-layout *ngIf="!singleSelection && disabled">
+    <fui-input-field
+      [disabled]="true"
+      [formControlField]="comboxForm"
+      [type]="'text'"
+      [placeholder]="selectedValue.length === 0 ? placeholder : ''"
+      [size]="size"
+      [invalid]="invalid"
+      [active]="openSelector"
+    >
+      <fui-icons
+        *ngIf="leftIcon"
+        left-icon
+        [icon]="leftIcon"
+        [size]="'size' + size"
+      ></fui-icons>
+      <div
+        class="wrap-badge disabled"
+        left-icon
+        *ngIf="selectedValue.length > 0"
+      >
+        <span
+          class="badge disable"
+          [ngStyle]="{
+            'font-size': size === 's' ? '9px' : size === 'm' ? '11px' : '13px'
+          }"
+          *ngFor="let data of selectedValue"
+        >
+          {{ data.name }}
+        </span>
+      </div>
+      <fui-icons
+        [ngClass]="{ 'mr-8': rightIcon }"
+        *ngIf="invalid"
+        right-icon
+        [label]="'right'"
+        [icon]="'alert'"
+        [size]="'size' + size"
+        [color]="'danger'"
+      />
+      <fui-icons
+        style="margin-right: 8px"
+        right-icon
+        *ngIf="selectedValue.length > 0"
+        (click)="toggleClearData()"
+        [icon]="'cross'"
+        [size]="'sizexs'"
+      ></fui-icons>
+      <fui-icons
+        *ngIf="rightIcon"
+        right-icon
+        (click)="toggleOpenSelector()"
+        class="fui-icon-combox"
+        [icon]="rightIcon"
+        [size]="'size' + size"
+      ></fui-icons>
+    </fui-input-field>
+
+    <fui-validator-field validator [message]="message" />
+  </fui-form-control-layout>
+
+  <fui-popover [position]="position" *ngIf="singleSelection">
     <fui-form-control-layout>
       <fui-input-field
         [disabled]="disabled"

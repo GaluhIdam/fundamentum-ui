@@ -12,61 +12,63 @@
     <p>S</p>
     <fui-combo-box
       [leftIcon]="'search'"
-      (selection)="test($event)"
-      [comboxForm]="searchMatter1"
+      (selection)="selectionS($event)"
+      [comboxForm]="searchMatterS"
       [size]="'s'"
-      [optionValue]="optionValue1"
-      [selectedValue]="selectedValue1"
+      [optionValue]="optionValueS"
+      [selectedValue]="selectedValueS"
+      [invalid]="false"
+      [disabled]="true"
     />
     <p>M</p>
     <fui-combo-box
-      [comboxForm]="searchMatter"
+      [comboxForm]="searchMatterM"
       [size]="'m'"
-      [optionValue]="optionValue"
-      [selectedValue]="selectedValue"
+      (selection)="selectionM($event)"
+      [optionValue]="optionValueM"
+      [selectedValue]="selectedValueM"
+      [invalid]="false"
     />
     <p>L</p>
     <fui-combo-box
-      [comboxForm]="searchMatter"
+      [leftIcon]="'search'"
+      [comboxForm]="searchMatterL"
       [size]="'l'"
-      [optionValue]="optionValue"
-      [selectedValue]="selectedValue"
+      [optionValue]="optionValueL"
+      [selectedValue]="selectedValueL"
+      [invalid]="false"
+      [disabled]="true"
     />
   </div>
+
+  <!-- ------------------  -->
+
   <div>
     <p>S</p>
     <fui-combo-box
       [leftIcon]="'search'"
-      [invalid]="
-        searchMatter.invalid && (searchMatter.dirty || searchMatter.touched)
-      "
       [size]="'s'"
-      [comboxForm]="searchMatter"
+      [comboxForm]="searchMatterSS"
       [singleSelection]="true"
-      [optionValue]="optionValue"
-      [selectedValue]="[]"
+      [optionValue]="optionValueSS"
+      [selectedValue]="selectedValueSS"
     />
     <p>M</p>
     <fui-combo-box
-      [invalid]="
-        searchMatter.invalid && (searchMatter.dirty || searchMatter.touched)
-      "
       [size]="'m'"
-      [comboxForm]="searchMatter"
+      [comboxForm]="searchMatterMM"
       [singleSelection]="true"
-      [optionValue]="optionValue"
-      [selectedValue]="[]"
+      [optionValue]="optionValueMM"
+      [selectedValue]="selectedValueMM"
     />
     <p>L</p>
     <fui-combo-box
-      [invalid]="
-        searchMatter.invalid && (searchMatter.dirty || searchMatter.touched)
-      "
       [size]="'l'"
-      [comboxForm]="searchMatter"
+      [comboxForm]="searchMatterLL"
       [singleSelection]="true"
-      [optionValue]="optionValue"
-      [selectedValue]="[]"
+      [optionValue]="optionValueLL"
+      [selectedValue]="selectedValueLL"
+      [disabled]="true"
     />
   </div>
 </div>
