@@ -90,7 +90,18 @@ export class EchartsComponent {
     this.observeWidthChanges();
     this.themeSubscription = this.themeService.currentTheme$.subscribe(
       (theme) => {
-        this.themeChart = theme === 'light' ? 'light' : 'dark';
+        if (theme === 'light') {
+          this.themeChart = 'light';
+        }
+        if (theme === 'dark') {
+          this.themeChart = 'dark';
+        }
+        if (theme === 'ahp-light') {
+          this.themeChart = 'light';
+        }
+        if (theme === 'ahp-dark') {
+          this.themeChart = 'dark';
+        }
         this.changeTheme();
       }
     );
