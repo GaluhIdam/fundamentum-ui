@@ -234,7 +234,29 @@
       <fui-input-field
         [type]="'text'"
         [size]="'l'"
-        [placeholder]="'Standard Text Field'"
+        [placeholder]="'Standard Text Field L'"
+        [invalid]="false"
+      >
+      </fui-input-field>
+    </fui-form-control-layout>
+  </div>
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-input-field
+        [type]="'text'"
+        [size]="'m'"
+        [placeholder]="'Standard Text Field M'"
+        [invalid]="false"
+      >
+      </fui-input-field>
+    </fui-form-control-layout>
+  </div>
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-input-field
+        [type]="'text'"
+        [size]="'s'"
+        [placeholder]="'Standard Text Field s'"
         [invalid]="false"
       >
       </fui-input-field>
@@ -257,10 +279,10 @@
   <div class="mb-5">
     <fui-form-control-layout>
       <fui-textarea
-      [formControlField]="email"
-      [size]="'l'"
-      [placeholder]="'Email'"
-      [invalid]="email?.invalid && (email?.dirty || email?.touched)"
+        [formControlField]="email"
+        [size]="'l'"
+        [placeholder]="'Email'"
+        [invalid]="email?.invalid && (email?.dirty || email?.touched)"
       >
         <fui-icons
           *ngIf="email?.invalid && (email?.dirty || email?.touched)"
