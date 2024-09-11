@@ -43,6 +43,11 @@ export class TextareaComponent {
 
   focusX: boolean = false;
 
+  ngAfterViewInit() {
+    // Ensure the height adjusts initially in case there's default text
+    this.adjustTextareaHeight();
+  }
+
   ngAfterContentInit() {
     if (this.disabled) {
       this.formControlField.disable();
@@ -85,5 +90,11 @@ export class TextareaComponent {
   handleOnBlur(): void {
     this.active = false;
     this.onBlur.emit();
+  }
+
+  adjustTextareaHeight(): void {
+    const textarea = this.inputX.nativeElement;
+    textarea.style.height = 'auto'; // Reset the height to auto to calculate the scroll height correctly
+    textarea.style.height = `${textarea.scrollHeight}px`; // Set the height to the scroll height
   }
 }
