@@ -70,19 +70,6 @@ export class TextareaComponent {
     }
   }
 
-  @HostListener('document:keydown', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) {
-    if (event.ctrlKey && event.key === 'k') {
-      event.preventDefault();
-      this.focusX = !this.focusX;
-      if (this.focusX) {
-        this.inputX.nativeElement.focus();
-      } else {
-        this.inputX.nativeElement.blur();
-      }
-    }
-  }
-
   handleOnFocus(): void {
     this.active = true;
     this.onFocus.emit();
@@ -95,6 +82,11 @@ export class TextareaComponent {
   adjustTextareaHeight(): void {
     const textarea = this.inputX.nativeElement;
     textarea.style.height = 'auto'; // Reset the height to auto to calculate the scroll height correctly
-    textarea.style.height = `${textarea.scrollHeight}px`; // Set the height to the scroll height
+    if (this.size === 's') {
+      textarea.style.height = `${textarea.scrollHeight-18}px`; // Set the height to the scroll height
+    }
+    if (this.size === 'm') {
+      textarea.style.height = `${textarea.scrollHeight-17}px`; // Set the height to the scroll height
+    }
   }
 }

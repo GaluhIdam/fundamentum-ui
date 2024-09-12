@@ -278,24 +278,25 @@
 
   <div class="mb-5">
     <fui-form-control-layout>
-      <fui-textarea
-        [formControlField]="email"
-        [size]="'l'"
-        [placeholder]="'Email'"
-        [invalid]="email?.invalid && (email?.dirty || email?.touched)"
-      >
-        <fui-icons
-          *ngIf="email?.invalid && (email?.dirty || email?.touched)"
-          right-icon
-          [label]="'right'"
-          [icon]="'alert'"
-          [size]="'sizel'"
-          [color]="'danger'"
-        />
+      <fui-textarea [size]="'s'" [rows]="1" [placeholder]="'Textarea S'" [invalid]="false">
       </fui-textarea>
-      <fui-validator-field validator [message]="'Email is required!'" />
     </fui-form-control-layout>
   </div>
+
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-textarea [size]="'m'" [rows]="1" [placeholder]="'Textarea M'" [invalid]="false">
+      </fui-textarea>
+    </fui-form-control-layout>
+  </div>
+
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-textarea [size]="'l'" [rows]="1" [placeholder]="'Textarea L'" [invalid]="false">
+      </fui-textarea>
+    </fui-form-control-layout>
+  </div>
+
   <div class="mb-5">
     <fui-form-control-layout>
       <fui-prepend>

@@ -2,10 +2,13 @@
 
 .fui-sidenav {
   font-family: $fuiFontFamily;
+  margin-bottom: 15px;
+  &:last-child {
+    margin-bottom: 0px;
+  }
 }
 .fui-sidenav-flex {
   display: flex;
-  margin-bottom: 15px;
   align-items: center;
 }
 .fui-sidenav-icon {

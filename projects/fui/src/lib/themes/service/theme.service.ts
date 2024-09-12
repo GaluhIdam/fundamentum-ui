@@ -43,7 +43,7 @@ export class ThemeService {
   applyTheme(): void {
     const theme = this.getTheme();
     if (!theme) {
-      this.setTheme('dark');
+      this.setTheme('light');
     } else {
       this.setTheme(theme);
     }

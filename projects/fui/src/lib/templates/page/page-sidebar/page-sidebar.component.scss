@@ -13,14 +13,14 @@
 .docked {
   height: 100%;
   position: relative;
-  box-shadow: inset -2px 0 8px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: inset -2px 0 8px -2px rgba(0, 0, 0, 0.2);
   z-index: 0;
 }
 
 .undocked {
   height: -webkit-fill-available;
   position: fixed;
-  box-shadow: 2px 0 8px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
   z-index: 2;
 }
 
