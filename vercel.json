@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "projects/fui-demo/ng-package.json", "use": "@vercel/static-build", "config": { "distDir": "dist/fui-demo" } }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}

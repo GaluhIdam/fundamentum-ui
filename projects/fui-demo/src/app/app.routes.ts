@@ -94,7 +94,7 @@ export const routes: Routes = [
       {
         path: 'secure-page',
         component: SecurePageComponent,
-        // canActivate: mapToCanActivate([AuthGuard]),
+        canActivate: mapToCanActivate([AuthGuard]),
       },
     ],
   },
