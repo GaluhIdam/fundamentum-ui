@@ -1,10 +1,11 @@
-import { inject, Injectable } from '@angular/core';
+import { Inject, inject, Injectable, PLATFORM_ID } from '@angular/core';
 import {
   ConfigDTO,
   WellKnownEndPointDTO,
 } from '../service/oidc.authenticator.service';
 import { catchError, Observable, of, switchMap } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { isPlatformBrowser } from '@angular/common';
 
 /** OpenId Connect Utility
  * @description OidcUtilityService is an Angular service designed to provide utility functions and methods for OpenID Connect (OIDC) authentication and authorization processes.
@@ -18,6 +19,8 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 export class OidcUtilityService {
   protected readonly _http = inject(HttpClient);
   protected codeVerifierKey: string = 'pkce_code_verifier';
+
+  constructor(@Inject(PLATFORM_ID) private platformId: any) {}
 
   /**
    * Proof of Key Code Exchange Process
@@ -92,11 +95,15 @@ export class OidcUtilityService {
    * @returns {string}
    */
   generateCodeVerifier(): string {
-    const array = new Uint32Array(56 / 2);
-    window.crypto.getRandomValues(array);
-    return Array.from(array, (dec) => ('0' + dec.toString(16)).slice(-2)).join(
-      ''
-    );
+    if (isPlatformBrowser(this.platformId)) {
+      const array = new Uint32Array(56 / 2);
+      window.crypto.getRandomValues(array);
+      return Array.from(array, (dec) =>
+        ('0' + dec.toString(16)).slice(-2)
+      ).join('');
+    } else {
+      return '';
+    }
   }
 
   /**
@@ -107,13 +114,17 @@ export class OidcUtilityService {
    * @returns {Promise<string>}
    */
   async generateCodeChallenge(verifier: string): Promise<string> {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(verifier);
-    const digest = await window.crypto.subtle.digest('SHA-256', data);
-    return btoa(String.fromCharCode(...new Uint8Array(digest)))
-      .replace(/\+/g, '-')
-      .replace(/\//g, '_')
-      .replace(/=+$/, '');
+    if (isPlatformBrowser(this.platformId)) {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(verifier);
+      const digest = await window.crypto.subtle.digest('SHA-256', data);
+      return btoa(String.fromCharCode(...new Uint8Array(digest)))
+        .replace(/\+/g, '-')
+        .replace(/\//g, '_')
+        .replace(/=+$/, '');
+    } else {
+      return '';
+    }
   }
 
   /**
@@ -123,7 +134,9 @@ export class OidcUtilityService {
    * @param {string} value
    */
   setLocalStorage(key: string, value: string): void {
-    localStorage.setItem(key, value);
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem(key, value);
+    }
   }
 
   /**
@@ -133,7 +146,11 @@ export class OidcUtilityService {
    * @returns {(string | null)}
    */
   getLocalStorage(key: string): string | null {
-    return localStorage.getItem(key);
+    if (isPlatformBrowser(this.platformId)) {
+      return localStorage.getItem(key);
+    } else {
+      return null;
+    }
   }
 
   /**
@@ -142,12 +159,16 @@ export class OidcUtilityService {
    * @param {string} key
    */
   deleteLocalStorage(key: string): void {
-    localStorage.removeItem(key);
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.removeItem(key);
+    }
   }
 
   /** Delete All Local Storage */
   deleteAllLocalStorage(): void {
-    localStorage.clear();
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.clear();
+    }
   }
 
   /**
@@ -194,13 +215,15 @@ export class OidcUtilityService {
    * @param {number} days
    */
   setCookie(name: string, value: string, days: number): void {
-    let expires = '';
-    if (days) {
-      const date = new Date();
-      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-      expires = '; expires=' + date.toUTCString();
+    if (isPlatformBrowser(this.platformId)) {
+      let expires = '';
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        expires = '; expires=' + date.toUTCString();
+      }
+      document.cookie = name + '=' + (value || '') + expires + '; path=/';
     }
-    document.cookie = name + '=' + (value || '') + expires + '; path=/';
   }
 
   /**
@@ -210,12 +233,14 @@ export class OidcUtilityService {
    * @returns {(string | null)}
    */
   getCookie(name: string): string | null {
-    const nameEQ = name + '=';
-    const ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    if (isPlatformBrowser(this.platformId)) {
+      const nameEQ = name + '=';
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
     }
     return null;
   }
@@ -226,20 +251,24 @@ export class OidcUtilityService {
    * @param {string} name
    */
   deleteCookie(name: string): void {
-    document.cookie = name + '=; Max-Age=-99999999;';
+    if (isPlatformBrowser(this.platformId)) {
+      document.cookie = name + '=; Max-Age=-99999999;';
+    }
   }
 
   /**
    * Delete All Cookie
    */
   deleteAllCookies(): void {
-    const cookies = document.cookie.split(';');
-    for (let i = 0; i < cookies.length; i++) {
-      const cookie = cookies[i];
-      const eqPos = cookie.indexOf('=');
-      const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-      document.cookie =
-        name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+    if (isPlatformBrowser(this.platformId)) {
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i];
+        const eqPos = cookie.indexOf('=');
+        const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie =
+          name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+      }
     }
   }
 

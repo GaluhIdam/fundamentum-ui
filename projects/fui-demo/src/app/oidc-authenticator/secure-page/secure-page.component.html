@@ -1,0 +1,14 @@
+<h1>Secure Page</h1>
+
+<p>{{ data | json }}</p>
+
+<fui-button-icon
+  [type]="'button'"
+  [option]="'iconText'"
+  [style]="'secondary'"
+  [text]="'Sign Out'"
+  [color]="'danger'"
+  [icon]="'globe'"
+  [iconSide]="'left'"
+  (onClick)="logout()"
+/>

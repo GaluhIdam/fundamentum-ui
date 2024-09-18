@@ -1,0 +1,18 @@
+<h1>Icon</h1>
+<p>
+  Icons can also be displayed instead of initials or images. When simply passing
+  an iconType, it will both size and color appropriately based on the other
+  FuiAvatar props. To customize these specifically, pass iconSize and iconColor.
+  If your icon has multiples or custom colors like a logo, you can keep the
+  default iconColor by passing null. Otherwise it will get the appropriate
+  contrast acceptable variant. Just ensure that you also are providing an
+  accesible background color to match that of the icon's color.
+</p>
+<div class="icons">
+  @for (iconName of icons; track $index) {
+  <div class="text-center icon">
+    <fui-icons [icon]="iconName" [size]="'sizexl'"></fui-icons>
+    <div>{{ iconName }}</div>
+  </div>
+  }
+</div>

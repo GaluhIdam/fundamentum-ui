@@ -1,0 +1,326 @@
+<h1>Form controls</h1>
+<p>
+  FUI provides different types of basic form controls: FuiFieldText,
+  FuiFieldSearch, FuiFieldNumber, FuiFieldPassword, FuiSelect, FuiTextArea, and
+  FuiFilePicker.
+</p>
+<div class="fit">
+  <fui-form-control-layout>
+    <fui-prepend>
+      <p>Prepend</p>
+    </fui-prepend>
+
+    <fui-input-field
+      [disabled]="true"
+      [type]="'text'"
+      [size]="'l'"
+      [invalid]="false"
+    >
+      <fui-icons
+        left-icon
+        [label]="'left'"
+        [icon]="'search'"
+        [size]="'sizel'"
+        [color]="'ink'"
+      />
+      <fui-loading
+        class="mx-5"
+        right-icon
+        [type]="'spinner'"
+        [isLoading]="true"
+        [size]="'sizel'"
+      ></fui-loading>
+      <fui-icons
+        right-icon
+        [label]="'right'"
+        [icon]="'alert'"
+        [size]="'sizel'"
+        [color]="'danger'"
+      />
+    </fui-input-field>
+
+    <fui-append>
+      <p>Append</p>
+    </fui-append>
+    <fui-validator-field validator />
+  </fui-form-control-layout>
+</div>
+<div class="fit">
+  <fui-form-control-layout>
+    <fui-prepend>
+      <p>Prepend</p>
+    </fui-prepend>
+
+    <fui-select-field
+      [invalid]="true"
+      [size]="'m'"
+      [selectOptions]="selectOptions"
+    >
+      <fui-icons
+        left-icon
+        [label]="'left'"
+        [icon]="'search'"
+        [size]="'sizel'"
+        [color]="'ink'"
+      />
+      <fui-loading
+        class="mx-5"
+        right-icon
+        [type]="'spinner'"
+        [isLoading]="true"
+        [size]="'sizel'"
+      ></fui-loading>
+      <fui-icons
+        right-icon
+        [label]="'right'"
+        [icon]="'alert'"
+        [size]="'sizel'"
+        [color]="'danger'"
+      />
+    </fui-select-field>
+
+    <fui-append>
+      <p>Append</p>
+    </fui-append>
+    <fui-validator-field validator />
+  </fui-form-control-layout>
+</div>
+
+<div class="fit" style="align-items: center">
+  <div class="max-width">
+    <fui-form-control-layout>
+      <fui-prepend>
+        <p>IDR</p>
+      </fui-prepend>
+
+      <fui-input-field
+        [type]="'number'"
+        [size]="'l'"
+        [placeholder]="'Currency'"
+        [invalid]="false"
+      >
+        <p left-icon>Rp.</p>
+      </fui-input-field>
+    </fui-form-control-layout>
+  </div>
+  <div class="max-width">
+    <fui-form-control-layout>
+      <fui-prepend>
+        <p>Dollar</p>
+      </fui-prepend>
+
+      <fui-input-field
+        [type]="'number'"
+        [size]="'l'"
+        [placeholder]="'Currency'"
+        [invalid]="false"
+      >
+        <p left-icon>$</p>
+      </fui-input-field>
+    </fui-form-control-layout>
+  </div>
+</div>
+
+<div class="fit">
+  <fui-form-control-layout>
+    <fui-prepend>
+      <fui-icons [icon]="'email'" [size]="'sizel'" [color]="'ink'" />
+    </fui-prepend>
+    <fui-input-field
+      [type]="'text'"
+      [size]="'l'"
+      [placeholder]="'Email'"
+      [invalid]="false"
+    >
+    </fui-input-field>
+  </fui-form-control-layout>
+</div>
+
+<div class="fit">
+  <fui-form-control-layout>
+    <fui-prepend>
+      <fui-icons [icon]="'email'" [size]="'sizel'" [color]="'ink'" />
+    </fui-prepend>
+    <fui-input-field
+      [formControlField]="emailForm"
+      [disabled]="true"
+      [type]="'text'"
+      [size]="'l'"
+      [placeholder]="'Email'"
+      [invalid]="false"
+    >
+    </fui-input-field>
+  </fui-form-control-layout>
+</div>
+
+<div class="fit">
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-input-field
+        [type]="'text'"
+        [size]="'l'"
+        [placeholder]="'Username'"
+        [invalid]="false"
+      >
+        <fui-icons
+          left-icon
+          [label]="'left'"
+          [icon]="'user'"
+          [size]="'sizel'"
+          [color]="'ink'"
+        />
+      </fui-input-field>
+    </fui-form-control-layout>
+  </div>
+
+  <div class="mb-5">
+    <form action=""></form>
+    <fui-form-control-layout>
+      <fui-input-field
+        [formControlField]="email"
+        [type]="'email'"
+        [size]="'l'"
+        [placeholder]="'Email'"
+        [invalid]="email?.invalid && (email?.dirty || email?.touched)"
+      >
+        <fui-icons
+          left-icon
+          [label]="'left'"
+          [icon]="'email'"
+          [size]="'sizel'"
+          [color]="'ink'"
+        />
+        <fui-icons
+          *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+          right-icon
+          [label]="'right'"
+          [icon]="'alert'"
+          [size]="'sizel'"
+          [color]="'danger'"
+        />
+      </fui-input-field>
+      <fui-validator-field validator [message]="'Email is required!'" />
+    </fui-form-control-layout>
+  </div>
+
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-input-field
+        [formControlField]="passwordForm"
+        [type]="showPass ? 'text' : 'password'"
+        [size]="'l'"
+        [placeholder]="'Password'"
+        [invalid]="false"
+      >
+        <fui-icons
+          left-icon
+          [label]="'left'"
+          [icon]="'lock'"
+          [size]="'sizel'"
+          [color]="'ink'"
+        />
+      </fui-input-field>
+      <fui-append (click)="showPass = !showPass">
+        <fui-icons
+          [icon]="showPass ? 'eyeClosed' : 'eye'"
+          [size]="'sizel'"
+          [color]="'ink'"
+        />
+      </fui-append>
+    </fui-form-control-layout>
+  </div>
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-input-field
+        [type]="'text'"
+        [size]="'l'"
+        [placeholder]="'Standard Text Field L'"
+        [invalid]="false"
+      >
+      </fui-input-field>
+    </fui-form-control-layout>
+  </div>
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-input-field
+        [type]="'text'"
+        [size]="'m'"
+        [placeholder]="'Standard Text Field M'"
+        [invalid]="false"
+      >
+      </fui-input-field>
+    </fui-form-control-layout>
+  </div>
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-input-field
+        [type]="'text'"
+        [size]="'s'"
+        [placeholder]="'Standard Text Field s'"
+        [invalid]="false"
+      >
+      </fui-input-field>
+    </fui-form-control-layout>
+  </div>
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-input-field
+        [formControlField]="disabledForm"
+        [type]="'text'"
+        [disabled]="true"
+        [size]="'l'"
+        [placeholder]="'Standard Text Field'"
+        [invalid]="false"
+      >
+      </fui-input-field>
+    </fui-form-control-layout>
+  </div>
+
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-textarea [size]="'s'" [rows]="1" [placeholder]="'Textarea S'" [invalid]="false">
+      </fui-textarea>
+    </fui-form-control-layout>
+  </div>
+
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-textarea [size]="'m'" [rows]="1" [placeholder]="'Textarea M'" [invalid]="false">
+      </fui-textarea>
+    </fui-form-control-layout>
+  </div>
+
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-textarea [size]="'l'" [rows]="1" [placeholder]="'Textarea L'" [invalid]="false">
+      </fui-textarea>
+    </fui-form-control-layout>
+  </div>
+
+  <div class="mb-5">
+    <fui-form-control-layout>
+      <fui-prepend>
+        <p>Prepend</p>
+      </fui-prepend>
+      <fui-textarea
+        [formControlField]="email"
+        [size]="'l'"
+        [placeholder]="'Email'"
+        [invalid]="email?.invalid && (email?.dirty || email?.touched)"
+      >
+        <fui-icons
+          *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+          right-icon
+          [label]="'right'"
+          [icon]="'alert'"
+          [size]="'sizel'"
+          [color]="'danger'"
+        />
+      </fui-textarea>
+      <fui-validator-field validator [message]="'Email is required!'" />
+      <fui-append>
+        <p>Append</p>
+      </fui-append>
+    </fui-form-control-layout>
+  </div>
+</div>

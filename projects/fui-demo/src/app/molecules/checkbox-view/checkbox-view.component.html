@@ -1,0 +1,148 @@
+<h1>Checkbox</h1>
+<p>
+  This component renders a basic HTML input type="checkbox" element. Use
+  checkboxes to allow users to select multiple options from a list. Use the
+  checked prop to handle the checked and unchecked state. You can also use the
+  indeterminate prop to set an indeterminate state. This state is commonly used
+  in hierarchical checkboxes to indicate that only some of the checkbox's
+  descendants are checked. Make sure to pass a label to ensure a larger
+  clickable area and ensure that screen readers will read out the label when the
+  user is focused on the input. To learn more about labels usage, go to the
+  guidelines tab.
+</p>
+<div class="container">
+  <div class="block">
+    <fui-checkbox
+      [options]="dataArrays[0]"
+      [groupLabel]="'Label'"
+    ></fui-checkbox>
+  </div>
+  <div class="block">
+    <fui-checkbox
+      [options]="dataArrays[1]"
+      [groupLabel]="'Label'"
+      [errorMessage]="'Error text explaining how to fix'"
+    ></fui-checkbox>
+  </div>
+</div>
+
+<div class="container">
+  <div class="block">
+    <fui-checkbox
+      [options]="dataArrays[2]"
+      [groupLabel]="'Label'"
+      [direction]="'row'"
+    ></fui-checkbox>
+  </div>
+  <div class="block">
+    <fui-checkbox
+      [options]="dataArrays[3]"
+      [groupLabel]="'Label'"
+      [direction]="'row'"
+      [errorMessage]="'Error text explaining how to fix'"
+    ></fui-checkbox>
+  </div>
+</div>
+
+<div class="container">
+  <div class="block">
+    <fui-checkbox
+      [options]="dataArrays[4]"
+      [direction]="'column'"
+    ></fui-checkbox>
+  </div>
+  <div class="block">
+    <fui-checkbox
+      [options]="dataArrays[5]"
+      [color]="'accent'"
+      [direction]="'column'"
+      [errorMessage]="'Error text explaining how to fix'"
+    ></fui-checkbox>
+  </div>
+</div>
+
+<div class="container">
+  <div class="block">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <fui-checkbox
+        [options]="dataArrays[6]"
+        [errorMessage]="errorMessageRequiredFruit"
+        (selectedCheckbox)="getSelectedCheckboxFruits($event)"
+      ></fui-checkbox>
+
+      <div class="btn">
+        <fui-button type="submit" [color]="'primary'" [size]="'sizes'"
+          >Submit</fui-button
+        >
+      </div>
+    </form>
+  </div>
+  <div class="block">
+    <fui-checkbox
+      [options]="dataArrays[7]"
+      [color]="'disabled'"
+      [direction]="'column'"
+    ></fui-checkbox>
+  </div>
+</div>
+
+<div class="container">
+  <div class="block" [formGroup]="favorite">
+    <i>Checkbox using FormControlName</i>
+    <fui-checkbox
+      formControlName="sports"
+      [groupLabel]="'Favorite Sport'"
+      [options]="dataSport"
+      [errorMessage]="errorMessageRequiredSport"
+      [optionAlign]="'row'"
+      (onChangeOption)="handleOnChangeOptionSport($event)"
+    ></fui-checkbox>
+    <div class="btn" (click)="submitSport()">
+      <fui-button type="submit" [color]="'primary'" [size]="'sizes'"
+        >Submit</fui-button
+      >
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="block">
+    <fui-checkbox
+      [options]="[
+        { value: 'value default', label: 'Label Default', isChecked: true }
+      ]"
+      [color]="'primary'"
+      [size]="'sizedefault'"
+    ></fui-checkbox>
+    <fui-checkbox
+      [options]="[{ value: 'value xs', label: 'Label XS', isChecked: true }]"
+      [color]="'primary'"
+      [size]="'sizexs'"
+    ></fui-checkbox>
+    <fui-checkbox
+      [options]="[{ value: 'value s', label: 'Label S', isChecked: true }]"
+      [color]="'primary'"
+      [size]="'sizes'"
+    ></fui-checkbox>
+    <fui-checkbox
+      [options]="[{ value: 'value m', label: 'Label M', isChecked: true }]"
+      [color]="'primary'"
+      [size]="'sizem'"
+    ></fui-checkbox>
+    <fui-checkbox
+      [options]="[{ value: 'value l', label: 'Label L', isChecked: true }]"
+      [color]="'primary'"
+      [size]="'sizel'"
+    ></fui-checkbox>
+    <fui-checkbox
+      [options]="[{ value: 'value xl', label: 'Label XL', isChecked: true }]"
+      [color]="'primary'"
+      [size]="'sizexl'"
+    ></fui-checkbox>
+    <fui-checkbox
+      [options]="[{ value: 'value xxl', label: 'Label XXL', isChecked: true }]"
+      [color]="'primary'"
+      [size]="'sizexxl'"
+    ></fui-checkbox>
+  </div>
+</div>

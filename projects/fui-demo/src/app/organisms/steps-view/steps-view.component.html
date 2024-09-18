@@ -1,0 +1,230 @@
+<h1>Steps</h1>
+<p>
+  FuiSteps presents procedural content in a numbered outline format. It is best
+  used when presenting instructional content that must be conducted in a
+  particular order. It requires a title and children to be present and will
+  automatically increment the step number based on the initial firstStepNumber.
+</p>
+<div class="container">
+  <h3>Step Display All, Direction Vertical</h3>
+  <fui-steps [steps]="steps">
+    <fui-step-content [id]="'step-1'">
+      <fui-text>content step 1</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+    <fui-step-content [id]="'step-2'">
+      <fui-text>content step 2</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+
+    <fui-step-content [id]="'step-3'">
+      <fui-text>content step 3</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+
+    <fui-step-content [id]="'step-4'">
+      <fui-text>content step 4</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+
+    <fui-step-content [id]="'step-5'">
+      <fui-text>content step 5</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+
+    <fui-step-content [id]="'step-6'">
+      <fui-text [color]="'disabled'">content step 6</fui-text> <br />
+      <fui-text [color]="'disabled'"
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+  </fui-steps>
+</div>
+
+<div class="container">
+  <h3>Step Display Current, Direction Horizontal</h3>
+  <fui-steps
+    [steps]="stepsCurrent"
+    [direction]="'horizontal'"
+    [conditionDisplay]="'current'"
+    [activeStepId]="activeStepCurrent"
+    (selectedStep)="handleSelectedStepCurrent($event)"
+  >
+    <fui-step-content [id]="'step-current-1'">
+      <fui-text>content step 1</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+    <fui-step-content [id]="'step-current-2'">
+      <fui-text>content step 2</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+
+    <fui-step-content [id]="'step-current-3'">
+      <fui-text>content step 3</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+
+    <fui-step-content [id]="'step-current-4'">
+      <fui-text>content step 4</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+
+    <fui-step-content [id]="'step-current-5'">
+      <fui-text>content step 5</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+
+    <fui-step-content [id]="'step-current-6'">
+      <fui-text [color]="'disabled'">content step 6</fui-text> <br />
+      <fui-text [color]="'disabled'"
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+  </fui-steps>
+</div>
+
+<div class="container">
+  <h3>Step Display Current, Direction Vertical</h3>
+  <fui-steps
+    [steps]="stepsCurrentVertical"
+    [direction]="'vertical'"
+    [conditionDisplay]="'current'"
+    [activeStepId]="activeStepCurrentVertical"
+    (selectedStep)="handleSelectedStepCurrentVertical($event)"
+  >
+    <fui-step-content [id]="'step-current-vertical-1'">
+      <fui-text>content step current vertical 1</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, amet!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore minus
+        qui quibusdam ipsa illo illum, mollitia distinctio eos voluptatem
+        impedit modi, numquam laboriosam cumque consequatur vel iusto id
+        accusantium magni laborum unde quia.</fui-text
+      >
+    </fui-step-content>
+    <fui-step-content [id]="'step-current-vertical-2'">
+      <fui-text>content step current vertical 2</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+
+    <fui-step-content [id]="'step-current-vertical-3'">
+      <fui-text>content step current vertical 3</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+
+    <fui-step-content [id]="'step-current-vertical-4'">
+      <fui-text>content step current vertical 4</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+
+    <fui-step-content [id]="'step-current-vertical-5'">
+      <fui-text>content step current vertical 5</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+
+    <fui-step-content [id]="'step-current-vertical-6'">
+      <fui-text [color]="'disabled'">content step current vertical 6</fui-text>
+      <br />
+      <fui-text [color]="'disabled'"
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+  </fui-steps>
+</div>
+
+<div class="container">
+  <h3>Step Display All, Direction Vertical, Step Icon</h3>
+  <fui-steps [steps]="stepsIcon">
+    <fui-step-content [id]="'step-icon-1'">
+      <fui-text>content step 1</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+    <fui-step-content [id]="'step-icon-2'">
+      <fui-text>content step 2</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+
+    <fui-step-content [id]="'step-icon-3'">
+      <fui-text>content step 3</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+
+    <fui-step-content [id]="'step-icon-4'">
+      <fui-text>content step 4</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+
+    <fui-step-content [id]="'step-icon-5'">
+      <fui-text>content step 5</fui-text> <br />
+      <fui-text
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+
+    <fui-step-content [id]="'step-icon-6'">
+      <fui-text [color]="'disabled'">content step 6</fui-text> <br />
+      <fui-text [color]="'disabled'"
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+        amet!</fui-text
+      >
+    </fui-step-content>
+  </fui-steps>
+</div>

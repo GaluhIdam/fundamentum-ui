@@ -1,0 +1,491 @@
+<h1>Avatar</h1>
+<p>
+  The FuiAvatar component typically creates a user icon. It will accept name
+  (required) and image props and will configure the display and accessibility as
+  needed. By default, the background colors come from the set of colors used for
+  visualizations. Otherwise you can pass a hex value to the color prop.
+</p>
+<div class="container">
+  <div class="user">
+    <div class="block">
+      <h3>Initials</h3>
+      <div class="avatar-container">
+        <fui-avatar
+          id="fui"
+          [shape]="'user'"
+          [type]="'initial'"
+          [name]="'Fui'"
+          [size]="'sizexs'"
+          [color]="'primary'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'initial'"
+          [name]="'Fui'"
+          [size]="'sizes'"
+          [color]="'success'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'initial'"
+          [name]="'Fui'"
+          [size]="'sizem'"
+          [color]="'warning'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'initial'"
+          [name]="'Fui'"
+          [size]="'sizel'"
+          [color]="'danger'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'initial'"
+          [name]="'Fui'"
+          [size]="'sizexl'"
+          [color]="'accent'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'initial'"
+          [name]="'Fui'"
+          [size]="'sizexxl'"
+          [color]="'disabled'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+      </div>
+      <div class="avatar-container">
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'initial'"
+          [name]="'Fui Design'"
+          [size]="'sizexs'"
+          [color]="'primary'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'initial'"
+          [name]="'Fui Design'"
+          [size]="'sizes'"
+          [color]="'success'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'initial'"
+          [name]="'Fui Design'"
+          [size]="'sizem'"
+          [color]="'warning'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'initial'"
+          [name]="'Fui Design'"
+          [size]="'sizel'"
+          [color]="'danger'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'initial'"
+          [name]="'Fui Design'"
+          [size]="'sizexl'"
+          [color]="'accent'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'initial'"
+          [name]="'Fui Design'"
+          [size]="'sizexxl'"
+          [color]="'disabled'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>Image</h3>
+      <div class="avatar-container">
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'image'"
+          [name]="'Fui Avatar Image'"
+          [image]="imageAvatar"
+          [size]="'sizexs'"
+          [color]="'primary'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'image'"
+          [name]="'Fui Avatar Image'"
+          [image]="imageAvatar"
+          [size]="'sizes'"
+          [color]="'success'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'image'"
+          [name]="'Fui Avatar Image'"
+          [image]="imageAvatar"
+          [size]="'sizem'"
+          [color]="'warning'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'image'"
+          [name]="'Fui Avatar Image'"
+          [image]="imageAvatar"
+          [size]="'sizel'"
+          [color]="'danger'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'image'"
+          [name]="'Fui Avatar Image'"
+          [image]="imageAvatar"
+          [size]="'sizexl'"
+          [color]="'accent'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'image'"
+          [name]="'Fui Avatar Image'"
+          [image]="imageAvatar"
+          [size]="'sizexxl'"
+          [color]="'disabled'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>Icon</h3>
+      <div class="avatar-container">
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'icon'"
+          [name]="'Fui Avatar Icon'"
+          [icon]="'userAvatar'"
+          [size]="'sizexs'"
+          [color]="'primary'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'icon'"
+          [name]="'Fui Avatar Icon'"
+          [icon]="'userAvatar'"
+          [size]="'sizes'"
+          [color]="'success'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'icon'"
+          [name]="'Fui Avatar Icon'"
+          [icon]="'userAvatar'"
+          [size]="'sizem'"
+          [color]="'warning'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'icon'"
+          [name]="'Fui Avatar Icon'"
+          [icon]="'userAvatar'"
+          [size]="'sizel'"
+          [color]="'danger'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'icon'"
+          [name]="'Fui Avatar Icon'"
+          [icon]="'userAvatar'"
+          [size]="'sizexl'"
+          [color]="'accent'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'user'"
+          [type]="'icon'"
+          [name]="'Fui Avatar Icon'"
+          [icon]="'userAvatar'"
+          [size]="'sizexxl'"
+          [color]="'disabled'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+      </div>
+    </div>
+  </div>
+  <div class="spaces">
+    <div class="block">
+      <h3>Initials</h3>
+      <div class="avatar-container">
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'initial'"
+          [name]="'Fui'"
+          [size]="'sizexs'"
+          [color]="'primary'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'initial'"
+          [name]="'Fui'"
+          [size]="'sizes'"
+          [color]="'success'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'initial'"
+          [name]="'Fui'"
+          [size]="'sizem'"
+          [color]="'warning'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'initial'"
+          [name]="'Fui'"
+          [size]="'sizel'"
+          [color]="'danger'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'initial'"
+          [name]="'Fui'"
+          [size]="'sizexl'"
+          [color]="'accent'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'initial'"
+          [name]="'Fui'"
+          [size]="'sizexxl'"
+          [color]="'disabled'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+      </div>
+
+      <div class="avatar-container">
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'initial'"
+          [name]="'Fui Design'"
+          [size]="'sizexs'"
+          [color]="'primary'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'initial'"
+          [name]="'Fui Design'"
+          [size]="'sizes'"
+          [color]="'success'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'initial'"
+          [name]="'Fui Design'"
+          [size]="'sizem'"
+          [color]="'warning'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'initial'"
+          [name]="'Fui Design'"
+          [size]="'sizel'"
+          [color]="'danger'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'initial'"
+          [name]="'Fui Design'"
+          [size]="'sizexl'"
+          [color]="'accent'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'initial'"
+          [name]="'Fui Design'"
+          [size]="'sizexxl'"
+          [color]="'disabled'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>Image</h3>
+      <div class="avatar-container">
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'image'"
+          [name]="'Fui Avatar Image'"
+          [image]="imageAvatar"
+          [size]="'sizexs'"
+          [color]="'primary'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'image'"
+          [name]="'Fui Avatar Image'"
+          [image]="imageAvatar"
+          [size]="'sizes'"
+          [color]="'success'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'image'"
+          [name]="'Fui Avatar Image'"
+          [image]="imageAvatar"
+          [size]="'sizem'"
+          [color]="'warning'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'image'"
+          [name]="'Fui Avatar Image'"
+          [image]="imageAvatar"
+          [size]="'sizel'"
+          [color]="'danger'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'image'"
+          [name]="'Fui Avatar Image'"
+          [image]="imageAvatar"
+          [size]="'sizexl'"
+          [color]="'accent'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'image'"
+          [name]="'Fui Avatar Image'"
+          [image]="imageAvatar"
+          [size]="'sizexxl'"
+          [color]="'disabled'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>Icon</h3>
+      <div class="avatar-container">
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'icon'"
+          [name]="'Fui Avatar Icon'"
+          [icon]="'userAvatar'"
+          [size]="'sizexs'"
+          [color]="'primary'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'icon'"
+          [name]="'Fui Avatar Icon'"
+          [icon]="'userAvatar'"
+          [size]="'sizes'"
+          [color]="'success'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'icon'"
+          [name]="'Fui Avatar Icon'"
+          [icon]="'userAvatar'"
+          [size]="'sizem'"
+          [color]="'warning'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'icon'"
+          [name]="'Fui Avatar Icon'"
+          [icon]="'userAvatar'"
+          [size]="'sizel'"
+          [color]="'danger'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'icon'"
+          [name]="'Fui Avatar Icon'"
+          [icon]="'userAvatar'"
+          [size]="'sizexl'"
+          [color]="'accent'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+        <fui-avatar
+          [shape]="'spaces'"
+          [type]="'icon'"
+          [name]="'Fui Avatar Icon'"
+          [icon]="'userAvatar'"
+          [size]="'sizexxl'"
+          [color]="'disabled'"
+          (onClickAvatar)="handleClickAvatar($event)"
+        ></fui-avatar>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="user">
+    <div class="block">
+      <h3>User Group</h3>
+      <fui-avatar
+        [size]="'sizel'"
+        [shape]="'user'"
+        [avatarBorder]="true"
+        [isGroup]="true"
+        [avatarGroupData]="avatarGroupDataInitial"
+        (onClickAvatar)="handleClickAvatar($event)"
+      ></fui-avatar>
+    </div>
+  </div>
+
+  <div class="spaces">
+    <div class="block">
+      <h3>Spaces Group</h3>
+      <fui-avatar
+        [size]="'sizel'"
+        [shape]="'spaces'"
+        [avatarBorder]="true"
+        [isGroup]="true"
+        [avatarGroupData]="avatarGroupDataInitial"
+        (onClickAvatar)="handleClickAvatar($event)"
+      ></fui-avatar>
+    </div>
+  </div>
+</div>

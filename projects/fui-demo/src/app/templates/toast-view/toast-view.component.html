@@ -1,0 +1,228 @@
+<h1>Toast</h1>
+<p>
+  FuiToast allows for small notes that appear in the bottom right of the screen.
+  They should be used for ephemeral, live actions (think save complete or
+  something just finished right now). They should not be used for historical
+  actions (your report built 30 minutes ago). This means that a user should
+  never be greeted with toasts when starting a session. Toasts should be brief
+  and avoid long paragraphs of text or titling.
+</p>
+
+<div class="container">
+  <div>
+    <h2>Normal Toast Bottom Right</h2>
+    <div class="toast">
+      <fui-button
+        [color]="'primary'"
+        [size]="'sizes'"
+        (click)="handleNormalToast()"
+        >Default Toast</fui-button
+      >
+      <fui-button
+        [color]="'primary'"
+        [size]="'sizes'"
+        (click)="handleNormalToast('primary')"
+        >Toast Primary</fui-button
+      >
+      <fui-button
+        [color]="'success'"
+        [size]="'sizes'"
+        (click)="handleNormalToast('success')"
+        >Toast Success</fui-button
+      >
+      <fui-button
+        [color]="'warning'"
+        [size]="'sizes'"
+        (click)="handleNormalToast('warning')"
+        >Toast Warning</fui-button
+      >
+      <fui-button
+        [color]="'danger'"
+        [size]="'sizes'"
+        (click)="handleNormalToast('danger')"
+        >Toast Danger</fui-button
+      >
+    </div>
+  </div>
+
+  <div>
+    <h2>Icon Toast Bottom Left</h2>
+    <div class="toast">
+      <fui-button
+        [color]="'primary'"
+        [size]="'sizes'"
+        (click)="handleIconToast()"
+        >Default Toast</fui-button
+      >
+      <fui-button
+        [color]="'primary'"
+        [size]="'sizes'"
+        (click)="handleIconToast('primary')"
+        >Toast Primary</fui-button
+      >
+      <fui-button
+        [color]="'success'"
+        [size]="'sizes'"
+        (click)="handleIconToast('success')"
+        >Toast Success</fui-button
+      >
+      <fui-button
+        [color]="'warning'"
+        [size]="'sizes'"
+        (click)="handleIconToast('warning')"
+        >Toast Warning</fui-button
+      >
+      <fui-button
+        [color]="'danger'"
+        [size]="'sizes'"
+        (click)="handleIconToast('danger')"
+        >Toast Danger</fui-button
+      >
+    </div>
+  </div>
+
+  <div>
+    <h2>Normal Footer Toast Top Left</h2>
+    <div class="toast">
+      <fui-button
+        [color]="'primary'"
+        [size]="'sizes'"
+        (click)="handleNormalFooterToast()"
+        >Default Toast</fui-button
+      >
+      <fui-button
+        [color]="'primary'"
+        [size]="'sizes'"
+        (click)="handleNormalFooterToast('primary')"
+        >Toast Primary</fui-button
+      >
+      <fui-button
+        [color]="'success'"
+        [size]="'sizes'"
+        (click)="handleNormalFooterToast('success')"
+        >Toast Success</fui-button
+      >
+      <fui-button
+        [color]="'warning'"
+        [size]="'sizes'"
+        (click)="handleNormalFooterToast('warning')"
+        >Toast Warning</fui-button
+      >
+      <fui-button
+        [color]="'danger'"
+        [size]="'sizes'"
+        (click)="handleNormalFooterToast('danger')"
+        >Toast Danger</fui-button
+      >
+    </div>
+  </div>
+
+  <div>
+    <h2>Icon Footer Toast Top Right</h2>
+    <div class="toast">
+      <fui-button
+        [color]="'primary'"
+        [size]="'sizes'"
+        (click)="handleIconFooterToast()"
+        >Default Toast</fui-button
+      >
+      <fui-button
+        [color]="'primary'"
+        [size]="'sizes'"
+        (click)="handleIconFooterToast('primary')"
+        >Toast Primary</fui-button
+      >
+      <fui-button
+        [color]="'success'"
+        [size]="'sizes'"
+        (click)="handleIconFooterToast('success')"
+        >Toast Success</fui-button
+      >
+      <fui-button
+        [color]="'warning'"
+        [size]="'sizes'"
+        (click)="handleIconFooterToast('warning')"
+        >Toast Warning</fui-button
+      >
+      <fui-button
+        [color]="'danger'"
+        [size]="'sizes'"
+        (click)="handleIconFooterToast('danger')"
+        >Toast Danger</fui-button
+      >
+    </div>
+  </div>
+
+  <div>
+    <h2>Normal Footer Action Dismiss Toast</h2>
+    <div class="toast">
+      <fui-button
+        [color]="'primary'"
+        [size]="'sizes'"
+        (click)="handleNormalFooterDismissToast()"
+        >Default Toast</fui-button
+      >
+      <fui-button
+        [color]="'primary'"
+        [size]="'sizes'"
+        (click)="handleNormalFooterDismissToast('primary')"
+        >Toast Primary</fui-button
+      >
+      <fui-button
+        [color]="'success'"
+        [size]="'sizes'"
+        (click)="handleNormalFooterDismissToast('success')"
+        >Toast Success</fui-button
+      >
+      <fui-button
+        [color]="'warning'"
+        [size]="'sizes'"
+        (click)="handleNormalFooterDismissToast('warning')"
+        >Toast Warning</fui-button
+      >
+      <fui-button
+        [color]="'danger'"
+        [size]="'sizes'"
+        (click)="handleNormalFooterDismissToast('danger')"
+        >Toast Danger</fui-button
+      >
+    </div>
+  </div>
+
+  <div>
+    <h2>Normal Footer Action Dynamic Toast</h2>
+    <div class="toast">
+      <fui-button
+        [color]="'primary'"
+        [size]="'sizes'"
+        (click)="handleNormalFooterActionToast()"
+        >Default Toast</fui-button
+      >
+      <fui-button
+        [color]="'primary'"
+        [size]="'sizes'"
+        (click)="handleNormalFooterActionToast('primary')"
+        >Toast Primary</fui-button
+      >
+      <fui-button
+        [color]="'success'"
+        [size]="'sizes'"
+        (click)="handleNormalFooterActionToast('success')"
+        >Toast Success</fui-button
+      >
+      <fui-button
+        [color]="'warning'"
+        [size]="'sizes'"
+        (click)="handleNormalFooterActionToast('warning')"
+        >Toast Warning</fui-button
+      >
+      <fui-button
+        [color]="'danger'"
+        [size]="'sizes'"
+        (click)="handleNormalFooterActionToast('danger')"
+        >Toast Dange</fui-button
+      >
+    </div>
+  </div>
+</div>
+<fui-toast></fui-toast>

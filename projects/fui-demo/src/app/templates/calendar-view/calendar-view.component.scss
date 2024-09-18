@@ -1,0 +1,44 @@
+@import "../../../styles.scss";
+
+.head-modal-primary {
+  @include headModalMix(var(--fuiColorPrimary, $fuiColorPrimary));
+}
+.head-modal-success {
+  @include headModalMix(var(--fuiColorSuccess, $fuiColorSuccess));
+}
+.head-modal-warning {
+  @include headModalMix(var(--fuiColorWarning, $fuiColorWarning));
+}
+.head-modal-danger {
+  @include headModalMix(var(--fuiColorDanger, $fuiColorDanger));
+}
+
+.modal-body-content {
+  @include modalBodyContentMix();
+}
+
+.head-event-detail {
+  display: grid;
+  .title-primary {
+    @include titleMix(var(--fuiColorPrimary, $fuiColorPrimary));
+  }
+  .title-success {
+    @include titleMix(var(--fuiColorSuccess, $fuiColorSuccess));
+  }
+  .title-warning {
+    @include titleMix(var(--fuiColorWarning, $fuiColorWarning));
+  }
+  .title-danger {
+    @include titleMix(var(--fuiColorDanger, $fuiColorDanger));
+  }
+  .additional {
+    font-size: small;
+    color: var(--fuiColorInk, $fuiColorInk);
+  }
+}
+.date-event-detail {
+  @include detailEventMix();
+}
+.content-event {
+  @include contentEventMix();
+}

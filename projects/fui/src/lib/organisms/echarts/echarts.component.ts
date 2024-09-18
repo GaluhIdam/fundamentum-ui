@@ -1,4 +1,12 @@
-import { Component, ElementRef, inject, Input, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Inject,
+  inject,
+  Input,
+  PLATFORM_ID,
+  ViewChild,
+} from '@angular/core';
 import { OptionChart } from './utility/option.dto';
 import * as echarts from 'echarts/core';
 import { ThemesChart } from './theme-chart';
@@ -23,7 +31,7 @@ import {
 } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
 import { UniversalTransition } from 'echarts/features';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ThemeService } from '../../../public-api';
 import { Subscription } from 'rxjs';
 
@@ -57,104 +65,124 @@ export class EchartsComponent {
   private themeSubscription!: Subscription;
   chartInstance?: echarts.ECharts;
 
-  constructor() {
-    echarts.use([
-      TitleComponent,
-      ToolboxComponent,
-      TooltipComponent,
-      GridComponent,
-      LegendComponent,
-      DataZoomComponent,
-      MarkAreaComponent,
-      MarkLineComponent,
-      VisualMapComponent,
-      TimelineComponent,
-      LineChart,
-      BarChart,
-      PieChart,
-      ScatterChart,
-      GaugeChart,
-      CanvasRenderer,
-      UniversalTransition,
-    ]);
+  constructor(@Inject(PLATFORM_ID) private platformId: any) {
+    if (isPlatformBrowser(this.platformId)) {
+      echarts.use([
+        TitleComponent,
+        ToolboxComponent,
+        TooltipComponent,
+        GridComponent,
+        LegendComponent,
+        DataZoomComponent,
+        MarkAreaComponent,
+        MarkLineComponent,
+        VisualMapComponent,
+        TimelineComponent,
+        LineChart,
+        BarChart,
+        PieChart,
+        ScatterChart,
+        GaugeChart,
+        CanvasRenderer,
+        UniversalTransition,
+      ]);
+    }
   }
 
   ngOnInit(): void {
-    if (this.themeCustom === false) {
-      this.registerTheme();
+    if (isPlatformBrowser(this.platformId)) {
+      if (this.themeCustom === false) {
+        this.registerTheme();
+      }
     }
   }
 
   ngAfterViewInit(): void {
-    this.initEchart();
-    this.observeWidthChanges();
-    this.themeSubscription = this.themeService.currentTheme$.subscribe(
-      (theme) => {
-        if (theme === 'light') {
-          this.themeChart = 'light';
+    if (isPlatformBrowser(this.platformId)) {
+      this.initEchart();
+      this.observeWidthChanges();
+      this.themeSubscription = this.themeService.currentTheme$.subscribe(
+        (theme) => {
+          if (theme === 'light') {
+            this.themeChart = 'light';
+          }
+          if (theme === 'dark') {
+            this.themeChart = 'dark';
+          }
+          if (theme === 'ahp-light') {
+            this.themeChart = 'light';
+          }
+          if (theme === 'ahp-dark') {
+            this.themeChart = 'dark';
+          }
+          this.changeTheme();
         }
-        if (theme === 'dark') {
-          this.themeChart = 'dark';
-        }
-        if (theme === 'ahp-light') {
-          this.themeChart = 'light';
-        }
-        if (theme === 'ahp-dark') {
-          this.themeChart = 'dark';
-        }
-        this.changeTheme();
-      }
-    );
+      );
+    }
   }
 
   ngOnChanges(changes: any): void {
-    if (this.chartInstance) {
-      if (changes.themeChart) {
-        this.changeTheme();
+    if (isPlatformBrowser(this.platformId)) {
+      if (this.chartInstance) {
+        if (changes.themeChart) {
+          this.changeTheme();
+        }
+        const option: any = this.chartOption;
+        this.chartInstance.setOption(option);
       }
+    }
+  }
+
+  ngOnDestroy() {
+    if (isPlatformBrowser(this.platformId)) {
+      if (this.themeSubscription) {
+        this.themeSubscription.unsubscribe();
+      }
+    }
+  }
+
+  registerTheme(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      echarts.registerTheme('light', ThemesChart.light);
+      echarts.registerTheme('dark', ThemesChart.dark);
+    }
+  }
+
+  initEchart(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.chartInstance = echarts.init(
+        this.echartsRef?.nativeElement,
+        this.themeChart,
+        {
+          width: 'auto',
+          height: 'auto',
+          renderer: 'svg',
+        }
+      );
       const option: any = this.chartOption;
       this.chartInstance.setOption(option);
     }
   }
 
-  ngOnDestroy() {
-    this.themeSubscription.unsubscribe();
-  }
-
-  registerTheme(): void {
-    echarts.registerTheme('light', ThemesChart.light);
-    echarts.registerTheme('dark', ThemesChart.dark);
-  }
-
-  initEchart(): void {
-    this.chartInstance = echarts.init(
-      this.echartsRef?.nativeElement,
-      this.themeChart,
-      {
-        width: 'auto',
-        height: 'auto',
-        renderer: 'canvas',
-      }
-    );
-    const option: any = this.chartOption;
-    this.chartInstance.setOption(option);
-  }
-
   changeTheme(): void {
-    this.chartInstance?.dispose();
-    this.initEchart();
+    if (isPlatformBrowser(this.platformId)) {
+      this.chartInstance?.dispose();
+      this.initEchart();
+    }
   }
 
   observeWidthChanges(): void {
-    const element = this.echartsRef!.nativeElement;
-    const observer = new ResizeObserver(() => {
-      if (this.chartInstance) {
-        this.chartInstance.dispose();
-        setTimeout(() => {
-          this.initEchart();
-        }, 100);
-      }
-    });
-    observer.observe(element);
+    if (isPlatformBrowser(this.platformId)) {
+      const element = this.echartsRef!.nativeElement;
+      const observer = new ResizeObserver(() => {
+        if (this.chartInstance) {
+          this.chartInstance.dispose();
+          setTimeout(() => {
+            this.initEchart();
+          }, 100);
+        }
+      });
+      observer.observe(element);
+    }
   }
 }

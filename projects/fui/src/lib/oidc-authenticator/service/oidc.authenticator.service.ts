@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { OidcUtilityService } from '../utility/oidc.utility.service';
 import {
   catchError,
@@ -10,6 +10,7 @@ import {
   tap,
 } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
+import { isPlatformBrowser } from '@angular/common';
 
 /** OpenId Connect Service
  * @description OidcAuthenticatorService is an Angular service designed to facilitate authentication and authorization using OpenID Connect (OIDC).
@@ -24,8 +25,17 @@ export class OidcAuthenticatorService extends OidcUtilityService {
   private authWindow: Window | null = null;
   private width: number = 500;
   private height: number = 500;
-  private left: number = window.screen.width / 2 - this.width / 2;
-  private top: number = window.screen.height / 2 - this.height / 2;
+  private left?: number;
+  private top?: number;
+
+  constructor(@Inject(PLATFORM_ID) private platformIdx: any) {
+    super(platformIdx);
+    if (isPlatformBrowser(this.platformIdx)) {
+      // Only runs in the browser
+      this.left = window.screen.width / 2 - this.width / 2;
+      this.top = window.screen.height / 2 - this.height / 2;
+    }
+  }
 
   /**
    * Url Generator
@@ -57,10 +67,12 @@ export class OidcAuthenticatorService extends OidcUtilityService {
    * @returns {Promise<void>}
    */
   async loginWithPage(config: ConfigDTO): Promise<void> {
-    const codeVerifier = this.generateCodeVerifier();
-    this.setLocalStorage(this.codeVerifierKey, codeVerifier);
-    const codeChallenge = await this.generateCodeChallenge(codeVerifier);
-    window.location.href = await this.generateAuthUrl(config, codeChallenge);
+    if (isPlatformBrowser(this.platformIdx)) {
+      const codeVerifier = this.generateCodeVerifier();
+      this.setLocalStorage(this.codeVerifierKey, codeVerifier);
+      const codeChallenge = await this.generateCodeChallenge(codeVerifier);
+      window.location.href = await this.generateAuthUrl(config, codeChallenge);
+    }
   }
 
   /**
@@ -71,15 +83,17 @@ export class OidcAuthenticatorService extends OidcUtilityService {
    * @returns {Promise<void>}
    */
   async loginWithPopup(config: ConfigDTO): Promise<void> {
-    const codeVerifier = this.generateCodeVerifier();
-    this.setLocalStorage(this.codeVerifierKey, codeVerifier);
-    const codeChallenge = await this.generateCodeChallenge(codeVerifier);
-    const authUrl = await this.generateAuthUrl(config, codeChallenge);
-    this.authWindow = window.open(
-      authUrl,
-      '_blank',
-      `width=${this.width},height=${this.height},left=${this.left},top=${this.top}`
-    );
+    if (isPlatformBrowser(this.platformIdx)) {
+      const codeVerifier = this.generateCodeVerifier();
+      this.setLocalStorage(this.codeVerifierKey, codeVerifier);
+      const codeChallenge = await this.generateCodeChallenge(codeVerifier);
+      const authUrl = await this.generateAuthUrl(config, codeChallenge);
+      this.authWindow = window.open(
+        authUrl,
+        '_blank',
+        `width=${this.width},height=${this.height},left=${this.left},top=${this.top}`
+      );
+    }
   }
 
   /**
@@ -88,29 +102,31 @@ export class OidcAuthenticatorService extends OidcUtilityService {
    * @param {ConfigDTO} config
    */
   callBackAuth(config: ConfigDTO): void {
-    const code = new URL(window.location.href).searchParams.get('code');
-    if (!code) return;
-    this._exchangeCodeForTokens(code, config)
-      .pipe(
-        tap((result) => {
-          this.storeTokens(result, config);
-          this.clearVerifierData();
-          if (window.opener) {
-            window.close();
-            if (window.opener.location) {
-              window.opener.location.reload();
+    if (isPlatformBrowser(this.platformIdx)) {
+      const code = new URL(window.location.href).searchParams.get('code');
+      if (!code) return;
+      this._exchangeCodeForTokens(code, config)
+        .pipe(
+          tap((result) => {
+            this.storeTokens(result, config);
+            this.clearVerifierData();
+            if (window.opener) {
+              window.close();
+              if (window.opener.location) {
+                window.opener.location.reload();
+              }
+            } else {
+              window.location.reload();
             }
-          } else {
-            window.location.reload();
-          }
-          history.replaceState(null, '', window.location.pathname);
-        }),
-        catchError((error) => {
-          console.error('Error during token exchange:', error);
-          return of(null);
-        })
-      )
-      .subscribe();
+            history.replaceState(null, '', window.location.pathname);
+          }),
+          catchError((error) => {
+            console.error('Error during token exchange:', error);
+            return of(null);
+          })
+        )
+        .subscribe();
+    }
   }
 
   /**
@@ -120,19 +136,23 @@ export class OidcAuthenticatorService extends OidcUtilityService {
    * @returns {Observable<boolean>}
    */
   checkAuth(config: ConfigDTO): Observable<boolean> {
-    const tokens = this.retrieveTokens(config);
-    if (tokens) {
-      return this.getUserInfo(config).pipe(
-        tap((res) => {
-          if (!res) {
-            localStorage.removeItem('access_token');
-            localStorage.removeItem('id_token');
-            localStorage.removeItem('refresh_token');
-          }
-        }),
-        map((res) => !!res),
-        catchError(() => of(false))
-      );
+    if (isPlatformBrowser(this.platformIdx)) {
+      const tokens = this.retrieveTokens(config);
+      if (tokens) {
+        return this.getUserInfo(config).pipe(
+          tap((res) => {
+            if (!res) {
+              localStorage.removeItem('access_token');
+              localStorage.removeItem('id_token');
+              localStorage.removeItem('refresh_token');
+            }
+          }),
+          map((res) => !!res),
+          catchError(() => of(false))
+        );
+      } else {
+        return of(false);
+      }
     } else {
       return of(false);
     }
@@ -145,29 +165,33 @@ export class OidcAuthenticatorService extends OidcUtilityService {
    * @returns {Observable<unknown>}
    */
   logoutAuth(config: ConfigDTO): Observable<unknown> {
-    const tokens = this.retrieveTokens(config);
-    if (!tokens.accessToken) throw new Error('No access token found');
-    return this._http
-      .get<WellKnownEndPointDTO>(config.authWellknownEndpointUrl)
-      .pipe(
-        switchMap((res) => {
-          const revocationRequests = this.generateRevocationRequests(
-            res,
-            config,
-            tokens
-          );
-          return forkJoin(revocationRequests).pipe(
-            tap(() => {
-              this.clearAllStorage();
-              window.location.reload();
-            }),
-            catchError((error) => {
-              console.error('Error during logout:', error);
-              return of(null);
-            })
-          );
-        })
-      );
+    if (isPlatformBrowser(this.platformIdx)) {
+      const tokens = this.retrieveTokens(config);
+      if (!tokens.accessToken) throw new Error('No access token found');
+      return this._http
+        .get<WellKnownEndPointDTO>(config.authWellknownEndpointUrl)
+        .pipe(
+          switchMap((res) => {
+            const revocationRequests = this.generateRevocationRequests(
+              res,
+              config,
+              tokens
+            );
+            return forkJoin(revocationRequests).pipe(
+              tap(() => {
+                this.clearAllStorage();
+                window.location.reload();
+              }),
+              catchError((error) => {
+                console.error('Error during logout:', error);
+                return of(null);
+              })
+            );
+          })
+        );
+    } else {
+      return of(null);
+    }
   }
 
   /**

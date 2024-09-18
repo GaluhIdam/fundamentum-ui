@@ -1,0 +1,59 @@
+<h1>Callout</h1>
+<p>
+  FuiCallOut contains a message directly related to content on the page. This
+  includes general information, success, warning, and error messages.
+</p>
+<p>Keep these guidelines in mind:</p>
+<ul>
+  <li>Minimize the number of callouts per page.</li>
+  <li>
+    Stack callouts in the order in which they require users' attention: error,
+    warning, info, and then success.
+  </li>
+  <li>
+    Offer only one action per callout and ensure it's an action users can
+    perform quickly.
+  </li>
+  <li>
+    If the callout has a permanent spot in the UI, but needs to be less
+    obstructive, set the size property to s (small).
+  </li>
+  <li>Use an iconType if it adds context.</li>
+</ul>
+<fui-callout
+  [title]="'This is CallOut Primary'"
+  [size]="'m'"
+  [icon]="'user'"
+  [color]="'primary'"
+  [message]="message"
+  [visibility]="visibilityPrimary"
+  (onClick)="onHandleCalloutPrimary()"
+>
+</fui-callout>
+<fui-callout
+  [title]="'This is CallOut Success'"
+  [size]="'s'"
+  [icon]="'checkInCircleFilled'"
+  [color]="'success'"
+  [message]="message"
+  [visibility]="visibilitySuccess"
+  (onClick)="onHandleCalloutSuccess()"
+></fui-callout>
+<fui-callout
+  [title]="'This is CallOut Warning'"
+  [size]="'m'"
+  [icon]="'alert'"
+  [color]="'warning'"
+  [visibility]="visibilityWarning"
+  (onClick)="onHandleCalloutWarning()"
+>
+</fui-callout>
+<fui-callout
+  [title]="'This is CallOut Danger'"
+  [size]="'s'"
+  [icon]="'crossInACircleFilled'"
+  [color]="'danger'"
+  [visibility]="visibilityDanger"
+  (onClick)="onHandleCalloutDanger()"
+>
+</fui-callout>

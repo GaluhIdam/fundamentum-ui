@@ -1,0 +1,35 @@
+<h1>Facet Button</h1>
+FuiFacetButtons are to be used when allowing lists with multiple search params
+to be filtered down by these particular params. They allow for an icon node
+and/or quantity to be passed. You can also indicate the current selection with
+isSelected. Other props include isDisabled and isLoading (which will swap the
+quantity indicator with a loading icon).
+<div class="container">
+  <h3>Normal Facet</h3>
+  <fui-facet-button [items]="facetItems"></fui-facet-button>
+</div>
+
+<div class="container" style="width: 160px">
+  <h3>Facet with space between</h3>
+  <fui-facet-button
+    [items]="facetItems"
+    [facetSpace]="'between'"
+  ></fui-facet-button>
+</div>
+
+<div class="container" style="width: 160px">
+  <h3>Facet with space between and label elipsis</h3>
+  <fui-facet-button
+    [items]="facetItems"
+    [facetSpace]="'between'"
+    [labelWrap]="'elipsis'"
+  ></fui-facet-button>
+</div>
+
+<div class="container">
+  <h3>Facet direction horizontal</h3>
+  <fui-facet-button
+    [items]="facetItems"
+    [direction]="'horizontal'"
+  ></fui-facet-button>
+</div>

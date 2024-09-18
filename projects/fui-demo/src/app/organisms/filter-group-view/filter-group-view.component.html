@@ -1,0 +1,48 @@
+<h1>Filter group</h1>
+<p>
+  Filter buttons Use FuiFilterGroup to wrap FuiFilterButtons into a container
+  that looks nice against form fields (like search). These buttons are used in
+  two different patterns. The most simplest use is that of an on/off pattern to
+  show whether a filter is on. Add the prop withNext to remove the border
+  between it and the next FuiFilterButton to visually group similar or opposite
+  style filters. Add the prop withNext to remove the border between it and the
+  next FuiFilterButton to visually group similar or opposite style filters. Set
+  hasActiveFilters to true when the filter is active.
+</p>
+<div class="container">
+  <fui-filter-group [fullWidth]="false">
+    <fui-filter-group-button (onClick)="test($event)">
+      Single Filter
+    </fui-filter-group-button>
+
+    <fui-filter-group-button
+      (onClick)="onOff(true)"
+      [active]="active"
+      [withNext]="true"
+    >
+      On
+    </fui-filter-group-button>
+    <fui-filter-group-button (onClick)="onOff(false)" [active]="!active">
+      Off
+    </fui-filter-group-button>
+  </fui-filter-group>
+</div>
+
+<div class="container">
+  <fui-filter-group [fullWidth]="true">
+    <fui-filter-group-button (onClick)="test($event)">
+      Single Filter
+    </fui-filter-group-button>
+
+    <fui-filter-group-button
+      (onClick)="onOffSec(true)"
+      [active]="activeSec"
+      [withNext]="true"
+    >
+      On
+    </fui-filter-group-button>
+    <fui-filter-group-button (onClick)="onOffSec(false)" [active]="!activeSec">
+      Off
+    </fui-filter-group-button>
+  </fui-filter-group>
+</div>
