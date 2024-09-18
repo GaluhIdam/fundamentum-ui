@@ -33,6 +33,6 @@ export class OidcAuthenticatorComponent {
 
   /** Login Method */
   login(): void {
-    this._authService.loginWithPage(google);
+    this._authService.loginWithPopup(google);
   }
 }
