@@ -7,7 +7,12 @@
     "strict": true,
     "noImplicitOverride": true,
     "paths": {
-      "fui": ["./dist/fui"]
+      "fui": [
+        "./dist/fui"
+      ],
+      "fui-v2": [
+        "./dist/fui-v2"
+      ]
     },
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,

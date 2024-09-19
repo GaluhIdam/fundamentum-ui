@@ -10,6 +10,8 @@
 /node_modules
 npm-debug.log
 yarn-error.log
+/project/fui-demo-v2
+/project/fui-v2
 
 # IDEs and editors
 .idea/

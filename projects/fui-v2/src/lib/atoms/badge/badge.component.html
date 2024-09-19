@@ -1,0 +1,50 @@
+<div
+  [ngClass]="['badge', disabled ? 'disabled' : color]"
+  [ngStyle]="customColor ? { 'background-color': color, color: textColor } : {}"
+>
+  <fui-icons
+    *ngIf="iconShow && iconPosition === 'start'"
+    [ngClass]="iconClick ? 'hover' : ''"
+    (click)="handleClickedIcon()"
+    [icon]="icon"
+    [color]="iconColor"
+    [size]="iconSize"
+  ></fui-icons>
+
+  <p
+    *ngIf="textShow && (!hrefLink || hrefLink === '#')"
+    [ngClass]="[
+      textClick && !disabled ? 'hover-underline' : '',
+      truncate || ''
+    ]"
+    [ngStyle]="customColor ? { color: textColor } : {}"
+    (click)="handleClicked()"
+  >
+    {{ text }}
+  </p>
+
+  <a
+    *ngIf="textShow && hrefLink && hrefLink !== '#'"
+    [ngClass]="[
+      !disabled ? 'hover-underline' : '',
+      truncate || '',
+      disabled ? 'disabled' : color
+    ]"
+    [ngStyle]="customColor ? { color: textColor } : {}"
+    [href]="hrefLink"
+    target="_blank"
+    rel="noopener noreferrer"
+    (click)="handleClicked()"
+  >
+    {{ text }}
+  </a>
+
+  <fui-icons
+    *ngIf="iconShow && iconPosition === 'end'"
+    [ngClass]="iconClick ? 'hover' : ''"
+    (click)="handleClickedIcon()"
+    [icon]="icon"
+    [color]="iconColor"
+    [size]="iconSize"
+  ></fui-icons>
+</div>

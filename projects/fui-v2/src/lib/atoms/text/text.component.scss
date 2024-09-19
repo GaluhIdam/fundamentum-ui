@@ -1,0 +1,73 @@
+@import "../../styles/index";
+
+p {
+  margin: 0px;
+  &.primary {
+    color: var(--fuiBtnPrimaryText, $fuiBtnPrimaryText);
+  }
+  &.success {
+    color: var(--fuiBtnSuccessText, $fuiBtnSuccessText);
+  }
+  &.accent {
+    color: var(--fuiBtnAccentText, $fuiBtnAccentText);
+  }
+  &.warning {
+    color: var(--fuiBtnWarningText, $fuiBtnWarningText);
+  }
+  &.danger {
+    color: var(--fuiDanger, $fuiDanger);
+  }
+  &.ink {
+    color: var(--fuiColorDarkestShade, $fuiColorDarkestShade);
+  }
+  &.text {
+    color: var(--fuiColorMediumShade, $fuiColorMediumShade);
+  }
+  &.disabled {
+    color: var(--fuiColorLightShade, $fuiColorLightShade);
+  }
+  &.ghost {
+    color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
+  }
+  &.thin {
+    font-weight: 100;
+  }
+  &.extralight {
+    font-weight: 200;
+  }
+  &.light {
+    font-weight: 300;
+  }
+  &.regular {
+    font-weight: 400;
+  }
+  &.medium {
+    font-weight: 500;
+  }
+  &.semibold {
+    font-weight: 600;
+  }
+  &.bold {
+    font-weight: 700;
+  }
+  &.extrabold {
+    font-weight: 800;
+  }
+  &.black {
+    font-weight: 900;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+  &.normal {
+    font-style: normal;
+  }
+
+  &.underline {
+    text-decoration: underline;
+  }
+  &.none {
+    text-decoration: none;
+  }
+}

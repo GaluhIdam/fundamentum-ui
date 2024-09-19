@@ -1,0 +1,19 @@
+$fuiSize: 16px !default;
+
+$fuiSizeXS: $fuiSize * 0.25 !default;
+$fuiSizeS: $fuiSize * 0.5 !default;
+$fuiSizeM: $fuiSize * 0.75 !default;
+$fuiSizeL: $fuiSize * 1.5 !default;
+$fuiSizeXL: $fuiSize * 2 !default;
+$fuiSizeXXL: $fuiSize * 2.5 !default;
+
+// Font sizes -- scale is loosely based on Major Third (1.250)
+$fuiTextScale: 2.25, 1.75, 1.25, 1.125, 1, 0.875, 0.75 !default;
+
+$fuiFontSize: $fuiSize !default; // 5th position in scale
+$fuiFontSizeXS: $fuiFontSize * nth($fuiTextScale, 7) !default; // 12px
+$fuiFontSizeS: $fuiFontSize * nth($fuiTextScale, 6) !default; // 14px
+$fuiFontSizeM: $fuiFontSize * nth($fuiTextScale, 4) !default; // 18px
+$fuiFontSizeL: $fuiFontSize * nth($fuiTextScale, 3) !default; // 20px
+$fuiFontSizeXL: $fuiFontSize * nth($fuiTextScale, 2) !default; // 28px
+$fuiFontSizeXXL: $fuiFontSize * nth($fuiTextScale, 1) !default; // 36px
