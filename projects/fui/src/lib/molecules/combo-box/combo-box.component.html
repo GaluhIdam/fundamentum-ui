@@ -19,7 +19,11 @@
           [icon]="leftIcon"
           [size]="'size' + size"
         ></fui-icons>
-        <p class="placeholder-txt" center *ngIf="!openSelector && selectedValue.length === 0">
+        <p
+          class="placeholder-txt"
+          center
+          *ngIf="!openSelector && selectedValue.length === 0"
+        >
           {{ placeholder }}
         </p>
         <div class="wrap-badge" center *ngIf="!singleSelection && !disabled">
@@ -68,7 +72,7 @@
         <fui-icons
           style="margin-right: 8px"
           right-icon
-          *ngIf="selectedValue.length > 0"
+          *ngIf="selectedValue.length > 0 && !disabled"
           (click)="toggleClearData()"
           [icon]="'cross'"
           [size]="'sizexs'"
@@ -155,7 +159,7 @@
       <fui-icons
         style="margin-right: 8px"
         right-icon
-        *ngIf="selectedValue.length > 0"
+        *ngIf="selectedValue.length > 0 && !disabled"
         (click)="toggleClearData()"
         [icon]="'cross'"
         [size]="'sizexs'"
@@ -202,7 +206,7 @@
         <fui-icons
           style="margin-right: 8px"
           right-icon
-          *ngIf="selectedValue.length > 0"
+          *ngIf="selectedValue.length > 0 && !disabled"
           (click)="toggleClearData()"
           [icon]="'cross'"
           [size]="'sizexs'"

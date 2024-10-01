@@ -6,21 +6,24 @@
   [ngClass]="[
     style == 'filled'
       ? 'btn-fui-' + color + '-' + size
-      : 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth,
+      : style == 'secondary'
+      ? 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth
+      : 'btn-fui-empty-' + color + '-' + size,
     shadow === true ? 'shadow' : '',
-    fullWidth === true ? 'full-width' : ''
+    fullWidth
   ]"
   (click)="handleOnClick()"
 >
   <fui-icons
+    style="margin-left: 6px"
     [size]="
       size === 's'
-        ? 'sizes'
+        ? 'sizexs'
         : size === 'm'
-        ? 'sizem'
+        ? 'sizes'
         : size === 'l'
         ? 'sizel'
-        : 'sizem'
+        : 'sizes'
     "
     *ngIf="icon"
     [ngClass]="iconSide === 'left' ? 'mr' : 'ml'"
@@ -45,9 +48,11 @@
   [ngClass]="[
     style == 'filled'
       ? 'btn-fui-' + color + '-' + size
-      : 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth,
+      : style == 'secondary'
+      ? 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth
+      : 'btn-fui-empty-' + color + '-' + size,
     shadow === true ? 'shadow' : '',
-    fullWidth === true ? 'full-width' : ''
+    fullWidth
   ]"
   (click)="handleOnClick()"
 >
@@ -68,7 +73,7 @@
         : size === 'm'
         ? 'sizes'
         : size === 'l'
-        ? 'sizem'
+        ? 'sizel'
         : 'sizes'
     "
     *ngIf="icon"
@@ -85,9 +90,11 @@
   [ngClass]="[
     style == 'filled'
       ? 'btn-fui-' + color + '-' + size
-      : 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth,
+      : style == 'secondary'
+      ? 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth
+      : 'btn-fui-empty-' + color + '-' + size,
     shadow === true ? 'shadow' : '',
-    fullWidth === true ? 'full-width' : '',
+    fullWidth,
     'btn-icon-only-' + size
   ]"
   (click)="handleOnClick()"
@@ -99,7 +106,7 @@
         : size === 'm'
         ? 'sizes'
         : size === 'l'
-        ? 'sizem'
+        ? 'sizel'
         : 'sizes'
     "
     *ngIf="icon"
@@ -116,9 +123,11 @@
   [ngClass]="[
     style == 'filled'
       ? 'btn-fui-' + color + '-' + size
-      : 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth,
+      : style == 'secondary'
+      ? 'btn-fui-secondary-' + color + '-' + size + ' ' + fullWidth
+      : 'btn-fui-empty-' + color + '-' + size,
     shadow === true ? 'shadow' : '',
-    fullWidth === true ? 'full-width' : ''
+    fullWidth
   ]"
   (click)="handleOnClick()"
 >

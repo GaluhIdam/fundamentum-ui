@@ -6,458 +6,805 @@
   tertiary or low prominence actions, use FuiButtonIcon.
 </p>
 
-<div style="display: flex">
-  <div style="display: block; width: 50%">
-    <h1>Filled Button Without Icon</h1>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'text'"
-      [style]="'filled'"
-      [text]="'Button Primary'"
-      [color]="'primary'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'text'"
-      [style]="'filled'"
-      [text]="'Button Success'"
-      [color]="'success'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'text'"
-      [style]="'filled'"
-      [text]="'Button Danger'"
-      [color]="'danger'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'text'"
-      [style]="'filled'"
-      [text]="'Button Warning'"
-      [color]="'warning'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'text'"
-      [style]="'filled'"
-      [text]="'Button Text'"
-      [color]="'text'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'text'"
-      [style]="'filled'"
-      [text]="'Button Accent'"
-      [color]="'accent'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'text'"
-      [disabled]="true"
-      [style]="'filled'"
-      [text]="'Button Disabled'"
-      [color]="'disabled'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
+<div class="flex-between">
+  <div class="card">
+    <div class="p-30">
+      <fui-button-icon
+        [type]="'button'"
+        [option]="'text'"
+        [style]="'filled'"
+        [text]="'Primary action'"
+        [color]="'primary'"
+      />
+    </div>
+    <div class="bg-white">
+      <p class="label">Filled Button</p>
+    </div>
   </div>
-
-  <div style="display: block; width: 50%">
-    <h1>Filled Button With Icon</h1>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'iconText'"
-      [style]="'filled'"
-      [text]="'Button Primary'"
-      [color]="'primary'"
-      [icon]="'apps'"
-      [iconSide]="'right'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'iconText'"
-      [style]="'filled'"
-      [text]="'Button Success'"
-      [color]="'success'"
-      [icon]="'check'"
-      [iconSide]="'right'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'iconText'"
-      [style]="'filled'"
-      [text]="'Button Danger'"
-      [color]="'danger'"
-      [icon]="'cross'"
-      [iconSide]="'right'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'iconText'"
-      [style]="'filled'"
-      [text]="'Button Warning'"
-      [color]="'warning'"
-      [icon]="'alert'"
-      [iconSide]="'right'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'iconText'"
-      [style]="'filled'"
-      [text]="'Button Text'"
-      [color]="'text'"
-      [icon]="'wordWrap'"
-      [iconSide]="'right'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'iconText'"
-      [style]="'filled'"
-      [text]="'Button Accent'"
-      [color]="'accent'"
-      [icon]="'wordWrap'"
-      [iconSide]="'right'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'iconText'"
-      [disabled]="true"
-      [style]="'filled'"
-      [text]="'Button Disabled'"
-      [color]="'disabled'"
-      [icon]="'wordWrap'"
-      [iconSide]="'right'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
+  <div class="card">
+    <div class="p-30">
+      <fui-button-icon
+        [type]="'button'"
+        [option]="'text'"
+        [style]="'secondary'"
+        [text]="'Secondary action'"
+        [color]="'primary'"
+      />
+    </div>
+    <div class="bg-white">
+      <p class="label">Secondary Button</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="p-30">
+      <fui-button-icon
+        [type]="'button'"
+        [option]="'text'"
+        [style]="'empty'"
+        [text]="'Empty action'"
+        [color]="'primary'"
+      />
+    </div>
+    <div class="bg-white">
+      <p class="label">Empty Button</p>
+    </div>
+  </div>
+</div>
+<div class="flex-between">
+  <div class="card">
+    <div class="p-30">
+      <fui-button-icon
+        [type]="'button'"
+        [option]="'icon'"
+        [style]="'filled'"
+        [icon]="'refresh'"
+        [color]="'primary'"
+        [fullWidth]="'fit'"
+      />
+    </div>
+    <div class="bg-white">
+      <p class="label">Icon Filled Button</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="p-30">
+      <fui-button-icon
+        [type]="'button'"
+        [option]="'icon'"
+        [style]="'secondary'"
+        [icon]="'refresh'"
+        [color]="'primary'"
+        [fullWidth]="'fit'"
+      />
+    </div>
+    <div class="bg-white">
+      <p class="label">Icon Secondary Button</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="p-30">
+      <fui-button-icon
+        [type]="'button'"
+        [option]="'icon'"
+        [style]="'empty'"
+        [icon]="'refresh'"
+        [color]="'primary'"
+      />
+    </div>
+    <div class="bg-white">
+      <p class="label">Icon Empty Button</p>
+    </div>
   </div>
 </div>
 
-<div style="display: flex">
-  <div style="display: block; width: 50%">
-    <h1>Filled Button Only Icon</h1>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'icon'"
-      [style]="'filled'"
-      [color]="'primary'"
-      [icon]="'apps'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'icon'"
-      [style]="'filled'"
-      [color]="'success'"
-      [icon]="'check'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'icon'"
-      [style]="'filled'"
-      [color]="'danger'"
-      [icon]="'cross'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'icon'"
-      [style]="'filled'"
-      [color]="'warning'"
-      [icon]="'cross'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'icon'"
-      [style]="'filled'"
-      [color]="'text'"
-      [icon]="'alert'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'icon'"
-      [style]="'filled'"
-      [color]="'accent'"
-      [icon]="'wordWrap'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'icon'"
-      [disabled]="true"
-      [style]="'filled'"
-      [color]="'disabled'"
-      [icon]="'wordWrap'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-  </div>
+<h1 class="mt-40">Basic button</h1>
+<p>
+  The most standard button component is FuiButton which comes in two styles and
+  two sizes. The fill style should be reserved for the main action and limited
+  in number for a single page. Use the small size (size="s") when placing
+  buttons into smaller containers like popovers.
+</p>
+<br />
+<p>
+  When using colors other than primary, be sure that either the words or an icon
+  also represents the status. For instance, don't rely on color alone to
+  represent dangerous actions but use words like "Delete" not "Confirm". The
+  text and accent colors should be used sparingly as they can easily be confused
+  with other states like disabled and danger.
+</p>
 
-  <div style="display: block; width: 50%">
-    <h1>Secondary Button With Icon</h1>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'icon'"
-      [style]="'secondary'"
-      [text]="'Button Primary'"
-      [color]="'primary'"
-      [icon]="'apps'"
-      [iconSide]="'left'"
-      (onClick)="handleButtonClick($event)"
-    ></fui-button-icon>
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'icon'"
-      [style]="'secondary'"
-      [text]="'Button Success'"
-      [color]="'success'"
-      [icon]="'check'"
-      [iconSide]="'left'"
-      (onClick)="handleButtonClick($event)"
-    ></fui-button-icon>
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'icon'"
-      [style]="'secondary'"
-      [text]="'Button Danger'"
-      [color]="'danger'"
-      [icon]="'cross'"
-      [iconSide]="'left'"
-      (onClick)="handleButtonClick($event)"
-    ></fui-button-icon>
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'icon'"
-      [style]="'secondary'"
-      [text]="'Button Warning'"
-      [color]="'warning'"
-      [icon]="'alert'"
-      [iconSide]="'left'"
-      (onClick)="handleButtonClick($event)"
-    ></fui-button-icon>
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'icon'"
-      [style]="'secondary'"
-      [text]="'Button Text'"
-      [color]="'text'"
-      [icon]="'wordWrap'"
-      [iconSide]="'left'"
-      (onClick)="handleButtonClick($event)"
-    ></fui-button-icon>
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'icon'"
-      [style]="'secondary'"
-      [text]="'Button Accent'"
-      [color]="'accent'"
-      [icon]="'wordWrap'"
-      [iconSide]="'right'"
-      (onClick)="handleButtonClick($event)"
-    ></fui-button-icon>
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'icon'"
-      [disabled]="true"
-      [style]="'secondary'"
-      [text]="'Button Disabled'"
-      [color]="'disabled'"
-      [icon]="'wordWrap'"
-      [iconSide]="'right'"
-      (onClick)="handleButtonClick($event)"
-    ></fui-button-icon>
-    <div style="margin-bottom: 20px"></div>
-  </div>
+<div class="flex mt-20">
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Primary'"
+    [color]="'primary'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'filled'"
+    [text]="'Filled'"
+    [color]="'primary'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Small'"
+    [color]="'primary'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'filled'"
+    [text]="'Small and filled'"
+    [color]="'primary'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Full Width'"
+    [color]="'primary'"
+    [fullWidth]="'full'"
+  />
 </div>
 
-<div style="display: flex">
-  <div style="display: block; width: 50%">
-    <h1>Secondary Button Without Icon</h1>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'text'"
-      [style]="'secondary'"
-      [text]="'Button Primary'"
-      [color]="'primary'"
-      (onClick)="handleButtonClick($event)"
-    ></fui-button-icon>
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'text'"
-      [style]="'secondary'"
-      [text]="'Button Success'"
-      [color]="'success'"
-      (onClick)="handleButtonClick($event)"
-    ></fui-button-icon>
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'text'"
-      [style]="'secondary'"
-      [text]="'Button Danger'"
-      [color]="'danger'"
-      (onClick)="handleButtonClick($event)"
-    ></fui-button-icon>
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'text'"
-      [style]="'secondary'"
-      [text]="'Button Warning'"
-      [color]="'warning'"
-      (onClick)="handleButtonClick($event)"
-    ></fui-button-icon>
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'text'"
-      [style]="'secondary'"
-      [text]="'Button Text'"
-      [color]="'text'"
-      (onClick)="handleButtonClick($event)"
-    ></fui-button-icon>
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'text'"
-      [style]="'secondary'"
-      [text]="'Button Accent'"
-      [color]="'accent'"
-      (onClick)="handleButtonClick($event)"
-    ></fui-button-icon>
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'text'"
-      [disabled]="true"
-      [style]="'secondary'"
-      [text]="'Button Disabled'"
-      [color]="'disabled'"
-      (onClick)="handleButtonClick($event)"
-    ></fui-button-icon>
-    <div style="margin-bottom: 20px"></div>
-  </div>
+<div class="flex mt-5">
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Success'"
+    [color]="'success'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'filled'"
+    [text]="'Filled'"
+    [color]="'success'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Small'"
+    [color]="'success'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'filled'"
+    [text]="'Small and filled'"
+    [color]="'success'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Full Width'"
+    [color]="'success'"
+    [fullWidth]="'full'"
+  />
+</div>
 
-  <div style="display: block; width: 50%">
-    <h1>Secondary Button With Icon</h1>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'iconText'"
-      [style]="'secondary'"
-      [text]="'Button Primary'"
-      [color]="'primary'"
-      [icon]="'apps'"
-      [iconSide]="'left'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'iconText'"
-      [style]="'secondary'"
-      [text]="'Button Success'"
-      [color]="'success'"
-      [icon]="'check'"
-      [iconSide]="'left'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'iconText'"
-      [style]="'secondary'"
-      [text]="'Button Danger'"
-      [color]="'danger'"
-      [icon]="'cross'"
-      [iconSide]="'left'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'iconText'"
-      [style]="'secondary'"
-      [text]="'Button Warning'"
-      [color]="'warning'"
-      [icon]="'alert'"
-      [iconSide]="'left'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'iconText'"
-      [style]="'secondary'"
-      [text]="'Button Text'"
-      [color]="'text'"
-      [icon]="'wordWrap'"
-      [iconSide]="'left'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'iconText'"
-      [style]="'secondary'"
-      [text]="'Button Accent'"
-      [color]="'accent'"
-      [icon]="'wordWrap'"
-      [iconSide]="'left'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-    <fui-button-icon
-      [type]="'button'"
-      [option]="'iconText'"
-      [disabled]="true"
-      [style]="'secondary'"
-      [text]="'Button Disabled'"
-      [color]="'disabled'"
-      [icon]="'wordWrap'"
-      [iconSide]="'left'"
-      (onClick)="handleButtonClick($event)"
-    />
-    <div style="margin-bottom: 20px"></div>
-  </div>
+<div class="flex mt-5">
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Warning'"
+    [color]="'warning'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'filled'"
+    [text]="'Filled'"
+    [color]="'warning'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Small'"
+    [color]="'warning'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'filled'"
+    [text]="'Small and filled'"
+    [color]="'warning'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Full Width'"
+    [color]="'warning'"
+    [fullWidth]="'full'"
+  />
+</div>
+
+<div class="flex mt-5">
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Danger'"
+    [color]="'danger'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'filled'"
+    [text]="'Filled'"
+    [color]="'danger'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Small'"
+    [color]="'danger'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'filled'"
+    [text]="'Small and filled'"
+    [color]="'danger'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Full Width'"
+    [color]="'danger'"
+    [fullWidth]="'full'"
+  />
+</div>
+
+<div class="flex mt-5">
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Text'"
+    [color]="'text'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'filled'"
+    [text]="'Filled'"
+    [color]="'text'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Small'"
+    [color]="'text'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'filled'"
+    [text]="'Small and filled'"
+    [color]="'text'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Full Width'"
+    [color]="'text'"
+    [fullWidth]="'full'"
+  />
+</div>
+
+<div class="flex mt-5">
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Accent'"
+    [color]="'accent'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'filled'"
+    [text]="'Filled'"
+    [color]="'accent'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Small'"
+    [color]="'accent'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'filled'"
+    [text]="'Small and filled'"
+    [color]="'accent'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Full Width'"
+    [color]="'accent'"
+    [fullWidth]="'full'"
+  />
+</div>
+
+<div class="flex mt-5">
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Disabled'"
+    [color]="'disabled'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'filled'"
+    [text]="'Filled'"
+    [color]="'disabled'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Small'"
+    [color]="'disabled'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'filled'"
+    [text]="'Small and filled'"
+    [color]="'disabled'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'text'"
+    [style]="'secondary'"
+    [text]="'Full Width'"
+    [color]="'disabled'"
+    [fullWidth]="'full'"
+  />
+</div>
+
+<h1 class="mt-40">Empty button</h1>
+<p>
+  Use EuiButtonEmpty when you want to reduce the importance of the button, but
+  still want to align it to the rest of the buttons. It is also the only button
+  component that supports down to size s
+</p>
+<div class="flex">
+  <fui-button-icon
+    [type]="'button'"
+    [fullWidth]="'default'"
+    [option]="'text'"
+    [style]="'empty'"
+    [text]="'Primary Small'"
+    [color]="'primary'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [fullWidth]="'default'"
+    [option]="'text'"
+    [style]="'empty'"
+    [text]="'Primary Medium'"
+    [color]="'primary'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [fullWidth]="'default'"
+    [option]="'text'"
+    [style]="'empty'"
+    [text]="'Primary Large'"
+    [color]="'primary'"
+    [size]="'l'"
+  />
+</div>
+<div class="flex">
+  <fui-button-icon
+    [type]="'button'"
+    [fullWidth]="'default'"
+    [option]="'text'"
+    [style]="'empty'"
+    [text]="'Success Small'"
+    [color]="'success'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [fullWidth]="'default'"
+    [option]="'text'"
+    [style]="'empty'"
+    [text]="'Success Medium'"
+    [color]="'success'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [fullWidth]="'default'"
+    [option]="'text'"
+    [style]="'empty'"
+    [text]="'Success Large'"
+    [color]="'success'"
+    [size]="'l'"
+  />
+</div>
+<div class="flex">
+  <fui-button-icon
+    [type]="'button'"
+    [fullWidth]="'default'"
+    [option]="'text'"
+    [style]="'empty'"
+    [text]="'Warning Small'"
+    [color]="'warning'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [fullWidth]="'default'"
+    [option]="'text'"
+    [style]="'empty'"
+    [text]="'Warning Medium'"
+    [color]="'warning'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [fullWidth]="'default'"
+    [option]="'text'"
+    [style]="'empty'"
+    [text]="'Warning Large'"
+    [color]="'warning'"
+    [size]="'l'"
+  />
+</div>
+<div class="flex">
+  <fui-button-icon
+    [type]="'button'"
+    [fullWidth]="'default'"
+    [option]="'text'"
+    [style]="'empty'"
+    [text]="'Danger Small'"
+    [color]="'danger'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [fullWidth]="'default'"
+    [option]="'text'"
+    [style]="'empty'"
+    [text]="'Danger Medium'"
+    [color]="'danger'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [fullWidth]="'default'"
+    [option]="'text'"
+    [style]="'empty'"
+    [text]="'Danger Large'"
+    [color]="'danger'"
+    [size]="'l'"
+  />
+</div>
+<div class="flex">
+  <fui-button-icon
+    [type]="'button'"
+    [fullWidth]="'default'"
+    [option]="'text'"
+    [style]="'empty'"
+    [text]="'Text Small'"
+    [color]="'text'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [fullWidth]="'default'"
+    [option]="'text'"
+    [style]="'empty'"
+    [text]="'Text Medium'"
+    [color]="'text'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [fullWidth]="'default'"
+    [option]="'text'"
+    [style]="'empty'"
+    [text]="'Text Large'"
+    [color]="'text'"
+    [size]="'l'"
+  />
+</div>
+<div class="flex">
+  <fui-button-icon
+    [type]="'button'"
+    [fullWidth]="'default'"
+    [option]="'text'"
+    [style]="'empty'"
+    [text]="'Disabled Small'"
+    [color]="'disabled'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [fullWidth]="'default'"
+    [option]="'text'"
+    [style]="'empty'"
+    [text]="'Disabled Medium'"
+    [color]="'disabled'"
+  />
+  <fui-button-icon
+    [type]="'button'"
+    [fullWidth]="'default'"
+    [option]="'text'"
+    [style]="'empty'"
+    [text]="'Disabled Large'"
+    [color]="'disabled'"
+    [size]="'l'"
+  />
+</div>
+
+<h1 class="mt-40">Buttons with icons</h1>
+<p>
+  All button components accept an iconType which must be an acceptable EuiIcon
+  type. Multi-color icons like app icons will be converted to single color.
+  Icons can be displayed on the opposite side by passing iconSide="right".
+</p>
+<div class="flex mt-20">
+  <fui-button-icon
+    [icon]="'search'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'secondary'"
+    [text]="'Primary'"
+    [color]="'primary'"
+  />
+  <fui-button-icon
+    [icon]="'search'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'filled'"
+    [text]="'Filled'"
+    [color]="'primary'"
+  />
+  <fui-button-icon
+    [icon]="'search'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'secondary'"
+    [text]="'Small'"
+    [color]="'primary'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [icon]="'search'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'filled'"
+    [text]="'Small and filled'"
+    [color]="'primary'"
+    [size]="'s'"
+    [fullWidth]="'fit'"
+  />
+  <fui-button-icon
+    [icon]="'search'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'secondary'"
+    [text]="'Full Width'"
+    [color]="'primary'"
+    [fullWidth]="'full'"
+  />
+</div>
+
+<div class="flex mt-5">
+  <fui-button-icon
+    [icon]="'search'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'empty'"
+    [text]="'Large'"
+    [color]="'primary'"
+    [size]="'l'"
+  />
+  <fui-button-icon
+    [icon]="'search'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'empty'"
+    [text]="'Medium'"
+    [color]="'primary'"
+    [size]="'m'"
+  />
+  <fui-button-icon
+    [icon]="'search'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'empty'"
+    [text]="'Small'"
+    [color]="'primary'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [icon]="'search'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'empty'"
+    [text]="'Full Width'"
+    [color]="'primary'"
+    [fullWidth]="'full'"
+  />
+</div>
+
+<div class="flex mt-5">
+  <fui-button-icon
+    [icon]="'arrowDown'"
+    [iconSide]="'right'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'secondary'"
+    [text]="'Primary'"
+    [color]="'primary'"
+  />
+  <fui-button-icon
+    [icon]="'arrowDown'"
+    [iconSide]="'right'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'filled'"
+    [text]="'Filled'"
+    [color]="'primary'"
+  />
+  <fui-button-icon
+    [icon]="'arrowDown'"
+    [iconSide]="'right'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'secondary'"
+    [text]="'Small'"
+    [color]="'primary'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [icon]="'arrowDown'"
+    [iconSide]="'right'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'filled'"
+    [text]="'Small and filled'"
+    [color]="'primary'"
+    [size]="'s'"
+    [fullWidth]="'fit'"
+  />
+  <fui-button-icon
+    [icon]="'arrowDown'"
+    [iconSide]="'right'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'secondary'"
+    [text]="'Full Width'"
+    [color]="'primary'"
+    [fullWidth]="'full'"
+  />
+</div>
+
+<div class="flex mt-5">
+  <fui-button-icon
+    [icon]="'arrowDown'"
+    [iconSide]="'right'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'empty'"
+    [text]="'Large'"
+    [color]="'primary'"
+    [size]="'l'"
+  />
+  <fui-button-icon
+    [icon]="'arrowDown'"
+    [iconSide]="'right'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'empty'"
+    [text]="'Medium'"
+    [color]="'primary'"
+    [size]="'m'"
+  />
+  <fui-button-icon
+    [icon]="'arrowDown'"
+    [iconSide]="'right'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'empty'"
+    [text]="'Small'"
+    [color]="'primary'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [icon]="'arrowDown'"
+    [iconSide]="'right'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'empty'"
+    [text]="'Full Width'"
+    [color]="'primary'"
+    [fullWidth]="'full'"
+  />
+</div>
+
+<div class="flex mt-5">
+  <fui-button-icon
+    [icon]="'folderOpen'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'secondary'"
+    [text]="'Primary'"
+    [color]="'disabled'"
+  />
+  <fui-button-icon
+    [icon]="'folderOpen'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'filled'"
+    [text]="'Filled'"
+    [color]="'disabled'"
+  />
+  <fui-button-icon
+    [icon]="'folderOpen'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'secondary'"
+    [text]="'Small'"
+    [color]="'disabled'"
+    [size]="'s'"
+  />
+  <fui-button-icon
+    [icon]="'folderOpen'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'filled'"
+    [text]="'Small and filled'"
+    [color]="'disabled'"
+    [size]="'s'"
+    [fullWidth]="'fit'"
+  />
+  <fui-button-icon
+    [icon]="'folderOpen'"
+    [type]="'button'"
+    [option]="'iconText'"
+    [style]="'secondary'"
+    [text]="'Full Width'"
+    [color]="'disabled'"
+    [fullWidth]="'full'"
+  />
 </div>

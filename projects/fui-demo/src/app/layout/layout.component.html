@@ -16,6 +16,7 @@
           [color]="'primary'"
           [icon]="'menu'"
           [iconSide]="'left'"
+          [fullWidth]="'fit'"
           (onClick)="collapseBtn()"
         />
         <fui-button-icon
@@ -27,6 +28,7 @@
           [icon]="'cross'"
           [iconSide]="'left'"
           (onClick)="collapseBtn()"
+          [fullWidth]="'fit'"
         />
         <div style="align-items: center; display: flex; margin-left: 10px">
           <h4 class="title">
@@ -39,6 +41,7 @@
       <div style="display: flex; align-items: center">
         <fui-popover [position]="'bottom'">
           <fui-button-icon
+            [fullWidth]="'fit'"
             [type]="'button'"
             [option]="'iconText'"
             [style]="'secondary'"

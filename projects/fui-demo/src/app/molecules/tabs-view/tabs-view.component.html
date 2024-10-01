@@ -7,17 +7,56 @@
   and onClick. Use the prepend and append tab props to add content before and
   after the tab label respectively.
 </p>
-<fui-tabs [dataTabs]="dataTabs">
-  <fui-tabs-content [id]="'Cobalt'">
-    <h1 style="margin: 0px">Cobalt</h1>
-  </fui-tabs-content>
-  <fui-tabs-content [id]="'Dextrose'">
-    <h1 style="margin: 0px">Dextrose</h1>
-  </fui-tabs-content>
-  <fui-tabs-content [id]="'Hydrogen'">
-    <h1 style="margin: 0px">Hydrogen</h1>
-  </fui-tabs-content>
-  <fui-tabs-content [id]="'Monosodium Glutamate'">
-    <h1 style="margin: 0px">Monosodium Glutamate</h1>
-  </fui-tabs-content>
-</fui-tabs>
+<div class="mt-20">
+  <h3>Default Tab</h3>
+  <fui-tabs [dataTabs]="dataTabs">
+    <fui-tabs-content [id]="'Cobalt'">
+      <h1>Cobalt</h1>
+    </fui-tabs-content>
+    <fui-tabs-content [id]="'Dextrose'">
+      <h1>Dextrose</h1>
+    </fui-tabs-content>
+    <fui-tabs-content [id]="'Hydrogen'">
+      <h1>Hydrogen</h1>
+    </fui-tabs-content>
+    <fui-tabs-content [id]="'Monosodium Glutamate'">
+      <h1>Monosodium Glutamate</h1>
+    </fui-tabs-content>
+  </fui-tabs>
+</div>
+
+<div class="mt-20">
+  <h3>Tab with icon</h3>
+  <fui-tabs [dataTabs]="dataIconTabs">
+    <fui-tabs-content [id]="'Folder One'">
+      <h1>Folder One</h1>
+    </fui-tabs-content>
+    <fui-tabs-content [id]="'Folder Two'">
+      <h1>Folder Two</h1>
+    </fui-tabs-content>
+    <fui-tabs-content [id]="'Folder Three'">
+      <h1>Folder Three</h1>
+    </fui-tabs-content>
+    <fui-tabs-content [id]="'Folder Four'">
+      <h1>Folder Four</h1>
+    </fui-tabs-content>
+  </fui-tabs>
+</div>
+
+<div class="mt-20">
+  <h3>Tab with dynamic icon</h3>
+  <fui-tabs [dataTabs]="dataIconTabsDynamic" [iconActive]="'folderOpen'" [iconNonActive]="'folderClosed'">
+    <fui-tabs-content [id]="'Folder One'">
+      <h1>Folder One</h1>
+    </fui-tabs-content>
+    <fui-tabs-content [id]="'Folder Two'">
+      <h1>Folder Two</h1>
+    </fui-tabs-content>
+    <fui-tabs-content [id]="'Folder Three'">
+      <h1>Folder Three</h1>
+    </fui-tabs-content>
+    <fui-tabs-content [id]="'Folder Four'">
+      <h1>Folder Four</h1>
+    </fui-tabs-content>
+  </fui-tabs>
+</div>

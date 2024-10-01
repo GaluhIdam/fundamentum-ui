@@ -26,46 +26,46 @@
 }
 .primary {
   color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
-  height: 6px;
+  min-height: 6px;
   background-color: var(--fuiBtnPrimary, $fuiBtnPrimary);
 }
 .success {
   color: #000;
-  height: 6px;
+  min-height: 6px;
   background-color: var(--fuiBtnSuccess, $fuiBtnSuccess);
 }
 .warning {
   color: #000;
-  height: 6px;
+  min-height: 6px;
   background-color: var(--fuiBtnWarning, $fuiBtnWarning);
 }
 .danger {
   color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
-  height: 6px;
+  min-height: 6px;
   background-color: var(--fuiBtnDanger, $fuiBtnDanger);
 }
 .text {
   color: var(--fuiColorFullShade, $fuiColorFullShade);
-  height: 6px;
+  min-height: 6px;
   background-color: var(--fuiColorMediumShade, $fuiColorMediumShade);
 }
 .accent {
   color: #000;
-  height: 6px;
+  min-height: 6px;
   background-color: var(--fuiBtnAccent, $fuiBtnAccent);
 }
 .ghost {
   color: var(--fuiColorFullShade, $fuiColorFullShade);
-  height: 6px;
+  min-height: 6px;
   background-color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
 }
 .ink {
   color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
-  height: 6px;
+  min-height: 6px;
   background-color: var(--fuiColorFullShade, $fuiColorFullShade);
 }
 .disabled {
   color: var(--fuiColorFullShade, $fuiColorFullShade);
-  height: 6px;
+  min-height: 6px;
   background-color: var(--fuiColorLightShade, $fuiColorLightShade);
 }

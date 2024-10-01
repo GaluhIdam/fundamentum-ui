@@ -4,13 +4,17 @@ $s: 7px;
 $m: 8px;
 $l: 9px;
 
+:host {
+  display: contents;
+}
+
 /* Button Filled S*/
 .btn-fui-primary-s {
   @include buttonIconMix(
     var(--fuiBtnPrimary, $fuiBtnPrimary),
     var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
-    $fuiSizeS,
+    $fuiSizeS + 2,
     $s
   );
 }
@@ -19,7 +23,7 @@ $l: 9px;
     var(--fuiBtnSuccess, $fuiBtnSuccess),
     #000,
     $fuiSizeXS,
-    $fuiSizeS,
+    $fuiSizeS + 2,
     $s
   );
 }
@@ -28,7 +32,7 @@ $l: 9px;
     var(--fuiBtnDanger, $fuiBtnDanger),
     var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
-    $fuiSizeS,
+    $fuiSizeS + 2,
     $s
   );
 }
@@ -37,7 +41,7 @@ $l: 9px;
     var(--fuiBtnWarning, $fuiBtnWarning),
     #000,
     $fuiSizeXS,
-    $fuiSizeS,
+    $fuiSizeS + 2,
     $s
   );
 }
@@ -46,7 +50,7 @@ $l: 9px;
     var(--fuiBtnText, $fuiBtnText),
     var(--fuiColorEmptyShade, $fuiColorEmptyShade),
     $fuiSizeXS,
-    $fuiSizeS,
+    $fuiSizeS + 2,
     $s
   );
 }
@@ -55,7 +59,7 @@ $l: 9px;
     var(--fuiBtnAccent, $fuiBtnAccent),
     #000,
     $fuiSizeXS,
-    $fuiSizeS,
+    $fuiSizeS + 2,
     $s
   );
 }
@@ -64,7 +68,7 @@ $l: 9px;
     var(--fuiBtnDisabled, $fuiBtnDisabled),
     var(--fuiBtnDisabledText, $fuiBtnDisabledText),
     $fuiSizeXS,
-    $fuiSizeS,
+    $fuiSizeS + 2,
     $s
   );
   &:disabled,
@@ -226,8 +230,8 @@ $l: 9px;
     transparent,
     var(--fuiBtnPrimaryText, $fuiBtnPrimaryText),
     $fuiSizeXS,
-    $fuiSizeM,
-    0
+    $fuiSizeS + 2,
+    $s
   );
 }
 .btn-fui-secondary-primary-s {
@@ -235,7 +239,7 @@ $l: 9px;
     var(--fuiPrimarySecondary, $fuiPrimarySecondary),
     var(--fuiBtnPrimaryText, $fuiBtnPrimaryText),
     $fuiSizeXS,
-    $fuiSizeM,
+    $fuiSizeS + 2,
     $s
   );
 }
@@ -244,7 +248,7 @@ $l: 9px;
     var(--fuiSuccessSecondary, $fuiSuccessSecondary),
     var(--fuiBtnSuccessText, $fuiBtnSuccessText),
     $fuiSizeXS,
-    $fuiSizeS,
+    $fuiSizeS + 2,
     $s
   );
 }
@@ -253,7 +257,7 @@ $l: 9px;
     var(--fuiDangerSecondary, $fuiDangerSecondary),
     var(--fuiBtnDangerText, $fuiBtnDangerText),
     $fuiSizeXS,
-    $fuiSizeS,
+    $fuiSizeS + 2,
     $s
   );
 }
@@ -262,7 +266,7 @@ $l: 9px;
     var(--fuiWarningSecondary, $fuiWarningSecondary),
     var(--fuiBtnWarningText, $fuiBtnWarningText),
     $fuiSizeXS,
-    $fuiSizeS,
+    $fuiSizeS + 2,
     $s
   );
 }
@@ -271,7 +275,7 @@ $l: 9px;
     var(--fuiTextSecondary, $fuiTextSecondary),
     var(--fuiBtnTextText, $fuiBtnTextText),
     $fuiSizeXS,
-    $fuiSizeS,
+    $fuiSizeS + 2,
     $s
   );
 }
@@ -280,7 +284,7 @@ $l: 9px;
     var(--fuiAccentSecondary, $fuiAccentSecondary),
     var(--fuiBtnAccentText, $fuiBtnAccentText),
     $fuiSizeXS,
-    $fuiSizeS,
+    $fuiSizeS + 2,
     $s
   );
 }
@@ -289,7 +293,7 @@ $l: 9px;
     var(--fuiDisabledSecondary, $fuiDisabledSecondary),
     var(--fuiBtnDisabledText, $fuiBtnDisabledText),
     $fuiSizeXS,
-    $fuiSizeS,
+    $fuiSizeS + 2,
     $s
   );
   &:disabled {
@@ -310,7 +314,7 @@ $l: 9px;
     var(--fuiBtnPrimaryText, $fuiBtnPrimaryText),
     $fuiSizeXS,
     $fuiSizeM,
-    0
+    $m
   );
 }
 .btn-fui-secondary-primary-m {
@@ -469,6 +473,309 @@ $l: 9px;
   }
 }
 
+/* Button Empty S */
+.btn-fui-empty-ghost-s {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnPrimaryText, $fuiBtnPrimaryText),
+    $fuiSizeXS,
+    $fuiSizeS + 2,
+    0
+  );
+}
+.btn-fui-empty-primary-s {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnPrimaryText, $fuiBtnPrimaryText),
+    $fuiSizeXS,
+    $fuiSizeS + 2,
+    $s
+  );
+  &:focus {
+    background-color: var(--fuiPrimarySecondary, $fuiPrimarySecondary);
+  }
+}
+.btn-fui-empty-success-s {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnSuccessText, $fuiBtnSuccessText),
+    $fuiSizeXS,
+    $fuiSizeS + 2,
+    $s
+  );
+  &:focus {
+    background-color: var(--fuiSuccessSecondary, $fuiSuccessSecondary);
+  }
+}
+.btn-fui-empty-danger-s {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnDangerText, $fuiBtnDangerText),
+    $fuiSizeXS,
+    $fuiSizeS + 2,
+    $s
+  );
+  &:focus {
+    background-color: var(--fuiDangerSecondary, $fuiDangerSecondary);
+  }
+}
+.btn-fui-empty-warning-s {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnWarningText, $fuiBtnWarningText),
+    $fuiSizeXS,
+    $fuiSizeS + 2,
+    $s
+  );
+  &:focus {
+    background-color: var(--fuiWarningSecondary, $fuiWarningSecondary);
+  }
+}
+.btn-fui-empty-text-s {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnTextText, $fuiBtnTextText),
+    $fuiSizeXS,
+    $fuiSizeS + 2,
+    $s
+  );
+  &:focus {
+    background-color: var(--fuiTextSecondary, $fuiTextSecondary);
+  }
+}
+.btn-fui-empty-accent-s {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnAccentText, $fuiBtnAccentText),
+    $fuiSizeXS,
+    $fuiSizeS + 2,
+    $s
+  );
+  &:focus {
+    background-color: var(--fuiAccentSecondary, $fuiAccentSecondary);
+  }
+}
+.btn-fui-empty-disabled-s {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnDisabledText, $fuiBtnDisabledText),
+    $fuiSizeXS,
+    $fuiSizeS + 2,
+    $s
+  );
+  &:disabled {
+    @include effectBtnIcon(transform 0.3s ease, none, not-allowed, none);
+  }
+  &:hover {
+    @include effectBtnIcon(none, none, not-allowed, none);
+  }
+  &:active {
+    @include effectBtnIcon(transform 0.3s ease, underline, cursor, none);
+  }
+}
+
+/* Button Secondary M */
+.btn-fui-empty-ghost-m {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnPrimaryText, $fuiBtnPrimaryText),
+    $fuiSizeXS,
+    $fuiSizeM,
+    0
+  );
+}
+.btn-fui-empty-primary-m {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnPrimaryText, $fuiBtnPrimaryText),
+    $fuiSizeXS,
+    $fuiSizeM,
+    $m
+  );
+  &:focus {
+    background-color: var(--fuiPrimarySecondary, $fuiPrimarySecondary);
+  }
+}
+.btn-fui-empty-success-m {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnSuccessText, $fuiBtnSuccessText),
+    $fuiSizeXS,
+    $fuiSizeM,
+    $m
+  );
+  &:focus {
+    background-color: var(--fuiSuccessSecondary, $fuiSuccessSecondary);
+  }
+}
+.btn-fui-empty-danger-m {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnDangerText, $fuiBtnDangerText),
+    $fuiSizeXS,
+    $fuiSizeM,
+    $m
+  );
+  &:focus {
+    background-color: var(--fuiDangerSecondary, $fuiDangerSecondary);
+  }
+}
+.btn-fui-empty-warning-m {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnWarningText, $fuiBtnWarningText),
+    $fuiSizeXS,
+    $fuiSizeM,
+    $m
+  );
+  &:focus {
+    background-color: var(--fuiWarningSecondary, $fuiWarningSecondary);
+  }
+}
+.btn-fui-empty-text-m {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnTextText, $fuiBtnTextText),
+    $fuiSizeXS,
+    $fuiSizeM,
+    $m
+  );
+  &:focus {
+    background-color: var(--fuiTextSecondary, $fuiTextSecondary);
+  }
+}
+.btn-fui-empty-accent-m {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnAccentText, $fuiBtnAccentText),
+    $fuiSizeXS,
+    $fuiSizeM,
+    $m
+  );
+  &:focus {
+    background-color: var(--fuiAccentSecondary, $fuiAccentSecondary);
+  }
+}
+.btn-fui-empty-disabled-m {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnDisabledText, $fuiBtnDisabledText),
+    $fuiSizeXS,
+    $fuiSizeM,
+    $m
+  );
+  &:disabled {
+    @include effectBtnIcon(transform 0.3s ease, none, not-allowed, none);
+  }
+  &:hover {
+    @include effectBtnIcon(none, none, not-allowed, none);
+  }
+  &:active {
+    @include effectBtnIcon(transform 0.3s ease, underline, cursor, none);
+  }
+}
+
+/* Button Secondary L */
+.btn-fui-empty-ghost-l {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnPrimaryText, $fuiBtnPrimaryText),
+    $fuiSizeXS,
+    $fuiSizeL,
+    0
+  );
+}
+.btn-fui-empty-primary-l {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnPrimaryText, $fuiBtnPrimaryText),
+    $fuiSizeXS,
+    $fuiSizeL,
+    $l
+  );
+  &:focus {
+    background-color: var(--fuiPrimarySecondary, $fuiPrimarySecondary);
+  }
+}
+.btn-fui-empty-success-l {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnSuccessText, $fuiBtnSuccessText),
+    $fuiSizeXS,
+    $fuiSizeL,
+    $l
+  );
+  &:focus {
+    background-color: var(--fuiSuccessSecondary, $fuiSuccessSecondary);
+  }
+}
+.btn-fui-empty-danger-l {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnDangerText, $fuiBtnDangerText),
+    $fuiSizeXS,
+    $fuiSizeL,
+    $l
+  );
+  &:focus {
+    background-color: var(--fuiDangerSecondary, $fuiDangerSecondary);
+  }
+}
+.btn-fui-empty-warning-l {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnWarningText, $fuiBtnWarningText),
+    $fuiSizeXS,
+    $fuiSizeL,
+    $l
+  );
+  &:focus {
+    background-color: var(--fuiWarningSecondary, $fuiWarningSecondary);
+  }
+}
+.btn-fui-empty-text-l {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnTextText, $fuiBtnTextText),
+    $fuiSizeXS,
+    $fuiSizeL,
+    $l
+  );
+  &:focus {
+    background-color: var(--fuiTextSecondary, $fuiTextSecondary);
+  }
+}
+.btn-fui-empty-accent-l {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnAccentText, $fuiBtnAccentText),
+    $fuiSizeXS,
+    $fuiSizeL,
+    $l
+  );
+  &:focus {
+    background-color: var(--fuiAccentSecondary, $fuiAccentSecondary);
+  }
+}
+.btn-fui-empty-disabled-l {
+  @include buttonIconMix(
+    transparent,
+    var(--fuiBtnDisabledText, $fuiBtnDisabledText),
+    $fuiSizeXS,
+    $fuiSizeL,
+    $l
+  );
+  &:disabled {
+    @include effectBtnIcon(transform 0.3s ease, none, not-allowed, none);
+  }
+  &:hover {
+    @include effectBtnIcon(none, none, not-allowed, none);
+  }
+  &:active {
+    @include effectBtnIcon(transform 0.3s ease, underline, cursor, none);
+  }
+}
+
 /* Add On */
 .mr {
   margin-right: 6px;
@@ -492,9 +799,19 @@ a {
   }
 }
 
-.full-width {
+.full {
   width: -webkit-fill-available;
   text-wrap: nowrap;
+}
+
+.fit {
+  width: fit-content;
+  text-wrap: nowrap;
+}
+.default {
+  width: auto;
+  text-wrap: nowrap;
+  min-inline-size: 112px;
 }
 a {
   text-wrap: nowrap;
@@ -518,7 +835,7 @@ a {
 
 .btn-icon-only {
   &-s {
-    width: $fuiSizeS + 23;
+    width: $fuiSizeS + 2 + 23;
   }
   &-m {
     width: $fuiSizeM + 23;

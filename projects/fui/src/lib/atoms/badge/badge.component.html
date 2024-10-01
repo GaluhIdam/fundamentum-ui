@@ -1,25 +1,51 @@
-@if (isDisplay) {
 <div
-  [ngClass]="[
-    'badge',
-    color,
-    size,
-    iconPosition === 'start' ? 'dismissLeft' : 'dismissRight',
-    underline ? 'underline' : '',
-    rounded ? 'rounded' : '',
-    fullWidth ? 'full' : 'fit'
-  ]"
-  (click)="iconForClose === true ? closeClicked() : handleClicked()"
+  [ngClass]="['badge', disabled ? 'disabled' : color]"
+  [ngStyle]="customColor ? { 'background-color': color, color: textColor } : {}"
 >
-  @if (isBadgeIcon && icon) {
   <fui-icons
+    *ngIf="iconShow && iconPosition === 'start'"
+    [ngClass]="iconClick ? 'hover' : ''"
+    (click)="handleClickedIcon()"
     [icon]="icon"
-    [size]="sizeIcon"
-    [ngClass]="['badge-icon', size + '-badge-icon']"
+    [color]="iconColor"
+    [size]="iconSize"
   ></fui-icons>
-  }
-  <span class="body-text">
-    <ng-content></ng-content>
-  </span>
+
+  <p
+    *ngIf="textShow && (!hrefLink || hrefLink === '#')"
+    [ngClass]="[
+      size,
+      textClick && !disabled ? 'hover-underline' : '',
+      truncate ? 'truncate' : ''
+    ]"
+    [ngStyle]="customColor ? { color: textColor } : {}"
+    (click)="handleClicked()"
+  >
+    {{ text }}
+  </p>
+
+  <a
+    *ngIf="textShow && hrefLink && hrefLink !== '#'"
+    [ngClass]="[size,
+      !disabled ? 'hover-underline' : '',
+      truncate || '',
+      disabled ? 'disabled' : color
+    ]"
+    [ngStyle]="customColor ? { color: textColor } : {}"
+    [href]="hrefLink"
+    target="_blank"
+    rel="noopener noreferrer"
+    (click)="handleClicked()"
+  >
+    {{ text }}
+  </a>
+
+  <fui-icons
+    *ngIf="iconShow && iconPosition === 'end'"
+    [ngClass]="iconClick ? 'hover' : ''"
+    (click)="handleClickedIcon()"
+    [icon]="icon"
+    [color]="iconColor"
+    [size]="iconSize"
+  ></fui-icons>
 </div>
-}

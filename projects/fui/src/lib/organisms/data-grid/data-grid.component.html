@@ -53,7 +53,7 @@
                   <fui-button-icon
                     *ngIf="isButtonVisible(key)"
                     (click)="toggleColumn(key)"
-                    [fullWidth]="true"
+                    [fullWidth]="'fit'"
                     [textAlign]="'left'"
                     [type]="'button'"
                     [option]="'iconText'"
@@ -76,7 +76,7 @@
                   <fui-button-icon
                     *ngIf="isButtonVisible(_getObjectKeys(data[0])[i])"
                     (click)="toggleColumn(_getObjectKeys(data[0])[i])"
-                    [fullWidth]="true"
+                    [fullWidth]="'fit'"
                     [textAlign]="'left'"
                     [type]="'button'"
                     [option]="'iconText'"
@@ -125,7 +125,7 @@
                 <div class="density-util">
                   <fui-button-icon
                     (onClick)="changeOption('compact')"
-                    [fullWidth]="true"
+                    [fullWidth]="'fit'"
                     [type]="'button'"
                     [option]="'text'"
                     [color]="density === 'compact' ? 'primary' : 'text'"
@@ -135,7 +135,7 @@
                   />
                   <fui-button-icon
                     (onClick)="changeOption('normal')"
-                    [fullWidth]="true"
+                    [fullWidth]="'fit'"
                     [type]="'button'"
                     [option]="'text'"
                     [color]="density === 'normal' ? 'primary' : 'text'"
@@ -145,7 +145,7 @@
                   />
                   <fui-button-icon
                     (onClick)="changeOption('expanded')"
-                    [fullWidth]="true"
+                    [fullWidth]="'fit'"
                     [type]="'button'"
                     [option]="'text'"
                     [color]="density === 'expanded' ? 'primary' : 'text'"
@@ -160,7 +160,7 @@
                 <div class="row-height-util">
                   <fui-button-icon
                     (onClick)="changeHeight('single')"
-                    [fullWidth]="true"
+                    [fullWidth]="'fit'"
                     [type]="'button'"
                     [option]="'text'"
                     [color]="rowHeight === 'single' ? 'primary' : 'text'"
@@ -170,7 +170,7 @@
                   />
                   <fui-button-icon
                     (onClick)="changeHeight('autoFit')"
-                    [fullWidth]="true"
+                    [fullWidth]="'fit'"
                     [type]="'button'"
                     [option]="'text'"
                     [color]="rowHeight === 'autoFit' ? 'primary' : 'text'"

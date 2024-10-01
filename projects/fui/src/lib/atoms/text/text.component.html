@@ -1,18 +1,4 @@
 <!-- button.component.html -->
-
-<span
-  [class.title]="typeValue === 'title'"
-  [class]="colorValue"
-  [class.sizeXS]="sizeValue === 'sizexs'"
-  [class.sizeS]="sizeValue === 'sizes'"
-  [class.sizeM]="sizeValue === 'sizem'"
-  [class.sizeL]="sizeValue === 'sizel'"
-  [class.sizeXL]="sizeValue === 'sizexl'"
-  [class.sizeXXL]="sizeValue === 'sizexxl'"
-  [class.sizeM]="sizeValue === 'sizem'"
-  [class]="[colorValue, decoration, 'weight-' + weight]"
-  [class.wrap]="textWrap === 'wrap'"
-  [class.nowrap]="textWrap === 'nowrap'"
->
+<p [ngClass]="[color, size, textWrap, weight, decoration, fwStyle]">
   <ng-content></ng-content>
-</span>
+</p>

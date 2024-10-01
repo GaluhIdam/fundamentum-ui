@@ -1,112 +1,95 @@
 @import "../../styles/index";
 
-.sizeXS {
-  font-size: $fuiFontSizeXS;
-}
-.sizeS {
-  font-size: $fuiFontSizeS;
-}
-.sizeM {
-  font-size: $fuiFontSize;
-}
+p {
+  margin: 0px;
+  &.primary {
+    color: var(--fuiBtnPrimaryText, $fuiBtnPrimaryText);
+  }
+  &.success {
+    color: var(--fuiBtnSuccessText, $fuiBtnSuccessText);
+  }
+  &.accent {
+    color: var(--fuiBtnAccentText, $fuiBtnAccentText);
+  }
+  &.warning {
+    color: var(--fuiBtnWarningText, $fuiBtnWarningText);
+  }
+  &.danger {
+    color: var(--fuiDanger, $fuiDanger);
+  }
+  &.ink {
+    color: var(--fuiColorDarkestShade, $fuiColorDarkestShade);
+  }
+  &.text {
+    color: var(--fuiColorMediumShade, $fuiColorMediumShade);
+  }
+  &.disabled {
+    color: var(--fuiColorLightShade, $fuiColorLightShade);
+  }
+  &.ghost {
+    color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
+  }
+  &.thin {
+    font-weight: 100;
+  }
+  &.extralight {
+    font-weight: 200;
+  }
+  &.light {
+    font-weight: 300;
+  }
+  &.regular {
+    font-weight: 400;
+  }
+  &.medium {
+    font-weight: 500;
+  }
+  &.semibold {
+    font-weight: 600;
+  }
+  &.bold {
+    font-weight: 700;
+  }
+  &.extrabold {
+    font-weight: 800;
+  }
+  &.black {
+    font-weight: 900;
+  }
 
-.sizeL {
-  font-size: $fuiFontSizeL;
-}
+  &.italic {
+    font-style: italic;
+  }
+  &.normal {
+    font-style: normal;
+  }
 
-.sizeXL {
-  font-size: $fuiFontSizeXL;
-}
+  &.underline {
+    text-decoration: underline;
+  }
+  &.line-through {
+    text-decoration: line-through;
+  }
+  &.overline {
+    text-decoration: overline;
+  }
+  &.none {
+    text-decoration: none;
+  }
 
-.sizeXXL {
-  font-size: $fuiFontSizeXXL;
-}
-
-.primary {
-  color: var(--fuiColorPrimary, $fuiColorPrimary);
-}
-.success {
-  color: var(--fuiColorSuccess, $fuiColorSuccess);
-}
-.warning {
-  color: var(--fuiColorWarning, $fuiColorWarning);
-}
-
-.danger {
-  color: var(--fuiColorDanger, $fuiColorDanger);
-}
-
-.text {
-  color: var(--fuiColorInk, $fuiColorInk);
-}
-.accent {
-  color: var(--fuiColorAccent, $fuiColorAccent);
-}
-
-.disabled {
-  color: var(--fuiColorDisabledText, $fuiColorDisabledText);
-}
-
-.ink {
-  color: var(--fuiColorInk, $fuiColorInk);
-}
-
-.ghost {
-  color: var(--fuiColorGhost, $fuiColorGhost);
-}
-
-.title {
-  margin: $fuiFontSizeXS 0;
-  display: block;
-}
-
-.normal {
-  text-decoration: none;
-}
-.underline {
-  text-decoration: underline;
-}
-
-.weight-thin {
-  font-weight: 100;
-}
-
-.weight-extralight {
-  font-weight: 200;
-}
-
-.weight-light {
-  font-weight: 300;
-}
-
-.weight-normal {
-  font-weight: 400;
-}
-
-.weight-medium {
-  font-weight: 500;
-}
-
-.weight-semibold {
-  font-weight: 600;
-}
-
-.weight-bold {
-  font-weight: 700;
-}
-
-.weight-extrabold {
-  font-weight: 800;
-}
-
-.weight-black {
-  font-weight: 900;
-}
-
-.wrap {
-  text-wrap: wrap;
-}
-
-.nowrap {
-  text-wrap: nowrap;
+  &.xs {
+    font-size: x-small;
+  }
+  &.s {
+    font-size: small;
+  }
+  &.m {
+    font-size: medium;
+  }
+  &.l {
+    font-size: larger;
+  }
+  &.xl {
+    font-size: x-large;
+  }
 }
