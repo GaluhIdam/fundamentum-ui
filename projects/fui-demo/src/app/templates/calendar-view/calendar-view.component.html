@@ -8,7 +8,10 @@
 </p>
 
 <p style="margin-top: 50px">Change Utility :</p>
-<fui-filter-group [fullWidth]="false">
+<fui-filter-group
+  [fullWidth]="false"
+  style="margin-top: 10px; margin-bottom: 20px; display: flex"
+>
   <fui-filter-group-button
     (onClick)="onOff(true)"
     [active]="active"
@@ -26,8 +29,72 @@
   this. Here's an example using flyouts and modals.
 </p>
 
+<div class="mt-20">
+  <h4>Choose theme</h4>
+  <div class="flex">
+    <fui-button-icon
+      [type]="'button'"
+      [option]="'iconText'"
+      [style]="'secondary'"
+      [text]="'Primary'"
+      [color]="'primary'"
+      [icon]="themeColor === 'primary' ? 'check' : 'cross'"
+      (onClick)="themeColor = 'primary'"
+    />
+    <fui-button-icon
+      [type]="'button'"
+      [option]="'iconText'"
+      [style]="'secondary'"
+      [text]="'Success'"
+      [color]="'success'"
+      [icon]="themeColor === 'success' ? 'check' : 'cross'"
+      (onClick)="themeColor = 'success'"
+    />
+    <fui-button-icon
+      [type]="'button'"
+      [option]="'iconText'"
+      [style]="'secondary'"
+      [text]="'Warning'"
+      [color]="'warning'"
+      [icon]="themeColor === 'warning' ? 'check' : 'cross'"
+      (onClick)="themeColor = 'warning'"
+    />
+    <fui-button-icon
+      [type]="'button'"
+      [option]="'iconText'"
+      [style]="'secondary'"
+      [text]="'Danger'"
+      [color]="'danger'"
+      [icon]="themeColor === 'danger' ? 'check' : 'cross'"
+      (onClick)="themeColor = 'danger'"
+    />
+    <fui-button-icon
+      [type]="'button'"
+      [option]="'iconText'"
+      [style]="'secondary'"
+      [text]="'Text'"
+      [color]="'text'"
+      [icon]="themeColor === 'text' ? 'check' : 'cross'"
+      (onClick)="themeColor = 'text'"
+    />
+    <fui-button-icon
+      [type]="'button'"
+      [option]="'iconText'"
+      [style]="'secondary'"
+      [text]="'Accent'"
+      [color]="'accent'"
+      [icon]="themeColor === 'accent' ? 'check' : 'cross'"
+      (onClick)="themeColor = 'accent'"
+    />
+  </div>
+</div>
+
 <div style="margin-top: 50px; margin-bottom: 50px">
-  <fui-calendar [events]="eventsInMay" (actionEvent)="actionEvent($event)" />
+  <fui-calendar
+    [events]="eventsInMay"
+    [themeColor]="themeColor"
+    (actionEvent)="actionEvent($event)"
+  />
 </div>
 
 <!-- Modal Body -->

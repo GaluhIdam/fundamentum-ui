@@ -800,15 +800,17 @@ a {
 }
 
 .full {
-  width: -webkit-fill-available;
+  width: 100%;
   text-wrap: nowrap;
 }
 
 .fit {
   width: fit-content;
+  height: fit-content;
   text-wrap: nowrap;
 }
 .default {
+  height: fit-content;
   width: auto;
   text-wrap: nowrap;
   min-inline-size: 112px;

@@ -1,4 +1,12 @@
-<h1>Horizontal Stack</h1>
+<h1>Horizontal Stack Component</h1>
+
+<p>
+  The HorizontalStackComponent is a UI component designed to display progress
+  bars with customizable segments. Each segment represents a percentage of
+  progress and is colored based on the provided configuration. The component is
+  built as a standalone Angular component and is designed for reuse across
+  different parts of your application.
+</p>
 
 <div class="container">
   <fui-horizontal-stack [progress]="progressSegments" />
@@ -6,3 +14,61 @@
 <div class="container">
   <fui-horizontal-stack [progress]="progressSegments2" />
 </div>
+
+<h3 class="mt-20">Component Structure</h3>
+
+<ul>
+  <li>
+    <strong>Inputs:</strong>
+    <ul>
+      <li>
+        <code>progress</code>: An array of objects representing the percentage
+        and color of each progress segment. This input is required for the
+        component to render properly.
+      </li>
+      <li>
+        <code>showPercentage</code>: A boolean input that determines whether the
+        percentage label is shown within the progress bar. By default, it is set
+        to <code>true</code>.
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 class="mt-20">Key Features</h3>
+
+<ul>
+  <li>
+    <strong>Dynamic Progress Bars:</strong> The component takes an array of
+    percentage and color pairs, rendering each segment of the bar with the
+    specified width.
+  </li>
+  <li>
+    <strong>Customizable Colors:</strong> You can assign any color from a
+    predefined set to each progress segment, making it visually distinct.
+  </li>
+  <li>
+    <strong>Optional Percentage Display:</strong> The percentage label inside
+    each segment can be toggled on or off using the
+    <code>showPercentage</code> input.
+  </li>
+</ul>
+
+<h3 class="mt-20">Example Use Case</h3>
+
+<p>
+  This component can be used for representing progress in various contexts, such
+  as task completion, project milestones, or health bars in games. It provides
+  flexibility in visual representation while being simple to implement across
+  different areas of the application.
+</p>
+
+<h3 class="mt-20">SCSS Styling</h3>
+
+<p>
+  The styles for this component can include classes like
+  <code>.hr-stack</code> for the horizontal stack styling and color classes for
+  each segment's background color. The width is dynamically adjusted based on
+  the percentage value.
+</p>
+

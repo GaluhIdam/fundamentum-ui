@@ -18,7 +18,7 @@ export class AuthGuard {
     return this.authService.checkAuth(google).pipe(
       tap((isAuthenticated) => {
         if (!isAuthenticated) {
-          this.router.navigate(['oidc-authenticator/authenticator']);
+          this.authService.loginWithPage(google);
         }
       }),
       map((isAuthenticated) => isAuthenticated)

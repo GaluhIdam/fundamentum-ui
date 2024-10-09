@@ -165,6 +165,12 @@ export const routes: Routes = [
         title: 'Breadcrumb',
         path: 'breadcrumb',
         component: BreadcrumbViewComponent,
+        children: [
+          {
+            path: ':id',
+            component: BreadcrumbViewComponent,
+          },
+        ],
       },
       {
         title: 'Button',

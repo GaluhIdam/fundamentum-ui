@@ -1,75 +1,278 @@
 <div class="calendar">
-  <div class="head-calendar">
-    <div class="title">
-      <h1>{{ selectedMonth }}</h1>
-      <h4>{{ selectedYear }}</h4>
-    </div>
-    <div class="utility">
-      <select
-        class="select-form"
-        name="month"
-        id="month"
-        [(ngModel)]="selectedMonth"
-        (change)="updateDaysInMonth()"
-      >
-        <option *ngFor="let item of month" [value]="item">{{ item }}</option>
-      </select>
-      <select
-        class="select-form"
-        name="year"
-        id="year"
-        [(ngModel)]="selectedYear"
-        (change)="updateDaysInMonth()"
-      >
-        <option *ngFor="let item of year" [value]="item">{{ item }}</option>
-      </select>
+  <div class="flex-calendar">
+    <div class="grid">
+      <div class="card">
+        <div class="body-calendar-small">
+          <div class="flex-between">
+            <div class="flex gap-10">
+              <fui-icons
+                [icon]="'calendar'"
+                [size]="'sizel'"
+                [color]="themeColor"
+              />
+              <h3 [ngClass]="'month-' + themeColor">
+                {{ selectedMonth.value }}
+              </h3>
+              <p>{{ selectedYear.value }}</p>
+            </div>
+            <div class="flex">
+              <fui-button-icon
+                [type]="'button'"
+                [option]="'icon'"
+                [icon]="'arrowLeft'"
+                [style]="'empty'"
+                [fullWidth]="'fit'"
+                [size]="'s'"
+                [color]="themeColor"
+                (onClick)="onPrevMonth()"
+              />
+              <fui-button-icon
+                [type]="'button'"
+                [option]="'icon'"
+                [icon]="'arrowRight'"
+                [style]="'empty'"
+                [fullWidth]="'fit'"
+                [size]="'s'"
+                [color]="themeColor"
+                (onClick)="onNextMonth()"
+              />
+            </div>
+          </div>
+          <table class="content-calendar-small">
+            <thead>
+              <tr>
+                <th class="week-calendar-small" *ngFor="let day of weekdays">
+                  {{ day }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="date-calendar-small" *ngFor="let week of weeks">
+                <ng-container *ngFor="let day of week">
+                  <td
+                    class="{{
+                      nowDate === day.date &&
+                      nowMonth === day.month &&
+                      selectedYear.value === nowYear
+                        ? 'today-' + themeColor + '-small'
+                        : 'day-calendar-small day-calendar-small-' + themeColor
+                    }}"
+                  >
+                    <p
+                      [ngClass]="{
+                        'outside-month-small':
+                          day.month !== selectedMonth.value,
+                        'date-day-small': day.month === selectedMonth.value
+                      }"
+                    >
+                      {{ day.date }}
+                    </p>
+                  </td>
+                </ng-container>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="flex gap-5 align-center">
+          <fui-icons [icon]="'list'" [size]="'sizel'" [color]="themeColor" />
+          <h4 [ngClass]="'month-' + themeColor">Today's Event</h4>
+        </div>
+        <div class="overflow-y-auto">
+          <ng-container *ngFor="let event of eventToday">
+            <div
+              (click)="parseData(event)"
+              class="{{ 'event-calendar-' + event.color }}"
+            >
+              <span class="title">{{ event.event.title }}</span>
+              <span class="subTitle">{{ event.event.subTitle }}</span>
+            </div>
+          </ng-container>
+          <fui-text
+            class="text-center"
+            [size]="'s'"
+            *ngIf="eventToday.length === 0"
+            [color]="'text'"
+            >No Event</fui-text
+          >
+        </div>
+      </div>
     </div>
   </div>
-  <div class="body-calendar">
-    <table class="content-calendar">
-      <thead>
-        <tr>
-          <th class="week-calendar" *ngFor="let day of weekdays">{{ day }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="date-calendar" *ngFor="let week of weeks">
-          <ng-container *ngFor="let day of week">
-            <td
-              class="{{
-                nowDate === day.date &&
-                nowMonth === day.month &&
-                selectedYear === nowYear
-                  ? 'today'
-                  : 'day-calendar'
-              }}"
-            >
-              <p
-                [ngClass]="{
-                  'outside-month': day.month !== selectedMonth,
-                  'date-day': day.month === selectedMonth
-                }"
+
+  <div class="calendar-wrap">
+    <div class="head-calendar">
+      <!-- MONTH AND YEAR FYI  -->
+      <fui-popover [position]="'bottom'" [align]="'start'">
+        <div class="title">
+          <h2 [ngClass]="'month-' + themeColor">{{ selectedMonth.value }}</h2>
+          <h3>{{ selectedYear.value }}</h3>
+          <fui-icons
+            [icon]="'arrowDown'"
+            [size]="'sizem'"
+            [color]="themeColor"
+          />
+        </div>
+        <div popover-body class="p-5">
+          <div class="mb-5">
+            <fui-text [size]="'xs'">Select Month/Year :</fui-text>
+          </div>
+          <div class="change-month-year">
+            <fui-form-control-layout>
+              <fui-select-field
+                [formControlField]="selectedMonth"
+                [selectOptions]="monthOption"
+                [size]="'s'"
+                [invalid]="false"
+                [placeholder]="'Month'"
               >
-                {{ day.date }}
-              </p>
-              <ng-container *ngFor="let event of events">
-                <div
-                  (click)="parseData(event)"
-                  *ngIf="
-                    day.month === event.month &&
-                    day.date === event.date &&
-                    selectedYear === event.year
-                  "
-                  class="{{ 'event-calendar-' + event.color }}"
+              </fui-select-field>
+            </fui-form-control-layout>
+            <fui-form-control-layout>
+              <fui-select-field
+                [formControlField]="selectedYear"
+                [selectOptions]="yearOption"
+                [size]="'s'"
+                [invalid]="false"
+                [placeholder]="'Year'"
+              >
+              </fui-select-field>
+            </fui-form-control-layout>
+          </div>
+        </div>
+      </fui-popover>
+      <!-- MONTH AND YEAR FYI  -->
+
+      <div class="flex-group">
+        <!-- SEARCH EVENT  -->
+        <fui-popover [position]="'bottom'" [align]="'end'">
+          <fui-form-control-layout>
+            <fui-input-field
+              [type]="'text'"
+              [size]="'s'"
+              [invalid]="false"
+              [placeholder]="'e.g Tech Conference'"
+            >
+              <fui-icons
+                left-icon
+                [label]="'left'"
+                [icon]="'search'"
+                [size]="'sizes'"
+                [color]="'text'"
+              />
+            </fui-input-field>
+          </fui-form-control-layout>
+          <div popover-body class="utility-search">
+            <div class="overflow-y-auto">
+              <!-- LIST EVENT  -->
+              <div
+                *ngFor="let event of events"
+                class="event-list"
+                (click)="parseData(event)"
+              >
+                <fui-text [size]="'s'">{{ event.event.title }}</fui-text>
+                <fui-text [size]="'xs'" [color]="'text'">{{
+                  event.event.subTitle
+                }}</fui-text>
+              </div>
+              <!-- LIST EVENT  -->
+
+              <fui-text
+                class="text-center"
+                [size]="'s'"
+                *ngIf="events.length === 0"
+                [color]="'text'"
+                >No Event</fui-text
+              >
+            </div>
+          </div>
+        </fui-popover>
+        <!-- SEARCH EVENT  -->
+
+        <!-- ADD NEW EVENT  -->
+        <fui-button-icon
+          (onClick)="handleCreateEventModal()"
+          [style]="'secondary'"
+          [fullWidth]="'fit'"
+          [color]="themeColor"
+          [type]="'button'"
+          [option]="'iconText'"
+          [icon]="'plusInCircle'"
+          [text]="'New Event'"
+          [size]="'s'"
+        />
+        <!-- ADD NEW EVENT  -->
+      </div>
+    </div>
+    <div class="container">
+      <table class="content-calendar">
+        <thead>
+          <tr>
+            <th
+              [ngClass]="['week-calendar-' + themeColor]"
+              *ngFor="let day of weekdays"
+            >
+              {{ day }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="date-calendar" *ngFor="let week of weeks">
+            <ng-container *ngFor="let day of week">
+              <td
+                class="{{
+                  nowDate === day.date &&
+                  nowMonth === day.month &&
+                  selectedYear.value === nowYear
+                    ? 'today-' + themeColor
+                    : 'day-calendar'
+                }}"
+              >
+                <p
+                  [ngClass]="{
+                    'outside-month': day.month !== selectedMonth.value,
+                    'date-day': day.month === selectedMonth.value
+                  }"
                 >
-                  <span class="title">{{ event.event.title }}</span>
-                  <span class="subTitle">{{ event.event.subTitle }}</span>
-                </div>
-              </ng-container>
-            </td>
-          </ng-container>
-        </tr>
-      </tbody>
-    </table>
+                  {{ day.date }}
+                </p>
+                <ng-container *ngFor="let event of events">
+                  <div
+                    (click)="parseData(event)"
+                    *ngIf="
+                      day.month === event.month &&
+                      day.date === event.date &&
+                      selectedYear.value === event.year
+                    "
+                    class="{{ 'event-calendar-' + event.color }}"
+                  >
+                    <span class="title">{{ event.event.title }}</span>
+                    <span class="subTitle">{{ event.event.subTitle }}</span>
+                  </div>
+                </ng-container>
+              </td>
+            </ng-container>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
+
+<!-- Modal Body -->
+<fui-modal [open]="isOpenCreateEvent" *ngIf="eventShow">
+  <fui-modal-header (onCloseModal)="handleCreateEventModal()">
+    <div class="{{ 'head-modal-' + eventShow.color }}">
+      <fui-icons
+        [icon]="'calendar'"
+        [size]="'sizel'"
+        [color]="eventShow.color"
+      />
+      <fui-text [size]="'l'" [color]="themeColor">New Event</fui-text>
+    </div>
+  </fui-modal-header>
+  <fui-modal-body> modal body </fui-modal-body>
+</fui-modal>
+<!-- Modal Body -->

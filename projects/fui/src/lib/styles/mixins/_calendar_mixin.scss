@@ -18,11 +18,11 @@
   text-align: left;
 }
 
-@mixin weekCalendarMix() {
-  background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
+@mixin weekCalendarMix($bgColor, $txtColor) {
+  background-color: $bgColor;
   padding: 5px 10px 5px 10px;
   height: 30px;
-  color: var(--fuiColorInk, $fuiColorInk);
+  color: $txtColor;
   text-align: left;
   border-width: 1px;
   border-style: solid;
@@ -62,7 +62,7 @@
 }
 
 @mixin modalBodyContentMix {
-  width: -webkit-fill-available;
+  width: 100%;
 
   @media (min-width: 501px) {
     width: 400px;
@@ -70,7 +70,6 @@
 }
 
 @mixin eventCalendarMix($bgColor, $textColor) {
-  margin: 5px 0px 0px 0px;
   background-color: $bgColor;
   color: $textColor;
   padding: 7px 7px 7px 7px;
@@ -132,13 +131,13 @@
   color: var(--fuiColorInk, $fuiColorInk);
   display: flex;
   margin: 10px 0px 10px 0px;
-  width: -webkit-fill-available;
+  width: 100%;
   p {
     margin: 5px 0px 5px 0px;
     font-size: small;
   }
   .content-schedule {
-    width: -webkit-fill-available;
+    width: 100%;
     text-align: left;
     p {
       margin: 5px 0px 5px 0px;

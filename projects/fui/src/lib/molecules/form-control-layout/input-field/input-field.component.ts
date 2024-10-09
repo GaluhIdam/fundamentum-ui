@@ -52,17 +52,18 @@ export class InputFieldComponent {
     }
   }
 
-  @HostListener('document:keydown', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) {
-    if (event.ctrlKey && event.key === 'k') {
-      event.preventDefault();
-      this.focusX = !this.focusX;
-      if (this.focusX) {
-        this.inputX.nativeElement.focus();
-      } else {
-        this.inputX.nativeElement.blur();
-      }
-    }
+  // @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(): void {
+    this.inputX.nativeElement.focus();
+    // if (event.ctrlKey && event.key === 'k') {
+    //   event.preventDefault();
+    //   this.focusX = !this.focusX;
+    //   if (this.focusX) {
+    //     this.inputX.nativeElement.focus();
+    //   } else {
+    //     this.inputX.nativeElement.blur();
+    //   }
+    // }
   }
 
   handleOnFocus(): void {

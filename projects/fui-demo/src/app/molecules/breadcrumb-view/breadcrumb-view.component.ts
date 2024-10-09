@@ -11,18 +11,18 @@ import { BreadcrumbComponent, BreadcrumbData } from 'fui';
 export class BreadcrumbViewComponent {
   links = [
     { label: 'Breadcrumb1', link: '/molecules/breadcrumb' },
-    { label: 'Breadcrumb2', link: 'breadcrumb2' },
-    { label: 'Breadcrumb3', link: 'breadcrumb3' },
-    { label: 'Breadcrumb4', link: 'breadcrumb4' },
-    { label: 'Breadcrumb5', link: 'breadcrumb5' },
-    { label: 'Breadcrumb6', link: 'breadcrumb6' },
-    { label: 'Breadcrumb7', link: 'breadcrumb7' },
-    { label: 'Breadcrumb8', link: 'breadcrumb8' },
-    { label: 'Breadcrumb9', link: 'breadcrumb9' },
-    { label: 'Breadcrumb10', link: 'breadcrumb10' },
+    { label: 'Breadcrumb2', link: '/molecules/breadcrumb/1' },
+    { label: 'Breadcrumb3', link: '/molecules/breadcrumb/2' },
+    { label: 'Breadcrumb4', link: '/molecules/breadcrumb/3' },
+    { label: 'Breadcrumb5', link: '/molecules/breadcrumb/4' },
+    { label: 'Breadcrumb6', link: '/molecules/breadcrumb/5' },
+    { label: 'Breadcrumb7', link: '/molecules/breadcrumb/6' },
+    { label: 'Breadcrumb8', link: '/molecules/breadcrumb/7' },
+    { label: 'Breadcrumb9', link: '/molecules/breadcrumb/8' },
+    { label: 'Breadcrumb10', link: '/molecules/breadcrumb/9' },
   ];
 
   changeBread(e: BreadcrumbData) {
-    console.log('breadcrumb', e);
+    // console.log('breadcrumb', e);
   }
 }

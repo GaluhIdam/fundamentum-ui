@@ -39,7 +39,7 @@ export interface BreadCrubmbDataType extends BreadcrumbData {
 export class BreadcrumbComponent implements OnInit {
   @Input() data: BreadcrumbData[] = [];
   @Input() separator: string = '/';
-  @Input() labelSize: Size = 'sizedefault';
+  @Input() labelSize: 'xs' | 's' | 'm' | 'l' | 'xl' = 'm';
   @Input() maxDisplayLink: number = 5;
   @Output() onChangeBreadcrumb: EventEmitter<BreadcrumbData> =
     new EventEmitter();

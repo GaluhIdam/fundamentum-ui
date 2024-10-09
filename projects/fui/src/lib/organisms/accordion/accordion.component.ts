@@ -25,12 +25,12 @@ import { CommonModule } from '@angular/common';
 export class AccordionComponent {
   @Input() isExpand: boolean = false;
   @Input() title: string = '';
-  @Input() titleSize: Size = 'sizedefault';
-  @Input() titleColor!: Color;
-  @Input() bodySize: Size = 'sizedefault';
-  @Input() bodyColor!: Color;
+  @Input() titleSize: 'xs' | 's' | 'm' | 'l' | 'xl' = 'm';
+  @Input() titleColor: Color = 'ink';
+  @Input() bodySize: 'xs' | 's' | 'm' | 'l' | 'xl' = 'm';
+  @Input() bodyColor: Color = 'ink';
   @Input() iconSize: Size = 'sizedefault';
-  @Input() iconColor!: Color;
+  @Input() iconColor: Color = 'ink';
   @Input() collapsedIcon: Icon = 'arrowRight';
   @Input() expandIcon: Icon = 'arrowDown';
   @Input() isLoading: boolean = false;

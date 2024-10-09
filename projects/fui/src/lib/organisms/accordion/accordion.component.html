@@ -19,9 +19,7 @@
     </div>
   </div>
   <div [ngClass]="['accordion-body', isExpand ? 'expanded' : '']">
-    <fui-text [size]="bodySize" [color]="bodyColor">
-      <ng-content></ng-content>
-    </fui-text>
+    <ng-content></ng-content>
   </div>
 </div>
 
