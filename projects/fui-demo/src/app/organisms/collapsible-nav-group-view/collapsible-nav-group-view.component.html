@@ -16,13 +16,13 @@
 <div style="margin-bottom: 10px">
   <fui-collapsible-nav-group
     class="primary"
-    [isCollapsed]="isCollapsed2"
-    (isCollapse)="toggleCollapse2($event)"
+    [isCollapsed]="isCollapsed1"
+    (isCollapse)="toggleCollapse1($event)"
   >
-    <div header class="header {{ !isCollapsed2 ? 'btm' : '' }}">
+    <div header class="header {{ !isCollapsed1 ? 'btm' : '' }}">
       <div class="logo">
         <fui-icons [icon]="'package'" [size]="'sizel'" [color]="'primary'" />
-        <h4>Nav Group</h4>
+        <h4>Nav Group Primary</h4>
       </div>
       <fui-button-icon
         [type]="'button'"
@@ -31,9 +31,9 @@
         [text]="'Button Primary'"
         [color]="'primary'"
         [fullWidth]="'fit'"
-        [icon]="!isCollapsed2 ? 'arrowRight' : 'arrowDown'"
+        [icon]="!isCollapsed1 ? 'arrowRight' : 'arrowDown'"
         [iconSide]="'left'"
-        (onClick)="test()"
+        (onClick)="toggleCollapse1(!isCollapsed1)"
       />
     </div>
     <div body class="body">
@@ -74,10 +74,10 @@
 <div style="margin-bottom: 10px">
   <fui-collapsible-nav-group
     class="success"
-    [isCollapsed]="isCollapsed3"
-    (isCollapse)="toggleCollapse3($event)"
+    [isCollapsed]="isCollapsed2"
+    (isCollapse)="toggleCollapse2($event)"
   >
-    <div header class="header {{ !isCollapsed3 ? 'btm' : '' }}">
+    <div header class="header {{ !isCollapsed2 ? 'btm' : '' }}">
       <div class="logo">
         <fui-icons [icon]="'package'" [size]="'sizel'" [color]="'success'" />
         <h4>Nav Group</h4>
@@ -89,8 +89,9 @@
         [text]="'Button Primary'"
         [color]="'success'"
         [fullWidth]="'fit'"
-        [icon]="!isCollapsed3 ? 'arrowRight' : 'arrowDown'"
+        [icon]="!isCollapsed2 ? 'arrowRight' : 'arrowDown'"
         [iconSide]="'left'"
+        (onClick)="toggleCollapse2(!isCollapsed2)"
       />
     </div>
     <div body class="body">
@@ -131,10 +132,10 @@
 <div style="margin-bottom: 10px">
   <fui-collapsible-nav-group
     class="warning"
-    [isCollapsed]="isCollapsed4"
-    (isCollapse)="toggleCollapse4($event)"
+    [isCollapsed]="isCollapsed3"
+    (isCollapse)="toggleCollapse3($event)"
   >
-    <div header class="header {{ !isCollapsed4 ? 'btm' : '' }}">
+    <div header class="header {{ !isCollapsed3 ? 'btm' : '' }}">
       <div class="logo">
         <fui-icons [icon]="'package'" [size]="'sizel'" [color]="'warning'" />
         <h4>Nav Group</h4>
@@ -146,8 +147,9 @@
         [text]="'Button Primary'"
         [color]="'warning'"
         [fullWidth]="'fit'"
-        [icon]="!isCollapsed4 ? 'arrowRight' : 'arrowDown'"
+        [icon]="!isCollapsed3 ? 'arrowRight' : 'arrowDown'"
         [iconSide]="'left'"
+        (onClick)="toggleCollapse3(!isCollapsed3)"
       />
     </div>
     <div body class="body">
@@ -188,10 +190,10 @@
 <div style="margin-bottom: 10px">
   <fui-collapsible-nav-group
     class="danger"
-    [isCollapsed]="isCollapsed5"
-    (isCollapse)="toggleCollapse5($event)"
+    [isCollapsed]="isCollapsed4"
+    (isCollapse)="toggleCollapse4($event)"
   >
-    <div header class="header {{ !isCollapsed5 ? 'btm' : '' }}">
+    <div header class="header {{ !isCollapsed4 ? 'btm' : '' }}">
       <div class="logo">
         <fui-icons [icon]="'package'" [size]="'sizel'" [color]="'danger'" />
         <h4>Nav Group</h4>
@@ -203,8 +205,9 @@
         [text]="'Button Primary'"
         [color]="'danger'"
         [fullWidth]="'fit'"
-        [icon]="!isCollapsed5 ? 'arrowRight' : 'arrowDown'"
+        [icon]="!isCollapsed4 ? 'arrowRight' : 'arrowDown'"
         [iconSide]="'left'"
+        (onClick)="toggleCollapse4(!isCollapsed4)"
       />
     </div>
     <div body class="body">
@@ -245,10 +248,10 @@
 <div style="margin-bottom: 10px">
   <fui-collapsible-nav-group
     class="dark"
-    [isCollapsed]="isCollapsed6"
-    (isCollapse)="toggleCollapse6($event)"
+    [isCollapsed]="isCollapsed5"
+    (isCollapse)="toggleCollapse5($event)"
   >
-    <div header class="header {{ !isCollapsed6 ? 'btm' : '' }}">
+    <div header class="header {{ !isCollapsed5 ? 'btm' : '' }}">
       <div class="logo">
         <fui-icons [icon]="'package'" [size]="'sizel'" [color]="'ghost'" />
         <h4>Nav Group</h4>
@@ -260,8 +263,9 @@
         [text]="'Button Primary'"
         [color]="'text'"
         [fullWidth]="'fit'"
-        [icon]="!isCollapsed6 ? 'arrowRight' : 'arrowDown'"
+        [icon]="!isCollapsed5 ? 'arrowRight' : 'arrowDown'"
         [iconSide]="'left'"
+        (onClick)="toggleCollapse5(!isCollapsed5)"
       />
     </div>
     <div body class="body">
@@ -302,10 +306,10 @@
 <div style="margin-bottom: 10px">
   <fui-collapsible-nav-group
     class="text"
-    [isCollapsed]="isCollapsed"
-    (isCollapse)="toggleCollapse($event)"
+    [isCollapsed]="isCollapsed6"
+    (isCollapse)="toggleCollapse6($event)"
   >
-    <div header class="header {{ !isCollapsed ? 'btm' : '' }}">
+    <div header class="header {{ !isCollapsed6 ? 'btm' : '' }}">
       <div class="logo">
         <fui-icons [icon]="'package'" [size]="'sizel'" [color]="'text'" />
         <h4>Nav Group</h4>
@@ -317,8 +321,9 @@
         [text]="'Button Primary'"
         [color]="'text'"
         [fullWidth]="'fit'"
-        [icon]="!isCollapsed ? 'arrowRight' : 'arrowDown'"
+        [icon]="!isCollapsed6 ? 'arrowRight' : 'arrowDown'"
         [iconSide]="'left'"
+        (onClick)="toggleCollapse6(!isCollapsed6)"
       />
     </div>
     <div body class="body">

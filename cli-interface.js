@@ -14,6 +14,7 @@ const cliInterface = `
 ║   CLI List :                                       ║
 ║   npm run fui-start (for build and run)            ║
 ║   npm run fui-build (for build)                    ║
+║   npm run fui-build-pack (for build & npm package) ║
 ║   npm run fui-serve (for run)                      ║
 ║                                                    ║
 ║   Thank You :)                                     ║

@@ -37,23 +37,14 @@
         <fui-icons
           [icon]="getStepIcon(step.stepStatus, step.stepIcon)"
           [color]="getStepColor(step.stepStatus, step.stepColor)"
-          [size]="stepSize ? stepSize : 'sizem'"
+          [size]="stepSize ? stepSize : 'm'"
         ></fui-icons>
         } @else {
-        <fui-text
-          [color]="getStepColor(step.stepStatus, step.stepColor)"
-          [size]="stepSize ? stepSize : 'sizem'"
-          >{{ $index + 1 }}</fui-text
-        >
+        <fui-text>{{ $index + 1 }}</fui-text>
         }
       </div>
       <div class="step-title">
-        <fui-text
-          [color]="step.titleColor"
-          [size]="step.titleSize"
-          [weight]="'semibold'"
-          >{{ step.title }}</fui-text
-        >
+        <fui-text [weight]="'semibold'">{{ step.title }}</fui-text>
       </div>
     </div>
     <div
@@ -96,8 +87,6 @@
 <!-- content current and direction horizontal -->
 @if(conditionDisplay === 'current' && direction === 'horizontal') {
 <div class="step-content-current">
-  @for (stepContent of getStepContents(activeStepId); track $index) {
-  <ng-container *ngTemplateOutlet="stepContent.template"></ng-container>
-  }
+  <ng-content></ng-content>
 </div>
 }

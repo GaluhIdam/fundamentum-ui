@@ -30,7 +30,7 @@
 
     <div popover-body>
       <div class="fui-date-picker__header">
-        <fui-button-icon
+        <fui-button-icon [fullWidth]="'fit'"
           (click)="prevMonth()"
           color="text"
           icon="arrowLeft"
@@ -56,7 +56,7 @@
         >
           <option *ngFor="let year of years" [value]="year">{{ year }}</option>
         </select>
-        <fui-button-icon
+        <fui-button-icon [fullWidth]="'fit'"
           (click)="nextMonth()"
           color="text"
           icon="arrowRight"

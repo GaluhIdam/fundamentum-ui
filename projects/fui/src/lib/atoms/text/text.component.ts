@@ -18,6 +18,7 @@ export class TextComponent {
   @Input() fwStyle: 'italic' | 'normal' = 'normal';
   @Input() decoration: 'underline' | 'line-through' | 'overline' | 'none' =
     'none';
+  @Input() textOverflow: 'ellipsis' | 'clip' = 'ellipsis';
   @Input() weight:
     | 'thin'
     | 'light'

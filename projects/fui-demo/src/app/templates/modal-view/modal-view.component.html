@@ -1,47 +1,333 @@
-<div class="container">
-  <fui-button (click)="openModal()">Show Modal</fui-button>
-  <fui-modal [open]="isModalOpen" (onClickOverlayModal)="handleClickOverlay()">
-    <fui-modal-header (onCloseModal)="handleCloseModal()">
-      <fui-text [size]="'sizel'">
-        <fui-icons [icon]="'apps'" />
-        Title Modal Header
-      </fui-text>
-    </fui-modal-header>
-    <fui-modal-body>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error voluptatem
-      nobis totam quasi mollitia adipisci magnam qui corporis reprehenderit,
-      laboriosam, nulla distinctio minus blanditiis modi debitis, veniam soluta
-      corrupti numquam optio fugit quisquam explicabo ducimus? Labore amet animi
-      porro delectus.
-    </fui-modal-body>
-    <fui-modal-footer [isCustomModalFooter]="true">
-      <fui-text>Footer Modal</fui-text>
-      <fui-spacer [direction]="'horizontal'"></fui-spacer>
-      <fui-button (click)="handleCancelModal()">Close Modal</fui-button>
-    </fui-modal-footer>
-  </fui-modal>
+<h1>Modal</h1>
+<p>
+  A modal works best for focusing users' attention on a short amount of content
+  and getting them to make a decision. Use it to temporarily interrupt a user’s
+  current task and block interactions to the content below it.
+</p>
+
+<div class="grid-2">
+  <!-- BASIC MODAL  -->
+  <div class="container">
+    <h4>Basic Modal</h4>
+
+    <div class="modal-ex">
+      <fui-modal-header (onCloseModal)="openModal()">
+        <fui-text [weight]="'semibold'" [size]="'l'"
+          >Basic Modal Component</fui-text
+        >
+      </fui-modal-header>
+
+      <fui-modal-body>
+        <div class="body-modal">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum
+            impedit voluptatibus tenetur asperiores nam consectetur officia,
+            dolores commodi exercitationem eaque aperiam corporis, reiciendis
+            laudantium rem molestias ab. Laudantium, temporibus vel!
+          </p>
+        </div>
+      </fui-modal-body>
+
+      <fui-modal-footer>
+        <div class="flex-footer">
+          <fui-button-icon
+            [style]="'secondary'"
+            [type]="'button'"
+            [fullWidth]="'fit'"
+            [option]="'text'"
+            [text]="'Cancel'"
+          />
+          <fui-button-icon
+            [type]="'button'"
+            [fullWidth]="'fit'"
+            [option]="'iconText'"
+            [icon]="'save'"
+            [text]="'Save'"
+          />
+        </div>
+      </fui-modal-footer>
+    </div>
+
+    <fui-button-icon
+      [style]="'secondary'"
+      [type]="'button'"
+      [fullWidth]="'fit'"
+      [option]="'text'"
+      [text]="'Click me!'"
+      (onClick)="openModal()"
+    />
+  </div>
+  <!-- BASIC MODAL  -->
+
+  <!-- CONFIRM MODAL  -->
+  <div class="container">
+    <h4>Confirm Modal</h4>
+
+    <div class="modal-ex">
+      <fui-modal-header (onCloseModal)="openModalCustom()">
+        <div class="center-all">
+          <div class="circle-icon">
+            <fui-icons [icon]="'alert'" [color]="'ghost'" [size]="'sizexl'" />
+          </div>
+          <fui-text [color]="'danger'" [size]="'l'" [weight]="'semibold'"
+            >Delete (PT1) Prototype</fui-text
+          >
+        </div>
+      </fui-modal-header>
+
+      <fui-modal-body>
+        <div class="body-modal-custom">
+          <fui-text [textWrap]="'wrap'">
+            This data will be permanently deleted. Do you want to continue?
+          </fui-text>
+
+          <div class="body-modal-custom-sub">
+            <ul>
+              <li>Data item 1</li>
+              <li>Data item 2</li>
+              <li>Data item 3</li>
+              <li>Data item 4</li>
+            </ul>
+          </div>
+        </div>
+      </fui-modal-body>
+
+      <fui-modal-footer>
+        <div class="flex-footer-custom">
+          <fui-button-icon
+            [style]="'secondary'"
+            [type]="'button'"
+            [fullWidth]="'fit'"
+            [option]="'text'"
+            [text]="'No, Keep It!'"
+            [color]="'text'"
+          />
+          <fui-button-icon
+            [type]="'button'"
+            [fullWidth]="'fit'"
+            [option]="'iconText'"
+            [color]="'danger'"
+            [icon]="'trash'"
+            [text]="'Yes, Delete'"
+          />
+        </div>
+      </fui-modal-footer>
+    </div>
+
+    <fui-button-icon
+      [style]="'secondary'"
+      [type]="'button'"
+      [fullWidth]="'fit'"
+      [option]="'text'"
+      [text]="'Click me!'"
+      (onClick)="openModalCustom()"
+    />
+  </div>
+  <!-- CONFIRM MODAL  -->
+
+  <!-- ALERT MODAL  -->
+  <div class="container">
+    <h4>Alert Modal</h4>
+
+    <div class="modal-ex">
+      <fui-modal-header (onCloseModal)="openModalCustom()">
+        <div class="center-all">
+          <div style="margin-bottom: 10px">
+            <svg
+              class="checkmark"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 52 52"
+            >
+              <circle
+                class="checkmark__circle"
+                cx="26"
+                cy="26"
+                r="25"
+                fill="none"
+              />
+              <path
+                class="checkmark__check"
+                fill="none"
+                d="M14.1 27.2l7.1 7.2 16.7-16.8"
+              />
+            </svg>
+          </div>
+          <fui-text [size]="'l'" [weight]="'semibold'">Success</fui-text>
+        </div>
+      </fui-modal-header>
+
+      <fui-modal-body>
+        <div class="modal-alert">
+          <fui-text [textWrap]="'wrap'">
+            Check your email for a booking confirmation. We'll see you soon!
+          </fui-text>
+        </div>
+      </fui-modal-body>
+
+      <fui-modal-footer>
+        <fui-loading-bar
+          [duration]="5000"
+          [delay]="500"
+          [heightPx]="'5px'"
+          [loading]="true"
+        />
+      </fui-modal-footer>
+    </div>
+
+    <fui-button-icon
+      [style]="'secondary'"
+      [type]="'button'"
+      [fullWidth]="'fit'"
+      [option]="'text'"
+      [text]="'Click me!'"
+      (onClick)="openModalAlert(true)"
+    />
+  </div>
+  <!-- ALERT MODAL  -->
 </div>
 
-<div class="container">
-  <fui-button (click)="openModalDelete()" [color]="'danger'"
-    >Show Modal Delete</fui-button
-  >
-  <fui-modal [open]="isModalDeleteOpen">
-    <fui-modal-header
-      [iconCloseColor]="'danger'"
-      (onCloseModal)="handleCloseModalDelete()"
+<!-- BASIC MODAL  -->
+<fui-modal [open]="isModalOpen" (onClickOverlayModal)="openModal()">
+  <fui-modal-header (onCloseModal)="openModal()">
+    <fui-text [weight]="'semibold'" [size]="'l'"
+      >Basic Modal Component</fui-text
     >
-      <fui-text [color]="'danger'" [size]="'sizexl'"
-        >Delete 6 pipelines?</fui-text
+  </fui-modal-header>
+
+  <fui-modal-body>
+    <div class="body-modal">
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum impedit
+        voluptatibus tenetur asperiores nam consectetur officia, dolores commodi
+        exercitationem eaque aperiam corporis, reiciendis laudantium rem
+        molestias ab. Laudantium, temporibus vel!
+      </p>
+    </div>
+  </fui-modal-body>
+
+  <fui-modal-footer>
+    <div class="flex-footer">
+      <fui-button-icon
+        [style]="'secondary'"
+        [type]="'button'"
+        [fullWidth]="'fit'"
+        [option]="'text'"
+        [text]="'Cancel'"
+        (onClick)="openModal()"
+      />
+      <fui-button-icon
+        [type]="'button'"
+        [fullWidth]="'fit'"
+        [option]="'iconText'"
+        [icon]="'save'"
+        [text]="'Save'"
+      />
+    </div>
+  </fui-modal-footer>
+</fui-modal>
+<!-- BASIC MODAL  -->
+
+<!-- CONFIRM MODAL  -->
+<fui-modal [open]="isModalCustomOpen" (onClickOverlayModal)="openModalCustom()">
+  <fui-modal-header (onCloseModal)="openModalCustom()">
+    <div class="center-all">
+      <div class="circle-icon">
+        <fui-icons [icon]="'alert'" [color]="'ghost'" [size]="'sizexl'" />
+      </div>
+      <fui-text [color]="'danger'" [size]="'l'" [weight]="'semibold'"
+        >Delete (PT1) Prototype</fui-text
       >
-    </fui-modal-header>
-    <fui-modal-body> You can’t recover deleted data. </fui-modal-body>
-    <fui-modal-footer
-      [confirmButtonColor]="'danger'"
-      [confirmButtonText]="'Delete'"
-      (onCancelButton)="handleCancelModalDelete()"
-      (onConfirmButton)="handleConfirmButtonModalDelete()"
-    >
-    </fui-modal-footer>
-  </fui-modal>
-</div>
+    </div>
+  </fui-modal-header>
+
+  <fui-modal-body>
+    <div class="body-modal-custom">
+      <fui-text [textWrap]="'wrap'" [color]>
+        This data will be permanently deleted. Do you want to continue?
+      </fui-text>
+
+      <div class="body-modal-custom-sub">
+        <ul>
+          <li>Data item 1</li>
+          <li>Data item 2</li>
+          <li>Data item 3</li>
+          <li>Data item 4</li>
+        </ul>
+      </div>
+    </div>
+  </fui-modal-body>
+
+  <fui-modal-footer>
+    <div class="flex-footer-custom">
+      <fui-button-icon
+        [style]="'secondary'"
+        [type]="'button'"
+        [fullWidth]="'fit'"
+        [option]="'text'"
+        [text]="'No, Keep It!'"
+        [color]="'text'"
+        (onClick)="openModalCustom()"
+      />
+      <fui-button-icon
+        [type]="'button'"
+        [fullWidth]="'fit'"
+        [option]="'iconText'"
+        [color]="'danger'"
+        [icon]="'trash'"
+        [text]="'Yes, Delete'"
+      />
+    </div>
+  </fui-modal-footer>
+</fui-modal>
+<!-- CONFIRM MODAL  -->
+
+<!-- ALERT MODAL  -->
+<fui-modal
+  [open]="isModalAlertOpen"
+  (onClickOverlayModal)="openModalAlert(false)"
+>
+  <fui-modal-header (onCloseModal)="openModalAlert(false)">
+    <div class="center-all">
+      <div style="margin-bottom: 10px">
+        <svg
+          class="checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 52 52"
+        >
+          <circle
+            class="checkmark__circle"
+            cx="26"
+            cy="26"
+            r="25"
+            fill="none"
+          />
+          <path
+            class="checkmark__check"
+            fill="none"
+            d="M14.1 27.2l7.1 7.2 16.7-16.8"
+          />
+        </svg>
+      </div>
+      <fui-text [size]="'l'" [weight]="'semibold'">Success</fui-text>
+    </div>
+  </fui-modal-header>
+
+  <fui-modal-body>
+    <div class="modal-alert">
+      <fui-text [textWrap]="'wrap'">
+        Check your email for a booking confirmation. We'll see you soon!
+      </fui-text>
+    </div>
+  </fui-modal-body>
+
+  <fui-modal-footer>
+    <fui-loading-bar
+      [duration]="2000"
+      [delay]="500"
+      [heightPx]="'5px'"
+      [loading]="isModalAlertOpen"
+      (loadingComplete)="openModalAlert(false)"
+    />
+  </fui-modal-footer>
+</fui-modal>
+<!-- ALERT MODAL  -->

@@ -73,7 +73,7 @@ export class FlyoutComponent {
   @Input() flyoutDirection: 'start' | 'end' = 'end';
   @Input() flyoutSize: 's' | 'm' | 'l' = 'm';
   @Input() flyoutPadding: 'none' | 's' | 'm' | 'l' = 'l';
-  @Input() withOverlay: boolean = false;
+  @Input() withOverlay: boolean = true;
   @Output() onOverlayClick: EventEmitter<void> = new EventEmitter();
   @Input() zIndex: number = 2;
   flyoutPadding$ = new BehaviorSubject<'none' | 's' | 'm' | 'l'>('l');

@@ -1,4 +1,11 @@
 <!-- button.component.html -->
-<p [ngClass]="[color, size, textWrap, weight, decoration, fwStyle]">
+<p
+  [ngClass]="[color, size, weight, decoration, fwStyle]"
+  [ngStyle]="{
+    'text-wrap': textWrap,
+    'text-overflow': textOverflow,
+    overflow: 'hidden'
+  }"
+>
   <ng-content></ng-content>
 </p>

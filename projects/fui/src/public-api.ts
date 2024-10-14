@@ -23,6 +23,7 @@ export * from './lib/molecules/input-field-number/input-field-number.component';
 export * from './lib/molecules/input-field-password/input-field-password.component';
 export * from './lib/molecules/input-search-field/input-search-field.component';
 export * from './lib/molecules/image/image.component';
+export * from './lib/molecules/loading-bar/loading-bar.component';
 
 export * from './lib/molecules/loading/loading.component';
 

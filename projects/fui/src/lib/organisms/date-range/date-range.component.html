@@ -23,7 +23,7 @@
 
       <div popover-body>
         <div class="fui-date-picker__header">
-          <fui-button-icon
+          <fui-button-icon [fullWidth]="'fit'"
             (click)="prevMonth(true)"
             color="text"
             icon="arrowLeft"
@@ -51,7 +51,7 @@
               {{ year }}
             </option>
           </select>
-          <fui-button-icon
+          <fui-button-icon [fullWidth]="'fit'"
             (click)="nextMonth(true)"
             color="text"
             icon="arrowRight"
@@ -125,7 +125,7 @@
       </fui-input-field>
       <div popover-body>
         <div class="fui-date-picker__header">
-          <fui-button-icon
+          <fui-button-icon [fullWidth]="'fit'"
             (click)="prevMonth(false)"
             color="text"
             icon="arrowLeft"
@@ -153,7 +153,7 @@
               {{ year }}
             </option>
           </select>
-          <fui-button-icon
+          <fui-button-icon [fullWidth]="'fit'"
             (click)="nextMonth(false)"
             color="text"
             icon="arrowRight"

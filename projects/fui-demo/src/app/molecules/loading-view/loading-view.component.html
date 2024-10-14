@@ -6,6 +6,16 @@
   single, larger loading indicator.
 </p>
 <div class="container">
+  <h2>Progress</h2>
+  <fui-loading-bar
+    [duration]="5000"
+    [delay]="1000"
+    [heightPx]="'10px'"
+    [loading]="isLoadingProgress"
+    (loadingComplete)="toggleLoadingBar()"
+  />
+  <button type="button" (click)="toggleLoadingBar()">Start</button>
+
   <h2>Elastic</h2>
   <div class="loading-container">
     <fui-loading [isLoading]="true" [type]="'elastic'" [size]="'sizedefault'" />

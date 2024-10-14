@@ -1,3 +1,9 @@
+:host {
+  height: 100vh;
+  display: grid;
+  overflow: hidden;
+}
+
 * {
   box-sizing: border-box;
 }

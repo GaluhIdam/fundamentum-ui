@@ -1,8 +1,6 @@
-<div #header>
-  <ng-content select="fui-header"></ng-content>
-</div>
+<ng-content select="fui-header"></ng-content>
 <div
-  [ngStyle]="{ height: 'calc(100vh - ' + height + '   - 1.2vh)' }"
+
   [ngClass]="[
     'page',
     'page-direction-' + direction,
@@ -10,7 +8,7 @@
     isRestrictWidth ? 'restrict-width' : ''
   ]"
 >
-  <div [ngStyle]="{ height: 'calc(100vh - ' + height + '   - 1.2vh)' }">
+  <div >
     <ng-content select="fui-page-sidebar"></ng-content>
   </div>
   <ng-content select="fui-page-body"></ng-content>

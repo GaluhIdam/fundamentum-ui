@@ -15,7 +15,8 @@
     "fui-build": "concurrently \"compodoc -p tsconfig.doc.json -d documentation -c compodoc.json\" \"ng build fui\"",
     "fui-serve": "concurrently \"ng serve\" \"npm run compodoc:serve\"",
     "serve:ssr:fui-demo": "node dist/fui-demo/server/server.mjs",
-    "serve:ssr:fui-demo-v2": "node dist/fui-demo-v2/server/server.mjs"
+    "serve:ssr:fui-demo-v2": "node dist/fui-demo-v2/server/server.mjs",
+    "fui-build-pack": "node cli-interface && ng build fui && cd dist/fui && npm pack && cd ../../"
   },
   "private": true,
   "dependencies": {

@@ -6,6 +6,7 @@
 .fui-collapsible-panel.show {
   z-index: 3;
   display: flex;
+  gap: 10px;
   background-color: rgba(#000, 0.5);
   width: 100%;
   position: fixed;

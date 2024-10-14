@@ -15,12 +15,12 @@
 }
 .fixed-top {
   width: 100%;
-  position: absolute;
+  position: sticky;
   top: 0;
 }
 .fixed-bottom {
   width: 100%;
-  position: absolute;
+  position: sticky;
   bottom: 0;
 }
 

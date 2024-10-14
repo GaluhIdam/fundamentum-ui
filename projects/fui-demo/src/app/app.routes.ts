@@ -379,7 +379,7 @@ export const routes: Routes = [
         component: HeaderViewComponent,
       },
       {
-        title: 'Modal Component',
+        title: 'Modal',
         path: 'modal',
         component: ModalViewComponent,
       },

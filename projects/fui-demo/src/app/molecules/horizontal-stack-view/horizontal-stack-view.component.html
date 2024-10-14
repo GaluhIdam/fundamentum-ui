@@ -11,27 +11,121 @@
 <div class="container">
   <fui-horizontal-stack [progress]="progressSegments" />
 </div>
+
+<h3 style="margin-top: 30px">Basic Component</h3>
 <div class="container">
-  <fui-horizontal-stack [progress]="progressSegments2" />
+  <p>Size XS</p>
+  <fui-horizontal-stack [size]="'xs'" [progress]="progressSegments" />
+  <p style="margin-top: 10px">Size S</p>
+  <fui-horizontal-stack [size]="'s'" [progress]="progressSegments" />
+  <p style="margin-top: 10px">Size M</p>
+  <fui-horizontal-stack [size]="'m'" [progress]="progressSegments" />
+  <p style="margin-top: 10px">Size L</p>
+  <fui-horizontal-stack [size]="'l'" [progress]="progressSegments" />
+  <p style="margin-top: 10px">Size XL</p>
+  <fui-horizontal-stack [size]="'xl'" [progress]="progressSegments" />
 </div>
 
-<h3 class="mt-20">Component Structure</h3>
+<h3 style="margin-top: 30px">Inline Percentage Component</h3>
+<div class="container">
+  <p>Size XS</p>
+  <fui-horizontal-stack
+    [showPercentage]="'inline'"
+    [size]="'xs'"
+    [progress]="progressSegments"
+  />
+  <p style="margin-top: 10px">Size S</p>
+  <fui-horizontal-stack
+    [showPercentage]="'inline'"
+    [size]="'s'"
+    [progress]="progressSegments"
+  />
+  <p style="margin-top: 10px">Size M</p>
+  <fui-horizontal-stack
+    [showPercentage]="'inline'"
+    [size]="'m'"
+    [progress]="progressSegments"
+  />
+  <p style="margin-top: 10px">Size L</p>
+  <fui-horizontal-stack
+    [showPercentage]="'inline'"
+    [size]="'l'"
+    [progress]="progressSegments"
+  />
+  <p style="margin-top: 10px">Size XL</p>
+  <fui-horizontal-stack
+    [showPercentage]="'inline'"
+    [size]="'xl'"
+    [progress]="progressSegments"
+  />
+</div>
+
+<h3 style="margin-top: 30px">Tooltip Percentage Component</h3>
+<div class="container">
+  <p>Size XS</p>
+  <fui-horizontal-stack
+    [showPercentage]="'tooltip'"
+    [size]="'xs'"
+    [progress]="progressSegments2"
+  />
+  <p style="margin-top: 10px">Size S</p>
+  <fui-horizontal-stack
+    [showPercentage]="'tooltip'"
+    [size]="'s'"
+    [progress]="progressSegments2"
+  />
+  <p style="margin-top: 10px">Size M</p>
+  <fui-horizontal-stack
+    [showPercentage]="'tooltip'"
+    [size]="'m'"
+    [progress]="progressSegments2"
+  />
+  <p style="margin-top: 10px">Size L</p>
+  <fui-horizontal-stack
+    [showPercentage]="'tooltip'"
+    [size]="'l'"
+    [progress]="progressSegments2"
+  />
+  <p style="margin-top: 10px">Size XL</p>
+  <fui-horizontal-stack
+    [showPercentage]="'tooltip'"
+    [size]="'xl'"
+    [progress]="progressSegments2"
+  />
+</div>
+
+<h3 style="margin-top: 50px">Component Structure</h3>
 
 <ul>
   <li>
-    <strong>Inputs:</strong>
+    <strong>progress:</strong> An array of objects representing the percentage
+    and color of each progress segment. This input is required for the component
+    to render properly.
+  </li>
+  <li>
+    <strong>showPercentage:</strong> A string input that determines how the
+    percentage label is displayed within the progress bar. It accepts the
+    following values:
     <ul>
       <li>
-        <code>progress</code>: An array of objects representing the percentage
-        and color of each progress segment. This input is required for the
-        component to render properly.
+        <code>'inline'</code>: Displays the percentage as an inline label within
+        the progress segment.
       </li>
       <li>
-        <code>showPercentage</code>: A boolean input that determines whether the
-        percentage label is shown within the progress bar. By default, it is set
-        to <code>true</code>.
+        <code>'tooltip'</code>: Shows the percentage in a tooltip when hovering
+        over the progress segment.
+      </li>
+      <li>
+        <code>'none'</code>: Does not display the percentage label at all.
       </li>
     </ul>
+    By default, it is set to <code>'none'</code>.
+  </li>
+  <li>
+    <strong>size:</strong> A string input that defines the size of the progress
+    bar. Acceptable values are <code>'xs'</code>, <code>'s'</code>,
+    <code>'m'</code>, <code>'l'</code>, and <code>'xl'</code>, with
+    <code>'m'</code> being the default.
   </li>
 </ul>
 
@@ -71,4 +165,3 @@
   each segment's background color. The width is dynamically adjusted based on
   the percentage value.
 </p>
-

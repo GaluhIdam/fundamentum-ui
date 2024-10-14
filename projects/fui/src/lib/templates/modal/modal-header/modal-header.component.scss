@@ -1,13 +1,16 @@
 .modal-header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-
-  .close-modal {
-    cursor: pointer;
-  }
+  margin-bottom: 15px;
 }
 
 .title {
   width: 100%;
+}
+
+.close-btn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }

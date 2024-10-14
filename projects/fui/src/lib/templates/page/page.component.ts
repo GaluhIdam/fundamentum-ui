@@ -42,27 +42,4 @@ export class PageComponent {
   @Input() direction: 'horizontal' | 'vertical' = 'horizontal';
   @Input() isGrow: boolean = true;
   @Input() isRestrictWidth: boolean = false;
-
-  @ViewChild('header', { static: false }) headerDiv!: ElementRef;
-  height: string = '0vh';
-
-  constructor(private elRef: ElementRef) {}
-
-  ngAfterViewInit() {
-    this.logHeight();
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event): void {
-    this.logHeight();
-  }
-
-  logHeight(): void {
-    const headerHeight = this.headerDiv.nativeElement.offsetHeight;
-    this.height =
-      (headerHeight /
-        this.elRef.nativeElement.ownerDocument.body.clientHeight) *
-        100 +
-      'vh';
-  }
 }

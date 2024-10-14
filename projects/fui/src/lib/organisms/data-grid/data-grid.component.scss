@@ -1,7 +1,7 @@
 @import "../../styles/index";
 
 :host {
-z-index: 9999;
+  z-index: 9999;
 }
 
 .container-fit {
@@ -20,7 +20,7 @@ z-index: 9999;
   overflow-y: auto;
 }
 .fui-data-grid {
-  // position: absolute;
+  position: absolute;
   max-width: 100%;
   width: 100%;
   border-style: solid;
@@ -298,17 +298,6 @@ z-index: 9999;
 }
 
 /** Add On*/
-::-webkit-scrollbar {
-  height: 5px;
-  width: 5px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--fuiColorMediumShade, $fuiColorMediumShade);
-  border-radius: 25px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--fuiColorDarkShade, $fuiColorDarkShade);
+* {
+  scrollbar-width: thin;
 }

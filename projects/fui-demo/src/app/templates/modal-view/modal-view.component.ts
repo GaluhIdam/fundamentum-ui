@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import {
-  ButtonComponent,
+  ButtonIconComponent,
   IconsComponent,
+  LoadingBarComponent,
   ModalBodyComponent,
   ModalComponent,
   ModalFooterComponent,
   ModalHeaderComponent,
-  SpacerComponent,
   TextComponent,
 } from 'fui';
 
@@ -16,53 +16,33 @@ import {
   templateUrl: './modal-view.component.html',
   styleUrl: './modal-view.component.scss',
   imports: [
-    ButtonComponent,
     ModalComponent,
     ModalHeaderComponent,
     ModalBodyComponent,
     ModalFooterComponent,
     TextComponent,
     IconsComponent,
-    SpacerComponent,
+    ButtonIconComponent,
+    LoadingBarComponent,
   ],
 })
 export class ModalViewComponent {
   isModalOpen: boolean = false;
-  isModalDeleteOpen: boolean = false;
+  isModalCustomOpen: boolean = false;
+  isModalAlertOpen: boolean = false;
 
-  openModal() {
-    this.isModalOpen = true;
+  /** Toggle Modal */
+  openModal(): void {
+    this.isModalOpen = !this.isModalOpen;
   }
 
-  handleCloseModal() {
-    this.isModalOpen = false;
+  /** Toggle Modal Custom */
+  openModalCustom(): void {
+    this.isModalCustomOpen = !this.isModalCustomOpen;
   }
 
-  handleCancelModal() {
-    this.isModalOpen = false;
-  }
-
-  handleConfirmButton() {
-    this.isModalOpen = false;
-  }
-
-  handleClickOverlay() {
-    this.isModalOpen = false;
-  }
-
-  openModalDelete() {
-    this.isModalDeleteOpen = true;
-  }
-
-  handleCloseModalDelete() {
-    this.isModalDeleteOpen = false;
-  }
-
-  handleCancelModalDelete() {
-    this.isModalDeleteOpen = false;
-  }
-
-  handleConfirmButtonModalDelete() {
-    this.isModalDeleteOpen = false;
+  /** Toggle Modal Custom */
+  openModalAlert(event: boolean): void {
+    this.isModalAlertOpen = event;
   }
 }
