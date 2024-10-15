@@ -12,7 +12,7 @@
     <h4>Basic Flyout</h4>
     <div class="mt-20">
       <div class="flyout">
-        <fui-flyout-header (closeOut)="toggleFlyout($event)">
+        <fui-flyout-header>
           <div class="flex-start">
             <fui-icons [icon]="'list'" [color]="'primary'" [size]="'sizem'" />
             <fui-text [color]="'primary'" [size]="'l'"> Basic Flyout </fui-text>
@@ -97,7 +97,7 @@
 
 <!-- FLYOUT S -->
 <fui-flyout [openFlyout]="isOpenFlyout" (overlayOut)="toggleFlyout($event)">
-  <fui-flyout-header (closeOut)="toggleFlyout($event)">
+  <fui-flyout-header>
     <div class="flex-start">
       <fui-icons
         [icon]="'tableOfContents'"
@@ -159,7 +159,7 @@
   [openFlyout]="isOpenFlyoutM"
   (overlayOut)="toggleFlyoutM($event)"
 >
-  <fui-flyout-header (closeOut)="toggleFlyoutM($event)">
+  <fui-flyout-header>
     <div class="flex-start">
       <fui-icons
         [icon]="'tableOfContents'"
@@ -221,7 +221,7 @@
   [openFlyout]="isOpenFlyoutL"
   (overlayOut)="toggleFlyoutL($event)"
 >
-  <fui-flyout-header (closeOut)="toggleFlyoutL($event)">
+  <fui-flyout-header>
     <div class="flex-start">
       <fui-icons
         [icon]="'tableOfContents'"

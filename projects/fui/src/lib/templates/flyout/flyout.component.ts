@@ -1,5 +1,6 @@
 import {
   Component,
+  ContentChild,
   EventEmitter,
   Input,
   Output,
@@ -11,6 +12,7 @@ import { ButtonEmptyComponent } from '../../atoms/button-empty/button-empty.comp
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../../atoms/button/button.component';
 import { OverlayMaskComponent } from '../../atoms/overlay-mask/overlay-mask.component';
+import { FlyoutHeaderComponent } from './flyout-header/flyout-header.component';
 
 /**
  * The FlyoutComponent
@@ -54,14 +56,26 @@ export class FlyoutComponent {
   @Input() withOverlay: boolean = true;
   @Input() size: 's' | 'm' | 'l' = 's';
   @Output() overlayOut: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @ContentChild(FlyoutHeaderComponent)
+  flyoutHeaderComponent!: FlyoutHeaderComponent;
 
   animation: boolean = false;
 
+  ngAfterContentInit(): void {
+    if (this.flyoutHeaderComponent) {
+      this.flyoutHeaderComponent.closeOut.subscribe((close: boolean) => {
+        this.handleOverlayClick();
+      });
+    }
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
     if (changes) {
-      setTimeout(() => {
-        this.animation = this.openFlyout;
-      }, 100);
+      if (this.openFlyout === true) {
+        setTimeout(() => {
+          this.animation = this.openFlyout;
+        }, 100);
+      }
     }
   }
 
