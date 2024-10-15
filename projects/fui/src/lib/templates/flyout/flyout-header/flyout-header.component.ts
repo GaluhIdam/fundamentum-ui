@@ -1,9 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TextComponent } from '../../../atoms/text/text.component';
-import { Color, Icon, Size } from '../../../types';
-import { FlyoutComponent } from '../flyout.component';
-import { Subscription } from 'rxjs';
 import { ButtonIconComponent } from '../../../../public-api';
 
 /**
