@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import {
-  ButtonComponent,
   FlyoutBodyComponent,
   FlyoutComponent,
   FlyoutFooterComponent,
   FlyoutHeaderComponent,
   IconsComponent,
-  SpacerComponent,
   TextComponent,
+  ButtonIconComponent,
 } from 'fui';
 
 @Component({
@@ -17,13 +16,12 @@ import {
   styleUrl: './flyout-view.component.scss',
   imports: [
     FlyoutComponent,
-    ButtonComponent,
     FlyoutHeaderComponent,
-    TextComponent,
     FlyoutBodyComponent,
     FlyoutFooterComponent,
-    SpacerComponent,
+    TextComponent,
     IconsComponent,
+    ButtonIconComponent,
   ],
 })
 export class FlyoutViewComponent {
@@ -31,27 +29,8 @@ export class FlyoutViewComponent {
   flyoutSize: 's' | 'm' | 'l' = 'm';
   flyoutPaddingSize: 'none' | 's' | 'm' | 'l' = 'm';
 
-  handleOpenFlyout() {
-    this.isOpenFlyout = true;
-  }
-
-  handleCloseFlyout() {
-    this.isOpenFlyout = false;
-  }
-
-  handleConfirmButton() {
-    this.isOpenFlyout = false;
-  }
-
-  handleCancelButton() {
-    this.isOpenFlyout = false;
-  }
-
-  changePaddingSize(size: 'none' | 's' | 'm' | 'l') {
-    this.flyoutPaddingSize = size;
-  }
-
-  changeSize(size: 's' | 'm' | 'l') {
-    this.flyoutSize = size;
+  /** Toggle Flyout */
+  toggleFlyout(event: boolean): void {
+    this.isOpenFlyout = event;
   }
 }

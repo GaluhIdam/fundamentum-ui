@@ -1,16 +1,15 @@
-<div
-  [ngClass]="['flyout-header-container', padding ? 'flyout-p-' + padding : '']"
->
-  <div class="flyout-header">
-    <div class="title">
-      <ng-content></ng-content>
-    </div>
-    <div class="close-flyout" (click)="onHandleCloseFlyout()">
-      <fui-icons
-        [icon]="iconClose"
-        [size]="iconCloseSize"
-        [color]="iconCloseColor"
-      />
-    </div>
-  </div>
+<div class="header-flyout">
+  <ng-content></ng-content>
+</div>
+<div class="close-btn">
+  <fui-button-icon
+    [type]="'button'"
+    [option]="'icon'"
+    [icon]="'cross'"
+    [style]="'empty'"
+    [size]="'s'"
+    [fullWidth]="'fit'"
+    [color]="'text'"
+    (onClick)="onHandleCloseFlyout()"
+  />
 </div>

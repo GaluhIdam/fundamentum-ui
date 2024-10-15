@@ -1,5 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IconsComponent } from '../../../public-api';
+import {
+  ButtonIconComponent,
+  IconsComponent,
+  TextComponent,
+} from '../../../public-api';
 import { CommonModule } from '@angular/common';
 
 /**
@@ -16,12 +20,13 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'fui-field-filepicker',
   standalone: true,
-  imports: [IconsComponent, CommonModule],
+  imports: [IconsComponent, CommonModule, TextComponent, ButtonIconComponent],
   templateUrl: './field-filepicker.component.html',
   styleUrl: './field-filepicker.component.scss',
 })
 export class FieldFilepickerComponent {
   @Input() files: File[] = [];
+  @Input() model: 'box' | 'row' = 'box';
   @Output() filesSelected: EventEmitter<File[]> = new EventEmitter<File[]>();
 
   /**

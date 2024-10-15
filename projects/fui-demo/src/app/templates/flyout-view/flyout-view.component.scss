@@ -1,9 +1,34 @@
-.container {
-  padding: 1rem;
+.mt-30 {
+  margin-top: 30px;
+}
+.mt-20 {
+  margin-top: 20px;
 }
 
-.padding-buttons {
+.flyout {
+  width: 350px;
   display: flex;
+  flex-direction: column;
+  height: 800px;
+  box-shadow: 0 2.7px 9px #00000021, 0 9.4px 24px #00000017,
+    0 21.8px 43px #00000014;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: start;
   align-items: center;
-  gap: 1rem;
+  gap: 10px;
+}
+
+.flex-footer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  .flex-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    justify-content: end;
+  }
 }

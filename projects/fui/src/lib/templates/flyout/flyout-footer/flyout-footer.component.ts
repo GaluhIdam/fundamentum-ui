@@ -24,46 +24,4 @@ import { Subscription } from 'rxjs';
   styleUrl: './flyout-footer.component.scss',
   imports: [CommonModule, ButtonComponent, ButtonEmptyComponent],
 })
-export class FlyoutFooterComponent {
-  @Input() isFlyoutFooterCustom: boolean = false;
-  @Input() flyoutFooterButtonPosition: 'start' | 'center' | 'end' = 'end';
-  @Input() reverseButtonPosition: boolean = false;
-  @Input() splitButton: 'between' | 'evenly' | 'around' | 'none' = 'none';
-  @Input() showConfirmButton: boolean = true;
-  @Input() confirmButtonType: 'button' | 'button-empty' = 'button';
-  @Input() confirmButtonText: string = 'Confirm';
-  @Input() confirmButtonSize: Size = 'sizem';
-  @Input() confirmButtonColor: Color = 'primary';
-  @Input() showCancelButton: boolean = true;
-  @Input() cancelButtonType: 'button' | 'button-empty' = 'button-empty';
-  @Input() cancelButtonText: string = 'Cancel  ';
-  @Input() cancelButtonSize: Size = 'sizem';
-  @Input() cancelButtonColor: Color = 'primary';
-  @Output() onCancelButton: EventEmitter<void> = new EventEmitter();
-  @Output() onConfirmButton: EventEmitter<void> = new EventEmitter();
-
-  padding: 'none' | 's' | 'm' | 'l' = 'm';
-  subs!: Subscription;
-
-  constructor(private FlyoutComponent: FlyoutComponent) {}
-
-  ngOnInit() {
-    this.subs = this.FlyoutComponent.flyoutPadding$.subscribe({
-      next: (value: 'none' | 's' | 'm' | 'l') => {
-        this.padding = value;
-      },
-    });
-  }
-
-  onHandleCancelButton() {
-    this.onCancelButton.emit();
-  }
-
-  onHandleConfirmButton() {
-    this.onConfirmButton.emit();
-  }
-
-  ngOnDestroy() {
-    this.subs.unsubscribe();
-  }
-}
+export class FlyoutFooterComponent {}

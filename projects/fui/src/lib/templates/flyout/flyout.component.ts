@@ -69,22 +69,12 @@ import { OverlayMaskComponent } from '../../atoms/overlay-mask/overlay-mask.comp
   ],
 })
 export class FlyoutComponent {
-  @Input() open: boolean = false;
-  @Input() flyoutDirection: 'start' | 'end' = 'end';
-  @Input() flyoutSize: 's' | 'm' | 'l' = 'm';
-  @Input() flyoutPadding: 'none' | 's' | 'm' | 'l' = 'l';
+  @Input() openFlyout: boolean = false;
   @Input() withOverlay: boolean = true;
-  @Output() onOverlayClick: EventEmitter<void> = new EventEmitter();
-  @Input() zIndex: number = 2;
-  flyoutPadding$ = new BehaviorSubject<'none' | 's' | 'm' | 'l'>('l');
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['flyoutPadding']?.currentValue) {
-      this.flyoutPadding$.next(changes['flyoutPadding']?.currentValue);
-    }
-  }
+  @Output() overlayOut: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   handleOverlayClick() {
-    this.onOverlayClick.emit();
+    this.openFlyout = false;
+    this.overlayOut.emit(false);
   }
 }

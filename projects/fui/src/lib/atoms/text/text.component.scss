@@ -93,3 +93,22 @@ p {
     font-size: x-large;
   }
 }
+.ellipsis {
+  max-inline-size: 100%;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+.clip {
+  max-inline-size: 100%;
+  overflow: hidden !important;
+  text-overflow: clip !important;
+  white-space: nowrap !important;
+}
+
+:host {
+  max-inline-size: 100%;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}

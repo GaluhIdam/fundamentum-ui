@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { FieldFilepickerComponent } from 'fui';
+import { FieldFilepickerComponent, TextComponent } from 'fui';
 
 @Component({
   selector: 'app-field-filepicker-view',
   standalone: true,
-  imports: [FieldFilepickerComponent],
+  imports: [FieldFilepickerComponent, TextComponent],
   templateUrl: './field-filepicker-view.component.html',
   styleUrl: './field-filepicker-view.component.scss',
 })
