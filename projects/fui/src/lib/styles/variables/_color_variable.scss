@@ -4,7 +4,6 @@
 $fuiColorGhost: #fff !default;
 $fuiColorInk: #000 !default;
 
-
 // Core
 $fuiColorPrimary: #006bb4 !default;
 $fuiColorAccent: #dd0a73 !default;
@@ -88,15 +87,14 @@ $fuiAccentSecondary: rgb(252, 220, 234);
 $fuiDisabledSecondary: rgba(211, 218, 230, 0.15);
 
 /* Button Text Color Secondary */
-$fuiBtnPrimaryText: rgb(0, 97, 166);
-$fuiBtnSuccessText: rgb(0, 108, 102);
-$fuiBtnWarningText: rgb(131, 101, 10);
-$fuiBtnDangerText: rgb(171, 35, 28);
-$fuiBtnTextText: rgb(52, 55, 65);
-$fuiBtnAccentText: rgb(160, 52, 101);
+$fuiBtnPrimaryText: #0061a6;
+$fuiBtnSuccessText: #006c66;
+$fuiBtnWarningText: #83650a;
+$fuiBtnDangerText: #ab231c;
+$fuiBtnTextText: #343741;
+$fuiBtnAccentText: #a03465;
 $fuiBtnDisabledText: rgb(162, 171, 186);
 $fuiColorCardDisabled: $fuiColorLightShade;
-
 
 // Color Code Highlight
 $fuiHighlightColor: #2f3337;
@@ -115,3 +113,10 @@ $fuiHighlightDeletion: #c02d2e;
 $fuiHighlightAddition: #2f6f44;
 $fuiHighlightNumber: #bfbfbf;
 $fuiHighlightNumberBorderLine: #d6d6d6;
+
+$fuiPrimary: #07c;
+$fuiSuccess: #4dd2ca;
+$fuiWarning: #fec514;
+$fuiDanger: #bd271e;
+$fuiText: #69707d;
+$fuiAccent: #f583b7;

@@ -11,3 +11,49 @@
     (onChangeBreadcrumb)="changeBread($event)"
   ></fui-breadcrumb>
 </div>
+
+<h3 class="mt-30">Custom Breadcrumbs</h3>
+<div class="container">
+  <p class="label">Max Display "2"</p>
+  <fui-breadcrumb
+    [maxDisplayLink]="2"
+    [data]="links"
+    (onChangeBreadcrumb)="changeBread($event)"
+  ></fui-breadcrumb>
+</div>
+<div class="container">
+  <p class="label">Spearator use "|"</p>
+  <fui-breadcrumb
+    [maxDisplayLink]="2"
+    [separator]="'|'"
+    [data]="links"
+    (onChangeBreadcrumb)="changeBread($event)"
+  ></fui-breadcrumb>
+</div>
+<div class="container">
+  <p class="label">Spearator use "<"</p>
+  <fui-breadcrumb
+    [maxDisplayLink]="2"
+    [separator]="'<'"
+    [data]="links"
+    (onChangeBreadcrumb)="changeBread($event)"
+  ></fui-breadcrumb>
+</div>
+<div class="container">
+  <p class="label">Spearator use ">"</p>
+  <fui-breadcrumb
+    [maxDisplayLink]="2"
+    [separator]="'>'"
+    [data]="links"
+    (onChangeBreadcrumb)="changeBread($event)"
+  ></fui-breadcrumb>
+</div>
+<div class="container">
+  <p class="label">Spearator use "~"</p>
+  <fui-breadcrumb
+    [maxDisplayLink]="2"
+    [separator]="'~'"
+    [data]="links"
+    (onChangeBreadcrumb)="changeBread($event)"
+  ></fui-breadcrumb>
+</div>

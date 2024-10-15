@@ -1,11 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ComboBoxComponent } from 'fui';
 
 @Component({
   selector: 'app-combo-box-view',
   standalone: true,
-  imports: [ComboBoxComponent],
+  imports: [CommonModule, ReactiveFormsModule, ComboBoxComponent],
   templateUrl: './combo-box-view.component.html',
   styleUrl: './combo-box-view.component.scss',
 })
@@ -242,11 +243,9 @@ export class ComboBoxViewComponent {
   ];
 
   selectionS(event: any): void {
-    console.log(event);
     this.selectedValueS = event;
   }
   selectionM(event: any): void {
-    console.log(event);
     this.selectedValueM = event;
   }
 }

@@ -13,7 +13,7 @@ import {
   styleUrl: './collapsible-nav-group-view.component.scss',
 })
 export class CollapsibleNavGroupViewComponent {
-  isCollapsed: boolean = true;
+  isCollapsed1: boolean = true;
   isCollapsed2: boolean = false;
   isCollapsed3: boolean = false;
   isCollapsed4: boolean = false;
@@ -24,8 +24,8 @@ export class CollapsibleNavGroupViewComponent {
     this.isCollapsed2 = !this.isCollapsed2;
   }
 
-  toggleCollapse(event: any): void {
-    this.isCollapsed = event;
+  toggleCollapse1(event: any): void {
+    this.isCollapsed1 = event;
     console.log(event);
   }
   toggleCollapse2(event: any): void {

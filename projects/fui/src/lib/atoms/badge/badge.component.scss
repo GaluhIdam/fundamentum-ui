@@ -1,178 +1,89 @@
-@import "./../../styles/index";
-
-$paddingTopBottom: 0.2rem;
-$paddingLeftRight: 0.5rem;
-$reducer: 30;
-
+@import "../../styles/index";
+:host {
+  max-width: 100%;
+}
 .badge {
-  border-radius: 0.35rem !important;
-  font-family: $fuiFontFamily;
-  font-weight: $fuiFontWeightMedium;
-  padding: $paddingTopBottom $paddingLeftRight;
-
-  &.fit {
-    width: fit-content;
-  }
-  &.full {
-    width: auto;
-  }
-
-  display: flex !important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 3px;
   align-items: center;
-  gap: 4px;
+  white-space: nowrap;
+  text-wrap: nowrap;
+  display: flex;
+  gap: 0px 5px;
+  flex-wrap: nowrap;
+  padding-inline: 8px;
+  padding-bottom: 5px;
+  padding-top: 3px;
+  max-width: fit-content;
 }
 
-.rounded {
-  border-radius: 50rem !important;
+.default {
+  color: var(--fuiColorFullShade, $fuiColorFullShade);
+  background-color: var(--fuiColorLightShade, $fuiColorLightShade);
 }
-
-.fuiColorGhostFill {
-  fill: var(--fuiColorGhost, $fuiColorGhost);
+.hollow {
+  background-color: transparent;
+  border-color: var(--fuiColorLightShade, $fuiColorLightShade);
+  border-width: 1px;
+  border-style: solid;
 }
-
-.fuiColorDisabledFill {
-  fill: var(--fuiColorDisabledText, $fuiColorDisabledText);
-}
-
 .primary {
-  @include fuiBadge(
-    var(--fuiBtnPrimary, $fuiBtnPrimary),
-    var(--fuiColorGhost, $fuiColorGhost)
-  );
+  background-color: var(--fuiPrimary, $fuiPrimary);
+  color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
 }
 .success {
-  @include fuiBadge(var(--fuiBtnSuccess, $fuiBtnSuccess), #000);
-}
-.warning {
-  @include fuiBadge(var(--fuiBtnWarning, $fuiBtnWarning), #000);
-}
-
-.danger {
-  @include fuiBadge(
-    var(--fuiBtnDanger, $fuiBtnDanger),
-    var(--fuiColorGhost, $fuiColorGhost)
-  );
+  background-color: var(--fuiSuccess, $fuiSuccess);
 }
 .accent {
-  @include fuiBadge(var(--fuiBtnAccent, $fuiBtnAccent), #000);
+  background-color: var(--fuiAccent, $fuiAccent);
 }
-
-.text {
-  @include fuiBadge(
-    var(--fuiColorLightShade, $fuiColorLightShade),
-    var(#000, #000)
-  );
+.warning {
+  background-color: var(--fuiWarning, $fuiWarning);
 }
-
-.ghost {
-  border-width: 1px;
-  border-color: var(--fuiColorMediumShade, $fuiColorMediumShade);
-  border-style: solid;
-  @include fuiBadge(transparent, var(--fuiColorFullShade, $fuiColorFullShade));
+.danger {
+  color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
+  background-color: var(--fuiDanger, $fuiDanger);
 }
-
 .disabled {
-  @include fuiBadge(
-    var(--fuiBtnDisabled, $fuiBtnDisabled),
-    var(--fuiColorDisabledText, $fuiColorDisabledText)
-  );
-  cursor: not-allowed;
+  border: none;
+  color: var(--fuiColorMediumShade, $fuiColorMediumShade);
+  background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
 }
 
-.sizedefault {
-  @include reduceSize($fuiFontSize, $reducer);
-  @include biggerPadding($fuiFontSize, $paddingTopBottom, $paddingLeftRight);
-}
-.sizexs {
-  @include reduceSize($fuiFontSizeXS, $reducer);
-  @include biggerPadding($fuiFontSizeXS, $paddingTopBottom, $paddingLeftRight);
-}
-.sizes {
-  @include reduceSize($fuiFontSizeS, $reducer);
-  @include biggerPadding($fuiFontSizeS, $paddingTopBottom, $paddingLeftRight);
-}
-.sizem {
-  @include reduceSize($fuiFontSizeM, $reducer);
-  @include biggerPadding($fuiFontSizeM, $paddingTopBottom, $paddingLeftRight);
-}
-
-.sizel {
-  @include reduceSize($fuiFontSizeL, $reducer);
-  @include biggerPadding($fuiFontSizeL, $paddingTopBottom, $paddingLeftRight);
-}
-
-.sizexl {
-  @include reduceSize($fuiFontSizeXL, $reducer);
-  @include biggerPadding($fuiFontSizeXL, $paddingTopBottom, $paddingLeftRight);
-}
-
-.sizexxl {
-  @include reduceSize($fuiFontSizeXXL, $reducer);
-  @include biggerPadding($fuiFontSizeXXL, $paddingTopBottom, $paddingLeftRight);
-}
-
-.badge-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sizedefault-badge-icon {
-  ::ng-deep div {
-    @include reduceSize($fuiFontSize, $reducer);
+.hover {
+  &:hover {
+    cursor: pointer;
   }
 }
-
-.sizexs-badge-icon {
-  ::ng-deep div {
-    @include reduceSize($fuiFontSizeXS, $reducer);
-  }
-}
-
-.sizes-badge-icon {
-  ::ng-deep div {
-    @include reduceSize($fuiFontSizeS, $reducer);
-  }
-}
-
-.sizem-badge-icon {
-  ::ng-deep div {
-    @include reduceSize($fuiFontSizeM, $reducer);
-  }
-}
-
-.sizel-badge-icon {
-  ::ng-deep div {
-    @include reduceSize($fuiFontSizeL, $reducer);
-  }
-}
-
-.sizexl-badge-icon {
-  ::ng-deep div {
-    @include reduceSize($fuiFontSizeXL, $reducer);
-  }
-}
-
-.sizexxl-badge-icon {
-  ::ng-deep div {
-    @include reduceSize($fuiFontSizeXXL, $reducer);
-  }
-}
-
-.d-none {
-  display: none !important;
-}
-
-.underline {
-  .body-text {
+.hover-underline {
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
     text-decoration: underline;
   }
 }
 
-.dismissLeft {
-  flex-direction: row;
+.truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
 }
 
-.dismissRight {
-  flex-direction: row-reverse;
+.xs {
+  font-size: x-small;
+}
+.s {
+  font-size: small;
+}
+.m {
+  font-size: medium;
+}
+.l {
+  font-size: larger;
+}
+.xl {
+  font-size: x-large;
 }

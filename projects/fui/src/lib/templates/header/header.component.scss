@@ -14,13 +14,13 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .fixed-top {
-  width: -webkit-fill-available;
-  position: fixed;
+  width: 100%;
+  position: sticky;
   top: 0;
 }
 .fixed-bottom {
-  width: -webkit-fill-available;
-  position: fixed;
+  width: 100%;
+  position: sticky;
   bottom: 0;
 }
 

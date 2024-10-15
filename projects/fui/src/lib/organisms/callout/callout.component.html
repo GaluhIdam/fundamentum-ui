@@ -25,11 +25,11 @@
         <fui-icons
           [className]="'icon'"
           [icon]="icon"
-          [size]="'sizes'"
+          [size]="iconSize"
           [color]="color"
         ></fui-icons>
         <!-- Icon -->
-        <h5 class="title-callout-{{color}}">
+        <h5 class="title-callout-{{ color }}">
           {{ title }}
         </h5>
       </ng-template>
@@ -38,11 +38,17 @@
 
     <!-- Dismiss BTN  -->
     <div class="icon-btn" (click)="onHandleCallout()">
-      <fui-icons [icon]="'cross'" [size]="'sizes'" [color]="color"></fui-icons>
+      <fui-icons [icon]="'cross'" [size]="iconSize" [color]="color"></fui-icons>
     </div>
     <!-- Dismiss BTN  -->
   </div>
   <!-- Message -->
-  <p *ngIf="message" [ngClass]="'text-callout-' + size">{{ message }}</p>
+  <p *ngIf="message && content === 'text'" [ngClass]="'text-callout-' + size">
+    {{ message }}
+  </p>
+  @if (content === 'custom') {
+  <ng-content></ng-content>
+  }
+
   <!-- Message -->
 </div>

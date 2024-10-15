@@ -30,9 +30,9 @@ import { IconsComponent } from '../../atoms/icons/icons.component';
 export class ButtonIconComponent {
   @Input({ required: true }) type: 'submit' | 'button' | 'reset' = 'button';
   @Input({ required: true }) option: 'iconText' | 'icon' | 'text' = 'iconText';
-  @Input() fullWidth: boolean = false;
+  @Input() fullWidth: 'full' | 'fit' | 'default' = 'default';
   @Input() disabled: boolean = false;
-  @Input() style: 'secondary' | 'filled' = 'filled';
+  @Input() style: 'secondary' | 'filled' | 'empty' = 'filled';
   @Input() text?: string;
   @Input() icon?: Icon;
   @Input() iconSide?: 'right' | 'left' = 'left';

@@ -1,67 +1,45 @@
 @import "../../styles/index";
 
 .flyout {
-  &-layout {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    z-index: $fuiZModal;
-    display: flex;
-  }
-
-  &-container {
-    position: relative;
-  }
-
-  &-content {
-    height: -webkit-fill-available;
-    background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
-    min-width: 350px;
-    width: fit-content;
-    box-shadow: 0 2.7px 9px rgba(#000, 0.13), 0 9.4px 24px rgba(#000, 0.09),
-      0 21.8px 43px rgba(#000, 0.08);
-
-    display: flex;
-    flex-direction: column;
-
-    ::ng-deep fui-flyout-body {
-      flex: 1;
-      overflow-y: auto;
-
-      scrollbar-width: thin;
-      scrollbar-color: $fuiColorLightShade;
-    }
-  }
-
-  @media screen and (max-width: map-get($map: $fuiBreakpoints, $key: "s")) {
-    &-container {
-      min-width: fit-content;
-    }
-  }
-}
-
-.flyout-direction-start {
-  justify-content: flex-start;
-  left: 0;
-}
-
-.flyout-direction-end {
-  justify-content: flex-end;
+  position: fixed;
+  top: 0;
   right: 0;
+  bottom: 0;
+  height: 100vh;
+  z-index: 2000;
+  background-color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
+  box-shadow: 0 2.7px 9px #00000021, 0 9.4px 24px #00000017,
+    0 21.8px 43px #00000014;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(0%);
 }
 
-.flyout-size-s {
-  width: 25vw;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
 }
 
-.flyout-size-m {
-  width: 50vw;
+.close {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+}
+.open {
+  transform: translateX(0%);
+  transition: transform 0.3s ease-in;
 }
 
-.flyout-size-l {
-  width: 75vw;
+.s {
+  width: 350px;
 }
-
-.flyout-size-auto {
-  width: fit-content;
+.m {
+  width: 450px;
+}
+.l {
+  width: 550px;
 }

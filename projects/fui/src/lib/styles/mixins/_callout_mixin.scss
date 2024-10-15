@@ -29,12 +29,6 @@
     font-size: $fontSize;
   }
 
-  // Styling for icons and icon buttons
-  .icon {
-    margin-right: 5px;
-    margin-top: 5px;
-  }
-
   .icon-btn {
     cursor: pointer;
     padding: 5px 5px 3px 5px;
@@ -50,7 +44,8 @@
   .flex,
   .flex-between {
     display: flex;
-    align-items: baseline;
+    gap: 5px;
+    align-items: center;
   }
 
   // Adjusting styles for flex-between to include spacing between items

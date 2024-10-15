@@ -1,9 +1,7 @@
 @if (open) {
-<div class="modal">
-  <fui-overlay-mask (onOverlayClick)="onHandleOverLayClick()">
-    <div class="modal-container" [@modalPopup]>
-      <ng-content></ng-content>
-    </div>
-  </fui-overlay-mask>
+<div class="overlay" (click)="onHandleOverLayClick()"></div>
+<div class="modal" [ngClass]="{ 'visible': open }">
+  <ng-content></ng-content>
 </div>
+
 }

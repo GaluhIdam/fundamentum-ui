@@ -1,7 +1,7 @@
 @import "../../../styles/index";
 
 :host {
-  width: -webkit-fill-available;
+  width: 100%;
   font-family: $fuiFontFamily;
   text-wrap: nowrap;
 }
@@ -40,8 +40,10 @@
 
 .w-100 {
   width: 100%;
+  padding: 5px 10px;
 }
 
 .w-fit {
   width: fit-content;
+  padding: 5px 10px;
 }

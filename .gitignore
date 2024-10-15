@@ -10,6 +10,8 @@
 /node_modules
 npm-debug.log
 yarn-error.log
+/project/fui-demo-v2
+/project/fui-v2
 
 # IDEs and editors
 .idea/
@@ -48,3 +50,7 @@ Thumbs.db
 /projects/fui/src/**/*.map
 
 /documentation
+
+# Ignore fui-demo-v2 and fui-v2
+/project/fui-demo-v2
+/project/fui-v2

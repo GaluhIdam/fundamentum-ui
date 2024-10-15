@@ -38,4 +38,82 @@ export class TabsViewComponent {
       title: 'Monosodium Glutamate',
     },
   ];
+
+  dataIconTabs: {
+    active: boolean | 'disabled';
+    icon?: Icon;
+    sideIcon?: 'right' | 'left';
+    sizeIcon?: Size;
+    prepend?: string;
+    append?: string;
+    title: string;
+  }[] = [
+    {
+      active: true,
+      icon: 'folderClosed',
+      sideIcon: 'left',
+      sizeIcon: 'sizes',
+      title: 'Folder One',
+    },
+    {
+      active: false,
+      icon: 'folderClosed',
+      sideIcon: 'left',
+      sizeIcon: 'sizes',
+      title: 'Folder Two',
+    },
+    {
+      active: 'disabled',
+      icon: 'folderClosed',
+      sideIcon: 'left',
+      sizeIcon: 'sizes',
+      title: 'Folder Three',
+    },
+    {
+      active: false,
+      icon: 'folderClosed',
+      sideIcon: 'left',
+      sizeIcon: 'sizes',
+      title: 'Folder Four',
+    },
+  ];
+
+  dataIconTabsDynamic: {
+    active: boolean | 'disabled';
+    icon?: Icon;
+    sideIcon?: 'right' | 'left';
+    sizeIcon?: Size;
+    prepend?: string;
+    append?: string;
+    title: string;
+  }[] = [
+    {
+      active: true,
+      icon: 'folderOpen',
+      sideIcon: 'left',
+      sizeIcon: 'sizes',
+      title: 'Folder One',
+    },
+    {
+      active: false,
+      icon: 'folderClosed',
+      sideIcon: 'left',
+      sizeIcon: 'sizes',
+      title: 'Folder Two',
+    },
+    {
+      active: 'disabled',
+      icon: 'folderClosed',
+      sideIcon: 'left',
+      sizeIcon: 'sizes',
+      title: 'Folder Three',
+    },
+    {
+      active: false,
+      icon: 'folderClosed',
+      sideIcon: 'left',
+      sizeIcon: 'sizes',
+      title: 'Folder Four',
+    },
+  ];
 }

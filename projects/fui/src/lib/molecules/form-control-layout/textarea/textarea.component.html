@@ -3,10 +3,7 @@
     disabled ? 'fui-input-field inactive disabled' : 'fui-input-field inactive'
   }}"
   [ngStyle]="{
-    'border-top-right-radius': append === true ? 0 : borderRadius[0],
-    'border-bottom-right-radius': append === true ? 0 : borderRadius[1],
-    'border-top-left-radius': prepend === true ? 0 : borderRadius[2],
-    'border-bottom-left-radius': prepend == true ? 0 : borderRadius[3]
+    'border-radius': borderRadius
   }"
   [ngClass]="{
     default: active && !invalid,
@@ -15,7 +12,7 @@
     prepend: prepend,
     append: append
   }"
-  style="padding: 0px;"
+  style="padding: 0px"
 >
   <ng-content select="[left-icon]"></ng-content>
   <div
@@ -43,13 +40,7 @@
       'fui-input-field-m': size == 'm',
       'fui-input-field-l': size == 'l'
     }"
-    [ngStyle]="{
-      'border-top-right-radius': append === true ? 0 : borderRadius[0],
-      'border-bottom-right-radius': append === true ? 0 : borderRadius[1],
-      'border-top-left-radius': prepend === true ? 0 : borderRadius[2],
-      'border-bottom-left-radius': prepend == true ? 0 : borderRadius[3],
-    }"
-    style="padding: 8px 20px; overflow: hidden;"
+    style="padding: 8px 20px; overflow: hidden; border-radius: inherit"
   ></textarea>
   <div style="position: absolute; right: 10px; bottom: 7px">
     <ng-content select="[right-icon]"></ng-content>

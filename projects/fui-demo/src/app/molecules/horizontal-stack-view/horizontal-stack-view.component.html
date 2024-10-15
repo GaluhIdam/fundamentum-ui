@@ -1,8 +1,167 @@
-<h1>Horizontal Stack</h1>
+<h1>Horizontal Stack Component</h1>
+
+<p>
+  The HorizontalStackComponent is a UI component designed to display progress
+  bars with customizable segments. Each segment represents a percentage of
+  progress and is colored based on the provided configuration. The component is
+  built as a standalone Angular component and is designed for reuse across
+  different parts of your application.
+</p>
 
 <div class="container">
   <fui-horizontal-stack [progress]="progressSegments" />
 </div>
+
+<h3 style="margin-top: 30px">Basic Component</h3>
 <div class="container">
-  <fui-horizontal-stack [progress]="progressSegments2" />
+  <p>Size XS</p>
+  <fui-horizontal-stack [size]="'xs'" [progress]="progressSegments" />
+  <p style="margin-top: 10px">Size S</p>
+  <fui-horizontal-stack [size]="'s'" [progress]="progressSegments" />
+  <p style="margin-top: 10px">Size M</p>
+  <fui-horizontal-stack [size]="'m'" [progress]="progressSegments" />
+  <p style="margin-top: 10px">Size L</p>
+  <fui-horizontal-stack [size]="'l'" [progress]="progressSegments" />
+  <p style="margin-top: 10px">Size XL</p>
+  <fui-horizontal-stack [size]="'xl'" [progress]="progressSegments" />
 </div>
+
+<h3 style="margin-top: 30px">Inline Percentage Component</h3>
+<div class="container">
+  <p>Size XS</p>
+  <fui-horizontal-stack
+    [showPercentage]="'inline'"
+    [size]="'xs'"
+    [progress]="progressSegments"
+  />
+  <p style="margin-top: 10px">Size S</p>
+  <fui-horizontal-stack
+    [showPercentage]="'inline'"
+    [size]="'s'"
+    [progress]="progressSegments"
+  />
+  <p style="margin-top: 10px">Size M</p>
+  <fui-horizontal-stack
+    [showPercentage]="'inline'"
+    [size]="'m'"
+    [progress]="progressSegments"
+  />
+  <p style="margin-top: 10px">Size L</p>
+  <fui-horizontal-stack
+    [showPercentage]="'inline'"
+    [size]="'l'"
+    [progress]="progressSegments"
+  />
+  <p style="margin-top: 10px">Size XL</p>
+  <fui-horizontal-stack
+    [showPercentage]="'inline'"
+    [size]="'xl'"
+    [progress]="progressSegments"
+  />
+</div>
+
+<h3 style="margin-top: 30px">Tooltip Percentage Component</h3>
+<div class="container">
+  <p>Size XS</p>
+  <fui-horizontal-stack
+    [showPercentage]="'tooltip'"
+    [size]="'xs'"
+    [progress]="progressSegments2"
+  />
+  <p style="margin-top: 10px">Size S</p>
+  <fui-horizontal-stack
+    [showPercentage]="'tooltip'"
+    [size]="'s'"
+    [progress]="progressSegments2"
+  />
+  <p style="margin-top: 10px">Size M</p>
+  <fui-horizontal-stack
+    [showPercentage]="'tooltip'"
+    [size]="'m'"
+    [progress]="progressSegments2"
+  />
+  <p style="margin-top: 10px">Size L</p>
+  <fui-horizontal-stack
+    [showPercentage]="'tooltip'"
+    [size]="'l'"
+    [progress]="progressSegments2"
+  />
+  <p style="margin-top: 10px">Size XL</p>
+  <fui-horizontal-stack
+    [showPercentage]="'tooltip'"
+    [size]="'xl'"
+    [progress]="progressSegments2"
+  />
+</div>
+
+<h3 style="margin-top: 50px">Component Structure</h3>
+
+<ul>
+  <li>
+    <strong>progress:</strong> An array of objects representing the percentage
+    and color of each progress segment. This input is required for the component
+    to render properly.
+  </li>
+  <li>
+    <strong>showPercentage:</strong> A string input that determines how the
+    percentage label is displayed within the progress bar. It accepts the
+    following values:
+    <ul>
+      <li>
+        <code>'inline'</code>: Displays the percentage as an inline label within
+        the progress segment.
+      </li>
+      <li>
+        <code>'tooltip'</code>: Shows the percentage in a tooltip when hovering
+        over the progress segment.
+      </li>
+      <li>
+        <code>'none'</code>: Does not display the percentage label at all.
+      </li>
+    </ul>
+    By default, it is set to <code>'none'</code>.
+  </li>
+  <li>
+    <strong>size:</strong> A string input that defines the size of the progress
+    bar. Acceptable values are <code>'xs'</code>, <code>'s'</code>,
+    <code>'m'</code>, <code>'l'</code>, and <code>'xl'</code>, with
+    <code>'m'</code> being the default.
+  </li>
+</ul>
+
+<h3 class="mt-20">Key Features</h3>
+
+<ul>
+  <li>
+    <strong>Dynamic Progress Bars:</strong> The component takes an array of
+    percentage and color pairs, rendering each segment of the bar with the
+    specified width.
+  </li>
+  <li>
+    <strong>Customizable Colors:</strong> You can assign any color from a
+    predefined set to each progress segment, making it visually distinct.
+  </li>
+  <li>
+    <strong>Optional Percentage Display:</strong> The percentage label inside
+    each segment can be toggled on or off using the
+    <code>showPercentage</code> input.
+  </li>
+</ul>
+
+<h3 class="mt-20">Example Use Case</h3>
+
+<p>
+  This component can be used for representing progress in various contexts, such
+  as task completion, project milestones, or health bars in games. It provides
+  flexibility in visual representation while being simple to implement across
+  different areas of the application.
+</p>
+
+<h3 class="mt-20">SCSS Styling</h3>
+
+<p>
+  The styles for this component can include classes like
+  <code>.hr-stack</code> for the horizontal stack styling and color classes for
+  each segment's background color. The width is dynamically adjusted based on
+  the percentage value.
+</p>

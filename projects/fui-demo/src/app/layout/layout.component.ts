@@ -21,7 +21,7 @@ import {
   SitewideSearchComponent,
   SitewideDTO,
   PopoverComponent,
-  ThemeService
+  ThemeService,
 } from 'fui';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { routes } from '../app.routes';
@@ -73,7 +73,9 @@ export class LayoutComponent {
   searchTog: boolean = false;
 
   constructor(private navigation: Router, private cdr: ChangeDetectorRef) {
-    this.themeService.setTheme('light');
+    if (!this.themeService.getTheme()) {
+      this.themeService.setTheme('light');
+    }
     this._sortRoutesAlphabetically(this.router);
     this.themeService.applyTheme();
   }
@@ -88,7 +90,6 @@ export class LayoutComponent {
     this.obs = this.searchForm.valueChanges
       .pipe(debounceTime(400))
       .subscribe((data) => {
-        console.log(data);
         this.filterData();
       });
     this.restructureData();

@@ -2,48 +2,74 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Color, Icon, Size } from '../../types';
 import { IconsComponent } from '../icons/icons.component';
-
-/**
- * The BadgeComponent
- * @usage
- * ```html
- * <fui-badge
- *  [color]="'primary'"
- *  [size]="'sizedefault'"
- *  [isBadgeIcon]="true"
- *  [icon]="'cross'"
- *  [iconPosition]="'start'"
- * > Badge </fui-badge>
- * ```
- * <example-url>http://localhost:4200/atoms/badge</example-url>
- */
+import { TextComponent } from '../text/text.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'fui-badge',
   standalone: true,
   templateUrl: './badge.component.html',
   styleUrl: './badge.component.scss',
-  imports: [CommonModule, IconsComponent],
+  imports: [CommonModule, IconsComponent, TextComponent, RouterModule],
 })
 export class BadgeComponent {
-  isDisplay: boolean = true;
-  @Input() fullWidth: boolean = false;
-  @Input({ required: true }) color: Color = 'primary';
-  @Input({ required: true }) size: Size = 'sizedefault';
-  @Input() sizeIcon: Size = 'sizedefault';
-  @Input() isBadgeIcon: boolean = false;
-  @Input() iconPosition: 'start' | 'end' = 'start';
-  @Input() icon!: Icon;
-  @Input() underline: boolean = false;
-  @Input() rounded: boolean = false;
-  @Input() iconForClose: boolean = false;
-  @Output() onClickBadge: EventEmitter<void> = new EventEmitter();
+  /** bagde */
+  @Input() customColor: boolean = false;
+  @Input() color:
+    | 'default'
+    | 'hollow'
+    | 'primary'
+    | 'success'
+    | 'accent'
+    | 'warning'
+    | 'danger'
+    | 'disabled'
+    | string = 'default';
+  @Input() disabled: boolean = false;
+  @Input() truncate: boolean = false;
 
-  closeClicked() {
-    this.onClickBadge.emit();
-    this.isDisplay = false;
-  }
+  /** text */
+  @Input() textShow: boolean = true;
+  @Input() textClick: boolean = false;
+  @Input() textColor: Color | string = 'ink';
+  @Input() text: string = 'This is badge';
+  @Input() size: 'xs' | 's' | 'm' | 'l' | 'xl' = 'm';
+
+  /** icon */
+  @Input() iconShow: boolean = false;
+  @Input() iconClick: boolean = false;
+  @Input() icon: Icon = 'cross';
+  @Input() iconPosition: 'start' | 'end' = 'start';
+  @Input() iconColor: Color = 'ink';
+  @Input() iconSize: Size = 'sizes';
+
+  /** href */
+  @Input() hrefLink: string = '#';
+
+  @Output() onClick: EventEmitter<void> = new EventEmitter();
+  @Output() iconOnClick: EventEmitter<void> = new EventEmitter();
+
   handleClicked() {
-    this.onClickBadge.emit();
+    this.onClick.emit();
+  }
+  handleClickedIcon() {
+    this.iconOnClick.emit();
+  }
+
+  /** Check custom  color */
+  checkCustomColor(color: string): boolean {
+    const predefinedColors = [
+      'default',
+      'hollow',
+      'primary',
+      'success',
+      'accent',
+      'warning',
+      'danger',
+      'disabled',
+    ];
+
+    // Check if the color is one of the predefined color names
+    return !predefinedColors.includes(color);
   }
 }

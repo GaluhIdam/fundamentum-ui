@@ -61,5 +61,50 @@ export class FormControlLayoutComponent {
   @ContentChild(PrependComponent) prependComponent!: PrependComponent;
   @ContentChild(AppendComponent) appendComponent!: AppendComponent;
 
+  ngDoCheck(): void {
+    if (this.prependComponent && !this.appendComponent) {
+      if (this.inputComponent) {
+        this.inputComponent.borderRadius = '0px 5px 5px 0px';
+      }
+      if (this.textareaComponent) {
+        this.textareaComponent.borderRadius = '0px 5px 5px 0px';
+      }
+      if (this.selectComponent) {
+        this.selectComponent.borderRadius = '0px 5px 5px 0px';
+      }
+    }
+    if (this.appendComponent && !this.prependComponent) {
+      if (this.inputComponent) {
+        this.inputComponent.borderRadius = '5px 0px 0px 5px';
+      }
+      if (this.textareaComponent) {
+        this.textareaComponent.borderRadius = '5px 0px 0px 5px';
+      }
+      if (this.selectComponent) {
+        this.selectComponent.borderRadius = '5px 0px 0px 5px';
+      }
+    }
+    if (this.appendComponent && this.prependComponent) {
+      if (this.inputComponent) {
+        this.inputComponent.borderRadius = '0px 0px 0px 0px';
+      }
+      if (this.textareaComponent) {
+        this.textareaComponent.borderRadius = '0px 0px 0px 0px';
+      }
+      if (this.selectComponent) {
+        this.selectComponent.borderRadius = '0px 0px 0px 0px';
+      }
+    }
+    if (!this.appendComponent && !this.prependComponent) {
+      if (this.inputComponent) {
+        this.inputComponent.borderRadius = '5px 5px 5px 5px';
+      }
+      if (this.textareaComponent) {
+        this.textareaComponent.borderRadius = '5px 5px 5px 5px';
+      }
+      if (this.selectComponent) {
+        this.selectComponent.borderRadius = '5px 5px 5px 5px';
+      }
+    }
+  }
 }
-

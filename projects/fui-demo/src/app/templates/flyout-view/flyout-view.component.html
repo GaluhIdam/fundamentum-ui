@@ -1,63 +1,278 @@
-<div class="container">
-  <fui-button (click)="handleOpenFlyout()">Open Flyout</fui-button>
+<h1>Flyout</h1>
+<p>
+  The flyout component in Angular is a sliding panel that appears from the side
+  of the screen. It is typically used to display additional content, settings,
+  or actions without navigating away from the current view. The flyout can
+  include a header, body, and footer, providing a structured space for
+  information, controls, and buttons like "Save" or "Cancel."
+</p>
+
+<div class="flex-10">
+  <div class="mt-30">
+    <h4>Basic Flyout</h4>
+    <div class="mt-20">
+      <div class="flyout">
+        <fui-flyout-header>
+          <div class="flex-start">
+            <fui-icons [icon]="'list'" [color]="'primary'" [size]="'sizem'" />
+            <fui-text [color]="'primary'" [size]="'l'"> Basic Flyout </fui-text>
+          </div>
+        </fui-flyout-header>
+
+        <fui-flyout-body>
+          <div style="margin-top: 1rem">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur
+            accusamus similique nobis asperiores voluptatibus! Quidem nobis
+            repudiandae beatae! Amet mollitia vero numquam quas molestiae illum
+            veniam ullam ratione corporis quam.
+          </div>
+        </fui-flyout-body>
+
+        <fui-flyout-footer>
+          <div class="flex-footer">
+            <fui-button-icon
+              [type]="'button'"
+              [fullWidth]="'fit'"
+              [color]="'text'"
+              [style]="'secondary'"
+              [option]="'text'"
+              [text]="'Cancel'"
+              (onClick)="toggleFlyout(false)"
+            />
+            <div class="flex-group">
+              <fui-button-icon
+                [type]="'button'"
+                [fullWidth]="'fit'"
+                [color]="'text'"
+                [style]="'filled'"
+                [option]="'iconText'"
+                [icon]="'refresh'"
+                [text]="'Reset'"
+              />
+              <fui-button-icon
+                [type]="'button'"
+                [fullWidth]="'fit'"
+                [color]="'primary'"
+                [style]="'filled'"
+                [option]="'iconText'"
+                [icon]="'save'"
+                [text]="'Save'"
+              />
+            </div>
+          </div>
+        </fui-flyout-footer>
+      </div>
+    </div>
+  </div>
+  <div class="mt-30 grid-10">
+    <fui-button-icon
+      [type]="'button'"
+      [fullWidth]="'fit'"
+      [color]="'text'"
+      [style]="'secondary'"
+      [option]="'text'"
+      [text]="'Open Flyout S'"
+      (onClick)="toggleFlyout(true)"
+    />
+    <fui-button-icon
+      [type]="'button'"
+      [fullWidth]="'fit'"
+      [color]="'text'"
+      [style]="'secondary'"
+      [option]="'text'"
+      [text]="'Open Flyout M'"
+      (onClick)="toggleFlyoutM(true)"
+    />
+    <fui-button-icon
+      [type]="'button'"
+      [fullWidth]="'fit'"
+      [color]="'text'"
+      [style]="'secondary'"
+      [option]="'text'"
+      [text]="'Open Flyout L'"
+      (onClick)="toggleFlyoutL(true)"
+    />
+  </div>
 </div>
-<fui-flyout
-  [open]="isOpenFlyout"
-  [flyoutSize]="flyoutSize"
-  [flyoutPadding]="flyoutPaddingSize"
->
-  <fui-flyout-header (onCloseFlyout)="handleCloseFlyout()">
-    <fui-icons style="margin-right: 10px;" [icon]="'userAvatar'"></fui-icons>
-    <fui-text [size]="'sizel'"> Title Flyout Header </fui-text>
+
+<!-- FLYOUT S -->
+<fui-flyout [openFlyout]="isOpenFlyout" (overlayOut)="toggleFlyout($event)">
+  <fui-flyout-header>
+    <div class="flex-start">
+      <fui-icons
+        [icon]="'tableOfContents'"
+        [color]="'primary'"
+        [size]="'sizem'"
+      />
+      <fui-text [color]="'primary'" [size]="'l'"> Basic Flyout </fui-text>
+    </div>
   </fui-flyout-header>
 
   <fui-flyout-body>
-    <h4>Padding</h4>
-    <div class="padding-buttons">
-      <fui-button (click)="changePaddingSize('none')">None</fui-button>
-      <fui-button (click)="changePaddingSize('s')">S</fui-button>
-      <fui-button (click)="changePaddingSize('m')">M</fui-button>
-      <fui-button (click)="changePaddingSize('l')">L</fui-button>
-    </div>
-
-    <h4>Size</h4>
-    <div class="padding-buttons">
-      <fui-button (click)="changeSize('s')">S</fui-button>
-      <fui-button (click)="changeSize('m')">M</fui-button>
-      <fui-button (click)="changeSize('l')">L</fui-button>
-    </div>
-
     <div style="margin-top: 1rem">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis
-      inventore saepe atque a. Cum, quaerat! Ut nulla tenetur, reiciendis ullam
-      vitae laudantium, deserunt, quod natus similique voluptate sequi quo
-      minima. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-      exercitationem atque, obcaecati velit totam sapiente veniam provident.
-      Placeat harum quis tempore est numquam ratione, magnam voluptas aspernatur
-      sed delectus quod quaerat odit ut. Expedita, ratione! Earum minus
-      quibusdam veritatis non, impedit itaque explicabo labore ad ullam quis
-      quasi nobis ab atque porro distinctio rem praesentium illo voluptatibus
-      numquam. Itaque officiis vitae suscipit iste eaque placeat eius saepe.
-      Impedit molestiae repellendus sunt qui vero debitis maxime enim quos
-      quaerat praesentium? Repudiandae ut, nemo officiis magnam assumenda totam
-      suscipit sit dolorum. Ab voluptatibus nostrum libero accusamus eveniet
-      ducimus aliquid, delectus itaque fuga voluptatem quis ea voluptates
-      dolorum praesentium velit ipsum sequi, repudiandae blanditiis. Magnam
-      optio eligendi nemo veniam eveniet numquam maxime quidem similique
-      assumenda voluptatem earum obcaecati ad itaque, voluptatibus laudantium
-      ipsam dolores debitis officiis blanditiis quas fugit incidunt quis libero?
-      Numquam sint nobis incidunt odio, maiores voluptate odit sunt cumque, quos
-      accusamus deleniti consectetur impedit illo voluptates sit quam reiciendis
-      commodi dolores dignissimos sequi ipsa deserunt ex fuga? Molestias atque
-      maiores, facilis omnis nulla neque consequatur eveniet delectus aliquam,
-      reiciendis fugiat a eos autem necessitatibus illum at eligendi quis odio
-      voluptates nesciunt.
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur
+      accusamus similique nobis asperiores voluptatibus! Quidem nobis
+      repudiandae beatae! Amet mollitia vero numquam quas molestiae illum veniam
+      ullam ratione corporis quam.
     </div>
   </fui-flyout-body>
 
-  <fui-flyout-footer [isFlyoutFooterCustom]="true">
-    <fui-text>Footer Modal</fui-text>
-    <fui-spacer [direction]="'horizontal'"></fui-spacer>
-    <fui-button (click)="handleCancelButton()">Close Flyout</fui-button>
+  <fui-flyout-footer>
+    <div class="flex-footer">
+      <fui-button-icon
+        [type]="'button'"
+        [fullWidth]="'fit'"
+        [color]="'text'"
+        [style]="'secondary'"
+        [option]="'text'"
+        [text]="'Cancel'"
+        (onClick)="toggleFlyout(false)"
+      />
+      <div class="flex-group">
+        <fui-button-icon
+          [type]="'button'"
+          [fullWidth]="'fit'"
+          [color]="'text'"
+          [style]="'filled'"
+          [option]="'iconText'"
+          [icon]="'refresh'"
+          [text]="'Reset'"
+        />
+        <fui-button-icon
+          [type]="'button'"
+          [fullWidth]="'fit'"
+          [color]="'primary'"
+          [style]="'filled'"
+          [option]="'iconText'"
+          [icon]="'save'"
+          [text]="'Save'"
+        />
+      </div>
+    </div>
   </fui-flyout-footer>
 </fui-flyout>
+<!-- FLYOUT S -->
+
+<!-- FLYOUT M -->
+<fui-flyout
+  [size]="'m'"
+  [openFlyout]="isOpenFlyoutM"
+  (overlayOut)="toggleFlyoutM($event)"
+>
+  <fui-flyout-header>
+    <div class="flex-start">
+      <fui-icons
+        [icon]="'tableOfContents'"
+        [color]="'primary'"
+        [size]="'sizem'"
+      />
+      <fui-text [color]="'primary'" [size]="'l'"> Basic Flyout </fui-text>
+    </div>
+  </fui-flyout-header>
+
+  <fui-flyout-body>
+    <div style="margin-top: 1rem">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur
+      accusamus similique nobis asperiores voluptatibus! Quidem nobis
+      repudiandae beatae! Amet mollitia vero numquam quas molestiae illum veniam
+      ullam ratione corporis quam.
+    </div>
+  </fui-flyout-body>
+
+  <fui-flyout-footer>
+    <div class="flex-footer">
+      <fui-button-icon
+        [type]="'button'"
+        [fullWidth]="'fit'"
+        [color]="'text'"
+        [style]="'secondary'"
+        [option]="'text'"
+        [text]="'Cancel'"
+        (onClick)="toggleFlyoutM(false)"
+      />
+      <div class="flex-group">
+        <fui-button-icon
+          [type]="'button'"
+          [fullWidth]="'fit'"
+          [color]="'text'"
+          [style]="'filled'"
+          [option]="'iconText'"
+          [icon]="'refresh'"
+          [text]="'Reset'"
+        />
+        <fui-button-icon
+          [type]="'button'"
+          [fullWidth]="'fit'"
+          [color]="'primary'"
+          [style]="'filled'"
+          [option]="'iconText'"
+          [icon]="'save'"
+          [text]="'Save'"
+        />
+      </div>
+    </div>
+  </fui-flyout-footer>
+</fui-flyout>
+<!-- FLYOUT M -->
+
+<!-- FLYOUT L -->
+<fui-flyout
+  [size]="'l'"
+  [openFlyout]="isOpenFlyoutL"
+  (overlayOut)="toggleFlyoutL($event)"
+>
+  <fui-flyout-header>
+    <div class="flex-start">
+      <fui-icons
+        [icon]="'tableOfContents'"
+        [color]="'primary'"
+        [size]="'sizem'"
+      />
+      <fui-text [color]="'primary'" [size]="'l'"> Basic Flyout </fui-text>
+    </div>
+  </fui-flyout-header>
+
+  <fui-flyout-body>
+    <div style="margin-top: 1rem">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur
+      accusamus similique nobis asperiores voluptatibus! Quidem nobis
+      repudiandae beatae! Amet mollitia vero numquam quas molestiae illum veniam
+      ullam ratione corporis quam.
+    </div>
+  </fui-flyout-body>
+
+  <fui-flyout-footer>
+    <div class="flex-footer">
+      <fui-button-icon
+        [type]="'button'"
+        [fullWidth]="'fit'"
+        [color]="'text'"
+        [style]="'secondary'"
+        [option]="'text'"
+        [text]="'Cancel'"
+        (onClick)="toggleFlyoutL(false)"
+      />
+      <div class="flex-group">
+        <fui-button-icon
+          [type]="'button'"
+          [fullWidth]="'fit'"
+          [color]="'text'"
+          [style]="'filled'"
+          [option]="'iconText'"
+          [icon]="'refresh'"
+          [text]="'Reset'"
+        />
+        <fui-button-icon
+          [type]="'button'"
+          [fullWidth]="'fit'"
+          [color]="'primary'"
+          [style]="'filled'"
+          [option]="'iconText'"
+          [icon]="'save'"
+          [text]="'Save'"
+        />
+      </div>
+    </div>
+  </fui-flyout-footer>
+</fui-flyout>
+<!-- FLYOUT L -->

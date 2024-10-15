@@ -64,6 +64,7 @@ import { OidcAuthenticatorComponent } from './oidc-authenticator/oidc-authentica
 import { SecurePageComponent } from './oidc-authenticator/secure-page/secure-page.component';
 import { AuthGuard } from './core/guard/auth.guard';
 import { inject, PLATFORM_ID } from '@angular/core';
+import { TextViewComponent } from './atoms/text-view/text-view.component';
 
 /** ATTENTION, ADD A TITLE IN CHILDREN ROUTE FOR THE DOCUMENTATION */
 export const routes: Routes = [
@@ -119,6 +120,11 @@ export const routes: Routes = [
         component: BadgeViewComponent,
       },
       {
+        title: 'Text',
+        path: 'text',
+        component: TextViewComponent,
+      },
+      {
         title: 'Icon',
         path: 'icon',
         component: IconsViewComponent,
@@ -159,6 +165,12 @@ export const routes: Routes = [
         title: 'Breadcrumb',
         path: 'breadcrumb',
         component: BreadcrumbViewComponent,
+        children: [
+          {
+            path: ':id',
+            component: BreadcrumbViewComponent,
+          },
+        ],
       },
       {
         title: 'Button',
@@ -367,7 +379,7 @@ export const routes: Routes = [
         component: HeaderViewComponent,
       },
       {
-        title: 'Modal Component',
+        title: 'Modal',
         path: 'modal',
         component: ModalViewComponent,
       },

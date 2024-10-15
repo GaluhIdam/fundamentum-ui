@@ -37,6 +37,8 @@ export class TabsComponent {
     sizeIcon?: Size;
     title: string;
   }[];
+  @Input() iconActive?: Icon;
+  @Input() iconNonActive?: Icon;
 
   constructor(private cdr: ChangeDetectorRef) {}
 
@@ -52,6 +54,7 @@ export class TabsComponent {
       this.cdr.detectChanges();
     }, 0);
   }
+
   onActive(index: number, title: string): void {
     this.contentComponents.forEach((content) => {
       if (content.id === title) {
@@ -61,6 +64,9 @@ export class TabsComponent {
       }
     });
     this.dataTabs!.forEach((item) => {
+      if (this.iconNonActive) {
+        item.icon = this.iconNonActive;
+      }
       item.active === true
         ? (item.active = false)
         : item.active === false
@@ -68,5 +74,8 @@ export class TabsComponent {
         : (item.active = 'disabled');
     });
     this.dataTabs[index].active = true;
+    if (this.iconActive) {
+      this.dataTabs[index].icon = this.iconActive;
+    }
   }
 }

@@ -20,40 +20,73 @@
   </li>
   <li>Use an iconType if it adds context.</li>
 </ul>
-<fui-callout
-  [title]="'This is CallOut Primary'"
-  [size]="'m'"
-  [icon]="'user'"
-  [color]="'primary'"
-  [message]="message"
-  [visibility]="visibilityPrimary"
-  (onClick)="onHandleCalloutPrimary()"
->
+
+<h3 style="margin-top: 30px">Basic Component</h3>
+<div style="margin-top: 20px">
+  <fui-callout
+    [title]="'This is CallOut Primary'"
+    [size]="'m'"
+    [iconSize]="'sizes'"
+    [icon]="'user'"
+    [color]="'primary'"
+    [message]="message"
+    [visibility]="visibilityPrimary"
+    (onClick)="onHandleCalloutPrimary()"
+  />
+</div>
+
+<div style="margin-top: 20px">
+  <fui-callout
+    [title]="'This is CallOut Success'"
+    [iconSize]="'sizexs'"
+    [size]="'s'"
+    [icon]="'checkInCircleFilled'"
+    [color]="'success'"
+    [message]="message"
+    [visibility]="visibilitySuccess"
+    (onClick)="onHandleCalloutSuccess()"
+  />
+</div>
+
+<div style="margin-top: 20px">
+  <fui-callout
+    [title]="'This is CallOut Warning'"
+    [size]="'m'"
+    [icon]="'alert'"
+    [color]="'warning'"
+    [visibility]="visibilityWarning"
+    (onClick)="onHandleCalloutWarning()"
+    />
+  </div>
+
+  <div style="margin-top: 20px">
+    <fui-callout
+    [iconSize]="'sizexs'"
+    [title]="'This is CallOut Danger'"
+    [size]="'s'"
+    [icon]="'crossInACircleFilled'"
+    [color]="'danger'"
+    [visibility]="visibilityDanger"
+    (onClick)="onHandleCalloutDanger()"
+  />
+</div>
+
+<h3 style="margin-top: 30px">Custom Content Component</h3>
+<div style="margin-top: 20px">
+  <fui-callout
+    [title]="'This is CallOut Primary'"
+    [size]="'m'"
+    [iconSize]="'sizes'"
+    [icon]="'checkInCircleFilled'"
+    [color]="'primary'"
+    [content]="'custom'"
+    [visibility]="visibilityPrimaryCustom"
+    (onClick)="onHandleCalloutPrimaryCustom()"
+  >
+  <h1>This is custom content</h1>
+  <div style="display: flex; gap: 5px;">
+    <fui-button-icon [type]="'button'" [color]="'danger'" [option]="'text'" [text]="'Cancel'" />
+    <fui-button-icon [type]="'button'" [option]="'text'" [text]="'Submit'" />
+  </div>
 </fui-callout>
-<fui-callout
-  [title]="'This is CallOut Success'"
-  [size]="'s'"
-  [icon]="'checkInCircleFilled'"
-  [color]="'success'"
-  [message]="message"
-  [visibility]="visibilitySuccess"
-  (onClick)="onHandleCalloutSuccess()"
-></fui-callout>
-<fui-callout
-  [title]="'This is CallOut Warning'"
-  [size]="'m'"
-  [icon]="'alert'"
-  [color]="'warning'"
-  [visibility]="visibilityWarning"
-  (onClick)="onHandleCalloutWarning()"
->
-</fui-callout>
-<fui-callout
-  [title]="'This is CallOut Danger'"
-  [size]="'s'"
-  [icon]="'crossInACircleFilled'"
-  [color]="'danger'"
-  [visibility]="visibilityDanger"
-  (onClick)="onHandleCalloutDanger()"
->
-</fui-callout>
+</div>

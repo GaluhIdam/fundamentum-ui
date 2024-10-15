@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Color, Size } from '../../types';
+import { Color } from '../../types';
 
 @Component({
   selector: 'fui-text',
@@ -11,20 +11,21 @@ import { Color, Size } from '../../types';
   styleUrl: './text.component.scss',
 })
 export class TextComponent {
-  @Input('color') colorValue: Color = 'text';
-  @Input('size') sizeValue: Size = 'sizem';
-  @Input('width') widthValue: string = 'auto';
-  @Input('type') typeValue: string = 'normal';
+  @Input() color: Color = 'ink';
+  @Input() size: 'xs' | 's' | 'm' | 'l' | 'xl' = 'm';
   @Input() textWrap: 'nowrap' | 'wrap' = 'wrap';
-  @Input() decoration: 'underline' | 'normal' = 'normal';
+  @Input() selector: boolean = true;
+  @Input() fwStyle: 'italic' | 'normal' = 'normal';
+  @Input() decoration: 'underline' | 'line-through' | 'overline' | 'none' =
+    'none';
+  @Input() textOverflow: 'ellipsis' | 'clip' | 'none' = 'none';
   @Input() weight:
     | 'thin'
-    | 'extralight'
     | 'light'
-    | 'normal'
+    | 'regular'
     | 'medium'
     | 'semibold'
     | 'bold'
     | 'extrabold'
-    | 'black' = 'normal';
+    | 'black' = 'regular';
 }

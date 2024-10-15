@@ -5,7 +5,7 @@
 >
   <fui-header [position]="'none'" [shadow]="true">
     <fui-header-panel
-      style="width: -webkit-fill-available; justify-content: space-between"
+      style="width: 100%; justify-content: space-between"
     >
       <div style="display: flex; align-items: baseline">
         <fui-button-icon
@@ -16,6 +16,7 @@
           [color]="'primary'"
           [icon]="'menu'"
           [iconSide]="'left'"
+          [fullWidth]="'fit'"
           (onClick)="collapseBtn()"
         />
         <fui-button-icon
@@ -27,6 +28,7 @@
           [icon]="'cross'"
           [iconSide]="'left'"
           (onClick)="collapseBtn()"
+          [fullWidth]="'fit'"
         />
         <div style="align-items: center; display: flex; margin-left: 10px">
           <h4 class="title">
@@ -39,6 +41,7 @@
       <div style="display: flex; align-items: center">
         <fui-popover [position]="'bottom'">
           <fui-button-icon
+            [fullWidth]="'fit'"
             [type]="'button'"
             [option]="'iconText'"
             [style]="'secondary'"
@@ -94,7 +97,7 @@
   <fui-header
     *ngIf="searchTog"
     [shadow]="true"
-    style="width: -webkit-fill-available; position: absolute"
+    style="width: 100%;"
   >
     <fui-sitewide-search
       class="nav-item"

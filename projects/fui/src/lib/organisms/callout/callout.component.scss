@@ -39,20 +39,24 @@
 .title-callout-primary {
   color: var(--fuiBtnPrimaryText, $fuiBtnPrimaryText);
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  gap: 10px;
 }
 .title-callout-success {
   color: var(--fuiBtnSuccessText, $fuiBtnSuccessText);
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  gap: 10px;
 }
 .title-callout-warning {
   color: var(--fuiBtnWarningText, $fuiBtnWarningText);
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  gap: 10px;
 }
 .title-callout-danger {
   color: var(--fuiBtnDangerText, $fuiBtnDangerText);
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  gap: 10px;
 }

@@ -1,3 +1,9 @@
+:host {
+  height: 100vh;
+  display: grid;
+  overflow: hidden;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -27,7 +33,7 @@
 }
 
 .page-full {
-  min-height: -webkit-fill-available;
+  min-height: 100%;
 }
 
 .page-fit {

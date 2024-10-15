@@ -1,27 +1,70 @@
 <div class="fui-filepicker">
-  <div class="fui-dropzone">
-    <input
-      type="file"
-      class="fui-input-file {{ files.length > 0 ? 'z-1' : '' }}"
-      multiple
-      (change)="onFileSelected($event)"
+  <input
+    [ngStyle]="{ 'z-index': files.length > 0 ? -1 : 1 }"
+    type="file"
+    class="fui-input-file"
+    multiple
+    (change)="onFileSelected($event)"
+  />
+  <div class="label" *ngIf="model === 'box'">
+    <fui-icons [icon]="'download'" [size]="'sizel'" [color]="'primary'" />
+    <fui-text
+      style="padding: 0px 20px"
+      [textOverflow]="'ellipsis'"
+      *ngIf="files.length === 0"
+      >Select or drag and drop multiple files</fui-text
+    >
+    <fui-text
+      style="margin-top: 10px; padding: 0px 20px"
+      [weight]="'semibold'"
+      [textOverflow]="'ellipsis'"
+      *ngIf="files.length === 1"
+      >{{ files[0].name }}</fui-text
+    >
+    <fui-text
+      [textOverflow]="'ellipsis'"
+      style="margin-top: 10px; padding: 0px 20px"
+      [weight]="'semibold'"
+      *ngIf="files.length > 1"
+      >{{ files.length + 1 }} files sellected</fui-text
+    >
+    <fui-button-icon
+      *ngIf="files.length > 0"
+      style="z-index: 1000"
+      [type]="'button'"
+      [option]="'text'"
+      [text]="'Remove'"
+      [size]="'s'"
+      [style]="'empty'"
+      (onClick)="clearFile()"
     />
-    <div class="fui-content">
-      <div class="fui-icons-container">
-        <fui-icons
-          style="width: auto"
-          [icon]="'download'"
-          [size]="'sizexl'"
-          [color]="'primary'"
-        ></fui-icons>
-      </div>
-      <div class="fui-remove-action" *ngIf="files.length > 0">
-        <p class="fui-selected-files">{{ files.length }} files selected</p>
-        <p class="fui-selected-files-rm" (click)="clearFile()">Remove</p>
-      </div>
-    </div>
-    <p class="fui-dropzone-text" *ngIf="files.length === 0">
-      Select or drag and drop multiple files
-    </p>
+  </div>
+  <div class="label-row" *ngIf="model === 'row'">
+    <fui-icons [icon]="'download'" [size]="'sizel'" [color]="'primary'" />
+    <fui-text [textOverflow]="'ellipsis'" *ngIf="files.length === 0"
+      >Select or drag and drop multiple files</fui-text
+    >
+    <fui-text
+      [weight]="'semibold'"
+      [textOverflow]="'ellipsis'"
+      *ngIf="files.length === 1"
+      >{{ files[0].name }}</fui-text
+    >
+    <fui-text
+      [textOverflow]="'ellipsis'"
+      [weight]="'semibold'"
+      *ngIf="files.length > 1"
+      >{{ files.length + 1 }} files sellected</fui-text
+    >
+    <fui-button-icon
+      *ngIf="files.length > 0"
+      style="z-index: 1000"
+      [type]="'button'"
+      [option]="'text'"
+      [text]="'Remove'"
+      [size]="'s'"
+      [style]="'empty'"
+      (onClick)="clearFile()"
+    />
   </div>
 </div>

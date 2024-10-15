@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CalloutComponent } from 'fui';
+import { ButtonIconComponent } from '../../../../../fui/src/public-api';
 
 @Component({
   selector: 'app-callout-view',
   standalone: true,
-  imports: [CalloutComponent, CommonModule],
+  imports: [CalloutComponent, CommonModule, ButtonIconComponent],
   templateUrl: './callout-view.component.html',
   styleUrl: './callout-view.component.scss',
 })
@@ -14,6 +15,7 @@ export class CalloutViewComponent {
   visibilitySuccess: boolean = true;
   visibilityWarning: boolean = true;
   visibilityDanger: boolean = true;
+  visibilityPrimaryCustom: boolean = true;
   message: string = 'You can customize icon, header, and paragraph';
 
   onHandleCalloutPrimary(): void {
@@ -27,5 +29,8 @@ export class CalloutViewComponent {
   }
   onHandleCalloutDanger(): void {
     this.visibilityDanger = !this.visibilityDanger;
+  }
+  onHandleCalloutPrimaryCustom(): void {
+    this.visibilityPrimaryCustom = !this.visibilityPrimary;
   }
 }

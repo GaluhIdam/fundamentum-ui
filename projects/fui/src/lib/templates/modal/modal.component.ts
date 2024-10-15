@@ -30,17 +30,6 @@ import { animate, style, transition, trigger } from '@angular/animations';
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.scss',
   imports: [CommonModule, OverlayMaskComponent],
-  animations: [
-    trigger('modalPopup', [
-      transition(':enter', [
-        style({ transform: 'translateY(20px)', opacity: 0.5 }),
-        animate(
-          '200ms ease',
-          style({ transform: 'translateY(0)', opacity: 1 })
-        ),
-      ]),
-    ]),
-  ],
 })
 export class ModalComponent {
   @Input() open: boolean = false;

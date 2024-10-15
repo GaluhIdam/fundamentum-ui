@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Icon } from '../../types';
+import { Icon, Size } from '../../types';
 import { CommonModule } from '@angular/common';
 import { IconsComponent } from '../../atoms/icons/icons.component';
 
@@ -37,6 +37,8 @@ export class CalloutComponent {
     | 'danger' = 'primary';
   @Input({ required: true }) size: 's' | 'm' = 'm';
   @Input({ required: true }) icon: Icon = 'user';
+  @Input() iconSize: Size = 'sizem';
+  @Input() content: 'text' | 'custom' = 'text';
 
   @Input({ required: true }) visibility: boolean = true;
   @Output() onClick: EventEmitter<void> = new EventEmitter<void>();

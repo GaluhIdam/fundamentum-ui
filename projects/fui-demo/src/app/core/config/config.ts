@@ -1,20 +1,19 @@
 import { ConfigDTO } from "fui";
 
 
-export const keycloak: ConfigDTO = {
-  authorization_endpoint: 'https://accounts.google.com/o/oauth2/v2/auth',
-  client_id:
-    '1078904476244-f15frfo2n070aft1jm66o73rfv7kcs51.apps.googleusercontent.com',
+export const google: ConfigDTO = {
+  authorization_endpoint:
+    'https://keycloak.ahp.id/realms/quantum/protocol/openid-connect/auth',
+  client_id: 'ahplms-beta',
   redirect_uri: 'http://localhost:4200',
   response_type: 'id_token token',
-  client_secret: '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',
-  scope: 'openid email profile',
+  scope: 'openid email profile roles',
   authWellknownEndpointUrl:
-    'https://accounts.google.com/.well-known/openid-configuration',
+    'https://keycloak.ahp.id/realms/quantum/.well-known/openid-configuration',
   storageUsage: 'local',
 };
 
-export const google: ConfigDTO = {
+export const keycloak: ConfigDTO = {
   authorization_endpoint:
     'http://localhost:8080/realms/quantum-demo/protocol/openid-connect/auth',
   client_id: 'quantum-client',

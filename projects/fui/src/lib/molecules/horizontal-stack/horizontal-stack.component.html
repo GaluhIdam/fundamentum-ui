@@ -1,11 +1,50 @@
-<div class="container">
+<div class="container" *ngIf="showPercentage === 'inline'">
   @for (item of progress; track $index) {
   <div
     *ngIf="item.percentage > 0"
-    class="hr-stack {{ item.color }}"
-    [ngStyle]="{ width: item.percentage + '%' }"
+    class="hr-stack {{ item.color }}  size-{{ size }}"
+    [ngStyle]="{
+      width: item.percentage + '%',
+      'background-color': colorCheck(item.color) ? '' : item.color
+    }"
   >
-    <span *ngIf="showPercentage">{{ item.percentage }}%</span>
+    <span>{{ item.percentage }}%</span>
   </div>
+  }
+</div>
+
+<div class="container" *ngIf="showPercentage === 'tooltip'">
+  @for (item of progress; track $index) {
+  <fui-tooltip
+    [position]="'top'"
+    [content]="item.percentage + '%'"
+    [ngStyle]="{width: item.percentage + '%',}"
+    class="hr-stack-tool"
+  >
+    <div
+      *ngIf="item.percentage > 0"
+      class="{{ item.color }}  size-{{ size }} stack"
+      [ngClass]="[
+        $index === 0 ? 'first' : '',
+        $index === (progress.length-1) ? 'last' : ''
+      ]"
+      [ngStyle]="{
+        'background-color': colorCheck(item.color) ? '' : item.color
+      }"
+    ></div>
+  </fui-tooltip>
+  }
+</div>
+
+<div class="container" *ngIf="showPercentage === 'none'">
+  @for (item of progress; track $index) {
+  <div
+    *ngIf="item.percentage > 0"
+    class="hr-stack {{ item.color }}  size-{{ size }}"
+    [ngStyle]="{
+      width: item.percentage + '%',
+      'background-color': colorCheck(item.color) ? '' : item.color
+    }"
+  ></div>
   }
 </div>

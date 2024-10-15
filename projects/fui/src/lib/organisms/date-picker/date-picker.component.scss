@@ -97,9 +97,13 @@
   color: #cccccc;
 }
 fui-popover {
-  width: -webkit-fill-available;
+  width: 100%;
 }
 :host {
   height: fit-content;
   display: block;
+}
+
+* {
+  scrollbar-width: thin;
 }

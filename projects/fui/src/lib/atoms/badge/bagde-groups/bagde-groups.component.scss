@@ -1,0 +1,24 @@
+@import "../../../styles/index";
+
+.group-badge {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  max-inline-size: 100%;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 0.9px 4px,
+    rgba(0, 0, 0, 0.06) 0px 2.6px 8px, rgba(0, 0, 0, 0.05) 0px 5.7px 12px,
+    rgba(0, 0, 0, 0.04) 0px 15px 15px;
+  background-color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
+  padding: 16px;
+
+  &.gutterSize-s {
+    gap: 8px;
+  }
+  &.gutterSize-none {
+    gap: 0px;
+  }
+  &.gutterSize-xs {
+    gap: 4px;
+  }
+}

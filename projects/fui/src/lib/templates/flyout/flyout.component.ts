@@ -1,5 +1,6 @@
 import {
   Component,
+  ContentChild,
   EventEmitter,
   Input,
   Output,
@@ -10,15 +11,8 @@ import { IconsComponent } from '../../atoms/icons/icons.component';
 import { ButtonEmptyComponent } from '../../atoms/button-empty/button-empty.component';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../../atoms/button/button.component';
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
-import { BehaviorSubject } from 'rxjs';
 import { OverlayMaskComponent } from '../../atoms/overlay-mask/overlay-mask.component';
+import { FlyoutHeaderComponent } from './flyout-header/flyout-header.component';
 
 /**
  * The FlyoutComponent
@@ -47,18 +41,7 @@ import { OverlayMaskComponent } from '../../atoms/overlay-mask/overlay-mask.comp
   standalone: true,
   templateUrl: './flyout.component.html',
   styleUrl: './flyout.component.scss',
-  animations: [
-    trigger('slideInOut', [
-      state('void', style({})),
-      state(
-        '*',
-        style({
-          transform: 'translateX(0)',
-        })
-      ),
-      transition('void <=> *', animate('300ms ease-in-out')),
-    ]),
-  ],
+
   imports: [
     CommonModule,
     TextComponent,
@@ -69,22 +52,38 @@ import { OverlayMaskComponent } from '../../atoms/overlay-mask/overlay-mask.comp
   ],
 })
 export class FlyoutComponent {
-  @Input() open: boolean = false;
-  @Input() flyoutDirection: 'start' | 'end' = 'end';
-  @Input() flyoutSize: 's' | 'm' | 'l' = 'm';
-  @Input() flyoutPadding: 'none' | 's' | 'm' | 'l' = 'l';
-  @Input() withOverlay: boolean = false;
-  @Output() onOverlayClick: EventEmitter<void> = new EventEmitter();
-  @Input() zIndex: number = 2;
-  flyoutPadding$ = new BehaviorSubject<'none' | 's' | 'm' | 'l'>('l');
+  @Input() openFlyout: boolean = false;
+  @Input() withOverlay: boolean = true;
+  @Input() size: 's' | 'm' | 'l' = 's';
+  @Output() overlayOut: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @ContentChild(FlyoutHeaderComponent)
+  flyoutHeaderComponent!: FlyoutHeaderComponent;
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['flyoutPadding']?.currentValue) {
-      this.flyoutPadding$.next(changes['flyoutPadding']?.currentValue);
+  animation: boolean = false;
+
+  ngAfterContentInit(): void {
+    if (this.flyoutHeaderComponent) {
+      this.flyoutHeaderComponent.closeOut.subscribe((close: boolean) => {
+        this.handleOverlayClick();
+      });
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes) {
+      if (this.openFlyout === true) {
+        setTimeout(() => {
+          this.animation = this.openFlyout;
+        }, 100);
+      }
     }
   }
 
   handleOverlayClick() {
-    this.onOverlayClick.emit();
+    this.animation = false;
+    setTimeout(() => {
+      this.openFlyout = false;
+      this.overlayOut.emit(false);
+    }, 300);
   }
 }

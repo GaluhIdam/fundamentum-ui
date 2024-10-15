@@ -1,6 +1,6 @@
 @import "../../styles/index";
 :host {
-  width: -webkit-fill-available;
+  width: 100%;
 }
 .container {
   display: flex;
@@ -8,8 +8,6 @@
 .hr-stack {
   align-content: center;
   text-align: center;
-  font-size: small;
-  font-weight: bold;
   padding: 3px 5px;
   &:first-child {
     border-top-left-radius: 20px;
@@ -24,48 +22,85 @@
   -moz-user-select: none;
   -ms-user-select: none;
 }
+
+.first {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.last {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.hr-stack-tool {
+  align-content: center;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.stack {
+  padding: 3px 5px;
+}
+
 .primary {
   color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
-  height: 6px;
   background-color: var(--fuiBtnPrimary, $fuiBtnPrimary);
 }
 .success {
   color: #000;
-  height: 6px;
   background-color: var(--fuiBtnSuccess, $fuiBtnSuccess);
 }
 .warning {
   color: #000;
-  height: 6px;
   background-color: var(--fuiBtnWarning, $fuiBtnWarning);
 }
 .danger {
   color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
-  height: 6px;
   background-color: var(--fuiBtnDanger, $fuiBtnDanger);
 }
 .text {
   color: var(--fuiColorFullShade, $fuiColorFullShade);
-  height: 6px;
   background-color: var(--fuiColorMediumShade, $fuiColorMediumShade);
 }
 .accent {
   color: #000;
-  height: 6px;
   background-color: var(--fuiBtnAccent, $fuiBtnAccent);
 }
 .ghost {
   color: var(--fuiColorFullShade, $fuiColorFullShade);
-  height: 6px;
   background-color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
 }
 .ink {
   color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
-  height: 6px;
   background-color: var(--fuiColorFullShade, $fuiColorFullShade);
 }
 .disabled {
   color: var(--fuiColorFullShade, $fuiColorFullShade);
-  height: 6px;
   background-color: var(--fuiColorLightShade, $fuiColorLightShade);
+}
+
+.size {
+  &-xs {
+    min-height: 1px;
+    font-size: 8px;
+  }
+  &-s {
+    min-height: 3px;
+    font-size: 12px;
+  }
+  &-m {
+    min-height: 6px;
+    font-size: 16px;
+  }
+  &-l {
+    min-height: 9px;
+    font-size: 20px;
+  }
+  &-xl {
+    min-height: 12px;
+    font-size: 24px;
+  }
 }

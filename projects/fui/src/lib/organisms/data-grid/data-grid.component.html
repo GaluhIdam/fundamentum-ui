@@ -13,6 +13,7 @@
       <div class="flex">
         <fui-popover class="item-util" [position]="'bottom'" [align]="'start'">
           <fui-button-icon
+            [fullWidth]="'fit'"
             (onClick)="triggerColumns()"
             [type]="'button'"
             [option]="'iconText'"
@@ -51,9 +52,10 @@
                   *ngFor="let key of _getObjectKeys(data[0])"
                 >
                   <fui-button-icon
+                    [fullWidth]="'full'"
                     *ngIf="isButtonVisible(key)"
                     (click)="toggleColumn(key)"
-                    [fullWidth]="true"
+
                     [textAlign]="'left'"
                     [type]="'button'"
                     [option]="'iconText'"
@@ -74,9 +76,10 @@
                   *ngFor="let key of title; let i = index"
                 >
                   <fui-button-icon
+                    [fullWidth]="'full'"
                     *ngIf="isButtonVisible(_getObjectKeys(data[0])[i])"
                     (click)="toggleColumn(_getObjectKeys(data[0])[i])"
-                    [fullWidth]="true"
+
                     [textAlign]="'left'"
                     [type]="'button'"
                     [option]="'iconText'"
@@ -111,6 +114,7 @@
       <div class="flex">
         <fui-popover class="item-util" [position]="'bottom'" [align]="'end'">
           <fui-button-icon
+            [fullWidth]="'fit'"
             [type]="'button'"
             [option]="'icon'"
             [icon]="'controlsHorizontal'"
@@ -124,8 +128,9 @@
                 <p class="title">Density :</p>
                 <div class="density-util">
                   <fui-button-icon
+                    [fullWidth]="'fit'"
                     (onClick)="changeOption('compact')"
-                    [fullWidth]="true"
+                    [fullWidth]="'fit'"
                     [type]="'button'"
                     [option]="'text'"
                     [color]="density === 'compact' ? 'primary' : 'text'"
@@ -134,8 +139,9 @@
                     [text]="'Compact'"
                   />
                   <fui-button-icon
+                    [fullWidth]="'fit'"
                     (onClick)="changeOption('normal')"
-                    [fullWidth]="true"
+                    [fullWidth]="'fit'"
                     [type]="'button'"
                     [option]="'text'"
                     [color]="density === 'normal' ? 'primary' : 'text'"
@@ -144,8 +150,9 @@
                     [text]="'Normal'"
                   />
                   <fui-button-icon
+                    [fullWidth]="'fit'"
                     (onClick)="changeOption('expanded')"
-                    [fullWidth]="true"
+                    [fullWidth]="'fit'"
                     [type]="'button'"
                     [option]="'text'"
                     [color]="density === 'expanded' ? 'primary' : 'text'"
@@ -159,8 +166,9 @@
                 <p class="title">Row Height :</p>
                 <div class="row-height-util">
                   <fui-button-icon
+                    [fullWidth]="'fit'"
                     (onClick)="changeHeight('single')"
-                    [fullWidth]="true"
+                    [fullWidth]="'fit'"
                     [type]="'button'"
                     [option]="'text'"
                     [color]="rowHeight === 'single' ? 'primary' : 'text'"
@@ -169,8 +177,9 @@
                     [text]="'Single'"
                   />
                   <fui-button-icon
+                    [fullWidth]="'fit'"
                     (onClick)="changeHeight('autoFit')"
-                    [fullWidth]="true"
+                    [fullWidth]="'fit'"
                     [type]="'button'"
                     [option]="'text'"
                     [color]="rowHeight === 'autoFit' ? 'primary' : 'text'"
@@ -188,6 +197,7 @@
           </div>
         </fui-popover>
         <fui-button-icon
+          [fullWidth]="'fit'"
           (onClick)="changeFullScreen()"
           *ngIf="!fullScreen"
           class="item-util"
@@ -199,6 +209,7 @@
           [style]="'secondary'"
         />
         <fui-button-icon
+          [fullWidth]="'fit'"
           (onClick)="changeFullScreen()"
           *ngIf="fullScreen"
           class="item-util"
@@ -396,6 +407,7 @@
             }
             <td class="action {{ rowHeight }} {{ textAlign }}">
               <fui-button-icon
+                [fullWidth]="'fit'"
                 [type]="'button'"
                 [option]="'icon'"
                 [style]="'secondary'"
@@ -407,7 +419,7 @@
           </tr>
         </tbody>
       </table>
-      <div *ngIf="data.length === 0" style="width: -webkit-fill-available">
+      <div *ngIf="data.length === 0" style="width: 100%">
         <p class="empty-data-text">Data is empty</p>
       </div>
     </div>

@@ -1,7 +1,7 @@
 @import "../variables/index";
 
 @mixin buttonIconMix($bgColor, $color, $BorderRadius, $fontSize, $padding) {
-  height: $fontSize + 23;
+  height: auto;
   color: $color;
   font-family: $fuiFontFamily;
   font-size: $fontSize;

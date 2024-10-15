@@ -6,6 +6,7 @@ export * from './lib/types';
 
 export * from './lib/atoms/aspect-ratio/aspect-ratio.component';
 export * from './lib/atoms/badge/badge.component';
+export * from './lib/atoms/badge/bagde-groups/bagde-groups.component';
 export * from './lib/atoms/button/button.component';
 export * from './lib/atoms/button-empty/button-empty.component';
 export * from './lib/atoms/code-block/code-block.component';
@@ -22,6 +23,7 @@ export * from './lib/molecules/input-field-number/input-field-number.component';
 export * from './lib/molecules/input-field-password/input-field-password.component';
 export * from './lib/molecules/input-search-field/input-search-field.component';
 export * from './lib/molecules/image/image.component';
+export * from './lib/molecules/loading-bar/loading-bar.component';
 
 export * from './lib/molecules/loading/loading.component';
 

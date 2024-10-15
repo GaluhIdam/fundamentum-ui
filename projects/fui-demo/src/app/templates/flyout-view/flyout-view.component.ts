@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import {
-  ButtonComponent,
   FlyoutBodyComponent,
   FlyoutComponent,
   FlyoutFooterComponent,
   FlyoutHeaderComponent,
   IconsComponent,
-  SpacerComponent,
   TextComponent,
+  ButtonIconComponent,
 } from 'fui';
 
 @Component({
@@ -17,41 +16,29 @@ import {
   styleUrl: './flyout-view.component.scss',
   imports: [
     FlyoutComponent,
-    ButtonComponent,
     FlyoutHeaderComponent,
-    TextComponent,
     FlyoutBodyComponent,
     FlyoutFooterComponent,
-    SpacerComponent,
+    TextComponent,
     IconsComponent,
+    ButtonIconComponent,
   ],
 })
 export class FlyoutViewComponent {
   isOpenFlyout = false;
-  flyoutSize: 's' | 'm' | 'l' = 'm';
-  flyoutPaddingSize: 'none' | 's' | 'm' | 'l' = 'm';
+  isOpenFlyoutM = false;
+  isOpenFlyoutL = false;
 
-  handleOpenFlyout() {
-    this.isOpenFlyout = true;
+  /** Toggle Flyout */
+  toggleFlyout(event: boolean): void {
+    this.isOpenFlyout = event;
   }
-
-  handleCloseFlyout() {
-    this.isOpenFlyout = false;
+  /** Toggle Flyout */
+  toggleFlyoutM(event: boolean): void {
+    this.isOpenFlyoutM = event;
   }
-
-  handleConfirmButton() {
-    this.isOpenFlyout = false;
-  }
-
-  handleCancelButton() {
-    this.isOpenFlyout = false;
-  }
-
-  changePaddingSize(size: 'none' | 's' | 'm' | 'l') {
-    this.flyoutPaddingSize = size;
-  }
-
-  changeSize(size: 's' | 'm' | 'l') {
-    this.flyoutSize = size;
+  /** Toggle Flyout */
+  toggleFlyoutL(event: boolean): void {
+    this.isOpenFlyoutL = event;
   }
 }

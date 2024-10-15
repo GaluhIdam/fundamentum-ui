@@ -1,18 +1,11 @@
 <!-- button.component.html -->
-
-<span
-  [class.title]="typeValue === 'title'"
-  [class]="colorValue"
-  [class.sizeXS]="sizeValue === 'sizexs'"
-  [class.sizeS]="sizeValue === 'sizes'"
-  [class.sizeM]="sizeValue === 'sizem'"
-  [class.sizeL]="sizeValue === 'sizel'"
-  [class.sizeXL]="sizeValue === 'sizexl'"
-  [class.sizeXXL]="sizeValue === 'sizexxl'"
-  [class.sizeM]="sizeValue === 'sizem'"
-  [class]="[colorValue, decoration, 'weight-' + weight]"
-  [class.wrap]="textWrap === 'wrap'"
-  [class.nowrap]="textWrap === 'nowrap'"
->
-  <ng-content></ng-content>
-</span>
+<div [ngClass]="[textOverflow]">
+  <p
+    [ngClass]="[color, size, weight, decoration, fwStyle, textOverflow]"
+    [ngStyle]="{
+      'text-wrap': textWrap,
+    }"
+  >
+    <ng-content></ng-content>
+  </p>
+</div>

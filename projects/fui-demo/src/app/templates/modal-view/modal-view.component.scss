@@ -1,3 +1,135 @@
+@import "../../../styles.scss";
+
+.grid-2 {
+  display: flex;
+  gap: 30px;
+}
 .container {
-  padding: 1rem;
+  margin-top: 50px;
+}
+.flex-footer {
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+}
+
+.body-modal {
+  max-width: 350px;
+}
+.body-modal-custom {
+  text-align: center;
+  max-width: 350px;
+  margin: 10px 0px;
+  .body-modal-custom-sub {
+    text-align: left;
+    margin-top: 10px;
+    background-color: var(--fuiColorLightShade, $fuiColorLightShade);
+    padding: 10px;
+  }
+}
+
+.modal-ex {
+  border-radius: 10px;
+  margin: 30px 0px;
+  width: fit-content;
+  background-color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.center-all {
+  display: grid;
+  justify-items: center;
+  fui-text {
+    margin-top: 10px;
+    display: flex;
+  }
+}
+
+.flex-footer-custom {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.circle-icon {
+  border-radius: 100%;
+  background: var(--fuiBtnDanger, $fuiBtnDanger);
+  padding: 8px 10px 10px 10px;
+}
+.circle-icon-success {
+  border-radius: 100%;
+  background: var(--fuiColorSuccess, $fuiColorSuccess);
+  padding: 8px 10px 10px 10px;
+}
+
+.modal-alert {
+  text-align: center;
+  width: 350px;
+}
+
+.absolute-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.checkmark {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #4bb71b;
+  stroke-miterlimit: 10;
+  box-shadow: inset 0px 0px 0px #4bb71b;
+  animation: fill 0.4s ease-in-out 0.4s forwards,
+    scale 0.3s ease-in-out 0.9s both;
+  position: relative;
+  top: 5px;
+  margin: 0 auto;
+}
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #4bb71b;
+  fill: #fff;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+  0%,
+  100% {
+    transform: none;
+  }
+
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #4bb71b;
+  }
 }

@@ -1,17 +1,11 @@
-@use './../../../styles//variables/size_variable' as size;
+@use "./../../../styles//variables/size_variable" as size;
 
-.flyout-p-none {
-  padding: 0;
+:host {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
 }
-
-.flyout-p-s {
-  padding: size.$fuiSizeS;
-}
-
-.flyout-p-m {
-  padding: size.$fuiSizeM;
-}
-
-.flyout-p-l {
-  padding: size.$fuiSizeL;
+.body-flyout {
+  padding: 15px;
 }

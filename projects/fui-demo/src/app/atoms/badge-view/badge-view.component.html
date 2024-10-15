@@ -1,472 +1,235 @@
 <h1>Badge</h1>
-<p>
-  FuiBadges are used to focus on important bits of information. Although they
-  will automatically space themselves if you use them in a repetitive fashion it
-  is good form to wrap them using a FuiBadgeGroup so that they will wrap when
-  width is constrained (as seen below).
+<p class="mt-10">
+  <b>FuiBadges</b> are used to focus on important bits of information. Although
+  they will automatically space themselves if you use them in a repetitive
+  fashion it is good form to wrap them using a FuiBadgeGroup so that they will
+  wrap when width is constrained (as seen below).
 </p>
-<div class="container">
-  <ul class="main-ul">
-    <h4>Badge Rounded</h4>
-    <li class="flex">
-      <fui-badge [rounded]="true" [color]="'primary'" [size]="'sizedefault'"
-        >Primary</fui-badge
-      >
-      <fui-badge
-        [rounded]="true"
-        [color]="'success'"
-        [size]="'sizedefault'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        >Success</fui-badge
-      >
-      <fui-badge
-        [rounded]="true"
-        [color]="'warning'"
-        [size]="'sizedefault'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        >Warning</fui-badge
-      >
-      <fui-badge
-        [rounded]="true"
-        [color]="'danger'"
-        [size]="'sizedefault'"
-        [underline]="true"
-        >Danger</fui-badge
-      >
-      <fui-badge
-        [rounded]="true"
-        [color]="'text'"
-        [size]="'sizedefault'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'start'"
-        [underline]="true"
-        >Text</fui-badge
-      >
-      <fui-badge
-        [rounded]="true"
-        [color]="'accent'"
-        [size]="'sizedefault'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        [underline]="true"
-        >Accent</fui-badge
-      >
-      <fui-badge
-        [rounded]="true"
-        [color]="'ghost'"
-        [size]="'sizedefault'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        [underline]="true"
-        >Ghost</fui-badge
-      >
-    </li>
-    <h4>Badge Default</h4>
-    <li class="flex">
-      <fui-badge [color]="'primary'" [size]="'sizedefault'">Primary</fui-badge>
-      <fui-badge
-        [color]="'success'"
-        [size]="'sizedefault'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        >Success</fui-badge
-      >
-      <fui-badge
-        [color]="'warning'"
-        [size]="'sizedefault'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        >Warning</fui-badge
-      >
-      <fui-badge [color]="'danger'" [size]="'sizedefault'" [underline]="true"
-        >Danger</fui-badge
-      >
-      <fui-badge
-        [color]="'text'"
-        [size]="'sizedefault'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'start'"
-        [underline]="true"
-        >Text</fui-badge
-      >
-      <fui-badge
-        [color]="'accent'"
-        [size]="'sizedefault'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        [underline]="true"
-        >Accent</fui-badge
-      >
-      <fui-badge
-        [color]="'ghost'"
-        [size]="'sizedefault'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        [underline]="true"
-        >Ghost</fui-badge
-      >
-    </li>
 
-    <h4>Badge Extra Small (XS)</h4>
-    <li class="flex">
-      <fui-badge [color]="'primary'" [size]="'sizexs'">Primary</fui-badge>
-      <fui-badge
-        [color]="'success'"
-        [size]="'sizexs'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        >Success</fui-badge
-      >
-      <fui-badge
-        [color]="'warning'"
-        [size]="'sizexs'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        >Warning</fui-badge
-      >
-      <fui-badge [color]="'danger'" [size]="'sizexs'" [underline]="true"
-        >Danger</fui-badge
-      >
-      <fui-badge
-        [color]="'text'"
-        [size]="'sizexs'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'start'"
-        [underline]="true"
-        >Text</fui-badge
-      >
-      <fui-badge
-        [color]="'accent'"
-        [size]="'sizexs'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        [underline]="true"
-        >Accent</fui-badge
-      >
-      <fui-badge
-        [color]="'ghost'"
-        [size]="'sizexs'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        [underline]="true"
-        >Ghost</fui-badge
-      >
-    </li>
+<div class="section">
+  <h4 class="mt-20">Accepted color names</h4>
+  <div class="flex mt-10">
+    <fui-badge [text]="'default'" />
+    <fui-badge [text]="'hollow'" [color]="'hollow'" />
+    <fui-badge [text]="'primary'" [color]="'primary'" [textColor]="'ghost'" />
+    <fui-badge [text]="'success'" [color]="'success'" />
+    <fui-badge [text]="'accent'" [color]="'accent'" />
+    <fui-badge [text]="'warning'" [color]="'warning'" />
+    <fui-badge [text]="'danger'" [color]="'danger'" [textColor]="'ghost'" />
+  </div>
 
-    <h4>Badge Small (S)</h4>
-    <li class="flex">
-      <fui-badge [color]="'primary'" [size]="'sizes'">Primary</fui-badge>
-      <fui-badge
-        [color]="'success'"
-        [size]="'sizes'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        >Success</fui-badge
-      >
-      <fui-badge
-        [color]="'warning'"
-        [size]="'sizes'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        >Warning</fui-badge
-      >
-      <fui-badge [color]="'danger'" [size]="'sizes'" [underline]="true"
-        >Danger</fui-badge
-      >
-      <fui-badge
-        [color]="'text'"
-        [size]="'sizes'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'start'"
-        [underline]="true"
-        >Text</fui-badge
-      >
-      <fui-badge
-        [color]="'accent'"
-        [size]="'sizes'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        [underline]="true"
-        >Accent</fui-badge
-      >
-      <fui-badge
-        [color]="'ghost'"
-        [size]="'sizes'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        [underline]="true"
-        >Ghost</fui-badge
-      >
-    </li>
+  <h4 class="mt-20">Accepted sizes</h4>
+  <div class="flex mt-10">
+    <fui-badge [text]="'Size XS'" [size]="'xs'" />
+    <fui-badge [text]="'Size S'" [size]="'s'" [color]="'hollow'" />
+    <fui-badge
+      [text]="'Size M'"
+      [size]="'m'"
+      [color]="'primary'"
+      [textColor]="'ghost'"
+    />
+    <fui-badge [text]="'Size L'" [size]="'l'" [color]="'success'" />
+    <fui-badge [text]="'Size XL'" [size]="'xl'" [color]="'accent'" />
+  </div>
 
-    <h4>Badge Medium (M)</h4>
-    <li class="flex">
-      <fui-badge [color]="'primary'" [size]="'sizem'">Primary</fui-badge>
-      <fui-badge
-        [color]="'success'"
-        [size]="'sizem'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        >Success</fui-badge
-      >
-      <fui-badge
-        [color]="'warning'"
-        [size]="'sizem'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        >Warning</fui-badge
-      >
-      <fui-badge [color]="'danger'" [size]="'sizem'" [underline]="true"
-        >Danger</fui-badge
-      >
-      <fui-badge
-        [color]="'text'"
-        [size]="'sizem'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'start'"
-        [underline]="true"
-        >Text</fui-badge
-      >
-      <fui-badge
-        [color]="'accent'"
-        [size]="'sizem'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        [underline]="true"
-        >Accent</fui-badge
-      >
-      <fui-badge
-        [color]="'ghost'"
-        [size]="'sizem'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        [underline]="true"
-        >Ghost</fui-badge
-      >
-    </li>
+  <h4 class="mt-20">Custom color examples</h4>
+  <div class="flex mt-10">
+    <fui-badge
+      [customColor]="true"
+      [color]="'#DDD'"
+      [textColor]="'#000'"
+      [text]="'#DDD'"
+    />
+    <fui-badge
+      [customColor]="true"
+      [color]="'#AAA'"
+      [textColor]="'#000'"
+      [text]="'#AAA'"
+    />
+    <fui-badge
+      [customColor]="true"
+      [color]="'#666'"
+      [textColor]="'#fff'"
+      [text]="'#666'"
+    />
+    <fui-badge
+      [customColor]="true"
+      [color]="'#333'"
+      [textColor]="'#fff'"
+      [text]="'#333'"
+    />
+    <fui-badge
+      [customColor]="true"
+      [color]="'#BADA55'"
+      [textColor]="'#000'"
+      [text]="'#BADA55'"
+    />
+  </div>
+  <div class="flex mt-5">
+    <fui-badge
+      [customColor]="true"
+      [color]="'#FCF7BC'"
+      [textColor]="'#000'"
+      [text]="'#FCF7BC'"
+    />
+    <fui-badge
+      [customColor]="true"
+      [color]="'#FEA27F'"
+      [textColor]="'#000'"
+      [text]="'#FEA27F'"
+    />
+    <fui-badge
+      [customColor]="true"
+      [color]="'#FFA500'"
+      [textColor]="'#fff'"
+      [text]="'#FFA500'"
+    />
+    <fui-badge
+      [customColor]="true"
+      [color]="'#0000FF'"
+      [textColor]="'#fff'"
+      [text]="'#0000FF'"
+    />
+  </div>
 
-    <h4>Badge Large (L)</h4>
-    <li class="flex">
-      <fui-badge [color]="'primary'" [size]="'sizel'">Primary</fui-badge>
-      <fui-badge
-        [color]="'success'"
-        [size]="'sizel'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        >Success</fui-badge
-      >
-      <fui-badge
-        [color]="'warning'"
-        [size]="'sizel'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        >Warning</fui-badge
-      >
-      <fui-badge [color]="'danger'" [size]="'sizel'" [underline]="true"
-        >Danger</fui-badge
-      >
-      <fui-badge
-        [color]="'text'"
-        [size]="'sizel'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'start'"
-        [underline]="true"
-        >Text</fui-badge
-      >
-      <fui-badge
-        [color]="'accent'"
-        [size]="'sizel'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        [underline]="true"
-        >Accent</fui-badge
-      >
-      <fui-badge
-        [color]="'ghost'"
-        [size]="'sizel'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        [underline]="true"
-        >Ghost</fui-badge
-      >
-    </li>
+  <h4 class="mt-20">Disabled state</h4>
+  <p class="mt-10">
+    Regardless of the assigned color, all badges use the same disabled state
+    styles.
+  </p>
+  <div class="flex mt-10">
+    <input type="checkbox" [(ngModel)]="disabled" />
+    <label (click)="disabled = !disabled">Badge with Icon</label>
+  </div>
+  <fui-badge
+    class="mt-10"
+    [disabled]="disabled"
+    [text]="'Disable me!'"
+    [color]="'success'"
+  />
+</div>
 
-    <h4>Badge Extra Large (XL)</h4>
-    <li class="flex">
-      <fui-badge [color]="'primary'" [size]="'sizexl'">Primary</fui-badge>
-      <fui-badge
-        [color]="'success'"
-        [size]="'sizexl'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        >Success</fui-badge
-      >
-      <fui-badge
-        [color]="'warning'"
-        [size]="'sizexl'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        >Warning</fui-badge
-      >
-      <fui-badge [color]="'danger'" [size]="'sizexl'" [underline]="true"
-        >Danger</fui-badge
-      >
-      <fui-badge
-        [color]="'text'"
-        [size]="'sizexl'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'start'"
-        [underline]="true"
-        >Text</fui-badge
-      >
-      <fui-badge
-        [color]="'accent'"
-        [size]="'sizexl'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        [underline]="true"
-        >Accent</fui-badge
-      >
-      <fui-badge
-        [color]="'ghost'"
-        [size]="'sizexl'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        [underline]="true"
-        >Ghost</fui-badge
-      >
-    </li>
+<div class="section">
+  <h3>Badge with Icon</h3>
+  <p class="mt-10">
+    Badges can use icons on the left and right (default) sides.
+  </p>
+  <div class="flex mt-10">
+    <fui-badge
+      [text]="'Hollow'"
+      [color]="'hollow'"
+      [iconShow]="true"
+      [icon]="'cross'"
+      [iconPosition]="'end'"
+    />
+    <fui-badge [text]="'Default'" [iconShow]="true" [icon]="'check'" />
+    <fui-badge
+      [color]="'primary'"
+      [iconColor]="'ghost'"
+      [textColor]="'ghost'"
+      [text]="'Primary with an app icon'"
+      [iconShow]="true"
+      [icon]="'search'"
+    />
+    <fui-badge
+      [textShow]="false"
+      [iconShow]="true"
+      [iconSize]="'sizel'"
+      [icon]="'continuityBelow'"
+    />
+  </div>
+</div>
 
-    <h4>Badge Extra Extra Large (XXL)</h4>
-    <li class="flex">
-      <fui-badge [color]="'primary'" [size]="'sizexxl'">Primary</fui-badge>
-      <fui-badge
-        [color]="'success'"
-        [size]="'sizexxl'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        >Success</fui-badge
-      >
-      <fui-badge
-        [color]="'warning'"
-        [size]="'sizexxl'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        >Warning</fui-badge
-      >
-      <fui-badge [color]="'danger'" [size]="'sizexxl'" [underline]="true"
-        >Danger</fui-badge
-      >
-      <fui-badge
-        [color]="'text'"
-        [size]="'sizexxl'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'start'"
-        [underline]="true"
-        >Text</fui-badge
-      >
-      <fui-badge
-        [color]="'accent'"
-        [size]="'sizexxl'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        [underline]="true"
-        >Accent</fui-badge
-      >
-      <fui-badge
-        [color]="'ghost'"
-        [size]="'sizexxl'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        [underline]="true"
-        >Ghost</fui-badge
-      >
-    </li>
+<div class="section">
+  <h3>Badge with onClick events</h3>
+  <p class="mt-10">
+    Badges can have <b>onClick</b> events applied to the badge itself or the
+    icon within the badge. The latter option is useful for when you might use
+    badges in other components (like a tag system with autocomplete where you
+    need close events). onClick with iconOnClick
+  </p>
+  <div class="flex mt-10">
+    <fui-badge
+      [textClick]="true"
+      [text]="'onClick on text within badge'"
+      [textColor]="'ghost'"
+      [color]="'primary'"
+    />
+    <fui-badge
+      [text]="'onClick on icon within badge'"
+      [textColor]="'ghost'"
+      [color]="'hollow'"
+      [iconShow]="true"
+      [iconClick]="true"
+      [icon]="'cross'"
+      [iconPosition]="'end'"
+    />
+    <fui-badge
+      [textClick]="true"
+      [text]="'onClick on both text and icon within badge'"
+      [textColor]="'ghost'"
+      [color]="'success'"
+      [iconShow]="true"
+      [iconClick]="true"
+      [icon]="'cross'"
+      [iconPosition]="'end'"
+    />
+    <fui-badge [disabled]="true" [text]="'disabled button badge'" />
+  </div>
+</div>
 
-    <h4>Badge Disabled</h4>
-    <li class="flex">
-      <fui-badge [color]="'disabled'" [size]="'sizedefault'"
-        >Size Default</fui-badge
-      >
+<div class="section">
+  <h3>Badge for health status</h3>
+  <p class="mt-10">
+    Badges can work as health status indicators in places where there are a lot
+    of repeated statuses, e.g. in tables.
+  </p>
+  <div class="flex mt-10">
+    <fui-badge [text]="'Healthy'" [color]="'success'" />
+    <fui-badge [text]="'Warning'" [color]="'warning'" />
+    <fui-badge [text]="'Critical'" [color]="'danger'" [textColor]="'ghost'" />
+    <fui-badge [text]="'Unknown'" />
+  </div>
+</div>
+
+<div class="section">
+  <h3>Badge with href</h3>
+  <p class="mt-10">
+    Badges can also be made to render anchor tags by passing an <b>href</b>.
+  </p>
+  <div class="flex mt-10">
+    <fui-badge
+      [customColor]="true"
+      [color]="'#BADA55'"
+      [textColor]="'#000'"
+      [text]="'badge as an anchor'"
+      [hrefLink]="'/atoms/badge'"
+    />
+  </div>
+</div>
+
+<div class="section">
+  <h3>Badge groups and truncation</h3>
+  <p class="mt-10">
+    Badges, like buttons, will only every be a single line of text. This means
+    text will not wrap, but be truncated if the badge's width reaches that of
+    its parent's. For this reason, badges also auto-apply the inner text of the
+    badge to the title attribute of the element to provide default browser
+    tooltips with the full badge text. To ensure proper wrapping, truncation and
+    spacing of multiple badges, it is advisable to wrap them in a
+    <b>FuiBadgeGroup</b>.
+  </p>
+  <div class="flex mt-10">
+    <fui-badge-groups>
       <fui-badge
-        [color]="'disabled'"
-        [size]="'sizexs'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        >Size XS</fui-badge
-      >
+        [text]="'Badge with simple text being truncated'"
+        [truncate]="true"
+      />
+      <fui-badge [text]="'Badge with icon being truncated'" [truncate]="true" />
       <fui-badge
-        [color]="'disabled'"
-        [size]="'sizes'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        >Size S</fui-badge
-      >
-      <fui-badge [color]="'disabled'" [size]="'sizem'" [underline]="true"
-        >Size M</fui-badge
-      >
-      <fui-badge
-        [color]="'disabled'"
-        [size]="'sizel'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'start'"
-        [underline]="true"
-        >Size L</fui-badge
-      >
-      <fui-badge
-        [color]="'disabled'"
-        [size]="'sizexl'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        [underline]="true"
-        >Size XL</fui-badge
-      >
-      <fui-badge
-        [color]="'disabled'"
-        [size]="'sizexxl'"
-        [isBadgeIcon]="true"
-        [icon]="'cross'"
-        [iconPosition]="'end'"
-        [underline]="true"
-        >Size XXL</fui-badge
-      >
-    </li>
-  </ul>
+        [text]="'Badge with onClick being truncated'"
+        [truncate]="true"
+      />
+    </fui-badge-groups>
+  </div>
 </div>

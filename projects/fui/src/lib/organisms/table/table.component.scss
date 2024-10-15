@@ -1,15 +1,15 @@
 @import "../../styles/index";
 .container {
-  width: -webkit-fill-available;
+  width: 100%;
   position: relative;
 }
 .wrap-table {
-  max-width: -webkit-fill-available;
-  width: -webkit-fill-available;
+  max-width: 100%;
+  width: 100%;
 }
 .wrap-content {
-  width: -webkit-fill-available;
-  max-width: -webkit-fill-available;
+  width: 100%;
+  max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
 }
@@ -50,6 +50,7 @@
   }
 }
 .page {
+  padding: 10px;
   margin-top: 15px;
 }
 

@@ -3,7 +3,6 @@ import {
   Component,
   ContentChildren,
   EventEmitter,
-  HostListener,
   Input,
   Output,
   QueryList,
@@ -31,7 +30,7 @@ export class InputFieldComponent {
   @Input({ required: true }) size: 's' | 'm' | 'l' = 'm';
   @Input() placeholder: string = 'Please type here...';
   @Input() formControlField: FormControl = new FormControl('');
-  @Input() borderRadius: string[] = ['4px', '4px', '4px', '4px'];
+  @Input() borderRadius: string = '5px 5px 5px 5px';
   @Input() showInput: boolean = true;
   @Input() disabled: boolean = false;
   @Input() readonly: boolean = false;
@@ -49,19 +48,6 @@ export class InputFieldComponent {
       this.formControlField.disable();
     } else {
       this.formControlField.enable();
-    }
-  }
-
-  @HostListener('document:keydown', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) {
-    if (event.ctrlKey && event.key === 'k') {
-      event.preventDefault();
-      this.focusX = !this.focusX;
-      if (this.focusX) {
-        this.inputX.nativeElement.focus();
-      } else {
-        this.inputX.nativeElement.blur();
-      }
     }
   }
 
