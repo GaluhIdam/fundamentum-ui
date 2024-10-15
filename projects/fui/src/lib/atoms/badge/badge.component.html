@@ -2,7 +2,7 @@
   [ngClass]="['badge', disabled ? 'disabled' : color]"
   [ngStyle]="customColor ? { 'background-color': color, color: textColor } : {}"
 >
-  <fui-icons
+  <fui-icons style="margin-top: 1px;"
     *ngIf="iconShow && iconPosition === 'start'"
     [ngClass]="iconClick ? 'hover' : ''"
     (click)="handleClickedIcon()"
@@ -40,7 +40,7 @@
     {{ text }}
   </a>
 
-  <fui-icons
+  <fui-icons style="margin-top: 1px;"
     *ngIf="iconShow && iconPosition === 'end'"
     [ngClass]="iconClick ? 'hover' : ''"
     (click)="handleClickedIcon()"
