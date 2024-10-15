@@ -21,6 +21,7 @@ export class TextComponent {
   @Input() textOverflow: 'ellipsis' | 'clip' | 'none' = 'none';
   @Input() weight:
     | 'thin'
+    | 'extralight'
     | 'light'
     | 'regular'
     | 'medium'
