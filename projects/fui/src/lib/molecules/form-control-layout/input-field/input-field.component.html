@@ -1,5 +1,5 @@
 <div
-  (click)="handleKeyboardEvent()"
+  [ngStyle]="{ 'border-radius': borderRadius }"
   class="{{
     disabled ? 'fui-input-field inactive disabled' : 'fui-input-field inactive'
   }}"

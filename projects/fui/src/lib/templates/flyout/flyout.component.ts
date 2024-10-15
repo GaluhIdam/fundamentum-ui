@@ -10,14 +10,6 @@ import { IconsComponent } from '../../atoms/icons/icons.component';
 import { ButtonEmptyComponent } from '../../atoms/button-empty/button-empty.component';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../../atoms/button/button.component';
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
-import { BehaviorSubject } from 'rxjs';
 import { OverlayMaskComponent } from '../../atoms/overlay-mask/overlay-mask.component';
 
 /**
@@ -47,18 +39,7 @@ import { OverlayMaskComponent } from '../../atoms/overlay-mask/overlay-mask.comp
   standalone: true,
   templateUrl: './flyout.component.html',
   styleUrl: './flyout.component.scss',
-  animations: [
-    trigger('slideInOut', [
-      state('void', style({})),
-      state(
-        '*',
-        style({
-          transform: 'translateX(0)',
-        })
-      ),
-      transition('void <=> *', animate('300ms ease-in-out')),
-    ]),
-  ],
+
   imports: [
     CommonModule,
     TextComponent,
@@ -71,10 +52,24 @@ import { OverlayMaskComponent } from '../../atoms/overlay-mask/overlay-mask.comp
 export class FlyoutComponent {
   @Input() openFlyout: boolean = false;
   @Input() withOverlay: boolean = true;
+  @Input() size: 's' | 'm' | 'l' = 's';
   @Output() overlayOut: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  animation: boolean = false;
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes) {
+      setTimeout(() => {
+        this.animation = this.openFlyout;
+      }, 100);
+    }
+  }
+
   handleOverlayClick() {
-    this.openFlyout = false;
-    this.overlayOut.emit(false);
+    this.animation = false;
+    setTimeout(() => {
+      this.openFlyout = false;
+      this.overlayOut.emit(false);
+    }, 300);
   }
 }

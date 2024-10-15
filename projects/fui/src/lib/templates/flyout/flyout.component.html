@@ -1,6 +1,6 @@
 @if (openFlyout) {
 <div class="overlay" *ngIf="withOverlay" (click)="handleOverlayClick()"></div>
-<div class="flyout">
+<div class="flyout" [ngClass]="[size, animation ? 'open' : 'close']">
   <ng-content></ng-content>
 </div>
 }

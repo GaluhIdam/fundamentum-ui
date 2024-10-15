@@ -32,3 +32,13 @@
     justify-content: end;
   }
 }
+
+.flex-10 {
+  display: flex;
+  gap: 10px;
+}
+.grid-10 {
+  display: grid;
+  gap: 10px;
+  height: fit-content;
+}

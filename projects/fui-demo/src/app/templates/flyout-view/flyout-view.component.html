@@ -7,80 +7,103 @@
   information, controls, and buttons like "Save" or "Cancel."
 </p>
 
-<div class="mt-30">
-  <h4>Basic Flyout</h4>
-  <div class="mt-20">
-    <div class="flyout">
-      <fui-flyout-header (closeOut)="toggleFlyout($event)">
-        <div class="flex-start">
-          <fui-icons [icon]="'list'" [color]="'primary'" [size]="'sizem'" />
-          <fui-text [color]="'primary'" [size]="'l'"> Basic Flyout </fui-text>
-        </div>
-      </fui-flyout-header>
+<div class="flex-10">
+  <div class="mt-30">
+    <h4>Basic Flyout</h4>
+    <div class="mt-20">
+      <div class="flyout">
+        <fui-flyout-header (closeOut)="toggleFlyout($event)">
+          <div class="flex-start">
+            <fui-icons [icon]="'list'" [color]="'primary'" [size]="'sizem'" />
+            <fui-text [color]="'primary'" [size]="'l'"> Basic Flyout </fui-text>
+          </div>
+        </fui-flyout-header>
 
-      <fui-flyout-body>
-        <div style="margin-top: 1rem">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur
-          accusamus similique nobis asperiores voluptatibus! Quidem nobis
-          repudiandae beatae! Amet mollitia vero numquam quas molestiae illum
-          veniam ullam ratione corporis quam.
-        </div>
-      </fui-flyout-body>
+        <fui-flyout-body>
+          <div style="margin-top: 1rem">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur
+            accusamus similique nobis asperiores voluptatibus! Quidem nobis
+            repudiandae beatae! Amet mollitia vero numquam quas molestiae illum
+            veniam ullam ratione corporis quam.
+          </div>
+        </fui-flyout-body>
 
-      <fui-flyout-footer>
-        <div class="flex-footer">
-          <fui-button-icon
-            [type]="'button'"
-            [fullWidth]="'fit'"
-            [color]="'text'"
-            [style]="'secondary'"
-            [option]="'text'"
-            [text]="'Cancel'"
-            (onClick)="toggleFlyout(false)"
-          />
-          <div class="flex-group">
+        <fui-flyout-footer>
+          <div class="flex-footer">
             <fui-button-icon
               [type]="'button'"
               [fullWidth]="'fit'"
               [color]="'text'"
-              [style]="'filled'"
-              [option]="'iconText'"
-              [icon]="'refresh'"
-              [text]="'Reset'"
+              [style]="'secondary'"
+              [option]="'text'"
+              [text]="'Cancel'"
+              (onClick)="toggleFlyout(false)"
             />
-            <fui-button-icon
-              [type]="'button'"
-              [fullWidth]="'fit'"
-              [color]="'primary'"
-              [style]="'filled'"
-              [option]="'iconText'"
-              [icon]="'save'"
-              [text]="'Save'"
-            />
+            <div class="flex-group">
+              <fui-button-icon
+                [type]="'button'"
+                [fullWidth]="'fit'"
+                [color]="'text'"
+                [style]="'filled'"
+                [option]="'iconText'"
+                [icon]="'refresh'"
+                [text]="'Reset'"
+              />
+              <fui-button-icon
+                [type]="'button'"
+                [fullWidth]="'fit'"
+                [color]="'primary'"
+                [style]="'filled'"
+                [option]="'iconText'"
+                [icon]="'save'"
+                [text]="'Save'"
+              />
+            </div>
           </div>
-        </div>
-      </fui-flyout-footer>
+        </fui-flyout-footer>
+      </div>
     </div>
   </div>
-
-  <div class="mt-20">
+  <div class="mt-30 grid-10">
     <fui-button-icon
       [type]="'button'"
       [fullWidth]="'fit'"
       [color]="'text'"
       [style]="'secondary'"
       [option]="'text'"
-      [text]="'Open Flyout'"
+      [text]="'Open Flyout S'"
       (onClick)="toggleFlyout(true)"
+    />
+    <fui-button-icon
+      [type]="'button'"
+      [fullWidth]="'fit'"
+      [color]="'text'"
+      [style]="'secondary'"
+      [option]="'text'"
+      [text]="'Open Flyout M'"
+      (onClick)="toggleFlyoutM(true)"
+    />
+    <fui-button-icon
+      [type]="'button'"
+      [fullWidth]="'fit'"
+      [color]="'text'"
+      [style]="'secondary'"
+      [option]="'text'"
+      [text]="'Open Flyout L'"
+      (onClick)="toggleFlyoutL(true)"
     />
   </div>
 </div>
 
-<!-- FLYOUT  -->
+<!-- FLYOUT S -->
 <fui-flyout [openFlyout]="isOpenFlyout" (overlayOut)="toggleFlyout($event)">
   <fui-flyout-header (closeOut)="toggleFlyout($event)">
     <div class="flex-start">
-      <fui-icons [icon]="'tableOfContents'" [color]="'primary'" [size]="'sizem'" />
+      <fui-icons
+        [icon]="'tableOfContents'"
+        [color]="'primary'"
+        [size]="'sizem'"
+      />
       <fui-text [color]="'primary'" [size]="'l'"> Basic Flyout </fui-text>
     </div>
   </fui-flyout-header>
@@ -128,4 +151,128 @@
     </div>
   </fui-flyout-footer>
 </fui-flyout>
-<!-- FLYOUT  -->
+<!-- FLYOUT S -->
+
+<!-- FLYOUT M -->
+<fui-flyout
+  [size]="'m'"
+  [openFlyout]="isOpenFlyoutM"
+  (overlayOut)="toggleFlyoutM($event)"
+>
+  <fui-flyout-header (closeOut)="toggleFlyoutM($event)">
+    <div class="flex-start">
+      <fui-icons
+        [icon]="'tableOfContents'"
+        [color]="'primary'"
+        [size]="'sizem'"
+      />
+      <fui-text [color]="'primary'" [size]="'l'"> Basic Flyout </fui-text>
+    </div>
+  </fui-flyout-header>
+
+  <fui-flyout-body>
+    <div style="margin-top: 1rem">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur
+      accusamus similique nobis asperiores voluptatibus! Quidem nobis
+      repudiandae beatae! Amet mollitia vero numquam quas molestiae illum veniam
+      ullam ratione corporis quam.
+    </div>
+  </fui-flyout-body>
+
+  <fui-flyout-footer>
+    <div class="flex-footer">
+      <fui-button-icon
+        [type]="'button'"
+        [fullWidth]="'fit'"
+        [color]="'text'"
+        [style]="'secondary'"
+        [option]="'text'"
+        [text]="'Cancel'"
+        (onClick)="toggleFlyoutM(false)"
+      />
+      <div class="flex-group">
+        <fui-button-icon
+          [type]="'button'"
+          [fullWidth]="'fit'"
+          [color]="'text'"
+          [style]="'filled'"
+          [option]="'iconText'"
+          [icon]="'refresh'"
+          [text]="'Reset'"
+        />
+        <fui-button-icon
+          [type]="'button'"
+          [fullWidth]="'fit'"
+          [color]="'primary'"
+          [style]="'filled'"
+          [option]="'iconText'"
+          [icon]="'save'"
+          [text]="'Save'"
+        />
+      </div>
+    </div>
+  </fui-flyout-footer>
+</fui-flyout>
+<!-- FLYOUT M -->
+
+<!-- FLYOUT L -->
+<fui-flyout
+  [size]="'l'"
+  [openFlyout]="isOpenFlyoutL"
+  (overlayOut)="toggleFlyoutL($event)"
+>
+  <fui-flyout-header (closeOut)="toggleFlyoutL($event)">
+    <div class="flex-start">
+      <fui-icons
+        [icon]="'tableOfContents'"
+        [color]="'primary'"
+        [size]="'sizem'"
+      />
+      <fui-text [color]="'primary'" [size]="'l'"> Basic Flyout </fui-text>
+    </div>
+  </fui-flyout-header>
+
+  <fui-flyout-body>
+    <div style="margin-top: 1rem">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur
+      accusamus similique nobis asperiores voluptatibus! Quidem nobis
+      repudiandae beatae! Amet mollitia vero numquam quas molestiae illum veniam
+      ullam ratione corporis quam.
+    </div>
+  </fui-flyout-body>
+
+  <fui-flyout-footer>
+    <div class="flex-footer">
+      <fui-button-icon
+        [type]="'button'"
+        [fullWidth]="'fit'"
+        [color]="'text'"
+        [style]="'secondary'"
+        [option]="'text'"
+        [text]="'Cancel'"
+        (onClick)="toggleFlyoutL(false)"
+      />
+      <div class="flex-group">
+        <fui-button-icon
+          [type]="'button'"
+          [fullWidth]="'fit'"
+          [color]="'text'"
+          [style]="'filled'"
+          [option]="'iconText'"
+          [icon]="'refresh'"
+          [text]="'Reset'"
+        />
+        <fui-button-icon
+          [type]="'button'"
+          [fullWidth]="'fit'"
+          [color]="'primary'"
+          [style]="'filled'"
+          [option]="'iconText'"
+          [icon]="'save'"
+          [text]="'Save'"
+        />
+      </div>
+    </div>
+  </fui-flyout-footer>
+</fui-flyout>
+<!-- FLYOUT L -->

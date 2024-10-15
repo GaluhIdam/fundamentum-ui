@@ -6,13 +6,13 @@
   right: 0;
   bottom: 0;
   height: 100vh;
-  width: 350px;
   z-index: 2000;
   background-color: var(--fuiColorEmptyShade, $fuiColorEmptyShade);
   box-shadow: 0 2.7px 9px #00000021, 0 9.4px 24px #00000017,
     0 21.8px 43px #00000014;
   display: flex;
   flex-direction: column;
+  transform: translateX(0%);
 }
 
 .overlay {
@@ -23,4 +23,23 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
+}
+
+.close {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+}
+.open {
+  transform: translateX(0%);
+  transition: transform 0.3s ease-in;
+}
+
+.s {
+  width: 350px;
+}
+.m {
+  width: 450px;
+}
+.l {
+  width: 550px;
 }

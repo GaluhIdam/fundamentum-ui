@@ -26,11 +26,19 @@ import {
 })
 export class FlyoutViewComponent {
   isOpenFlyout = false;
-  flyoutSize: 's' | 'm' | 'l' = 'm';
-  flyoutPaddingSize: 'none' | 's' | 'm' | 'l' = 'm';
+  isOpenFlyoutM = false;
+  isOpenFlyoutL = false;
 
   /** Toggle Flyout */
   toggleFlyout(event: boolean): void {
     this.isOpenFlyout = event;
+  }
+  /** Toggle Flyout */
+  toggleFlyoutM(event: boolean): void {
+    this.isOpenFlyoutM = event;
+  }
+  /** Toggle Flyout */
+  toggleFlyoutL(event: boolean): void {
+    this.isOpenFlyoutL = event;
   }
 }

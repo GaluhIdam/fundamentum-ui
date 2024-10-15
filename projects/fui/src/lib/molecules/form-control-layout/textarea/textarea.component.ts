@@ -26,7 +26,7 @@ export class TextareaComponent {
   @Input({ required: true }) size: 's' | 'm' | 'l' = 'm';
   @Input() placeholder: string = 'Please type here...';
   @Input() formControlField: FormControl = new FormControl('');
-  @Input() borderRadius: string[] = ['4px', '4px', '4px', '4px'];
+  @Input() borderRadius: string = '5px 5px 5px 5px';
   @Input() showInput: boolean = true;
   @Input() disabled: boolean = false;
   iconLeft: boolean = false;
@@ -83,10 +83,10 @@ export class TextareaComponent {
     const textarea = this.inputX.nativeElement;
     textarea.style.height = 'auto'; // Reset the height to auto to calculate the scroll height correctly
     if (this.size === 's') {
-      textarea.style.height = `${textarea.scrollHeight-18}px`; // Set the height to the scroll height
+      textarea.style.height = `${textarea.scrollHeight - 18}px`; // Set the height to the scroll height
     }
     if (this.size === 'm') {
-      textarea.style.height = `${textarea.scrollHeight-17}px`; // Set the height to the scroll height
+      textarea.style.height = `${textarea.scrollHeight - 17}px`; // Set the height to the scroll height
     }
   }
 }
