@@ -1,6 +1,6 @@
 <div class="fui-date-range">
   <fui-form-control-layout>
-    <fui-popover [position]="position" align="start">
+    <fui-popover [position]="position" align="start" style="width: 100%">
       <fui-input-field
         [borderRadius]="['0px', '0px', '6px', '6px']"
         [invalid]="isInvalidStartDate"
@@ -23,7 +23,8 @@
 
       <div popover-body>
         <div class="fui-date-picker__header">
-          <fui-button-icon [fullWidth]="'fit'"
+          <fui-button-icon
+            [fullWidth]="'fit'"
             (click)="prevMonth(true)"
             color="text"
             icon="arrowLeft"
@@ -51,7 +52,8 @@
               {{ year }}
             </option>
           </select>
-          <fui-button-icon [fullWidth]="'fit'"
+          <fui-button-icon
+            [fullWidth]="'fit'"
             (click)="nextMonth(true)"
             color="text"
             icon="arrowRight"
@@ -107,7 +109,7 @@
     <div class="fui-date-range__delimiter">
       <fui-icons icon="sortRight" size="sizel"></fui-icons>
     </div>
-    <fui-popover [position]="position" align="end">
+    <fui-popover [position]="position" align="end" style="width: 100%">
       <fui-input-field
         [disabled]="disabled"
         [borderRadius]="['6px', '6px', '0px', '0px']"
@@ -125,7 +127,8 @@
       </fui-input-field>
       <div popover-body>
         <div class="fui-date-picker__header">
-          <fui-button-icon [fullWidth]="'fit'"
+          <fui-button-icon
+            [fullWidth]="'fit'"
             (click)="prevMonth(false)"
             color="text"
             icon="arrowLeft"
@@ -153,7 +156,8 @@
               {{ year }}
             </option>
           </select>
-          <fui-button-icon [fullWidth]="'fit'"
+          <fui-button-icon
+            [fullWidth]="'fit'"
             (click)="nextMonth(false)"
             color="text"
             icon="arrowRight"

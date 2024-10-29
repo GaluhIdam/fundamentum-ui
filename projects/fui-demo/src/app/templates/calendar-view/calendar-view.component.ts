@@ -59,7 +59,7 @@ export class CalendarViewComponent {
     {
       date: 1,
       year: '2024',
-      month: this.months[this.dateNow.getMonth()],
+      month: 'October',
       color: 'success',
       event: {
         title: 'Tech Conference Batch 1',
@@ -74,7 +74,7 @@ export class CalendarViewComponent {
     {
       date: 9,
       year: '2024',
-      month: this.months[this.dateNow.getMonth()],
+      month: 'October',
       color: 'danger',
       event: {
         title: 'Magic Test',
@@ -89,7 +89,22 @@ export class CalendarViewComponent {
     {
       date: 9,
       year: '2024',
-      month: this.months[this.dateNow.getMonth()],
+      month: 'October',
+      color: 'success',
+      event: {
+        title: 'Tech Conference Batch 2',
+        subTitle: 'Innovation Summit',
+        start: '10:00',
+        end: '12:00',
+        place: 'Convention Center',
+        description:
+          'Join us for a day of groundbreaking discussions on innovation.',
+      },
+    },
+    {
+      date: 15,
+      year: '2024',
+      month: 'October',
       color: 'success',
       event: {
         title: 'Tech Conference Batch 2',
@@ -104,22 +119,50 @@ export class CalendarViewComponent {
     {
       date: 10,
       year: '2024',
-      month: this.months[this.dateNow.getMonth()],
+      month: 'October',
       color: 'danger',
       event: {
         title: 'Magic Test',
         subTitle: 'Innovation Summit',
-        start: '10:00',
-        end: '12:00',
+        start: '15:00',
+        end: '18:00',
         place: 'Convention Center',
         description:
           'Join us for a day of groundbreaking discussions on innovation.',
       },
     },
     {
+      date: 9,
+      year: '2024',
+      month: 'October',
+      color: 'danger',
+      event: {
+        title: 'Test',
+        subTitle: 'test',
+        start: '10:00',
+        end: '12:00',
+        place: 'Maratua Room',
+        description: 'Nothing',
+      },
+    },
+    {
       date: 10,
       year: '2024',
-      month: this.months[this.dateNow.getMonth()],
+      month: 'October',
+      color: 'danger',
+      event: {
+        title: 'Sprint Review',
+        subTitle: 'Review result',
+        start: '10:00',
+        end: '12:00',
+        place: 'Maratua Room',
+        description: 'Nothing',
+      },
+    },
+    {
+      date: 10,
+      year: '2024',
+      month: 'October',
       color: 'success',
       event: {
         title: 'Tech Conference Batch 2',

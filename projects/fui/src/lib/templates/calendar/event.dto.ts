@@ -12,3 +12,8 @@ export interface EventDTO {
     description: string;
   };
 }
+
+export interface EventPerdateDTO {
+  event: EventDTO;
+  total: number;
+}

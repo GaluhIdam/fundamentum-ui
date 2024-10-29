@@ -65,6 +65,7 @@ import { SecurePageComponent } from './oidc-authenticator/secure-page/secure-pag
 import { AuthGuard } from './core/guard/auth.guard';
 import { inject, PLATFORM_ID } from '@angular/core';
 import { TextViewComponent } from './atoms/text-view/text-view.component';
+import { AdvanceFilterViewComponent } from './templates/advance-filter-view/advance-filter-view.component';
 
 /** ATTENTION, ADD A TITLE IN CHILDREN ROUTE FOR THE DOCUMENTATION */
 export const routes: Routes = [
@@ -439,6 +440,11 @@ export const routes: Routes = [
         title: 'Tree View',
         path: 'tree-view',
         component: TreeViewViewComponent,
+      },
+      {
+        title: 'Advance Filter',
+        path: 'advance-filter',
+        component: AdvanceFilterViewComponent,
       },
     ],
   },

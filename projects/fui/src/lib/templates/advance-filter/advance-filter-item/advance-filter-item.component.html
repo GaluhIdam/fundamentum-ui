@@ -1,0 +1,19 @@
+<div class="flex">
+  <fui-text>{{ label }}</fui-text>
+  <div class="group">
+    <fui-text [size]="'s'">{{ value }}</fui-text>
+    <fui-button-icon
+      [fullWidth]="'fit'"
+      [color]="'text'"
+      [type]="'button'"
+      [option]="'icon'"
+      [size]="'s'"
+      [style]="'empty'"
+      [icon]="showHide ? 'minus' : 'plus'"
+      (onClick)="toggleShowHide()"
+    />
+  </div>
+</div>
+<div *ngIf="showHide">
+  <ng-content></ng-content>
+</div>

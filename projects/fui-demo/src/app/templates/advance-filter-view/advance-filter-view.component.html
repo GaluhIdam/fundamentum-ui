@@ -1,0 +1,62 @@
+<h1>Advance Filter</h1>
+<p>
+  The fui-advance-filter component is a customizable filter interface for
+  advanced data searching and filtering in Angular applications. It allows users
+  to define multiple filter sections, each containing input forms for targeted
+  criteria. The component includes options for text input (fui-input-field),
+  selection from predefined lists (fui-combo-box), and date ranges
+  (fui-date-range), making it adaptable to various data types. The component's
+  structure supports configurable labels, values, and placeholders, with event
+  emitters like actionOut for handling user actions.
+</p>
+<fui-button-icon
+  style="margin-top: 20px; display: flex;"
+  [type]="'button'"
+  [option]="'text'"
+  [text]="'Advance Filter'"
+  (onClick)="modalOpen = true"
+/>
+<fui-advance-filter [openFilter]="modalOpen" (actionOut)="actionOut($event)">
+  <fui-advance-filter-section [title]="'Invoice'">
+    <fui-advance-filter-item
+      [label]="'Search something'"
+      [value]="searchForm.value"
+    >
+      <fui-form-control-layout>
+        <fui-input-field
+          [size]="'m'"
+          [formControlField]="searchForm"
+          [type]="'text'"
+          [size]="'l'"
+          [placeholder]="'Type something...'"
+          [invalid]="false"
+        >
+        </fui-input-field>
+      </fui-form-control-layout>
+    </fui-advance-filter-item>
+
+    <fui-advance-filter-item
+      [label]="'Paying Name'"
+      [value]="getFormattedNames()"
+    >
+      <fui-combo-box
+        [optionValue]="optionValuePayingName"
+        [selectedValue]="selectedValuePayingName"
+        [placeholder]="'Select paying name'"
+      />
+    </fui-advance-filter-item>
+
+    <fui-advance-filter-item
+      [label]="'Issuance Date'"
+      [value]="returnDateForm()"
+    >
+      <fui-date-range
+        [dateFormat]="'DD-MM-YYYY'"
+        [startDateControl]="startDateForm"
+        [endDateControl]="endDateForm"
+        (onChangeStartDate)="changeDateForm($event, 'start')"
+        (onChangeEndDate)="changeDateForm($event, 'end')"
+      />
+    </fui-advance-filter-item>
+  </fui-advance-filter-section>
+</fui-advance-filter>

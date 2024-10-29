@@ -1,5 +1,9 @@
 @import "../../styles/index";
 
+:host {
+  width: 100%;
+}
+
 .fui-header-container {
   position: relative;
   font-family: $fuiFontFamily;

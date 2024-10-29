@@ -1,0 +1,14 @@
+@import "../../styles/index";
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  .flex {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.body {
+  min-width: 700px;
+}

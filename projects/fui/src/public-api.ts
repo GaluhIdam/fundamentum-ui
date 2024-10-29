@@ -157,6 +157,9 @@ export * from './lib/templates/page/page-body/page-body.component';
 export * from './lib/templates/page/page-section/page-section.component';
 export * from './lib/templates/calendar/calendar.component';
 export * from './lib/templates/calendar/event.dto';
+export * from './lib/templates/advance-filter/advance-filter.component';
+export * from './lib/templates/advance-filter/advance-filter-section/advance-filter-section.component';
+export * from './lib/templates/advance-filter/advance-filter-item/advance-filter-item.component';
 
 /** Horizontal Stack */
 export * from './lib/molecules/horizontal-stack/horizontal-stack.component';

@@ -17,13 +17,13 @@ input {
   }
 }
 .fui-input-field-s {
-  @include textFieldBaseStyles($fuiSizeM, 6px);
+  @include textFieldBaseStyles(small, 6px);
 }
 .fui-input-field-m {
-  @include textFieldBaseStyles($fuiSizeM + 3, 8px);
+  @include textFieldBaseStyles(medium, 8px);
 }
 .fui-input-field-l {
-  @include textFieldBaseStyles($fuiSizeM + 6, 8px);
+  @include textFieldBaseStyles(large, 8px);
 }
 
 .full-width {

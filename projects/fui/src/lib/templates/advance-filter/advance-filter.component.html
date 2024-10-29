@@ -1,0 +1,41 @@
+@if (openFilter) {
+<fui-modal [open]="openFilter" (onClickOverlayModal)="toggleOpenClose(false)">
+  <fui-modal-header (onCloseModal)="toggleOpenClose(false)">
+    <fui-text [size]="'xl'" [weight]="'semibold'">{{ title }}</fui-text>
+  </fui-modal-header>
+
+  <fui-modal-body>
+    <div class="body">
+      <ng-content></ng-content>
+    </div>
+  </fui-modal-body>
+
+  <fui-modal-footer>
+    <div class="footer">
+      <fui-button-icon
+        [type]="'button'"
+        [style]="'empty'"
+        [option]="'text'"
+        [text]="'Clear'"
+        (onClick)="toggleOpenClose('clear')"
+      />
+      <div class="flex">
+        <fui-button-icon
+          [style]="'empty'"
+          [color]="'text'"
+          [type]="'button'"
+          [option]="'text'"
+          [text]="'Cancel'"
+          (onClick)="toggleOpenClose(false)"
+        />
+        <fui-button-icon
+          [type]="'button'"
+          [option]="'text'"
+          [text]="'Apply Filter'"
+          (onClick)="toggleOpenClose('filter')"
+        />
+      </div>
+    </div>
+  </fui-modal-footer>
+</fui-modal>
+}

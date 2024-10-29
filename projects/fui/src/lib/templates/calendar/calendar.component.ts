@@ -23,7 +23,7 @@ import {
 } from '../../../public-api';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { EventDTO } from './event.dto';
+import { EventDTO, EventPerdateDTO } from './event.dto';
 
 /**
  * The Calendar Component
@@ -105,15 +105,15 @@ export class CalendarComponent {
     value: any;
   }[] = [];
 
-  daysInMonth: { date: number; day: string; month: string }[] = [];
+  daysInMonth: {
+    date: number;
+    day: string;
+    month: string;
+  }[] = [];
   weekdays: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   weeks: { date: number; day: string; month: string }[][] = [];
-  prevMonth: string = 'April';
-  nextMonth: string = 'June';
-
-  hours: string[] = Array.from({ length: 24 }, (_, i) => this.formatHour(i));
-  today: Date = new Date();
-  eventToday: EventDTO[] = [];
+  prevMonth: string = '';
+  nextMonth: string = '';
 
   /** Modal Create Event */
   isOpenCreateEvent: boolean = false;
@@ -137,12 +137,24 @@ export class CalendarComponent {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes) {
-      this.getEventToday();
-    }
-  }
+      if (this.events.length > 0) {
+        const cleanedEvents = this.cleanAndGroupEvents(this.events);
+        console.log('clean', cleanedEvents);
 
-  private formatHour(hour: number): string {
-    return `${hour < 10 ? '0' : ''}${hour}:00`;
+        const z = this.filterEventsByMinimumDate(cleanedEvents);
+        console.log('filter', z);
+
+        const result = this.filterAndCountEvents(this.events);
+        console.log('result', result);
+
+        const v = this.removeDuplicateEvents(this.events, cleanedEvents);
+
+        console.log('remove', v);
+
+        const a = [...z, ...v];
+        console.log('merge', a);
+      }
+    }
   }
 
   restructureMonth(): void {
@@ -158,16 +170,6 @@ export class CalendarComponent {
           label: item,
           value: item,
         });
-      });
-    }
-  }
-
-  getEventToday(): void {
-    if (this.events.length > 0) {
-      this.events.forEach((item) => {
-        if (item.date === this.today.getDate()) {
-          this.eventToday.unshift(item);
-        }
       });
     }
   }
@@ -203,7 +205,7 @@ export class CalendarComponent {
   dateNow(): void {
     const currentYear: number = new Date().getFullYear();
     const years: string[] = [];
-    for (let year = currentYear; year >= 2000; year--) {
+    for (let year = currentYear - 5; year <= currentYear + 5; year++) {
       years.push(year.toString());
     }
     this.year = years;
@@ -297,7 +299,7 @@ export class CalendarComponent {
   }
 
   /**
-   * @ignore
+   * Get date now
    */
   getDateNow(): void {
     const currentDateNow = new Date();
@@ -307,6 +309,7 @@ export class CalendarComponent {
     this.nowYear = currentDateNow.getFullYear().toString();
   }
 
+  /** Toggle for previos month */
   onPrevMonth(): void {
     let monthIndex = this.month.indexOf(this.selectedMonth.value);
     if (monthIndex === 0) {
@@ -322,6 +325,7 @@ export class CalendarComponent {
     this.updateDaysInMonth();
   }
 
+  /** Toggle for next month */
   onNextMonth(): void {
     let monthIndex = this.month.indexOf(this.selectedMonth.value);
     if (monthIndex === this.month.length - 1) {
@@ -342,17 +346,108 @@ export class CalendarComponent {
     return hours * 60 + minutes;
   }
 
-  getEventHeight(event: EventDTO): number {
-    const startMinutes = this.timeToMinutes(event.event.start);
-    const endMinutes = this.timeToMinutes(event.event.end);
-    const duration = endMinutes - startMinutes; // Duration in minutes
-
-    // Set a base height per minute (e.g., 2px per minute)
-    const heightPerMinute = 2; // Adjust this value as needed
-    return duration * heightPerMinute;
-  }
-
   handleCreateEventModal(): void {
     this.isOpenCreateEvent = !this.isOpenCreateEvent;
+  }
+
+  cleanAndGroupEvents(events: EventDTO[]): EventDTO[] {
+    const eventMap = new Map<string, EventDTO[]>();
+    const sameEvent: EventDTO[] = [];
+
+    // Group events by a unique key combining title, subtitle, month, and year
+    events.forEach((event) => {
+      const key = `${event.event.title}-${event.event.subTitle}-${event.month}-${event.year}`;
+      if (!eventMap.has(key)) {
+        eventMap.set(key, []);
+      }
+      eventMap.get(key)?.push(event);
+    });
+
+    // Iterate over each group of events
+    eventMap.forEach((eventGroup) => {
+      // Sort the group by date (in case they are not sorted)
+      const sortedGroup = eventGroup.sort((a, b) => a.date - b.date);
+      let previousDate = null;
+      const sequentialEvents: EventDTO[] = [];
+
+      // Check for sequential dates
+      for (const event of sortedGroup) {
+        if (previousDate === null || event.date === previousDate + 1) {
+          sequentialEvents.push(event);
+        } else {
+          // If we encounter a gap, check if we have sequential events to add to sameEvent
+          if (sequentialEvents.length > 1) {
+            sameEvent.push(...sequentialEvents);
+          }
+          sequentialEvents.length = 0; // Reset for the next sequence
+        }
+        previousDate = event.date;
+      }
+
+      // Check for any remaining sequential events
+      if (sequentialEvents.length > 1) {
+        sameEvent.push(...sequentialEvents);
+      }
+    });
+    return sameEvent;
+  }
+
+  removeDuplicateEvents(
+    events: EventDTO[],
+    duplicates: EventDTO[]
+  ): EventDTO[] {
+    const duplicatesSet = new Set(
+      duplicates.map(
+        (duplicate) =>
+          `${duplicate.date}-${duplicate.year}-${duplicate.month}-${duplicate.event.title}-${duplicate.event.subTitle}`
+      )
+    );
+
+    return events.filter((event) => {
+      const eventKey = `${event.date}-${event.year}-${event.month}-${event.event.title}-${event.event.subTitle}`;
+      if (duplicatesSet.has(eventKey)) {
+        duplicatesSet.delete(eventKey); // Remove the key to keep the first occurrence
+        return false; // Filter out the duplicate
+      }
+      return true; // Keep the unique event
+    });
+  }
+
+  filterEventsByMinimumDate(events: EventDTO[]): EventDTO[] {
+    // Find the minimum date
+    const minDate = Math.min(...events.map((event) => event.date));
+
+    // Return only events that match the minimum date
+    return events.filter((event) => event.date === minDate);
+  }
+
+  filterAndCountEvents(events: EventDTO[]): any[] {
+    // Find the minimum date
+    const minDate = Math.min(...events.map((event) => event.date));
+
+    // Filter events by minimum date
+    const filteredEvents = events.filter((event) => event.date === minDate);
+
+    // Count occurrences of each unique event based on multiple properties
+    const eventCount = filteredEvents.reduce((acc, event) => {
+      const key = JSON.stringify({
+        title: event.event.title,
+        subTitle: event.event.subTitle,
+        color: event.color,
+        start: event.event.start,
+        end: event.event.end,
+        place: event.event.place,
+        description: event.event.description,
+      });
+
+      if (!acc[key]) {
+        acc[key] = { event: { ...event }, total: 0 };
+      }
+      acc[key].total++;
+      return acc;
+    }, {} as Record<string, any>);
+
+    // Convert the result back to an array
+    return Object.values(eventCount);
   }
 }

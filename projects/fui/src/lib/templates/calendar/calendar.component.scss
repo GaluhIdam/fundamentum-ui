@@ -1,443 +1,90 @@
 @import "../../styles/index";
 
-.calendar {
-  height: max-content;
+.toggle-select {
   display: flex;
-  flex-wrap: nowrap;
-  overflow: hidden;
-  gap: 20px;
+  width: fit-content;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 15px;
 }
-.container {
-  height: max-content;
-  overflow-x: auto;
-}
-.head-calendar {
-  display: flex;
-  margin-bottom: 10px;
-  justify-content: space-between;
+.label-calendar {
+  display: block;
 }
 
-.now {
-  color: var(--fuiColorDarkShade, $fuiColorDarkShade);
-}
-
-.utility {
-  display: flex;
-  gap: 10px;
-  align-content: end;
-  flex-wrap: wrap;
-}
-
-.title {
-  text-align: left;
-  display: flex;
-  align-items: baseline;
-  &:hover {
-    cursor: pointer;
-  }
-  gap: 10px;
-  h1 {
-    margin: 0;
-  }
-  h4 {
-    margin: 0;
-  }
-}
-
-.calendar-wrap {
-  display: grid;
-  width: 100%;
-}
-
-.select-form {
-  @include selectFormMix();
-}
-.content-calendar {
-  min-width: 800px;
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-}
-.week-calendar {
-  &-primary {
-    @include weekCalendarMix(
-      var(--fuiPrimary, $fuiPrimary),
-      var(--fuiPrimarySecondary, $fuiPrimarySecondary)
-    );
-  }
-  &-success {
-    @include weekCalendarMix(
-      var(--fuiSuccess, $fuiSuccess),
-      var(--fuiSuccessSecondary, $fuiSuccessSecondary)
-    );
-  }
-  &-warning {
-    @include weekCalendarMix(
-      var(--fuiWarning, $fuiWarning),
-      var(--fuiWarningSecondary, $fuiWarningSecondary)
-    );
-  }
-  &-danger {
-    @include weekCalendarMix(
-      var(--fuiDanger, $fuiDanger),
-      var(--fuiDangerSecondary, $fuiDangerSecondary)
-    );
-  }
-  &-text {
-    @include weekCalendarMix(
-      var(--fuiText, $fuiText),
-      var(--fuiTextSecondary, $fuiTextSecondary)
-    );
-  }
-  &-accent {
-    @include weekCalendarMix(
-      var(--fuiAccent, $fuiAccent),
-      var(--fuiAccentSecondary, $fuiAccentSecondary)
-    );
-  }
-}
-.day-calendar {
-  @include dayCalendarTodayMix(
-    var(--fuiColorDarkestShade, $fuiColorDarkestShade),
-    var(--fuiColorLightestShade, $fuiColorLightestShade),
-    var(--fuiColorLightShade, $fuiColorLightShade),
-    10px,
-    var(--fuiColorDarkShade, $fuiColorDarkShade)
-  );
-}
-
-.today {
-  &-primary {
-    @include dayCalendarTodayMix(
-      var(--fuiPrimary, $fuiPrimary),
-      var(--fuiPrimarySecondary, $fuiPrimarySecondary),
-      var(--fuiPrimarySecondary, $fuiPrimarySecondary),
-      10px,
-      var(--fuiPrimary, $fuiPrimary)
-    );
-  }
-  &-success {
-    @include dayCalendarTodayMix(
-      var(--fuiSuccess, $fuiSuccess),
-      var(--fuiSuccessSecondary, $fuiSuccessSecondary),
-      var(--fuiSuccessSecondary, $fuiSuccessSecondary),
-      10px,
-      var(--fuiSuccess, $fuiSuccess)
-    );
-  }
-  &-warning {
-    @include dayCalendarTodayMix(
-      var(--fuiWarning, $fuiWarning),
-      var(--fuiWarningSecondary, $fuiWarningSecondary),
-      var(--fuiWarningSecondary, $fuiWarningSecondary),
-      10px,
-      var(--fuiWarning, $fuiWarning)
-    );
-  }
-  &-danger {
-    @include dayCalendarTodayMix(
-      var(--fuiDanger, $fuiDanger),
-      var(--fuiDangerSecondary, $fuiDangerSecondary),
-      var(--fuiDangerSecondary, $fuiDangerSecondary),
-      10px,
-      var(--fuiDanger, $fuiDanger)
-    );
-  }
-  &-text {
-    @include dayCalendarTodayMix(
-      var(--fuiText, $fuiText),
-      var(--fuiTextSecondary, $fuiTextSecondary),
-      var(--fuiTextSecondary, $fuiTextSecondary),
-      10px,
-      var(--fuiText, $fuiText)
-    );
-  }
-  &-accent {
-    @include dayCalendarTodayMix(
-      var(--fuiAccent, $fuiAccent),
-      var(--fuiAccentSecondary, $fuiAccentSecondary),
-      var(--fuiAccentSecondary, $fuiAccentSecondary),
-      10px,
-      var(--fuiAccent, $fuiAccent)
-    );
-  }
-}
-
-.event-calendar-primary {
-  position: relative;
-  @include eventCalendarMix(
-    var(--fuiPrimarySecondary, $fuiPrimarySecondary),
-    var(--fuiColorPrimary, $fuiColorPrimary)
-  );
-}
-.event-calendar-success {
-  position: relative;
-  @include eventCalendarMix(
-    var(--fuiSuccessSecondary, $fuiSuccessSecondary),
-    var(--fuiColorSuccess, $fuiColorSuccess)
-  );
-}
-.event-calendar-warning {
-  position: relative;
-  @include eventCalendarMix(
-    var(--fuiWarningSecondary, $fuiWarningSecondary),
-    var(--fuiColorWarning, $fuiColorWarning)
-  );
-}
-.event-calendar-danger {
-  position: relative;
-  @include eventCalendarMix(
-    var(--fuiDangerSecondary, $fuiDangerSecondary),
-    var(--fuiColorDanger, $fuiColorDanger)
-  );
-}
-.event-calendar-text {
-  @include eventCalendarTextMix();
-}
-
-.month {
-  &-primary {
-    color: var(--fuiPrimary, $fuiPrimary);
-  }
-  &-success {
-    color: var(--fuiSuccess, $fuiSuccess);
-  }
-  &-warning {
-    color: var(--fuiWarning, $fuiWarning);
-  }
-  &-danger {
-    color: var(--fuiDanger, $fuiDanger);
-  }
-  &-text {
-    color: var(--fuiText, $fuiText);
-  }
-  &-accent {
-    color: var(--fuiAccent, $fuiAccent);
-  }
-}
 .flex {
   display: flex;
-  align-items: center;
-  width: 100%;
-  &.gap-5 {
-    gap: 5px;
-  }
-  &.gap-10 {
-    gap: 10px;
-  }
-  &.align-center {
-    align-items: center;
-  }
-  &.align-flex-start {
-    align-items: flex-start;
-  }
+  gap: 5px;
 }
-.flex-group {
+.flex-max {
   display: flex;
+  gap: 5px;
+  width: max-content;
   align-items: center;
-  gap: 10px;
-}
-.flex-calendar {
-  display: flex;
-  gap: 20px;
 }
 
-.body-calendar-small {
-  .week-calendar-small,
-  .outside-month-small,
-  .day-calendar-small .date-day-small {
-    text-align: center;
-    font-size: small;
-    padding: 6px 4px;
-  }
-
-  .outside-month-small {
-    color: var(--fuiColorMediumShade, $fuiColorMediumShade);
-  }
-
-  .day-calendar-small {
-    &-primary {
-      padding: 4px 4px;
-      &:hover {
-        border-radius: 100%;
-        padding: 4px 4px;
-        background-color: var(--fuiPrimarySecondary, $fuiPrimarySecondary);
-        cursor: pointer;
-      }
-    }
-    &-success {
-      padding: 4px 4px;
-      &:hover {
-        border-radius: 100%;
-        padding: 4px 4px;
-        background-color: var(--fuiSuccessSecondary, $fuiSuccessSecondary);
-        cursor: pointer;
-      }
-    }
-    &-warning {
-      padding: 4px 4px;
-      &:hover {
-        border-radius: 100%;
-        padding: 4px 4px;
-        background-color: var(--fuiWarningSecondary, $fuiWarningSecondary);
-        cursor: pointer;
-      }
-    }
-    &-danger {
-      padding: 4px 4px;
-      &:hover {
-        border-radius: 100%;
-        padding: 4px 4px;
-        background-color: var(--fuiDangerSecondary, $fuiDangerSecondary);
-        cursor: pointer;
-      }
-    }
-    &-text {
-      padding: 4px 4px;
-      &:hover {
-        border-radius: 100%;
-        padding: 4px 4px;
-        background-color: var(--fuiTextSecondary, $fuiTextSecondary);
-        cursor: pointer;
-      }
-    }
-    &-accent {
-      padding: 4px 4px;
-      &:hover {
-        border-radius: 100%;
-        padding: 4px 4px;
-        background-color: var(--fuiAccentSecondary, $fuiAccentSecondary);
-        cursor: pointer;
-      }
-    }
-  }
-  .today {
-    &-primary-small {
-      padding: 10px 0px;
-      border-radius: 100%;
-      color: var(--fuiColorGhost, $fuiColorGhost);
-      font-size: small;
-      text-align: center;
-      background-color: var(--fuiPrimary, $fuiPrimary);
-    }
-    &-success-small {
-      padding: 10px 0px;
-      border-radius: 100%;
-      color: var(--fuiColorGhost, $fuiColorGhost);
-      font-size: small;
-      text-align: center;
-      background-color: var(--fuiSuccess, $fuiSuccess);
-    }
-    &-warning-small {
-      padding: 10px 0px;
-      border-radius: 100%;
-      color: var(--fuiColorGhost, $fuiColorGhost);
-      font-size: small;
-      text-align: center;
-      background-color: var(--fuiWarning, $fuiWarning);
-    }
-    &-danger-small {
-      padding: 10px 0px;
-      border-radius: 100%;
-      color: var(--fuiColorGhost, $fuiColorGhost);
-      font-size: small;
-      text-align: center;
-      background-color: var(--fuiDanger, $fuiDanger);
-    }
-    &-text-small {
-      padding: 10px 0px;
-      border-radius: 100%;
-      color: var(--fuiColorGhost, $fuiColorGhost);
-      font-size: small;
-      text-align: center;
-      background-color: var(--fuiText, $fuiText);
-    }
-    &-accent-small {
-      padding: 10px 0px;
-      border-radius: 100%;
-      color: var(--fuiColorGhost, $fuiColorGhost);
-      font-size: small;
-      text-align: center;
-      background-color: var(--fuiAccent, $fuiAccent);
-    }
-  }
-}
-.mb-10 {
-  margin-bottom: 10px;
-}
-.mb-5 {
-  margin-bottom: 5px;
-}
 .flex-between {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0px;
+  align-items: center;
 }
-.card {
-  margin-bottom: 20px;
-  padding: 15px;
-  height: fit-content;
-  border-radius: 8px;
-  background-color: var(--fuiColorLightestShade, $fuiColorLightestShade);
-}
-.overflow-y-auto {
-  overflow-y: auto;
-  max-height: 200px;
-  margin-top: 15px;
-}
-.text {
-  &-center {
-    text-align: center;
+
+.dayofweek {
+  padding: 10px;
+  color: var(--fuiColorGhost, $fuiColorGhost);
+  &.primary {
+    background-color: var(--fuiPrimarySecondary, $fuiPrimarySecondary);
+  }
+  &.success {
+    background-color: var(--fuiSuccessSecondary, $fuiSuccessSecondary);
+  }
+  &.warning {
+    background-color: var(--fuiWarningSecondary, $fuiWarningSecondary);
+  }
+  &.danger {
+    background-color: var(--fuiDangerSecondary, $fuiDangerSecondary);
+  }
+  &.text {
+    background-color: var(--fuiTextSecondary, $fuiTextSecondary);
+  }
+  &.accent {
+    background-color: var(--fuiAccentSecondary, $fuiAccentSecondary);
   }
 }
+
+.grid-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: auto;
+}
+
 .p-10 {
   padding: 10px;
 }
-.p-5 {
-  padding: 5px;
-}
 
-.header-days {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-}
-
-.utility-search {
-  min-width: 250px;
-}
-.search-content {
-  margin-top: 15px;
-}
-
-.event-list {
-  margin-bottom: 10px;
-  padding: 5px;
-  &:hover {
-    cursor: pointer;
-    background-color: var(--fuiTextSecondary, $fuiTextSecondary);
-  }
-  &:last-child {
-    margin-bottom: 0px;
+.event-badge {
+  background-color: red;
+  margin-bottom: 5px;
+  color: white;
+  &-primary {
+    color: white;
+    margin-bottom: 5px;
+    background-color: blue;
   }
 }
-.change-month-year {
-  width: 235px;
-  display: flex;
-  justify-content: space-between;
+
+.col-span {
+  &-2 {
+    grid-column: span 2;
+  }
+  &-3 {
+    grid-column: span 3;
+  }
+  &-4 {
+    grid-column: span 4;
+  }
 }
 
 /** Add On*/
-::-webkit-scrollbar {
-  height: 5px;
-  width: 5px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: $fuiColorLightShade;
-  border-radius: 25px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: $fuiColorLightShade;
+* {
+  scrollbar-width: thin;
 }
