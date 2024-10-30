@@ -1,0 +1,58 @@
+<fui-popover [position]="'bottom'" [align]="align">
+  <div class="flex">
+    <fui-icons
+      *ngIf="sortFeature"
+      [icon]="iconSort"
+      [size]="iconSort === 'sortable' ? 'sizes' : 'sizem'"
+      [color]="iconSort === 'sortable' ? 'disabled' : 'primary'"
+    />
+    <ng-content></ng-content>
+  </div>
+  <div popover-body *ngIf="sortFeature">
+    <fui-text class="my-5" [size]="'xs'">Sort :</fui-text>
+    <fui-button-icon
+      *ngIf="iconSort === 'sortAscending'"
+      [type]="'button'"
+      [fullWidth]="'full'"
+      [option]="'iconText'"
+      [icon]="'sortAscending'"
+      [text]="'Ascending'"
+      [style]="'secondary'"
+      [textAlign]="'left'"
+      (onClick)="toggleSort({ fieldName: fieldName, sort: 'asc' })"
+    />
+    <fui-button-icon
+      *ngIf="iconSort !== 'sortAscending'"
+      [type]="'button'"
+      [fullWidth]="'full'"
+      [option]="'iconText'"
+      [icon]="'sortAscending'"
+      [text]="'Ascending'"
+      [style]="'empty'"
+      [textAlign]="'left'"
+      (onClick)="toggleSort({ fieldName: fieldName, sort: 'asc' })"
+    />
+    <fui-button-icon
+      *ngIf="iconSort === 'sortDescending'"
+      [type]="'button'"
+      [fullWidth]="'full'"
+      [option]="'iconText'"
+      [icon]="'sortDescending'"
+      [text]="'Descending'"
+      [style]="'secondary'"
+      [textAlign]="'left'"
+      (onClick)="toggleSort({ fieldName: fieldName, sort: 'desc' })"
+    />
+    <fui-button-icon
+      *ngIf="iconSort !== 'sortDescending'"
+      [type]="'button'"
+      [fullWidth]="'full'"
+      [option]="'iconText'"
+      [icon]="'sortDescending'"
+      [text]="'Descending'"
+      [style]="'empty'"
+      [textAlign]="'left'"
+      (onClick)="toggleSort({ fieldName: fieldName, sort: 'desc' })"
+    />
+  </div>
+</fui-popover>

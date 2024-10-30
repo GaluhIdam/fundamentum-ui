@@ -1,0 +1,63 @@
+@import "../../styles/index";
+.container {
+  width: 100%;
+  position: relative;
+}
+.wrap-table {
+  max-width: 100%;
+  width: 100%;
+}
+.wrap-content {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.table {
+  border-collapse: collapse;
+  text-indent: initial;
+  border-spacing: 2px;
+  display: table;
+  box-sizing: border-box;
+  text-indent: initial;
+  unicode-bidi: isolate;
+}
+.thead {
+  display: table-header-group;
+  vertical-align: middle;
+  unicode-bidi: isolate;
+  border-color: inherit;
+}
+.tr {
+  display: table-row;
+  vertical-align: inherit;
+  unicode-bidi: isolate;
+  border-color: inherit;
+}
+.tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  unicode-bidi: isolate;
+  border-color: inherit;
+}
+.page-info {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 5px;
+  flex-wrap: nowrap;
+}
+.page {
+  padding: 10px;
+  margin-top: 15px;
+}
+.body-table {
+  display: table-row-group;
+  vertical-align: middle;
+  unicode-bidi: isolate;
+  border-color: inherit;
+}
+
+/** Add On*/
+* {
+  scrollbar-width: thin;
+}

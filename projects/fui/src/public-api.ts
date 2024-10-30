@@ -178,3 +178,9 @@ export * from './lib/themes/service/theme.service';
 export * from './lib/organisms/date-picker/date-picker.component';
 export * from './lib/organisms/time-selection/time-selection.component';
 export * from './lib/organisms/date-range/date-range.component';
+
+export * from './lib/templates/table-tree/table-tree.component';
+export * from './lib/templates/table-tree/table-head-tree/table-head-tree.component';
+export * from './lib/templates/table-tree/table-row-tree/table-row-tree.component';
+export * from './lib/templates/table-tree/table-data-tree/table-data-tree.component';
+export * from './lib/templates/table-tree/dto/table-tree.dto';

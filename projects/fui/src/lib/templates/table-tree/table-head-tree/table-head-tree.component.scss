@@ -1,0 +1,29 @@
+@import "../../../styles/index";
+
+.flex {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 5px;
+  align-items: center;
+}
+:host {
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: 600;
+  text-align: -internal-center;
+  unicode-bidi: isolate;
+  text-wrap: nowrap;
+  border-top-color: var(--fuiColorLightShade, $fuiColorLightShade);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-bottom-color: var(--fuiColorLightShade, $fuiColorLightShade);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  padding: 8px;
+}
+
+.my-5 {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  display: flex;
+}

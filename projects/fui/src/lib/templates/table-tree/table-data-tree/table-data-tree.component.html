@@ -1,0 +1,10 @@
+<div class="flex" [ngStyle]="{ 'margin-left': 30 * level + 'px' }">
+  <fui-icons
+    *ngIf="showDropIcon"
+    [size]="'sizes'"
+    [color]="'ink'"
+    [icon]="status ? 'arrowDown' : 'arrowRight'"
+    (click)="toogle()"
+  />
+  <ng-content />
+</div>

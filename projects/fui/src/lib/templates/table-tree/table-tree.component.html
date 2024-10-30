@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="wrap-table">
+    <!-- PAGE INFO  -->
+    <div class="page-info" *ngIf="showInfo">
+      <fui-text [size]="sizeInfo">Showing</fui-text>
+      <fui-text [weight]="'semibold'"
+        >{{ getRangeStart() }} - {{ getRangeEnd() }}</fui-text
+      >
+      <fui-text [size]="sizeInfo">of</fui-text>
+      <fui-text [weight]="'semibold'">{{ totalItems }}</fui-text>
+      <fui-text [size]="sizeInfo">{{ info }}</fui-text>
+    </div>
+    <!-- PAGE INFO  -->
+
+    <!-- CONTENT  -->
+    <div class="table">
+      <!-- HEAD  -->
+      <div class="thead">
+        <div class="tr">
+          <ng-content select="fui-table-head-tree"></ng-content>
+        </div>
+      </div>
+      <!-- HEAD  -->
+
+      <!-- BODY  -->
+      <div class="body-table">
+        <ng-content></ng-content>
+      </div>
+      <!-- BODY  -->
+    </div>
+    <!-- CONTENT  -->
+
+    <!-- PAGINATION  -->
+    <div class="page" *ngIf="pagination">
+      <fui-pagination
+        (onPageChange)="onPageChange($event)"
+        [itemsPerPage]="limit"
+        [totalItems]="totalItems"
+        [size]="'sizes'"
+      ></fui-pagination>
+    </div>
+    <!-- PAGINATION  -->
+  </div>
+</div>

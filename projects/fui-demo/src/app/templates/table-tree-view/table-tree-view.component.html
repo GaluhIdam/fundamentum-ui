@@ -1,0 +1,89 @@
+<h1>Table Tree</h1>
+
+<fui-table-tree
+  [limit]="5"
+  [totalItems]="10"
+  [showInfo]="true"
+  [info]="'Dummy Data'"
+  [pagination]="true"
+>
+  <!-- HEADER  -->
+  <fui-table-head-tree
+    *ngFor="let item of header; let i = index"
+    [fieldName]="item"
+    [sortFeature]="item === 'Description' ? false : true"
+    [utils]="{
+      index: i,
+      dataLength: header.length,
+      action: true,
+      activeField: sortData?.fieldName
+    }"
+    (sortOut)="toggleSort($event)"
+  >
+    <fui-text>{{ item }}</fui-text>
+  </fui-table-head-tree>
+  <!-- HEADER  -->
+
+  <!-- BODY  -->
+
+  <!-- LEVEL 1  -->
+  <ng-container *ngFor="let a of data; let x = index">
+    <fui-table-row-tree>
+      <fui-table-data-tree
+        [showDropIcon]="true"
+        (clickOut)="dataShowHide[x].status = !dataShowHide[x].status"
+      >
+        <fui-text> {{ a.name }} </fui-text>
+      </fui-table-data-tree>
+      <fui-table-data-tree [showDropIcon]="false">
+        <fui-text> {{ a.code }} </fui-text>
+      </fui-table-data-tree>
+      <fui-table-data-tree [showDropIcon]="false">
+        <fui-text [textWrap]="'nowrap'"> {{ a.desc }} </fui-text>
+      </fui-table-data-tree>
+    </fui-table-row-tree>
+
+    <!-- LEVEL 2  -->
+    <ng-container *ngFor="let b of a.child; let y = index">
+      <fui-table-row-tree *ngIf="dataShowHide[x].status">
+        <fui-table-data-tree
+          [showDropIcon]="true"
+          [level]="1"
+          (clickOut)="
+            dataShowHide[x].child[y].status = !dataShowHide[x].child[y].status
+          "
+        >
+          <fui-text> {{ b.name }} </fui-text>
+        </fui-table-data-tree>
+        <fui-table-data-tree [showDropIcon]="false">
+          <fui-text> {{ b.code }} </fui-text>
+        </fui-table-data-tree>
+        <fui-table-data-tree [showDropIcon]="false">
+          <fui-text [textWrap]="'nowrap'"> {{ b.desc }} </fui-text>
+        </fui-table-data-tree>
+      </fui-table-row-tree>
+
+      <!-- LEVEL 3  -->
+      <ng-container *ngFor="let c of b.child; let z = index">
+        <fui-table-row-tree *ngIf="dataShowHide[x].child[y].status">
+          <fui-table-data-tree [showDropIcon]="false" [level]="2">
+            <fui-text> {{ c.name }} </fui-text>
+          </fui-table-data-tree>
+          <fui-table-data-tree [showDropIcon]="false">
+            <fui-text> {{ c.code }} </fui-text>
+          </fui-table-data-tree>
+          <fui-table-data-tree [showDropIcon]="false">
+            <fui-text [textWrap]="'nowrap'"> {{ c.desc }} </fui-text>
+          </fui-table-data-tree>
+        </fui-table-row-tree>
+      </ng-container>
+      <!-- LEVEL 3  -->
+    </ng-container>
+
+    <!-- LEVEL 2  -->
+  </ng-container>
+
+  <!-- LEVEL 1  -->
+
+  <!-- BODY  -->
+</fui-table-tree>
