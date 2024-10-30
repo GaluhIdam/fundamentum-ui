@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TextComponent } from '../../../public-api';
+import { PaginationComponent, TextComponent } from '../../../public-api';
 
 @Component({
   selector: 'fui-table-tree',
   standalone: true,
-  imports: [CommonModule, TextComponent],
+  imports: [CommonModule, TextComponent, PaginationComponent],
   templateUrl: './table-tree.component.html',
   styleUrl: './table-tree.component.scss',
 })

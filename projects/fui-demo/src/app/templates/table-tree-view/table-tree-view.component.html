@@ -30,7 +30,7 @@
   <ng-container *ngFor="let a of data; let x = index">
     <fui-table-row-tree>
       <fui-table-data-tree
-        [showDropIcon]="true"
+        [showDropIcon]="a.child.length > 0 ? true : false"
         (clickOut)="dataShowHide[x].status = !dataShowHide[x].status"
       >
         <fui-text> {{ a.name }} </fui-text>
@@ -41,13 +41,29 @@
       <fui-table-data-tree [showDropIcon]="false">
         <fui-text [textWrap]="'nowrap'"> {{ a.desc }} </fui-text>
       </fui-table-data-tree>
+      <fui-table-data-tree [showDropIcon]="false">
+        <fui-button-icon
+          [type]="'button'"
+          [fullWidth]="'fit'"
+          [option]="'icon'"
+          [icon]="'pencil'"
+          [color]="'primary'"
+        />
+        <fui-button-icon
+          [type]="'button'"
+          [fullWidth]="'fit'"
+          [option]="'icon'"
+          [icon]="'trash'"
+          [color]="'danger'"
+        />
+      </fui-table-data-tree>
     </fui-table-row-tree>
 
     <!-- LEVEL 2  -->
     <ng-container *ngFor="let b of a.child; let y = index">
       <fui-table-row-tree *ngIf="dataShowHide[x].status">
         <fui-table-data-tree
-          [showDropIcon]="true"
+          [showDropIcon]="b.child.length > 0 ? true : false"
           [level]="1"
           (clickOut)="
             dataShowHide[x].child[y].status = !dataShowHide[x].child[y].status
@@ -60,6 +76,22 @@
         </fui-table-data-tree>
         <fui-table-data-tree [showDropIcon]="false">
           <fui-text [textWrap]="'nowrap'"> {{ b.desc }} </fui-text>
+        </fui-table-data-tree>
+        <fui-table-data-tree [showDropIcon]="false">
+          <fui-button-icon
+            [type]="'button'"
+            [fullWidth]="'fit'"
+            [option]="'icon'"
+            [icon]="'pencil'"
+            [color]="'primary'"
+          />
+          <fui-button-icon
+            [type]="'button'"
+            [fullWidth]="'fit'"
+            [option]="'icon'"
+            [icon]="'trash'"
+            [color]="'danger'"
+          />
         </fui-table-data-tree>
       </fui-table-row-tree>
 
@@ -74,6 +106,22 @@
           </fui-table-data-tree>
           <fui-table-data-tree [showDropIcon]="false">
             <fui-text [textWrap]="'nowrap'"> {{ c.desc }} </fui-text>
+          </fui-table-data-tree>
+          <fui-table-data-tree [showDropIcon]="false">
+            <fui-button-icon
+              [type]="'button'"
+              [fullWidth]="'fit'"
+              [option]="'icon'"
+              [icon]="'pencil'"
+              [color]="'primary'"
+            />
+            <fui-button-icon
+              [type]="'button'"
+              [fullWidth]="'fit'"
+              [option]="'icon'"
+              [icon]="'trash'"
+              [color]="'danger'"
+            />
           </fui-table-data-tree>
         </fui-table-row-tree>
       </ng-container>

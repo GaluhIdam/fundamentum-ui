@@ -6,5 +6,6 @@
     [icon]="status ? 'arrowDown' : 'arrowRight'"
     (click)="toogle()"
   />
+  <div *ngIf="!showDropIcon" style="width: 14px;"></div>
   <ng-content />
 </div>

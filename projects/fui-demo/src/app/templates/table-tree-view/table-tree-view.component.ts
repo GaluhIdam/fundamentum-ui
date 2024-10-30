@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
+  ButtonIconComponent,
   TableDataTreeComponent,
   TableHeadTreeComponent,
   TableRowTreeComponent,
@@ -20,6 +21,7 @@ import { exampleDTO } from './example.dto';
     TableRowTreeComponent,
     TableDataTreeComponent,
     TextComponent,
+    ButtonIconComponent,
   ],
   templateUrl: './table-tree-view.component.html',
   styleUrl: './table-tree-view.component.scss',
@@ -88,6 +90,25 @@ export class TableTreeViewComponent {
               child: [],
             },
           ],
+        },
+      ],
+    },
+    {
+      name: 'Category 3',
+      code: 'CAT3',
+      desc: 'Description of Category 3',
+      child: [],
+    },
+    {
+      name: 'Category 4',
+      code: 'CAT4',
+      desc: 'Description of Category 4',
+      child: [
+        {
+          name: 'Subcategory 1.1',
+          code: 'SUB1.1',
+          desc: 'Description of Subcategory 1.1',
+          child: [],
         },
       ],
     },

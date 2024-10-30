@@ -1,11 +1,13 @@
 <fui-popover [position]="'bottom'" [align]="align">
   <div class="flex">
-    <fui-icons
-      *ngIf="sortFeature"
-      [icon]="iconSort"
-      [size]="iconSort === 'sortable' ? 'sizes' : 'sizem'"
-      [color]="iconSort === 'sortable' ? 'disabled' : 'primary'"
-    />
+    <div style="width: 19px">
+      <fui-icons
+        *ngIf="sortFeature"
+        [icon]="iconSort"
+        [size]="iconSort === 'sortable' ? 'sizes' : 'sizem'"
+        [color]="iconSort === 'sortable' ? 'disabled' : 'primary'"
+      />
+    </div>
     <ng-content></ng-content>
   </div>
   <div popover-body *ngIf="sortFeature">

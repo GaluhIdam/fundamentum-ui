@@ -13,20 +13,22 @@
     <!-- PAGE INFO  -->
 
     <!-- CONTENT  -->
-    <div class="table">
-      <!-- HEAD  -->
-      <div class="thead">
-        <div class="tr">
-          <ng-content select="fui-table-head-tree"></ng-content>
+    <div class="wrap-content">
+      <div class="table">
+        <!-- HEAD  -->
+        <div class="thead">
+          <div class="tr">
+            <ng-content select="fui-table-head-tree"></ng-content>
+          </div>
         </div>
-      </div>
-      <!-- HEAD  -->
+        <!-- HEAD  -->
 
-      <!-- BODY  -->
-      <div class="body-table">
-        <ng-content></ng-content>
+        <!-- BODY  -->
+        <div class="body-table">
+          <ng-content></ng-content>
+        </div>
+        <!-- BODY  -->
       </div>
-      <!-- BODY  -->
     </div>
     <!-- CONTENT  -->
 
@@ -37,7 +39,7 @@
         [itemsPerPage]="limit"
         [totalItems]="totalItems"
         [size]="'sizes'"
-      ></fui-pagination>
+      />
     </div>
     <!-- PAGINATION  -->
   </div>
