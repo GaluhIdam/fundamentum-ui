@@ -116,12 +116,6 @@ export class TableTreeViewComponent {
 
   dataShowHide: TableTreeDTO[] = [];
 
-  test = [
-    [true, true],
-    [true, true],
-    [true, true],
-  ];
-
   ngOnInit(): void {
     this.data.forEach((item, i) => {
       this.dataShowHide.push({
