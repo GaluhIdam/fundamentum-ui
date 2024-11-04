@@ -40,17 +40,26 @@
               x
             </div>
           </span>
-        }
-        <span
-          *ngIf="selectedValue.length > maxShow"
-          class="badge enable"
-          [ngStyle]="{
-            'font-size': size === 's' ? '9px' : size === 'm' ? '11px' : '13px'
-          }"
-        >
-          <p>{{ selectedValue.length - maxShow }}</p>
-          <div style="margin-left: 5px">+</div>
-        </span>
+          }
+          <span
+            *ngIf="selectedValue.length > maxShow"
+            class="badge enable"
+            [ngStyle]="{
+              'font-size': size === 's' ? '9px' : size === 'm' ? '11px' : '13px'
+            }"
+          >
+            <p
+              style="
+                max-width: 50px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+              "
+            >
+              {{ selectedValue.length - maxShow }}
+            </p>
+            <div style="margin-left: 5px">+</div>
+          </span>
           <span class="badge-input">
             <input
               [disabled]="disabled"
