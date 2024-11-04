@@ -2,7 +2,8 @@
   [ngClass]="['badge', disabled ? 'disabled' : color]"
   [ngStyle]="customColor ? { 'background-color': color, color: textColor } : {}"
 >
-  <fui-icons style="margin-top: 1px;"
+  <fui-icons
+    style="margin-top: 1px"
     *ngIf="iconShow && iconPosition === 'start'"
     [ngClass]="iconClick ? 'hover' : ''"
     (click)="handleClickedIcon()"
@@ -16,7 +17,8 @@
     [ngClass]="[
       size,
       textClick && !disabled ? 'hover-underline' : '',
-      truncate ? 'truncate' : ''
+      truncate ? 'truncate' : '',
+      weight
     ]"
     [ngStyle]="customColor ? { color: textColor } : {}"
     (click)="handleClicked()"
@@ -26,10 +28,12 @@
 
   <a
     *ngIf="textShow && hrefLink && hrefLink !== '#'"
-    [ngClass]="[size,
+    [ngClass]="[
+      size,
       !disabled ? 'hover-underline' : '',
       truncate || '',
-      disabled ? 'disabled' : color
+      disabled ? 'disabled' : color,
+      weight
     ]"
     [ngStyle]="customColor ? { color: textColor } : {}"
     [href]="hrefLink"
@@ -40,7 +44,8 @@
     {{ text }}
   </a>
 
-  <fui-icons style="margin-top: 1px;"
+  <fui-icons
+    style="margin-top: 1px"
     *ngIf="iconShow && iconPosition === 'end'"
     [ngClass]="iconClick ? 'hover' : ''"
     (click)="handleClickedIcon()"

@@ -34,6 +34,12 @@ export class BadgeComponent {
   @Input() textColor: Color | string = 'ink';
   @Input() text: string = 'This is badge';
   @Input() size: 'xs' | 's' | 'm' | 'l' | 'xl' = 'm';
+  @Input() weight:
+    | 'light'
+    | 'regular'
+    | 'medium'
+    | 'semibold'
+    | 'bold' = 'regular';
 
   /** icon */
   @Input() iconShow: boolean = false;

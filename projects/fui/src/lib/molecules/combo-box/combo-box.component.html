@@ -35,7 +35,16 @@
               'font-size': size === 's' ? '9px' : size === 'm' ? '11px' : '13px'
             }"
           >
-            <p>{{ data.name }}</p>
+            <p
+              style="
+                max-width: 50px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+              "
+            >
+              {{ data.name }}
+            </p>
             <div style="margin-left: 5px" (click)="toggleSelection(data)">
               x
             </div>
@@ -48,14 +57,7 @@
               'font-size': size === 's' ? '9px' : size === 'm' ? '11px' : '13px'
             }"
           >
-            <p
-              style="
-                max-width: 50px;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden;
-              "
-            >
+            <p>
               {{ selectedValue.length - maxShow }}
             </p>
             <div style="margin-left: 5px">+</div>
