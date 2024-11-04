@@ -60,6 +60,7 @@ export class ComboBoxComponent {
   @Input() disabled: boolean = false;
   @Input() message: string = 'This is required!';
   @Input() position: 'left' | 'right' | 'top' | 'bottom' = 'bottom';
+  @Input() maxShow: number = 5;
   @Output() selection: EventEmitter<any> = new EventEmitter();
 
   @ViewChild('comboxInput', { static: false }) comboxInput!: ElementRef;
@@ -78,7 +79,6 @@ export class ComboBoxComponent {
   constructor(private elementRef: ElementRef) {}
 
   ngOnInit(): void {
-
     if (
       this.selectedValue &&
       this.selectedValue.length > 1 &&

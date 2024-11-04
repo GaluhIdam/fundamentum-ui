@@ -27,18 +27,30 @@
           {{ placeholder }}
         </p>
         <div class="wrap-badge" center *ngIf="!singleSelection && !disabled">
+          @for (data of selectedValue; track $index) {
           <span
+            *ngIf="$index + 1 <= maxShow"
             class="badge enable"
             [ngStyle]="{
               'font-size': size === 's' ? '9px' : size === 'm' ? '11px' : '13px'
             }"
-            *ngFor="let data of selectedValue"
           >
-            {{ data.name }}
+            <p>{{ data.name }}</p>
             <div style="margin-left: 5px" (click)="toggleSelection(data)">
               x
             </div>
           </span>
+        }
+        <span
+          *ngIf="selectedValue.length > maxShow"
+          class="badge enable"
+          [ngStyle]="{
+            'font-size': size === 's' ? '9px' : size === 'm' ? '11px' : '13px'
+          }"
+        >
+          <p>{{ selectedValue.length - maxShow }}</p>
+          <div style="margin-left: 5px">+</div>
+        </span>
           <span class="badge-input">
             <input
               [disabled]="disabled"
