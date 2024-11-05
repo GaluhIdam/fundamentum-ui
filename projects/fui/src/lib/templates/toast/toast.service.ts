@@ -28,9 +28,8 @@ import { ToastProps } from '../../types';
   providedIn: 'root',
 })
 export class ToastService {
-  private toastMessageSource: BehaviorSubject<ToastProps> = new BehaviorSubject(
-    {}
-  );
+  private toastMessageSource: BehaviorSubject<ToastProps | null> =
+    new BehaviorSubject<ToastProps | null>(null);
   $toastMessages = this.toastMessageSource.asObservable();
 
   constructor() {}
@@ -40,9 +39,12 @@ export class ToastService {
       const newToast = {
         ...toast,
         id: new Date().getTime().toString(),
-        position: toast?.position ? toast?.position : 'bottom-right',
+        position: toast.position || 'bottom-right',
       };
       this.toastMessageSource.next(newToast);
+      setTimeout(() => {
+        this.toastMessageSource.next(null);
+      }, toast.duration || 3000);
     }
   }
 }
