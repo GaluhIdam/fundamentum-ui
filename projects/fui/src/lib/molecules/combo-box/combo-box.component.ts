@@ -61,6 +61,7 @@ export class ComboBoxComponent {
   @Input() message: string = 'This is required!';
   @Input() position: 'left' | 'right' | 'top' | 'bottom' = 'bottom';
   @Input() maxShow: number = 5;
+  @Input() badgeWidth: 's' | 'm' | 'l' | 'full' = 'full';
   @Output() selection: EventEmitter<any> = new EventEmitter();
 
   @ViewChild('comboxInput', { static: false }) comboxInput!: ElementRef;

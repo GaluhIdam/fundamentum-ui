@@ -1,4 +1,4 @@
-@import './../../styles/index';
+@import "./../../styles/index";
 
 * {
   box-sizing: border-box;
@@ -11,14 +11,14 @@
   &-container {
     position: absolute;
     z-index: 1;
-    padding: .5rem;
+    padding: 0.5rem;
     width: max-content;
-    max-width: $fuiMaxWidthTooltip;
+    max-width: 350px;
     margin: auto;
     background: $fuiTooltipBackgroundColor;
     border: $fuiTooltipBorderColor;
     color: $fuiColorEmptyShade;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     visibility: hidden;
     opacity: 0;
 
@@ -52,7 +52,6 @@
     .right {
       left: 100%;
     }
-
   }
 }
 
@@ -116,61 +115,61 @@
 }
 
 .arrow-tooltip-top-start {
-  @include fuiTooltipArrow('top', 'start')
+  @include fuiTooltipArrow("top", "start");
 }
 
 .arrow-tooltip-top-center {
-  @include fuiTooltipArrow('top', 'center')
+  @include fuiTooltipArrow("top", "center");
 }
 
 .arrow-tooltip-top-end {
-  @include fuiTooltipArrow('top', 'end')
+  @include fuiTooltipArrow("top", "end");
 }
 
 .arrow-tooltip-bottom-start {
-  @include fuiTooltipArrow('bottom', 'start')
+  @include fuiTooltipArrow("bottom", "start");
 }
 
 .arrow-tooltip-bottom-center {
-  @include fuiTooltipArrow('bottom', 'center')
+  @include fuiTooltipArrow("bottom", "center");
 }
 
 .arrow-tooltip-bottom-end {
-  @include fuiTooltipArrow('bottom', 'end')
+  @include fuiTooltipArrow("bottom", "end");
 }
 
 .arrow-tooltip-right-start {
-  @include fuiTooltipArrow('right', 'start')
+  @include fuiTooltipArrow("right", "start");
 }
 
 .arrow-tooltip-right-center {
-  @include fuiTooltipArrow('right', 'center')
+  @include fuiTooltipArrow("right", "center");
 }
 
 .arrow-tooltip-right-end {
-  @include fuiTooltipArrow('right', 'end')
+  @include fuiTooltipArrow("right", "end");
 }
 
 .arrow-tooltip-left-start {
-  @include fuiTooltipArrow('left', 'start')
+  @include fuiTooltipArrow("left", "start");
 }
 
 .arrow-tooltip-left-center {
-  @include fuiTooltipArrow('left', 'center')
+  @include fuiTooltipArrow("left", "center");
 }
 
 .arrow-tooltip-left-end {
-  @include fuiTooltipArrow('left', 'end')
+  @include fuiTooltipArrow("left", "end");
 }
 
-.tooltip-radius-none{
+.tooltip-radius-none {
   border-radius: 0;
 }
 
-.tooltip-radius-s{
+.tooltip-radius-s {
   border-radius: $fuiBorderRadiusSmall;
 }
 
-.tooltip-radius-m{
+.tooltip-radius-m {
   border-radius: $fuiBorderRadius;
 }

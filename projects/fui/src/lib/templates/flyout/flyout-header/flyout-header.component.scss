@@ -1,7 +1,6 @@
 @import "../../../styles/index";
 
 .header-flyout {
-  padding: 15px;
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: var(--fuiColorLightShade, $fuiColorLightShade);
@@ -11,4 +10,17 @@
   position: absolute;
   top: 5px;
   right: 5px;
+}
+
+.p-s {
+  padding: 5px;
+}
+.p-m {
+  padding: 15px;
+}
+.p-l {
+  padding: 25px;
+}
+.p-none {
+  padding: 0;
 }

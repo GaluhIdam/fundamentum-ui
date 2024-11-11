@@ -36,15 +36,23 @@
             }"
           >
             <p
-              style="
-                max-width: 50px;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden;
-              "
+              [ngStyle]="{
+                'text-overflow': 'ellipsis',
+                'white-space': 'nowrap',
+                overflow: 'hidden',
+                'max-width':
+                  badgeWidth === 's'
+                    ? '50px'
+                    : badgeWidth === 'm'
+                    ? '65px'
+                    : badgeWidth === 'l'
+                    ? '80px'
+                    : '100%'
+              }"
             >
               {{ data.name }}
             </p>
+
             <div style="margin-left: 5px" (click)="toggleSelection(data)">
               x
             </div>
@@ -167,7 +175,23 @@
           }"
           *ngFor="let data of selectedValue"
         >
-          {{ data.name }}
+          <p
+            [ngStyle]="{
+              'text-overflow': 'ellipsis',
+              'white-space': 'nowrap',
+              overflow: 'hidden',
+              'max-width':
+                badgeWidth === 's'
+                  ? '50px'
+                  : badgeWidth === 'm'
+                  ? '65px'
+                  : badgeWidth === 'l'
+                  ? '80px'
+                  : '100%'
+            }"
+          >
+            {{ data.name }}
+          </p>
         </span>
       </div>
       <fui-icons

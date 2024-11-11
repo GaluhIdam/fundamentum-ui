@@ -21,6 +21,7 @@ import { ButtonIconComponent } from '../../../../public-api';
   imports: [CommonModule, TextComponent, ButtonIconComponent],
 })
 export class FlyoutHeaderComponent {
+  @Input() padding: 'none' | 's' | 'm' | 'l' = 'm';
   closeOut: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   onHandleCloseFlyout() {
