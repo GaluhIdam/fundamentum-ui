@@ -1,5 +1,13 @@
-import { Component, Input } from '@angular/core';
-import { TextComponent } from '../../../../public-api';
+import {
+  Component,
+  ContentChildren,
+  Input,
+  QueryList
+} from '@angular/core';
+import {
+  AdvanceFilterItemComponent,
+  TextComponent,
+} from '../../../../public-api';
 
 @Component({
   selector: 'fui-advance-filter-section',
@@ -10,4 +18,7 @@ import { TextComponent } from '../../../../public-api';
 })
 export class AdvanceFilterSectionComponent {
   @Input({ required: true }) title: string = 'Section';
+
+  @ContentChildren(AdvanceFilterItemComponent)
+  contentComponent!: QueryList<AdvanceFilterItemComponent>;
 }
