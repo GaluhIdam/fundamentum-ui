@@ -15,7 +15,7 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class DatePickerViewComponent {
   selectedDate: string = '';
-  dateFormControl: FormControl = new FormControl('', Validators.required);
+  dateFormControl: FormControl = new FormControl('13-11-2024', Validators.required);
   clockForm: FormControl = new FormControl('');
   isInvalid: boolean = false;
   errorMessage: string = 'Input is not valid.';

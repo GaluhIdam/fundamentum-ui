@@ -1,14 +1,13 @@
 <div>
   <fui-date-picker
-    dateFormat="DD-MM-YY"
+    [dateFormat]="'DD-MM-YYYY'"
     [dateFormControl]="dateFormControl"
     (onChange)="onChangeHandler($event)"
     [isInvalid]="
       dateFormControl.invalid &&
       (dateFormControl.dirty || dateFormControl.touched)
     "
-    [showTimeOptions]="true"
-    timeFormat="12h"
+    [showTimeOptions]="false"
   >
   </fui-date-picker>
   <p class="reset" (click)="resetAct()">Reset</p>

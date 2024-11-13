@@ -5,17 +5,16 @@ import {
   Input,
   OnInit,
   Output,
+  SimpleChanges,
 } from '@angular/core';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
-import { NgForOf } from '@angular/common';
+import { CommonModule, formatDate, NgForOf } from '@angular/common';
 import { FormControl, FormsModule } from '@angular/forms';
-import { ButtonEmptyComponent } from '../../atoms/button-empty/button-empty.component';
 import { ButtonIconComponent } from '../../molecules/button-icon/button-icon.component';
 import { InputFieldComponent } from '../../molecules/form-control-layout/input-field/input-field.component';
 import { IconsComponent } from '../../atoms/icons/icons.component';
 import { FormControlLayoutComponent } from '../../molecules/form-control-layout/form-control-layout.component';
-import { FlexGroupComponent } from '../../templates/flex/flex-group.component';
 import { PopoverComponent } from '../../templates/popover/popover.component';
 import { MinuteInterval, TimeFormat } from '../../types';
 import { ValidatorFieldComponent } from '../../../public-api';
@@ -25,13 +24,12 @@ import { ValidatorFieldComponent } from '../../../public-api';
   standalone: true,
   imports: [
     NgForOf,
+    CommonModule,
     FormsModule,
-    ButtonEmptyComponent,
     ButtonIconComponent,
     InputFieldComponent,
     IconsComponent,
     FormControlLayoutComponent,
-    FlexGroupComponent,
     PopoverComponent,
     ValidatorFieldComponent,
   ],
@@ -101,6 +99,44 @@ export class DatePickerComponent implements OnInit {
         (this.timeFormat === '12h' ? 'HH:MM AM' : 'HH:MM');
     }
     this.generateCalendar(this.displayMonth);
+
+    dayjs.extend(customParseFormat);
+
+    const selectedDate = dayjs(
+      this.dateFormControl.value,
+      this.dateFormat
+    ).format('YYYY-MM-DD');
+    this.weeks.forEach((week) => {
+      week.forEach((subitem) => {
+        const subitemDate = dayjs(subitem.date, 'YYYY-MM-DD').format(
+          'YYYY-MM-DD'
+        );
+        if (subitemDate === selectedDate) {
+          subitem.selected = true;
+        }
+      });
+    });
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes) {
+      dayjs.extend(customParseFormat);
+      const selectedDate = dayjs(
+        this.dateFormControl.value,
+        this.dateFormat
+      ).format('YYYY-MM-DD');
+
+      this.weeks.forEach((week) => {
+        week.forEach((subitem) => {
+          const subitemDate = dayjs(subitem.date, 'YYYY-MM-DD').format(
+            'YYYY-MM-DD'
+          );
+          if (subitemDate === selectedDate) {
+            subitem.selected = true;
+          }
+        });
+      });
+    }
   }
 
   isDateSelected(date: dayjs.Dayjs): boolean {
@@ -149,13 +185,13 @@ export class DatePickerComponent implements OnInit {
     this.generateCalendar(this.displayMonth);
     if (!this.showTimeOptions) {
       this.preventClose = false;
-      this.dateFormControl.setValue(this.formatDate(this.selectedDate));
+      this.dateFormControl.setValue(this.formatDates(this.selectedDate));
       this.isInvalid = false;
       this.isInvalidChange.emit(this.isInvalid);
       this.onChange.emit(this.dateFormControl.value);
     } else {
       this.preventClose = false;
-      this.dateFormControl.setValue(this.formatDate(this.selectedDate));
+      this.dateFormControl.setValue(this.formatDates(this.selectedDate));
       this.isInvalid = false;
       this.isInvalidChange.emit(this.isInvalid);
       this.onChange.emit(this.dateFormControl.value);
@@ -167,7 +203,7 @@ export class DatePickerComponent implements OnInit {
     this.preventClose = false;
     if (this.selectedDate) {
       this.generateTimeOptions();
-      const date: string = this.formatDate(this.selectedDate);
+      const date: string = this.formatDates(this.selectedDate);
       const time: string = this.formatTime(this.selectedTime);
       this.dateFormControl.setValue(date + ' ' + time);
       this.isInvalid = false;
@@ -186,7 +222,7 @@ export class DatePickerComponent implements OnInit {
     this.generateCalendar(this.displayMonth);
   }
 
-  formatDate(date: dayjs.Dayjs): string {
+  formatDates(date: dayjs.Dayjs): string {
     return date.format(this.dateFormat);
   }
 
