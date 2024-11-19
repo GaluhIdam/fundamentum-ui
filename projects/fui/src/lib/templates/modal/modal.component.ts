@@ -1,7 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OverlayMaskComponent } from '../../atoms/overlay-mask/overlay-mask.component';
-import { animate, style, transition, trigger } from '@angular/animations';
 
 /**
  * The ModalComponent
@@ -29,7 +27,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
   standalone: true,
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.scss',
-  imports: [CommonModule, OverlayMaskComponent],
+  imports: [CommonModule],
 })
 export class ModalComponent {
   @Input() open: boolean = false;
