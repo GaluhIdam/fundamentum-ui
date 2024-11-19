@@ -81,6 +81,16 @@
   height: fit-content;
 }
 
+@media (max-width: 760px) {
+  .container-item {
+    min-width: 350px;
+    max-width: 350px;
+    overflow-y: auto;
+    max-height: 450px;
+    height: fit-content;
+  }
+}
+
 .shortcut-key {
   font-size: small;
   font-weight: 700;
